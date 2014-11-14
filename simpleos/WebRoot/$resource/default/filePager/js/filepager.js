@@ -1,0 +1,4 @@
+function __filepager_addMethods(c,a){var b=function(e,d){return(a+"="+c.rowId(e)).addParameter(d)};c.add=function(e){var d=$Actions.ajaxAddFilePage;d.selector=c.selector;$Actions.addFilepagerWindow(e)};
+c.edit=function(f,e){var d=$Actions.ajaxEditFilePage;d.selector=c.selector;$Actions.editFilepagerWindow(b(f,e))};c.del=function(f,e){var d=$Actions.filePagerDelete;d.selector=c.selector;d(b(f,e))};c.del2=function(d){c.__checkall(function(f){var e=$Actions.filePagerDelete;
+e.selector=c.selector;e((a+"="+f).addParameter(d))})};c.download=function(d){var e=$Actions.ajaxFilepagerDownload;e.selector=c.selector;$Actions.filepagerDownloadWindow(a+"="+d)};c.top=function(f,e){var d=$Actions.ajaxFilepagerTop;
+d.selector=c.selector;d(b(f,e))}};

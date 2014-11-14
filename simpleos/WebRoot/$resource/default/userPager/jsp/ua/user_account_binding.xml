@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	
+	<components>
+		<ajaxRequest name="ajaxBindingEmail">
+			<urlForward>
+				user_account_binding_email.jsp
+			</urlForward>
+		</ajaxRequest>
+		<window name="windowBindingEmail" contentRef="ajaxBindingEmail" height="380"
+			width="300" title="#(user_account_binding.0)">
+		</window>
+
+		<ajaxRequest name="ajaxUnBindingEmail" 
+			handleClass="net.simpleframework.organization.component.userpager.UserUtilsAction"
+			handleMethod="unBindingMail" 
+			confirmMessage="#(user_account_binding.1)">
+			<jsCompleteCallback>
+				__user_account_mail_callback(false);
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

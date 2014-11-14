@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="./content_utils.xsd" />
+	<xsd:element name="remark">
+		<xsd:complexType>
+			<xsd:attributeGroup ref="content_utils" />
+			<xsd:attribute name="actionText" type="xsd:string" />
+			<xsd:attribute name="title" type="xsd:string" />
+			<xsd:attribute name="showReply" type="xsd:string" default="true" />
+			<xsd:attribute name="showSupportOpposition" type="xsd:string" default="true" />
+			<xsd:attribute name="showValidateCode" type="xsd:string" default="true" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

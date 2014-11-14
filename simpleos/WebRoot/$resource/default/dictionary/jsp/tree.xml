@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<tooltip 
+			handleClass="net.simpleframework.web.page.component.ui.dictionary.DictionaryTooltip">
+			<tip stem="leftTop" width="240">
+				<hook target="topRight" tip="topLeft" />
+				<hideOn tipElement="tip" event="mouseover" />
+			</tip>
+		</tooltip>
+	</components>
+</page>

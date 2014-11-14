@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.my.message.MessageUtils;
+	</scriptInit>
+	<importPage>
+		<value>/my/dialog/dialog.xml</value>
+		<value>${MessageUtils.deployPath}jsp/message_utils.xml</value>
+	</importPage>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
+	<components>
+		<tablePager name="myMessageTable" handleClass="net.prj.mvc.message.MyMessageTableHandle"
+			exportAction="false" containerId="mymessage_data_id" showCheckbox="true"
+			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
+			pagerBarLayout="bottom">
+			<columns>
+				<column columnName="subject" columnText="#(Message.Table.0)"
+					separator="true" filter="true"></column>
+				<column columnName="sendid" width="140" columnText="#(Message.Table.1)"
+					separator="true"></column>
+				<column columnName="toid" width="120" columnText="#(Message.Table.2)"
+					separator="true"></column>
+				<column columnName="sentdate" columnText="#(Message.Table.3)"
+					width="120" textAlign="center" separator="true" filter="true"></column>
+			</columns>
+			<jsLoadedCallback>
+				<![CDATA[
+					$IT.A('mymessageMenu');
+				]]>
+			</jsLoadedCallback>
+		</tablePager>
+		<menu name="mymessageMenu" menuEvent="click" runImmediately="false"
+			selector="#idAbstractMyMessageTPage_markMenu">
+			<menuitem title="#(Message.Act.0)">
+				<jsSelectCallback><![CDATA[messageread_mymessage(true);]]></jsSelectCallback>
+			</menuitem>
+			<menuitem title="#(Message.Act.1)">
+				<jsSelectCallback><![CDATA[messageread_mymessage(false);]]></jsSelectCallback>
+			</menuitem>
+			<menuitem title="#(Message.Act.2)">
+				<jsSelectCallback><![CDATA[$IT.A('messagereadAllAct','messageType='+$F('messageType'));]]></jsSelectCallback>
+			</menuitem>
+		</menu>
+		<listbox name="mymessageList" containerId="mymessageListId"
+			handleClass="net.prj.mvc.message.MyMessageListBoxHandle" tooltip="false">
+		</listbox>
+
+		<ajaxRequest name="myMessageDeleteAct" confirmMessage="#(Delete.Is)"
+			handleClass="net.prj.mvc.message.MyMessageAction" handleMethod="deleteMyMessage">
+			<jsCompleteCallback>
+			<![CDATA[
+				$IT.alert('#(Delete.OK)');
+				$IT.R('myMessageTable');
+			]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="messagereadAct" handleClass="net.prj.mvc.message.MyMessageAction"
+			handleMethod="messageread">
+			<jsCompleteCallback>
+			<![CDATA[
+				$IT.alert('#(Message.Act.3)');
+				$IT.R('myMessageTable');
+			]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="messagereadAllAct" handleClass="net.prj.mvc.message.MyMessageAction"
+			handleMethod="messagereadAll">
+			<jsCompleteCallback>
+			<![CDATA[
+				$IT.alert('#(Message.Act.3)');
+				$IT.R('myMessageTable');
+			]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="myDialogAjax1" updateContainerId="mymessage_data_id">
+			<urlForward>message_dialog.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="myMessageAjax">
+			<urlForward>mymessage_v.jsp</urlForward>
+		</ajaxRequest>
+		<window name="myMessageWin" contentRef="myMessageAjax" title="#(Message.0)"
+			width="500"></window>
+		<ajaxRequest name="myMessageSendAjax">
+			<urlForward>my_message_sent1.jsp</urlForward>
+		</ajaxRequest>
+		<window name="myMessageSendWin" contentRef="myMessageSendAjax"
+			title="#(Message.Act.4)" width="500"></window>
+	</components>
+</page>

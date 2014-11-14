@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<importPage>
+		<value>space_log_editor.xml</value>
+	</importPage>
+	<components>
+		<pager name="__my_space_log_pager" containerId="__my_space_log_pager"
+			pageItems="30" showEditPageItems="false" dataPath="space_log_list.jsp"
+			handleClass="net.simpleframework.my.space.SapceLogPagerHandle">
+		</pager>
+
+		<ajaxRequest name="ajaxSpaceLogDelete"
+			handleClass="net.simpleframework.my.space.SapceAction" handleMethod="logDelete"
+			confirmMessage="#(Confirm.Delete)">
+			<jsCompleteCallback>
+				if (json["result"]) {
+					$Actions["__my_space_log_pager"]();
+				}
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxSpaceLogRemarkPage">
+			<urlForward>space_log_remark.jsp</urlForward>
+		</ajaxRequest>
+
+		<ajaxRequest name="mySpaceLogId" updateContainerId="__my_space_log_id"
+			runImmediately="true">
+			<urlForward>space_log_item.jsp</urlForward>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxSpaceLogImageLoaded"
+			handleClass="net.simpleframework.my.space.SapceAction" handleMethod="logImageLoaded">
+			<jsCompleteCallback>
+		      <![CDATA[
+		      	    var trigger = $Actions["ajaxSpaceLogImageLoaded"].trigger;
+			        if (trigger) {
+			          trigger.callback(json["src"]);
+			        }
+		      ]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

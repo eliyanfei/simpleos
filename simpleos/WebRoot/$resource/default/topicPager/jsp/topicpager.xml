@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>
+		net.simpleframework.web.page.component.ui.pager.PagerPageLoad
+	</handleClass>
+
+	<components>
+		<menu name="topicPager_Menu" menuEvent="click"
+			handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerMenu">
+			<jsBeforeShowCallback>
+				if (menu.firstLevel()) {
+				var row = __pager_action(menu).row(menu);
+				var items = menu.getItems();
+				items[1].setItemChecked(row.getAttribute("top") == "true");
+				}
+			</jsBeforeShowCallback>
+		</menu>
+		<menu name="topicPager_Menu2" menuEvent="click" minWidth="140"
+			handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerMenu2">
+		</menu>
+
+		<ajaxRequest name="topicPagerDelete"
+			handleClass="net.simpleframework.content.component.topicpager.TopicPagerAction"
+			handleMethod="delete" confirmMessage="#(topicpager.1)">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="topicPagerMove"
+			handleClass="net.simpleframework.content.component.topicpager.TopicPagerAction"
+			handleMethod="exchange">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxTopicPagerAdd"
+			handleClass="net.simpleframework.content.component.topicpager.TopicPagerAction"
+			handleMethod="topicEditUrl">
+		</ajaxRequest>
+		<ajaxRequest name="ajaxTopicPagerEdit"
+			handleClass="net.simpleframework.content.component.topicpager.TopicPagerAction"
+			handleMethod="topicEditUrl">
+		</ajaxRequest>
+		<window name="topicPagerWindow" width="840" height="580"
+			title="#(topicpager.0)">
+			<jsHiddenCallback>
+				window.onbeforeunload = null;
+			</jsHiddenCallback>
+		</window>
+
+		<ajaxRequest name="ajaxTopicPagerView">
+			<urlForward>topic_view.jsp</urlForward>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxTopicUpdate"
+			handleClass="net.simpleframework.content.component.topicpager.TopicPagerAction"
+			handleMethod="saveTopic2">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxTopicEdit2"
+			handleClass="net.simpleframework.content.component.topicpager.TopicPagerAction"
+			handleMethod="topicEdit2Url">
+		</ajaxRequest>
+		<window name="topicEdit2Window" contentRef="ajaxTopicEdit2"
+			height="180" width="360" title="#(topic_edit2.2)">
+		</window>
+
+		<tree name="topicMove2Tree"
+			handleClass="net.simpleframework.content.component.topicpager.TopicMove2Tree"></tree>
+		<dictionary name="topicMove2Dict" title="#(topicpager.2)">
+			<tree ref="topicMove2Tree" />
+			<jsSelectCallback>
+				return
+				$Actions['topicMove2Dict'].move2_callback(selects);
+			</jsSelectCallback>
+		</dictionary>
+
+		<ajaxRequest name="ajaxTopicMove2"
+			handleClass="net.simpleframework.content.component.topicpager.TopicPagerAction"
+			handleMethod="move2">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

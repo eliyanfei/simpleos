@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<propEditor name="docuOptionEditor" containerId="docuOptionEditor">
+			<field label="#(layout_option.1)">
+				<component type="select" name="_docu_order" defaultValue="#(layout_option.2)" />
+			</field>
+			<field label="#(Docu.show)">
+				<component type="checkbox" name="_show_tabs" defaultValue="true" />
+			</field>
+			<field label="#(layout_option.0)">
+				<component type="text" name="_docu_rows" />
+			</field>
+		</propEditor>
+	</components>
+</page>

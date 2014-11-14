@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.organization.OrgUtils;
+	</scriptInit>	<importCSS>
+		<value>${OrgUtils.getCssPath(pageParameter)}/job_ajax_access.css</value>
+	</importCSS>
+	<jobView>${net.simpleframework.organization.IJob.sj_anonymous}</jobView>	<components>
+		<ajaxRequest name="ajaxJobAccess"
+			jobExecute="${net.simpleframework.organization.IJob.sj_anonymous}">
+			<urlForward>job_ajax_access_page.jsp</urlForward>
+		</ajaxRequest>
+		<window name="jobAccessWindow" contentRef="ajaxJobAccess"
+			title="#(job_ajax_access.1)" width="600" height="180">
+		</window>
+	</components>
+</page>

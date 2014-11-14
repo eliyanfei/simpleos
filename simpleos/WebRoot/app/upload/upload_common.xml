@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<ajaxRequest name="fileUploadAjaxAct">
+			<urlForward>file_upload.jsp</urlForward>
+		</ajaxRequest>
+		<window name="fileUploadWindowAct" contentRef="fileUploadAjaxAct"
+			modal="false" title="#(File.Upload)" width="360" height="450"></window>
+		<ajaxRequest name="fileUploadImgAjaxAct">
+			<urlForward>file_upload_img.jsp</urlForward>
+		</ajaxRequest>
+		<window name="fileUploadImgWindowAct" contentRef="fileUploadImgAjaxAct"
+			modal="false" title="#(File.Upload)" width="360" height="450"></window>
+	</components>
+</page>

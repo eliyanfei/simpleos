@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+  <components>
+    <ajaxRequest name="ajaxVoteUsersViewPage"
+      handleClass="net.simpleframework.content.component.vote.VoteAction"
+      handleMethod="usersViewUrl">
+    </ajaxRequest>
+    <window name="windowVoteUsersView" contentRef="ajaxVoteUsersViewPage"
+      title="#(vote_view.0)" width="520" height="380">
+    </window>
+  </components>
+</page>

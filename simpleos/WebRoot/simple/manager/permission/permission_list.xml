@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<components>
+		<ajaxRequest name="bindMenuWithJob"
+			handleClass="net.itsite.permission.PermissionAction"
+			handleMethod="bindMenuWithJob">
+			<jsCompleteCallback>
+				if(json['ret'] == true){ alert('绑定菜单完成.'); }
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

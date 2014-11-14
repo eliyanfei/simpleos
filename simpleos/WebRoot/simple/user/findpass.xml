@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<importPage>
+		<value>/simple/include/c.xml</value>
+	</importPage>
+	<components>
+		<pwdstrength name="pwdStrength" runImmediately="false"
+			containerId="pwd_strength" pwdInput="user_password" />
+
+		<propEditor name="userPwd" containerId="_userpwd" width="380px;">
+			<jsLoadedCallback>
+        <![CDATA[
+          $Actions['pwdStrength']();
+        ]]>
+			</jsLoadedCallback>
+			<field label="设置密码:">
+				<component type="password" name="user_password" />
+				<component type="div" name="pwd_strength" />
+			</field>
+			<field label="确认新密码:">
+				<component type="password" name="user_password2" />
+			</field>
+			<field label="">
+				<component type="button" name="pwd_1" defaultValue="确定"
+					attributes="class:button2;id:_userpwd_save">
+					<event name="click">
+						<![CDATA[
+							$IT.A('ajaxfindPassword');
+						]]>
+					</event>
+				</component>
+			</field>
+		</propEditor>
+
+		<validation name="userpwdValidation" triggerSelector="#_userpwd_save"
+			warnType="insertAfter">
+			<validator selector="#user_password" method="required"></validator>
+			<validator selector="#user_password" method="min_length"
+				args="6"></validator>
+			<validator selector="#user_password2" method="equals"
+				args="user_password" />
+		</validation>
+
+		<ajaxRequest name="ajaxfindPassword" selector="#_userpwd_form"
+			handleClass="net.simpleframework.organization.component.userpager.UserUtilsAction"
+			handleMethod="findPassword" confirmMessage="确认重新设置密码？">
+			<jsCompleteCallback>
+	        <![CDATA[
+	            if(json['act']=='true'){
+	            	$IT.alert('设置成功！');
+	            	$Actions.loc('/login.html');
+	            }else{
+	            	$IT.alert('会话已经超时，请重新请求！');
+	            }
+	        ]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

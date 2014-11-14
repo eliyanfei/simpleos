@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.blog.BlogUtils;
+	</scriptInit>
+
+	<importCSS>
+		<value>${BlogUtils.getCssPath(pageParameter)}/blog.css</value>
+	</importCSS>
+
+	<components>
+		<newsPager name="__g_blog_pager" containerId="__g_blog_mgr_pager"
+			handleClass="net.simpleframework.content.blog.BlogMgrPagerHandle"
+			pageItems="30" exportAction="false">
+		</newsPager>
+
+		<ajaxRequest name="ajaxBlogManagerToolsPage">
+			<urlForward>blog_manager_tools.jsp</urlForward>
+		</ajaxRequest>
+		<window name="blogManagerToolsWindow" contentRef="ajaxBlogManagerToolsPage"
+			title="#(manager_tools.0)" height="210" width="360">
+		</window>
+
+		<ajaxRequest name="ajaxblogAttention"
+			handleClass="net.simpleframework.applets.attention.AttentionAction"
+			handleMethod="newsAttention" confirmMessage="#(AttentionUtils.1)">
+			<jsCompleteCallback>
+				if (json["ok"])
+				$Actions["__g_blog_pager"].refresh();
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

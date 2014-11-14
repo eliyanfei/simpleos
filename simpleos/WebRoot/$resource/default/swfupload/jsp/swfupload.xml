@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="jobUploadAction"
+			handleClass="net.simpleframework.web.page.component.ui.swfupload.JobUploadAction">
+			<jsCompleteCallback>
+				var act = $Actions[json.name];
+				if (act.paramsObject) 
+					act.swf.setPostParams(act.paramsObject);
+				act.swf.startUpload();
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

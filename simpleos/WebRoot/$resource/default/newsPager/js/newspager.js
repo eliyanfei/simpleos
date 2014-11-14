@@ -1,0 +1,3 @@
+function __newspager_addMethods(c,a){var b=function(e,d){return(a+"="+c.rowId(e)).addParameter(d)};c.add=function(d){$Actions.ajaxAddNewspagerPage.selector=c.selector;$Actions.addNewspagerWindow(d)};c.edit=function(e,d){$Actions.ajaxAddNewspagerPage.selector=c.selector;
+$Actions.addNewspagerWindow(b(e,d))};c.edit2=function(f,e){var d=$Actions.ajaxNewsEdit2;d.selector=c.selector;$Actions.newsEditWindow2(b(f,e))};c.del=function(f,e){var d=$Actions.newspagerDelete;d.selector=c.selector;
+d(b(f,e))};c.del2=function(d){c.__checkall(function(f){var e=$Actions.newspagerDelete;e.selector=c.selector;e((a+"="+f).addParameter(d))})}};

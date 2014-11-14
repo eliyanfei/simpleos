@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>net.simpleframework.content.component.vote.VoteEditPageLoad</handleClass>
+	<handleMethod>ve2Loaded</handleMethod>
+
+	<components>
+		<propEditor name="ve2FormEditor" containerId="ve2FormEditor">
+			<field label="#(vote_edit_1.0)">
+				<component name="ve2_text" type="textarea" attributes="rows:3"></component>
+			</field>
+			<field label="#(vote_edit_2.0)">
+				<component name="ve2_multiple" type="text" defaultValue="0"></component>
+				<component type="div" defaultValue="#(vote_edit_2.1)" style="padding: 1px; color:red;"></component>
+			</field>
+		</propEditor>
+
+		<validation name="ve2FormValidation" warnType="insertAfter" triggerSelector="#ve2Save">
+			<validator selector="#ve2_text" method="required"></validator>
+			<validator selector="#ve2_multiple" method="int_range" args="0,255">
+			</validator>
+		</validation>
+
+		<ajaxRequest name="ajaxVe2Save"
+			handleClass="net.simpleframework.content.component.vote.VoteAction" 
+			handleMethod="groupSave">
+			<jsCompleteCallback>
+        <![CDATA[
+          $Actions["voteEdit2Window"].close();
+          __vote_edit_refresh();
+        ]]>
+      </jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

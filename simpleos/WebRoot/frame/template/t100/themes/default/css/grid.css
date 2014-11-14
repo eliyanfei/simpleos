@@ -1,0 +1,86 @@
+.grid_tab_container  .grid_tab {
+	float: left;
+	height: 90%;
+	border-right: 1px solid black;
+	width: 25%;
+	position: relative;
+	overflow: auto;
+}
+
+.appButton_appIconImg {
+	width: 32px;
+	height: 32px;
+}
+
+.appButton {
+	width: auto;
+	display: block;
+	float: none;
+	height: 32px;
+	margin-bottom: 5px;
+}
+
+.amg_folder_appbutton .appButton_appIcon {
+	height: 32px;
+	float: left;
+	display: inline;
+	background: none !important;
+}
+
+.appButton_appIcon {
+	width: 32px;
+	height: 32px;
+	overflow: hidden;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	position: relative;
+}
+
+.appButton_appName {
+	color: black;
+	height: 20px;
+	margin: 8px 0 0 0;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.amg_folder_appbutton .appButton_appName {
+	float: left;
+	text-align: left;
+	margin-top: 6px;
+	margin-left: 10px;
+}
+
+.appButton:hover {
+	background-color: #ccc;
+}
+
+.folder_bg1 {
+	background: url(../images/amg_1.png) no-repeat top right;
+	_background: 0;
+}
+
+.folder_bg2 {
+	background: url(../images/amg_2.png) no-repeat top right;
+	_background: 0;
+}
+
+.folder_bg3 {
+	background: url(../images/amg_3.png) no-repeat top right;
+	_background: 0;
+}
+
+.folder_bg4 {
+	background: url(../images/amg_4.png) no-repeat top right;
+	_background: 0;
+}
+
+.folder_bg {
+	width: 70px;
+	height: 100px;
+	top: 0;
+	right: 0;
+	position: absolute;
+}

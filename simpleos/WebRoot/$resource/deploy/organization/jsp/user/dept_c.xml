@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.organization.OrgUtils;
+	</scriptInit>
+	<importCSS>
+		<value>${OrgUtils.deployPath}css/${skin}/org.css</value>
+	</importCSS>
+	
+	<components>
+		<catalog name="__dept_tree" containerId="__dept_tree"
+			handleClass="net.simpleframework.organization.web.DepartmentTreeHandle" 
+			rootText="#(Org.dept_c.0)" />
+	</components>
+</page>

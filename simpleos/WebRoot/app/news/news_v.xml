@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.news.NewsUtils;
+	</scriptInit>
+	<importPage>
+		<value>${NewsUtils.deployPath}jsp/news_view.xml</value>
+	</importPage>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<components>
+		<ajaxRequest name="hotPageletLoadV" updateContainerId="hot_tabs"
+			showLoading="false" runImmediately="false">
+			<urlForward>news_pagelet.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="commentsPageletLoadV" updateContainerId="comments_tabs"
+			showLoading="false" runImmediately="false">
+			<urlForward>news_pagelet.jsp</urlForward>
+		</ajaxRequest>
+	</components>
+</page>

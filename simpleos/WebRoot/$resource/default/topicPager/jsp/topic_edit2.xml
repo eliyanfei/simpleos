@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>
+		net.simpleframework.content.component.topicpager.TopicEditPageLoad
+	</handleClass>
+	<handleMethod>topicEdit2</handleMethod>
+
+	<components>
+		<ajaxRequest name="ajaxSaveTopic2"
+			handleClass="net.simpleframework.content.component.topicpager.TopicPagerAction"
+			handleMethod="saveTopic2">
+			<jsCompleteCallback>
+				$Actions["topicEdit2Window"].close();
+				$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

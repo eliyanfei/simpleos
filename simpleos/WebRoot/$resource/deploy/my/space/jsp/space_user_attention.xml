@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		<![CDATA[
+		import net.simpleframework.my.space.MySpaceUtils;
+		]]>
+	</scriptInit>
+	<importPage>
+		<value>${MySpaceUtils.deployPath}jsp/my_space_utils.xml</value>
+	</importPage>
+	<components>
+		<pager name="space_user_attention" containerId="space_user_attention"
+			showEditPageItems="false" dataPath="space_user_attention_c.jsp"
+			handleClass="net.simpleframework.my.space.UserAttentionPagerHandle"
+			pageItems="12">
+		</pager>
+	</components>
+</page>

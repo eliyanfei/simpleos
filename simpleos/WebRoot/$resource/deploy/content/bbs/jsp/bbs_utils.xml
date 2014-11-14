@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<tree name="forumSelectTree" cookies="false"
+			handleClass="net.simpleframework.content.bbs.BbsForumDictTree"></tree>
+		<dictionary name="forumSelectDict" width="340" height="460"
+			showHelpTooltip="false" clearAction="false" title="#(bbs_util.0)">
+			<tree ref="forumSelectTree" />
+		</dictionary>
+	</components>
+</page>

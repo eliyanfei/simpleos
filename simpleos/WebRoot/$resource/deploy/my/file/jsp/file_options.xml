@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxFileResize" handleClass="net.simpleframework.my.file.FolderFileAction"
+			handleMethod="fileResize" confirmMessage="#(Confirm.Post)">
+			<jsCompleteCallback>
+				if (json["err"]) {
+					alert(json["err"]);
+				} else {
+					$Actions["__my_folder_refresh"]();
+					alert($MessageConst["SaveOK"]);
+				}
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="fileResizeValidation" warnType="alert" triggerSelector="#fileResizeText+a">
+			<validator selector="#fileResizeText" method="required" />
+			<validator selector="#fileResizeText" method="digits" />
+		</validation>
+	</components>
+</page>

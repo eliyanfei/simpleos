@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<ajaxRequest name="ajaxVoteEdit1Page">
+			<urlForward>vote_edit_1.jsp</urlForward>
+		</ajaxRequest>
+		<window name="voteEdit1Window" contentRef="ajaxVoteEdit1Page" title="#(vote_edit.1)"
+			height="300" width="380" />
+
+		<ajaxRequest name="ajaxVoteEdit2Page">
+			<urlForward>vote_edit_2.jsp</urlForward>
+		</ajaxRequest>
+		<window name="voteEdit2Window" contentRef="ajaxVoteEdit2Page" height="210" width="420"
+			title="#(vote_edit.3)" />
+
+		<ajaxRequest name="ajaxVoteEdit3Page">
+			<urlForward>vote_edit_3.jsp</urlForward>
+		</ajaxRequest>
+		<window name="voteEdit3Window" contentRef="ajaxVoteEdit3Page" height="210" width="380"
+			title="#(vote_edit.5)" />
+
+		<ajaxRequest name="ajaxDeleteItemGroup"
+			handleClass="net.simpleframework.content.component.vote.VoteAction" 
+			handleMethod="groupDelete"
+			confirmMessage="#(vote_edit.6)">
+			<jsCompleteCallback>
+				__vote_edit_refresh();
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxGroupItem">
+			<urlForward>vote_item_edit.jsp</urlForward>
+		</ajaxRequest>
+		<window name="groupItemWindow" contentRef="ajaxGroupItem" height="380" width="350"
+			title="#(vote_edit.4)" />
+	</components>
+</page>

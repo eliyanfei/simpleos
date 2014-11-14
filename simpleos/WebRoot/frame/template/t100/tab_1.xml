@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<ajaxRequest name="loginAjax">
+			<urlForward>login.jsp</urlForward>
+		</ajaxRequest>
+		<window name="loginWin" height="400" width="500" resizable="false"
+			contentRef="loginAjax" title="登入" modal="true">
+		</window>
+	</components>
+</page>

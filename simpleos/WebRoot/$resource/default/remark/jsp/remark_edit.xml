@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<handleClass>net.simpleframework.content.component.remark.RemarkEditPageLoad
+	</handleClass>
+	<handleMethod>editLoaded</handleMethod>
+
+	<components><!-- <htmlEditor name="remarkHtmlEditor" textarea="textareaRemarkHtmlEditor" 
+			toolbar="Basic" height="150"> <jsLoadedCallback> $("textareaRemarkHtmlEditorInfo").innerHTML 
+			= ""; </jsLoadedCallback> </htmlEditor> -->
+		<ajaxRequest name="ajaxSaveRemark"
+			handleClass="net.simpleframework.content.component.remark.RemarkAction"
+			handleMethod="saveRemark" confirmMessage="#(Confirm.Post)">
+			<jsCompleteCallback>
+        <![CDATA[
+          Validation.clearInsert("textRemarkHtmlEditorValidateCode");
+          if (json["validateCode"]) {
+            Validation.insertAfter("textRemarkHtmlEditorValidateCode", json["validateCode"]);
+          } else {
+            $Actions["remarkPager"]();
+            $Actions["remarkEditWindow"].close();
+          }
+        ]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<validateCode name="remarkHtmlEditorValidateCode"
+			containerId="remarkHtmlEditorValidateCode" textName="textRemarkHtmlEditorValidateCode" />
+
+		<validation name="remarkHtmlEditorValidation"
+			triggerSelector="#submitRemarkHtmlEditor" warnType="insertAfter">
+			<validator selector="#textareaRemarkHtmlEditor" method="required"
+				message="#(remark_edit.0)" />
+			<validator selector="#textRemarkHtmlEditorValidateCode"
+				method="required" message="#(remark_edit.1)" />
+		</validation>
+	</components>
+</page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import
+		net.simpleframework.content.component.topicpager.TopicPagerUtils;
+	</scriptInit>
+	<importPage>
+		<value>bbs_utils.xml</value>
+		<value>${TopicPagerUtils.getHomePath()}/jsp/topic_view.xml</value>
+	</importPage>
+	<handleClass>
+		net.simpleframework.content.bbs.BbsTopicPageLoad
+	</handleClass>
+</page>

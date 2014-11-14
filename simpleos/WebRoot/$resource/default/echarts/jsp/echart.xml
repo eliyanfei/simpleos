@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<echarts name="complex2Act" containerId="complex2DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleComplex2EChartHandle">
+		</echarts>
+		<echarts name="complex1Act" containerId="complex1DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleComplex1EChartHandle">
+		</echarts>
+		<echarts name="funnel3Act" containerId="funnel3DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleFunnel3EChartHandle">
+		</echarts>
+		<echarts name="funnel2Act" containerId="funnel2DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleFunnel2EChartHandle">
+		</echarts>
+		<echarts name="funnel1Act" containerId="funnel1DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleFunnel1EChartHandle">
+		</echarts>
+		<echarts name="gauge1Act" containerId="gauge1DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleGauge1EChartHandle">
+		</echarts>
+		<echarts name="map1Act" containerId="map1DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleMap1EChartHandle">
+		</echarts>
+		<echarts name="chordAct" containerId="chordDivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleChordEChartHandle">
+		</echarts>
+		<echarts name="radar1Act" containerId="radar1DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleRadar1EChartHandle">
+		</echarts>
+		<echarts name="radar2Act" containerId="radar2DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleRadar2EChartHandle">
+		</echarts>
+		<echarts name="pie3Act" containerId="pie3DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExamplePie3EChartHandle">
+		</echarts>
+		<echarts name="pie2" containerId="pie2DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExamplePie2EChartHandle">
+		</echarts>
+		<echarts name="pieAct" containerId="pieDivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExamplePieEChartHandle">
+		</echarts>
+		<echarts name="pie1" containerId="pie1DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExamplePie1EChartHandle">
+		</echarts>
+		<echarts name="kAct" containerId="kDivId" width="600" height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleKEChartHandle">
+		</echarts>
+		<echarts name="k1" containerId="k1DivId" width="600" height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleK1EChartHandle">
+		</echarts>
+		<echarts name="scatterAct" containerId="scatterDivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleScatterEChartHandle">
+		</echarts>
+		<echarts name="scatter1" containerId="scatter1DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleScatter1EChartHandle">
+		</echarts>
+		<echarts name="saaatAct" containerId="themeDivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleEChartHandle">
+		</echarts>
+		<echarts name="bbbb" containerId="lineDivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleLineEChartHandle">
+		</echarts>
+		<echarts name="dddd" containerId="bar1DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleBar1EChartHandle">
+		</echarts>
+		<echarts name="eeee" containerId="line1DivId" width="600"
+			height="400"
+			handleClass="net.simpleframework.web.page.component.ui.echarts.ExampleLine1EChartHandle">
+		</echarts>
+	</components>
+</page>

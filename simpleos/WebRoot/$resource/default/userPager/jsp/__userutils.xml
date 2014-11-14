@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.organization.OrgUtils;
+		import net.simpleframework.organization.component.userpager.UserPagerUtils;
+  </scriptInit>
+	<importPage>
+		<value>ue/user_edit.xml</value>
+	</importPage>
+	<importCSS>
+		<value>${UserPagerUtils.cssUserutils(pageParameter)}</value>
+	</importCSS>
+
+	<components>
+		<ajaxRequest name="ajaxEditUserPage"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="editUrl" />
+		<window name="editUserWindow" contentRef="ajaxEditUserPage"
+			width="640" height="480" title="#(up_pager.5)">
+		</window>
+
+		<ajaxRequest name="ajaxUserAccountStatPage"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="accountStatUrl" />
+		<window name="userAccountStatWindow" contentRef="ajaxUserAccountStatPage"
+			width="400" height="480" title="#(up_pager.6)">
+		</window>
+
+		<ajaxRequest name="ajaxUserAccountRulePage">
+			<urlForward>
+				${OrgUtils.applicationModule.getAccountRuleUrl(pageParameter)}
+			</urlForward>
+		</ajaxRequest>
+		<window name="userAccountRuleWindow" contentRef="ajaxUserAccountRulePage"
+			width="480" height="540" modal="false" title="#(user_utils.0)">
+		</window>
+
+		<ajaxRequest name="ajaxUserAccountLogPage"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="accountLogUrl">
+		</ajaxRequest>
+		<window name="userAccountLogWindow" contentRef="ajaxUserAccountLogPage"
+			width="640" height="480" modal="false" title="#(user_utils.0)">
+		</window>
+	</components>
+</page>

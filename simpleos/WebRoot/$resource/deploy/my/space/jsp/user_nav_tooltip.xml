@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.my.friends.FriendsUtils;
+		import net.simpleframework.my.message.MessageUtils;
+	</scriptInit>
+	<importPage>
+		<value>${FriendsUtils.deployPath}jsp/friends_utils.xml</value>
+		<value>${MessageUtils.deployPath}jsp/message_utils.xml</value>
+	</importPage>
+
+	<components>
+		<ajaxRequest name="ajaxUserAttention" handleClass="net.simpleframework.my.space.SapceAction"
+			handleMethod="userAttention"
+			jobExecute="${net.simpleframework.organization.IJob.sj_account_normal}">
+			<jsCompleteCallback>				
+				if (json["error"]) {
+					alert(json["error"]);
+					return;
+				}
+				if (json["attention"]) {
+					var trigger = $Actions["ajaxUserAttention"].trigger;
+					if (trigger) {
+						trigger.up().innerHTML = json["attention"];
+					}
+				}
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

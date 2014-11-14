@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<propEditor name="bbsOptionEditor" containerId="bbsOptionEditor">
+			<field label="#(bbs_layout_option.0)">
+				<component type="hidden" name="_bbs_forum" />
+				<component type="textButton" name="_bbs_forum_text"
+					attributes="readonly">
+					<event name="click">$Actions['lyForumDict']();</event>
+				</component>
+			</field>
+			<field label="#(bbs_layout_option.1)">
+				<component type="select" name="_bbs_type" defaultValue="#(bbs_layout_option.2)" />
+			</field>
+			<field label="#(bbs_layout_option.3)">
+				<component type="checkbox" name="_bbs_star" defaultValue="true" />
+			</field>
+			<field label="#(layout_option.1)">
+				<component type="select" name="_bbs_order" defaultValue="#(layout_option.2)" />
+			</field>
+			<field label="#(layout_option.3)">
+				<component type="select" name="_bbs_time" defaultValue="#(layout_option.4)" />
+			</field>
+			<field label="显示分组">
+				<component type="checkbox" name="_show_tabs" defaultValue="true" />
+			</field>
+			<field label="#(layout_option.0)">
+				<component type="text" name="_bbs_rows" />
+			</field>
+			<field label="#(layout_option.5)">
+				<component type="text" name="_bbs_dateFormat" />
+				<component type="div" defaultValue="#(layout_option.6)" />
+			</field>
+			<field label="#(layout_option.7)">
+				<component type="text" name="_bbs_descLength" />
+				<component type="div" defaultValue="#(layout_option.8)" />
+			</field>
+		</propEditor>
+
+		<tree name="lyForumTree" handleClass="net.simpleframework.content.bbs.BbsForumDictTree">
+		</tree>
+		<dictionary name="lyForumDict" title="#(bbs_search_pane.4)"
+			bindingId="_bbs_forum" bindingText="_bbs_forum_text">
+			<tree ref="lyForumTree" />
+		</dictionary>
+	</components>
+</page>

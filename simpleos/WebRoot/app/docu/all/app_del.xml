@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<ajaxRequest name="docuDeleteAct"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuDelete"
+			confirmMessage="#(Docu.all.2)">
+			<jsCompleteCallback>
+				<![CDATA[
+					if($Actions['appDelDocuWindowAct']){
+						$IT.C('appDelDocuWindowAct');
+					}
+					if($Actions['allDocuListTableAct'])
+						$IT.R('allDocuListTableAct')
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

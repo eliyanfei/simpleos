@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import
+		net.simpleframework.organization.component.login.LoginUtils;
+	</scriptInit>
+	<jobView>${net.simpleframework.organization.IJob.sj_anonymous}</jobView>
+
+	<components>
+		<ajaxRequest name="arLogin"
+			handleClass="net.simpleframework.organization.component.login.LoginAction"
+			handleMethod="login" selector="#_loginForm"
+			jobExecute="${net.simpleframework.organization.IJob.sj_anonymous}">
+			<jsCompleteCallback>_loginCallback(json);</jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="loginValidation" triggerSelector="#_loginBtn"
+			warnType="insertAfter">
+			<validator selector="#_accountName" method="required" />
+		</validation>
+
+		<ajaxRequest name="ajaxGetPassword"
+			jobExecute="${net.simpleframework.organization.IJob.sj_anonymous}">
+			<urlForward>get_pwd.jsp</urlForward>
+		</ajaxRequest>
+		<window name="getPasswordWindow" contentRef="ajaxGetPassword"
+			width="280" height="300" title="#(login.7)">
+		</window>
+
+		<userRegister name="ajaxRegist" closeAction="$Actions['registWindow'].close();"
+			termsUrl="${LoginUtils.getHomePath()}/jsp/service.html" />
+		<window name="registWindow" contentRef="ajaxRegist" width="400"
+			height="540" title="#(login.9)">
+		</window>
+
+		<menu name="accountMenu" width="100" menuEvent="click" selector="#_accountMenu"
+			iconPath="$resource/default/login/images/">
+			<jsBeforeShowCallback>
+        <![CDATA[
+          var items = menu.getItems();
+          items[0].setText(_AccountTypeMSG["normal"]);
+          items[1].setText(_AccountTypeMSG["email"]);
+          items[2].setText(_AccountTypeMSG["mobile"]);
+        ]]>
+			</jsBeforeShowCallback>
+			<menuitem icon="normal.png">
+				<jsSelectCallback>_changeAccountType("normal")</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-" />
+			<menuitem icon="email.png">
+				<jsSelectCallback>_changeAccountType("email")</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-" />
+			<menuitem icon="mobile.png">
+				<jsSelectCallback>_changeAccountType("mobile")</jsSelectCallback>
+			</menuitem>
+		</menu>
+
+		<ajaxRequest name="ajaxSendActivationMail"
+			handleClass="net.simpleframework.organization.component.login.LoginAction"
+			handleMethod="sendMail2" jobExecute="${net.simpleframework.organization.IJob.sj_anonymous}"
+			selector="#_loginForm">
+			<jsCompleteCallback>if (json["result"]) alert(json["result"]);</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxPageEditmail"
+			jobExecute="${net.simpleframework.organization.IJob.sj_anonymous}">
+			<urlForward>editmail.jsp</urlForward>
+		</ajaxRequest>
+		<window name="editmailWindow" contentRef="ajaxPageEditmail"
+			height="250" width="360" title="#(login.11)">
+		</window>
+
+		<menu name="activationMenu" menuEvent="click">
+			<menuitem title="#(login.10)">
+				<jsSelectCallback>
+          <![CDATA[
+            $Actions['ajaxSendActivationMail'](
+              'accountId=' + $target(item).getAttribute("accountId"));
+          ]]>
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="#(login.11)">
+				<jsSelectCallback>
+          <![CDATA[
+            $Actions['editmailWindow'](
+              'accountId=' + $target(item).getAttribute("accountId"));
+          ]]>
+				</jsSelectCallback>
+			</menuitem>
+		</menu>
+	</components>
+</page>

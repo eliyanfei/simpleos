@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+
+	<components>
+		<swfupload name="space_img_swfupload" containerId="space_img_swfupload"
+			fileSizeLimit="5MB" fileTypes="*.jpg;*.jpeg;*.gif;*.png"
+			fileTypesDesc="Image Files" multiFileSelected="true"
+			handleClass="net.simpleframework.my.space.SapceUploadHandle">
+			<jsCompleteCallback>
+				if(!hasQueued) {
+					$Actions["windowSpaceImgUpload"].close();
+					$Actions["ajaxSpaceImgUploadList"]();
+				}
+			</jsCompleteCallback>
+		</swfupload>
+	</components>
+</page>

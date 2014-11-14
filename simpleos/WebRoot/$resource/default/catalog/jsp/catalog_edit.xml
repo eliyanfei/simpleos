@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<handleClass>net.simpleframework.content.component.catalog.CatalogEditPageLoad
+	</handleClass>
+	<handleMethod>catalogPageLoaded</handleMethod>
+
+	<components>
+		<propEditor name="__catalog_itemForm" containerId="__catalog_itemForm"
+			handleClass="net.simpleframework.content.component.catalog.CatalogPropEditor">
+			<field label="#(catalog_edit.0)">
+				<component name="catalog_text" type="text" />
+				<component name="catalog_name" type="hidden" />
+			</field>
+			<field label="#(catalog_edit.2)">
+				<component name="catalog_parentId" type="hidden" />
+				<component name="catalog_parentText" type="textButton"
+					attributes="readonly">
+					<event name="click">
+						__catalog_parent_select();
+					</event>
+				</component>
+			</field>
+			<field label="#(Description)">
+				<component name="catalog_description" type="textarea"
+					attributes="rows:6" />
+			</field>
+		</propEditor>
+		<htmlEditor name="catalog_description" textarea="catalog_description"
+			toolbar="Simple" height="120" runImmediately="false">
+			<jsLoadedCallback>
+				$("catalog_description").innerHTML = "";
+			</jsLoadedCallback>
+		</htmlEditor>
+
+		<validation name="__catalog_itemBtn" warnType="insertAfter"
+			triggerSelector="#__catalog_itemBtn, #__catalog_itemBtn2">
+			<validator selector="#catalog_text" method="required" />
+			<validator selector="#catalog_extend1, #catalog_extend2"
+				method="number" />
+		</validation>
+
+		<ajaxRequest name="ajaxCatalogSave"
+			handleClass="net.simpleframework.content.component.catalog.CatalogAction"
+			handleMethod="itemSave">
+			<jsCompleteCallback>
+        <![CDATA[
+          if (!json["next"]) {
+            $Actions["catalogWindow"].close();
+          } else {
+            var f = $("__catalog_itemForm");
+          	f.down().clear();
+          	var vId = $F("catalog_parentId");
+          	var tText = $F("catalog_parentText");
+           	f.reset();
+           	$("catalog_parentId").setValue(vId);
+           	$("catalog_parentText").setValue(tText);
+          }
+          $eval(json["jsCallback"]);
+        ]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<tree name="catalogTreeRef" parameters="dictionary=true"
+			handleClass="net.simpleframework.content.component.catalog.CatalogTree">
+		</tree>
+		<dictionary name="dictCatalogTree" bindingText="catalog_parentText"
+			bindingId="catalog_parentId" title="#(catalog_edit.2)"
+			handleClass="net.simpleframework.content.component.catalog.CatalogSelectDict">
+			<tree ref="catalogTreeRef" />
+		</dictionary>
+	</components>
+</page>

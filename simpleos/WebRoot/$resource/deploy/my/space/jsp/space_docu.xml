@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>/app/docu/docu_bar.xml</value>
+	</importPage>
+	<importCSS>
+		<value>/app/docu/docu.css</value>
+	</importCSS>
+	<components>
+		<tablePager name="allDocuListTableAct" containerId="myDocuListTableId"
+			pageItems="15" showEditPageItems="false" showCheckbox="false"
+			exportAction="false" handleClass="net.itsite.document.docu.my.MyDocuTablePaperHandle">
+			<columns>
+				<column columnText="文档名称" columnName="title" sort="false"></column>
+				<column columnText="类目" columnName="catalogId" separator="true"
+					textAlign="center" width="120"></column>
+				<column columnText="属性" width="50" columnName="docuFunction"
+					textAlign="center" separator="true"></column>
+				<column columnText="上传时间" columnName="createDate" separator="true"
+					textAlign="center" width="120"></column>
+			</columns>
+		</tablePager>
+	</components>
+</page>

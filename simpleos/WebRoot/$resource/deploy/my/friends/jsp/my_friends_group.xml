@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<catalog name="idMyFriendsGroup" containerId="idMyFriendsGroup"
+			handleClass="net.simpleframework.my.friends.FriendsGroupHandle" rootText="#(my_friends_group.0)"
+			cookies="false">
+			<jsLoadedCallback><![CDATA[
+				$$("#idMyFriendsGroup .tafelTreecontent").each(function(item) {
+					var b = item.branch;
+					if (b.getParent() == null && !b.hasChildren()) {
+						return;
+					}
+					Droppables.add(item, {
+						hoverclass : "tafelTreeselected",
+						onDrop : function(drag, drop, event) {
+							var act = $Actions["ajaxMyFriendsGroupDrop"];
+							if (act.drop) 
+								return;
+							var arr = __my_friends_checkArr(drag);	
+							act("drag=" + arr.join(";") + "&drop=" + drop.branch.getId());	
+							act.drop = true;
+						}
+					});
+				});
+			]]></jsLoadedCallback>
+		</catalog>
+
+		<ajaxRequest name="ajaxMyFriendsGroupDrop" handleClass="net.simpleframework.my.friends.FriendsAction"
+			handleMethod="dropFriend" confirmMessage="#(my_friends_group.1)">
+			<jsCompleteCallback>
+				if (json["ok"]) {
+					$Actions["idMyFriendsGroup"].refresh();
+					$Actions["idMyFriendsPager"]();
+				}
+				$Actions["ajaxMyFriendsGroupDrop"].drop = false;
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

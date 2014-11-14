@@ -1,0 +1,23 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<components>
+		<tablePager name="jobTableAct" containerId="jobViewId"
+			exportAction="false" pagerBarLayout="top" showCheckbox="false"
+			showLineNo="true" showVerticalLine="true"
+			handleClass="net.simpleframework.organization.JobTableHandle">
+			<columns>
+				<column columnName="memberType" columnText="成员类型" separator="true"
+					textAlign="center" filter="true"
+					beanPropertyType="net.simpleframework.organization.EMemberType"></column>
+				<column columnName="memberId" columnText="成员" separator="true"
+					textAlign="center"></column>
+				<column columnName="primaryJob" columnText="主要角色" separator="true"
+					textAlign="center" beanPropertyType="java.lang.Boolean" filter="true"></column>
+				<column columnName="description" columnText="描述" separator="true"
+					filter="true"></column>
+				<column columnName="act" width="40" separator="true"
+					textAlign="center" columnText="操作"></column>
+			</columns>
+		</tablePager>
+	</components>
+</page>

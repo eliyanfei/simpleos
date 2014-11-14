@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import
+		net.simpleframework.my.file.component.fileselect.FileSelectUtils;
+	</scriptInit>
+	<handleClass>
+		net.simpleframework.content.component.newspager.NewsTemplatePageLoad
+	</handleClass>
+
+	<components>
+		<ajaxRequest name="ajaxAttachmentTooltip">
+			<urlForward>${FileSelectUtils.jspTooltip()}</urlForward>
+		</ajaxRequest>
+		<tooltip name="attachmentTooltip">
+			<tip selector=".newspager_template .inherit_c a[onclick]"
+				ajaxRequest="ajaxAttachmentTooltip" delay="0.5" stem="topMiddle"
+				hideOthers="true" title="#(topic_view_pager.9)" width="320">
+				<jsTipCreate>
+					var s = element.readAttribute("onclick");
+					if
+					(s.startsWith("$Actions")) {
+					element.addClassName("attachment a2");
+					element.setAttribute("tipParam", s.substring(s.indexOf("('") + 2,
+					s.indexOf("')")));
+					}					
+				</jsTipCreate>
+				<hideOn tipElement="closeButton" />
+				<hook target="bottomMiddle" tip="topMiddle" />
+			</tip>
+		</tooltip>
+
+		<ajaxRequest name="ajaxNewsAttention"
+			handleClass="net.simpleframework.content.component.newspager.NewsPagerAction"
+			handleMethod="newsAttention">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<syntaxHighlighter name="newsSyntaxHighlighter"
+			shTheme="shThemeEclipse" />
+	</components>
+</page>

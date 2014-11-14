@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<swfupload name="addFilesSwfUpload" containerId="addFilesSwfUpload"
+			fileQueueLimit="1" fileSizeLimit="5MB" multiFileSelected="true"
+			selector="#fileForm__" handleClass="net.itsite.upload.FileUploadHandle">
+			<jsCompleteCallback>
+      		<![CDATA[
+      			if(json['download']){
+      				$Actions.setValue(json['refId'], json['download'], true);
+      				$IT.C('fileUploadWindowAct');
+      			}
+				return true;
+      		]]>
+      </jsCompleteCallback>
+		</swfupload>
+	</components>
+</page>

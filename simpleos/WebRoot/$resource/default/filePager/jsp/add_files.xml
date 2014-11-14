@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<swfupload name="addFilesSwfUpload" containerId="addFilesSwfUpload"
+			multiFileSelected="true"
+			handleClass="net.simpleframework.content.component.filepager.FileUploadHandle">
+			<jsCompleteCallback>
+				if(!hasQueued) {
+				$eval(json["jsCallback"]);
+				}
+			</jsCompleteCallback>
+		</swfupload>
+	</components>
+</page>

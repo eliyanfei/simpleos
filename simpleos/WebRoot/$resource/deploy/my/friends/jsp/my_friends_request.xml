@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<pager name="idMyFriendsRequestPager" containerId="idMyFriendsRequestPager"
+			handleClass="net.simpleframework.my.friends.FriendsRequestPagerHandle" dataPath="my_friends_request_pager.jsp"
+			pageItems="20">
+		</pager>
+
+		<ajaxRequest name="ajaxFriendsRequestAction" 
+			handleClass="net.simpleframework.my.friends.FriendsAction"
+			handleMethod="doFriendsRequest" confirmMessage="#(Confirm.Post)">
+			<jsCompleteCallback>
+				$Actions["idMyFriendsRequestPager"]();
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxDeleteFriendsRequest" 
+			handleClass="net.simpleframework.my.friends.FriendsAction"
+			handleMethod="deleteFriendsRequest" confirmMessage="#(Confirm.Delete)">
+			<jsCompleteCallback>
+				$Actions["idMyFriendsRequestPager"]();
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>
+		net.simpleframework.content.component.vote.VotePageLoad
+	</handleClass>
+	
+	<components>
+		<ajaxRequest name="ajaxVoteSubmit" handleClass="net.simpleframework.content.component.vote.VoteAction"
+			handleMethod="voteSubmit">
+			<jsCompleteCallback>
+				if (json["error"]) 
+					alert(json["error"]);
+				else if (json["jsCallback"]) 
+					$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxVoteView">
+			<urlForward>vote_view.jsp</urlForward>
+		</ajaxRequest>
+		<window name="voteViewWindow" contentRef="ajaxVoteView" width="480" height="540"
+			title="#(vote.3)" />
+	</components>
+</page>

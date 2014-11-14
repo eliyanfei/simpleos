@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>
+		net.simpleframework.content.component.topicpager.PostsEditPageLoad
+	</handleClass>
+
+	<components>
+		<pager name="__pager_postsId" containerId="__pager_postsId"
+			pagerBarLayout="bottom"
+			handleClass="net.simpleframework.content.component.topicpager.PostsViewHandle"
+			dataPath="topic_view_pager.jsp">
+		</pager>
+
+		<validateCode name="__pager_postsValidateCode"
+			containerId="__pager_postsValidateCode" textName="textFastReplyValidateCode"
+			width="200" />
+
+		<ajaxRequest name="ajaxFastReplyTopicSave"
+			handleClass="net.simpleframework.content.component.topicpager.PostsAction"
+			handleMethod="fastReplyTopic" confirmMessage="#(topic_view.2)">
+			<jsCompleteCallback>
+				Validation.clearInsert("textFastReplyValidateCode");
+				if
+				(json["validateCode"]) {
+				Validation.insertAfter("textFastReplyValidateCode",
+				json["validateCode"]);
+				} else {
+				$Actions["__pager_postsId"].refresh();
+				$("textFastReplyValidateCode").clear();
+				}
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="fastReplyValidation" triggerSelector=".tp_view .right .btn"
+			warnType="insertAfter">
+			<validator
+				selector="#fastReplyTopic, #fastReplyContent, #textFastReplyValidateCode"
+				method="required" />
+		</validation>
+
+		<dictionary name="smileyTopicPagerDict" bindingId="fastReplyContent">
+			<smiley />
+		</dictionary>
+
+		<syntaxHighlighter name="topicSyntaxHighlighter"
+			shTheme="shThemeEclipse" />
+	</components>
+</page>

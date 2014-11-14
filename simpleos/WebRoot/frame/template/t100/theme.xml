@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<ajaxRequest name="themeSystemAjax">
+			<urlForward><![CDATA[theme_system.jsp]]></urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="themeCustomAjax">
+			<urlForward><![CDATA[theme_custom.jsp]]></urlForward>
+		</ajaxRequest>
+		<tabs name="themeTabs" containerId="themeDivId1">
+			<tab title="系统主题" contentRef="themeSystemAjax" cache="true"></tab>
+			<tab title="自定义" contentRef="themeCustomAjax" cache="true"></tab>
+		</tabs>
+
+	</components>
+</page>

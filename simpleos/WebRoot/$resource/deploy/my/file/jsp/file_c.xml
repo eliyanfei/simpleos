@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<filePager name="__my_files" containerId="__my_files"
+			handleClass="net.simpleframework.my.file.FileHandle" assertCatalogNull="false"
+			jobView="${net.simpleframework.organization.IJob.sj_account_normal}">
+			<jsLoadedCallback>
+				TableRowDraggable.init("__my_files", "tafelTreeselected");	
+			</jsLoadedCallback>
+		</filePager>
+
+		<ajaxRequest name="ajaxFileManagerToolsPage">
+			<urlForward>file_manager_tools.jsp</urlForward>
+		</ajaxRequest>
+		<window name="fileManagerToolsWindow" contentRef="ajaxFileManagerToolsPage"
+			title="#(manager_tools.0)" height="210" width="360">
+		</window>
+	</components>
+</page>

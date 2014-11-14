@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.news.NewsUtils;
+		import
+		net.simpleframework.my.file.component.fileselect.FileSelectUtils;
+	</scriptInit>
+	<!-- 图片预览需要装载__dl.xml -->
+	<importPage>
+		<value>${FileSelectUtils.xmlDownload()}</value>
+	</importPage>
+	<importCSS>
+		<value>${NewsUtils.getCssPath(pageParameter)}/news.css</value>
+	</importCSS>
+
+	<components>
+		<newsPager name="__news_app_pager" containerId="__news_app_pager"
+			pagerBarLayout="bottom" handleClass="${NewsUtils.applicationModule.getPagerHandleClass()}"
+			pageItems="30">
+		</newsPager>
+
+		<ajaxRequest name="ajaxnewsAttention"
+			handleClass="net.simpleframework.applets.attention.AttentionAction"
+			handleMethod="newsAttention" confirmMessage="#(AttentionUtils.1)">
+			<jsCompleteCallback>
+				if (json["ok"])
+				$Actions["__news_app_pager"].refresh();
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

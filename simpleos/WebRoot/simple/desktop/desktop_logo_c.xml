@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<swfupload name="logoUpload" fileSizeLimit="1MB" fileTypes="*.png"
+			containerId="template_logoUploadId" fileTypesDesc="#(Img.Upload)"
+			handleClass="net.prj.manager.template.LogoUpLoadFileHandle">
+			<jsCompleteCallback>
+					<![CDATA[
+						if(json['rs']=='true'){
+							$('template_logoId').src=json['src'];
+						}
+					]]>
+				</jsCompleteCallback>
+		</swfupload>
+	</components>
+</page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<components>
+		<ajaxRequest name="ajaxRemarkEditPage">
+			<urlForward>remark_edit.jsp</urlForward>
+		</ajaxRequest>
+		<window name="remarkEditWindow" contentRef="ajaxRemarkEditPage"
+			width="540" height="390" title="#(remark.10)">
+		</window>
+		<pager name="remarkPager" dataPath="remark_list.jsp"
+			containerId="remark_docu_list"
+			handleClass="net.simpleframework.content.component.remark.RemarkDocuList"
+			pagerBarLayout="bottom" noResultDesc="&amp;nbsp;" />
+	</components>
+</page>

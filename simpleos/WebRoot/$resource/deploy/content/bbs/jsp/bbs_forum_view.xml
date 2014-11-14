@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<importPage>
+		<value>bbs_toolbar_pane.xml</value>
+	</importPage>
+
+	<components>
+		<tooltip name="ajaxForumTooltip">
+			<tip selector=".bbs_forum .c_forums2" delay="0.5" offsetY="4"
+				hideAfter="5" stem="bottomMiddle">
+				<hook target="topLeft" />
+			</tip>
+		</tooltip>
+	</components>
+</page>

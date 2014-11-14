@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>docu_catalog.xml</value>
+	</importPage>
+	<components>
+		<ajaxRequest name="docuMgrCatalogAjaxAct">
+			<urlForward>docu_catalog.jsp</urlForward>
+		</ajaxRequest>
+		<window name="docuMgrCatalogWindowAct" contentRef="docuMgrCatalogAjaxAct"
+			title="#(Docu.mgr.2)" width="340" height="420">
+		</window>
+
+		<ajaxRequest name="docuReBuildStatData"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="statRebuild"
+			confirmMessage="#(manager_tools.1)">
+			<jsCompleteCallback>
+				<![CDATA[
+					if (json["info"])
+					$("span_docuReBuildStatData").innerHTML = json["info"];
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="docuIndexRebuild"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="indexRebuild"
+			confirmMessage="#(manager_tools.5)">
+			<jsCompleteCallback>
+				if (json["info"])
+					$("span_docuIndexRebuild").innerHTML = json["info"];
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="docuPathAct"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuPath"
+			confirmMessage="#(Docu.mgr.6)">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.alert('#(Save.OK)');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

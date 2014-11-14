@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<handleClass>net.itsite.document.docu.DocuPageLoad</handleClass>
+	<handleMethod>docuLoad1</handleMethod>
+	<components>
+		<ajaxRequest name="docuSaveAct"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuSave"
+			selector="#docuForm" confirmMessage="#(Docu.add.5)">
+			<jsCompleteCallback>
+				<![CDATA[
+					$Actions.loc('/docu.html');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="uploadDocuValid" triggerSelector="#uploadDocuBtn"
+			warnType="insertAfter">
+			<validator selector="#docu_title,#docu_catalog" method="required"></validator>
+		</validation>
+
+		<tree name="docuCatalogTreeAct" handleClass="net.itsite.document.docu.DocuCatalogAddTreeHandle" />
+		<dictionary name="docuCatalogAct" width="320" height="350"
+			title="">
+			<tree ref="docuCatalogTreeAct" />
+			<jsSelectCallback>
+				<![CDATA[
+					var id = '';
+					var cId = '';
+					for(var i=0;i<selects.length;i++){
+						var txtArr = selects[i].id.split('|');
+						cId = txtArr[1];
+						$('docu_catalog').value = txtArr[1];
+						$('docu_catalog_text').value = txtArr[0];
+						break;
+					}
+					return true;
+				]]>
+			</jsSelectCallback>
+		</dictionary>
+	</components>
+</page>

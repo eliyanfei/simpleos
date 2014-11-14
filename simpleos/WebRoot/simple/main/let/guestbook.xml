@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>/simple/template/c.xml</value>
+	</importPage>
+	<components>
+		<remark name="_guestbook" containerId="_guestbook"
+			documentId='${"guestbook".hashCode()}' actionText="我要留言" />
+	</components>
+</page>

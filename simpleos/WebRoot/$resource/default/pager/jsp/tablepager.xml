@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <importPage>
+  	<value>tablepager_filter.xml</value>
+  </importPage>
+  <components>
+    <ajaxRequest name="ajaxTablePagerExportPage">
+      <urlForward>tablepager_export.jsp</urlForward>
+    </ajaxRequest>
+    <window name="tablePagerExportWin" contentRef="ajaxTablePagerExportPage"
+      title="#(tablepager_export.0)">
+    </window>
+
+    <tooltip name="tablePagerHeadTooltip">
+      <tip stem="topMiddle" hideOthers="true" width="240">
+        <hook target="bottomMiddle" tip="topMiddle" />
+        <hideOn tipElement="tip" event="mouseleave" />
+      </tip>
+    </tooltip>
+
+    <ajaxRequest name="ajaxTablePagerColumnFilter"
+      handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerAction"
+      handleMethod="filterUrl">
+    </ajaxRequest>
+    <window name="tablePagerColumnFilterWindow" contentRef="ajaxTablePagerColumnFilter"
+      height="210" width="420" title="#(tablepager.0)">
+    </window>
+  </components>
+</page>

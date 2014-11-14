@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxAttentionUsers">
+			<urlForward>attention_users.jsp</urlForward>
+		</ajaxRequest>
+		<window name="attentionUsersWindow" contentRef="ajaxAttentionUsers" title="#(attention.xml.0)"
+			width="420" height="380">
+		</window>
+	</components>
+</page>

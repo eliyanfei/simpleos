@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>docu_bar.xml</value>
+		<value>docu_list.xml</value>
+		<value>remark/remark.xml</value>
+		<value>/app/docu/all/alldocu.xml</value>
+		<value>/app/docu/my/mydocu.xml</value>
+	</importPage>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<jobView>${net.simpleframework.organization.IJob.sj_anonymous}</jobView>
+	<components>
+		<tree name="docuTreeAct" containerId="docu_tree"
+			handleClass="net.itsite.document.docu.DocuCatalogTreeHandle"></tree>
+		<ajaxRequest name="doUploadAct"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="doUpload">
+			<jsCompleteCallback>
+				<![CDATA[
+					$Actions.loc('/docu/upload.html');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<remark name="remarkMgr" />
+		<pager name="documentPaperAct" containerId="documentDivId"
+			pagerBarLayout="bottom" pageItems="49" showEditPageItems="false"
+			noResultDesc="no document" dataPath="docu_data.jsp"
+			handleClass="net.itsite.document.docu.DocuPaperHandle">
+		</pager>
+		<ajaxRequest name="docuAttentionAct"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="attention">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.R('documentPaperAct');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="docuRecommendedAct"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuRecommended">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.R('documentPaperAct');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<pager name="remarkDocuTable" handleClass="net.prj.mvc.remark.RemarkDocuTableHandle"
+			exportAction="false" containerId="remarkListId_docu" dataPath="remark_docu_data.jsp"
+			showEditPageItems="false" pagerBarLayout="bottom"></pager>
+	</components>
+</page>

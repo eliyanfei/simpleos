@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>
+		net.simpleframework.content.component.vote.VoteEditPageLoad
+	</handleClass>
+	<handleMethod>ve1Loaded</handleMethod>
+
+	<components>
+		<propEditor name="ve1FormEditor" containerId="ve1FormEditor">
+			<field label="#(vote_edit_1.0)">
+				<component name="ve1_text" type="textarea" attributes="rows:3"></component>
+			</field>
+			<field label="#(vote_edit_1.1)">
+				<component name="ve1_status" type="select" defaultValue="#(vote_edit_1.3)"></component>
+			</field>
+			<field label="#(vote_edit_1.2)">
+				<component name="ve1_expiredDate" type="textButton" attributes="readonly">
+					<event name="click">$Actions["calExpiredDate"].show();</event>
+				</component>
+			</field>
+			<field label="#(Description)">
+				<component name="ve1_description" type="textarea" attributes="rows:5"></component>
+			</field>
+		</propEditor>
+
+		<calendar name="calExpiredDate" dateFormat="yyyy-MM-dd" inputField="ve1_expiredDate">
+		</calendar>
+
+		<ajaxRequest name="ajaxVe1Save"
+			handleClass="net.simpleframework.content.component.vote.VoteAction" 
+			handleMethod="voteSave">
+			<jsCompleteCallback>
+        <![CDATA[
+          $Actions["voteEdit1Window"].close();
+          __vote_edit_refresh();
+        ]]>
+      </jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

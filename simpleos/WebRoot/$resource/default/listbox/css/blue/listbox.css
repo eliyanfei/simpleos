@@ -1,0 +1,117 @@
+.listbox {
+	overflow-y: auto;
+	position: relative;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	background: #f9faff;
+	padding: 2px;
+}
+
+.listbox .item {
+	overflow: hidden;
+	margin: 2px 2px;
+	padding: 4px 6px;
+	border: 1px solid #dedede;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.listbox .item:hover {
+	background: #DFEEF3;
+}
+
+.listbox .odd {
+	background: #FBFBFB;
+}
+
+.listbox .even {
+	background: #F8F8F8;
+}
+
+.listbox .checked {
+	background: #FFF8C2;
+}
+
+.listbox .select {
+	background: #DFEEF3;
+}
+
+.listbox .item .uncheck {
+	width: 16px;
+	height: 16px;
+	padding: 0;
+	margin: 0;
+	background: transparent url(images/check1.gif) no-repeat;
+}
+
+.listbox .item .uncheck:hover {
+	background: transparent url(images/check_over1.gif) no-repeat;
+}
+
+.listbox .item .check {
+	width: 16px;
+	height: 16px;
+	padding: 0;
+	margin: 0;
+	background: transparent url(images/check2.gif) no-repeat;
+}
+
+.listbox .item .check:hover {
+	background: transparent url(images/check_over2.gif) no-repeat;
+}
+
+.category .listbox .item {
+	text-align: left;
+	line-height: 40px;
+	margin: 0;
+	padding: 0;
+	padding-left: 20px;
+	border: 1px solid transparent;
+	border-bottom-color: #888;
+	font-size: 10.5pt;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.category .listbox .item :hover {
+	transition: background-color 0.4s;
+	-moz-transition: background-color 0.4s;
+	-webkit-transition: background-color 0.4s;
+	-ms-transition: background-color 0.4s;
+}
+
+.category .listbox {
+	border: 0px solid rgb(204, 204, 204);
+	background: rgb(238, 238, 255);
+}
+
+.category .listbox .odd {
+	background: none;
+}
+
+.category .listbox .even {
+	background: none;
+}
+
+
+.listbox .listsub .data{
+	padding-left: 30px;
+}
+
+.category .listbox .select,.category .listbox .item:hover {
+	background-color: white;
+	-webkit-box-shadow: 1px 1px 5px rgb(153, 153, 153);
+	box-shadow: 1px 1px 5px rgb(153, 153, 153);
+}
+
+.category .listbox .select {
+	background: url(images/arrow-right.png) no-repeat 96% center white;
+}
+
+.category .listbox .data {
+	cursor: pointer;
+}

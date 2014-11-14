@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<pwdstrength name="pwdStrength" runImmediately="false"
+			containerId="pwd_strength" pwdInput="user_password" />
+		<validateCode name="pwdValidateCode" runImmediately="false"
+			containerId="pwd_validateCode" textName="user_validateCode" />
+
+		<propEditor name="userPwd" containerId="_userpwd" width="380px;">
+			<jsLoadedCallback>
+        <![CDATA[
+          $Actions['pwdValidateCode']();
+          $Actions['pwdStrength']();
+        ]]>
+      </jsLoadedCallback>
+			<field label="#(user_edit_pwd.3)">
+				<component type="password" name="user_old_password" />
+			</field>
+			<field label="#(user_edit_pwd.4)">
+				<component type="password" name="user_password" />
+				<component type="div" name="pwd_strength" />
+			</field>
+			<field label="#(user_edit_pwd.5)">
+				<component type="password" name="user_password2" />
+			</field>
+			<field label="#(user_edit_pwd.6)">
+				<component type="div" name="pwd_validateCode" />
+			</field>
+		</propEditor>
+
+		<validation name="userpwdValidation" triggerSelector="#_userpwd_save"
+			warnType="insertAfter">
+			<validator selector="#user_validateCode" method="required"></validator>
+			<validator selector="#user_password2" method="equals"
+				args="user_password" />
+		</validation>
+
+		<ajaxRequest name="ajaxEditPassword"
+			handleClass="net.simpleframework.organization.component.userpager.UserUtilsAction"
+			handleMethod="editPassword" confirmMessage="#(Confirm.Post)">
+			<jsCompleteCallback>
+        <![CDATA[
+          Validation.clearInsert(['pwd_validateCode', 'user_old_password']);
+          if (json['validateCode']) {
+            Validation.insertAfter('pwd_validateCode', json['validateCode']);
+          } else if (json['oldPassword']) {
+          	Validation.insertAfter('user_old_password', json['oldPassword']);
+          } else {
+            $('user_validateCode').clear();
+            alert($MessageConst['SaveOK']);
+          }
+        ]]>
+      </jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

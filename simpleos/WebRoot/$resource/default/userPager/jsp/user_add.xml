@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>
+		net.simpleframework.organization.component.userpager.UserEditPageLoad
+	</handleClass>
+	<handleMethod>addUserLoaded</handleMethod>
+
+	<components>
+		<propEditor name="userFormEditor" containerId="userFormEditor">
+			<field label="#(user_add.0)">
+				<component name="user_account" type="text" />
+			</field>
+			<field label="#(user_add.1)">
+				<component name="user_password" type="password" />
+			</field>
+			<field label="#(user_add.2)">
+				<component name="user_text" type="text" />
+			</field>
+			<field label="#(user_add.3)">
+				<component name="user_departmentText" type="textButton" attributes="readonly">
+					<event name="click">
+						__deptselct_dict();
+					</event>
+				</component>
+				<component name="user_departmentId" type="hidden" />
+			</field>
+			<field label="#(user_add.4)">
+				<component name="user_sex" type="select" defaultValue="#(user_add.5)" />
+			</field>
+			<field label="#(user_add.6)">
+				<component name="user_birthday" type="textButton">
+					<event name="click">
+						$Actions['birthdayCal'].show();
+					</event>
+				</component>
+			</field>
+		</propEditor>
+
+		<calendar name="birthdayCal" inputField="user_birthday" />
+
+		<validation name="userValidation" triggerSelector="#userSave, #userSaveAndNew"
+			warnType="insertAfter">
+			<validator selector="#user_account, #user_text" method="required"></validator>
+			<validator selector="#user_birthday" method="date" args="yyyy-MM-dd"></validator>
+		</validation>
+
+		<ajaxRequest name="ajaxUserSave"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="addUser">
+			<jsCompleteCallback>
+        <![CDATA[
+          if (json['exist']) {
+            Validation.insertAfter('user_account', json['exist']);
+          } else {
+            if (!json['next'])
+              $Actions['addUserWindow'].close();
+            else
+              $('userFormEditor').reset();
+            $eval(json["jsCallback"]);  
+          }
+        ]]>
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<deptSelect name="arDeptDict" destroyOnClose="false" bindingId="user_departmentId"
+			bindingText="user_departmentText" title="#(user_add.7)"
+			handleClass="net.simpleframework.organization.component.userpager.UserDeptSelect">
+		</deptSelect>
+	</components>
+</page>

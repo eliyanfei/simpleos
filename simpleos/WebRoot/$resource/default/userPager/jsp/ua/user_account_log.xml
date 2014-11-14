@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+  <components>
+    <tablePager name="user_account_log_table" containerId="user_account_log_table"
+      handleClass="net.simpleframework.organization.component.userpager.UserAccountLogTable"
+      exportAction="false" indexPages="5" pageItems="12"
+      pagerBarLayout="top" showCheckbox="false">
+      <columns>
+        <column columnName="eventText" columnText="#(user_account_log.0)"
+          headerStyle="width: 120px;" style="width: 120px;"
+          columnSqlName="eventId" />
+        <column columnName="createDate" columnText="#(user_account_log.1)"
+          headerStyle="width: 125px;" style="width: 125px;" separator="true" />
+        <column columnName="exp" columnText="#(user_account_stat.11)"
+          textAlign="center" width="45" separator="true" />
+        <column columnName="points" columnText="#(user_account_stat.8)"
+          textAlign="center" width="45" separator="true" />
+        <column columnName="reputation" columnText="#(user_account_stat.9)"
+          textAlign="center" width="45" separator="true" />
+        <column columnName="money" columnText="#(user_account_stat.10)"
+          textAlign="center" width="45" separator="true" />
+        <column columnName="desc" columnText="#(Description)"
+          separator="true" sort="false" />
+      </columns>
+    </tablePager>
+  </components>
+</page>

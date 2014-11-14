@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.my.space.MySpaceUtils;	
+	import net.simpleframework.my.message.MessageUtils;</scriptInit>
+	<importPage>
+		<value>/simple/template/c2.xml</value>
+		<value>a/my_attention_right.xml</value>
+		<value>${MySpaceUtils.deployPath}jsp/my_space_left.xml</value>
+	</importPage>
+	<importCSS>
+		<value>${MessageUtils.getCssPath(pageParameter)}/message.css</value>
+	</importCSS>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+</page>

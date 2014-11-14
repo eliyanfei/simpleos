@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <scriptEval>single</scriptEval>
+  
+	<components>
+		<ajaxRequest name="ajaxRemarkSupport" 
+      handleClass="net.simpleframework.content.component.remark.RemarkAction"
+      handleMethod="doSupport">
+      <jsCompleteCallback>
+        <![CDATA[  
+          if (json['k'] && $(json['k']) && json['v']) {
+            $(json['k']).innerHTML = json['v']; 
+          }
+        ]]>
+      </jsCompleteCallback>
+    </ajaxRequest>
+
+    <ajaxRequest name="ajaxRemarkOpposition" 
+      handleClass="net.simpleframework.content.component.remark.RemarkAction"
+      handleMethod="doOpposition">
+      <jsCompleteCallback>
+        <![CDATA[
+          if (json['k'] && $(json['k']) && json['v']) {
+            $(json['k']).innerHTML = json['v']; 
+          } 
+        ]]>
+      </jsCompleteCallback>
+    </ajaxRequest>
+
+    <ajaxRequest name="ajaxRemarkDelete" confirmMessage="#(remark.9)"
+      handleClass="net.simpleframework.content.component.remark.RemarkAction"
+      handleMethod="doDelete">
+      <jsCompleteCallback>
+        <![CDATA[
+          $Actions["remarkPager"]();
+        ]]>
+      </jsCompleteCallback>
+    </ajaxRequest>
+	</components>  
+</page>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<importPage>
+		<value>bbs_toolbar_pane.xml</value>
+	</importPage>
+	<components>
+		<tablePager name="bbsUserPager" containerId="bbsUserPager"
+			showCheckbox="false" pageItems="30" pagerBarLayout="bottom"
+			handleClass="net.simpleframework.content.bbs.BbsUserPager"
+			exportAction="false" showLineNo="true" showVerticalLine="true">
+			<columns>
+				<column columnName="userText" columnText="#(bbs_topic_view.0)"
+					filter="false" sort="false" separator="true" />
+				<column columnName="userFrom" columnText="#(topic_view_pager.11)"
+					filter="false" sort="false" separator="true" width="180" />
+				<column columnName="lastlogindate" columnText="#(topic_view_pager.10)"
+					separator="true" width="120" />
+				<column columnName="exp" columnText="#(topic_view_pager.12)"
+					separator="true" width="120" />
+				<column columnName="topics" columnText="#(bbs_forum_view.2)"
+					filter="true" separator="true" width="60" textAlign="center" />
+				<column columnName="messages" columnText="#(bbs_forum_view.3)"
+					filter="true" separator="true" width="60" textAlign="center" />
+			</columns>
+		</tablePager>
+	</components>
+</page>

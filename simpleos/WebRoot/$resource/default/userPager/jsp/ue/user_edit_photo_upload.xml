@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<submit name="uploadPhoto"
+			handleClass="net.simpleframework.organization.component.userpager.UserUploadPhoto"
+			formName="uploadPhoto" 
+			binary="true" 
+			confirmMessage="#(Confirm.Post)">
+		</submit>
+		<validation name="uploadValidation" triggerSelector="#btnUploadPhoto">
+			<validator selector="#user_photo" method="file" args="jpg,jpeg,bmp,gif,png" />
+		</validation>
+	</components>
+</page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<components>
+		<pager name="downUsersPagerAct" containerId="idDownUsersPager"
+			handleClass="net.itsite.document.docu.DocuDownUsersPagerHandle"
+			pageItems="10" dataPath="down_users_pager.jsp"
+			showEditPageItems="false">
+		</pager>
+	</components>
+</page>

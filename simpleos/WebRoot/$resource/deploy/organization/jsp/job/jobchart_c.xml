@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <scriptEval>single</scriptEval>
+  <scriptInit>
+  	import net.simpleframework.organization.OrgUtils;
+  </scriptInit>
+  <importCSS>
+    <value>${OrgUtils.deployPath}css/${skin}/org.css</value>
+  </importCSS>
+
+  <components>
+    <tree name="jcTree" containerId="jcTree"
+      handleClass="net.simpleframework.organization.web.JobChartTree" />
+
+    <ajaxRequest name="ajaxJobChartEdit"
+      handleClass="net.simpleframework.organization.web.JobChartAction"
+      handleMethod="jcEditUrl" />
+    <window name="jcEditWindow" contentRef="ajaxJobChartEdit"
+      width="320" height="350" title="#(jobchart_c.0)">
+    </window>
+
+    <ajaxRequest name="ajaxJobChartMove"
+      handleClass="net.simpleframework.organization.web.JobChartAction"
+      handleMethod="jcMove">
+      <jsCompleteCallback>
+				$Actions['jcTree'].refresh();
+			</jsCompleteCallback>
+    </ajaxRequest>
+
+    <ajaxRequest name="ajaxJobChartDelete"
+      handleClass="net.simpleframework.organization.web.JobChartAction"
+      handleMethod="jcDelete" confirmMessage="#(jobchart_c.3)">
+      <jsCompleteCallback>
+				$Actions['jcTree'].refresh();
+			</jsCompleteCallback>
+    </ajaxRequest>
+
+    <menu name="jcCommonContextMenu">
+      <menuitem title="#(Refresh)" icon="#refresh">
+        <jsSelectCallback>
+					$Actions['jcTree'].refresh();
+				</jsSelectCallback>
+      </menuitem>
+      <menuitem title="-" />
+      <menuitem title="#(Tree.expand)" icon="#expand">
+        <jsSelectCallback>
+					$Actions['jcTree'].expand(item);
+				</jsSelectCallback>
+      </menuitem>
+      <menuitem title="#(Tree.collapse)" icon="#collapse">
+        <jsSelectCallback>
+					$Actions['jcTree'].collapse(item);
+				</jsSelectCallback>
+      </menuitem>
+    </menu>
+
+    <menu name="jcContextMenu">
+      <menuitem title="#(Add)" icon="#add">
+        <jsSelectCallback>__jobchart_add(item);</jsSelectCallback>
+      </menuitem>
+      <menuitem title="-" />
+      <menuitem ref="jcCommonContextMenu" />
+    </menu>
+
+    <menu name="jcContextMenu2">
+      <menuitem title="#(Add)" icon="#add">
+        <jsSelectCallback>
+					__jobchart_add(item);
+				</jsSelectCallback>
+      </menuitem>
+      <menuitem title="#(Edit)" icon="#edit">
+        <jsSelectCallback>
+					__jobchart_edit(item);
+				</jsSelectCallback>
+      </menuitem>
+      <menuitem title="#(Delete)" icon="#delete">
+        <jsSelectCallback>
+					__jobchart_delete(item);
+				</jsSelectCallback>
+      </menuitem>
+      <menuitem title="-" />
+      <menuitem title="#(Menu.move)">
+        <menuitem title="#(Menu.up)" icon="#up">
+          <jsSelectCallback>
+						__jobchart_move(item, true);
+					</jsSelectCallback>
+        </menuitem>
+        <menuitem title="#(Menu.up2)" icon="#up2">
+          <jsSelectCallback>
+						__jobchart_move2(item, true);
+					</jsSelectCallback>
+        </menuitem>
+        <menuitem title="#(Menu.down)" icon="#down">
+          <jsSelectCallback>
+						__jobchart_move(item, false);
+					</jsSelectCallback>
+        </menuitem>
+        <menuitem title="#(Menu.down2)" icon="#down2">
+          <jsSelectCallback>
+						__jobchart_move2(item, false);
+					</jsSelectCallback>
+        </menuitem>
+      </menuitem>
+      <menuitem title="-" />
+      <menuitem ref="jcCommonContextMenu" />
+    </menu>
+  </components>
+</page>

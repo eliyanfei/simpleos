@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.my.home.MyHomeUtils;
+  </scriptInit>
+	<importCSS>
+		<value>${MyHomeUtils.getCssPath(pageParameter)}/myhome.css</value>
+	</importCSS>
+
+	<components>
+		<ajaxRequest name="addMyhomeTabPage" includeRequestData="p">
+			<urlForward>my_home_add_tab.jsp</urlForward>
+		</ajaxRequest>
+		<window name="addMyhomeTabWin" contentRef="addMyhomeTabPage" title="#(my_home.0)"
+			height="240">
+		</window>
+
+		<ajaxRequest name="deleteMyhomeTab" handleClass="net.simpleframework.my.home.MyHomeAction"
+			handleMethod="delTab" confirmMessage="#(my_home.1)">
+			<jsCompleteCallback>
+				if (json["error"])
+					alert(json["error"]);
+				else if (json["url"])
+					$Actions.loc(json["url"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<menu name="myhomeTabMenu" selector=".myhome_class .menu" menuEvent="click">
+			<menuitem title="#(Edit)" icon="#edit">
+				<jsSelectCallback>
+					$Actions["addMyhomeTabWin"]("tab_id=" + $target(item).id.substring(1));
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="#(Delete)" icon="#delete">
+				<jsSelectCallback>
+					$Actions["deleteMyhomeTab"]("tab_id=" + $target(item).id.substring(1));
+				</jsSelectCallback>
+			</menuitem>
+		</menu>
+
+		<portal name="__myhome_layout" containerId="__myhome_layout"
+			handleClass="net.simpleframework.my.home.HomePortalHandle">
+		</portal>
+
+		<tooltip name="ajaxMyhomeTooltip">
+			<tip selector=".myhome_class li a" stem="topMiddle" delay="0.5" hideAfter="5">
+				<hook target="bottomMiddle" tip="topMiddle" />
+			</tip>
+		</tooltip>
+
+		<ajaxRequest name="ajaxResetSpace" handleClass="net.simpleframework.my.home.MyHomeAction"
+			handleMethod="resetSpace" confirmMessage="#(my_home.4)">
+			<jsCompleteCallback>
+				if (json["ok"]) {
+					$Actions['__myhome_layout'].refresh();
+				}
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

@@ -1,0 +1,6 @@
+function __catalog_addMethods(d,b,a){var c=function(f,e){return(b+"="+d.__branch(f).getId()).addParameter(e)};d.add=function(i,h){var f=$Actions.ajaxAddCatalogPage;f.selector=d.selector;var e=d.__branch(i);
+if(e){h=("parentId="+e.getId()).addParameter(h)}var g=$Actions.catalogWindow;g.contentRef="ajaxAddCatalogPage";g(h)};d.edit=function(h,g){var e=$Actions.ajaxEditCatalogPage;e.selector=d.selector;var f=$Actions.catalogWindow;
+f.contentRef="ajaxEditCatalogPage";f(c(h,g))};d.del=function(g,f){var e=$Actions.ajaxCatalogDelete;e.selector=d.selector;e(c(g,f))};d.move=function(g,e){var f=__tree_move(d.__branch(g),e);if(f){var h=$Actions.ajaxCatalogMove;
+h.selector=d.selector;h(f)}};d.move2=function(g,e){var f=__tree_move2(d.__branch(g),e);if(f){var h=$Actions.ajaxCatalogMove;h.selector=d.selector;h(f)}};d.owner_mgr=function(g,f){var e=$Actions.ajaxCatalogOwnerPage;
+e.selector=d.selector;$Actions.catalogOwnerWindow(c(g,f))};d.refresh=function(f){var e=$Actions["__catalogTree_"+a];e.selector=d.selector;e.refresh(f)};d.expand=function(e){d.__branch(e).expand()};d.collapse=function(e){d.__branch(e).collapse()
+};d.__branch=function(e){if(!e){return}e=$target(e);return e.branch||e.up(".tafelTreecanevas").down().branch}};

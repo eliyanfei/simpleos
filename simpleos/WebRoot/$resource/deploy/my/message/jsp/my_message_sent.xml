@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
+
+	<components>
+		<userSelect name="messageUsersSelect" showDepartmentFilter="false" pageItems="10"
+			handleClass="net.simpleframework.my.friends.MyFriendsSelectedHandle" height="500">
+			<jsSelectCallback>
+				var txt = $("textMessageUsers");
+				if (txt) {
+					var arr = selects.map(function(m) { return m.name; });
+					var v = $F(txt).strip();
+					if (v.length > 0) {
+						arr =	$A(v.split(",").concat(arr)).uniq();
+					}
+					txt.value = arr.join(",");
+					return true;
+				}
+			</jsSelectCallback>
+		</userSelect>
+
+		<validation name="messageSentValidation" triggerSelector="#buttonMessageSent"
+			warnType="insertAfter">
+			<validator selector="#textMessageUsers, #textareaMessageEditor" method="required" />
+			<validator selector="#textareaMessageEditor" method="min_length" args="5" />
+		</validation>
+
+		<ajaxRequest name="ajaxMessageSentOK" selector="#my_message_sent_form"
+			handleClass="net.simpleframework.my.message.MessageAction" handleMethod="sentMessage"
+			confirmMessage="#(my_message_sent.4)">
+			<jsCompleteCallback>
+				$IT.alert(json["result"]);		
+				$Actions["myMessageSentWindow"].close();
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

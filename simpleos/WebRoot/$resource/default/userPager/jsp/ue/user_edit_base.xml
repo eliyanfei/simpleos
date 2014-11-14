@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<handleClass>
+		net.simpleframework.organization.component.userpager.UserEditPageLoad
+	</handleClass>
+	<handleMethod>userBaseLoaded</handleMethod>
+	<components>
+		<tree name="hometownCatalogTreeAct" dynamicLoading="true" cookies="true"
+			handleClass="net.simpleframework.organization.component.userpager.HometownCatalogTreeHandle" />
+		<dictionary name="hometownCatalogDictAct" bindingId="user_hometown"
+			width="350" height="420" bindingText="user_hometown_text" title="所在地"
+			selector="false">
+			<tree ref="hometownCatalogTreeAct" />
+		</dictionary>
+		
+		<propEditor name="_userbase_0" containerId="_userbase_0"
+			titleToggle="false" width="100%">
+			<field label="#(user_edit_base.2)" labelStyle="width:80px;">
+				<component type="text" name="user_text" />
+			</field>
+			<field label="#(user_edit_base.3)">
+				<component type="select" name="user_sex" defaultValue="#(user_edit_base.4)" />
+			</field>
+			<field label="#(user_edit_base.5)">
+				<component type="textButton" name="user_birthday">
+					<event name="click">$Actions['birthdayCal'].show();</event>
+				</component>
+			</field>
+			<field label="#(user_edit_base.6)">
+				<component type="select" name="user_blood" defaultValue="#(user_edit_base.7)" />
+			</field>
+			<field label="#(user_edit_base.8)">
+				<component type="text" style="display:none;" name="user_hometown"></component>
+				<component type="textButton" name="user_hometown_text"
+					attributes="readonly">
+					<event name="click">
+						$Actions['hometownCatalogDictAct']();
+				</event>
+				</component>
+			</field>
+			<field label="#(user_edit_base.19)" labelStyle="vertical-align:top;">
+				<component name="user_description" type="textarea"
+					attributes="rows:5" />
+			</field>
+		</propEditor>
+
+		<propEditor name="_userbase_1" containerId="_userbase_1"
+			titleToggle="false" width="100%">
+			<field label="#(user_edit_base.11)" labelStyle="width:80px;">
+				<component type="text" name="user_email" />
+			</field>
+			<field label="#(user_edit_base.12)">
+				<component type="text" name="user_homePhone" />
+			</field>
+			<field label="#(user_edit_base.13)">
+				<component type="text" name="user_officePhone" />
+			</field>
+			<field label="#(user_edit_base.14)">
+				<component type="text" name="user_mobile" />
+			</field>
+			<field label="个人主页">
+				<component type="text" name="user_homepage" />
+			</field>
+			<field label="#(user_edit_base.15)">
+				<component type="textarea" name="user_address" attributes="rows:3" />
+			</field>
+			<field label="#(user_edit_base.16)">
+				<component type="text" name="user_postcode" />
+			</field>
+			<field label="#(user_edit_base.17)">
+				<component type="text" name="user_qq" />
+			</field>
+			<field label="#(user_edit_base.18)">
+				<component type="text" name="user_msn" />
+			</field>
+		</propEditor>
+
+		<calendar name="birthdayCal" inputField="user_birthday"
+			dateFormat="yyyy-MM-dd" />
+
+		<ajaxRequest name="ajaxEditUserBase"
+			handleClass="net.simpleframework.organization.component.userpager.UserUtilsAction"
+			handleMethod="editUserBase" confirmMessage="#(Confirm.Post)">
+			<jsCompleteCallback>
+				alert($MessageConst['SaveOK']);
+				__user_pager_refresh();
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="userValidation" triggerSelector="#_userbase_save"
+			warnType="insertAfter">
+			<validator selector="#user_text, #user_email, #user_mobile"
+				method="required" />
+			<validator selector="#user_birthday" method="date" args="yyyy-MM-dd" />
+			<validator selector="#user_email, #user_msn" method="email" />
+			<validator selector="#user_homePhone, #user_officePhone"
+				method="phone" />
+			<validator selector="#user_mobile" method="mobile_phone" />
+			<validator selector="#user_homepage" method="url"></validator>
+		</validation>
+	</components>
+</page>

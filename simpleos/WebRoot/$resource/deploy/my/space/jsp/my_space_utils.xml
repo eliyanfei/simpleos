@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.my.space.MySpaceUtils;
+	</scriptInit>
+	<importPage>
+		<value>/my/dialog/dialog.xml</value>
+	</importPage>
+	<jobView>sys_account_normal</jobView>
+	<components>
+		<tooltip name="my_navTooltip"
+			handleClass="net.simpleframework.my.space.SpaceNavigationTip">
+			<tip selector=".my_navTooltip_class" stem="topMiddle" hideOthers="true"
+				width="240" hideAfter="2">
+				<hook target="bottomMiddle" tip="topMiddle" />
+				<hideOn tipElement="tip" event="mouseleave" />
+			</tip>
+		</tooltip>
+		<ajaxRequest name="ajax_user_navTooltip">
+			<urlForward>${MySpaceUtils.applicationModule.getUserNavigationPath(pageParameter)}
+			</urlForward>
+		</ajaxRequest>
+		<tooltip name="user_navTooltip">
+			<tip ajaxRequest="ajax_user_navTooltip" selector=".user_navTooltip_class"
+				stem="bottomMiddle" hideOthers="true" delay="0.6" width="300"
+				hideAfter="2">
+				<hook target="topMiddle" tip="bottomMiddle" />
+				<hideOn tipElement="tip" event="mouseleave" />
+			</tip>
+		</tooltip>
+	</components>
+</page>

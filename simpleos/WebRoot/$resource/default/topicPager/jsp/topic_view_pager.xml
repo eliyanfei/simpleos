@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import
+		net.simpleframework.my.file.component.fileselect.FileSelectUtils;		
+	</scriptInit>
+
+	<components>
+		<vote name="topicVote"
+			handleClass="net.simpleframework.content.component.topicpager.TopicVoteHandle"
+			containerId="__topic_voteId" />
+
+		<menu name="postMgrMenu" selector=".tp_view .mgrbtn" menuEvent="click">
+			<menuitem title="#(Delete)">
+				<jsSelectCallback>
+					POST_UTILS.del(item);
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="#(Menu.move)">
+				<menuitem title="#(Menu.up)" icon="#up">
+					<jsSelectCallback>
+						POST_UTILS.move(item, true);
+					</jsSelectCallback>
+				</menuitem>
+				<menuitem title="#(Menu.up2)" icon="#up2">
+					<jsSelectCallback>
+						POST_UTILS.move2(item, true);
+					</jsSelectCallback>
+				</menuitem>
+				<menuitem title="#(Menu.down)" icon="#down">
+					<jsSelectCallback>
+						POST_UTILS.move(item, false);					
+					</jsSelectCallback>
+				</menuitem>
+				<menuitem title="#(Menu.down2)" icon="#down2">
+					<jsSelectCallback>
+						POST_UTILS.move2(item, false);
+					</jsSelectCallback>
+				</menuitem>
+			</menuitem>
+		</menu>
+
+		<menu name="postUserMenu" selector=".tp_view .uv .right_down_menu"
+			menuEvent="click"
+			handleClass="net.simpleframework.content.component.topicpager.PostsUserMenuHandle">
+			<menuitem title="#(topic_view_pager.2)">
+				<jsSelectCallback>POST_UTILS.onlyuser(item);</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-" />
+			<menuitem title="#(topic_view_pager.14)">
+				<jsSelectCallback>POST_UTILS.listMy(item);</jsSelectCallback>
+			</menuitem>
+			<menuitem title="#(topic_view_pager.15)">
+				<jsSelectCallback>POST_UTILS.listMy2(item);</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-" />
+			<menuitem title="#(topic_view_pager.13)">
+				<jsSelectCallback>POST_UTILS.blog(item);</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-" />
+			<menuitem title="#(friends_utils.0)">
+				<jsSelectCallback>POST_UTILS.addFriend(item);</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-" />
+			<menuitem title="#(topic_view_pager.3)">
+				<jsSelectCallback>POST_UTILS.user_stat(item);</jsSelectCallback>
+			</menuitem>
+		</menu>
+
+		<ajaxRequest name="ajaxPostVoteDelete"
+			handleClass="net.simpleframework.content.component.topicpager.PostsAction"
+			handleMethod="voteDelete" confirmMessage="#(Confirm.Delete)">
+			<jsCompleteCallback>
+				$Actions["__pager_postsId"].refresh();
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxPostMove"
+			handleClass="net.simpleframework.content.component.topicpager.PostsAction"
+			handleMethod="postExchange">
+			<jsCompleteCallback>
+				$Actions["__pager_postsId"].refresh();
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxPostDelete"
+			handleClass="net.simpleframework.content.component.topicpager.PostsAction"
+			handleMethod="postDelete" confirmMessage="#(topic_view_pager.0)">
+			<jsCompleteCallback>
+				$Actions["__pager_postsId"].refresh();
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxTopicPagerReply"
+			handleClass="net.simpleframework.content.component.topicpager.PostsAction"
+			handleMethod="replyTopicUrl" />
+		<window name="topicPagerReplyWindow" contentRef="ajaxTopicPagerReply"
+			width="840" height="580" title="#(topicpager.0)">
+			<jsHiddenCallback>
+				window.onbeforeunload = null;
+			</jsHiddenCallback>
+		</window>
+
+		<ajaxRequest name="ajaxTopicAttention"
+			handleClass="net.simpleframework.content.component.topicpager.PostsAction"
+			handleMethod="topicAttention">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxAttachmentTooltip">
+			<urlForward>${FileSelectUtils.jspTooltip()}</urlForward>
+		</ajaxRequest>
+		<tooltip name="attachmentTooltip">
+			<tip selector=".tp_view .inherit_c a[onclick]" ajaxRequest="ajaxAttachmentTooltip"
+				delay="0.5" stem="topMiddle" hideOthers="true" title="#(topic_view_pager.9)"
+				width="320">
+				<jsTipCreate>
+					var s = element.readAttribute("onclick");
+					if (s.startsWith("$Actions"))
+					{
+					element.addClassName("attachment a2");
+					element.setAttribute("tipParam", s.substring(s.indexOf("('") + 2, s.indexOf("')")));
+					}			
+				</jsTipCreate>
+				<hideOn tipElement="closeButton" />
+				<hook target="bottomMiddle" tip="topMiddle" />
+			</tip>
+		</tooltip>
+	</components>
+</page>

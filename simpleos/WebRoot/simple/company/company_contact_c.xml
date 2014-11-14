@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<handleClass>net.prj.manager.company.PrjCompanyPageLoad</handleClass>
+	<handleMethod>contactLoad</handleMethod>
+	<jobView>sys_manager</jobView>
+	<components>
+		<ajaxRequest name="company_contactAct"
+			handleClass="net.prj.manager.company.PrjCompanyAction" selector="#company_contact_form"
+			handleMethod="saveContact">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.alert('#(Save.OK)');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<validation name="company_contact_btn" triggerSelector="#company_contact_btn"
+			d="span" warnType="insertAfter" selector="#company_contact_form">
+			<validator selector="#contact_phone,#contact_email" method="required"
+				message="#(Not.Null)"></validator>
+		</validation>
+	</components>
+</page>

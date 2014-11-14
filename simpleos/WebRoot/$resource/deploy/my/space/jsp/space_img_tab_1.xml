@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <components>
+    <ajaxRequest name="space_img_url_add" 
+      handleClass="net.simpleframework.my.space.SapceAction"
+      handleMethod="imgUrlAdd" >
+      <jsCompleteCallback>
+        if (json["url"]) {
+          $Actions["space_img_tab_1"]();
+        }
+      </jsCompleteCallback>
+    </ajaxRequest>
+
+    <validation name="space_img_url_validation"
+      triggerSelector="#space_img_url_add_btn" warnType="insertAfter">
+      <validator selector="#space_img_url_add_text" method="required" />
+      <validator selector="#space_img_url_add_text" method="url" />
+    </validation>
+    
+    <ajaxRequest name="space_img_url_delete" 
+      handleClass="net.simpleframework.my.space.SapceAction"
+      handleMethod="imgUrlDelete" >
+      <jsCompleteCallback>
+        if (json["result"]) {
+          var trigger = $Actions["space_img_url_delete"].trigger;
+          if (trigger) {
+            trigger.up(".space_img_list").$remove();
+          }
+        }         
+      </jsCompleteCallback>
+    </ajaxRequest>
+  </components>
+</page>

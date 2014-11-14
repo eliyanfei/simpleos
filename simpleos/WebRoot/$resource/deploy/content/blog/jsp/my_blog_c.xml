@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<importPage>
+		<value>blog_utils.xml</value>
+	</importPage>
+	<handleClass>
+		net.simpleframework.content.blog.MyBlogPageLoad
+	</handleClass>
+	<components>
+		<newsPager name="__my_blog_pager" containerId="__my_blog_pager"
+			pagerBarLayout="bottom" handleClass="net.simpleframework.content.blog.MyBlogPagerHandle"
+			pageItems="30" exportAction="false">
+			<jsLoadedCallback>
+				TableRowDraggable.init("__my_blog_pager",
+				"tafelTreeselected");	
+			</jsLoadedCallback>
+		</newsPager>
+	</components>
+</page>

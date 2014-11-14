@@ -1,0 +1,535 @@
+@charset "utf-8";
+
+/*导入重置样式*/
+@import url("../../reset.css");
+
+/*页面基础样式*/
+html {
+	overflow: hidden
+}
+
+body {
+	font-size: 12px;
+	font-family: Tahoma, Geneva, sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow: hidden
+}
+
+a {
+	font-size: 12px;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+.corner { /*只在支持css3的高级浏览器起作用*/
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 3px 6px #666;
+	-webkit-box-shadow: 1px 3px 6px #666;
+	box-shadow: 1px 3px 6px #666;
+}
+
+.loading {
+	background: url(../images/loading.gif) no-repeat center center
+}
+
+/*界面布局样式*/
+.powered_by {
+	width: 160px;
+	height: 25px;
+	line-height: 25px;
+	background: url(../images/powered-by.png) no-repeat left center;
+	color: #CCC;
+	text-indent: 26px;
+	display: block;
+	outline: none;
+	position: absolute;
+	right: 20px;
+	bottom: 60px;
+}
+
+/*桌面导航按钮*/
+#navBar {
+	width: 220px;
+	height: 32px;
+	line-height: 32px;
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	top: 0px;
+	background: url(../images/navBg0.png) no-repeat center center;
+	text-align: center;
+}
+
+#navBar a.currTab {
+	background-position: -33px top;
+	color: black;
+}
+
+#navBar a {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background: url(../images/navbg.png) no-repeat left top;
+	margin: -1px 2px 0px 0px;
+	outline: none;
+	line-height: 33px;
+	color: white;
+	font-weight: bold;
+}
+
+#navBar .allgrid {
+	display: inline-block;
+	width: 27px;
+	height: 35px;
+	background: url(../images/buju.png) no-repeat left top;
+	background-position: -52px top;
+	margin: -1px 2px 0px 0px;
+	outline: none;
+	line-height: 33px;
+	color: white;
+	font-weight: bold;
+	outline: none;
+	line-height: 33px;
+}
+
+#navBar .allgrid:HOVER {
+	background-position: -25px top;
+	color: black;
+}
+
+.desktopTheme {
+	padding: 2px 10px;
+	position: absolute;
+	right: 2px;
+	top: 3px;
+	height: 17px;
+	cursor: pointer;
+	background: url(../images/delete.png) no-repeat;
+}
+
+#navBar a:hover {
+	color: #7CFC00;
+	font-weight: bolder;
+}
+
+/*任务栏样式*/
+#taskBarWrap {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: url(../images/taskbarbg.png) repeat-x;
+}
+
+#taskBar {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	float: right;
+}
+
+#task_lb_wrap {
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	position: relative;
+}
+
+#task_lb {
+	width: auto;
+	height: auto;
+	top: 0;
+	right: 0;
+}
+
+#task_lb .task_lb_sub {
+	font-size: 12px;
+	position: relative;
+	cursor: pointer;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	width: 110px;
+	height: 40px;
+	margin-left: 0px;
+	background-image: url(../images/taskHdBtn.png);
+}
+
+#task_lb .defaultTab:hover {
+	background-position: right bottom;
+}
+
+#task_lb .defaultTab {
+	background-position: right top;
+	color: #ccc;
+}
+
+#task_lb .task_lb_sub:HOVER {
+	font-size: 14px;
+	font-weight: bold;
+	background-image: url(../images/taskHdBtn.png);
+}
+
+#task_lb .task_lb_sub .task_lb_sub_icon {
+	position: absolute;
+	width: 36px;
+	height: 36px;
+	left: 1px;
+	top: 2px;
+	bottom: 2px;
+}
+
+.task_lb_sub_icon img {
+	width: 36px;
+	height: 36px;
+}
+
+#task_lb .task_lb_sub .task_lb_sub_desc {
+	position: absolute;
+	left:37px;
+	top: 2px;
+	bottom: 2px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 10px;
+	vertical-align: middle;
+}
+
+#task_lb .defaultTab {
+	background-position: right top;
+	color: #ccc
+}
+
+#task_lb .defaultTab:hover {
+	background-position: right bottom;
+}
+
+#task_lb .selectTab {
+	background-position: left top;
+	color: #FFF
+}
+
+#task_lb .selectTab:hover {
+	background-position: left bottom
+}
+
+#wallpapers {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -100;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+/*桌面图标*/
+#desktopPanel {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+#desktopInnerPanel {
+	position: relative;
+	background: url(../images/bg.png) repeat;
+}
+
+.deskIcon {
+	width: 100%;
+	height: auto;
+	position: relative;
+	float: left;
+}
+
+.desktop_icon {
+	width: 86px;
+	height: 88px;
+	cursor: pointer;
+	margin-left: -1000px;
+	text-align: center;
+	padding: 1px;
+}
+
+.desktop_icon:HOVER {
+	padding: 0px;
+	background-color: #ddd;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid white;
+	border-radius: 5px;
+}
+
+.desktop_icon span {
+	display: block;
+}
+
+.desktop_icon .icon {
+	width: 50px;
+	height: 50px;
+	margin: 5px auto;
+	outline: none;
+	-moz-user-select: none;
+}
+
+.desktop_icon .icon img {
+	width: 50px;
+	height: 50px;
+}
+
+.desktop_icon .textdesc_has {
+	color: red;
+	display: inline-block;
+	width: auto;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	background: url(../images/iconTextbg.png) no-repeat left center;
+	position: relative;
+	padding-left: 10px;
+	margin-right: 10px;
+	outline: none;
+	-moz-user-select: none;
+}
+
+.desktop_icon .textdesc {
+	display: inline-block;
+	width: auto;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	color: #fff;
+	background: url(../images/iconTextbg.png) no-repeat left center;
+	position: relative;
+	padding-left: 10px;
+	margin-right: 10px;
+	outline: none;
+	-moz-user-select: none;
+}
+
+.desktop_icon s {
+	display: inline-block;
+	width: 10px;
+	height: 22px;
+	position: absolute;
+	right: -10px;
+	top: 0;
+	background: url(../images/iconTextbg_right.png) left center no-repeat;
+}
+
+.desktop_icon_over {
+	background: url(../images/icon_over.png) no-repeat center center;
+}
+
+/*侧边浮动栏*/
+#lr_bar {
+	width: 73px;
+	height: auto;
+	position: absolute;
+	left: 0;
+	top: 30px;
+	background: url(../images/dock_top.png) repeat-y left top;
+	z-index: 1;
+	-moz-box-shadow: 0px 3px 15px #444;
+	-webkit-box-shadow: 0px 3px 15px #444;
+	box-shadow: 0px 3px 15px #444;
+	padding-top: 5px;
+}
+
+#default_app {
+	width: 73px;
+	height: auto;
+	padding: 5px 0;
+	position: relative;
+}
+
+#default_app li {
+	width: 48px;
+	height: 48px;
+	overflow: hidden;
+	margin: 3px auto;
+	padding: 6px;
+}
+
+#default_app li .text {
+	display: none;
+}
+
+#default_app li img {
+	width: 48px;
+	height: 48px;
+	cursor: pointer;
+	outline: none;
+	-moz-user-select: none;
+}
+
+#start_block {
+	width: 73px;
+	height: 62px;
+	border-bottom: 1px solid #444;
+}
+
+#fast_config{
+	left: 0;
+	width: 73px;
+	height: 56px;
+	-moz-box-shadow: 0px 5px 15px #444;
+	-webkit-box-shadow: 0px 5px 15px #444;
+	box-shadow: 0px 5px 15px #444;
+	background: url(../images/dock_b.png) no-repeat left bottom;
+}
+
+#start_btn {
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin: 4px auto 0 auto;
+	outline: none;
+	z-index: 501;
+	cursor: pointer;
+}
+
+.default_tools {
+	width: 71px;
+	height: auto;
+	overflow: hidden;
+	zoom: -1;
+	padding: 1px 0;
+	margin: 0 auto;
+}
+
+.default_tools img {
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+}
+
+.default_tools img:HOVER,#default_app li:HOVER {
+	background-color: #ddd;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#taskBar #show_desktop {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	color: #fff;
+	overflow: hidden;
+	padding: 0 1px;
+	margin-top: 5px;
+	line-height: 40px;
+}
+
+#taskBar .float_left img,#taskBar .float_right img {
+	padding: 0px 0 0;
+}
+
+#taskBar #show_desktop:active {
+	background: #c60;
+	border: 1px solid #fff;
+}
+
+#taskBar #show_desktop:hover {
+	background: #000;
+}
+
+.float_left {
+	float: left;
+}
+
+
+#panel {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px;
+	background-color: #f6f6f6;
+	padding: 0;
+	-webkit-box-shadow: 0px 1px 5px #000;
+	-moz-box-shadow: 0px 1px 5px #000;
+	box-shadow: 0px 1px 5px #000;
+	-moz-border-radius: 0 0 0 4px;
+	-webkit-border-radius: 0 0 0 4px;
+	border-radius: 0 0 0 4px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+#handle {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	padding: 0;
+	margin: 0 0 -16px 0;
+	clear: both;
+}
+
+#panel_title {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	padding: 6px 10px;
+	background-color: #ccc;
+	line-height: 16px;
+}
+
+#panel_content {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	padding: 6px 10px;
+}
+
+#panel_title span {
+	font-size: 12px;
+	font-family: 'Ubuntu', Verdana, serif;
+	font-weight: bold;
+	line-height: 16px;
+	color: #333;
+	cursor: pointer;
+}
+
+#handle_open,#handle_close {
+	height: 16px;
+	width: 16px;
+	float: left;
+	margin: 0;
+	padding: 0;
+	background-image: url(../images/buttons_s.png);
+	cursor: pointer;
+}
+
+#handle_open {
+	background-position: -80px 0;
+}
+
+#handle_open:hover {
+	background-position: -80px 16px;
+}
+
+#handle_close {
+	background-position: -64px 0;
+}
+
+#handle_close:hover {
+	background-position: -64px 16px;
+}

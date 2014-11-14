@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<importPage>
+		<value>__newspager_window.xml</value>
+	</importPage>
+	<handleClass>
+		net.simpleframework.web.page.component.ui.pager.PagerPageLoad
+	</handleClass>
+
+	<components>
+		<menu name="newsPager_Menu" menuEvent="click"
+			handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerMenu">
+		</menu>
+
+		<menu name="newsPager_Menu2" menuEvent="click" minWidth="140"
+			handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerMenu2">
+		</menu>
+
+		<ajaxRequest name="newspagerDelete" handleMethod="delete"
+			handleClass="net.simpleframework.content.component.newspager.NewsPagerAction"
+			confirmMessage="#(np_pager.1)">
+			<jsCompleteCallback>
+        $eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="newspagerMove"
+			handleClass="net.simpleframework.content.component.newspager.NewsPagerAction"
+			handleMethod="exchange">
+			<jsCompleteCallback>
+        $eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxNewsEdit2"
+			handleClass="net.simpleframework.content.component.newspager.NewsPagerAction"
+			handleMethod="edit2Url">
+		</ajaxRequest>
+		<window name="newsEditWindow2" contentRef="ajaxNewsEdit2" height="210" width="360"
+			title="#(news_edit.3)">
+		</window>
+	</components>
+</page>

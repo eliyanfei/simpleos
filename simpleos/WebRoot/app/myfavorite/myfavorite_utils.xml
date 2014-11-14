@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
+	<components>
+		<ajaxRequest name="cancelFavorite"
+			handleClass="net.prj.mvc.myfavorite.MyFavoriteAction" handleMethod="cancelFavorite">
+			<jsCompleteCallback>
+			<![CDATA[
+				$IT.R('myFavoriteTable');
+				var fa = $('favorite_act');
+				if(fa){
+					fa.innerHTML ='#(App.Favorite.0)';
+					fa.setAttribute('onclick','');
+				}
+				var fn = $('favorite_num');
+				if(fn){
+					fn.innerHTML = parseInt(fn.innerHTML)-1;
+				}
+			]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="addFavorite"
+			handleClass="net.prj.mvc.myfavorite.MyFavoriteAction" handleMethod="addFavorite">
+			<jsCompleteCallback>
+			<![CDATA[
+				if(json['action']==null){
+					$IT.A(json['action']);
+				}
+				var fa = $('favorite_act');
+				if(fa){
+					fa.innerHTML ='#(App.Favorite.1)';
+					fa.setAttribute('onclick','');
+				}
+				var fn = $('favorite_num');
+				if(fn){
+					fn.innerHTML = parseInt(fn.innerHTML)+1;
+				}
+			]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="ajaxAttentionUsers">
+			<urlForward>attention_users.jsp</urlForward>
+		</ajaxRequest>
+		<window name="attentionUsersWindow" contentRef="ajaxAttentionUsers"
+			width="420" height="380">
+		</window>
+	</components>
+</page>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+
+	<components>
+		<propEditor name="newsOptionEditor" containerId="newsOptionEditor">
+			<field label="#(news_layout_option.0)">
+				<component type="hidden" name="_news_catalog" />
+				<component type="textButton" name="_news_catalog_text">
+					<event name="click">
+						$Actions["newsLayoutCatalogDict"]();
+					</event>
+				</component>
+			</field>
+			<field label="#(news_layout_option.1)">
+				<component type="select" name="_news_type" defaultValue="#(news_layout_option.2)" />
+			</field>
+			<field label="#(layout_option.1)">
+				<component type="select" name="_news_order" defaultValue="#(layout_option.2)" />
+			</field>
+			<field label="#(layout_option.3)">
+				<component type="select" name="_news_time" defaultValue="#(layout_option.4)" />
+			</field>
+			<field label="显示分组">
+				<component type="checkbox" name="_show_tabs" defaultValue="true" />
+			</field>
+			<field label="#(layout_option.0)">
+				<component type="text" name="_news_rows" />
+			</field>
+			<field label="#(layout_option.5)">
+				<component type="text" name="_news_dateFormat" />
+				<component type="div" defaultValue="#(layout_option.6)" />
+			</field>
+			<field label="#(layout_option.7)">
+				<component type="text" name="_news_descLength" />
+				<component type="div" defaultValue="#(layout_option.8)" />
+			</field>
+			<field label="#(news_layout_option.3)">
+				<component type="text" name="_news_image_dimension" />
+			</field>
+		</propEditor>
+
+		<tree name="newsLayoutCatalogTree"
+			handleClass="net.simpleframework.content.news.NewsLayoutCatalogSelect" />
+		<dictionary name="newsLayoutCatalogDict" bindingId="_news_catalog"
+			bindingText="_news_catalog_text" title="#(np_edit.9)">
+			<tree ref="newsLayoutCatalogTree" />
+		</dictionary>
+	</components>
+</page>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+    import net.simpleframework.my.file.MyFileUtils;
+  </scriptInit>
+	<importCSS>
+		<value>${MyFileUtils.getCssPath(pageParameter)}/myfile.css</value>
+	</importCSS>
+
+	<components>
+		<catalog name="__my_folder" containerId="__my_folder"
+			handleClass="net.simpleframework.my.file.FolderHandle" rootText="#(FolderHandle.0)">
+			<jsLoadedCallback><![CDATA[
+				$$("#__my_folder .tafelTreecontent").each(function(item) {
+					if (item.branch.getId() == -3) { 
+						return; /** admin all **/
+					}
+					Droppables.add(item, {
+						hoverclass : "tafelTreeselected",
+						onDrop : function(drag, drop, event) {
+							if (!confirm("#(My.folder_c.1)")) {
+								return;
+							}	
+							var act = $Actions["ajaxFileDropAction"];
+							if (act.drop) 
+								return;
+							act("drag=" + TableRowDraggable.checked(drag).join(";") + 
+								"&drop=" + drop.branch.getId());
+							act.drop = true;	
+						}
+					});
+				});
+			]]></jsLoadedCallback>
+		</catalog>
+
+		<ajaxRequest name="ajaxFileDropAction" handleClass="net.simpleframework.my.file.FolderFileAction"
+			handleMethod="fileDrop">
+			<jsCompleteCallback>
+				if (json["ok"]) {
+					$Actions["__my_folder"].refresh();
+					$Actions["__my_files"]();
+				}
+				$Actions["ajaxFileDropAction"].drop = false;
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<progressbar name="__my_folder_pb" containerId="__my_folder_pb"
+			startAfterCreate="false" showAbortAction="false" showDetailAction="false"
+			handleClass="net.simpleframework.my.file.FileSizeBar">
+		</progressbar>
+
+		<ajaxRequest name="__my_folder_refresh" handleClass="net.simpleframework.my.file.FolderFileAction"
+			handleMethod="folderRefresh">
+			<jsCompleteCallback>
+				$("__my_folder_bt").update(json["title"]);
+				$Actions["__my_folder_pb"].progressbar.setProgress(json["myFilesSize"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxFileOptions">
+			<urlForward>${MyFileUtils.applicationModule.getOptionsPath(pageParameter)}</urlForward>
+		</ajaxRequest>
+		<window name="fileOptionsWindow" contentRef="ajaxFileOptions" title="#(MyFileUtils.6)">
+		</window>
+	</components>
+</page>

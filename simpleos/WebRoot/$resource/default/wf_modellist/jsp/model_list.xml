@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<importPage>
+		<value>model_list_menu.xml</value>
+	</importPage>
+	<handleClass>
+    net.simpleframework.web.page.component.ui.pager.PagerPageLoad
+  </handleClass>
+
+	<components>
+		<window name="ml_upload_window" url="model_upload.jsp" height="190"
+			title="#(model_list.2)">
+		</window>
+
+		<ajaxRequest name="ajax_ml_opt">
+			<urlForward>model_opt.jsp</urlForward>
+		</ajaxRequest>
+		<window name="ml_opt_window" contentRef="ajax_ml_opt" title="#(model_list_menu.1)"
+			height="210">
+		</window>
+
+		<ajaxRequest name="ml_delete_model"
+			handleClass="net.simpleframework.workflow.web.component.modellist.ModelListAction"
+			handleMethod="deleteModel" confirmMessage="#(model_list.1)">
+			<jsCompleteCallback>
+        if (json["models"]) {
+          $Actions[json["models"]].refresh();   
+        }
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ml_create_process"
+			handleClass="net.simpleframework.workflow.web.component.modellist.ModelListAction"
+			handleMethod="createProcess" confirmMessage="#(model_list.0)">
+			<jsCompleteCallback>
+      </jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

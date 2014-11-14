@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>
+		net.simpleframework.web.page.component.ui.pager.PagerPageLoad
+	</handleClass>
+	
+	<components>
+		<ajaxRequest name="filePagerDelete"
+			handleClass="net.simpleframework.content.component.filepager.FilePagerAction"
+			handleMethod="delete" confirmMessage="#(fp_pager.1)">
+			<jsCompleteCallback>
+      	$eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="filePagerMove"
+			handleClass="net.simpleframework.content.component.filepager.FilePagerAction"
+			handleMethod="exchange">
+			<jsCompleteCallback>
+        $eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<menu name="filePager_Menu" menuEvent="click"
+			handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerMenu">
+			<jsBeforeShowCallback>
+				if (menu.firstLevel()) {			
+					var b = __pager_action(menu).row(menu).getAttribute("top");
+					var items = menu.getItems();
+					if (items.length > 2)
+						items[2].setItemChecked(b == "true");
+				}
+			</jsBeforeShowCallback>
+		</menu>
+		<menu name="filePager_Menu2" menuEvent="click" minWidth="140"
+			handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerMenu2">
+		</menu>
+
+		<ajaxRequest name="ajaxAddFilePage">
+			<urlForward>add_files.jsp</urlForward>
+		</ajaxRequest>
+		<window name="addFilepagerWindow" contentRef="ajaxAddFilePage" height="450"
+			width="360" title="#(fp_pager.0)" modal="false">
+		</window>
+
+		<ajaxRequest name="ajaxEditFilePage"
+			handleClass="net.simpleframework.content.component.filepager.FilePagerAction"
+			handleMethod="fileUrl" />
+		<window name="editFilepagerWindow" contentRef="ajaxEditFilePage" height="280"
+			width="400" title="#(fp_pager.2)">
+		</window>
+		
+		<ajaxRequest name="ajaxFilepagerDownload"
+			handleClass="net.simpleframework.content.component.filepager.FilePagerAction"
+			handleMethod="downloadUrl" />
+		<window name="filepagerDownloadWindow" contentRef="ajaxFilepagerDownload" height="460"
+			width="360" title="#(fp_pager.3)">
+		</window>
+		
+		<ajaxRequest name="ajaxFilepagerTop"
+			handleClass="net.simpleframework.content.component.filepager.FilePagerAction"
+			handleMethod="topSave">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+			</jsCompleteCallback>	
+		</ajaxRequest>
+	</components>
+</page>

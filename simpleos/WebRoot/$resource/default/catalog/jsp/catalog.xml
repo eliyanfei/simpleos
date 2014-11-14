@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<tree  
+			handleClass="net.simpleframework.content.component.catalog.CatalogTree">
+		</tree>
+
+		<menu name="__catalogTreeMenu"
+			handleClass="net.simpleframework.content.component.catalog.CatalogMenu">
+		</menu>
+		<menu name="__catalogTreeMenu2" 
+			handleClass="net.simpleframework.content.component.catalog.CatalogMenu">
+		</menu>
+
+		<ajaxRequest name="ajaxAddCatalogPage"
+			handleClass="net.simpleframework.content.component.catalog.CatalogAction"
+			handleMethod="catalogUrl" />
+		<ajaxRequest name="ajaxEditCatalogPage"
+			handleClass="net.simpleframework.content.component.catalog.CatalogAction"
+			handleMethod="catalogUrl" />
+		<window name="catalogWindow" width="500" height="380" title="#(catalog.0)" />
+
+		<ajaxRequest name="ajaxCatalogOwnerPage"
+			handleClass="net.simpleframework.content.component.catalog.CatalogAction"
+			handleMethod="catalogOwnerUrl" />
+		<window name="catalogOwnerWindow" contentRef="ajaxCatalogOwnerPage" width="320"
+			height="340" title="#(catalog.2)" />
+
+		<ajaxRequest name="ajaxCatalogMove"
+			handleClass="net.simpleframework.content.component.catalog.CatalogAction"
+			handleMethod="itemMove">
+			<jsCompleteCallback>
+      	$eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxCatalogDelete" confirmMessage="#(catalog.1)"
+			handleClass="net.simpleframework.content.component.catalog.CatalogAction"
+			handleMethod="itemDelete">
+			<jsCompleteCallback>
+      	$eval(json["jsCallback"]);
+     	</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

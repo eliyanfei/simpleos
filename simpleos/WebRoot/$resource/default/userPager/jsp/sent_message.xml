@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import
+		net.simpleframework.content.component.newspager.NewsPagerUtils
+	</scriptInit>
+	<importCSS>
+		<value>
+			${NewsPagerUtils.getCssPath(pageParameter)}/np_edit.css
+		</value>
+	</importCSS>
+	<components>
+		<ajaxRequest name="ajaxSentMessageOK" confirmMessage="确定发送消息吗？"
+			selector="#__sent_mail_form" handleClass="net.simpleframework.my.message.MessageAction"
+			handleMethod="sentNotification">
+			<jsCompleteCallback>
+				$Actions["userSentMessageWindow"].close();
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="validationSentMessage" triggerSelector="#buttonSentMessage">
+			<validator selector="#sentMessageTopic" method="required"
+				warnType="insertAfter" />
+			<validator selector="#textareaSentMessageHtmlEditor"
+				method="required" />
+		</validation>
+	</components>
+</page>

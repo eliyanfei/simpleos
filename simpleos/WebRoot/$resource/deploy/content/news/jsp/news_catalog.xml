@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<components>
+		<catalog name="newsMgrCatalogAct" containerId="newsMgrCatalog"
+			rootText="目录管理" handleClass="net.simpleframework.content.news.NewsCatalogHandle" />
+	</components>
+</page>

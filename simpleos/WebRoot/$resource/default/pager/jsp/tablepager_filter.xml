@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <handleClass>
+    net.simpleframework.web.page.component.ui.pager.TablePagerFilterPageLoad
+  </handleClass>
+
+  <components>
+    <ajaxRequest name="ajaxTablePagerFilterSave"
+      handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerAction"
+      handleMethod="doFilter" selector=".tablepager_filter">
+      <jsCompleteCallback>
+        $Actions['tablePagerColumnFilterWindow'].close();
+        $eval(json["filter"]);
+      </jsCompleteCallback>
+    </ajaxRequest>
+
+    <ajaxRequest name="ajaxTablePagerFilterDelete"
+      handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerAction"
+      handleMethod="doFilterDelete">
+      <jsCompleteCallback>
+        $eval(json["filter"]);
+      </jsCompleteCallback>
+    </ajaxRequest>
+
+    <validation name="validationTablePagerFilterSave"
+      triggerSelector="#idTablePagerFilterSave" warnType="insertAfter"
+      handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerFilterValidation">
+      <validator selector="#tp_filter_v1, #tp_filter_v2"
+        method="required" />
+    </validation>
+
+    <calendar name="calendarTablePagerFilter" />
+  </components>
+</page>

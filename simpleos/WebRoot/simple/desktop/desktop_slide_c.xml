@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<swfupload name="logoUpload" fileSizeLimit="1MB" fileTypes="*.png"
+			containerId="template_logoUploadId" fileTypesDesc="#(Img.Upload)"
+			handleClass="net.prj.manager.template.LogoUpLoadFileHandle">
+			<jsCompleteCallback>
+					<![CDATA[
+						if(json['rs']=='true'){
+							$('template_logoId').src=json['src'];
+						}
+					]]>
+				</jsCompleteCallback>
+		</swfupload>
+
+		<tablePager name="navTable" containerId="template_slide_id"
+			pagerBarLayout="top" showLineNo="true" showVerticalLine="true"
+			handleClass="net.prj.manager.PrjNavTable">
+			<columns>
+				<column columnName="title" columnText="标题"></column>
+				<column columnName="img" columnText="图片" separator="true"
+					width="320" textAlign="center"></column>
+				<column columnName="act" columnText="操作" separator="true"
+					width="40" textAlign="center"></column>
+			</columns>
+			<jsLoadedCallback>
+				<![CDATA[
+				var s_b = $Actions["slideBodyMenu"]; 
+				if (s_b)
+					s_b.bindEvent(".nav_b"); 
+             ]]>
+			</jsLoadedCallback>
+		</tablePager>
+		<menu name="slideBodyMenu" menuEvent="click">
+			<menuitem title="编辑">
+				<jsSelectCallback>
+					<![CDATA[
+						var o = $Actions['navTable'].row(item); 
+						$Actions['slideAddWindow']('navId='+o.getAttribute('rowid'));
+					]]>
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="图片">
+				<jsSelectCallback>
+					<![CDATA[
+						var o = $Actions['navTable'].row(item); 
+						$Actions['slideUploadWindow']('navId='+o.getAttribute('rowid'));
+					]]>
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="删除">
+				<jsSelectCallback>
+					<![CDATA[
+						var o = $Actions['navTable'].row(item); 
+						$Actions['navDeleteAct']('navId='+o.getAttribute('rowid'));
+					]]>
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="上移">
+				<jsSelectCallback>
+					<![CDATA[
+						var o = $Actions['navTable'].row(item); 
+						$Actions['exchangeNav']('up=true&navId1='+o.getAttribute('rowid')+'&navId2='+o.previous().getAttribute('rowid'));
+					]]>
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="下移">
+				<jsSelectCallback>
+					<![CDATA[
+					 var o = $Actions['navTable'].row(item); 
+					 $Actions['exchangeNav']('up=false&navId1='+o.getAttribute('rowid')+'&navId2='+o.next().getAttribute('rowid'));
+					]]>
+				</jsSelectCallback>
+			</menuitem>
+		</menu>
+		<ajaxRequest name="navDeleteAct" handleClass="net.prj.manager.PrjMgrAction"
+			handleMethod="deleteNav">
+			<jsCompleteCallback>
+				<![CDATA[
+					$Actions['navTable'].refresh();
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="exchangeNav" handleClass="net.prj.manager.PrjMgrAction"
+			handleMethod="exchangeNav">
+			<jsCompleteCallback>
+				<![CDATA[
+					$Actions['navTable'].refresh();
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="slideAddAjax">
+			<urlForward>desktop_slide_add.jsp</urlForward>
+		</ajaxRequest>
+		<window name="slideAddWindow" contentRef="slideAddAjax"></window>
+		<ajaxRequest name="slideUploadAjax">
+			<urlForward>desktop_slide_upload.jsp</urlForward>
+		</ajaxRequest>
+		<window name="slideUploadWindow" contentRef="slideUploadAjax"></window>
+	</components>
+</page>

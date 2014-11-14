@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+  <components>
+    <ajaxRequest name="ajaxSpaceLogSave"
+      handleClass="net.simpleframework.my.space.SapceAction"
+      handleMethod="logSave" selector=".space_tabs_content .space_log_editor">
+      <jsCompleteCallback>
+				if (json["result"]) {
+					$Actions["__my_space_log_pager"]();
+					var editor = $("ta_space_log_editor");
+					if (editor) {
+						editor.clear();
+					}
+				}
+			</jsCompleteCallback>
+    </ajaxRequest>
+
+    <validation name="validationSpaceLog" triggerSelector=".space_log_editor .btn"
+      warnType="insertAfter">
+      <validator selector="#ta_space_log_editor" method="required" />
+      <validator selector="#ta_space_log_editor" method="min_length"
+        args="2" />
+    </validation>
+
+    <dictionary name="smileySpaceLogDict" bindingId="ta_space_log_editor">
+      <smiley />
+    </dictionary>
+
+    <ajaxRequest name="space_img_tab_1">
+      <urlForward>space_img_tab_1.jsp</urlForward>
+    </ajaxRequest>
+
+    <tabs name="tabsImgSelected">
+      <tab title="#(space_log.editor.2)" cache="true">
+        <content>
+					<![CDATA[
+						<div style="padding: 4px 12px;" id="space_img_swfupload">
+						<input type="button" value="#(space_log.editor.5)" 
+							onclick="$Actions['windowSpaceImgUpload']();" />
+						<div style="padding: 6px 0;" id="space_img_upload_list"></div>
+						</div>
+					]]>
+				</content>
+        <jsContentLoadedCallback>
+					$Actions["ajaxSpaceImgUploadList"]();
+				</jsContentLoadedCallback>
+      </tab>
+      <tab title="#(space_log.editor.3)" contentRef="space_img_tab_1"
+        cache="true" />
+      <tab title="#(space_log.editor.4)" cache="true" />
+    </tabs>
+    <window name="imgSelectedWindow" title="#(space_log.editor.0)"
+      contentRef="tabsImgSelected" popup="true" singleWindow="true"
+      width="340" height="380">
+    </window>
+
+    <ajaxRequest name="ajaxSpaceImgUpload">
+      <urlForward>space_img_upload.jsp</urlForward>
+    </ajaxRequest>
+    <window name="windowSpaceImgUpload" contentRef="ajaxSpaceImgUpload"
+      width="360" height="450" title="#(space_log.editor.6)">
+    </window>
+
+    <ajaxRequest name="ajaxSpaceImgUploadList"
+      updateContainerId="space_img_upload_list">
+      <urlForward>space_img_list.jsp</urlForward>
+    </ajaxRequest>
+
+    <ajaxRequest name="ajaxVoteSelected">
+      <urlForward>space_log_vote.jsp</urlForward>
+    </ajaxRequest>
+    <window name="voteSelectedWindow" contentRef="ajaxVoteSelected"
+      popup="true" width="340" height="420" title="#(space_log.6)">
+    </window>
+  </components>
+</page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<pager name="__my_dialog_log_pager" containerId="dialogLogId"
+			pagerBarLayout="top" showEditPageItems="false"
+			handleClass="net.simpleframework.my.dialog.DialogLogTablePaper"
+			dataPath="my_dialog_log_data.jsp" pageItems="30"></pager>
+	</components>
+</page>

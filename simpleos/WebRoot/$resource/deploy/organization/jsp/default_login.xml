@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.organization.OrgUtils;
+	</scriptInit>
+	<importCSS>
+		<value>${OrgUtils.getCssPath(pageParameter)}/org.css</value>
+	</importCSS>
+	<jobView>${net.simpleframework.organization.IJob.sj_anonymous}</jobView>
+
+	<components>
+		<login name="__default_login" containerId="__default_login"
+			width="300">
+		</login>
+	</components>
+</page>

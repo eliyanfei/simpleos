@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.blog.BlogUtils;
+		import net.simpleframework.applets.tag.TagUtils;
+	</scriptInit>
+	<importPage>
+		<value>${BlogUtils.deployPath}jsp/blog_home.xml</value>
+		<value>${TagUtils.xmlTagsLayout()}</value>
+	</importPage>
+	<importCSS>
+		<value>/app/twocol.css</value>
+	</importCSS>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<components>
+		<ajaxRequest name="hotPageletLoad" updateContainerId="hot_tabs"
+			showLoading="false" runImmediately="false">
+			<urlForward>blog_pagelet.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="commentsPageletLoad" updateContainerId="comments_tabs"
+			showLoading="false" runImmediately="false">
+			<urlForward>blog_pagelet.jsp</urlForward>
+		</ajaxRequest>
+	</components>
+</page>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>/simple/include/c.xml</value>
+	</importPage>
+	<jobView>sys_manager</jobView>
+	<components>
+		<listbox name="siteListAct" containerId="siteListId" tooltip="false">
+			<item text="#(Site.1)" run="true">
+				<jsClickCallback><![CDATA[$IT.A('site_site_act');$('site_title').innerHTML = '#(Site.1)';]]></jsClickCallback>
+			</item>
+			<item text="#(Site.0)">
+				<jsClickCallback><![CDATA[$IT.A('site_sys_act');$('site_title').innerHTML = '#(Site.0)';]]></jsClickCallback>
+			</item>
+			<item text="#(Site.2)">
+				<jsClickCallback><![CDATA[$IT.A('site_links_act');$('site_title').innerHTML = '#(Site.2)';]]></jsClickCallback>
+			</item>
+			<!--<item text="开放登入"> <jsClickCallback><![CDATA[$IT.A('site_open_act');$('site_title').innerHTML 
+				= '开放登入';]]></jsClickCallback> </item> -->
+		</listbox>
+		<ajaxRequest name="site_sys_act" updateContainerId="site_data_id">
+			<urlForward>site_sys_c.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="site_site_act" updateContainerId="site_data_id">
+			<urlForward>site_site_c.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="site_links_act" updateContainerId="site_data_id">
+			<urlForward>site_links_c.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="site_open_act" updateContainerId="site_data_id">
+			<urlForward>site_open_c.jsp</urlForward>
+		</ajaxRequest>
+	</components>
+</page>

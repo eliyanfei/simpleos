@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<ajaxRequest name="ajaxFileStatRebuild" handleClass="net.simpleframework.my.file.FolderFileAction"
+			handleMethod="statRebuild" confirmMessage="#(manager_tools.1)">
+			<jsCompleteCallback>
+				if (json["info"])
+					$("fileStatRebuildInfo").innerHTML = json["info"];
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

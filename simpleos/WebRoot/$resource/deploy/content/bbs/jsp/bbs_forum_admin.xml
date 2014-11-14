@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<catalog name="bbsCatalogAdmin" containerId="bbsCatalogAdmin"
+			rootText="#(bbs_forum_admin.0)" handleClass="net.simpleframework.content.bbs.BbsForumHandle" />
+	</components>
+</page>

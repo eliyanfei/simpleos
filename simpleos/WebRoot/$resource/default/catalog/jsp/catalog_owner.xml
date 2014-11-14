@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxCatalogAddUser"
+			handleClass="net.simpleframework.content.component.catalog.CatalogAction"
+			handleMethod="addUserOwner">
+			<jsCompleteCallback>
+				__catalog_owner_refresh();
+			</jsCompleteCallback>
+		</ajaxRequest>
+		
+		<ajaxRequest name="ajaxCatalogOwnerDelete"
+			handleClass="net.simpleframework.content.component.catalog.CatalogAction"
+			handleMethod="ownerDelete" confirmMessage="#(Confirm.Delete)">
+			<jsCompleteCallback>
+				__catalog_owner_refresh();
+			</jsCompleteCallback>
+		</ajaxRequest>
+		
+		<userSelect name="catalogUserSelect">
+			<jsSelectCallback>
+				<![CDATA[
+					var ua = $Actions["ajaxCatalogAddUser"];
+					var oa = $Actions["ajaxCatalogOwnerPage"];
+					ua.selector = oa.selector;
+					ua($Actions["catalogUserSelect"].idQuery + 
+						"&ids=" + selects.map(function(m) { return m.id; }).join('; '));
+					return true;
+				]]>
+			</jsSelectCallback>
+		</userSelect>
+	</components>
+</page>

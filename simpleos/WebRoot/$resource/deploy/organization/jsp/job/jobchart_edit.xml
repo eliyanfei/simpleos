@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <handleClass>net.simpleframework.organization.web.OrgEditPageLoad</handleClass>
+  <handleMethod>jobChartLoaded</handleMethod>
+
+  <components>
+    <propEditor name="jcFormEditor" containerId="jcFormEditor">
+      <field label="#(jobchart_edit.0)">
+      	<component type="hidden" name="jc_id"></component>
+        <component type="text" name="jc_text"></component>
+      </field>
+      <field label="#(jobchart_edit.1)">
+        <component type="text" name="jc_name"></component>
+      </field>
+      <field label="#(Description)">
+        <component name="jc_description" type="textarea" attributes="rows:6"></component>
+      </field>
+    </propEditor>
+
+    <validation name="jcValidation" triggerSelector="#jcSave, #jcSaveAndNew"
+      warnType="insertAfter">
+      <validator selector="#jc_text,#jc_name" method="required">
+      </validator>
+    </validation>
+
+    <ajaxRequest name="ajaxJobChartSave"
+      handleClass="net.simpleframework.organization.web.JobChartAction"
+      handleMethod="jobChartSave" 
+      selector="#jcFormEditor">
+      <jsCompleteCallback>
+        <![CDATA[
+          if (json["next"]) 
+            $("jcFormEditor").reset();
+          else 
+            $Actions["jcEditWindow"].close();
+          $Actions["jcTree"].refresh();
+        ]]>
+      </jsCompleteCallback>
+    </ajaxRequest>
+  </components>
+</page>

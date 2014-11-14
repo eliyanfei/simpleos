@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+  <components>
+    <tablePager name="_tagsTablePager" containerId="_tagsTablePager"
+      handleClass="net.simpleframework.applets.tag.TagsManagerTableHandle"
+      exportAction="false" indexPages="5" pagerBarLayout="bottom">
+      <columns>
+        <column columnName="tagText" columnText="#(tags_manager.0)" />
+        <column columnName="ttype" columnText="#(tags_option.0)"
+          textAlign="center" width="55" />
+        <column columnName="frequency" columnText="#(tags_manager.1)"
+          textAlign="center" width="55" />
+        <column columnName="views" columnText="#(tags_manager.2)"
+          textAlign="center" width="60" />
+        <column columnName="action" columnText="&amp;nbsp;"
+          textAlign="center" width="105" />
+      </columns>
+    </tablePager>
+
+    <ajaxRequest name="ajaxTagRPage"
+      handleClass="net.simpleframework.applets.tag.TagAction"
+      handleMethod="tagRUrl">
+    </ajaxRequest>
+    <window name="newsTagRWindow" contentRef="ajaxTagRPage"
+      title="#(tags_manager.3)" width="540" height="400">
+    </window>
+
+    <ajaxRequest name="_tagDelete"
+      handleClass="net.simpleframework.applets.tag.TagAction"
+      handleMethod="tagDelete" confirmMessage="#(Confirm.Delete)">
+      <jsCompleteCallback>
+				$Actions["_tagsTablePager"]();
+			</jsCompleteCallback>
+    </ajaxRequest>
+
+    <ajaxRequest name="ajaxRebuildTags"
+      handleClass="net.simpleframework.applets.tag.TagAction"
+      handleMethod="tagRebuild" confirmMessage="#(tags_manager.8)">
+      <jsCompleteCallback>
+				if (json["result"])
+					alert(json["result"]);
+			</jsCompleteCallback>
+    </ajaxRequest>
+
+    <ajaxRequest name="ajaxTagOptionsPage">
+      <urlForward>tags_option.jsp</urlForward>
+    </ajaxRequest>
+    <window name="_tagOptionsWindow" contentRef="ajaxTagOptionsPage"
+      height="160" width="360" title="#(tags_manager.6)">
+    </window>
+  </components>
+</page>

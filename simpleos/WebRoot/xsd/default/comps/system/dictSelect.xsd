@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../dictionary.xsd"></xsd:include>
+	<xsd:element name="dictSelect">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="dictionaryElements" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="dictionaryAttributes" />
+			<xsd:attribute name="dictName" type="xsd:string" />
+			<xsd:attribute name="dictType">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="tree" />
+						<xsd:enumeration value="list" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

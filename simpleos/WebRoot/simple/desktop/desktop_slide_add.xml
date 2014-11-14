@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.component.newspager.NewsPagerUtils
+	</scriptInit>
+	<importCSS>
+		<value>
+			${NewsPagerUtils.getCssPath(pageParameter)}/np_edit.css
+		</value>
+	</importCSS>
+	<components>
+		<ajaxRequest name="saveNav" handleClass="net.prj.manager.PrjMgrAction"
+			handleMethod="saveNav" selector="#saveForm">
+			<jsCompleteCallback>
+				<![CDATA[
+				 	$IT.R('navTable');
+				 	$IT.C('slideAddWindow');
+				 	$IT.alert('#(Save.OK)');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<validation name="validation1" triggerSelector="#validBtn"
+			warnType="insertAfter">
+			<validator selector="#ds_title,#ds_url" method="required"></validator>
+			<validator selector="#ds_url" method="url"></validator>
+		</validation>
+	</components>
+</page>

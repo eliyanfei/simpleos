@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.my.message.MessageUtils;	
+	</scriptInit>
+	<importPage>
+		<value>${MessageUtils.deployPath}jsp/my_message.xml</value>
+	</importPage>
+	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
+	<components>
+		<pager name="dialogTableAct" containerId="dialogTableId"
+			pagerBarLayout="bottom" showEditPageItems="false"
+			handleClass="net.simpleframework.my.dialog.DialogTablePaper"
+			dataPath="message_dialog_c_data.jsp" />
+		<ajaxRequest name="dialogDeleteAct"
+			handleClass="net.simpleframework.my.dialog.DialogAction"
+			handleMethod="dialogDelete">
+			<jsCompleteCallback>
+					<![CDATA[
+						if(json['act']){
+							alert(json['act']);						
+						}else{
+							$IT.R('dialogTableAct');
+						}
+					]]>
+				</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

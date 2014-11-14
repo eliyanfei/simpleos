@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">	
+	<components>
+		<catalog name="__sys_dict_item" containerId="__sys_dict_item" 
+			runImmediately="false"
+			handleClass="net.simpleframework.sysmgr.dict.DictItemHandle" 
+			rootText="#(dict_item.0)" />
+
+		<ajaxRequest name="ajax_sys_dict_item_c" updateContainerId="__sys_dict_item_c">
+			<urlForward>dict_item_c.jsp</urlForward>
+		</ajaxRequest>
+	</components>
+</page>

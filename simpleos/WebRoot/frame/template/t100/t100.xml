@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		<![CDATA[
+		import net.simpleframework.organization.component.userpager.UserPagerUtils;
+		import net.simpleframework.my.home.MyHomeUtils;	
+		]]>
+	</scriptInit>
+	<importPage>
+		<value>/simple/include/main.xml</value>
+		<value>/frame/template/t100/help.xml</value>
+		<value>/frame/template/t100/tab_1.xml</value>
+		<value>${UserPagerUtils.xmlUserutils()}</value>
+		<value>${MyHomeUtils.deployPath}jsp/my_home.xml</value>
+	</importPage>
+	<importJavascript>
+		<value>/frame/template/t100/themes/default/js/desktop.js</value>
+		<value>/frame/template/t100/startMenu.js</value>
+	</importJavascript>
+	<importCSS>
+		<value>/frame/template/t100/themes/default/css/grid.css?v=5.6</value>
+		<value>/frame/template/t100/themes/default/css/desktop.css?v=5.6</value>
+		<value>/frame/template/t100/startmenu.css</value>
+	</importCSS>
+	<components>
+		<menu name="aa" menuEvent="contextmenu" selector="body">
+			<menuitem title="排序方式">
+				<menuitem title="默认">
+					<jsSelectCallback>
+					<![CDATA[
+						$desktop.setCookies("oorder","oorder");
+						location.reload();
+					]]>
+				</jsSelectCallback>
+				</menuitem>
+				<menuitem title="名称">
+					<jsSelectCallback>
+					<![CDATA[
+						$desktop.setCookies("oorder","uiName");
+						location.reload();				
+					]]>
+				</jsSelectCallback>
+				</menuitem>
+				<menuitem title="加入时间">
+					<jsSelectCallback>
+					<![CDATA[
+						$desktop.setCookies("oorder","createDate");
+						location.reload();				
+					]]>
+				</jsSelectCallback>
+				</menuitem>
+			</menuitem>
+			<menuitem title="-" />
+			<menuitem title="显示桌面"
+				icon="/frame/template/t100/themes/icon/desktop_16.png">
+				<jsSelectCallback>
+					<![CDATA[
+						$desktop.hideWin();					
+					]]>
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="刷新页面"
+				icon="/frame/template/t100/themes/icon/refresh_16.png">
+				<jsSelectCallback>
+					<![CDATA[
+						location.reload();				
+					]]>
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-" />
+			<menuitem title="系统设置"
+				icon="/frame/template/t100/themes/icon/setting_16.png">
+				<jsSelectCallback><![CDATA[
+				$Actions['settingWin']();
+			]]></jsSelectCallback>
+			</menuitem>
+			<menuitem title="主题设置"
+				icon="/frame/template/t100/themes/icon/theme_16.png">
+				<jsSelectCallback><![CDATA[
+				$Actions['themeWin']();
+			]]></jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="退出系统"
+				icon="/frame/template/t100/themes/icon/logout_16.png">
+				<jsSelectCallback><![CDATA[
+				$Actions['ajaxLogout']();
+			]]></jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="新手指导" icon="/frame/template/t100/themes/icon/help.png">
+				<jsSelectCallback><![CDATA[
+				show_help();
+			]]></jsSelectCallback>
+			</menuitem>
+			<jsBeforeShowCallback>
+				<![CDATA[
+					var items = menu.getItems();
+					for(var i=0;i<items.length;i++){
+						var oorder = $desktop.getCookies("oorder");
+						if(items[i].text=='默认'&&'oorder'==oorder)
+							items[i].setItemChecked(true);
+						else if(items[i].text=='名称'&&'uiName'==oorder)
+							items[i].setItemChecked(true);
+						else if(items[i].text=='加入时间'&&oorder=='createDate')
+							items[i].setItemChecked(true);
+					}
+				]]>
+			</jsBeforeShowCallback>
+		</menu>
+
+		<ajaxRequest name="ajaxLogout" confirmMessage="是否注销?"
+			handleClass="net.simpleframework.organization.component.login.LoginAction"
+			handleMethod="logout">
+			<jsCompleteCallback>
+			<![CDATA[
+			$desktop.setCookies("login__", 'true');
+			location.reload();
+			]]></jsCompleteCallback>
+		</ajaxRequest>
+
+		<menu name="desktop" menuEvent="contextmenu" selector=".desktop_icon">
+			<menuitem title="删除">
+				<jsSelectCallback>
+					<![CDATA[
+					var o = $target(item);
+					o = o.hasClassName("desktop_icon")?o:o.up(".desktop_icon");
+					if(o.getAttribute('rowid'))
+						$Actions['delUIAct']('tabId='+$('desktopmenu').getAttribute('tabId')+'&uiName='+o.getAttribute('rowid'));	
+					]]>	
+				</jsSelectCallback>
+			</menuitem>
+		</menu>
+		<menu name="desktopClose" menuEvent="contextmenu" selector=".task_lb_sub">
+			<menuitem title="关闭">
+				<jsSelectCallback>
+					<![CDATA[
+					var o = $target(item);
+					o = o.hasClassName("task_lb_sub")?o:o.up(".task_lb_sub");
+					var crow = o.getAttribute('crow');
+					if(crow){
+						$Actions[crow].close();
+						if($(crow+'__')){
+							$(crow+'__').style.display = '';
+						}
+					}
+					]]>	
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="最小化">
+				<jsSelectCallback>
+					<![CDATA[
+					var o = $target(item);
+					o = o.hasClassName("task_lb_sub")?o:o.up(".task_lb_sub");
+					var id = o.id.substring(0,o.id.length-1);
+					if($(id)){
+						$(id).style.display = 'none';
+					}
+					]]>	
+				</jsSelectCallback>
+			</menuitem>
+		</menu>
+		<ajaxRequest name="saveAnnounce" showLoading="false"
+			handleClass="net.itsite.AnnounceHandle" handleMethod="saveAnnounce">
+			<jsCompleteCallback>
+			<![CDATA[]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="getAnnounce" showLoading="false"
+			handleClass="net.itsite.AnnounceHandle" handleMethod="getAnnounce">
+			<jsCompleteCallback>
+				<![CDATA[
+					if(json['TEXT']){
+						$('announceValue').value = json['TEXT'];
+					}
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="delUIAct"
+			handleClass="net.simpleframework.desktop.DesktopUIActionHandle"
+			handleMethod="delUI">
+			<jsCompleteCallback>
+				<![CDATA[
+					$Actions['desktopAppAjax']();
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="themeAjax">
+			<urlForward>/frame/template/t100/theme.jsp</urlForward>
+		</ajaxRequest>
+		<window name="themeWin" height="600" width="540" resizable="false"
+			contentRef="themeAjax" title="主题设置" modal="false">
+		</window>
+		<ajaxRequest name="monitorAjax" parameters="windowName=monitorWin">
+			<urlForward>/frame/template/t100/homepage.jsp</urlForward>
+		</ajaxRequest>
+		<window name="monitorWin" height="700" width="800" resizable="false"
+			contentRef="monitorAjax" title="监控主页" modal="false">
+			<jsShownCallback>
+				<![CDATA[
+					this.maximize();
+				]]>
+			</jsShownCallback>
+		</window>
+		<ajaxRequest name="settingAjax">
+			<urlForward>/frame/template/t100/setting.jsp</urlForward>
+		</ajaxRequest>
+		<window name="settingWin" height="450" width="300" resizable="false"
+			contentRef="settingAjax" title="系统设置" modal="false">
+			<jsHiddenCallback>
+				<![CDATA[
+				location.reload();
+				]]>
+			</jsHiddenCallback>
+		</window>
+		<ajaxRequest name="addUIAjax">
+			<urlForward>/frame/template/t100/add_ui.jsp</urlForward>
+		</ajaxRequest>
+		<window name="addUIWin" height="600" width="480" resizable="false"
+			contentRef="addUIAjax" title="添加组件(双击添加,红色表示已经添加)" modal="false">
+		</window>
+		<ajaxRequest name="desktopAppAjax" updateContainerId="desktopInnerPanel"
+			runImmediately="false">
+			<urlForward>/frame/template/t100/desktop_app.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="allGridContentAjax" updateContainerId="all_grid_content"
+			runImmediately="true">
+			<urlForward>/frame/template/t100/all_grid_content.jsp</urlForward>
+		</ajaxRequest>
+	</components>
+</page>

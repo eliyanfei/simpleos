@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<listbox name="templateListAct" containerId="userInfoListId"
+			tooltip="false">
+			<item text="#(user_edit.0)" run="true">
+				<jsClickCallback>
+					<![CDATA[
+						$Actions['ajaxUserTabs0']();
+					]]>
+				</jsClickCallback>
+			</item>
+			<item text="#(user_edit.1)">
+				<jsClickCallback>
+					<![CDATA[
+						$Actions['ajaxUserTabs1']();
+					]]>
+				</jsClickCallback>
+			</item>
+			<item text="#(user_edit.2)">
+				<jsClickCallback>
+					<![CDATA[
+						$Actions['ajaxUserTabs2']();
+					]]>
+				</jsClickCallback>
+			</item>
+			<item text="#(user_edit.3)">
+				<jsClickCallback>
+					<![CDATA[
+						$Actions['ajaxUserTabs3']();
+					]]>
+				</jsClickCallback>
+			</item>
+		</listbox>
+		<ajaxRequest name="ajaxUserTabs0" updateContainerId="__user_edit_data_id"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="tabUrl" parameters="tp=ue/user_edit_base.jsp" />
+		<ajaxRequest name="ajaxUserTabs1" updateContainerId="__user_edit_data_id"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="tabUrl" parameters="tp=ue/user_edit_pwd.jsp" />
+		<ajaxRequest name="ajaxUserTabs2" updateContainerId="__user_edit_data_id"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="tabUrl" parameters="tp=ue/user_edit_photo.jsp" />
+		<ajaxRequest name="ajaxUserTabs3" updateContainerId="__user_edit_data_id"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="tabUrl" parameters="tp=ua/user_account_stat.jsp" />
+
+	</components>
+</page>

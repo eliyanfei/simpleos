@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>/simple/template/c.xml</value>
+	</importPage>
+	<components>
+		<swfupload name="docuUploadAct" containerId="docu_upload"
+			fileQueueLimit="1" fileTypes="*" fileTypesDesc="All" fileSizeLimit="15MB"
+			multiFileSelected="true" handleClass="net.itsite.document.docu.DocuUploadHandle">
+			<jsCompleteCallback><![CDATA[
+				$IT.A('uploadDocuAct','docuId='+json['id']);
+				if(json['id']!=''){
+					$('docuIds').value = json['id']+','+$F('docuIds');
+				}
+			]]></jsCompleteCallback>
+		</swfupload>
+
+		<ajaxRequest name="uploadDocuAct" updateContainerId="docu_upload_c">
+			<urlForward>upload_docu.jsp</urlForward>
+		</ajaxRequest>
+	</components>
+</page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<jobView>sys_manager</jobView>
+	<components>
+		<ajaxRequest name="site_openAct" handleClass="net.prj.manager.site.PrjSiteAction"
+			selector="#site_open_form" handleMethod="saveOpen">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.alert('#(Save.OK)');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

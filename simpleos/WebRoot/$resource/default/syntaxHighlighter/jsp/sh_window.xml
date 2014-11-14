@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import
+		net.simpleframework.web.page.component.ui.syntaxhighlighter.SyntaxHighlighterUtils;
+  </scriptInit>
+	<importCSS>
+		<value>${SyntaxHighlighterUtils.getCssPath(pageParameter)}/sh_window.css</value>
+	</importCSS>
+</page>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <scriptEval>single</scriptEval>
+  <jobView>${net.simpleframework.organization.IJob.sj_anonymous}</jobView>
+  <components>
+    <validateCode name="getpwdValidateCode" containerId="getpwdValidateCode"
+      textName="textGetpwdValidateCode" />
+
+    <validation name="getpwdValidation" triggerSelector="#btnGetpwd"
+      warnType="insertAfter">
+      <validator selector="#textGetpwd, #textGetpwdValidateCode"
+        method="required">
+      </validator>
+      <validator selector="#textGetpwd" method="email"></validator>
+    </validation>
+
+    <ajaxRequest name="ajaxGetpwd"
+      handleClass="net.simpleframework.organization.component.login.LoginAction"
+      handleMethod="getpwd" 
+      selector="#formGetpwd"
+      jobExecute="${net.simpleframework.organization.IJob.sj_anonymous}">
+      <jsCompleteCallback>
+        <![CDATA[
+          Validation.clearInsert("textGetpwdValidateCode");
+          if (json["validateCode"]) {
+            Validation.insertAfter("textGetpwdValidateCode", json["validateCode"]);
+          } else {
+            $("textGetpwdValidateCode").clear();
+            alert(json["getpwd"]);
+          }
+        ]]>
+      </jsCompleteCallback>
+    </ajaxRequest>
+  </components>
+</page>

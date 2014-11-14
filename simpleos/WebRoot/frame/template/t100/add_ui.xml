@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<ajaxRequest name="addUIAct"
+			handleClass="net.simpleframework.desktop.DesktopUIActionHandle"
+			handleMethod="addUI">
+			<jsCompleteCallback>
+				<![CDATA[
+					if(json['rs']=='ok'){
+					 	$Actions['allGridContentAjax']();
+					 	$Actions['desktopAppAjax']();
+					 }
+					else
+					  alert('已经添加!');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

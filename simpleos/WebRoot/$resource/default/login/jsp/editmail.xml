@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <scriptEval>single</scriptEval>
+  <jobView>${net.simpleframework.organization.IJob.sj_anonymous}</jobView>
+  <components>
+    <validateCode name="editmailValidateCode" containerId="editmailValidateCode"
+      textName="textEditmailValidateCode" runImmediately="false" />
+
+    <propEditor name="editmailEditor" containerId="editmailEditor">
+      <jsLoadedCallback>
+        <![CDATA[
+          $Actions['editmailValidateCode']();
+          _load_account();
+        ]]>
+      </jsLoadedCallback>
+      <field label="#(editmail.0)">
+        <component type="text" name="em_accountName" attributes="readonly" />
+      </field>
+      <field label="#(editmail.1)">
+        <component type="text" name="em_password" />
+      </field>
+      <field label="#(editmail.2)">
+        <component type="text" name="em_mail" />
+      </field>
+      <field label="#(editmail.3)">
+        <component type="div" name="editmailValidateCode" />
+      </field>
+    </propEditor>
+
+    <ajaxRequest name="ajaxEditmail"
+      handleClass="net.simpleframework.organization.component.login.LoginAction"
+      handleMethod="editmail" 
+      selector="#editmailForm"
+      jobExecute="${net.simpleframework.organization.IJob.sj_anonymous}">
+      <jsCompleteCallback>
+        <![CDATA[
+          Validation.clearInsert("em_password", "textEditmailValidateCode");
+          if (json["validateCode"]) {
+            Validation.insertAfter("textEditmailValidateCode", json["validateCode"]);
+          } else if (json['password']) {
+            Validation.insertAfter("em_password", json["password"]);
+            $("em_password").activate();
+          } else {
+            alert($MessageConst["SaveOK"]);
+            $Actions['editmailWindow'].close();
+          }
+        ]]>
+      </jsCompleteCallback>
+    </ajaxRequest>
+
+    <validation name="editmailValidation" triggerSelector="#editmailSave"
+      warnType="insertAfter">
+      <validator selector="#em_mail, #textEditmailValidateCode"
+        method="required" />
+      <validator selector="#em_mail" method="email" />
+    </validation>
+  </components>
+</page>

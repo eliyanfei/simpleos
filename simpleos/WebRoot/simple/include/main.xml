@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+	</importPage>
+	<importJavascript>
+		<value>itsite.js</value>
+		<value>t.js</value>
+	</importJavascript>
+	<handleClass>net.itsite.ItSitePageHandle</handleClass>
+	<components>
+		<ajaxRequest name="ajaxSpaceLogSave"
+			handleClass="net.simpleframework.my.space.SapceAction" jobExecute="sys_anonymous"
+			handleMethod="logSave" selector=".space_log_editor1">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.pageletOne($('saySubmit'));
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="complaintAjaxAct">
+			<urlForward>complaint/complaint_c.jsp</urlForward>
+		</ajaxRequest>
+		<window name="complaintWindowAct" contentRef="complaintAjaxAct"
+			title="我要举报" width="600" height="350"></window>
+		<ajaxRequest name="ajaxLogout"
+			handleClass="net.simpleframework.organization.component.login.LoginAction"
+			handleMethod="logout">
+			<jsCompleteCallback>location.reload();</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="doLanguage" handleClass="net.itsite.ItSiteAjaxHandle"
+			handleMethod="doLanguage">
+			<jsCompleteCallback>
+				<![CDATA[
+					 location.reload();
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="doSkin" handleClass="net.itsite.ItSiteAjaxHandle"
+			handleMethod="doSkin">
+			<jsCompleteCallback>
+				<![CDATA[
+					 location.reload();
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="deleteNotificationAct"
+			handleClass="net.simpleframework.applets.notification.NotificationAction"
+			handleMethod="deleteNotification">
+			<jsCompleteCallback>
+					<![CDATA[
+						var o = $('_pre_0');
+						var o1 = $('_pre_1');
+						if(o||o1){
+							__message_view_click(o,0);
+							__message_view_click(o1,1);
+						}
+					]]>
+				</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="aboutAjaxAct">
+			<urlForward>/simple/main/let/_about.jsp</urlForward>
+		</ajaxRequest>
+		<window name="aboutWinAct" contentRef="aboutAjaxAct" title="智汇"
+			draggable="false" popup="true" resizable="false" width="600" height="350"
+			modal="true" showCenter="true"></window>
+		<ajaxRequest name="alertAjax">
+			<urlForward>alert.jsp</urlForward>
+		</ajaxRequest>
+		<window name="alertWin" contentRef="alertAjax" title="信息"
+			draggable="false" popup="true" resizable="false" width="420" height="160"
+			modal="true" showCenter="true"></window>
+	</components>
+</page>

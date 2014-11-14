@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../dictionary.xsd"></xsd:include>
+	<xsd:element name="userSelect">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="dictionaryElements" />
+			</xsd:sequence>
+			<xsd:attribute name="showCheckbox" type="xsd:string" default="true" />
+			<xsd:attribute name="showDepartmentFilter" type="xsd:string" default="true" />
+			<xsd:attribute name="pageItems" type="xsd:string" />
+			<xsd:attributeGroup ref="dictionaryAttributes" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

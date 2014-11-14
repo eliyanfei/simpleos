@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<importPage>
+		<value>/app/upload/upload_common.xml</value>
+	</importPage>
+	<components>
+		<myFileSelect name="__news_myfileSelect" bindingText="np_content"
+			destroyOnClose="true">
+		</myFileSelect>
+
+		<syntaxHighlighter name="__news_syntaxHighlighter">
+			<jsSelectedCallback>
+				$Actions.setValue('np_content', script, true);
+				return true;
+      </jsSelectedCallback>
+		</syntaxHighlighter>
+	</components>
+</page>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <handleClass>
+  	net.simpleframework.content.component.filepager.FileEditPageLoad
+  </handleClass>
+  <handleMethod>filePropsLoaded</handleMethod>
+  
+  <components>
+    <propEditor name="__fp_fileForm" containerId="__fp_fileForm">
+      <field label="#(FilePager.columns.0)">
+      	<component type="text" name="file_topic" />
+      </field>
+      <field label="#(Description)">
+        <component name="file_description" type="textarea" attributes="rows:8" />
+      </field>
+    </propEditor>
+
+    <ajaxRequest name="ajaxFilePropsSave"
+      handleClass="net.simpleframework.content.component.filepager.FilePagerAction"
+      handleMethod="fileSave">
+      <jsCompleteCallback>
+        <![CDATA[
+          $Actions['editFilepagerWindow'].close();
+          $eval(json["jsCallback"]);
+        ]]>
+      </jsCompleteCallback>
+    </ajaxRequest>
+  </components>
+</page>

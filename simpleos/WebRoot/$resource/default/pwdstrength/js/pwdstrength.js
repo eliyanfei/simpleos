@@ -1,0 +1,6 @@
+$Comp.PwdStrength=Class.create({initialize:function(a,c){this.options={pwdInput:null};Object.extend(this.options,c||{});a=$(a);a.setDimensions(this.options);a.insert($Comp.createTable({className:"pwdstrength"}));
+this.s=new Element("div",{className:"pwds"});this.m=new Element("td",{className:"pwdm"}).update($MessageConst["PwdStrength.1"]);var d=new Element("tr");d.insert(new Element("td",{width:"100px"}).insert(new Element("div",{className:"pwdc"}).insert(this.s))).insert(this.m);
+a.down("tbody").insert(d);if(this.options.pwdInput){var b=$(this.options.pwdInput);if(b){b.observe("keyup",function(){this.update($F(b))}.bind(this))}}},update:function(a){var e=0;for(var b=0;b<a.length;
+b++){var f=a.charAt(b);if(f>="a"&&f<="z"){e+=2}if(f>="0"&&f<="9"){e+=3}if(f>="A"&&f<="Z"){e+=4}if(f.match(/[!,@#$%^&*?_~]/)){e+=5}}var d=e*2.2;if(d>98){d=98}this.s.$style("width:"+d+"px",{effects:this.options.effects});
+if(e<=0){this.m.update($MessageConst["PwdStrength.1"])}else{var b;if(e<4){b=0}else{if(e<=10){b=1}else{if(e<=15){b=2}else{if(e<=20){b=3}else{if(e<=25){b=4}else{if(e<=30){b=5}else{if(e<=40){b=6}else{b=7}}}}}}}this.m.update($MessageConst["PwdStrength.0"][b])
+}}});

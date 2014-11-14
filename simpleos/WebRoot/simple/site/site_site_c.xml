@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<handleClass>net.prj.manager.site.PrjSitePageLoad</handleClass>
+	<handleMethod>siteLoad</handleMethod>
+	<jobView>sys_manager</jobView>
+	<components>
+		<ajaxRequest name="site_siteAct" handleClass="net.prj.manager.site.PrjSiteAction"
+			selector="#site_site_form" handleMethod="saveSite">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.alert('#(Save.OK)');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<validation name="site_site_btn" triggerSelector="#site_site_btn"
+			d="span" warnType="insertAfter" selector="#site_site_form">
+			<validator selector="#site_desc,#site_name,#site_copyright"
+				method="required" message="#(Not.Null)"></validator>
+			<validator selector="#site_copyright" method="number"
+				message="#(Site.Site.Val)"></validator>
+		</validation>
+	</components>
+</page>

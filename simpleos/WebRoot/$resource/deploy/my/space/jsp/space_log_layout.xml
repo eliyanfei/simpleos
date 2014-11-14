@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<components>
+		<ajaxRequest name="ajaxSpaceLogSave"
+			handleClass="net.simpleframework.my.space.SapceAction" handleMethod="logSave"
+			selector=".space_log_editor1">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.pagelet($('space_log_layout'));
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

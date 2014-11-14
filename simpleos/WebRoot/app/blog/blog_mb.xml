@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.blog.BlogUtils;
+	</scriptInit>
+	<importPage>
+		<value>${BlogUtils.deployPath}jsp/my_blog_c.xml</value>
+		<value>my_blog_lr.xml</value>
+	</importPage>
+	<importCSS>
+		<value>/app/twocol.css</value>
+	</importCSS>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+</page>

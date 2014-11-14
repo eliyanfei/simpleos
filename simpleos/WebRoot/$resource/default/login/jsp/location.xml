@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <scriptEval>single</scriptEval>
+  <jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>  
+</page>

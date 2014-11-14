@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxVoteEditPage" handleClass="net.simpleframework.content.component.vote.VoteAction"
+			handleMethod="editUrl" />
+		<window name="voteEditWindow" contentRef="ajaxVoteEditPage" title="#(vote.2)"
+			height="380" width="350" />
+
+		<ajaxRequest name="ajaxVoteDelete" confirmMessage="#(vote.5)"
+			handleClass="net.simpleframework.content.component.vote.VoteAction" handleMethod="voteDelete">
+			<jsCompleteCallback>
+				if (json["jsCallback"]) 
+					$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxVoteCreate" confirmMessage="#(vote.7)"
+			handleClass="net.simpleframework.content.component.vote.VoteAction" handleMethod="voteCreate">
+			<jsCompleteCallback>
+				if (json["jsCallback"]) 
+					$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

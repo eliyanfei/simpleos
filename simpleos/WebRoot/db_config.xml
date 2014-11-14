@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<propEditor name="dbAct" containerId="db_config"
+			handleClass="net.itsite.ItSiteDBPropEditorHandle">
+			<field label="数据库" labelStyle="">
+				<component type="select" name="dbtype">
+					<!--<defaultValue>in=内置数据库;out=外置数据库</defaultValue> -->
+					<defaultValue>out=外置数据库</defaultValue>
+				</component>
+			</field>
+			<field label="JDBC驱动" labelStyle="">
+				<component type="select" name="driverClassName">
+					<defaultValue>org.gjt.mm.mysql.Driver</defaultValue>
+				</component>
+			</field>
+			<field label="URL">
+				<component type="text" name="url">
+					<defaultValue>jdbc:mysql://localhost:3306/database</defaultValue>
+				</component>
+			</field>
+			<field label="用户名">
+				<component type="text" name="username">
+					<defaultValue></defaultValue>
+				</component>
+			</field>
+			<field label="密码">
+				<component type="text" name="password">
+					<defaultValue></defaultValue>
+				</component>
+			</field>
+		</propEditor>
+		<ajaxRequest name="doConnectionTest" handleClass="net.itsite.ItSiteAjaxHandle"
+			handleMethod="doConnectionTest" selector="#db_config">
+			<jsCompleteCallback>
+				<![CDATA[
+					 alert(json['rs']);
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="doConnectionSave" handleClass="net.itsite.ItSiteAjaxHandle"
+			confirmMessage="初始化数据库可能需要一些时间，请您耐心等待！" handleMethod="doConnectionSave"
+			selector="#db_config">
+			<jsCompleteCallback>
+				<![CDATA[
+					if(json['rs']){
+						$('dbSaveId').disabled = 'disabled';
+						alert(json['rs']);
+					}else{
+					 	$Actions.loc('/');
+					 }
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<validation name="valiAct" triggerSelector=".valiBtn"
+			warnType="insertAfter">
+			<validator selector="#url,#username" method="required"></validator>
+		</validation>
+	</components>
+</page>

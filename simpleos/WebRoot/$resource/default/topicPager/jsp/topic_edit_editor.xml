@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<components>
+		<htmlEditor name="tpContentHtmlEditor" textarea="tp_content" toolbar="News"
+			height="265">
+			<jsLoadedCallback>
+				$("tp_content_info").innerHTML = "";
+			</jsLoadedCallback>
+		</htmlEditor>
+		
+		<validation name="topicEditorValidation" triggerSelector="#submitTopicHtmlEditor"
+			warnType="insertAfter">
+			<validator selector="#tp_topic" method="required" message="#(topic_edit_editor.0)" />
+			<validator selector="#tp_content" method="required" warnType="alert"
+				message="#(topic_edit_editor.1)" />
+			<validator selector="#textTopicEditorValidateCode" method="required"
+				message="#(topic_edit_editor.2)" />
+			<validator selector="#tp_att3" method="int_range" args="0,10" warnType="alert" />
+		</validation>
+		<validateCode name="topicEditorValidateCode" containerId="topicEditorValidateCode"
+			textName="textTopicEditorValidateCode" />
+	</components>
+</page>

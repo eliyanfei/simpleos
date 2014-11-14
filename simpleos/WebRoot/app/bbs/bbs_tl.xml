@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.bbs.BbsUtils;
+	</scriptInit>
+	<importPage>
+		<value>${BbsUtils.deployPath}jsp/bbs_topic_view.xml</value>
+	</importPage>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+</page>

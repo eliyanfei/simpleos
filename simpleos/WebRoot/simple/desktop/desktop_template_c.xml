@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<ajaxRequest name="saveTemplate" handleClass="net.prj.manager.PrjMgrAction"
+			handleMethod="saveTemplate">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.A("desktop_template_act");
+					$('desktop_title').innerHTML ='#(Desktop.0)';
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<tree name="__jobSelectTree" 
+			handleClass="net.simpleframework.organization.component.jobselect.JobSelectTree">
+		</tree>
+
+		<jobChartSelect name="__jobChartSelectDict" clearAction="false">
+			<jsSelectCallback>
+				<![CDATA[
+					var s = selects[0];
+					$Actions["__jobSelectTree"].refresh(s.jobChartId + "=" + s.id);
+					$Actions["__jobChartSelectDict"].a.update(s.text);
+					return true;
+				]]>
+			</jsSelectCallback>
+		</jobChartSelect>
+	</components>
+</page>

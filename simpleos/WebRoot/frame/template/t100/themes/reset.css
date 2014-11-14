@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+/*重置样式*/
+
+fieldset,img {
+	border: 0;
+}
+
+
+/*重置样式*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote
+	{
+	margin: 0;
+	padding: 0;
+}
+
+caption,th {
+	text-align: left;
+}
+
+
+q:before,q:after {
+	content: ”;
+}
+
+/* Whats nearby map */
+.whatsNearby {
+	height: 100%;
+	overflow: hidden;
+	background: #f2f6eb;
+}
+
+.whatsNearby .balance .js_map {
+	display: block;
+	position: relative;
+	width: 546px;
+	height: 446px;
+	margin: 2px;
+}
+
+.trdBubbleBadge {
+	padding: 5px 0px 5px 0px;
+	display: block;
+	color: #217148;
+}
+
+.trdBubbleBadge .trdText {
+	padding-left: 3px;
+}
+
+/* commerce */
+.whatsNearby .balance .fmBanner {
+	overflow: hidden;
+	padding: 4px 0 2px;
+}
+
+.whatsNearby .balance .fmBanner .bTtl {
+	display: block;
+	text-align: right;
+	padding: 24px 10px 0;
+	color: #939393;
+	font: bold 70% Arial, Tahoma, "Bitstream Vera Sans", sans-serif;
+	float: left;
+}
+
+.whatsNearby .balance .fmBanner .ad {
+	display: block;
+	width: 468px;
+	float: left;
+}

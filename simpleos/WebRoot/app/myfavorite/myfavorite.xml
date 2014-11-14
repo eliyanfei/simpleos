@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>myfavorite_utils.xml</value>
+	</importPage>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
+	<components>
+		<tablePager name="myFavoriteTable"
+			handleClass="net.prj.mvc.myfavorite.MyFavoriteTableHandle"
+			exportAction="false" containerId="myfavorite_data_id" showCheckbox="false"
+			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
+			pagerBarLayout="bottom">
+			<columns>
+				<column columnName="title" columnText="#(App.Favorite.Table.0)"
+					separator="true" filter="true"></column>
+				<column columnName="createdate" columnText="#(App.Favorite.Table.1)"
+					width="120" textAlign="center" separator="true" filter="true"></column>
+				<column columnName="act" columnText="#(App.Favorite.Table.2)"
+					width="60" textAlign="center" separator="true" sort="false"></column>
+			</columns>
+		</tablePager>
+		<listbox name="myfavoriteList" containerId="myfavoriteListId"
+			handleClass="net.prj.mvc.myfavorite.MyFavoriteListBoxHandle" tooltip="false">
+		</listbox>
+
+	</components>
+</page>

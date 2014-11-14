@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>
+		net.simpleframework.content.component.newspager.NewsEditPageLoad
+	</handleClass>
+	<handleMethod>newsLoaded</handleMethod>
+
+	<components>
+		<htmlEditor name="addNewsHtmlEditor" textarea="np_content" toolbar="News"
+			height="250">
+			<jsLoadedCallback>
+				$("np_content_info").innerHTML = "";
+			</jsLoadedCallback>
+		</htmlEditor>
+
+		<ajaxRequest name="ajaxNewspagerAdd"
+			handleClass="net.simpleframework.content.component.newspager.NewsPagerAction"
+			handleMethod="npSave">
+			<jsCompleteCallback><![CDATA[
+				Validation.clearInsert("textNewsEditorValidateCode");
+        if (json["validateCode"]) {
+          Validation.insertAfter("textNewsEditorValidateCode", json["validateCode"]);
+        } else {
+        	$Actions["addNewspagerWindow"].close();   
+          $eval(json["jsCallback"]);
+        }
+			]]></jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="__np_newsAddBtn" triggerSelector="#__np_newsAddBtn"
+			warnType="alert">
+			<validator selector="#np_topic, #np_content, #textNewsEditorValidateCode"
+				method="required" />
+		</validation>
+
+		<validateCode name="newsEditorValidateCode" containerId="newsEditorValidateCode"
+			textName="textNewsEditorValidateCode" />
+
+		<tree name="newsCatalogTree" handleClass="net.simpleframework.content.component.newspager.NewsCatalogSelect">
+		</tree>
+		<dictionary name="newsCatalogDict" bindingId="np_catalog" bindingText="np_catalog_text"
+			title="#(np_edit.9)">
+			<tree ref="newsCatalogTree" />
+		</dictionary>
+	</components>
+</page>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd" />
+	<xsd:include schemaLocation="pager.xsd" />
+	<xsd:include schemaLocation="job_utils.xsd" />
+
+	<xsd:element name="tablePager">
+		<xsd:complexType>
+			<xsd:group ref="tablePagerElements" />
+			<xsd:attributeGroup ref="tablePagerAttributes" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:group name="tablePagerElements">
+		<xsd:sequence>
+			<xsd:element name="columns" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="column" minOccurs="1" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="title" type="xsd:string" minOccurs="0" maxOccurs="1" />
+								</xsd:sequence>
+								<xsd:attribute name="columnName" type="xsd:string" use="required" />
+								<xsd:attribute name="columnText" type="xsd:string" />
+                <xsd:attribute name="beanPropertyType" type="xsd:string" />                
+								<xsd:attribute name="columnSqlName" type="xsd:string" />
+								<xsd:attribute name="headerStyle" type="xsd:string" />
+								<xsd:attribute name="style" type="xsd:string" />
+								<xsd:attribute name="width" type="xsd:string" default="0"/>
+								<xsd:attribute name="textAlign" type="ETextAlign"/>
+								<xsd:attribute name="separator" type="xsd:string" default="false" />
+                <xsd:attribute name="format" type="xsd:string" />
+                <xsd:attribute name="sort" type="xsd:string" default="true" />
+								<xsd:attribute name="filter" type="xsd:string" default="false" />
+								<xsd:attribute name="defaultExport" type="xsd:string" default="true" />
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:group ref="pagerElements" />
+			<xsd:element name="jsRowClick" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="jsRowDblclick" type="xsd:string" minOccurs="0"
+				maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:attributeGroup name="tablePagerAttributes">
+		<xsd:attribute name="showCheckbox" type="xsd:string" default="true" />
+		<xsd:attribute name="showVerticalLine" type="xsd:string" default="false" />
+		<xsd:attribute name="showLineNo" type="xsd:string" default="false" />
+		<xsd:attribute name="rowMargin" type="xsd:string" default="0" />
+		<xsd:attributeGroup ref="pagerAttributes" />
+	</xsd:attributeGroup>
+</xsd:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<swfupload name="slideUploadAct" fileSizeLimit="5MB"
+			selector="#slide_upload_form" fileQueueLimit="1"
+			fileTypes="*.png;*.jpg;*.jpeg;*.gif" containerId="slide_upload_id"
+			fileTypesDesc="#(Img.Upload)" handleClass="net.prj.manager.PrjNavUpLoadFileHandle">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.R('navTable');
+					$IT.C('slideUploadWindow');
+				]]>
+			</jsCompleteCallback>
+		</swfupload>
+	</components>
+</page>

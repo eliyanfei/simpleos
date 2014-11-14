@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importJavascript>
+		<value>docu.js</value>
+	</importJavascript>
+	<components>
+		<ajaxRequest name="docuMgrToolsAjaxAct">
+			<urlForward>mgr/docu_mgr.jsp</urlForward>
+		</ajaxRequest>
+		<window name="docuMgrToolsWindowAct" contentRef="docuMgrToolsAjaxAct"
+			title="#(Docu.mgr)" width="400" height="300"></window>
+		<ajaxRequest name="myDocuAddAjaxAct" includeRequestData="p">
+			<urlForward>mydocu_add.jsp</urlForward>
+		</ajaxRequest>
+		<window name="myDocuAddWindowAct" contentRef="myDocuAddAjaxAct"
+			height="390" width="400" title="#(Docu.edit)"></window>
+		<ajaxRequest name="docuDownloadAct"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" jobExecute="sys_anonymous"
+			handleMethod="docuDownload">
+			<jsCompleteCallback>
+				<![CDATA[
+					if(json['act']){
+						alert(json['act']);
+					}else{
+						if(json['self']==true||json['point']=='0'){
+							$Actions.loc('/app/docu/download.jsp?docuId='+json['docuId']+'&s='+json['s']);
+						}
+					}
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<ajaxRequest name="ajaxRemarkEditPage">
+			<urlForward>remark_edit.jsp</urlForward>
+		</ajaxRequest>
+		<window name="remarkEditWindow" contentRef="ajaxRemarkEditPage"
+			width="480" height="300" title="#(remark.10)">
+		</window>
+
+		<pager name="remarkPager" dataPath="remark_list.jsp"
+			handleClass="net.simpleframework.content.component.remark.RemarkList"
+			pagerBarLayout="bottom" noResultDesc="&amp;nbsp;" />
+
+		<validateCode name="remarkEditorValidateCode"
+			containerId="remarkEditorValidateCode" textName="textRemarkEditorValidateCode"
+			width="200" />
+
+		<ajaxRequest name="ajaxSave2Remark"
+			handleClass="net.simpleframework.content.component.remark.RemarkAction"
+			handleMethod="save2Remark" confirmMessage="#(Confirm.Post)">
+			<jsCompleteCallback>
+				Validation.clearInsert("textRemarkEditorValidateCode");
+				if (json["validateCode"]) {
+				Validation.insertAfter("textRemarkEditorValidateCode",
+				json["validateCode"]);
+				} else {
+				$Actions["remarkPager"]();
+				$("textareaRemarkEditor").clear();
+				$("textRemarkEditorValidateCode").clear();
+				}
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="remarkEditorValidation" triggerSelector="#submitRemarkEditor"
+			warnType="insertAfter">
+			<validator selector="#textareaRemarkEditor" method="required" />
+			<validator selector="#textRemarkEditorValidateCode" method="required"
+				message="#(remark_edit.1)" />
+		</validation>
+
+		<dictionary name="smileyRemarkDict" bindingId="textareaRemarkEditor">
+			<smiley />
+		</dictionary>
+	</components>
+</page>

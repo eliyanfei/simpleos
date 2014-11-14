@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.my.message.MessageUtils;
+  </scriptInit>
+	<importPage>
+		<value>message_utils.xml</value>
+	</importPage>
+	<importCSS>
+		<value>${MessageUtils.getCssPath(pageParameter)}/message.css</value>
+	</importCSS>
+
+	<components>
+		<pager name="__my_message_pager" containerId="__my_message_pager" runImmediately="false"
+			handleClass="net.simpleframework.my.message.MyMessageList" dataPath="my_message_c.jsp">
+		</pager>
+
+		<ajaxRequest name="__my_message_delete"
+			handleClass="net.simpleframework.my.message.MessageAction"
+			handleMethod="deleteMessage" confirmMessage="#(Confirm.Delete)">
+			<jsCompleteCallback>
+				if (json["result"]) {
+				$Actions["__my_message_pager"]();
+				}
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

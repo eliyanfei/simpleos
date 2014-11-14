@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+  <scriptEval>multiple</scriptEval>
+  <scriptInit>
+    import net.simpleframework.web.page.component.ui.pager.PagerUtils;
+    
+    String hashId = PagerUtils.getComponentParameter(pageParameter).componentBean.hashId();
+  </scriptInit>
+  <components>
+    <menu name="ml_${hashId}_Menu" menuEvent="click"
+      handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerMenu">
+    </menu>
+    <menu name="ml_${hashId}_Menu2" menuEvent="click" minWidth="140"
+      handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerMenu2">
+    </menu>
+  </components>
+</page>

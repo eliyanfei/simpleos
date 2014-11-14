@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxBlogStatRebuild" handleClass="net.simpleframework.content.blog.BlogAction"
+			handleMethod="statRebuild" confirmMessage="#(manager_tools.1)">
+			<jsCompleteCallback>
+				if (json["info"])
+					$("span_ajaxBlogStatRebuild").innerHTML = json["info"];
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxBlogIndexRebuild" handleClass="net.simpleframework.content.blog.BlogAction"
+			handleMethod="indexRebuild" confirmMessage="#(manager_tools.5)">
+			<jsCompleteCallback>
+				if (json["info"])
+					$("span_ajaxBlogIndexRebuild").innerHTML = json["info"];
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

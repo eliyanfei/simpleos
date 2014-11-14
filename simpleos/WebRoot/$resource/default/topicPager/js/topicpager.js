@@ -1,0 +1,5 @@
+function __topicpager_addMethods(c,a){var b=function(e,d){return(a+"="+c.rowId(e)).addParameter(d)};c.add=function(e){var d=$Actions.topicPagerWindow;d.contentRef=$Actions.ajaxTopicPagerAdd;d.contentRef.selector=c.selector;
+d(e)};c.edit=function(f,e){var d=$Actions.topicPagerWindow;d.contentRef=$Actions.ajaxTopicPagerEdit;d.contentRef.selector=c.selector;d(b(f,e))};c.update=function(f,e){var d=$Actions.ajaxTopicUpdate;d.selector=c.selector;
+d(b(f,e))};c.edit2=function(e,d){$Actions.ajaxTopicEdit2.selector=c.selector;$Actions.topicEdit2Window(b(e,d))};c.del=function(f,e){var d=$Actions.topicPagerDelete;d.selector=c.selector;d(b(f,e))};c.del2=function(d){c.__checkall(function(f){var e=$Actions.topicPagerDelete;
+e.selector=c.selector;e((a+"="+f).addParameter(d))})};c.view=function(f,e){var d=$Actions.ajaxTopicPagerView;d.container=c.pager.up();d.selector=c.selector;d(e)};c.move2=function(e,d){var f=$Actions.topicMove2Dict;
+f.selector=c.selector;f.move2_callback=function(h){var i=h[0].id;var g=$Actions.ajaxTopicMove2;g.selector=c.selector;g(("mCatalog="+i).addParameter(b(e,d)));return true};f(d)}};

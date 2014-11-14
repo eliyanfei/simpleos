@@ -1,0 +1,52 @@
+#__np__newsAddForm .tbl {
+	border-right: 1px solid #ddd;
+	width: 100%;
+	table-layout: fixed;
+}
+
+#__np__newsAddForm .tbl_first {
+	border-top: 1px solid #ddd;
+}
+
+#__np__newsAddForm .tbl>tbody>tr>td {
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+#__np__newsAddForm .tbl .lbl,#__np__newsAddForm .tbl .lbl2 {
+	background: rgb(249, 249, 249);
+	color: rgb(68, 68, 68);
+}
+
+#__np__newsAddForm .tbl .lbl {
+	text-align: right;
+	padding: 7px 6px;
+	width: 90px;
+}
+
+#__np__newsAddForm .tbl .lbl2 {
+	text-align: center;
+	width: 60px;
+}
+
+#td_np_catalog .text,#td_np_catalog .text input,#__np__newsAddForm #np_topic,#__np__newsAddForm #np_keywords,#__np__newsAddForm #np_source,#__np__newsAddForm #np_author,#__np__newsAddForm #np_description
+	{
+	border-width: 0;
+	width: 99%;
+	background-image: none;
+}
+
+#__np__newsAddForm .btn {
+	text-align: right;
+	margin-top: 6px;
+}
+
+#__np__newsAddForm .btn span {
+	color: #B75009;
+	margin-right: 15px;
+}
+
+#__np__newsAddForm .cb label,#__np__newsAddForm .cb input {
+	vertical-align: middle;
+	cursor: pointer;
+}

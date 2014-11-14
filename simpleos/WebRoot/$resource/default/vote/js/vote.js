@@ -1,0 +1,5 @@
+var __vote_element=function(a){a=$target(a);return a.hasClassName("vote_c")?a:a.up(".vote_c")};var __vote_action=function(a){return __vote_element(a).action};function __vote_cb_click(c){var a=c.up(".vg");
+var d=parseInt($F(a.down()));if(d==0){return}var b=0;a.select("INPUT").each(function(e){if(e.checked){b++}});if(b>d){alert(VOTE_CLICK_MSG);c.checked=false}}function __vote_addMethods(b,a){b.refresh=function(c){b(c)
+};b._create=function(d){var c=$Actions.ajaxVoteCreate;c.selector=b.selector;c(d)};b._edit=function(c){$Actions.ajaxVoteEditPage.selector=b.selector;$Actions.voteEditWindow(c)};b._delete=function(d){var c=$Actions.ajaxVoteDelete;
+c.selector=b.selector;c(d)};b._submit=function(d){var c=$Actions.ajaxVoteSubmit;c.selector=b.selector;c($$Form("vote_"+a).addParameter(d))};b._view=function(f){var d=$Actions.ajaxVoteView;d.selector=b.selector;
+var c=$Actions.voteViewWindow;var e=b.vote.select(".vt")[0];if(e){c.options.title=e.innerHTML.truncate(20)}c(f)}};

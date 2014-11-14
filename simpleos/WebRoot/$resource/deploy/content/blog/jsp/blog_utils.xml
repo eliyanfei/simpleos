@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.blog.BlogUtils;
+	</scriptInit>
+
+	<importCSS>
+		<value>${BlogUtils.getCssPath(pageParameter)}/blog.css</value>
+	</importCSS>
+</page>

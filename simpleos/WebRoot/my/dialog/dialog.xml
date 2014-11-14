@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<ajaxRequest name="myDialogAjax">
+			<urlForward>my_dialog.jsp</urlForward>
+		</ajaxRequest>
+		<window name="myDialogWindow" width="700" height="540" title="对话"
+			resizable="false" contentRef="myDialogAjax">
+			<jsHiddenCallback>
+					<![CDATA[
+						$IT.stopExec();
+					]]>
+				</jsHiddenCallback>
+		</window>
+	</components>
+</page>

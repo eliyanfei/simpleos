@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+
+	<components>
+		<ajaxRequest name="ajaxAddFriendAction"
+			jobExecute="${net.simpleframework.organization.IJob.sj_account_normal}">
+			<urlForward>add_friend.jsp</urlForward>
+		</ajaxRequest>
+		<window name="addMyFriendWindow" contentRef="ajaxAddFriendAction" height="240"
+			width="380" title="#(friends_utils.0)">
+		</window>
+	</components>
+</page>

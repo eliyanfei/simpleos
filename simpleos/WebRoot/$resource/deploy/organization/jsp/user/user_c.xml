@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+  <components>
+    <userPager name="__user_list" containerId="__user_list"
+      handleClass="net.simpleframework.organization.web.UserListPagerHandle">
+      <jsLoadedCallback>
+				$("__user_list").previous().down(".sech_pane_params").hide();
+			</jsLoadedCallback>
+    </userPager>
+
+    <ajaxRequest name="__user_logout"
+      handleClass="net.simpleframework.organization.web.UserAction"
+      handleMethod="doLogout" confirmMessage="#(user_c.0)">
+      <jsCompleteCallback>
+        if (json["result"])
+          $Actions["__user_list"].refresh();
+      </jsCompleteCallback>
+    </ajaxRequest>
+  </components>
+</page>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<swfupload name="themeUpload" fileSizeLimit="5MB"
+			fileTypes="*.jpg;*.jpeg;*.png" containerId="themeuploadId"
+			fileTypesDesc="图片上传" handleClass="net.simpleframework.desktop.ThemeUpLoadFileHandle">
+			<jsCompleteCallback>
+					<![CDATA[
+						if(json['rs']=='false'){
+							alert('自定义主题最多支持10个!');
+						}else{
+							$Actions['themeCustomAjax']();
+						}
+					]]>
+				</jsCompleteCallback>
+		</swfupload>
+		<ajaxRequest name="delDesktopTheme"
+			handleClass="net.simpleframework.desktop.DesktopUIActionHandle"
+			handleMethod="delDesktopTheme">
+			<jsCompleteCallback>
+				<![CDATA[
+					$Actions['themeCustomAjax']();
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<components>
+		<catalog name="__my_blog_catalog" containerId="__my_blog_catalog"
+			handleClass="net.simpleframework.content.blog.BlogCatalogHandle"
+			cookies="false">
+			<jsLoadedCallback><![CDATA[
+        $$("#__my_blog_catalog .tafelTreecontent").each(function(item) {
+          Droppables.add(item, {
+            hoverclass : "tafelTreeselected",
+            onDrop : function(drag, drop, event) {
+              if (!confirm("#(my_blog.7)")) {
+                return;
+              } 
+              var act = $Actions["ajaxBlogDropAction"];
+              if (act.drop) 
+                return;
+              act("drag=" + TableRowDraggable.checked(drag).join(";") + 
+                "&drop=" + drop.branch.getId());
+              act.drop = true;
+            }
+          });
+        });
+      ]]></jsLoadedCallback>
+		</catalog>
+
+		<ajaxRequest name="ajaxBlogDropAction"
+			handleClass="net.simpleframework.content.blog.BlogAction"
+			handleMethod="blogDrop">
+			<jsCompleteCallback>
+				if (json["ok"]) {
+				$Actions["__my_blog_pager"]();
+				$Actions["__my_blog_catalog"].refresh();
+				}
+				$Actions["ajaxBlogDropAction"].drop = false;
+      </jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

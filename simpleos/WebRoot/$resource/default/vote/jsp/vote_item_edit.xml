@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxDeleteItem" 
+			handleClass="net.simpleframework.content.component.vote.VoteAction"
+			handleMethod="itemDelete" confirmMessage="#(vote_item_edit.0)">
+			<jsCompleteCallback>
+				__vote_item_refresh();
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

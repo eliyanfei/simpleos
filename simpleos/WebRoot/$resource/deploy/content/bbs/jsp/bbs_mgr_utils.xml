@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxBbsManagerToolsPage">
+			<urlForward>bbs_manager_tools.jsp</urlForward>
+		</ajaxRequest>
+		<window name="bbsManagerToolsWindow" contentRef="ajaxBbsManagerToolsPage"
+			title="#(BbsUtils.3)" height="210" width="360">
+		</window>
+	</components>
+</page>

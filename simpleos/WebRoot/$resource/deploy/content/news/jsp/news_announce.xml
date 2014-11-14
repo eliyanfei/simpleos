@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<tooltip name="newsAnnounceTooltip" handleClass="net.simpleframework.content.news.NewsAnnounceTooltip">
+			<tip selector="#_news_announce_marquee img" stem="topMiddle" hideOthers="true"
+				width="280">
+				<hook target="bottomMiddle" tip="topLeft" />
+				<hideOn tipElement="tip" event="mouseleave" />
+			</tip>
+		</tooltip>
+	</components>
+</page>

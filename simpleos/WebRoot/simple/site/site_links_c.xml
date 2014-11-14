@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<handleClass>net.prj.manager.site.PrjSitePageLoad</handleClass>
+	<handleMethod>linksLoad</handleMethod>
+	<jobView>sys_manager</jobView>
+	<components>
+		<htmlEditor name="links_homeLinks" textarea="links_homeLinks"
+			toolbar="News" height="160">
+			<jsLoadedCallback>
+				$("links_homeLinks").innerHTML = "";
+			</jsLoadedCallback>
+		</htmlEditor>
+		<ajaxRequest name="site_linksAct" handleClass="net.prj.manager.site.PrjSiteAction"
+			selector="#site_links_form" handleMethod="saveLinks">
+			<jsCompleteCallback>
+				<![CDATA[
+					if(json['rs']=='true'){
+						$IT.alert('#(Save.OK)');
+					}
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<tablePager name="linksTable"
+			handleClass="net.prj.manager.links.PrjLinksTableHandle" showLineNo="true"
+			showVerticalLine="true" runImmediately="true" containerId="linksDataId"
+			pagerBarLayout="bottom" showEditPageItems="false" noResultDesc=""
+			showCheckbox="false">
+			<columns>
+				<column columnName="title" columnText="#(links.table.0)"
+					filter="true"></column>
+				<column columnName="startDate" columnText="#(links.table.1)"
+					separator="true"></column>
+				<column columnName="description" columnText="#(links.add.3)" separator="true"></column>
+				<column columnName="action" sort="false" separator="true"
+					textAlign="center" width="25"
+					columnText='&lt;a class=" down_menu_image"&gt;&lt;/a&gt;' />
+			</columns>
+			<jsLoadedCallback>
+				<![CDATA[
+					var os2 = $Actions["linksMenu"]; 
+					if (os2)
+						os2.bindEvent(".links_menu");
+				]]>
+			</jsLoadedCallback>
+		</tablePager>
+		<menu name="linksMenu" menuEvent="click">
+			<menuitem title="#(links.menu.1)" icon="#option">
+				<jsSelectCallback>
+				<![CDATA[
+					var rowId = PagerUtil.rowId(item);
+					$IT.A('linksAddWin','linksId='+rowId);
+				]]>
+			</jsSelectCallback>
+			</menuitem>
+			<menuitem title="#(links.menu.2)" icon="#edit">
+				<jsSelectCallback>
+				<![CDATA[
+					var rowId = PagerUtil.rowId(item);
+					$IT.A('linksDelete','linksId='+rowId);
+				]]>
+			</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="#(links.menu.4)" icon="#delete">
+				<jsSelectCallback>
+				<![CDATA[
+					var o = PagerUtil.row(item);
+					$Actions['exchangeLinksAct']('linksId1='+o.getAttribute('rowid')+'&linksId2='+o.previous().getAttribute('rowid'));
+				]]>
+			</jsSelectCallback>
+			</menuitem>
+			<menuitem title="#(links.menu.5)" icon="#delete">
+				<jsSelectCallback>
+				<![CDATA[
+					var o = PagerUtil.row(item);
+					$Actions['exchangeLinksAct']('linksId1='+o.getAttribute('rowid')+'&linksId2='+o.next().getAttribute('rowid'));
+				]]>
+			</jsSelectCallback>
+			</menuitem>
+		</menu>
+		<ajaxRequest name="linksDelete" confirmMessage="#(links.2)"
+			handleClass="net.prj.manager.links.PrjLinksAction" handleMethod="linksDelete">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.R('linksTable');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="exchangeLinksAct" handleClass="net.prj.manager.links.PrjLinksAction"
+			handleMethod="exchangeLinks">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.R('linksTable');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="linksAddAjax">
+			<urlForward>links_add.jsp</urlForward>
+		</ajaxRequest>
+		<window name="linksAddWin" contentRef="linksAddAjax" width="600"
+			draggable="true" showCenter="true" height="400"></window>
+	</components>
+</page>

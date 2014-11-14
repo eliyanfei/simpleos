@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+    <![CDATA[
+      import net.simpleframework.web.page.component.ComponentParameter;
+      import net.simpleframework.organization.component.register.UserRegisterUtils;
+      ComponentParameter nComponentParameter = UserRegisterUtils.getComponentParameter(pageParameter);
+    ]]>
+	</scriptInit>
+	<jobView>sys_anonymous</jobView>
+	<components>
+		<validateCode name="registValidateCode" containerId="regist_validateCode"
+			textName="textRegistValidateCode" runImmediately="true" />
+
+		<calendar name="birthdayCal" inputField="user_birthday"
+			dateFormat="yyyy-MM-dd">
+		</calendar>
+
+		<validation name="registValidation" triggerSelector="#idRegisterPage_save"
+			warnType="insertAfter">
+			<validator
+				selector="#user_account,#user_password,#user_password2, #user_text, #user_email, #textRegistValidateCode"
+				method="required" />
+			<validator selector="#user_account" method="min_length"
+				args="4"></validator>
+
+			<validator selector="#user_account" method="min_length"
+				args="6"></validator>
+			<validator selector="#user_account" method="max_length"
+				args="20"></validator>
+			<validator selector="#user_text" method="min_length" args="2"></validator>
+			<validator selector="#user_text" method="max_length" args="20"></validator>
+			<validator selector="#user_password" method="min_length"
+				args="6"></validator>
+			<validator selector="#user_password2" method="equals"
+				args="user_password" />
+			<validator selector="#user_email" method="email" />
+		</validation>
+
+		<ajaxRequest name="ajaxRegistAccount" handleMethod="regist"
+			handleClass="net.simpleframework.organization.component.register.UserRegisterAction"
+			selector="#_registForm" jobExecute="${net.simpleframework.organization.IJob.sj_anonymous}">
+			<jsCompleteCallback>_registCallback(json);</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxAccountChecked"
+			handleClass="net.simpleframework.organization.component.register.UserRegisterAction"
+			handleMethod="checked" selector="#_registForm"
+			jobExecute="${net.simpleframework.organization.IJob.sj_anonymous}">
+			<jsCompleteCallback>
+        <![CDATA[
+          if (json["result"]) 
+            Validation.insertAfter("user_account", json["result"]);
+        ]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxTerms"
+			jobExecute="${net.simpleframework.organization.IJob.sj_anonymous}">
+			<urlForward>${nComponentParameter.getBeanProperty("termsUrl")}
+			</urlForward>
+		</ajaxRequest>
+		<window name="termsWindow" contentRef="ajaxTerms" width="400"
+			height="540" title="#(regist.12)">
+		</window>
+	</components>
+</page>

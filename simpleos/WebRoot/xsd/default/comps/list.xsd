@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="list">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="listElement" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="listAttri" />
+			<xsd:attribute name="header" type="xsd:boolean" default="true" />
+			<xsd:attribute name="footer" type="xsd:boolean" default="true" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:attributeGroup name="listAttri">
+		<xsd:attributeGroup ref="container" />
+	</xsd:attributeGroup>
+
+	<xsd:group name="listElement">
+		<xsd:sequence>
+			<xsd:group ref="listElement2" />
+			<xsd:element name="jsLoadedCallback" type="xsd:string"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element ref="listnode" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="listNodeElement">
+		<xsd:sequence>
+			<xsd:element name="text" type="xsd:string" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:element name="tooltip" type="xsd:string" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:group ref="listElement2" />
+			<xsd:element ref="listnode" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="listElement2">
+		<xsd:sequence>
+			<xsd:element name="jsClickCallback" type="xsd:string"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="jsDblclickCallback" type="xsd:string"
+				minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:element name="listnode">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="listNodeElement" />
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string" />
+			<xsd:attribute name="text" type="xsd:string" />
+			<xsd:attribute name="image" type="xsd:string" />
+			<xsd:attribute name="imageOpen" type="xsd:string" />
+			<xsd:attribute name="opened" type="xsd:boolean" default="false" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

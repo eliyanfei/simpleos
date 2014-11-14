@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.bbs.BbsUtils;
+		import
+		net.simpleframework.content.component.topicpager.TopicPagerUtils;
+		import net.simpleframework.applets.tag.TagUtils;
+	</scriptInit>
+	<importPage>
+		<value>bbs_toolbar_pane.xml</value>
+		<value>${TopicPagerUtils.getHomePath()}/jsp/topic_tags.xml</value>
+		<value>${TagUtils.xmlTagsLayout()}</value>
+	</importPage>
+	<handleClass>
+		net.simpleframework.content.bbs.BbsForumPageLoad
+	</handleClass>
+	<components>
+		<topicPager name="bbsTopicPager" containerId="bbsTopicMgrPager"
+			pagerBarLayout="bottom"
+			handleClass="net.simpleframework.content.bbs.BbsTopicMgrPagerHandle">
+			<jsLoadedCallback>
+				$("bbsTopicPager").up().down(".sech_pane_params").hide();
+			</jsLoadedCallback>
+		</topicPager>
+	</components>
+</page>

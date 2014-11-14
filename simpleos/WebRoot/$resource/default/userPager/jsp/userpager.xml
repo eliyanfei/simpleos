@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>__userutils.xml</value>
+	</importPage>
+	<handleClass>
+		net.simpleframework.web.page.component.ui.pager.PagerPageLoad
+	</handleClass>
+
+	<components>
+		<menu name="userPager_Menu" menuEvent="click"
+			handleClass="net.simpleframework.web.page.component.ui.pager.TablePagerMenu">
+		</menu>
+		<menu name="userPager_Menu2" menuEvent="click" minWidth="140">
+			<menuitem title="#(Add)" icon="#add">
+				<jsSelectCallback>
+					__pager_action(item).add();
+			    </jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="#(Menu.delete2)" icon="#delete">
+				<jsSelectCallback>
+					__pager_action(item).del2();
+			    </jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="#(UserPager.menu.1)" icon="#mail">
+				<jsSelectCallback>
+					__pager_action(item).sentmail();
+			    </jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="通知所有用户" icon="#announce.gif">
+				<jsSelectCallback>
+					__pager_action(item).sentmessage('t=all');
+			    </jsSelectCallback>
+			</menuitem>
+			<menuitem title="通知在线用户" icon="#announce.gif">
+				<jsSelectCallback>
+					__pager_action(item).sentmessage('t=online');
+			    </jsSelectCallback>
+			</menuitem>
+			<menuitem title="通知选择的用户" icon="#announce.gif">
+				<jsSelectCallback>
+					__pager_action(item).sentmessage();
+			    </jsSelectCallback>
+			</menuitem>
+		</menu>
+
+		<ajaxRequest name="userPagerUnlock"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="unlock" confirmMessage="确定解锁用户吗?解锁后用户可以正常登入系统!">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="userPagerLock"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="lock" confirmMessage="确定锁定用户吗?锁定后用户无法登入系统!">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="userPagerDelete"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="delete" confirmMessage="#(up_pager.4)">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="userPagerUnDelete"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="undelete" confirmMessage="#(up_pager.8)">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="userPagerBlacklist"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="blacklist" confirmMessage="确定把用户加入黑名单吗？">
+			<jsCompleteCallback>
+				alert(json['rs']);
+				$eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="userPagerActive"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="active" confirmMessage="确定激活该用户吗？">
+			<jsCompleteCallback>
+				alert('用户已经激活!');
+				$eval(json["jsCallback"]);
+      </jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="userPagerMove"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="exchange">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxAddUserPage"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="addUrl" />
+		<window name="addUserWindow" contentRef="ajaxAddUserPage"
+			width="320" height="380" title="#(up_pager.3)">
+		</window>
+
+		<deptSelect name="move2DeptWindow" title="#(up_pager.0)"
+			clearAction="false"
+			handleClass="net.simpleframework.organization.component.userpager.UserMove2Dept">
+			<jsSelectCallback>
+				return
+				$Actions['move2DeptWindow']._move2dept_callback(selects);
+			</jsSelectCallback>
+		</deptSelect>
+
+		<ajaxRequest name="ajaxMove2Dept"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="move2Dept">
+			<jsCompleteCallback>
+				$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxUserSentMailPage"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="sentMailUrl">
+		</ajaxRequest>
+		<window name="userSentMailWindow" contentRef="ajaxUserSentMailPage"
+			title="#(UserPager.menu.1)" width="640" height="480">
+		</window>
+		<ajaxRequest name="ajaxUserSentMessagePage">
+			<urlForward>sent_message.jsp</urlForward>
+		</ajaxRequest>
+		<window name="userSentMessageWindow" contentRef="ajaxUserSentMessagePage"
+			title="发送消息" width="640" height="480">
+		</window>
+	</components>
+</page>

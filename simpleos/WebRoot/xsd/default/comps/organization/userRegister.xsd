@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+  <xsd:include schemaLocation="../../base.xsd"></xsd:include>
+  <xsd:element name="userRegister">
+    <xsd:complexType>
+      <xsd:attribute name="closeAction" type="xsd:string" />
+      <xsd:attribute name="termsUrl" type="xsd:string" />
+      <xsd:attributeGroup ref="container" />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

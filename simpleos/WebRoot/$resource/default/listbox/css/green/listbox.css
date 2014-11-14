@@ -1,0 +1,4 @@
+.listbox{overflow-y:auto;position:relative;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;border:1px solid #ccc;background:#f9faff;padding:2px;}.listbox .item{overflow:hidden;margin:2px 2px;padding:4px 6px;border:1px solid #dedede;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+.listbox .item:hover{background:#DFEEF3;color:#fff;}.listbox .odd{background:#FBFBFB;}.listbox .even{background:#F8F8F8;}.listbox .checked{background:#FFF8C2;}.listbox .select{background:#DFEEF3;}.listbox .item .uncheck{width:16px;height:16px;padding:0;margin:0;background:transparent url(images/check1.gif) no-repeat;}
+.listbox .item .uncheck:hover{background:transparent url(images/check_over1.gif) no-repeat;}.listbox .item .check{width:16px;height:16px;padding:0;margin:0;background:transparent url(images/check2.gif) no-repeat;}
+.listbox .item .check:hover{background:transparent url(images/check_over2.gif) no-repeat;}

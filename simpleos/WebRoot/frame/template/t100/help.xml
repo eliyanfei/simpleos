@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<importJavascript>
+		<value>help.js</value>
+	</importJavascript>
+	<components>
+		<ajaxRequest name="welAjax" showLoading="false">
+			<urlForward>help.jsp</urlForward>
+		</ajaxRequest>
+		<window name="welWin" title="新手指导" height="300" width="400"
+			contentRef="welAjax" resizable="false">
+		</window>
+	</components>
+</page>

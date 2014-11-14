@@ -1,0 +1,35 @@
+function @{actionFunc}(){
+  var _dhxLayout = new dhtmlXLayoutObject({
+    parent : "@{containerId}",
+    pattern : "@{pattern}",
+    skin : "@{skinName}",
+    image_path : "@{imagePath}",
+    cells : [
+      @foreach{cell: cells}
+      {
+     id : "@{cell.cellName}",
+     text : "@{cell.headerText}",
+     header : @{cell.showHeader},
+     fix_size : [ @{cell.fixWidth}, @{cell.fixHeight} ],
+     width : @{cell.width},
+     height : @{cell.height}
+      }
+      @end{', '}
+    ]
+  });
+  @foreach{cell: cells}
+    @if{cell.url != null}
+       @if{(cell.url != "null") && (cell.url != "") }
+         _dhxLayout.cells("@{cell.cellName}").attachURL("@{cell.url}");
+       @end{}
+    @else{cell.targetId != null}
+      @if{(cell.targetId != "null") && (cell.targetId != "")}
+         _dhxLayout.cells("@{cell.cellName}").attachObject("@{cell.targetId}");
+      @end{}
+    @end{}
+  @end{}
+}
+ 
+$ready(function() {
+  @{actionFunc}();
+});

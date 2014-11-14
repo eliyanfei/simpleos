@@ -1,0 +1,54 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<propEditor name="jobmemberFormEditor" containerId="jobmemberFormEditor">
+			<field label="#(job_member_edit.0)">
+				<component type="select" name="jm_memberType" defaultValue="#(job_member_edit.1)">
+				</component>
+			</field>
+			<field label="#(job_member_edit.2)">
+				<component type="hidden" name="jm_memberId"></component>
+				<component type="textButton" name="jm_memberText" attributes="readonly">
+					<event name="click">
+            <![CDATA[
+              var mt = $F("jm_memberType");
+              if (mt == "user") {
+                $Actions["jm_userSelect"](); 
+              } else {
+                $Actions["jm_jobSelect"](); 
+              }
+            ]]>
+					</event>
+				</component>
+			</field>
+			<field label="#(job_member_edit.3)">
+				<component type="checkbox" defaultValue="true" name="jm_primaryJob"></component>
+			</field>
+			<field label="#(Description)">
+				<component name="jm_description" type="textarea" attributes="rows:6"></component>
+			</field>
+		</propEditor>
+
+		<validation name="jmValidation" triggerSelector="#jobmemberSaveAndNew, #jobmemberSave"
+			warnType="insertAfter">
+			<validator selector="#jm_memberText" method="required"></validator>
+		</validation>
+
+		<ajaxRequest name="ajaxJobmemberSave" selector="#jobmemberFormEditor, #__job_detail_form"
+			handleClass="net.simpleframework.organization.web.JobAction" handleMethod="jobMemberSave">
+			<jsCompleteCallback>
+        <![CDATA[
+          if (json["next"])
+            $("jobmemberFormEditor").reset();
+          else
+            $Actions["jobmemberWindow"].close();
+          $Actions["ajaxJobDetail"]();
+        ]]>
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<userSelect name="jm_userSelect" bindingId="jm_memberId" bindingText="jm_memberText" />
+
+		<jobSelect name="jm_jobSelect" bindingId="jm_memberId" bindingText="jm_memberText"></jobSelect>
+	</components>
+</page>

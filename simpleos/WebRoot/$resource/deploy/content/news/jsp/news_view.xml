@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import
+		net.simpleframework.web.page.component.ComponentParameter;
+		import
+		net.simpleframework.content.news.NewsUtils;
+		import
+		net.simpleframework.content.component.newspager.INewsPagerHandle;
+		import net.simpleframework.content.component.newspager.NewsPagerUtils;
+		import
+		net.simpleframework.my.file.component.fileselect.FileSelectUtils;
+
+		ComponentParameter nComponentParameter =
+		ComponentParameter.get(pageParameter,
+		NewsUtils.applicationModule.getComponentBean(pageParameter));
+		INewsPagerHandle nHandle = nComponentParameter.getComponentHandle();
+	</scriptInit>
+	<importPage>
+		<value>${NewsPagerUtils.xmlNewsTemplate()}</value>
+		<value>${FileSelectUtils.xmlDownload()}</value>
+	</importPage>
+	<handleClass>
+		net.simpleframework.content.component.newspager.NewsViewPageLoad
+	</handleClass>
+	<components>
+		<remark name="newsRemark" containerId="idNewsRemark"
+			showValidateCode="false" showHigh="false"
+			handleClass="${nHandle.getRemarkHandleClass(nComponentParameter)}" />
+	</components>
+</page>

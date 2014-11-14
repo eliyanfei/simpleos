@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.organization.OrgUtils;
+	</scriptInit>
+	<importCSS>
+		<value>${OrgUtils.getCssPath(pageParameter)}/login_win_redirect_page.css</value>
+	</importCSS>
+	<jobView>${net.simpleframework.organization.IJob.sj_anonymous}</jobView>
+
+	<components>
+		<login name="idLoginRedirect" containerId="idLoginRedirect">
+			<loginCallback>
+				<![CDATA[
+					if (json["ok"]) { 
+						$Actions["loginRedirectWindow"].close();
+						$eval(__login_callback);
+					}
+					return json["ok"];
+				]]>
+			</loginCallback>
+		</login>
+	</components>
+</page>

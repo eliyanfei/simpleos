@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+
+	<jobView>
+		${net.simpleframework.organization.IJob.sj_account_normal}
+	</jobView>
+
+	<components>
+		<ajaxRequest name="ajaxUserAccountBindingPage"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="accountBindingUrl" />
+		<window name="userAccountBindingWindow" contentRef="ajaxUserAccountBindingPage"
+			width="360" height="240" title="#(up_pager.7)">
+		</window>
+	</components>
+</page>

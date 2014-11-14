@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<tablePager name="downListPaperAct" containerId="downListId"
+			exportAction="false" pageItems="30" showEditPageItems="false"
+			showLineNo="true" showVerticalLine="true" showCheckbox="false"
+			pagerBarLayout="bottom" handleClass="net.itsite.document.docu.DocuDownTablePaperHandle">
+			<columns>
+				<column columnText="#(Docu.all.down.0)" columnName="title"
+					columnSqlName="docuId"></column>
+				<column columnText="#(Docu.all.down.2)" columnName="downDate"
+					separator="true" width="130"></column>
+			</columns>
+		</tablePager>
+	</components>
+</page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	
+	<components>
+		<ajaxRequest name="ajaxDownloadFile"
+			handleClass="net.simpleframework.content.component.filepager.FilePagerAction"
+			handleMethod="downloadFile">
+			<jsCompleteCallback>
+				if (json["dl"]) {
+					$Actions.loc(json["dl"]);
+				}
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

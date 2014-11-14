@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+
+	<components>
+		<propEditor name="userRegisterOptionEditor" containerId="userRegisterOptionEditor">
+			<field label="#(layout_option.0)">
+				<component type="text" name="_user_r_rows" />
+			</field>
+			<field label="头像大小">
+				<component type="text" name="_user_r_size" />
+			</field>
+		</propEditor>
+	</components>
+</page>

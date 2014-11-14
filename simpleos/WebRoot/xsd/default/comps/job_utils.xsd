@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:attributeGroup name="job_edit">
+		<xsd:attribute name="jobAdd" type="xsd:string" />
+		<xsd:attribute name="jobEdit" type="xsd:string" />
+		<xsd:attribute name="jobDelete" type="xsd:string" />
+		<xsd:attribute name="jobExchange" type="xsd:string" />
+	</xsd:attributeGroup>
+
+	<xsd:attributeGroup name="job_view">
+		<xsd:attribute name="jobView" type="xsd:string" />
+	</xsd:attributeGroup>
+</xsd:schema>

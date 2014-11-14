@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<ajaxRequest name="ajaxBbsCatalogManager">
+			<urlForward>bbs_forum_admin.jsp</urlForward>
+		</ajaxRequest>
+		<window name="bbsCatalogManagerWindow" contentRef="ajaxBbsCatalogManager"
+			title="#(bbs_manager_tools.1)" width="340" height="420">
+		</window>
+
+		<ajaxRequest name="ajaxBbsStatRebuild"
+			handleClass="net.simpleframework.content.bbs.BbsAction" handleMethod="statRebuild"
+			confirmMessage="#(bbs_manager_tools.2)">
+			<jsCompleteCallback>
+				if (json["info"])
+				$("span_ajaxBbsStatRebuild").innerHTML = json["info"];
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxBbsIndexRebuild"
+			handleClass="net.simpleframework.content.bbs.BbsAction" handleMethod="indexRebuild"
+			confirmMessage="#(manager_tools.5)">
+			<jsCompleteCallback>
+				if (json["info"])
+				$("span_ajaxBbsIndexRebuild").innerHTML = json["info"];
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

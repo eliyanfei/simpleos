@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.component.newspager.NewsPagerUtils
+	</scriptInit>
+	<importCSS>
+		<value>
+			${NewsPagerUtils.getCssPath(pageParameter)}/np_edit.css
+		</value>
+	</importCSS>
+	<handleClass>net.prj.manager.links.PrjLinksPageLoad</handleClass>
+	<handleMethod>linksLoad</handleMethod>
+	<components>
+		<colorpalette name="palette2" runImmediately="false">
+			<changeCallback><![CDATA[
+				$('l_color_').style.backgroundColor = '#'+value;
+				$('l_color').value = '#'+value;
+			]]></changeCallback>
+		</colorpalette>
+		<window name="paletteWin" contentRef="palette2" popup="true"
+			width="460" height="340"></window>
+		<ajaxRequest name="linksSave" handleClass="net.prj.manager.links.PrjLinksAction"
+			handleMethod="linksSave" selector="#linksForm">
+			<jsCompleteCallback>
+				<![CDATA[
+					if (json["act"] == "true") {
+				 		$IT.C('linksAddWin');
+				 		$IT.R('linksTable');
+				 	}else{
+				 		$IT.alert('#(Save.OK)');
+				 	}
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<validation name="validation1" triggerSelector="#validBtn"
+			warnType="insertAfter">
+			<validator selector="#l_title,#l_url" method="required"></validator>
+			<validator selector="#l_url" method="url"></validator>
+		</validation>
+	</components>
+</page>

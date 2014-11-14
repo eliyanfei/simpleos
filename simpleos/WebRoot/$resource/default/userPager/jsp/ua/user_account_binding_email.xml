@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<validateCode name="bindingMailValidateCode" containerId="bindingMailValidateCode"
+			textName="textBindingMailValidateCode" />
+			
+		<validation name="sendBindingMailValidation" triggerSelector="#btnSendBindingMail"
+			warnType="insertAfter">
+			<validator selector="#textSendBindingMail, #textBindingMailValidateCode"
+				method="required" />
+			<validator selector="#textSendBindingMail" method="email" />
+		</validation>
+
+		<ajaxRequest name="ajaxSendBindingMail" 
+			handleClass="net.simpleframework.organization.component.userpager.UserUtilsAction"
+			handleMethod="sendBindingMail">
+			<jsCompleteCallback>
+        <![CDATA[
+          Validation.clearInsert("textBindingMailValidateCode");
+          if (json["validateCode"]) {
+            Validation.insertAfter("textBindingMailValidateCode", json["validateCode"]);
+          } else {
+            $("textBindingMailValidateCode").clear();
+            if (json["send"]) {
+              Validation.insertAfter("btnSendBindingMail", json["send"]);
+            }
+          }           
+        ]]>
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="bindingMailValidation" triggerSelector="#btnBindingMail"
+			warnType="insertAfter">
+			<validator selector="#textBindingMailCode" method="required" />
+		</validation>
+
+		<ajaxRequest name="ajaxBindingMail" 
+			handleClass="net.simpleframework.organization.component.userpager.UserUtilsAction"
+			handleMethod="bindingMail">
+			<jsCompleteCallback>
+        <![CDATA[
+          Validation.clearInsert("textBindingMailCode");
+          if (json["bindingMailCode"]) {
+            Validation.insertAfter("textBindingMailCode", json["bindingMailCode"]);
+          } else {
+            __user_account_mail_callback(true);
+            alert($MessageConst["SaveOK"]);
+          }
+        ]]>
+      </jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

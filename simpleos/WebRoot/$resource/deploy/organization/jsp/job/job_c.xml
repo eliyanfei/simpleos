@@ -1,0 +1,44 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<catalog name="__jobTree" containerId="__job_tree_c" cookies="false"
+			rootText="#(job_c.1)" handleClass="net.simpleframework.organization.web.JobTreeHandle" />
+
+		<!-- job detail -->
+		<ajaxRequest name="ajaxJobDetail" updateContainerId="__job_detail"
+			selector="#__job_detail_form">
+			<urlForward>job_detail.jsp</urlForward>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxJobTypeSave"
+			handleClass="net.simpleframework.organization.web.JobAction"
+			handleMethod="jobTypeSave" selector="#__job_detail_form, #__job_detail_form2">
+			<jsCompleteCallback>
+				alert($MessageConst["SaveOK"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxJobMemberEdit"
+			handleClass="net.simpleframework.organization.web.JobAction"
+			handleMethod="memberEditUrl">
+		</ajaxRequest>
+		<window name="jobmemberWindow" contentRef="ajaxJobMemberEdit"
+			width="340" height="320" title="#(job_c.2)">
+		</window>
+
+		<ajaxRequest name="ajaxJobmemberDelete" confirmMessage="#(Confirm.Delete)"
+			selector="#__job_detail_form" handleClass="net.simpleframework.organization.web.JobAction"
+			handleMethod="jobMemberDelete">
+			<jsCompleteCallback>
+				$Actions["ajaxJobDetail"]();
+      </jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="ajaxJobmemberUpdate" selector="#__job_detail_form"
+			handleClass="net.simpleframework.organization.web.JobAction"
+			handleMethod="jobMemberUpdate">
+			<jsCompleteCallback>
+				$Actions["ajaxJobDetail"]();
+      </jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

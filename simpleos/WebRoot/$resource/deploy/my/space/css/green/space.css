@@ -1,0 +1,224 @@
+.space_user_layout .f2 {
+	text-align: center;
+	border-bottom: 3px double #ddd;
+	padding-bottom: 2px;
+	margin-bottom: 6px;
+}
+
+.space_user_layout .attention {
+	border-top: 3px double #ddd;
+	border-bottom: 3px double #ddd;
+	margin: 2px 0;
+}
+
+.space_user_layout .attention .lbl {
+	border-right: 1px solid #aaa;
+	font-size: 14px;
+}
+
+.space_user_layout .attention .lbl2 {
+	font-size: 14px;
+}
+
+.space_user_layout .attention .lbl span,.space_user_layout .attention .lbl2 span
+	{
+	display: block;
+	padding-top: 2px;
+}
+
+.space_user_layout .attr {
+	padding-top: 6px;
+}
+
+.space_user_layout .edit_btn {
+	text-align: right;
+	margin-top: 6px;
+}
+
+.space_account_log_layout {
+	color: #222;
+	margin: 8px 0;
+	padding-bottom: 4px;
+	border-bottom: 3px double #ccc;
+	font-size: 9.5pt;
+	color: #24698F;
+}
+
+.space_tabs_content {
+	min-height: 400px;
+	padding: 8px !important;
+}
+
+.space_content_item {
+	border-bottom: 1px dashed #ccc;
+	padding-top: 3px;
+	padding-bottom: 6px;
+}
+
+.space_content_item:hover {
+	background-color: #f8f8f8;
+	-moz-transition: background-color .3s;
+	-webkit-transition: background-color .3s;
+	transition: background-color .3s;
+}
+
+.space_content_item .c {
+	font-size: 9.5pt;
+	line-height: normal;
+}
+
+.space_content_item .image {
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	box-shadow: 0 0 5px #ccc;
+	-webkit-box-shadow: 0 0 5px #ccc;
+	-moz-box-shadow: 0 0 5px #ccc;
+	padding: 3px;
+	text-align: center;
+	min-height: 40px;
+	border: 3px solid #ccc;
+	margin-top: 4px;
+	overflow-x: auto;
+	background: #fff url("images/loading.gif") center center no-repeat;
+}
+
+.space_content_item .image img {
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.space_log_editor .simple_toolbar1 {
+	margin: 0;
+	border: 5px solid #249e3a;
+	background: none;
+}
+
+.space_log_editor textarea {
+	width: 100%;
+	border: 0;
+	background: none;
+	font-size: 14px;
+}
+
+.space_log_editor .btn {
+	border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	box-shadow: 3px 3px 3px #aaa;
+	-webkit-box-shadow: 3px 3px 3px #aaa;
+	-moz-box-shadow: 3px 3px 3px #aaa;
+	margin-right: 8px;
+	display: inline-block;
+	height: 25px;
+	line-height: 22px;
+	text-align: center;
+	width: 80px;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+	background: #249e3a;
+	cursor: pointer;
+}
+
+.space_log_editor .btn:hover {
+	font-weight: bold;
+}
+
+.space_log_editor .ins {
+	background: #d2fbd9;
+	height: 18px;
+	padding: 2px;
+	margin-left: 8px;
+}
+
+.space_log_editor .ins a {
+	display: inline-block;
+	margin: 0 4px;
+	padding-left: 18px;
+}
+
+.space_log_editor .ins .square {
+	background: url('images/square.png') 0 center no-repeat;
+}
+
+.space_log_editor .ins .square:HOVER {
+	background: url('images/square_hover.png') 0 center no-repeat;
+}
+
+.space_log_editor .ins .squareactive {
+	background: url('images/square_hover.png') 0 center no-repeat;
+}
+
+.space_log_editor .ins .emotion {
+	background: url('images/emotion.gif') 0 center no-repeat;
+}
+
+.space_log_editor .ins .img {
+	background: url('images/img.gif') 0 center no-repeat;
+}
+
+.space_log_editor .ins .vote {
+	background: url('images/vote.gif') 0 center no-repeat;
+}
+
+.space_log_editor .ins .os {
+	background: url('images/square.png') 0 center no-repeat;
+}
+
+#__my_space_log_pager .pager_top_block {
+	padding-bottom: 6px;
+	margin-bottom: 0;
+	border-bottom: 1px dashed #ccc;
+}
+
+#__my_space_log_pager .pager_title a {
+	font-size: 9.5pt;
+}
+
+.space_log_remark .ta {
+	border: 1px solid #ccc;
+	padding: 3px;
+	background: #fff;
+}
+
+.space_log_remark .ta textarea {
+	border: 0 !important;
+	background: #fff !important;
+	width: 100%;
+}
+
+.space_log_remark .btn {
+	margin: 4px 0 8px 0;
+	text-align: right;
+}
+
+.space_remark_item {
+	border-top: 1px dashed #ccc;
+	padding: 4px 2px;
+}
+
+.space_remark_item:hover {
+	background-color: #f9f9f9;
+}
+
+.space_log_remark_top {
+	background: url(images/top_p.png) no-repeat;
+	height: 9px;
+}
+
+.space_img_list {
+	padding: 8px 2px;
+	border-bottom: 1px dashed #ccc;
+}
+
+.space_img_list:hover {
+	background: #f9f9f9;
+}
+
+.signature {
+	border-bottom: 3px double rgb(221, 221, 221);
+	min-height: 64px;
+	color: rgb(36, 105, 143);
+	background: url(images/signature.png) no-repeat left bottom;
+}

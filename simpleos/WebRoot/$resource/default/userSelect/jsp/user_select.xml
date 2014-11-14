@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<userPager name="userSelectPager" indexPages="4" pageItems="8" 
+			pagerBarLayout="bottom"
+			handleClass="net.simpleframework.organization.component.userselect.UserSelectPagerHandle"
+			exportAction="false" showEditPageItems="false">
+			<jsLoadedCallback>
+				__user_select_pager_loaded();
+			</jsLoadedCallback>
+		</userPager>
+
+		<deptSelect name="deptSelectDict"
+			handleClass="net.simpleframework.organization.component.userselect.UserDeptSelect"
+			clearAction="false">
+			<jsSelectCallback>
+				return __dept_select_dict_callback(selects);
+			</jsSelectCallback>
+		</deptSelect>
+	</components>
+</page>

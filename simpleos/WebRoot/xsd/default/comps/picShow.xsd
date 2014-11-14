@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="picShow">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="picItem" minOccurs="0"
+					maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="jsClickCallBack" minOccurs="0"
+								maxOccurs="1" type="xsd:string" />
+							<xsd:element name="desc" minOccurs="0"
+								maxOccurs="2" type="xsd:string" />
+						</xsd:sequence>
+						<xsd:attribute name="title" type="xsd:string" />
+						<xsd:attribute name="id" type="xsd:string" />
+						<xsd:attribute name="date" type="xsd:string" />
+						<xsd:attribute name="img_x" type="xsd:string" />
+						<xsd:attribute name="img_x50" type="xsd:string" />
+						<xsd:attribute name="img_x160"
+							type="xsd:string" />
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="container" />
+			<xsd:attribute name="arg" type="xsd:string" />
+			<xsd:attribute name="path" type="xsd:string" />
+			<xsd:attribute name="showTop" type="xsd:boolean"  default="true"/>
+			<xsd:attribute name="showCenter" type="xsd:boolean"  default="true"/>
+			<xsd:attribute name="showbottom" type="xsd:boolean"  default="true"/>
+			<xsd:attribute name="show" type="xsd:boolean"
+				default="false" />
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

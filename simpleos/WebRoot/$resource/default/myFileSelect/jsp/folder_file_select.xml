@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.component.catalog.CatalogUtils;
+	</scriptInit>
+	<importPage>
+		<value>__dl.xml</value>
+	</importPage>
+
+	<components>
+		<tree name="__my_folder_select_tree" handleClass="net.simpleframework.my.file.component.fileselect.FolderSelectTree"></tree>
+		<dictionary name="__my_folder_select__dict" title="#(My.folder_file_select.1)">
+			<tree ref="__my_folder_select_tree" />
+			<jsSelectCallback>
+				$Actions["__my_folderfile_select"]("${CatalogUtils.CATALOG_ID}=" + selects[0].id);
+				return true;
+			</jsSelectCallback>
+		</dictionary>
+	</components>
+</page>

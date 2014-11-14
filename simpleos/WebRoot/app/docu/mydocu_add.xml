@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>/simple/template/c.xml</value>
+	</importPage>
+	<handleClass>net.itsite.document.docu.DocuPageLoad</handleClass>
+	<handleMethod>docuLoad</handleMethod>
+	<components>
+		<ajaxRequest name="docuEditSaveAct"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuEditSave"
+			selector="#docuForm" confirmMessage="#(Docu.add.5)">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.R('allDocuListTableAct');
+					$IT.R('allDocuListTableNonAct');
+					$IT.R('myDocuListTableNonAct');
+					$IT.R('myDocuListTableAct');
+					$IT.C('myDocuAddWindowAct');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="__docuAddBtnAct" triggerSelector="#__docuAddBtn"
+			warnType="insertAfter">
+			<validator selector="#docu_title, #docu_catalog, #docu_function"
+				method="required" />
+		</validation>
+
+		<tree name="docuCatalogTreeAct" handleClass="net.itsite.document.docu.DocuCatalogAddTreeHandle" />
+		<dictionary name="docuCatalogAct" width="320" height="350"
+			bindingText="docu_catalog_text" bindingId="docu_catalog" title="#(Docu.add.6)">
+			<tree ref="docuCatalogTreeAct" />
+			<jsSelectCallback>
+				<![CDATA[
+					var id = '';
+					var cId = '';
+					for(var i=0;i<selects.length;i++){
+						var txtArr = selects[i].id.split('|');
+						$('docu_catalog').value = txtArr[1];
+						$('docu_catalog_text').value = txtArr[0];
+						break;
+					}
+					return true;
+				]]>
+			</jsSelectCallback>
+		</dictionary>
+	</components>
+</page>

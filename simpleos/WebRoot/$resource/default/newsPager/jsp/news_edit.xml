@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>
+		net.simpleframework.content.component.newspager.NewsEditPageLoad
+	</handleClass>
+	<handleMethod>news2Loaded</handleMethod>
+
+	<components>
+		<ajaxRequest name="ajaxNewsSave"
+			handleClass="net.simpleframework.content.component.newspager.NewsPagerAction"
+			handleMethod="npSave2">
+			<jsCompleteCallback>
+				$Actions["newsEditWindow2"].close();
+				$eval(json["jsCallback"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

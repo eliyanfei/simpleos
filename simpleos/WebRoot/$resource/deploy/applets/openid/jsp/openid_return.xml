@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxOpenidAttriSave" selector=".openid_return .attri"
+			handleClass="net.simpleframework.applets.openid.OpenIDAction"
+			handleMethod="doSave">
+			<jsCompleteCallback>
+				if (json["url"])
+					$Actions.loc(json["url"]);
+				else 
+					alert("#(openid_return.5)");	
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="openIdValidation" triggerSelector="#oi_submit" warnType="insertAfter">
+			<validator selector="#oi_name, #oi_text, #oi_password" method="required" />
+			<validator selector="#oi_name" method="min_length" args="4" />
+			<validator selector="#oi_text" method="min_length" args="2" />
+		</validation>
+	</components>
+</page>

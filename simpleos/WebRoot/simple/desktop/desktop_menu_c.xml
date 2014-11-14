@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<catalog name="template_menu_catalog" containerId="template_menu_catalog" 
+			runImmediately="true" handleClass="net.prj.manager.menu.PrjMenuItemHandle"
+			rootText="#(Desktop.Menu.0)" />
+
+		<ajaxRequest name="ajax_sys_dict_item_c"
+			updateContainerId="__sys_dict_item_c">
+			<urlForward>dict_item_c.jsp</urlForward>
+		</ajaxRequest>
+	</components>
+</page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<submit name="model_upload_submit" formName="model_upload_form"
+			binary="true" jobExecute="sys_admin"
+			handleClass="net.simpleframework.workflow.web.component.modellist.ModelUploadAction">
+		</submit>
+
+		<validation name="model_upload_validation" triggerSelector="#ml_submit"
+			warnType="insertAfter">
+			<validator selector="#ml_upload" method="required" />
+			<validator selector="#ml_upload" method="file" args="xml"/>
+		</validation>
+	</components>
+</page>

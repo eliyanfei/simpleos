@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxTagsManagerPage" handleClass="net.simpleframework.applets.tag.TagAction"
+			handleMethod="tagsManagerUrl">
+		</ajaxRequest>
+		<window name="tagsManagerWindow" contentRef="ajaxTagsManagerPage" title="#(tags_layout.0)"
+			width="480" height="600">
+		</window>
+
+		<ajaxRequest name="ajaxTagsMorePage" includeRequestData="p">
+			<urlForward>tags_more.jsp</urlForward>
+		</ajaxRequest>
+		<window name="tagsMoreWindow" contentRef="ajaxTagsMorePage" popup="true" width="320"
+			height="420" title="#(tags_layout.2)">
+		</window>
+	</components>
+</page>

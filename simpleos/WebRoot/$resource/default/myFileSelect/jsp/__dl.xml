@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+
+	<components>
+		<filePager name="__my_folderfile_select"
+			handleClass="net.simpleframework.my.file.component.fileselect.SelectFilePagerHandle"
+			assertCatalogNull="false" pageItems="10"
+			jobView="${net.simpleframework.organization.IJob.sj_account_normal}">
+			<jsLoadedCallback>
+				__myfile_select_pager_loaded();
+			</jsLoadedCallback>
+		</filePager>
+
+		<ajaxRequest name="__my_folderfile_ajax_download"
+			handleClass="net.simpleframework.my.file.component.fileselect.FileSelectAction"
+			handleMethod="download">
+			<jsCompleteCallback><![CDATA[
+				var msg = json["confirm"];
+				if (msg && !confirm(msg)) {
+					return;
+				}
+				if (json["dl"]) {
+					if (json["updateAccount"])
+						$Actions["__my_folderfile_ajax_updateAccount"](json["updateAccount"]);
+					$Actions.loc(json["dl"]);
+				}
+			]]></jsCompleteCallback>
+		</ajaxRequest>
+		
+		<ajaxRequest name="__my_folderfile_ajax_updateAccount" 
+			handleClass="net.simpleframework.my.file.component.fileselect.FileSelectAction"
+			handleMethod="updateAccount">
+		</ajaxRequest>
+	</components>
+</page>

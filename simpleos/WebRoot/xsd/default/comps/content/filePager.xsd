@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../tablePager.xsd" />
+	<xsd:element name="filePager">
+		<xsd:complexType>
+			<xsd:group ref="pagerElements" />
+			<xsd:attributeGroup ref="tablePagerAttributes" />
+			<xsd:attribute name="fileSizeLimit" type="xsd:string" default="1MB" />
+			<xsd:attribute name="fileQueueLimit" type="xsd:string" default="5" />
+			<xsd:attribute name="jobDownload" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

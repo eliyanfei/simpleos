@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sql-script> 
+  <version>1.0.0</version>  
+  <name>script</name>  
+  <description>organization database script.</description>  
+  <tran-sql state="ignore"> 
+    <description/>  <![CDATA[
+      create table simple_account (
+        id bigint not null,
+        password varchar(32),
+        status tinyint not null,
+        createdate datetime not null,
+        lastlogindate datetime not null,
+        lastloginip varchar(24),
+        login bit not null,
+        logintimes int not null,
+        onlinemillis bigint not null,
+        mailbinding bit,
+        mobilebinding bit,
+        blacklist bit,
+        exp int,
+        points int,
+        reputation int,
+        money int,
+        skin varchar(16),
+        theme varchar(16),
+        primary key(id)
+      );
+    ]]> 
+  </tran-sql>  
+  <tran-sql state="ignore"> 
+    <description/>  <![CDATA[
+      create table simple_account_log (
+      	id bigint not null,
+      	accountid bigint not null,
+      	eventid varchar(32) not null,
+      	createdate datetime not null,
+      	exp int,
+        points int,
+        reputation int,
+        money int,
+        logid bigint,
+        description varchar(256),
+      	primary key(id)
+      );
+    ]]> 
+  </tran-sql>  
+  <tran-sql state="ignore"> 
+    <description/>  <![CDATA[
+      create table simple_account_view_log (
+        id bigint not null,
+      	accountid bigint not null,
+      	viewid bigint not null,
+      	vtype tinyint not null,
+      	createdate datetime not null,
+      	lastupdate datetime,
+      	unique (accountid, viewid, vtype),
+       	primary key(id)
+      );
+    ]]> 
+  </tran-sql>  
+  <tran-sql state="ignore"> 
+    <description/>  <![CDATA[
+	    create table simple_user (
+	      id bigint not null,
+        name varchar(32) not null,
+        departmentid int not null,
+	      text varchar(32),
+	      status tinyint not null,
+	      sex varchar(2),
+	      birthday date,
+	      blood varchar(8),
+	      hometown varchar(32),
+	      email varchar(32),
+	      homephone varchar(16),
+	      officephone varchar(16),
+	      mobile varchar(16),
+	      address varchar(256),
+	      postcode varchar(8),
+	      qq varchar(16), 
+	      msn varchar(16),
+	      description varchar(256),
+	      signature varchar(256),
+	      homepage varchar(128),
+	      oorder bigint not null,
+	      primary key(id),
+        unique (name),
+        unique (email),
+        unique (mobile)
+	    );
+    ]]> 
+  </tran-sql>  
+  <tran-sql state="ignore"> 
+    <description/>  <![CDATA[
+    	create table simple_user_lob (
+    		id bigint not null,
+    		photo longblob,
+    		primary key(id)
+    	);
+    ]]> 
+  </tran-sql>  
+  <tran-sql state="ignore"> 
+    <description/>  <![CDATA[
+    	create table simple_department (
+        id bigint not null,
+        parentid bigint not null,
+        name varchar(32) not null,
+        text varchar(32) not null, 
+        description varchar(256),
+        oorder bigint not null,
+        primary key(id),
+        unique (name),
+        unique (parentid, text)
+      );
+    ]]> 
+  </tran-sql>  
+  <tran-sql state="ignore"> 
+    <description/>  <![CDATA[
+      create table simple_chart (
+        id bigint not null,
+        departmentid bigint,
+        name varchar(32) not null,
+        text varchar(32) not null,
+        description varchar(256),
+        oorder bigint not null,
+        primary key(id),
+        unique (name),
+        unique (departmentid, text)
+      );
+    ]]> 
+  </tran-sql>  
+  <tran-sql state="ignore"> 
+    <description/>  <![CDATA[
+      create table simple_job (
+        id bigint not null,
+        jobchartid bigint not null,
+        parentid bigint not null,
+        name varchar(32) not null,
+        text varchar(32) not null,
+        jobtype tinyint not null,
+        rulehandle varchar(64),
+        rulescript text,
+        description varchar(256),
+        oorder bigint not null,
+        primary key(id),
+        unique (name),
+        unique (jobchartid, text)
+      );
+    ]]> 
+  </tran-sql>  
+  <tran-sql state="ignore"> 
+    <description/>  <![CDATA[
+      create table simple_job_member (
+        jobid bigint not null,
+        membertype tinyint not null,
+        memberid bigint not null,
+        primaryjob bit not null,
+        description varchar(256),
+        unique (jobid, membertype, memberid)
+      );
+    ]]> 
+  </tran-sql> 
+</sql-script>

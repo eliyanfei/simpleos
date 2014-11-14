@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<portal name="desktop_index_act" autoPagelet="rss" containerId="desktop_index_id"
+			jobManager="${net.simpleframework.organization.IJob.sj_manager}"
+			draggable="true" showMenu="false">
+			<column width="70%">
+				<pagelet align="left" height="0" module="news" sync="false">
+					<title />
+					<options><![CDATA[#Tue Dec 24 17:32:20 CST 2013
+_news_rows=9
+_news_image_dimension=400*280
+_news_dateFormat=
+_show_tabs=true
+_news_time=0
+_news_order=0
+_news_descLength=0
+_news_type=0
+_news_catalog=
+]]></options>
+				</pagelet>
+				<pagelet align="left" height="0" module="bbs" sync="false">
+					<title />
+					<options><![CDATA[#Tue Dec 24 17:32:20 CST 2013
+_bbs_star=false
+_show_tabs=true
+_bbs_type=0
+_bbs_rows=9
+_bbs_order=0
+_bbs_dateFormat=
+_bbs_time=0
+_bbs_forum=
+_bbs_descLength=0
+]]></options>
+				</pagelet>
+			</column>
+			<column width="30%">
+				<pagelet align="left" height="0" module="docu" sync="false">
+					<title />
+					<options><![CDATA[#Tue Dec 24 17:32:20 CST 2013
+_docu_order=0
+_show_tabs=true
+_docu_rows=9
+]]></options>
+				</pagelet>
+				<pagelet align="left" height="0" module="rss" sync="false">
+					<title link="http://roll.news.sina.com.cn/s/" value="新闻要闻-新浪新闻" />
+					<options><![CDATA[#Tue Dec 24 17:32:20 CST 2013
+_rss_tip=true
+_rss_url=http\://rss.sina.com.cn/news/marquee/ddt.xml
+_rss_times=0
+_rss_rows=9
+]]></options>
+				</pagelet>
+			</column>
+		</portal>
+	</components>
+</page>

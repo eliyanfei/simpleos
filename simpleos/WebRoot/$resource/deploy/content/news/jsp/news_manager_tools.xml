@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<components>
+		<ajaxRequest name="newsCatalogAjaxAct">
+			<urlForward>news_catalog.jsp</urlForward>
+		</ajaxRequest>
+		<window name="newsCatalogWindowAct" contentRef="newsCatalogAjaxAct"
+			title="目录管理" width="340" height="420">
+		</window>
+		<ajaxRequest name="ajaxNewsStatRebuild"
+			handleClass="net.simpleframework.content.news.NewsAction"
+			handleMethod="statRebuild" confirmMessage="#(manager_tools.1)">
+			<jsCompleteCallback>
+				if (json["info"])
+				$("span_ajaxNewsStatRebuild").innerHTML = json["info"];
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxNewsIndexRebuild"
+			handleClass="net.simpleframework.content.news.NewsAction"
+			handleMethod="indexRebuild" confirmMessage="#(manager_tools.5)">
+			<jsCompleteCallback>
+				if (json["info"])
+				$("span_ajaxNewsIndexRebuild").innerHTML = json["info"];
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

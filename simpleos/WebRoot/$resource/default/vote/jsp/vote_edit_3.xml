@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>net.simpleframework.content.component.vote.VoteEditPageLoad</handleClass>
+	<handleMethod>ve3Loaded</handleMethod>
+
+	<components>
+		<propEditor name="ve3FormEditor" containerId="ve3FormEditor">
+			<field label="#(vote_edit_1.0)">
+				<component name="ve3_text" type="textarea" attributes="rows:6" />
+				<component type="div" defaultValue="#(vote_edit_3.0)" style="margin-top: 2px; color: red;"/>
+			</field>
+		</propEditor>
+
+		<validation name="ve3FormValidation" warnType="insertAfter" triggerSelector="#ve3Save">
+			<validator selector="#ve3_text" method="required"></validator>
+		</validation>
+
+		<ajaxRequest name="ajaxVe3Save"
+			handleClass="net.simpleframework.content.component.vote.VoteAction" 
+			handleMethod="itemSave">
+			<jsCompleteCallback>
+        <![CDATA[
+          $Actions["voteEdit3Window"].close();
+          __vote_item_refresh();
+        ]]>
+      </jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

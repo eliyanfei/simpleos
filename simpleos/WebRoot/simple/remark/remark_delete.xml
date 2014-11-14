@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<jobView>sys_account_normal</jobView>
+	<components>
+		<ajaxRequest name="remarkDeleteAct" selector="#rForm"
+			handleClass="net.prj.mvc.remark.RemarkAction" handleMethod="remarkDelete">
+			<jsCompleteCallback>
+					<![CDATA[
+						$IT.C('remarkWindowAct');
+						if(json['action'])
+							$IT.R(json['action']);
+					]]>
+				</jsCompleteCallback>
+		</ajaxRequest>
+		<validation name="__complaintAct" triggerSelector="#rdBtn"
+			warnType="insertAfter">
+			<validator selector="#rd_content" method="required" />
+		</validation>
+	</components>
+</page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<handleClass>net.simpleframework.applets.tag.TagEditPageLoad</handleClass>
+	<handleMethod>optionLoad</handleMethod>
+	
+	<components>
+		<ajaxRequest name="ajaxTagOptionsSave" handleClass="net.simpleframework.applets.tag.TagAction"
+			handleMethod="tagOptionSave" selector=".tags_option">
+			<jsCompleteCallback>
+				$Actions["_tagOptionsWindow"].close();
+				$Actions["_tagsTablePager"].refresh();
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

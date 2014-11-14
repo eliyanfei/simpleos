@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxSentMailOK"
+			confirmMessage="#(User.sent_mail.2)"
+			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
+			handleMethod="sentMail">
+			<jsCompleteCallback>
+				alert(json["info"]);
+				$Actions["userSentMailWindow"].close();
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<htmlEditor name="sentMailHtmlEditor" textarea="textareaSentMailHtmlEditor"
+			toolbar="Simple" height="240">
+		</htmlEditor>
+
+		<validation name="validationSentMail" triggerSelector="#buttonSentMail">
+			<validator selector="#sentMailTopic" method="required" warnType="insertAfter" />
+			<validator selector="#textareaSentMailHtmlEditor" method="required" />
+		</validation>
+	</components>
+</page>

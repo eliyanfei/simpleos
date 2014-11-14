@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.sysmgr.dict.DictUtils;
+	</scriptInit>
+	<importPage>
+		<value>/simple/include/c.xml</value>
+		<value>${DictUtils.deployPath}jsp/dict_item.xml</value>
+		<value>${DictUtils.deployPath}jsp/dict_type.xml</value>
+	</importPage>
+	<jobView>
+		${net.simpleframework.organization.IJob.sj_manager}
+  </jobView>
+</page>

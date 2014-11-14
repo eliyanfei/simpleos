@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+    import net.simpleframework.sysmgr.dict.DictUtils;
+  </scriptInit>
+	<importCSS>
+		<value>${DictUtils.getCssPath(pageParameter)}/sys_dict.css</value>
+	</importCSS>
+	
+	<components>
+		<catalog name="__sys_dict_type" containerId="__sys_dict_type"
+			handleClass="net.simpleframework.sysmgr.dict.DictTypeHandle" 
+			rootText="#(dict_type.0)"/>
+	</components>
+</page>

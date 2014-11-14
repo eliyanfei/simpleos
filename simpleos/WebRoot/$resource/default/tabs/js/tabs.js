@@ -1,0 +1,7 @@
+$Comp.Tabs=Class.create({initialize:function(b,a,c){this.tabs=[];this.options=Object.extend({activeIndex:0},c);b=$(b);b.setDimensions(this.options);b.update(this.element=new Element("div",{className:"tabs"}));
+var e=new Element("ul",{className:"simple_tabs"});this.element.insert(e);this.content=new Element("div",{className:"simple_tabs_content"});this.element.insert(this.content);var d=0;$A(a||[]).each(function(i){var g=$Comp.createLink(i.title,null,function(j){if(this.current!=h){this.active(h.index)
+}}.bind(this));var f=new Element("li").insert(g);e.insert(f);var h={data:i,li:f,index:d++};this.tabs.push(h)}.bind(this));this.active(this.options.activeIndex)},active:function(d){if(this.tabs.length==0||this.doingActive){return
+}this.doingActive=true;var b=function(a){return a.li.down()};var g=this.content.identify()+"_";var c=this.current;var e;if(c){b(c).removeClassName("active");e=this.content.down("#"+g+c.index);if(e){if(c.data.cache){e.hide()
+}else{e.remove()}}}var f=this.current=this.tabs[d];b(f).addClassName("active");e=this.content.down("#"+g+d);var h=!e;if(h){e=new Element("div",{id:g+d}).update(f.data.content?f.data.content:"&nbsp;");if(f.data.contentStyle){e.setStyle(f.data.contentStyle)
+}e.hide();this.content.insert(e);if(f.data.onContentLoaded){$eval(f.data.onContentLoaded)}}if(f.data.contentRef&&h){$Actions.callSafely(f.data.contentRef,this.options.parameters,function(a){a.container=e
+})}e.$show({effects:this.options.effects,afterFinish:function(a){if(f.data.onActive){$eval(f.data.onActive)}this.doingActive=false}.bind(this)})}});

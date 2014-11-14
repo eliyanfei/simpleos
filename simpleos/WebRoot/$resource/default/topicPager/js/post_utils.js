@@ -1,0 +1,7 @@
+var POST_UTILS={alluser:function(a){if(this.viewUrl.length>0){$Actions.loc(this.viewUrl)}else{$Actions.__pager_postsId.refresh(this._user_params())}},onlyuser:function(a){if(this.viewUrl.length>0){$Actions.loc(this.viewUrl.addParameter(this._user_params(a)))
+}else{$Actions.__pager_postsId.refresh(this._user_params(a))}},user_stat:function(a){$Actions.userAccountStatWindow(this._user_params(a))},move:function(c,a){c=$target(c).up("table");var d=c.id.substring(4);
+c=c.up(".postbody");c=a?c.previous(".postbody"):c.next(".postbody");if(c){var b=c.down("table").id.substring(4);$Actions.ajaxPostMove("up="+a+"&postId="+d+"&postId2="+b)}},move2:function(c,a){c=$target(c).up("table");
+var d=c.id.substring(4);c=c.up(".cl");var b=$F(a?c.down("#firstPost"):c.down("#lastPost"));if(b!=""){$Actions.ajaxPostMove("up="+a+"&postId="+d+"&postId2="+b)}},del:function(a){$Actions.ajaxPostDelete(this._params(a))
+},listMy:function(a){$Actions.loc(this.topicUrl.addParameter(this._user_params(a)))},listMy2:function(a){$Actions.loc(this.topicUrl.addParameter(this._user_params(a)+"&r=true"))},blog:function(a){$Actions.loc($F($target(a).next()))
+},addFriend:function(a){$Actions.addMyFriendWindow(this._user_params(a))},_params:function(a){return"postId="+$target(a).up("table").id.substring(4)},_user_params:function(b){var a=this.userIdParameterName+"=";
+if(b){a+=$target(b).getAttribute("userId")}return a}};

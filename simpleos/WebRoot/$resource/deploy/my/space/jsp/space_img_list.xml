@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxSpaceImgDelete" handleClass="net.simpleframework.my.space.SapceAction"
+			handleMethod="imgDelete">
+			<jsCompleteCallback>
+				if (json["result"]) {
+					var trigger = $Actions["ajaxSpaceImgDelete"].trigger;
+					if (trigger) {
+						trigger.up(".space_img_list").$remove();
+					}
+				}						
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

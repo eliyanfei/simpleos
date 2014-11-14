@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptInit>
+		import net.simpleframework.organization.component.userpager.UserPagerUtils;
+	</scriptInit>
+	<importPage>
+		<value>${UserPagerUtils.xmlUserutils()}</value>
+	</importPage>
+	<components>
+		<pager name="idMyFriendsPager" containerId="idMyFriendsPager"
+			handleClass="net.simpleframework.my.friends.FriendsPagerHandle" dataPath="my_friends_pager.jsp"
+			pageItems="20">
+			<jsLoadedCallback>
+				$Comp.initDragDrop("idMyFriendsPager", "tafelTreeselected", 
+					function(a) {
+						return $MessageConst["Table.Draggable.0"]
+							+ __my_friends_checkArr(a).length
+							+ $MessageConst["Table.Draggable.1"]
+					});
+			</jsLoadedCallback>
+		</pager>
+
+		<ajaxRequest name="ajaxDeleteMyFriend" handleClass="net.simpleframework.my.friends.FriendsAction"
+			handleMethod="deleteFriend" confirmMessage="#(Confirm.Delete)">
+			<jsCompleteCallback>
+				$Actions["idMyFriendsPager"]();
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

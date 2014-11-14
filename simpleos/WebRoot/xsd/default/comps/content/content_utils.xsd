@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../base.xsd" />
+	<xsd:include schemaLocation="../job_utils.xsd" />
+	<xsd:attributeGroup name="content_utils">
+		<xsd:attribute name="documentId" type="xsd:string" />
+		<xsd:attributeGroup ref="job_edit" />
+		<xsd:attributeGroup ref="container" />
+	</xsd:attributeGroup>
+</xsd:schema>

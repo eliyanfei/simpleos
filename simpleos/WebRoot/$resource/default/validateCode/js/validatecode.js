@@ -1,0 +1,5 @@
+$Comp.ValidateCode=Class.create({initialize:function(b,d){this.options={path:"",trigger:null,textWidth:70};Object.extend(this.options,d||{});this.container=$(b);b.setDimensions(this.options);var h=new Element("tr");
+this.container.update($Comp.createTable());this.container.down("tbody").insert(h);var g=new Element("td",{width:this.options.textWidth+"px;"});var f=new Element("td");h.insert(g).insert(f);var e=new Element("input",{type:"text",style:"width:80%;"});
+var a=this.options.textName;if(a){e.writeAttribute("id",a);e.writeAttribute("name",a)}g.insert(e);var c=new Element("img",{src:this.options.path,className:"photo_icon"});f.insert(c);f.insert(new Element("div",{style:"padding-top: 3px;"}).insert($Comp.createLink($MessageConst["ValidateCode.0"],null,function(){this.refresh()
+}.bind(this))))},refresh:function(){var a;if(Browser.IE&&window.onbeforeunload){a=window.onbeforeunload;window.onbeforeunload=null;(function(){window.onbeforeunload=a}).delay(2)}this.container.down("img").src=this.options.path.addParameter("tmp="+(new Date().getTime().toString(36)));
+this.container.down("input").activate()}});

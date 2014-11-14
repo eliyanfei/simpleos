@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+  <components>
+    <pager name="vote_users_view" containerId="vote_users_view"
+      dataPath="vote_users_view_c.jsp"
+      handleClass="net.simpleframework.content.component.vote.VoteUsersViewPager"
+      pageItems="12">
+    </pager>
+
+    <ajaxRequest name="ajaxVoteUserDelete"
+      handleClass="net.simpleframework.content.component.vote.VoteAction"
+      handleMethod="userDelete" confirmMessage="#(Confirm.Delete)">
+      <jsCompleteCallback>
+        $Actions['vote_users_view'].refresh();
+      </jsCompleteCallback>
+    </ajaxRequest>
+  </components>
+</page>

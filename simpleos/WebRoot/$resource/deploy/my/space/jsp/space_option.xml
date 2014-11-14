@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+
+	<components>
+		<propEditor name="spaceOptionEditor" containerId="spaceOptionEditor">
+			<field label="#(layout_option.0)">
+				<component type="text" name="_space_rows" />
+			</field>
+		</propEditor>
+	</components>
+</page>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<ajaxRequest name="ajaxDoAddFriend" selector=".add_friend_request"
+			handleClass="net.simpleframework.my.friends.FriendsAction" handleMethod="addFriend">
+			<jsCompleteCallback>
+				if (json["error"]) {
+					alert(json["error"]);
+				} else {
+					alert(json["ok"]);
+					$Actions['addMyFriendWindow'].close();
+				}
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<tree name="friendsGroupTree" handleClass="net.simpleframework.my.friends.FriendsGroupDict"></tree>
+		<dictionary name="friendsGroupDict" title="#(friends_utils.1)">
+			<tree ref="friendsGroupTree" />
+			<jsSelectCallback><![CDATA[			
+				$("af_groupid").value = selects[0].id;
+				$("af_groupid_label").innerHTML = "<span style=\"vertical-align: middle; padding-right: 4px;\">" + 
+					selects[0].text + "</span>" + 
+					"<span class=\"delete_image\" onclick=\"$('af_groupid_label').innerHTML='';$('af_groupid').value='';\"></span>";	
+				return true;
+			]]></jsSelectCallback>
+		</dictionary>
+	</components>
+</page>

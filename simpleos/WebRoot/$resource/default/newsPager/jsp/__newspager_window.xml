@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.component.newspager.NewsPagerUtils;
+	</scriptInit>
+	<importCSS>
+		<value>${NewsPagerUtils.cssNpedit(pageParameter)}</value>
+	</importCSS>
+
+	<components>
+		<ajaxRequest name="ajaxAddNewspagerPage"
+			handleClass="net.simpleframework.content.component.newspager.NewsPagerAction"
+			handleMethod="editUrl">
+		</ajaxRequest>
+		<window name="addNewspagerWindow" contentRef="ajaxAddNewspagerPage" width="880"
+			height="650" title="#(np_edit.0)">
+			<jsHiddenCallback>
+				window.onbeforeunload = null;
+			</jsHiddenCallback>
+		</window>
+	</components>
+</page>

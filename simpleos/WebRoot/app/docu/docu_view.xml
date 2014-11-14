@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../../xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import
+		net.simpleframework.content.component.newspager.NewsPagerUtils;
+	</scriptInit>
+	<importPage>
+		<value>docu_bar.xml</value>
+		<value>/app/myfavorite/myfavorite_utils.xml</value>
+	</importPage>
+	<importCSS>
+		<value>${NewsPagerUtils.getCssPath(pageParameter)}/np_edit.css</value>
+	</importCSS>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<jobView>${net.simpleframework.organization.IJob.sj_anonymous}</jobView>
+	<components>
+		<ajaxRequest name="docuDownAjax">
+			<urlForward>docu_down.jsp</urlForward>
+		</ajaxRequest>
+		<window name="docuDownWindowAct" contentRef="docuDownAjax"
+			title="" width="480" height="340" resizable="false" />
+		<ajaxRequest name="ajaxAttentionUsersAct">
+			<urlForward>attention/attention_users.jsp</urlForward>
+		</ajaxRequest>
+		<window name="attentionUsersWindowAct" contentRef="ajaxAttentionUsersAct"
+			title="" width="420" height="380" />
+		<ajaxRequest name="ajaxDownUsersAct">
+			<urlForward>downuser/down_users.jsp</urlForward>
+		</ajaxRequest>
+		<window name="downUsersWindowAct" contentRef="ajaxDownUsersAct"
+			title="" width="420" height="380" />
+		<remark name="docuRemarkAct" containerId="docu_remark"
+			selector="#idNewsRemark" runImmediately="true" showValidateCode="false"
+			handleClass="net.itsite.document.docu.DocuRemarkHandle" />
+
+	</components>
+</page>

@@ -1,0 +1,12 @@
+
+.cke_top {
+	padding: 6px 5px 0 !important;
+}
+
+.cke_reset_all, .cke_reset_all * {
+	font-family: inherit !important;
+}
+
+.cke_reset_all a:hover {
+	text-decoration: none !important;
+}

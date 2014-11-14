@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+
+	<handleClass>
+		net.simpleframework.my.home.MyHomePageLoad
+	</handleClass>
+	<handleMethod>tabEdit</handleMethod>
+
+	<components>
+		<ajaxRequest name="ajaxAddMyhomeTab" 
+			handleClass="net.simpleframework.my.home.MyHomeAction"
+			handleMethod="addTab" selector="#homeAddTabForm"
+			jobExecute="${net.simpleframework.organization.IJob.sj_account_normal}">
+			<jsCompleteCallback>
+				$Actions["addMyhomeTabWin"].close();	
+				if (json["url"])
+					$Actions.loc(json["url"]);
+			</jsCompleteCallback>
+		</ajaxRequest>
+
+		<validation name="tab_saveValidation" triggerSelector="#tab_saveBtn"
+			warnType="insertAfter">
+			<validator selector="#tab_name" method="required"></validator>
+		</validation>
+	</components>
+</page>

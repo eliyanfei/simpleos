@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<tablePager name="downListPaperAct" containerId="downListId"
+			exportAction="false" pageItems="30" showEditPageItems="false"
+			showVerticalLine="true" pagerBarLayout="bottom"
+			handleClass="net.itsite.document.docu.DocuDownTablePaperHandle">
+			<columns>
+				<column columnText="#(Docu.all.down.0)" columnName="title" columnSqlName="docuId"
+					separator="true"></column>
+				<column columnText="#(Docu.all.down.1)" textAlign="center" columnName="userId"
+					filter="true" width="100" separator="true"></column>
+				<column columnText="IP" textAlign="center" columnName="ip"
+					filter="true" width="100" separator="true"></column>
+				<column columnText="#(Docu.all.down.2)" textAlign="center" columnName="ipName"
+					width="100" separator="true"></column>
+				<column columnText="#(Docu.all.down.3)" columnName="downDate" separator="true"
+					textAlign="center" width="120"></column>
+				<column columnName="action" sort="false" separator="true"
+					width="22" textAlign="center"
+					columnText='&lt;a class="downHeader down_menu_image"&gt;&lt;/a&gt;' />
+			</columns>
+			<!-- 绑定操作菜单 -->
+			<jsLoadedCallback>
+				<![CDATA[
+				var downBody = $Actions["downBodyMenu"]; 
+				if (downBody)
+					downBody.bindEvent(".downBody");
+				var downHeader = $Actions["downHeaderMenu"]; 
+				if (downHeader)
+					downHeader.bindEvent(".downHeader");
+             ]]>
+				</jsLoadedCallback>
+		</tablePager>
+		<menu name="downBodyMenu" menuEvent="click">
+			<menuitem title="#(Docu.all.down.4)" icon="#delete">
+				<jsSelectCallback>
+				<![CDATA[
+					var id = $Actions['downListPaperAct'].rowId(item);
+					$Actions['docuLogDeleteAct']('logIds='+id);
+				]]>
+			</jsSelectCallback>
+			</menuitem>
+		</menu>
+		<menu name="downHeaderMenu" selector=".downHeader" menuEvent="click">
+			<menuitem title="#(Docu.all.down.5)" icon="#delete">
+				<jsSelectCallback>
+					<![CDATA[
+					var id = "";
+					$$('#downListId .titem input[type=checkbox]').each(function (c) {
+						if (c.checked) {
+							var idc = $Actions['downListPaperAct'].rowId(c);
+							id += idc + ",";
+						}
+					});
+					if (id == "") {
+						alert("\u81f3\u5c11\u9009\u62e9\u4e00\u4e2a\u6761\u76ee");
+						return;
+					} else {
+						$Actions['docuLogDeleteAct']('logIds='+id);
+					}
+					]]>
+				</jsSelectCallback>
+			</menuitem>
+		</menu>
+		<ajaxRequest name="docuLogDeleteAct"
+			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuLogDelete"
+			confirmMessage="#(Docu.all.down.6)">
+			<jsCompleteCallback>
+				<![CDATA[
+					$IT.R('downListPaperAct');
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.organization.OrgUtils;
+		import net.simpleframework.applets.openid.OpenIDUtils;
+ 	 </scriptInit>
+	<importPage>
+		<value>/simple/include/c.xml</value>
+	</importPage>
+	<jobView>sys_manager</jobView>
+	<components>
+		<listbox name="aa" containerId="desktopListId" tooltip="false">
+			<item text="#(Desktop.0)" run="true">
+				<jsClickCallback><![CDATA[
+					$IT.A("desktop_template_act");
+					$('desktop_title').innerHTML ='#(Desktop.0)';
+				]]></jsClickCallback>
+			</item>
+			<item text="#(Desktop.1)">
+				<jsClickCallback><![CDATA[
+					$IT.A("desktop_logo_act");
+					$('desktop_title').innerHTML ='#(Desktop.1)';
+				]]></jsClickCallback>
+			</item>
+			<item text="#(Desktop.2)">
+				<jsClickCallback><![CDATA[
+					$IT.A("desktop_favicon_act");
+					$('desktop_title').innerHTML ='#(Desktop.2)';
+				]]></jsClickCallback>
+			</item>
+			<item text="#(Desktop.3)">
+				<jsClickCallback><![CDATA[
+					$IT.A("desktop_menu_act");
+					$('desktop_title').innerHTML ='#(Desktop.3)';
+				]]></jsClickCallback>
+			</item>
+			<item text="#(Desktop.4)">
+				<jsClickCallback><![CDATA[
+					$IT.A("desktop_index_act");
+					$('desktop_title').innerHTML ='#(Desktop.4)';
+				]]></jsClickCallback>
+			</item>
+			<item text="幻灯片设置">
+				<jsClickCallback><![CDATA[ $IT.A("desktop_slide_act"); 
+				$('desktop_title').innerHTML ='幻灯片设置'; ]]></jsClickCallback>
+			</item>
+		</listbox>
+		<ajaxRequest name="desktop_menu_act" updateContainerId="desktop_data_id">
+			<urlForward>desktop_menu_c.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="desktop_logo_act" updateContainerId="desktop_data_id">
+			<urlForward>desktop_logo_c.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="desktop_favicon_act" updateContainerId="desktop_data_id">
+			<urlForward>desktop_favicon_c.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="desktop_slide_act" updateContainerId="desktop_data_id">
+			<urlForward>desktop_slide_c.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="desktop_index_act" updateContainerId="desktop_data_id">
+			<urlForward>desktop_index_c.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="desktop_template_act"
+			updateContainerId="desktop_data_id">
+			<urlForward>desktop_template_c.jsp</urlForward>
+		</ajaxRequest>
+	</components>
+</page>

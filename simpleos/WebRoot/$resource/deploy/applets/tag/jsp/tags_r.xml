@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+
+	<components>
+		<tablePager name="_tagRTablePager" containerId="_tagRTablePager"
+			handleClass="net.simpleframework.applets.tag.TagRTableHandle" exportAction="false"
+			indexPages="5" pagerBarLayout="bottom" showCheckbox="false">
+			<columns>
+				<column columnName="topic" sort="false" columnText="#(tags_r.0)" />
+			</columns>
+		</tablePager>
+
+		<ajaxRequest name="_tagRDelete" handleClass="net.simpleframework.applets.tag.TagAction"
+			handleMethod="tagRDelete" confirmMessage="#(Confirm.Delete)">
+			<jsCompleteCallback>
+				$Actions["_tagRTablePager"]();
+			</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

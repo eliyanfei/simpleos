@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<handleClass>net.itsite.document.docu.DocuPageLoad</handleClass>
+	<components>
+		<ajaxRequest name="allDocuTableAct" updateContainerId="alldocuId"
+			runImmediately="true">
+			<urlForward>alldocu_list.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="docuDownAct" updateContainerId="alldocuId">
+			<urlForward>down_list.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="appDelDocuAjaxAct">
+			<urlForward>app_del.jsp</urlForward>
+		</ajaxRequest>
+		<window name="appDelDocuWindowAct" contentRef="appDelDocuAjaxAct"
+			height="300" width="400" title="#(Docu.all.1)"></window>
+	</components>
+</page>

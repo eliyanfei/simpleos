@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+
+	<components>
+		<vote name="space_vote_c" containerId="space_vote_c" documentId='${"spacevote".hashCode()}'
+			handleClass="net.simpleframework.my.space.SpaceVoteHandle" />
+	</components>
+</page>

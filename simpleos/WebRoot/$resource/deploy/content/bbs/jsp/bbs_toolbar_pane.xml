@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.content.bbs.BbsUtils;
+		import
+		net.simpleframework.web.page.component.ui.pager.PagerUtils;
+	</scriptInit>
+	<importPage>
+		<value>bbs_mgr_utils.xml</value>
+		<value>bbs_utils.xml</value>
+	</importPage>
+	<importJavascript>
+		<value>${BbsUtils.deployPath}js/bbs.js</value>
+	</importJavascript>
+	<importCSS>
+		<value>${BbsUtils.getCssPath(pageParameter)}/bbs_forum.css</value>
+	</importCSS>
+
+	<components>
+		<calendar name="calStartDate" inputField="_s_startDate" />
+		<calendar name="calEndDate" inputField="_s_endDate" />
+
+		<tree name="forumInsertTree" checkboxes="true"
+			checkboxesThreeState="true"
+			handleClass="net.simpleframework.content.bbs.BbsForumDictTree">
+		</tree>
+		<dictionary name="forumInsertDict" clearAction="false"
+			width="300" height="380" title="#(bbs_search_pane.4)">
+			<tree ref="forumInsertTree" />
+			<jsSelectCallback>
+				return BBS_UTILS.insert_forum(selects);
+       </jsSelectCallback>
+		</dictionary>
+
+		<tree name="forumAddSelectTree" cookies="false"
+			handleClass="net.simpleframework.content.bbs.BbsForumDictTree"></tree>
+		<dictionary name="forumAddSelectDict" width="340" height="460"
+			showHelpTooltip="false" clearAction="false" title="#(bbs_toolbar_pane.0)">
+			<tree ref="forumAddSelectTree" />
+		</dictionary>
+	</components>
+</page>

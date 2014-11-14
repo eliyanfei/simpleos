@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.my.space.MySpaceUtils;
+		import net.simpleframework.organization.component.userpager.UserPagerUtils;
+  </scriptInit>
+	<importPage>
+		<value>/simple/template/c.xml</value>
+		<value>${MySpaceUtils.deployPath }jsp/space_log.xml</value>
+		<value>${MySpaceUtils.deployPath }jsp/space_log_editor.xml</value>
+		<value>${UserPagerUtils.xmlUserutils()}</value>
+	</importPage>
+	<handleClass>net.simpleframework.my.space.MySpacePageLoad</handleClass>
+	<components>
+		<pager name="__my_space_log_pager" containerId="moreSpaceLogId"
+			showEditPageItems="false"
+			handleClass="net.simpleframework.my.space.MoreSapceLogPagerHandle"
+			dataPath="morespace_c_data.jsp" pageItems="30"></pager>
+	</components>
+</page>
