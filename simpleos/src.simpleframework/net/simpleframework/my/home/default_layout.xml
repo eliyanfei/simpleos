@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout draggable="false">
+	<column width="35%">
+		<pagelet module="my_user" align="left" sync="true">
+			<title fontStyle="color:#AA3311" />
+			<options><![CDATA[#Mon Jan 03 15:57:11 CST 2011
+_user_photo_dimension=128*128
+]]></options>
+		</pagelet>
+	</column>
+	<column width="65%">
+		<pagelet module="blog" align="left" sync="true">
+			<title value="最近发布的博客" fontStyle="color:#AA3311" />
+			<options><![CDATA[#Mon Jan 03 15:57:11 CST 2011
+_blog_showDesc=
+_blog_rows=8
+_blog_time=0
+_blog_order=0
+_blog_dateFormat=yyyy-MM-dd HH\:mm
+_blog_descLength=360
+_blog_type=2
+]]></options>
+		</pagelet>
+		<pagelet module="bbs" align="left" sync="true">
+			<title value="最近发布的帖子" fontStyle="color:#AA3311" />
+			<options><![CDATA[#Mon Jan 03 15:59:15 CST 2011
+_bbs_star=
+_bbs_rows=6
+_bbs_time=0
+_bbs_dateFormat=yyyy-MM-dd HH\:mm
+_bbs_descLength=0
+_bbs_order=0
+_bbs_forum=
+_bbs_type=2
+]]></options>
+		</pagelet>
+	</column>
+</layout>

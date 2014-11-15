@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<item title="#(Edit)" icon="#edit">
+		<jsSelectCallback>
+			__pager_action(item).edit(item);
+		</jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(Top)" checkbox="true">
+		<jsSelectCallback>
+			__pager_action(item).update(item, "top=true");
+    </jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(topic_edit2.2)" icon="#option">
+		<jsSelectCallback>
+			__pager_action(item).edit2(item);
+		</jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(Delete)" icon="#delete">
+		<jsSelectCallback>
+			__pager_action(item).del(item);
+    </jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(topicpager.menu.1)" icon="#move">
+		<jsSelectCallback>
+			__pager_action(item).move2(item);
+		</jsSelectCallback>
+	</item>
+	<!-- 
+	<item title="#(Menu.move)">
+		<item title="#(Menu.up)" icon="#up">
+			<jsSelectCallback>
+				__pager_action(item).move(item, true, "topicPagerMove");
+			</jsSelectCallback>
+		</item>
+		<item title="#(Menu.up2)" icon="#up2">
+			<jsSelectCallback>
+				__pager_action(item).move2(item, true, "topicPagerMove");
+			</jsSelectCallback>
+		</item>
+		<item title="#(Menu.down)" icon="#down">
+			<jsSelectCallback>
+				__pager_action(item).move(item, false, "topicPagerMove");
+			</jsSelectCallback>
+		</item>
+		<item title="#(Menu.down2)" icon="#down2">
+			<jsSelectCallback>
+				__pager_action(item).move2(item, false, "topicPagerMove");
+			</jsSelectCallback>
+		</item>
+	</item>
+ 	-->
+</menu>

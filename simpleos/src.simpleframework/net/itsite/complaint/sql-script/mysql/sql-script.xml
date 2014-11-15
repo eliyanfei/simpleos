@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-script>
+	<version>1.0.0</version>
+	<name>Complaint</name>
+	<tran-sql>
+		<description>it_complaint</description>
+		<![CDATA[
+  CREATE TABLE `it_complaint` (
+  `id` bigint(20) NOT NULL,
+  `refModule` tinyint(4) NOT NULL,
+  `complaint` tinyint(4) NOT NULL,
+  `content` text ,
+  `createdate` datetime NOT NULL,
+  `dealDate` datetime NOT NULL,
+  `userId` bigint(11) NOT NULL,
+  `refId` bigint(20) NOT NULL,
+  `deal` tinyint(1) NOT NULL,
+  `dealContent` text ,
+  PRIMARY KEY  (`id`)
+)
+    ]]>
+	</tran-sql>
+</sql-script>

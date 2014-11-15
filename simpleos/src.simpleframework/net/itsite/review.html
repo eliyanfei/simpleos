@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style>
+.block_layout1__ .t1__ {
+	border-bottom: 2px solid #5490C0;
+	background: white;
+	padding: 0px 0px 0px 0px;
+}
+
+.c__ {
+	font-size: 9pt;
+	color: #777;
+}
+
+.title__ {
+	font-size: 11pt;
+	color: #3190C6;
+}
+
+.block_layout1__ {
+	margin: 0px 0px 5px 5px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	text-align: left;
+}
+
+.item__:hover {
+	background-color: #F8F8F8;
+}
+
+.ts__ {
+	padding: 0 0 2px 0;
+	background: #5490C0;
+	color: white;
+	padding: 2px 10px;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+
+#t_body__ {
+	padding: 6px;
+	min-height: 450px;
+	border: 1px solid #CCC;
+	background-color: white;
+	border-image: initial;
+	font-family: Verdana, Simsun, sans-serif;
+}
+</style>
+	</head>
+	<body style="margin-top: 0px; ">
+		<div align="center">
+			<div style="width: 800px;" id="t_body__">
+				<div style="margin-top: 0px; border-bottom: 1px solid #ccc;">
+					<table width="100%" cellpadding="0" cellspacing="0">
+						<tr>
+							<td style="width: 20%;" valign="bottom">
+								<a href="${serverUrl}"><img style="border: 0px;"
+										src="${serverUrl}/simple/template/images/logo.png" alt="" />
+								</a>
+							</td>
+							<td
+								style="width: 80%; color: #3190C6; font-weight: bold; font-size: 14pt;"
+								valign="top" align="left">
+								${title}
+								<a href="${serverUrl}">(www.itniwo.net)</a>一周内容回顾
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="block_layout1__">
+					<div class="t1__">
+						<span class="ts__">资讯</span>
+					</div>
+					<div class="c__">
+						${news}
+					</div>
+				</div>
+				<div class="block_layout1__">
+					<div class="t1__">
+						<span class="ts__">软件</span>
+					</div>
+					<div class="c__">
+						${os}
+					</div>
+				</div>
+				<div class="block_layout1__">
+					<div class="t1__">
+						<span class="ts__">文档</span>
+					</div>
+					<div class="c__">
+						${docu}
+					</div>
+				</div>
+				<div class="block_layout1__">
+					<div class="t1__">
+						<span class="ts__">博客</span>
+					</div>
+					<div class="c__">
+						${blog}
+					</div>
+				</div>
+				<div align="left" style="border-top: 2px double #5490C0;">
+					<a href="http://www.itniwo.net/unsubscribe.html?v=true&email=${email}&uId=${uId}">退订I++每周内容回顾 </a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

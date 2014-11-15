@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+  <item title="#(Add)" icon="#add">
+    <jsSelectCallback>
+    	__pager_action(item).add();
+    </jsSelectCallback>
+  </item>
+  <item title="-" />
+  <item title="#(Menu.delete2)" icon="#delete">
+    <jsSelectCallback>
+   		__pager_action(item).del2();
+    </jsSelectCallback>
+  </item>
+  <item title="-" />
+  <item title="#(UserPager.menu.1)" icon="#mail">
+  	<jsSelectCallback>
+  		__pager_action(item).sentmail();
+  	</jsSelectCallback>
+  </item>
+</menu>

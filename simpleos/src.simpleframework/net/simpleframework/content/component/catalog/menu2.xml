@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<item title="#(Add)" icon="#add">
+		<jsSelectCallback>
+			__catalog_action(item).add(item);
+		</jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(Refresh)" icon="#refresh">
+		<jsSelectCallback>
+			__catalog_action(item).refresh();
+   	</jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(Tree.expand)" icon="#expand">
+		<jsSelectCallback>
+			__catalog_action(item).expand(item);
+		</jsSelectCallback>
+	</item>
+	<item title="#(Tree.collapse)" icon="#collapse">
+		<jsSelectCallback>
+			__catalog_action(item).collapse(item);
+		</jsSelectCallback>
+	</item>
+</menu>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-script>
+	<version>1.0.0</version>
+	<name>script</name>
+	<description></description>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_friends (
+        id bigint not null,
+        userid bigint not null,
+        createdate datetime not null,
+        friendid bigint not null,
+       	groupid bigint,
+        relation tinyint not null,
+       	primary key(id),
+       	unique (userid, friendid)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_friends_group (
+        id bigint not null,
+        parentid bigint not null,
+        text varchar(32) not null, 
+        createdate datetime not null,
+        userid bigint not null,
+        friends int not null,
+        description varchar(256),
+        oorder bigint not null,
+        primary key(id),
+        unique (userid, text)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_friends_request (
+        id bigint not null,
+        sentid bigint not null,
+        sentdate datetime not null,
+        toid bigint not null, 
+        messagetext varchar(256),
+        requeststatus tinyint not null,
+        groupid bigint,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_folder (
+        id bigint not null,
+        parentid bigint not null,
+        text varchar(32) not null, 
+        description varchar(256),
+        createdate datetime not null,
+        userid bigint not null,
+        files int,
+				filessize bigint,
+        status tinyint not null,
+        mark tinyint,
+        oorder bigint not null,
+        primary key(id),
+        unique (parentid, text, userid)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_file (
+        id bigint not null,
+        catalogid bigint not null,
+        topic varchar(128),
+        filename varchar(80) not null,
+        filetype varchar(16),
+        filesize bigint not null,
+        downloads bigint not null,
+        md5 varchar(32),
+        sha1 varchar(40),
+        ip varchar(32),
+        description varchar(256),
+        createdate datetime not null,
+        userid bigint not null,
+        status tinyint not null,
+        mark tinyint,
+        ttop bit,
+        oorder bigint not null, 
+        refId bigint not null, 
+        type tinyint,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+      alter table simple_my_file  add column refId bigint;
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+      alter table simple_my_file  add column type tinyint;
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_file_stat (
+       	id bigint not null,
+       	filesizelimit bigint,
+       	fileuploadlimit bigint,
+       	allfiles int,
+       	allfilessize bigint,
+       	rootfiles int,
+       	rootfilessize bigint,
+       	deletefiles int,
+       	deletefilessize bigint,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_file_lob (
+        id bigint not null,
+        lob longblob,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_message (
+        id bigint not null,
+       	messagetype tinyint not null,
+       	notification tinyint,
+       	subject text,
+       	textbody text not null,
+       	sentid bigint,
+       	sentdate datetime not null,
+       	toid bigint,
+       	jobview varchar(32),
+       	messageurl varchar(80),
+       	expireddate datetime,
+       	messageread bit,
+       	status tinyint,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_home_tabs (
+        id bigint not null,
+        tabtext varchar(32) not null,
+        userid bigint not null,
+        createdate datetime not null,
+        defaulttab bit not null,
+        views int not null,
+        description varchar(256),
+        primary key(id),
+        unique(userid, tabtext)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_home_layout (
+        id bigint not null,
+        layoutlob text,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_space_stat (
+       	id bigint not null,
+       	views bigint not null,
+       	attentions int not null,
+       	fans int not null,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_space_log (
+      	id bigint not null,
+      	userid bigint not null,
+        createdate datetime not null,
+        content varchar(256),
+        refmodule tinyint,
+        refid bigint,
+        replyfrom bigint,
+        remarks int not null,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_space_remark (
+      	id bigint not null,
+      	logid bigint not null,
+      	userid bigint not null,
+        createdate datetime not null,
+        content varchar(256),
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_user_attention (
+      	userid bigint not null,
+      	attentionid bigint not null,
+      	createdate datetime not null,
+        unique(userid, attentionid)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_space_resource (
+      	id bigint not null,
+      	logid bigint not null,
+      	logresource tinyint not null,
+      	resourceid bigint,
+      	resourceurl varchar(128),
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+     CREATE TABLE simple_dialog (
+	  id bigint(20) NOT NULL,
+	  sentId bigint(20) NOT NULL,
+	  toId bigint(20) NOT NULL,
+	  createdate datetime NOT NULL,
+	  lastdate datetime NOT NULL,
+	  sentDel tinyint(1) DEFAULT '0',
+	  toDel tinyint(1) DEFAULT '0',
+	  toRead tinyint(1) DEFAULT NULL,
+	  sendRead tinyint(1) DEFAULT NULL,
+	  PRIMARY KEY (id)
+	);
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+    CREATE TABLE simple_dialog_item (
+	  id bigint(20) NOT NULL,
+	  dialogId bigint(20) NOT NULL,
+	  sentdate datetime NOT NULL,
+	  me tinyint(1) DEFAULT NULL,
+	  content text,
+	  PRIMARY KEY (id)
+	);
+    ]]>
+	</tran-sql>
+</sql-script>

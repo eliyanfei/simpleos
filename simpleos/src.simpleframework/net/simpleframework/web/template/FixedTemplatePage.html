@@ -1,0 +1,19 @@
+<div align="center">
+  <div id="resized_header" class="clear_float">
+    <div class="logo"></div>
+    <div class="desc">${page.logoTitle(pageParameter)}</div>
+    <div class="bar">${page.loginBar(pageParameter)}</div>
+  </div>
+  $if{page.isShowMenu(pageParameter)}
+  <div id="resized_menu" class="clear_float">
+    <div id="resized_menu_right"></div>
+    <div id="resized_menu_left">${page.navBar(pageParameter)}</div>
+  </div>
+  $end{}
+  <div id="fixed_body" style="width: ${page.pageWidth(pageParameter)}px;">
+    <div id="fixed_content">${content}</div>
+    $if{page.isShowFooter(pageParameter)}
+    <div id="fixed_footer"></div>
+    $end{}
+  </div>
+</div>

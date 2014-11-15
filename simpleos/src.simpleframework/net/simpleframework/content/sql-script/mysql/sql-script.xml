@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-script>
+	<version>1.0.0</version>
+	<name>content script</name>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+    	create table simple_bbs_forum (
+        id bigint not null,
+        parentid bigint not null,
+        name varchar(32) not null,
+        text varchar(32) not null, 
+        createdate datetime not null,
+        status tinyint not null,
+        showtags bit not null,
+        description varchar(256),
+        oorder bigint not null,
+        primary key(id),
+        unique (name)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+  	<![CDATA[
+  		create table simple_bbs_forum_owner (
+  			catalogid bigint not null,
+  			ownertype varchar(8) not null,
+  			ownerid bigint not null,
+  			unique (catalogid, ownertype, ownerid)
+  		);
+  	]]>
+	</tran-sql>
+	<tran-sql>
+    <![CDATA[
+    	create table simple_bbs_forum_stat (
+      	id bigint not null,
+      	lastpostid bigint,
+      	topics int,
+      	messages int,
+      	primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+    <![CDATA[
+    	create table simple_bbs_user (
+      	id bigint not null,
+      	lastpostid bigint,
+      	topics int,
+      	messages int,
+      	deletes int,
+      	primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_bbs_topic (
+        id bigint not null,
+        catalogid bigint not null,
+        topic varchar(128) not null,
+        keywords varchar(128),
+        lastpostid bigint,
+        views bigint not null,
+        replies int not null,
+       	attentions int not null,
+        star tinyint not null,
+        createdate datetime not null,
+        userid bigint,
+        lastupdate datetime,
+        lastuserid bigint,
+        lastpostupdate datetime,
+        status tinyint not null,
+        mark tinyint,
+        ttype tinyint,
+        ttop bit,
+        oorder bigint not null, 
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+    <![CDATA[
+    	create table simple_bbs_posts (
+    		id bigint not null,
+    		topicid bigint not null,
+    		firstpost bit not null,
+        ip varchar(32),
+       	createdate datetime not null,
+       	userid bigint,
+       	quoteid bigint,
+       	lastupdate datetime,
+       	lastuserid bigint,
+        status tinyint not null,
+        oorder bigint not null,
+    		primary key(id)
+    	);
+    ]]>
+	</tran-sql>
+	<tran-sql>
+    <![CDATA[
+    	create table simple_bbs_posts_text (
+    		id bigint not null,
+    		subject varchar(128),
+    		content text not null,
+    		primary key(id)
+    	);
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+    	create table simple_blog_catalog (
+    		id bigint not null,
+        parentid bigint not null,
+        text varchar(32) not null, 
+        createdate datetime not null,
+        userid bigint not null,
+        blogs int not null,
+        description varchar(256),
+        oorder bigint not null,
+        primary key(id),
+        unique (userid, text)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+    	create table simple_blog (
+        id bigint not null,
+        catalogid bigint not null,
+        viewtemplate varchar(2),
+        topic varchar(128) not null,
+        content text,
+        keywords varchar(128),
+        author varchar(32),
+        source varchar(32),
+        views bigint not null,
+        remarks int not null,
+        attentions int not null,
+        allowcomments bit not null,
+        description varchar(256),
+        createdate datetime not null,
+        userid bigint,
+        lastupdate datetime,
+        lastuserid bigint,
+        status tinyint not null,
+        mark tinyint,
+        ttype tinyint,
+        ttop bit,
+        oorder bigint not null,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_blog_remark (
+        id bigint not null,
+        parentid bigint not null,
+        documentid bigint not null,
+        content text not null,
+        support int not null,
+        opposition int not null,
+        ip varchar(32),
+       	createdate datetime not null,
+       	userid bigint,
+        lastupdate datetime,
+        lastuserid bigint,
+       	primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+    	create table simple_app_news (
+        id bigint not null,
+        catalogid bigint not null,
+        viewtemplate varchar(2),
+        topic varchar(128) not null,
+        content text,
+        keywords varchar(128),
+        author varchar(32),
+        source varchar(32),
+        views bigint not null,
+        remarks int not null,
+        attentions int not null,
+        allowcomments bit not null,
+        description varchar(256),
+        createdate datetime not null,
+        userid bigint,
+        lastupdate datetime,
+        lastuserid bigint,
+        status tinyint not null,
+        mark tinyint,
+        ttype tinyint,
+        ttop bit,
+        oorder bigint not null,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_app_news_remark (
+        id bigint not null,
+        parentid bigint not null,
+        documentid bigint not null,
+        content text not null,
+        support int not null,
+        opposition int not null,
+        ip varchar(32),
+       	createdate datetime not null,
+       	userid bigint,
+        lastupdate datetime,
+        lastuserid bigint,
+       	primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description>catalog</description>
+		<![CDATA[
+  CREATE TABLE `simple_app_news_catalog` (
+  `id` bigint(20) NOT NULL,
+  `parentid` bigint(20) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `text` varchar(32) NOT NULL,
+  `createdate` datetime,
+  `counter` bigint(11) default 0,
+  `description` varchar(256) default NULL,
+  `oorder` bigint(20) default 0,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY (`name`)
+)
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description>catalog</description>
+		<![CDATA[
+		insert into simple_app_news_catalog(id,parentid,name,text) values(1,0,'zonghe','综合资讯');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description></description>
+		<![CDATA[
+      create table simple_resource_lob (
+        id bigint not null,
+        lob longblob,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+			ALTER TABLE simple_app_news ADD INDEX news_id ( `id` );
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+			ALTER TABLE simple_app_news ADD INDEX news_catalogId ( `catalogId` );
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+			ALTER TABLE simple_app_news ADD INDEX news_createDate ( `createDate` );
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+ALTER TABLE simple_blog ADD INDEX blog_id ( `id` );
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+ALTER TABLE simple_blog ADD INDEX blog_catalogId ( `catalogId` );
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+ALTER TABLE simple_blog ADD INDEX blog_createDate ( `createDate` ) USING BTREE;
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+ALTER TABLE simple_blog ADD INDEX blog_userid ( `userid` );
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+ALTER TABLE simple_app_news ADD INDEX news_userid ( `userid` );
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+ALTER TABLE simple_my_space_log ADD INDEX spacelog_id ( `id` );
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+ALTER TABLE simple_my_space_log ADD INDEX spacelog_userid ( `userid` );
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+ALTER TABLE simple_my_message ADD INDEX spacelog_id ( `id` );
+			  ]]>
+		</description>
+	</tran-sql>
+	<tran-sql>
+		<description>
+			 <![CDATA[
+ALTER TABLE simple_my_message ADD INDEX spacelog_toid ( `toid` );
+			  ]]>
+		</description>
+	</tran-sql>
+</sql-script>

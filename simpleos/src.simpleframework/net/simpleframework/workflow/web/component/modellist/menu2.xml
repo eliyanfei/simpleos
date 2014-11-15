@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+  <item title="#(model_list_menu.0)" icon="#add">
+    <jsSelectCallback>
+      __pager_action(item).upload_model();
+    </jsSelectCallback>
+  </item>
+</menu>

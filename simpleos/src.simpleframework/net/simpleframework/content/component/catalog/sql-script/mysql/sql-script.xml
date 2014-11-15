@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-script>
+	<version>1.0.0</version>
+	<name>catalog script</name>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_catalog (
+        id bigint not null,
+        parentid bigint not null,
+        documentid bigint not null,
+        name varchar(32) not null,
+        text varchar(32) not null, 
+        description varchar(256),
+        createdate datetime not null,
+        userid bigint,
+        lastupdate datetime,
+        lastuserid bigint,
+        status tinyint not null,
+        mark tinyint,
+        ttype tinyint,
+        ttop bit,
+        oorder bigint not null, 
+        primary key(id),
+        unique (name),
+        unique (parentid, text)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+  	<![CDATA[
+  		create table simple_catalog_owner (
+  			catalogid bigint not null,
+  			ownertype varchar(8) not null,
+  			ownerid bigint not null,
+  			unique (catalogid, ownertype, ownerid)
+  		);
+  	]]>
+	</tran-sql>
+</sql-script>

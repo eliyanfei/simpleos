@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columns>
+	<column columnName="icon" />
+
+	<column columnName="topic" columnText="#(TopicPager.columns.0)"
+		style="word-wrap: break-word;" />
+
+	<column columnName="replies" columnText="#(TopicPager.columns.1)"
+		textAlign="center" width="55" separator="true" />
+
+	<column columnName="views" columnText="#(TopicPager.columns.2)"
+		textAlign="center" width="55" separator="true" />
+
+	<column columnName="author" columnText="#(TopicPager.columns.3)"
+		textAlign="left" width="125" sort="false" separator="true" />
+
+	<column columnName="lastMessage" columnText="#(TopicPager.columns.4)"
+		textAlign="left" width="125" sort="false" separator="true" />
+
+	<column columnName="action" />
+</columns>

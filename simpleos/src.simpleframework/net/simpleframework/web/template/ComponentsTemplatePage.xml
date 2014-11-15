@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importCSS>
+		<value>${page.getCssPath(pageParameter)}/template.css</value>
+	</importCSS>
+
+	<components>
+		<menu name="resized_menu_main" containerId="resized_menu_right"
+			minWidth="124"
+			handleClass="net.street.eis.web.template.ComponentsTemplatePage$MainMenu">
+		</menu>
+
+		<ajaxRequest name="ajaxLogout" confirmMessage="您确实想注销吗?"
+			handleClass="net.street.organization.component.login.LoginAction"
+			handleMethod="logout">
+			<jsCompleteCallback>
+      	location.reload();
+      </jsCompleteCallback>
+		</ajaxRequest>
+		
+		<ajaxRequest name="ajaxEditUser" jobExecute="sys_manager">
+		</ajaxRequest>
+		<window name="editUserWindow" contentRef="ajaxEditUser"></window>
+	</components>
+</page>

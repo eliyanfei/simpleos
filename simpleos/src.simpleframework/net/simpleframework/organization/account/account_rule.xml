@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="idAccountContext" class="net.simpleframework.organization.account.AccountContext">
+		<property name="enable" value="true" />
+
+		<property name="expText">
+			<value><![CDATA[
+				#exp;level;text;icon
+				80;1;幼儿园
+				100;2;学前班
+				120;3;小学一年级
+				150;4;小学二年级
+				200;5;小学三年级
+				300;6;小学四年级
+				500;7;小学五年级
+				800;8;小学六年级
+				1500;9;初中一年级
+				2500;10;初中二年级
+				4000;11;初中三年级
+				7000;12;高中一年级
+				12000;13;高中二年级
+				20000;14;高中三年级
+				40000;15;大学一年级
+				80000;16;大学二年级
+				160000;17;大学三年级	
+				320000;18;大学四年级
+				640000;19;硕士一年级　
+				1280000;20;硕士二年级
+			]]></value>
+		</property>
+
+		<property name="accountRuleMap">
+			<map>
+				<!-- org -->
+				<entry key="org_login" value-ref="ref_org_login" />
+				<entry key="org_regist" value-ref="ref_org_regist" />
+				<entry key="org_edituser" value-ref="ref_org_edituser" />
+				<entry key="org_photo" value-ref="ref_org_photo" />
+
+				<!-- bbs -->
+				<entry key="bbs_newTopic" value-ref="ref_bbs_newTopic" />
+				<entry key="bbs_replyTopic" value-ref="ref_bbs_replyTopic" />
+				<entry key="bbs_download" value-ref="ref_bbs_download" />
+				<entry key="bbs_typeRecommended" value-ref="ref_bbs_typeRecommended" />
+
+				<!-- news -->
+				<entry key="news_statusPublish" value-ref="ref_news_statusPublish" />
+				<entry key="news_remark" value-ref="ref_news_remark" />
+
+				<!-- blog -->
+				<entry key="blog_add" value-ref="ref_blog_add" />
+				<entry key="blog_remark" value-ref="ref_blog_remark" />
+				<entry key="blog_typeRecommended" value-ref="ref_blog_typeRecommended" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="ref_org_login" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="1" />
+		<property name="expMaxValue" value="5" />
+		<property name="expTimeUnit" value="day" />
+		<property name="text" value="登录" />
+		<property name="module" value="用户" />
+		<property name="description">
+			<value>一天内允许的最大经验值是5</value>
+		</property>
+	</bean>
+
+	<bean id="ref_org_regist" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="2" />
+		<property name="text" value="激活帐号" />
+		<property name="module" value="用户" />
+	</bean>
+
+	<bean id="ref_org_edituser" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="2" />
+		<property name="points" value="2" />
+		<property name="logOnlyonce" value="true" />
+		<property name="text" value="完善资料" />
+		<property name="module" value="用户" />
+		<property name="description">
+			<value>需要输入手机、所在地、简介等个人信息</value>
+		</property>
+	</bean>
+
+	<bean id="ref_org_photo" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="2" />
+		<property name="points" value="1" />
+		<property name="logOnlyonce" value="true" />
+		<property name="text" value="上传照片" />
+		<property name="module" value="用户" />
+	</bean>
+
+	<bean id="ref_bbs_newTopic" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="2" />
+		<property name="points" value="1" />
+		<property name="text" value="新建主题" />
+		<property name="module" value="BBS" />
+	</bean>
+
+	<bean id="ref_bbs_replyTopic" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="1" />
+		<property name="points" value="1" />
+		<property name="text" value="回复主题" />
+		<property name="module" value="BBS" />
+	</bean>
+
+	<bean id="ref_bbs_typeRecommended" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="1" />
+		<property name="points" value="3" />
+		<property name="logOnlyonce" value="true" />
+		<property name="module" value="BBS" />
+		<property name="text" value="被评为推荐" />
+	</bean>
+
+	<bean id="ref_bbs_download" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="1" />
+		<!-- points值在程序中更改 -->
+		<property name="logOnlyonce" value="true" />
+		<property name="text" value="文件下载" />
+		<property name="module" value="BBS" />
+		<property name="description">
+			<value>积分值由发布者动态决定</value>
+		</property>
+	</bean>
+
+	<bean id="ref_news_statusPublish" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="2" />
+		<property name="points" value="1" />
+		<property name="logOnlyonce" value="true" />
+		<property name="module" value="资讯" />
+		<property name="text" value="发布审核通过" />
+	</bean>
+
+	<bean id="ref_news_remark" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="2" />
+		<property name="points" value="1" />
+		<property name="logOnlyonce" value="true" />
+		<property name="module" value="资讯" />
+		<property name="text" value="发表评论" />
+	</bean>
+
+	<bean id="ref_blog_add" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="2" />
+		<property name="points" value="1" />
+		<property name="module" value="博客" />
+		<property name="text" value="发表博文" />
+	</bean>
+
+	<bean id="ref_blog_remark" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="2" />
+		<property name="points" value="1" />
+		<property name="module" value="博客" />
+		<property name="text" value="发表评论" />
+	</bean>
+	
+	<bean id="ref_blog_typeRecommended" class="net.simpleframework.organization.account.DefaultAccountRule">
+		<property name="exp" value="1" />
+		<property name="points" value="3" />
+		<property name="logOnlyonce" value="true" />
+		<property name="module" value="博客" />
+		<property name="text" value="被评为推荐" />
+	</bean>
+</beans>

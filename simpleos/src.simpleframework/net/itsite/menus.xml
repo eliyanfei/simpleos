@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus>
+	<menu title="#(Itsite.menu.home)" url="/" index="1" />
+	<menu title="#(Itsite.menu.news)" url="/news.html" index="2" />
+	<menu title="#(Itsite.menu.bbs)" url="/bbs.html" index="3" />
+	<menu title="#(Itsite.menu.sysmgr)" index="100">
+		<menu title="#(Itsite.menu.mgruserjob)" url="/manager/user.html" />
+		<menu title="-" />
+		<menu title="#(Itsite.menu.mgrdict)" url="/manager/dict.html" />
+		<menu title="-" />
+		<menu title="#(Itsite.menu.mgrpermission)" url="/manager/permission.html" />
+	</menu>
+</menus>

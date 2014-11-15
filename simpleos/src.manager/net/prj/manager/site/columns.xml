@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<columns name="sys">
+		<column name="language" text="语言设置" default="zh,zh-tw,en," mul="true" />
+		<column name="register" text="允许注册" default="true" />
+		<column name="mail" text="注册不需要激活" default="false" />
+		<column name="remark" text="评论不需要登入" default="false" />
+		<column name="mail_sentAddress" text="发送地址" default="itniwo@qq.com" />
+		<column name="mail_smtpServer" text="服务地址" default="smtp.exmail.qq.com" />
+		<column name="mail_smtpUsername" text="用户名" default="itniwo" />
+		<column name="mail_smtpPassword" text="密码" default="itniwo" />
+	</columns>
+	<columns name="site">
+		<column name="url" text="站点URL" />
+		<column name="name" text="站点名称" />
+		<column name="copyright" text="创建年份" />
+		<column name="keywords" text="关键词" />
+		<column name="slogan" text="站点口号" />
+		<column name="desc" text="描述" />
+		<column name="icp" text="备案号码" />
+	</columns>
+	<columns name="links">
+		<column name="homeLinks" text="首页友链" />
+	</columns>
+	<columns name="open" ids="qq,sinat,qqt,google,yahoo">
+		<column name="appKey" text="App Key" />
+		<column name="appSecret" text="App Secret" />
+		<column name="source" text="来源" />
+	</columns>
+</config>

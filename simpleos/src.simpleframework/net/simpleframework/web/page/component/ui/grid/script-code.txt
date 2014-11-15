@@ -1,0 +1,76 @@
+var tableModel = {
+    options : {
+        width: '640px',
+        title: 'CD Catalog',
+        pager: {
+            total: 55,
+            pages: 5,
+            currentPage: 1,
+            from: 1,
+            to: 10
+        }
+    },
+    columnModel : [
+        {
+            id : 'id',
+            title : 'Id',
+            width : 30,
+            editable: true,
+            editor: 'checkbox'
+        },
+        {
+            id : 'title',
+            title : 'Title',
+            width : 200,
+            editable: true,
+            editor: 'input'
+        },
+        {
+            id : 'artist',
+            title : 'Artist',
+            width : 140,
+            editable: true
+        },
+        {
+            id : 'country',
+            title : 'Country',
+            width : 134,
+            editable: true
+        },
+        {
+            id : 'company',
+            title : 'Company',
+            width : 130
+        },
+        {
+            id : 'price',
+            title : 'Price',
+            type: 'number',
+            width : 130,
+            editable: true
+        },
+        {
+            id : 'year',
+            title : 'Year',
+            width : 130,
+            editable: true
+        }
+    ],
+
+    rows : [
+        ['1', 'Empire Burlesque', 'Bob Dylan', 'EU', 'Columbia', '10.90', '1985'],
+        ['2', 'Hide your heart', 'Bonnie Tyler', 'UK', 'CBS Records', '9.90', '1988'],
+        ['3', 'One night only', 'Bee Gees', 'UK', 'Polydor', '10.90', '1998'],
+        ['4', 'Romanza', 'Andrea Bocelli', 'EU', 'Polydor', '10.80', '1996'],
+        ['5', 'Pavarotti Gala Concert', 'Luciano Pavarotti', 'EU', 'DECCA', '9.90', '1991'],
+        ['6', 'Picture book', 'Simply Red', 'EU', 'Elektra', '7.90', '1985'],
+        ['7', 'Eros', 'Eros Ramazzotti', 'EU', 'BMG', '9.90', '1997'],
+        ['8', 'Black angel', 'Savage Rose', 'EU', 'Mega', '10.90', '1995'],
+        ['9', 'For the good times', 'Kenny Rogers', 'UK', 'Mucik Master', '8.70', '1995'],
+        ['10', 'Big Willie style', 'Will Smith', 'EU', 'Columbia', '9.90', '1997']
+    ]
+};
+
+tableGrid1 = new MyTableGrid(tableModel);
+
+tableGrid1.render('table1');

@@ -18,6 +18,12 @@
 					$('desktop_title').innerHTML ='#(Desktop.0)';
 				]]></jsClickCallback>
 			</item>
+			<item text="#(Desktop.3)">
+				<jsClickCallback><![CDATA[
+					$IT.A("desktop_menu_act");
+					$('desktop_title').innerHTML ='#(Desktop.3)';
+				]]></jsClickCallback>
+			</item>
 			<item text="#(Desktop.1)">
 				<jsClickCallback><![CDATA[
 					$IT.A("desktop_logo_act");
@@ -28,12 +34,6 @@
 				<jsClickCallback><![CDATA[
 					$IT.A("desktop_favicon_act");
 					$('desktop_title').innerHTML ='#(Desktop.2)';
-				]]></jsClickCallback>
-			</item>
-			<item text="#(Desktop.3)">
-				<jsClickCallback><![CDATA[
-					$IT.A("desktop_menu_act");
-					$('desktop_title').innerHTML ='#(Desktop.3)';
 				]]></jsClickCallback>
 			</item>
 			<item text="#(Desktop.4)">

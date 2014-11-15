@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-script>
+	<version>1.0.0</version>
+	<name>case</name>
+		<tran-sql>
+		<description>prj_links</description>
+		<![CDATA[
+  CREATE TABLE `prj_links` (
+  `id` bigint(20) NOT NULL,
+  `userId` bigint(20) NOT NULL,
+  `title` varchar(128) NOT NULL,
+  `color` varchar(64) NOT NULL,
+  `url` varchar(128) ,
+  `oorder` bigint(10) ,
+  `description` text ,
+  `createdDate` datetime, 
+  PRIMARY KEY  (`id`)
+)
+    ]]>
+	</tran-sql>
+</sql-script>

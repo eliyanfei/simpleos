@@ -1,0 +1,25 @@
+<table style="width: 100%; height: 100%;" cellpadding="0"
+  cellspacing="0" class="fixed_table">
+  <tr>
+    <td class="left_c"><div
+        style="overflow: auto; position: relative;">${content_left}</div></td>
+    <td class="splitbar"></td>
+    <td class="center_c"><div
+        style="overflow: auto; position: relative;">${content_center}</div></td>
+  </tr>
+</table>
+<script type="text/javascript">
+	$ready(function() {
+		var sb = $$("#resized_body .splitbar")[0];
+		$Comp.createSplitbar(sb, sb.previous());
+
+		var m = $("resized_body").down();
+		m.resizedCallback = function() {
+			var left_c = m.down(".left_c").down();
+			var center_c = m.down(".center_c").down();
+			var style = "height: " + m.getHeight() + "px";
+			left_c.setStyle(style);
+			center_c.setStyle(style);
+		};
+	});
+</script>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file-type>
+	<item icon="rar.png" ext="rar;tar;gz;tgz;jar;r01;r02;r03;r04;r05;r06;r07;r08;r09;r10;r11;r12"
+		desc="#(file_type.rar)" />
+	<item icon="zip.png" ext="zip" desc="#(file_type.zip)" />
+	<item icon="7z.png" ext="7z" />
+	<item icon="iso.png" ext="iso" />
+
+	<item icon="exe.png" ext="exe" desc="#(file_type.exe)" />
+	<item icon="dll.png" ext="dll" desc="#(file_type.dll)" />
+
+	<item icon="doc.png" ext="doc;docx;rtf" />
+	<item icon="ppt.png" ext="ppt;pptx" />
+	<item icon="xls.png" ext="xls;xlsx" />
+	<item icon="pdf.png" ext="pdf" />
+	<item icon="html.png" ext="html;htm;mht" />
+	<item icon="txt.png" ext="txt;log" />
+	<item icon="reg.png" ext="reg" />
+	<item icon="eml.png" ext="eml" />
+	<item icon="ini.png" ext="ini;xml" />
+
+	<item icon="jpg.png" ext="jpg;jpeg" />
+	<item icon="gif.png" ext="gif" />
+	<item icon="png.png" ext="png" />
+	<item icon="bmp.png" ext="bmp" />
+	<item icon="tif.png" ext="tif;tiff" />
+	<item icon="emf.png" ext="emf" />
+	<item icon="wmf.png" ext="wmf" />
+	<item icon="ico.png" ext="ico;icon" />
+	<item icon="raw.png" ext="raw" />
+
+	<item icon="swf.png" ext="swf" />
+	<item icon="psd.png" ext="psd" />
+	<item icon="ai.png" ext="ai" />
+	<item icon="fla.png" ext="fla" />
+
+	<item icon="audio.png" ext="wav;mp3;ogg;aif;aiff;cda;mid;mp1;mp2;au" />
+	<item icon="video.png" ext="avi;rm;asf;mov;mpg;mpeg;wma;wmv;flv;mp4" />
+	<item icon="c.png" ext="c" />
+	<item icon="cplusplus.png" ext="cpp;h" />
+	<item icon="csharp.png" ext="cs" />
+	<item icon="code.png" ext="java;py;bas;css;js;sql" />
+</file-type>

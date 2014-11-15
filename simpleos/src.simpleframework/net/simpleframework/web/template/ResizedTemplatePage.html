@@ -1,0 +1,41 @@
+<div align="center">
+  <div id="resized_header" class="clear_float">
+    <div class="logo"></div>
+    <div class="desc">${page.logoTitle(pageParameter)}</div>
+    <div class="bar">${page.loginBar(pageParameter)}</div>
+  </div>
+  $if{page.isShowMenu(pageParameter)}
+  <div id="resized_menu" class="clear_float">
+    <div id="resized_menu_right"></div>
+    <div id="resized_menu_left">${page.navBar(pageParameter)}</div>
+  </div>
+  $end{}
+  <div id="resized_body">
+    <div class="child">${content}</div>
+  </div>
+  $if{page.isShowFooter(pageParameter)}
+  <div id="resized_footer"></div>
+  $end{}
+</div>
+<script type="text/javascript">
+	$ready(function() {
+		var header = $('resized_header');
+		var footer = $('resized_footer');
+		var menu = $('resized_menu');
+		var m = $('resized_body').down();
+		var r = function() {
+			var height = document.viewport.getHeight() - header.getHeight()
+					- footer.getHeight();
+			if (menu) {
+				height -= menu.getHeight();
+			}
+			var style = 'height: ' + height + 'px';
+			m.setStyle(style);
+			if (m.resizedCallback) {
+				$eval(m.resizedCallback);
+			}
+		};
+		r.defer();
+		Event.observe(window, "resize", r);
+	});
+</script>

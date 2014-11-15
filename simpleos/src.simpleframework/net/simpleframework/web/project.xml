@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="defaultDatasource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="org.gjt.mm.mysql.Driver" />
+		<property name="url"
+			value="jdbc:mysql://127.0.0.1:3306/simple3?useServerPrepStmts=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+		<property name="testWhileIdle" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="14400000" />
+	</bean>
+  
+  <bean id="idTaskExecutor" class="net.simpleframework.core.ApplicationTaskExecutor">
+  </bean>
+
+	<bean id="idOrgInitializer" class="net.simpleframework.organization.OrgInitializer">
+		<property name="sync" value="true" />
+	</bean>
+
+	<bean id="idContentInitializer" class="net.simpleframework.content.ContentInitializer">
+		<property name="sync" value="true" />
+		<property name="bbsApplicationModule">
+			<bean class="net.simpleframework.example.MyBbsModule">
+			</bean>
+		</property>
+		<property name="newsApplicationModule">
+			<bean class="net.simpleframework.example.MyNewsApplicationModule">
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="idAppletsInitializer" class="net.simpleframework.applets.AppletsInitializer">
+		<property name="sync" value="true" />
+		<property name="notificationApplicationModule">
+			<bean class="net.simpleframework.applets.notification.DefaultNotificationApplicationModule">
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="idMyInitializer" class="net.simpleframework.my.MyInitializer">
+		<property name="sync" value="true" />
+		<property name="homeApplicationModule">
+			<bean class="net.simpleframework.example.MyHomeApplicationModule">
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="idSysManagerInitializer" class="net.simpleframework.sysmgr.SysManagerInitializer">
+		<property name="sync" value="true" />
+	</bean>
+
+	<bean id="idApplicationConfig" class="net.simpleframework.web.WebApplicationConfig">
+		<property name="initializerList">
+			<list>
+				<ref local="idSysManagerInitializer" />
+				<ref local="idOrgInitializer" />
+				<ref local="idContentInitializer" />
+				<ref local="idMyInitializer" />
+				<ref local="idAppletsInitializer" />
+			</list>
+		</property>
+
+		<property name="serverUrl" value="http://www.itniwo.net" />
+		<property name="datePattern" value="yyyy-MM-dd HH:mm" />
+		<property name="tableEntityManagerClass">
+			<value>net.simpleframework.ado.db.cache.MapTableEntityManager</value>
+		</property>
+		<!-- cache.Map -->
+	</bean>
+</beans>

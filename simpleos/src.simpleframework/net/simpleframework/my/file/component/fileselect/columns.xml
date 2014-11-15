@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columns>
+  <column columnName="icon" />
+
+  <column columnName="filename" columnText="#(FilePager.columns.0)"
+    style="word-wrap: break-word;" filter="true" />
+
+  <column columnName="filesize" columnText="#(FilePager.columns.1)"
+    textAlign="center" width="100" separator="true" filter="true"
+    beanPropertyType="java.lang.Long" />
+
+  <column columnName="createdate" columnText="#(FilePager.columns.2)"
+    textAlign="center" width="125" separator="true" filter="true"
+    beanPropertyType="java.util.Date" />
+
+  <column columnName="action" />
+</columns>

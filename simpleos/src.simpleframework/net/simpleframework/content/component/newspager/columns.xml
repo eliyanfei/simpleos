@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columns>
+  <!-- <column columnName="icon" /> -->
+  <column columnName="topic" columnText="#(NewsPager.columns.0)"
+    style="word-wrap: break-word;" filter="true" />
+
+  <column columnName="author" columnText="#(NewsPager.columns.1)"
+    textAlign="center" width="80" separator="true" />
+
+  <column columnName="createdate" columnText="#(NewsPager.columns.2)"
+    textAlign="center" width="80" separator="true" />
+
+  <column columnName="status" columnText="#(NewsPager.columns.3)"
+    textAlign="center" width="60" separator="true" />
+
+  <column columnName="remarks" columnText="#(NewsPager.columns.5)"
+    textAlign="center" width="50" separator="true" filter="true"
+    beanPropertyType="java.lang.Integer" />
+
+  <column columnName="views" columnText="#(NewsPager.columns.4)"
+    textAlign="center" width="50" separator="true" filter="true"
+    beanPropertyType="java.lang.Long" />
+
+  <column columnName="action" />
+</columns>

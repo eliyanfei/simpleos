@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columns>
+  <column columnName="text" columnText="#(UserPager.columns.0)"
+    headerStyle="width: 45%;" textAlign="center" />
+
+  <column columnName="name" columnText="#(UserPager.columns.1)"
+    textAlign="center" separator="true" />
+</columns>

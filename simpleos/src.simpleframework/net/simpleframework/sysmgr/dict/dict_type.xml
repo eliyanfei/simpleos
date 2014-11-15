@@ -1,0 +1,3719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dict>
+	<type name="base" text="常用字典" mark="1">
+		<type name="sex" text="性别">
+			<item name="0" text="男"/>
+			<item name="1" text="女"/>
+		</type>
+		<type name="animal" text="生肖">
+			<item name="mouse" text="鼠"/>
+			<item name="cattle" text="牛"/>
+			<item name="tiger" text="虎"/>
+			<item name="rabbit" text="兔"/>
+			<item name="dragon" text="龙"/>
+			<item name="snake" text="蛇"/>
+			<item name="horse" text="马"/>
+			<item name="sheep" text="羊"/>
+			<item name="monkey" text="猴"/>
+			<item name="chicken" text="鸡"/>
+			<item name="dog" text="狗"/>
+			<item name="pig" text="猪"/>
+		</type>
+		<type name="constellation" text="星座">
+			<item name="Aquarius" text="水瓶座 "/>
+			<item name="Pisces" text="双鱼座"/>
+			<item name="Aries" text="白羊座"/>
+			<item name="Taurus" text="金牛座"/>
+			<item name="Gemini" text="双子座"/>
+			<item name="Cancer" text="巨蟹座"/>
+			<item name="Leo" text="狮子座"/>
+			<item name="virgo" text="处女座"/>
+			<item name="Libra" text="天枰座"/>
+			<item name="Scorpio" text="天蝎座"/>
+			<item name="Sagittarius" text="射手座"/>
+			<item name="Capricornus" text="摩羯座 "/>
+		</type>
+		<type name="bloodtype" text="血型">
+			<item name="a" text="A型"/>
+			<item name="b" text="B型"/>
+			<item name="ab" text="AB型"/>
+			<item name="o" text="O型"/>
+			<item name="other" text="其他"/>
+		</type>
+
+		<type name="district" text="地域">
+			<item name="CITY_1" text="北京市">
+				<item name="100000_1_0" text="北京市">
+					<item name="100000_1" text="东城区"/>
+					<item name="100000_2" text="西城区"/>
+					<item name="100000_3" text="崇文区"/>
+					<item name="100000_4" text="宣武区"/>
+					<item name="100000_5" text="朝阳区"/>
+					<item name="100000_6" text="丰台区"/>
+					<item name="100000_7" text="石景山区"/>
+					<item name="100000_8" text="海淀区"/>
+					<item name="100000_9" text="门头沟区"/>
+					<item name="100000_10" text="房山区"/>
+					<item name="100000_11" text="通州区"/>
+					<item name="100000_12" text="顺义区"/>
+					<item name="100000_13" text="昌平区"/>
+					<item name="100000_14" text="大兴区"/>
+					<item name="100000_15" text="怀柔区"/>
+					<item name="100000_16" text="平谷区"/>
+					<item name="100000_17" text="密云县"/>
+					<item name="100000_18" text="延庆县"/>
+				</item>
+			</item>
+			<item name="CITY_2" text="天津市">
+				<item name="200000_2_1" text="天津市">
+					<item name="200000_19" text="和平区"/>
+					<item name="200000_20" text="河东区"/>
+					<item name="200000_21" text="河西区"/>
+					<item name="200000_22" text="南开区"/>
+					<item name="200000_23" text="河北区"/>
+					<item name="200000_24" text="红桥区"/>
+					<item name="200000_25" text="塘沽区"/>
+					<item name="200000_26" text="汉沽区"/>
+					<item name="200000_27" text="大港区"/>
+					<item name="200000_28" text="东丽区"/>
+					<item name="200000_29" text="西青区"/>
+					<item name="200000_30" text="津南区"/>
+					<item name="200000_31" text="北辰区"/>
+					<item name="200000_32" text="武清区"/>
+					<item name="200000_33" text="宝坻区"/>
+					<item name="200000_34" text="宁河县"/>
+					<item name="200000_35" text="静海县"/>
+					<item name="200000_36" text="蓟县"/>
+				</item>
+			</item>
+			<item name="CITY_3" text="河北省">
+				<item name="050000_3_2" text="石家庄市">
+					<item name="050000_37" text="长安区"/>
+					<item name="050000_38" text="桥东区"/>
+					<item name="050000_39" text="桥西区"/>
+					<item name="050000_40" text="新华区"/>
+					<item name="050000_41" text="井陉矿区"/>
+					<item name="050000_42" text="裕华区"/>
+					<item name="050000_43" text="井陉县"/>
+					<item name="050000_44" text="正定县"/>
+					<item name="050000_45" text="栾城县"/>
+					<item name="050000_46" text="行唐县"/>
+					<item name="050000_47" text="灵寿县"/>
+					<item name="050000_48" text="高邑县"/>
+					<item name="050000_49" text="深泽县"/>
+					<item name="050000_50" text="赞皇县"/>
+					<item name="050000_51" text="无极县"/>
+					<item name="050000_52" text="平山县"/>
+					<item name="050000_53" text="元氏县"/>
+					<item name="050000_54" text="赵县"/>
+					<item name="050000_55" text="辛集市"/>
+					<item name="050000_56" text="藁城市"/>
+					<item name="050000_57" text="晋州市"/>
+					<item name="050000_58" text="新乐市"/>
+					<item name="050000_59" text="鹿泉市"/>
+				</item>
+				<item name="063000_3_3" text="唐山市">
+					<item name="063000_60" text="路南区"/>
+					<item name="063000_61" text="路北区"/>
+					<item name="063000_62" text="古冶区"/>
+					<item name="063000_63" text="开平区"/>
+					<item name="063000_64" text="丰南区"/>
+					<item name="063000_65" text="丰润区"/>
+					<item name="063000_66" text="滦县"/>
+					<item name="063000_67" text="滦南县"/>
+					<item name="063000_68" text="乐亭县"/>
+					<item name="063000_69" text="迁西县"/>
+					<item name="063000_70" text="玉田县"/>
+					<item name="063000_71" text="唐海县"/>
+					<item name="063000_72" text="遵化市"/>
+					<item name="063000_73" text="迁安市"/>
+				</item>
+				<item name="066000_3_4" text="秦皇岛市">
+					<item name="066000_74" text="海港区"/>
+					<item name="066000_75" text="山海关区"/>
+					<item name="066000_76" text="北戴河区"/>
+					<item name="066000_77" text="青龙满族自治县"/>
+					<item name="066000_78" text="昌黎县"/>
+					<item name="066000_79" text="抚宁县"/>
+					<item name="066000_80" text="卢龙县"/>
+				</item>
+				<item name="056000_3_5" text="邯郸市">
+					<item name="056000_81" text="邯山区"/>
+					<item name="056000_82" text="丛台区"/>
+					<item name="056000_83" text="复兴区"/>
+					<item name="056000_84" text="峰峰矿区"/>
+					<item name="056000_85" text="邯郸县"/>
+					<item name="056000_86" text="临漳县"/>
+					<item name="056000_87" text="成安县"/>
+					<item name="056000_88" text="大名县"/>
+					<item name="056000_89" text="涉县"/>
+					<item name="056000_90" text="磁县"/>
+					<item name="056000_91" text="肥乡县"/>
+					<item name="056000_92" text="永年县"/>
+					<item name="056000_93" text="邱县"/>
+					<item name="056000_94" text="鸡泽县"/>
+					<item name="056000_95" text="广平县"/>
+					<item name="056000_96" text="馆陶县"/>
+					<item name="056000_97" text="魏县"/>
+					<item name="056000_98" text="曲周县"/>
+					<item name="056000_99" text="武安市"/>
+				</item>
+				<item name="054000_3_6" text="邢台市">
+					<item name="054000_100" text="桥东区"/>
+					<item name="054000_101" text="桥西区"/>
+					<item name="054000_102" text="邢台县"/>
+					<item name="054000_103" text="临城县"/>
+					<item name="054000_104" text="内丘县"/>
+					<item name="054000_105" text="柏乡县"/>
+					<item name="054000_106" text="隆尧县"/>
+					<item name="054000_107" text="任县"/>
+					<item name="054000_108" text="南和县"/>
+					<item name="054000_109" text="宁晋县"/>
+					<item name="054000_110" text="巨鹿县"/>
+					<item name="054000_111" text="新河县"/>
+					<item name="054000_112" text="广宗县"/>
+					<item name="054000_113" text="平乡县"/>
+					<item name="054000_114" text="威县"/>
+					<item name="054000_115" text="清河县"/>
+					<item name="054000_116" text="临西县"/>
+					<item name="054000_117" text="南宫市"/>
+					<item name="054000_118" text="沙河市"/>
+				</item>
+				<item name="071000_3_7" text="保定市">
+					<item name="071000_119" text="新市区"/>
+					<item name="071000_120" text="北市区"/>
+					<item name="071000_121" text="南市区"/>
+					<item name="071000_122" text="满城县"/>
+					<item name="071000_123" text="清苑县"/>
+					<item name="071000_124" text="涞水县"/>
+					<item name="071000_125" text="阜平县"/>
+					<item name="071000_126" text="徐水县"/>
+					<item name="071000_127" text="定兴县"/>
+					<item name="071000_128" text="唐县"/>
+					<item name="071000_129" text="高阳县"/>
+					<item name="071000_130" text="容城县"/>
+					<item name="071000_131" text="涞源县"/>
+					<item name="071000_132" text="望都县"/>
+					<item name="071000_133" text="安新县"/>
+					<item name="071000_134" text="易县"/>
+					<item name="071000_135" text="曲阳县"/>
+					<item name="071000_136" text="蠡县"/>
+					<item name="071000_137" text="顺平县"/>
+					<item name="071000_138" text="博野县"/>
+					<item name="071000_139" text="雄县"/>
+					<item name="071000_140" text="涿州市"/>
+					<item name="071000_141" text="定州市"/>
+					<item name="071000_142" text="安国市"/>
+					<item name="071000_143" text="高碑店市"/>
+				</item>
+				<item name="075000_3_8" text="张家口市">
+					<item name="075000_144" text="桥东区"/>
+					<item name="075000_145" text="桥西区"/>
+					<item name="075000_146" text="宣化区"/>
+					<item name="075000_147" text="下花园区"/>
+					<item name="075000_148" text="宣化县"/>
+					<item name="075000_149" text="张北县"/>
+					<item name="075000_150" text="康保县"/>
+					<item name="075000_151" text="沽源县"/>
+					<item name="075000_152" text="尚义县"/>
+					<item name="075000_153" text="蔚县"/>
+					<item name="075000_154" text="阳原县"/>
+					<item name="075000_155" text="怀安县"/>
+					<item name="075000_156" text="万全县"/>
+					<item name="075000_157" text="怀来县"/>
+					<item name="075000_158" text="涿鹿县"/>
+					<item name="075000_159" text="赤城县"/>
+					<item name="075000_160" text="崇礼县"/>
+				</item>
+				<item name="067000_3_9" text="承德市">
+					<item name="067000_161" text="双桥区"/>
+					<item name="067000_162" text="双滦区"/>
+					<item name="067000_163" text="鹰手营子矿区"/>
+					<item name="067000_164" text="承德县"/>
+					<item name="067000_165" text="兴隆县"/>
+					<item name="067000_166" text="平泉县"/>
+					<item name="067000_167" text="滦平县"/>
+					<item name="067000_168" text="隆化县"/>
+					<item name="067000_169" text="丰宁满族自治县"/>
+					<item name="067000_170" text="宽城满族自治县"/>
+					<item name="067000_171" text="围场满族蒙古族自治县"/>
+				</item>
+				<item name="061000_3_10" text="沧州市">
+					<item name="061000_172" text="新华区"/>
+					<item name="061000_173" text="运河区"/>
+					<item name="061000_174" text="沧县"/>
+					<item name="061000_175" text="青县"/>
+					<item name="061000_176" text="东光县"/>
+					<item name="061000_177" text="海兴县"/>
+					<item name="061000_178" text="盐山县"/>
+					<item name="061000_179" text="肃宁县"/>
+					<item name="061000_180" text="南皮县"/>
+					<item name="061000_181" text="吴桥县"/>
+					<item name="061000_182" text="献县"/>
+					<item name="061000_183" text="孟村回族自治县"/>
+					<item name="061000_184" text="泊头市"/>
+					<item name="061000_185" text="任丘市"/>
+					<item name="061000_186" text="黄骅市"/>
+					<item name="061000_187" text="河间市"/>
+				</item>
+				<item name="065000_3_11" text="廊坊市">
+					<item name="065000_188" text="安次区"/>
+					<item name="065000_189" text="广阳区"/>
+					<item name="065000_190" text="固安县"/>
+					<item name="065000_191" text="永清县"/>
+					<item name="065000_192" text="香河县"/>
+					<item name="065000_193" text="大城县"/>
+					<item name="065000_194" text="文安县"/>
+					<item name="065000_195" text="大厂回族自治县"/>
+					<item name="065000_196" text="霸州市"/>
+					<item name="065000_197" text="三河市"/>
+				</item>
+				<item name="053000_3_12" text="衡水市">
+					<item name="053000_198" text="桃城区"/>
+					<item name="053000_199" text="枣强县"/>
+					<item name="053000_200" text="武邑县"/>
+					<item name="053000_201" text="武强县"/>
+					<item name="053000_202" text="饶阳县"/>
+					<item name="053000_203" text="安平县"/>
+					<item name="053000_204" text="故城县"/>
+					<item name="053000_205" text="景县"/>
+					<item name="053000_206" text="阜城县"/>
+					<item name="053000_207" text="冀州市"/>
+					<item name="053000_208" text="深州市"/>
+				</item>
+			</item>
+			<item name="CITY_4" text="山西省">
+				<item name="030000_4_13" text="太原市">
+					<item name="030000_209" text="小店区"/>
+					<item name="030000_210" text="迎泽区"/>
+					<item name="030000_211" text="杏花岭区"/>
+					<item name="030000_212" text="尖草坪区"/>
+					<item name="030000_213" text="万柏林区"/>
+					<item name="030000_214" text="晋源区"/>
+					<item name="030000_215" text="清徐县"/>
+					<item name="030000_216" text="阳曲县"/>
+					<item name="030000_217" text="娄烦县"/>
+					<item name="030000_218" text="古交市"/>
+				</item>
+				<item name="037000_4_14" text="大同市">
+					<item name="037000_219" text="城区"/>
+					<item name="037000_220" text="矿区"/>
+					<item name="037000_221" text="南郊区"/>
+					<item name="037000_222" text="新荣区"/>
+					<item name="037000_223" text="阳高县"/>
+					<item name="037000_224" text="天镇县"/>
+					<item name="037000_225" text="广灵县"/>
+					<item name="037000_226" text="灵丘县"/>
+					<item name="037000_227" text="浑源县"/>
+					<item name="037000_228" text="左云县"/>
+					<item name="037000_229" text="大同县"/>
+				</item>
+				<item name="045000_4_15" text="阳泉市">
+					<item name="045000_230" text="城区"/>
+					<item name="045000_231" text="矿区"/>
+					<item name="045000_232" text="郊区"/>
+					<item name="045000_233" text="平定县"/>
+					<item name="045000_234" text="盂县"/>
+				</item>
+				<item name="046000_4_16" text="长治市">
+					<item name="046000_235" text="城区"/>
+					<item name="046000_236" text="郊区"/>
+					<item name="046000_237" text="长治县"/>
+					<item name="046000_238" text="襄垣县"/>
+					<item name="046000_239" text="屯留县"/>
+					<item name="046000_240" text="平顺县"/>
+					<item name="046000_241" text="黎城县"/>
+					<item name="046000_242" text="壶关县"/>
+					<item name="046000_243" text="长子县"/>
+					<item name="046000_244" text="武乡县"/>
+					<item name="046000_245" text="沁县"/>
+					<item name="046000_246" text="沁源县"/>
+					<item name="046000_247" text="潞城市"/>
+				</item>
+				<item name="048000_4_17" text="晋城市">
+					<item name="048000_248" text="城区"/>
+					<item name="048000_249" text="沁水县"/>
+					<item name="048000_250" text="阳城县"/>
+					<item name="048000_251" text="陵川县"/>
+					<item name="048000_252" text="泽州县"/>
+					<item name="048000_253" text="高平市"/>
+				</item>
+				<item name="036000_4_18" text="朔州市">
+					<item name="036000_254" text="朔城区"/>
+					<item name="036000_255" text="平鲁区"/>
+					<item name="036000_256" text="山阴县"/>
+					<item name="036000_257" text="应县"/>
+					<item name="036000_258" text="右玉县"/>
+					<item name="036000_259" text="怀仁县"/>
+				</item>
+				<item name="030600_4_19" text="晋中市">
+					<item name="030600_260" text="榆次区"/>
+					<item name="030600_261" text="榆社县"/>
+					<item name="030600_262" text="左权县"/>
+					<item name="030600_263" text="和顺县"/>
+					<item name="030600_264" text="昔阳县"/>
+					<item name="030600_265" text="寿阳县"/>
+					<item name="030600_266" text="太谷县"/>
+					<item name="030600_267" text="祁县"/>
+					<item name="030600_268" text="平遥县"/>
+					<item name="030600_269" text="灵石县"/>
+					<item name="030600_270" text="介休市"/>
+				</item>
+				<item name="044000_4_20" text="运城市">
+					<item name="044000_271" text="盐湖区"/>
+					<item name="044000_272" text="临猗县"/>
+					<item name="044000_273" text="万荣县"/>
+					<item name="044000_274" text="闻喜县"/>
+					<item name="044000_275" text="稷山县"/>
+					<item name="044000_276" text="新绛县"/>
+					<item name="044000_277" text="绛县"/>
+					<item name="044000_278" text="垣曲县"/>
+					<item name="044000_279" text="夏县"/>
+					<item name="044000_280" text="平陆县"/>
+					<item name="044000_281" text="芮城县"/>
+					<item name="044000_282" text="永济市"/>
+					<item name="044000_283" text="河津市"/>
+				</item>
+				<item name="034000_4_21" text="忻州市">
+					<item name="034000_284" text="忻府区"/>
+					<item name="034000_285" text="定襄县"/>
+					<item name="034000_286" text="五台县"/>
+					<item name="034000_287" text="代县"/>
+					<item name="034000_288" text="繁峙县"/>
+					<item name="034000_289" text="宁武县"/>
+					<item name="034000_290" text="静乐县"/>
+					<item name="034000_291" text="神池县"/>
+					<item name="034000_292" text="五寨县"/>
+					<item name="034000_293" text="岢岚县"/>
+					<item name="034000_294" text="河曲县"/>
+					<item name="034000_295" text="保德县"/>
+					<item name="034000_296" text="偏关县"/>
+					<item name="034000_297" text="原平市"/>
+				</item>
+				<item name="041000_4_22" text="临汾市">
+					<item name="041000_298" text="尧都区"/>
+					<item name="041000_299" text="曲沃县"/>
+					<item name="041000_300" text="翼城县"/>
+					<item name="041000_301" text="襄汾县"/>
+					<item name="041000_302" text="洪洞县"/>
+					<item name="041000_303" text="古县"/>
+					<item name="041000_304" text="安泽县"/>
+					<item name="041000_305" text="浮山县"/>
+					<item name="041000_306" text="吉县"/>
+					<item name="041000_307" text="乡宁县"/>
+					<item name="041000_308" text="大宁县"/>
+					<item name="041000_309" text="隰县"/>
+					<item name="041000_310" text="永和县"/>
+					<item name="041000_311" text="蒲县"/>
+					<item name="041000_312" text="汾西县"/>
+					<item name="041000_313" text="侯马市"/>
+					<item name="041000_314" text="霍州市"/>
+				</item>
+				<item name="030500_4_23" text="吕梁市">
+					<item name="030500_315" text="离石区"/>
+					<item name="030500_316" text="文水县"/>
+					<item name="030500_317" text="交城县"/>
+					<item name="030500_318" text="兴县"/>
+					<item name="030500_319" text="临县"/>
+					<item name="030500_320" text="柳林县"/>
+					<item name="030500_321" text="石楼县"/>
+					<item name="030500_322" text="岚县"/>
+					<item name="030500_323" text="方山县"/>
+					<item name="030500_324" text="中阳县"/>
+					<item name="030500_325" text="交口县"/>
+					<item name="030500_326" text="孝义市"/>
+					<item name="030500_327" text="汾阳市"/>
+				</item>
+			</item>
+			<item name="CITY_5" text="内蒙古自治区">
+				<item name="010000_5_24" text="呼和浩特市">
+					<item name="010000_328" text="新城区"/>
+					<item name="010000_329" text="回民区"/>
+					<item name="010000_330" text="玉泉区"/>
+					<item name="010000_331" text="赛罕区"/>
+					<item name="010000_332" text="土默特左旗"/>
+					<item name="010000_333" text="托克托县"/>
+					<item name="010000_334" text="和林格尔县"/>
+					<item name="010000_335" text="清水河县"/>
+					<item name="010000_336" text="武川县"/>
+				</item>
+				<item name="014000_5_25" text="包头市">
+					<item name="014000_337" text="东河区"/>
+					<item name="014000_338" text="昆都仑区"/>
+					<item name="014000_339" text="青山区"/>
+					<item name="014000_340" text="石拐区"/>
+					<item name="014000_341" text="白云矿区"/>
+					<item name="014000_342" text="九原区"/>
+					<item name="014000_343" text="土默特右旗"/>
+					<item name="014000_344" text="固阳县"/>
+					<item name="014000_345" text="达尔罕茂明安联合旗"/>
+				</item>
+				<item name="016000_5_26" text="乌海市">
+					<item name="016000_346" text="海勃湾区"/>
+					<item name="016000_347" text="海南区"/>
+					<item name="016000_348" text="乌达区"/>
+				</item>
+				<item name="024000_5_27" text="赤峰市">
+					<item name="024000_349" text="红山区"/>
+					<item name="024000_350" text="元宝山区"/>
+					<item name="024000_351" text="松山区"/>
+					<item name="024000_352" text="阿鲁科尔沁旗"/>
+					<item name="024000_353" text="巴林左旗"/>
+					<item name="024000_354" text="巴林右旗"/>
+					<item name="024000_355" text="林西县"/>
+					<item name="024000_356" text="克什克腾旗"/>
+					<item name="024000_357" text="翁牛特旗"/>
+					<item name="024000_358" text="喀喇沁旗"/>
+					<item name="024000_359" text="宁城县"/>
+					<item name="024000_360" text="敖汉旗"/>
+				</item>
+				<item name="028000_5_28" text="通辽市">
+					<item name="028000_361" text="科尔沁区"/>
+					<item name="028000_362" text="科尔沁左翼中旗"/>
+					<item name="028000_363" text="科尔沁左翼后旗"/>
+					<item name="028000_364" text="开鲁县"/>
+					<item name="028000_365" text="库伦旗"/>
+					<item name="028000_366" text="奈曼旗"/>
+					<item name="028000_367" text="扎鲁特旗"/>
+					<item name="028000_368" text="霍林郭勒市"/>
+				</item>
+				<item name="010300_5_29" text="鄂尔多斯市">
+					<item name="010300_369" text="东胜区"/>
+					<item name="010300_370" text="达拉特旗"/>
+					<item name="010300_371" text="准格尔旗"/>
+					<item name="010300_372" text="鄂托克前旗"/>
+					<item name="010300_373" text="鄂托克旗"/>
+					<item name="010300_374" text="杭锦旗"/>
+					<item name="010300_375" text="乌审旗"/>
+					<item name="010300_376" text="伊金霍洛旗"/>
+				</item>
+				<item name="021000_5_30" text="呼伦贝尔市">
+					<item name="021000_377" text="海拉尔区"/>
+					<item name="021000_378" text="阿荣旗"/>
+					<item name="021000_379" text="莫力达瓦达斡尔族自治旗"/>
+					<item name="021000_380" text="鄂伦春自治旗"/>
+					<item name="021000_381" text="鄂温克族自治旗"/>
+					<item name="021000_382" text="陈巴尔虎旗"/>
+					<item name="021000_383" text="新巴尔虎左旗"/>
+					<item name="021000_384" text="新巴尔虎右旗"/>
+					<item name="021000_385" text="满洲里市"/>
+					<item name="021000_386" text="牙克石市"/>
+					<item name="021000_387" text="扎兰屯市"/>
+					<item name="021000_388" text="额尔古纳市"/>
+					<item name="021000_389" text="根河市"/>
+				</item>
+				<item name="014400_5_31" text="巴彦淖尔市">
+					<item name="014400_390" text="临河区"/>
+					<item name="014400_391" text="五原县"/>
+					<item name="014400_392" text="磴口县"/>
+					<item name="014400_393" text="乌拉特前旗"/>
+					<item name="014400_394" text="乌拉特中旗"/>
+					<item name="014400_395" text="乌拉特后旗"/>
+					<item name="014400_396" text="杭锦后旗"/>
+				</item>
+				<item name="011800_5_32" text="乌兰察布市">
+					<item name="011800_397" text="集宁区"/>
+					<item name="011800_398" text="卓资县"/>
+					<item name="011800_399" text="化德县"/>
+					<item name="011800_400" text="商都县"/>
+					<item name="011800_401" text="兴和县"/>
+					<item name="011800_402" text="凉城县"/>
+					<item name="011800_403" text="察哈尔右翼前旗"/>
+					<item name="011800_404" text="察哈尔右翼中旗"/>
+					<item name="011800_405" text="察哈尔右翼后旗"/>
+					<item name="011800_406" text="四子王旗"/>
+					<item name="011800_407" text="丰镇市"/>
+				</item>
+				<item name="137500_5_33" text="兴安盟">
+					<item name="137500_408" text="乌兰浩特市"/>
+					<item name="137500_409" text="阿尔山市"/>
+					<item name="137500_410" text="科尔沁右翼前旗"/>
+					<item name="137500_411" text="科尔沁右翼中旗"/>
+					<item name="137500_412" text="扎赉特旗"/>
+					<item name="137500_413" text="突泉县"/>
+				</item>
+				<item name="011100_5_34" text="锡林郭勒盟">
+					<item name="011100_414" text="二连浩特市"/>
+					<item name="011100_415" text="锡林浩特市"/>
+					<item name="011100_416" text="阿巴嘎旗"/>
+					<item name="011100_417" text="苏尼特左旗"/>
+					<item name="011100_418" text="苏尼特右旗"/>
+					<item name="011100_419" text="东乌珠穆沁旗"/>
+					<item name="011100_420" text="西乌珠穆沁旗"/>
+					<item name="011100_421" text="太仆寺旗"/>
+					<item name="011100_422" text="镶黄旗"/>
+					<item name="011100_423" text="正镶白旗"/>
+					<item name="011100_424" text="正蓝旗"/>
+					<item name="011100_425" text="多伦县"/>
+				</item>
+				<item name="016000_5_35" text="阿拉善盟">
+					<item name="016000_426" text="阿拉善左旗"/>
+					<item name="016000_427" text="阿拉善右旗"/>
+					<item name="016000_428" text="额济纳旗"/>
+				</item>
+			</item>
+			<item name="CITY_6" text="辽宁省">
+				<item name="110000_6_36" text="沈阳市">
+					<item name="110000_429" text="和平区"/>
+					<item name="110000_430" text="沈河区"/>
+					<item name="110000_431" text="大东区"/>
+					<item name="110000_432" text="皇姑区"/>
+					<item name="110000_433" text="铁西区"/>
+					<item name="110000_434" text="苏家屯区"/>
+					<item name="110000_435" text="东陵区"/>
+					<item name="110000_436" text="新城子区"/>
+					<item name="110000_437" text="于洪区"/>
+					<item name="110000_438" text="辽中县"/>
+					<item name="110000_439" text="康平县"/>
+					<item name="110000_440" text="法库县"/>
+					<item name="110000_441" text="新民市"/>
+				</item>
+				<item name="116000_6_37" text="大连市">
+					<item name="116000_442" text="中山区"/>
+					<item name="116000_443" text="西岗区"/>
+					<item name="116000_444" text="沙河口区"/>
+					<item name="116000_445" text="甘井子区"/>
+					<item name="116000_446" text="旅顺口区"/>
+					<item name="116000_447" text="金州区"/>
+					<item name="116000_448" text="长海县"/>
+					<item name="116000_449" text="瓦房店市"/>
+					<item name="116000_450" text="普兰店市"/>
+					<item name="116000_451" text="庄河市"/>
+				</item>
+				<item name="114000_6_38" text="鞍山市">
+					<item name="114000_452" text="铁东区"/>
+					<item name="114000_453" text="铁西区"/>
+					<item name="114000_454" text="立山区"/>
+					<item name="114000_455" text="千山区"/>
+					<item name="114000_456" text="台安县"/>
+					<item name="114000_457" text="岫岩满族自治县"/>
+					<item name="114000_458" text="海城市"/>
+				</item>
+				<item name="113000_6_39" text="抚顺市">
+					<item name="113000_459" text="新抚区"/>
+					<item name="113000_460" text="东洲区"/>
+					<item name="113000_461" text="望花区"/>
+					<item name="113000_462" text="顺城区"/>
+					<item name="113000_463" text="抚顺县"/>
+					<item name="113000_464" text="新宾满族自治县"/>
+					<item name="113000_465" text="清原满族自治县"/>
+				</item>
+				<item name="117000_6_40" text="本溪市">
+					<item name="117000_466" text="平山区"/>
+					<item name="117000_467" text="溪湖区"/>
+					<item name="117000_468" text="明山区"/>
+					<item name="117000_469" text="南芬区"/>
+					<item name="117000_470" text="本溪满族自治县"/>
+					<item name="117000_471" text="桓仁满族自治县"/>
+				</item>
+				<item name="118000_6_41" text="丹东市">
+					<item name="118000_472" text="元宝区"/>
+					<item name="118000_473" text="振兴区"/>
+					<item name="118000_474" text="振安区"/>
+					<item name="118000_475" text="宽甸满族自治县"/>
+					<item name="118000_476" text="东港市"/>
+					<item name="118000_477" text="凤城市"/>
+				</item>
+				<item name="121000_6_42" text="锦州市">
+					<item name="121000_478" text="古塔区"/>
+					<item name="121000_479" text="凌河区"/>
+					<item name="121000_480" text="太和区"/>
+					<item name="121000_481" text="黑山县"/>
+					<item name="121000_482" text="义县"/>
+					<item name="121000_483" text="凌海市"/>
+					<item name="121000_484" text="北宁市"/>
+				</item>
+				<item name="115000_6_43" text="营口市">
+					<item name="115000_485" text="站前区"/>
+					<item name="115000_486" text="西市区"/>
+					<item name="115000_487" text="鲅鱼圈区"/>
+					<item name="115000_488" text="老边区"/>
+					<item name="115000_489" text="盖州市"/>
+					<item name="115000_490" text="大石桥市"/>
+				</item>
+				<item name="123000_6_44" text="阜新市">
+					<item name="123000_491" text="海州区"/>
+					<item name="123000_492" text="新邱区"/>
+					<item name="123000_493" text="太平区"/>
+					<item name="123000_494" text="清河门区"/>
+					<item name="123000_495" text="细河区"/>
+					<item name="123000_496" text="阜新蒙古族自治县"/>
+					<item name="123000_497" text="彰武县"/>
+				</item>
+				<item name="111000_6_45" text="辽阳市">
+					<item name="111000_498" text="白塔区"/>
+					<item name="111000_499" text="文圣区"/>
+					<item name="111000_500" text="宏伟区"/>
+					<item name="111000_501" text="弓长岭区"/>
+					<item name="111000_502" text="太子河区"/>
+					<item name="111000_503" text="辽阳县"/>
+					<item name="111000_504" text="灯塔市"/>
+				</item>
+				<item name="124000_6_46" text="盘锦市">
+					<item name="124000_505" text="双台子区"/>
+					<item name="124000_506" text="兴隆台区"/>
+					<item name="124000_507" text="大洼县"/>
+					<item name="124000_508" text="盘山县"/>
+				</item>
+				<item name="112000_6_47" text="铁岭市">
+					<item name="112000_509" text="银州区"/>
+					<item name="112000_510" text="清河区"/>
+					<item name="112000_511" text="铁岭县"/>
+					<item name="112000_512" text="西丰县"/>
+					<item name="112000_513" text="昌图县"/>
+					<item name="112000_514" text="调兵山市"/>
+					<item name="112000_515" text="开原市"/>
+				</item>
+				<item name="122000_6_48" text="朝阳市">
+					<item name="122000_516" text="双塔区"/>
+					<item name="122000_517" text="龙城区"/>
+					<item name="122000_518" text="朝阳县"/>
+					<item name="122000_519" text="建平县"/>
+					<item name="122000_520" text="喀喇沁左翼蒙古族自治县"/>
+					<item name="122000_521" text="北票市"/>
+					<item name="122000_522" text="凌源市"/>
+				</item>
+				<item name="125000_6_49" text="葫芦岛市">
+					<item name="125000_523" text="连山区"/>
+					<item name="125000_524" text="龙港区"/>
+					<item name="125000_525" text="南票区"/>
+					<item name="125000_526" text="绥中县"/>
+					<item name="125000_527" text="建昌县"/>
+					<item name="125000_528" text="兴城市"/>
+				</item>
+			</item>
+			<item name="CITY_7" text="吉林省">
+				<item name="130000_7_50" text="长春市">
+					<item name="130000_529" text="南关区"/>
+					<item name="130000_530" text="宽城区"/>
+					<item name="130000_531" text="朝阳区"/>
+					<item name="130000_532" text="二道区"/>
+					<item name="130000_533" text="绿园区"/>
+					<item name="130000_534" text="双阳区"/>
+					<item name="130000_535" text="农安县"/>
+					<item name="130000_536" text="九台市"/>
+					<item name="130000_537" text="榆树市"/>
+					<item name="130000_538" text="德惠市"/>
+				</item>
+				<item name="132000_7_51" text="吉林市">
+					<item name="132000_539" text="昌邑区"/>
+					<item name="132000_540" text="龙潭区"/>
+					<item name="132000_541" text="船营区"/>
+					<item name="132000_542" text="丰满区"/>
+					<item name="132000_543" text="永吉县"/>
+					<item name="132000_544" text="蛟河市"/>
+					<item name="132000_545" text="桦甸市"/>
+					<item name="132000_546" text="舒兰市"/>
+					<item name="132000_547" text="磐石市"/>
+				</item>
+				<item name="136000_7_52" text="四平市">
+					<item name="136000_548" text="铁西区"/>
+					<item name="136000_549" text="铁东区"/>
+					<item name="136000_550" text="梨树县"/>
+					<item name="136000_551" text="伊通满族自治县"/>
+					<item name="136000_552" text="公主岭市"/>
+					<item name="136000_553" text="双辽市"/>
+				</item>
+				<item name="136200_7_53" text="辽源市">
+					<item name="136200_554" text="龙山区"/>
+					<item name="136200_555" text="西安区"/>
+					<item name="136200_556" text="东丰县"/>
+					<item name="136200_557" text="东辽县"/>
+				</item>
+				<item name="134000_7_54" text="通化市">
+					<item name="134000_558" text="东昌区"/>
+					<item name="134000_559" text="二道江区"/>
+					<item name="134000_560" text="通化县"/>
+					<item name="134000_561" text="辉南县"/>
+					<item name="134000_562" text="柳河县"/>
+					<item name="134000_563" text="梅河口市"/>
+					<item name="134000_564" text="集安市"/>
+				</item>
+				<item name="134300_7_55" text="白山市">
+					<item name="134300_565" text="八道江区"/>
+					<item name="134300_566" text="抚松县"/>
+					<item name="134300_567" text="靖宇县"/>
+					<item name="134300_568" text="长白朝鲜族自治县"/>
+					<item name="134300_569" text="江源县"/>
+					<item name="134300_570" text="临江市"/>
+				</item>
+				<item name="131100_7_56" text="松原市">
+					<item name="131100_571" text="宁江区"/>
+					<item name="131100_572" text="前郭尔罗斯蒙古族自治县"/>
+					<item name="131100_573" text="长岭县"/>
+					<item name="131100_574" text="乾安县"/>
+					<item name="131100_575" text="扶余县"/>
+				</item>
+				<item name="137000_7_57" text="白城市">
+					<item name="137000_576" text="洮北区"/>
+					<item name="137000_577" text="镇赉县"/>
+					<item name="137000_578" text="通榆县"/>
+					<item name="137000_579" text="洮南市"/>
+					<item name="137000_580" text="大安市"/>
+				</item>
+				<item name="133000_7_58" text="延边朝鲜族自治州">
+					<item name="133000_581" text="延吉市"/>
+					<item name="133000_582" text="图们市"/>
+					<item name="133000_583" text="敦化市"/>
+					<item name="133000_584" text="珲春市"/>
+					<item name="133000_585" text="龙井市"/>
+					<item name="133000_586" text="和龙市"/>
+					<item name="133000_587" text="汪清县"/>
+					<item name="133000_588" text="安图县"/>
+				</item>
+			</item>
+			<item name="CITY_8" text="黑龙江省">
+				<item name="150000_8_59" text="哈尔滨市">
+					<item name="150000_589" text="道里区"/>
+					<item name="150000_590" text="南岗区"/>
+					<item name="150000_591" text="道外区"/>
+					<item name="150000_592" text="香坊区"/>
+					<item name="150000_593" text="动力区"/>
+					<item name="150000_594" text="平房区"/>
+					<item name="150000_595" text="松北区"/>
+					<item name="150000_596" text="呼兰区"/>
+					<item name="150000_597" text="依兰县"/>
+					<item name="150000_598" text="方正县"/>
+					<item name="150000_599" text="宾县"/>
+					<item name="150000_600" text="巴彦县"/>
+					<item name="150000_601" text="木兰县"/>
+					<item name="150000_602" text="通河县"/>
+					<item name="150000_603" text="延寿县"/>
+					<item name="150000_604" text="阿城市"/>
+					<item name="150000_605" text="双城市"/>
+					<item name="150000_606" text="尚志市"/>
+					<item name="150000_607" text="五常市"/>
+				</item>
+				<item name="161000_8_60" text="齐齐哈尔市">
+					<item name="161000_608" text="龙沙区"/>
+					<item name="161000_609" text="建华区"/>
+					<item name="161000_610" text="铁锋区"/>
+					<item name="161000_611" text="昂昂溪区"/>
+					<item name="161000_612" text="富拉尔基区"/>
+					<item name="161000_613" text="碾子山区"/>
+					<item name="161000_614" text="梅里斯达斡尔族区"/>
+					<item name="161000_615" text="龙江县"/>
+					<item name="161000_616" text="依安县"/>
+					<item name="161000_617" text="泰来县"/>
+					<item name="161000_618" text="甘南县"/>
+					<item name="161000_619" text="富裕县"/>
+					<item name="161000_620" text="克山县"/>
+					<item name="161000_621" text="克东县"/>
+					<item name="161000_622" text="拜泉县"/>
+					<item name="161000_623" text="讷河市"/>
+				</item>
+				<item name="158100_8_61" text="鸡西市">
+					<item name="158100_624" text="鸡冠区"/>
+					<item name="158100_625" text="恒山区"/>
+					<item name="158100_626" text="滴道区"/>
+					<item name="158100_627" text="梨树区"/>
+					<item name="158100_628" text="城子河区"/>
+					<item name="158100_629" text="麻山区"/>
+					<item name="158100_630" text="鸡东县"/>
+					<item name="158100_631" text="虎林市"/>
+					<item name="158100_632" text="密山市"/>
+				</item>
+				<item name="154100_8_62" text="鹤岗市">
+					<item name="154100_633" text="向阳区"/>
+					<item name="154100_634" text="工农区"/>
+					<item name="154100_635" text="南山区"/>
+					<item name="154100_636" text="兴安区"/>
+					<item name="154100_637" text="东山区"/>
+					<item name="154100_638" text="兴山区"/>
+					<item name="154100_639" text="萝北县"/>
+					<item name="154100_640" text="绥滨县"/>
+				</item>
+				<item name="155100_8_63" text="双鸭山市">
+					<item name="155100_641" text="尖山区"/>
+					<item name="155100_642" text="岭东区"/>
+					<item name="155100_643" text="四方台区"/>
+					<item name="155100_644" text="宝山区"/>
+					<item name="155100_645" text="集贤县"/>
+					<item name="155100_646" text="友谊县"/>
+					<item name="155100_647" text="宝清县"/>
+					<item name="155100_648" text="饶河县"/>
+				</item>
+				<item name="163000_8_64" text="大庆市">
+					<item name="163000_649" text="萨尔图区"/>
+					<item name="163000_650" text="龙凤区"/>
+					<item name="163000_651" text="让胡路区"/>
+					<item name="163000_652" text="红岗区"/>
+					<item name="163000_653" text="大同区"/>
+					<item name="163000_654" text="肇州县"/>
+					<item name="163000_655" text="肇源县"/>
+					<item name="163000_656" text="林甸县"/>
+					<item name="163000_657" text="杜尔伯特蒙古族自治县"/>
+				</item>
+				<item name="152300_8_65" text="伊春市">
+					<item name="152300_658" text="伊春区"/>
+					<item name="152300_659" text="南岔区"/>
+					<item name="152300_660" text="友好区"/>
+					<item name="152300_661" text="西林区"/>
+					<item name="152300_662" text="翠峦区"/>
+					<item name="152300_663" text="新青区"/>
+					<item name="152300_664" text="美溪区"/>
+					<item name="152300_665" text="金山屯区"/>
+					<item name="152300_666" text="五营区"/>
+					<item name="152300_667" text="乌马河区"/>
+					<item name="152300_668" text="汤旺河区"/>
+					<item name="152300_669" text="带岭区"/>
+					<item name="152300_670" text="乌伊岭区"/>
+					<item name="152300_671" text="红星区"/>
+					<item name="152300_672" text="上甘岭区"/>
+					<item name="152300_673" text="嘉荫县"/>
+					<item name="152300_674" text="铁力市"/>
+				</item>
+				<item name="154000_8_66" text="佳木斯市">
+					<item name="154000_675" text="永红区"/>
+					<item name="154000_676" text="向阳区"/>
+					<item name="154000_677" text="前进区"/>
+					<item name="154000_678" text="东风区"/>
+					<item name="154000_679" text="郊区"/>
+					<item name="154000_680" text="桦南县"/>
+					<item name="154000_681" text="桦川县"/>
+					<item name="154000_682" text="汤原县"/>
+					<item name="154000_683" text="抚远县"/>
+					<item name="154000_684" text="同江市"/>
+					<item name="154000_685" text="富锦市"/>
+				</item>
+				<item name="154600_8_67" text="七台河市">
+					<item name="154600_686" text="新兴区"/>
+					<item name="154600_687" text="桃山区"/>
+					<item name="154600_688" text="茄子河区"/>
+					<item name="154600_689" text="勃利县"/>
+				</item>
+				<item name="157000_8_68" text="牡丹江市">
+					<item name="157000_690" text="东安区"/>
+					<item name="157000_691" text="阳明区"/>
+					<item name="157000_692" text="爱民区"/>
+					<item name="157000_693" text="西安区"/>
+					<item name="157000_694" text="东宁县"/>
+					<item name="157000_695" text="林口县"/>
+					<item name="157000_696" text="绥芬河市"/>
+					<item name="157000_697" text="海林市"/>
+					<item name="157000_698" text="宁安市"/>
+					<item name="157000_699" text="穆棱市"/>
+				</item>
+				<item name="164300_8_69" text="黑河市">
+					<item name="164300_700" text="爱辉区"/>
+					<item name="164300_701" text="嫩江县"/>
+					<item name="164300_702" text="逊克县"/>
+					<item name="164300_703" text="孙吴县"/>
+					<item name="164300_704" text="北安市"/>
+					<item name="164300_705" text="五大连池市"/>
+				</item>
+				<item name="152000_8_70" text="绥化市">
+					<item name="152000_706" text="北林区"/>
+					<item name="152000_707" text="望奎县"/>
+					<item name="152000_708" text="兰西县"/>
+					<item name="152000_709" text="青冈县"/>
+					<item name="152000_710" text="庆安县"/>
+					<item name="152000_711" text="明水县"/>
+					<item name="152000_712" text="绥棱县"/>
+					<item name="152000_713" text="安达市"/>
+					<item name="152000_714" text="肇东市"/>
+					<item name="152000_715" text="海伦市"/>
+				</item>
+				<item name="165000_8_71" text="大兴安岭地区">
+					<item name="165000_716" text="呼玛县"/>
+					<item name="165000_717" text="塔河县"/>
+					<item name="165000_718" text="漠河县"/>
+				</item>
+			</item>
+			<item name="CITY_9" text="上海市">
+				<item name="200000_9_72" text="上海市">
+					<item name="200000_719" text="黄浦区"/>
+					<item name="200000_720" text="卢湾区"/>
+					<item name="200000_721" text="徐汇区"/>
+					<item name="200000_722" text="长宁区"/>
+					<item name="200000_723" text="静安区"/>
+					<item name="200000_724" text="普陀区"/>
+					<item name="200000_725" text="闸北区"/>
+					<item name="200000_726" text="虹口区"/>
+					<item name="200000_727" text="杨浦区"/>
+					<item name="200000_728" text="闵行区"/>
+					<item name="200000_729" text="宝山区"/>
+					<item name="200000_730" text="嘉定区"/>
+					<item name="200000_731" text="浦东新区"/>
+					<item name="200000_732" text="金山区"/>
+					<item name="200000_733" text="松江区"/>
+					<item name="200000_734" text="青浦区"/>
+					<item name="200000_735" text="南汇区"/>
+					<item name="200000_736" text="奉贤区"/>
+					<item name="200000_737" text="崇明县"/>
+				</item>
+			</item>
+			<item name="CITY_10" text="江苏省">
+				<item name="210000_10_73" text="南京市">
+					<item name="210000_738" text="玄武区"/>
+					<item name="210000_739" text="白下区"/>
+					<item name="210000_740" text="秦淮区"/>
+					<item name="210000_741" text="建邺区"/>
+					<item name="210000_742" text="鼓楼区"/>
+					<item name="210000_743" text="下关区"/>
+					<item name="210000_744" text="浦口区"/>
+					<item name="210000_745" text="栖霞区"/>
+					<item name="210000_746" text="雨花台区"/>
+					<item name="210000_747" text="江宁区"/>
+					<item name="210000_748" text="六合区"/>
+					<item name="210000_749" text="溧水县"/>
+					<item name="210000_750" text="高淳县"/>
+				</item>
+				<item name="214000_10_74" text="无锡市">
+					<item name="214000_751" text="崇安区"/>
+					<item name="214000_752" text="南长区"/>
+					<item name="214000_753" text="北塘区"/>
+					<item name="214000_754" text="锡山区"/>
+					<item name="214000_755" text="惠山区"/>
+					<item name="214000_756" text="滨湖区"/>
+					<item name="214000_757" text="江阴市"/>
+					<item name="214000_758" text="宜兴市"/>
+				</item>
+				<item name="221000_10_75" text="徐州市">
+					<item name="221000_759" text="鼓楼区"/>
+					<item name="221000_760" text="云龙区"/>
+					<item name="221000_761" text="九里区"/>
+					<item name="221000_762" text="贾汪区"/>
+					<item name="221000_763" text="泉山区"/>
+					<item name="221000_764" text="丰县"/>
+					<item name="221000_765" text="沛县"/>
+					<item name="221000_766" text="铜山县"/>
+					<item name="221000_767" text="睢宁县"/>
+					<item name="221000_768" text="新沂市"/>
+					<item name="221000_769" text="邳州市"/>
+				</item>
+				<item name="213000_10_76" text="常州市">
+					<item name="213000_770" text="天宁区"/>
+					<item name="213000_771" text="钟楼区"/>
+					<item name="213000_772" text="戚墅堰区"/>
+					<item name="213000_773" text="新北区"/>
+					<item name="213000_774" text="武进区"/>
+					<item name="213000_775" text="溧阳市"/>
+					<item name="213000_776" text="金坛市"/>
+				</item>
+				<item name="215000_10_77" text="苏州市">
+					<item name="215000_777" text="沧浪区"/>
+					<item name="215000_778" text="平江区"/>
+					<item name="215000_779" text="金阊区"/>
+					<item name="215000_780" text="虎丘区"/>
+					<item name="215000_781" text="吴中区"/>
+					<item name="215000_782" text="相城区"/>
+					<item name="215000_783" text="常熟市"/>
+					<item name="215000_784" text="张家港市"/>
+					<item name="215000_785" text="昆山市"/>
+					<item name="215000_786" text="吴江市"/>
+					<item name="215000_787" text="太仓市"/>
+				</item>
+				<item name="226000_10_78" text="南通市">
+					<item name="226000_788" text="崇川区"/>
+					<item name="226000_789" text="港闸区"/>
+					<item name="226000_790" text="海安县"/>
+					<item name="226000_791" text="如东县"/>
+					<item name="226000_792" text="启东市"/>
+					<item name="226000_793" text="如皋市"/>
+					<item name="226000_794" text="通州市"/>
+					<item name="226000_795" text="海门市"/>
+				</item>
+				<item name="222000_10_79" text="连云港市">
+					<item name="222000_796" text="连云区"/>
+					<item name="222000_797" text="新浦区"/>
+					<item name="222000_798" text="海州区"/>
+					<item name="222000_799" text="赣榆县"/>
+					<item name="222000_800" text="东海县"/>
+					<item name="222000_801" text="灌云县"/>
+					<item name="222000_802" text="灌南县"/>
+				</item>
+				<item name="223200_10_80" text="淮安市">
+					<item name="223200_803" text="清河区"/>
+					<item name="223200_804" text="楚州区"/>
+					<item name="223200_805" text="淮阴区"/>
+					<item name="223200_806" text="清浦区"/>
+					<item name="223200_807" text="涟水县"/>
+					<item name="223200_808" text="洪泽县"/>
+					<item name="223200_809" text="盱眙县"/>
+					<item name="223200_810" text="金湖县"/>
+				</item>
+				<item name="224000_10_81" text="盐城市">
+					<item name="224000_811" text="亭湖区"/>
+					<item name="224000_812" text="盐都区"/>
+					<item name="224000_813" text="响水县"/>
+					<item name="224000_814" text="滨海县"/>
+					<item name="224000_815" text="阜宁县"/>
+					<item name="224000_816" text="射阳县"/>
+					<item name="224000_817" text="建湖县"/>
+					<item name="224000_818" text="东台市"/>
+					<item name="224000_819" text="大丰市"/>
+				</item>
+				<item name="225000_10_82" text="扬州市">
+					<item name="225000_820" text="广陵区"/>
+					<item name="225000_821" text="邗江区"/>
+					<item name="225000_822" text="维扬区"/>
+					<item name="225000_823" text="宝应县"/>
+					<item name="225000_824" text="仪征市"/>
+					<item name="225000_825" text="高邮市"/>
+					<item name="225000_826" text="江都市"/>
+				</item>
+				<item name="212000_10_83" text="镇江市">
+					<item name="212000_827" text="京口区"/>
+					<item name="212000_828" text="润州区"/>
+					<item name="212000_829" text="丹徒区"/>
+					<item name="212000_830" text="丹阳市"/>
+					<item name="212000_831" text="扬中市"/>
+					<item name="212000_832" text="句容市"/>
+				</item>
+				<item name="225300_10_84" text="泰州市">
+					<item name="225300_833" text="海陵区"/>
+					<item name="225300_834" text="高港区"/>
+					<item name="225300_835" text="兴化市"/>
+					<item name="225300_836" text="靖江市"/>
+					<item name="225300_837" text="泰兴市"/>
+					<item name="225300_838" text="姜堰市"/>
+				</item>
+				<item name="223800_10_85" text="宿迁市">
+					<item name="223800_839" text="宿城区"/>
+					<item name="223800_840" text="宿豫区"/>
+					<item name="223800_841" text="沭阳县"/>
+					<item name="223800_842" text="泗阳县"/>
+					<item name="223800_843" text="泗洪县"/>
+				</item>
+			</item>
+			<item name="CITY_11" text="浙江省">
+				<item name="310000_11_86" text="杭州市">
+					<item name="310000_844" text="上城区"/>
+					<item name="310000_845" text="下城区"/>
+					<item name="310000_846" text="江干区"/>
+					<item name="310000_847" text="拱墅区"/>
+					<item name="310000_848" text="西湖区"/>
+					<item name="310000_849" text="滨江区"/>
+					<item name="310000_850" text="萧山区"/>
+					<item name="310000_851" text="余杭区"/>
+					<item name="310000_852" text="桐庐县"/>
+					<item name="310000_853" text="淳安县"/>
+					<item name="310000_854" text="建德市"/>
+					<item name="310000_855" text="富阳市"/>
+					<item name="310000_856" text="临安市"/>
+				</item>
+				<item name="315000_11_87" text="宁波市">
+					<item name="315000_857" text="海曙区"/>
+					<item name="315000_858" text="江东区"/>
+					<item name="315000_859" text="江北区"/>
+					<item name="315000_860" text="北仑区"/>
+					<item name="315000_861" text="镇海区"/>
+					<item name="315000_862" text="鄞州区"/>
+					<item name="315000_863" text="象山县"/>
+					<item name="315000_864" text="宁海县"/>
+					<item name="315000_865" text="余姚市"/>
+					<item name="315000_866" text="慈溪市"/>
+					<item name="315000_867" text="奉化市"/>
+				</item>
+				<item name="325000_11_88" text="温州市">
+					<item name="325000_868" text="鹿城区"/>
+					<item name="325000_869" text="龙湾区"/>
+					<item name="325000_870" text="瓯海区"/>
+					<item name="325000_871" text="洞头县"/>
+					<item name="325000_872" text="永嘉县"/>
+					<item name="325000_873" text="平阳县"/>
+					<item name="325000_874" text="苍南县"/>
+					<item name="325000_875" text="文成县"/>
+					<item name="325000_876" text="泰顺县"/>
+					<item name="325000_877" text="瑞安市"/>
+					<item name="325000_878" text="乐清市"/>
+				</item>
+				<item name="314000_11_89" text="嘉兴市">
+					<item name="314000_879" text="秀城区"/>
+					<item name="314000_880" text="秀洲区"/>
+					<item name="314000_881" text="嘉善县"/>
+					<item name="314000_882" text="海盐县"/>
+					<item name="314000_883" text="海宁市"/>
+					<item name="314000_884" text="平湖市"/>
+					<item name="314000_885" text="桐乡市"/>
+				</item>
+				<item name="313000_11_90" text="湖州市">
+					<item name="313000_886" text="吴兴区"/>
+					<item name="313000_887" text="南浔区"/>
+					<item name="313000_888" text="德清县"/>
+					<item name="313000_889" text="长兴县"/>
+					<item name="313000_890" text="安吉县"/>
+				</item>
+				<item name="312000_11_91" text="绍兴市">
+					<item name="312000_891" text="越城区"/>
+					<item name="312000_892" text="绍兴县"/>
+					<item name="312000_893" text="新昌县"/>
+					<item name="312000_894" text="诸暨市"/>
+					<item name="312000_895" text="上虞市"/>
+					<item name="312000_896" text="嵊州市"/>
+				</item>
+				<item name="321000_11_92" text="金华市">
+					<item name="321000_897" text="婺城区"/>
+					<item name="321000_898" text="金东区"/>
+					<item name="321000_899" text="武义县"/>
+					<item name="321000_900" text="浦江县"/>
+					<item name="321000_901" text="磐安县"/>
+					<item name="321000_902" text="兰溪市"/>
+					<item name="321000_903" text="义乌市"/>
+					<item name="321000_904" text="东阳市"/>
+					<item name="321000_905" text="永康市"/>
+				</item>
+				<item name="324000_11_93" text="衢州市">
+					<item name="324000_906" text="柯城区"/>
+					<item name="324000_907" text="衢江区"/>
+					<item name="324000_908" text="常山县"/>
+					<item name="324000_909" text="开化县"/>
+					<item name="324000_910" text="龙游县"/>
+					<item name="324000_911" text="江山市"/>
+				</item>
+				<item name="316000_11_94" text="舟山市">
+					<item name="316000_912" text="定海区"/>
+					<item name="316000_913" text="普陀区"/>
+					<item name="316000_914" text="岱山县"/>
+					<item name="316000_915" text="嵊泗县"/>
+				</item>
+				<item name="318000_11_95" text="台州市">
+					<item name="318000_916" text="椒江区"/>
+					<item name="318000_917" text="黄岩区"/>
+					<item name="318000_918" text="路桥区"/>
+					<item name="318000_919" text="玉环县"/>
+					<item name="318000_920" text="三门县"/>
+					<item name="318000_921" text="天台县"/>
+					<item name="318000_922" text="仙居县"/>
+					<item name="318000_923" text="温岭市"/>
+					<item name="318000_924" text="临海市"/>
+				</item>
+				<item name="323000_11_96" text="丽水市">
+					<item name="323000_925" text="莲都区"/>
+					<item name="323000_926" text="青田县"/>
+					<item name="323000_927" text="缙云县"/>
+					<item name="323000_928" text="遂昌县"/>
+					<item name="323000_929" text="松阳县"/>
+					<item name="323000_930" text="云和县"/>
+					<item name="323000_931" text="庆元县"/>
+					<item name="323000_932" text="景宁畲族自治县"/>
+					<item name="323000_933" text="龙泉市"/>
+				</item>
+			</item>
+			<item name="CITY_12" text="安徽省">
+				<item name="230000_12_97" text="合肥市">
+					<item name="230000_934" text="瑶海区"/>
+					<item name="230000_935" text="庐阳区"/>
+					<item name="230000_936" text="蜀山区"/>
+					<item name="230000_937" text="包河区"/>
+					<item name="230000_938" text="长丰县"/>
+					<item name="230000_939" text="肥东县"/>
+					<item name="230000_940" text="肥西县"/>
+				</item>
+				<item name="241000_12_98" text="芜湖市">
+					<item name="241000_941" text="镜湖区"/>
+					<item name="241000_942" text="马塘区"/>
+					<item name="241000_943" text="新芜区"/>
+					<item name="241000_944" text="鸠江区"/>
+					<item name="241000_945" text="芜湖县"/>
+					<item name="241000_946" text="繁昌县"/>
+					<item name="241000_947" text="南陵县"/>
+				</item>
+				<item name="233000_12_99" text="蚌埠市">
+					<item name="233000_948" text="龙子湖区"/>
+					<item name="233000_949" text="蚌山区"/>
+					<item name="233000_950" text="禹会区"/>
+					<item name="233000_951" text="淮上区"/>
+					<item name="233000_952" text="怀远县"/>
+					<item name="233000_953" text="五河县"/>
+					<item name="233000_954" text="固镇县"/>
+				</item>
+				<item name="232000_12_100" text="淮南市">
+					<item name="232000_955" text="大通区"/>
+					<item name="232000_956" text="田家庵区"/>
+					<item name="232000_957" text="谢家集区"/>
+					<item name="232000_958" text="八公山区"/>
+					<item name="232000_959" text="潘集区"/>
+					<item name="232000_960" text="凤台县"/>
+				</item>
+				<item name="243000_12_101" text="马鞍山市">
+					<item name="243000_961" text="金家庄区"/>
+					<item name="243000_962" text="花山区"/>
+					<item name="243000_963" text="雨山区"/>
+					<item name="243000_964" text="当涂县"/>
+				</item>
+				<item name="235000_12_102" text="淮北市">
+					<item name="235000_965" text="杜集区"/>
+					<item name="235000_966" text="相山区"/>
+					<item name="235000_967" text="烈山区"/>
+					<item name="235000_968" text="濉溪县"/>
+				</item>
+				<item name="244000_12_103" text="铜陵市">
+					<item name="244000_969" text="铜官山区"/>
+					<item name="244000_970" text="狮子山区"/>
+					<item name="244000_971" text="郊区"/>
+					<item name="244000_972" text="铜陵县"/>
+				</item>
+				<item name="246000_12_104" text="安庆市">
+					<item name="246000_973" text="迎江区"/>
+					<item name="246000_974" text="大观区"/>
+					<item name="246000_975" text="郊区"/>
+					<item name="246000_976" text="怀宁县"/>
+					<item name="246000_977" text="枞阳县"/>
+					<item name="246000_978" text="潜山县"/>
+					<item name="246000_979" text="太湖县"/>
+					<item name="246000_980" text="宿松县"/>
+					<item name="246000_981" text="望江县"/>
+					<item name="246000_982" text="岳西县"/>
+					<item name="246000_983" text="桐城市"/>
+				</item>
+				<item name="242700_12_105" text="黄山市">
+					<item name="242700_984" text="屯溪区"/>
+					<item name="242700_985" text="黄山区"/>
+					<item name="242700_986" text="徽州区"/>
+					<item name="242700_987" text="歙县"/>
+					<item name="242700_988" text="休宁县"/>
+					<item name="242700_989" text="黟县"/>
+					<item name="242700_990" text="祁门县"/>
+				</item>
+				<item name="239000_12_106" text="滁州市">
+					<item name="239000_991" text="琅琊区"/>
+					<item name="239000_992" text="南谯区"/>
+					<item name="239000_993" text="来安县"/>
+					<item name="239000_994" text="全椒县"/>
+					<item name="239000_995" text="定远县"/>
+					<item name="239000_996" text="凤阳县"/>
+					<item name="239000_997" text="天长市"/>
+					<item name="239000_998" text="明光市"/>
+				</item>
+				<item name="236100_12_107" text="阜阳市">
+					<item name="236100_999" text="颍州区"/>
+					<item name="236100_1000" text="颍东区"/>
+					<item name="236100_1001" text="颍泉区"/>
+					<item name="236100_1002" text="临泉县"/>
+					<item name="236100_1003" text="太和县"/>
+					<item name="236100_1004" text="阜南县"/>
+					<item name="236100_1005" text="颍上县"/>
+					<item name="236100_1006" text="界首市"/>
+				</item>
+				<item name="234100_12_108" text="宿州市">
+					<item name="234100_1007" text="埇桥区"/>
+					<item name="234100_1008" text="砀山县"/>
+					<item name="234100_1009" text="萧县"/>
+					<item name="234100_1010" text="灵璧县"/>
+					<item name="234100_1011" text="泗县"/>
+				</item>
+				<item name="238000_12_109" text="巢湖市">
+					<item name="238000_1012" text="居巢区"/>
+					<item name="238000_1013" text="庐江县"/>
+					<item name="238000_1014" text="无为县"/>
+					<item name="238000_1015" text="含山县"/>
+					<item name="238000_1016" text="和县"/>
+				</item>
+				<item name="237000_12_110" text="六安市">
+					<item name="237000_1017" text="金安区"/>
+					<item name="237000_1018" text="裕安区"/>
+					<item name="237000_1019" text="寿县"/>
+					<item name="237000_1020" text="霍邱县"/>
+					<item name="237000_1021" text="舒城县"/>
+					<item name="237000_1022" text="金寨县"/>
+					<item name="237000_1023" text="霍山县"/>
+				</item>
+				<item name="236800_12_111" text="亳州市">
+					<item name="236800_1024" text="谯城区"/>
+					<item name="236800_1025" text="涡阳县"/>
+					<item name="236800_1026" text="蒙城县"/>
+					<item name="236800_1027" text="利辛县"/>
+				</item>
+				<item name="247100_12_112" text="池州市">
+					<item name="247100_1028" text="贵池区"/>
+					<item name="247100_1029" text="东至县"/>
+					<item name="247100_1030" text="石台县"/>
+					<item name="247100_1031" text="青阳县"/>
+				</item>
+				<item name="366000_12_113" text="宣城市">
+					<item name="366000_1032" text="宣州区"/>
+					<item name="366000_1033" text="郎溪县"/>
+					<item name="366000_1034" text="广德县"/>
+					<item name="366000_1035" text="泾县"/>
+					<item name="366000_1036" text="绩溪县"/>
+					<item name="366000_1037" text="旌德县"/>
+					<item name="366000_1038" text="宁国市"/>
+				</item>
+			</item>
+			<item name="CITY_13" text="福建省">
+				<item name="350000_13_114" text="福州市">
+					<item name="350000_1039" text="鼓楼区"/>
+					<item name="350000_1040" text="台江区"/>
+					<item name="350000_1041" text="仓山区"/>
+					<item name="350000_1042" text="马尾区"/>
+					<item name="350000_1043" text="晋安区"/>
+					<item name="350000_1044" text="闽侯县"/>
+					<item name="350000_1045" text="连江县"/>
+					<item name="350000_1046" text="罗源县"/>
+					<item name="350000_1047" text="闽清县"/>
+					<item name="350000_1048" text="永泰县"/>
+					<item name="350000_1049" text="平潭县"/>
+					<item name="350000_1050" text="福清市"/>
+					<item name="350000_1051" text="长乐市"/>
+				</item>
+				<item name="361000_13_115" text="厦门市">
+					<item name="361000_1052" text="思明区"/>
+					<item name="361000_1053" text="海沧区"/>
+					<item name="361000_1054" text="湖里区"/>
+					<item name="361000_1055" text="集美区"/>
+					<item name="361000_1056" text="同安区"/>
+					<item name="361000_1057" text="翔安区"/>
+				</item>
+				<item name="351100_13_116" text="莆田市">
+					<item name="351100_1058" text="城厢区"/>
+					<item name="351100_1059" text="涵江区"/>
+					<item name="351100_1060" text="荔城区"/>
+					<item name="351100_1061" text="秀屿区"/>
+					<item name="351100_1062" text="仙游县"/>
+				</item>
+				<item name="365000_13_117" text="三明市">
+					<item name="365000_1063" text="梅列区"/>
+					<item name="365000_1064" text="三元区"/>
+					<item name="365000_1065" text="明溪县"/>
+					<item name="365000_1066" text="清流县"/>
+					<item name="365000_1067" text="宁化县"/>
+					<item name="365000_1068" text="大田县"/>
+					<item name="365000_1069" text="尤溪县"/>
+					<item name="365000_1070" text="沙县"/>
+					<item name="365000_1071" text="将乐县"/>
+					<item name="365000_1072" text="泰宁县"/>
+					<item name="365000_1073" text="建宁县"/>
+					<item name="365000_1074" text="永安市"/>
+				</item>
+				<item name="362000_13_118" text="泉州市">
+					<item name="362000_1075" text="鲤城区"/>
+					<item name="362000_1076" text="丰泽区"/>
+					<item name="362000_1077" text="洛江区"/>
+					<item name="362000_1078" text="泉港区"/>
+					<item name="362000_1079" text="惠安县"/>
+					<item name="362000_1080" text="安溪县"/>
+					<item name="362000_1081" text="永春县"/>
+					<item name="362000_1082" text="德化县"/>
+					<item name="362000_1083" text="金门县"/>
+					<item name="362000_1084" text="石狮市"/>
+					<item name="362000_1085" text="晋江市"/>
+					<item name="362000_1086" text="南安市"/>
+				</item>
+				<item name="363000_13_119" text="漳州市">
+					<item name="363000_1087" text="芗城区"/>
+					<item name="363000_1088" text="龙文区"/>
+					<item name="363000_1089" text="云霄县"/>
+					<item name="363000_1090" text="漳浦县"/>
+					<item name="363000_1091" text="诏安县"/>
+					<item name="363000_1092" text="长泰县"/>
+					<item name="363000_1093" text="东山县"/>
+					<item name="363000_1094" text="南靖县"/>
+					<item name="363000_1095" text="平和县"/>
+					<item name="363000_1096" text="华安县"/>
+					<item name="363000_1097" text="龙海市"/>
+				</item>
+				<item name="353000_13_120" text="南平市">
+					<item name="353000_1098" text="延平区"/>
+					<item name="353000_1099" text="顺昌县"/>
+					<item name="353000_1100" text="浦城县"/>
+					<item name="353000_1101" text="光泽县"/>
+					<item name="353000_1102" text="松溪县"/>
+					<item name="353000_1103" text="政和县"/>
+					<item name="353000_1104" text="邵武市"/>
+					<item name="353000_1105" text="武夷山市"/>
+					<item name="353000_1106" text="建瓯市"/>
+					<item name="353000_1107" text="建阳市"/>
+				</item>
+				<item name="364000_13_121" text="龙岩市">
+					<item name="364000_1108" text="新罗区"/>
+					<item name="364000_1109" text="长汀县"/>
+					<item name="364000_1110" text="永定县"/>
+					<item name="364000_1111" text="上杭县"/>
+					<item name="364000_1112" text="武平县"/>
+					<item name="364000_1113" text="连城县"/>
+					<item name="364000_1114" text="漳平市"/>
+				</item>
+				<item name="352100_13_122" text="宁德市">
+					<item name="352100_1115" text="蕉城区"/>
+					<item name="352100_1116" text="霞浦县"/>
+					<item name="352100_1117" text="古田县"/>
+					<item name="352100_1118" text="屏南县"/>
+					<item name="352100_1119" text="寿宁县"/>
+					<item name="352100_1120" text="周宁县"/>
+					<item name="352100_1121" text="柘荣县"/>
+					<item name="352100_1122" text="福安市"/>
+					<item name="352100_1123" text="福鼎市"/>
+				</item>
+			</item>
+			<item name="CITY_14" text="江西省">
+				<item name="330000_14_123" text="南昌市">
+					<item name="330000_1124" text="东湖区"/>
+					<item name="330000_1125" text="西湖区"/>
+					<item name="330000_1126" text="青云谱区"/>
+					<item name="330000_1127" text="湾里区"/>
+					<item name="330000_1128" text="青山湖区"/>
+					<item name="330000_1129" text="南昌县"/>
+					<item name="330000_1130" text="新建县"/>
+					<item name="330000_1131" text="安义县"/>
+					<item name="330000_1132" text="进贤县"/>
+				</item>
+				<item name="333000_14_124" text="景德镇市">
+					<item name="333000_1133" text="昌江区"/>
+					<item name="333000_1134" text="珠山区"/>
+					<item name="333000_1135" text="浮梁县"/>
+					<item name="333000_1136" text="乐平市"/>
+				</item>
+				<item name="337000_14_125" text="萍乡市">
+					<item name="337000_1137" text="安源区"/>
+					<item name="337000_1138" text="湘东区"/>
+					<item name="337000_1139" text="莲花县"/>
+					<item name="337000_1140" text="上栗县"/>
+					<item name="337000_1141" text="芦溪县"/>
+				</item>
+				<item name="332000_14_126" text="九江市">
+					<item name="332000_1142" text="庐山区"/>
+					<item name="332000_1143" text="浔阳区"/>
+					<item name="332000_1144" text="九江县"/>
+					<item name="332000_1145" text="武宁县"/>
+					<item name="332000_1146" text="修水县"/>
+					<item name="332000_1147" text="永修县"/>
+					<item name="332000_1148" text="德安县"/>
+					<item name="332000_1149" text="星子县"/>
+					<item name="332000_1150" text="都昌县"/>
+					<item name="332000_1151" text="湖口县"/>
+					<item name="332000_1152" text="彭泽县"/>
+					<item name="332000_1153" text="瑞昌市"/>
+				</item>
+				<item name="338000_14_127" text="新余市">
+					<item name="338000_1154" text="渝水区"/>
+					<item name="338000_1155" text="分宜县"/>
+				</item>
+				<item name="335000_14_128" text="鹰潭市">
+					<item name="335000_1156" text="月湖区"/>
+					<item name="335000_1157" text="余江县"/>
+					<item name="335000_1158" text="贵溪市"/>
+				</item>
+				<item name="341000_14_129" text="赣州市">
+					<item name="341000_1159" text="章贡区"/>
+					<item name="341000_1160" text="赣县"/>
+					<item name="341000_1161" text="信丰县"/>
+					<item name="341000_1162" text="大余县"/>
+					<item name="341000_1163" text="上犹县"/>
+					<item name="341000_1164" text="崇义县"/>
+					<item name="341000_1165" text="安远县"/>
+					<item name="341000_1166" text="龙南县"/>
+					<item name="341000_1167" text="定南县"/>
+					<item name="341000_1168" text="全南县"/>
+					<item name="341000_1169" text="宁都县"/>
+					<item name="341000_1170" text="于都县"/>
+					<item name="341000_1171" text="兴国县"/>
+					<item name="341000_1172" text="会昌县"/>
+					<item name="341000_1173" text="寻乌县"/>
+					<item name="341000_1174" text="石城县"/>
+					<item name="341000_1175" text="瑞金市"/>
+					<item name="341000_1176" text="南康市"/>
+				</item>
+				<item name="343000_14_130" text="吉安市">
+					<item name="343000_1177" text="吉州区"/>
+					<item name="343000_1178" text="青原区"/>
+					<item name="343000_1179" text="吉安县"/>
+					<item name="343000_1180" text="吉水县"/>
+					<item name="343000_1181" text="峡江县"/>
+					<item name="343000_1182" text="新干县"/>
+					<item name="343000_1183" text="永丰县"/>
+					<item name="343000_1184" text="泰和县"/>
+					<item name="343000_1185" text="遂川县"/>
+					<item name="343000_1186" text="万安县"/>
+					<item name="343000_1187" text="安福县"/>
+					<item name="343000_1188" text="永新县"/>
+					<item name="343000_1189" text="井冈山市"/>
+				</item>
+				<item name="336000_14_131" text="宜春市">
+					<item name="336000_1190" text="袁州区"/>
+					<item name="336000_1191" text="奉新县"/>
+					<item name="336000_1192" text="万载县"/>
+					<item name="336000_1193" text="上高县"/>
+					<item name="336000_1194" text="宜丰县"/>
+					<item name="336000_1195" text="靖安县"/>
+					<item name="336000_1196" text="铜鼓县"/>
+					<item name="336000_1197" text="丰城市"/>
+					<item name="336000_1198" text="樟树市"/>
+					<item name="336000_1199" text="高安市"/>
+				</item>
+				<item name="332900_14_132" text="抚州市">
+					<item name="332900_1200" text="临川区"/>
+					<item name="332900_1201" text="南城县"/>
+					<item name="332900_1202" text="黎川县"/>
+					<item name="332900_1203" text="南丰县"/>
+					<item name="332900_1204" text="崇仁县"/>
+					<item name="332900_1205" text="乐安县"/>
+					<item name="332900_1206" text="宜黄县"/>
+					<item name="332900_1207" text="金溪县"/>
+					<item name="332900_1208" text="资溪县"/>
+					<item name="332900_1209" text="东乡县"/>
+					<item name="332900_1210" text="广昌县"/>
+				</item>
+				<item name="334000_14_133" text="上饶市">
+					<item name="334000_1211" text="信州区"/>
+					<item name="334000_1212" text="上饶县"/>
+					<item name="334000_1213" text="广丰县"/>
+					<item name="334000_1214" text="玉山县"/>
+					<item name="334000_1215" text="铅山县"/>
+					<item name="334000_1216" text="横峰县"/>
+					<item name="334000_1217" text="弋阳县"/>
+					<item name="334000_1218" text="余干县"/>
+					<item name="334000_1219" text="鄱阳县"/>
+					<item name="334000_1220" text="万年县"/>
+					<item name="334000_1221" text="婺源县"/>
+					<item name="334000_1222" text="德兴市"/>
+				</item>
+			</item>
+			<item name="CITY_15" text="山东省">
+				<item name="250000_15_134" text="济南市">
+					<item name="250000_1223" text="历下区"/>
+					<item name="250000_1224" text="市中区"/>
+					<item name="250000_1225" text="槐荫区"/>
+					<item name="250000_1226" text="天桥区"/>
+					<item name="250000_1227" text="历城区"/>
+					<item name="250000_1228" text="长清区"/>
+					<item name="250000_1229" text="平阴县"/>
+					<item name="250000_1230" text="济阳县"/>
+					<item name="250000_1231" text="商河县"/>
+					<item name="250000_1232" text="章丘市"/>
+				</item>
+				<item name="266000_15_135" text="青岛市">
+					<item name="266000_1233" text="市南区"/>
+					<item name="266000_1234" text="市北区"/>
+					<item name="266000_1235" text="四方区"/>
+					<item name="266000_1236" text="黄岛区"/>
+					<item name="266000_1237" text="崂山区"/>
+					<item name="266000_1238" text="李沧区"/>
+					<item name="266000_1239" text="城阳区"/>
+					<item name="266000_1240" text="胶州市"/>
+					<item name="266000_1241" text="即墨市"/>
+					<item name="266000_1242" text="平度市"/>
+					<item name="266000_1243" text="胶南市"/>
+					<item name="266000_1244" text="莱西市"/>
+				</item>
+				<item name="255000_15_136" text="淄博市">
+					<item name="255000_1245" text="淄川区"/>
+					<item name="255000_1246" text="张店区"/>
+					<item name="255000_1247" text="博山区"/>
+					<item name="255000_1248" text="临淄区"/>
+					<item name="255000_1249" text="周村区"/>
+					<item name="255000_1250" text="桓台县"/>
+					<item name="255000_1251" text="高青县"/>
+					<item name="255000_1252" text="沂源县"/>
+				</item>
+				<item name="277100_15_137" text="枣庄市">
+					<item name="277100_1253" text="市中区"/>
+					<item name="277100_1254" text="薛城区"/>
+					<item name="277100_1255" text="峄城区"/>
+					<item name="277100_1256" text="台儿庄区"/>
+					<item name="277100_1257" text="山亭区"/>
+					<item name="277100_1258" text="滕州市"/>
+				</item>
+				<item name="257000_15_138" text="东营市">
+					<item name="257000_1259" text="东营区"/>
+					<item name="257000_1260" text="河口区"/>
+					<item name="257000_1261" text="垦利县"/>
+					<item name="257000_1262" text="利津县"/>
+					<item name="257000_1263" text="广饶县"/>
+				</item>
+				<item name="264000_15_139" text="烟台市">
+					<item name="264000_1264" text="芝罘区"/>
+					<item name="264000_1265" text="福山区"/>
+					<item name="264000_1266" text="牟平区"/>
+					<item name="264000_1267" text="莱山区"/>
+					<item name="264000_1268" text="长岛县"/>
+					<item name="264000_1269" text="龙口市"/>
+					<item name="264000_1270" text="莱阳市"/>
+					<item name="264000_1271" text="莱州市"/>
+					<item name="264000_1272" text="蓬莱市"/>
+					<item name="264000_1273" text="招远市"/>
+					<item name="264000_1274" text="栖霞市"/>
+					<item name="264000_1275" text="海阳市"/>
+				</item>
+				<item name="261000_15_140" text="潍坊市">
+					<item name="261000_1276" text="潍城区"/>
+					<item name="261000_1277" text="寒亭区"/>
+					<item name="261000_1278" text="坊子区"/>
+					<item name="261000_1279" text="奎文区"/>
+					<item name="261000_1280" text="临朐县"/>
+					<item name="261000_1281" text="昌乐县"/>
+					<item name="261000_1282" text="青州市"/>
+					<item name="261000_1283" text="诸城市"/>
+					<item name="261000_1284" text="寿光市"/>
+					<item name="261000_1285" text="安丘市"/>
+					<item name="261000_1286" text="高密市"/>
+					<item name="261000_1287" text="昌邑市"/>
+				</item>
+				<item name="272100_15_141" text="济宁市">
+					<item name="272100_1288" text="市中区"/>
+					<item name="272100_1289" text="任城区"/>
+					<item name="272100_1290" text="微山县"/>
+					<item name="272100_1291" text="鱼台县"/>
+					<item name="272100_1292" text="金乡县"/>
+					<item name="272100_1293" text="嘉祥县"/>
+					<item name="272100_1294" text="汶上县"/>
+					<item name="272100_1295" text="泗水县"/>
+					<item name="272100_1296" text="梁山县"/>
+					<item name="272100_1297" text="曲阜市"/>
+					<item name="272100_1298" text="兖州市"/>
+					<item name="272100_1299" text="邹城市"/>
+				</item>
+				<item name="271000_15_142" text="泰安市">
+					<item name="271000_1300" text="泰山区"/>
+					<item name="271000_1301" text="岱岳区"/>
+					<item name="271000_1302" text="宁阳县"/>
+					<item name="271000_1303" text="东平县"/>
+					<item name="271000_1304" text="新泰市"/>
+					<item name="271000_1305" text="肥城市"/>
+				</item>
+				<item name="265700_15_143" text="威海市">
+					<item name="265700_1306" text="环翠区"/>
+					<item name="265700_1307" text="文登市"/>
+					<item name="265700_1308" text="荣成市"/>
+					<item name="265700_1309" text="乳山市"/>
+				</item>
+				<item name="276800_15_144" text="日照市">
+					<item name="276800_1310" text="东港区"/>
+					<item name="276800_1311" text="岚山区"/>
+					<item name="276800_1312" text="五莲县"/>
+					<item name="276800_1313" text="莒县"/>
+				</item>
+				<item name="271100_15_145" text="莱芜市">
+					<item name="271100_1314" text="莱城区"/>
+					<item name="271100_1315" text="钢城区"/>
+				</item>
+				<item name="276000_15_146" text="临沂市">
+					<item name="276000_1316" text="兰山区"/>
+					<item name="276000_1317" text="罗庄区"/>
+					<item name="276000_1318" text="河东区"/>
+					<item name="276000_1319" text="沂南县"/>
+					<item name="276000_1320" text="郯城县"/>
+					<item name="276000_1321" text="沂水县"/>
+					<item name="276000_1322" text="苍山县"/>
+					<item name="276000_1323" text="费县"/>
+					<item name="276000_1324" text="平邑县"/>
+					<item name="276000_1325" text="莒南县"/>
+					<item name="276000_1326" text="蒙阴县"/>
+					<item name="276000_1327" text="临沭县"/>
+				</item>
+				<item name="253000_15_147" text="德州市">
+					<item name="253000_1328" text="德城区"/>
+					<item name="253000_1329" text="陵县"/>
+					<item name="253000_1330" text="宁津县"/>
+					<item name="253000_1331" text="庆云县"/>
+					<item name="253000_1332" text="临邑县"/>
+					<item name="253000_1333" text="齐河县"/>
+					<item name="253000_1334" text="平原县"/>
+					<item name="253000_1335" text="夏津县"/>
+					<item name="253000_1336" text="武城县"/>
+					<item name="253000_1337" text="乐陵市"/>
+					<item name="253000_1338" text="禹城市"/>
+				</item>
+				<item name="252000_15_148" text="聊城市">
+					<item name="252000_1339" text="东昌府区"/>
+					<item name="252000_1340" text="阳谷县"/>
+					<item name="252000_1341" text="莘县"/>
+					<item name="252000_1342" text="茌平县"/>
+					<item name="252000_1343" text="东阿县"/>
+					<item name="252000_1344" text="冠县"/>
+					<item name="252000_1345" text="高唐县"/>
+					<item name="252000_1346" text="临清市"/>
+				</item>
+				<item name="256600_15_149" text="滨州市">
+					<item name="256600_1347" text="滨城区"/>
+					<item name="256600_1348" text="惠民县"/>
+					<item name="256600_1349" text="阳信县"/>
+					<item name="256600_1350" text="无棣县"/>
+					<item name="256600_1351" text="沾化县"/>
+					<item name="256600_1352" text="博兴县"/>
+					<item name="256600_1353" text="邹平县"/>
+				</item>
+				<item name="255000_15_150" text="荷泽市">
+					<item name="255000_1354" text="牡丹区"/>
+					<item name="255000_1355" text="曹县"/>
+					<item name="255000_1356" text="单县"/>
+					<item name="255000_1357" text="成武县"/>
+					<item name="255000_1358" text="巨野县"/>
+					<item name="255000_1359" text="郓城县"/>
+					<item name="255000_1360" text="鄄城县"/>
+					<item name="255000_1361" text="定陶县"/>
+					<item name="255000_1362" text="东明县"/>
+				</item>
+			</item>
+			<item name="CITY_16" text="河南省">
+				<item name="450000_16_151" text="郑州市">
+					<item name="450000_1363" text="中原区"/>
+					<item name="450000_1364" text="二七区"/>
+					<item name="450000_1365" text="管城回族区"/>
+					<item name="450000_1366" text="金水区"/>
+					<item name="450000_1367" text="上街区"/>
+					<item name="450000_1368" text="惠济区"/>
+					<item name="450000_1369" text="中牟县"/>
+					<item name="450000_1370" text="巩义市"/>
+					<item name="450000_1371" text="荥阳市"/>
+					<item name="450000_1372" text="新密市"/>
+					<item name="450000_1373" text="新郑市"/>
+					<item name="450000_1374" text="登封市"/>
+				</item>
+				<item name="475000_16_152" text="开封市">
+					<item name="475000_1375" text="龙亭区"/>
+					<item name="475000_1376" text="顺河回族区"/>
+					<item name="475000_1377" text="鼓楼区"/>
+					<item name="475000_1378" text="南关区"/>
+					<item name="475000_1379" text="郊区"/>
+					<item name="475000_1380" text="杞县"/>
+					<item name="475000_1381" text="通许县"/>
+					<item name="475000_1382" text="尉氏县"/>
+					<item name="475000_1383" text="开封县"/>
+					<item name="475000_1384" text="兰考县"/>
+				</item>
+				<item name="471000_16_153" text="洛阳市">
+					<item name="471000_1385" text="老城区"/>
+					<item name="471000_1386" text="西工区"/>
+					<item name="471000_1387" text="廛河回族区"/>
+					<item name="471000_1388" text="涧西区"/>
+					<item name="471000_1389" text="吉利区"/>
+					<item name="471000_1390" text="洛龙区"/>
+					<item name="471000_1391" text="孟津县"/>
+					<item name="471000_1392" text="新安县"/>
+					<item name="471000_1393" text="栾川县"/>
+					<item name="471000_1394" text="嵩县"/>
+					<item name="471000_1395" text="汝阳县"/>
+					<item name="471000_1396" text="宜阳县"/>
+					<item name="471000_1397" text="洛宁县"/>
+					<item name="471000_1398" text="伊川县"/>
+					<item name="471000_1399" text="偃师市"/>
+				</item>
+				<item name="467000_16_154" text="平顶山市">
+					<item name="467000_1400" text="新华区"/>
+					<item name="467000_1401" text="卫东区"/>
+					<item name="467000_1402" text="石龙区"/>
+					<item name="467000_1403" text="湛河区"/>
+					<item name="467000_1404" text="宝丰县"/>
+					<item name="467000_1405" text="叶县"/>
+					<item name="467000_1406" text="鲁山县"/>
+					<item name="467000_1407" text="郏县"/>
+					<item name="467000_1408" text="舞钢市"/>
+					<item name="467000_1409" text="汝州市"/>
+				</item>
+				<item name="454900_16_155" text="安阳市">
+					<item name="454900_1410" text="文峰区"/>
+					<item name="454900_1411" text="北关区"/>
+					<item name="454900_1412" text="殷都区"/>
+					<item name="454900_1413" text="龙安区"/>
+					<item name="454900_1414" text="安阳县"/>
+					<item name="454900_1415" text="汤阴县"/>
+					<item name="454900_1416" text="滑县"/>
+					<item name="454900_1417" text="内黄县"/>
+					<item name="454900_1418" text="林州市"/>
+				</item>
+				<item name="456600_16_156" text="鹤壁市">
+					<item name="456600_1419" text="鹤山区"/>
+					<item name="456600_1420" text="山城区"/>
+					<item name="456600_1421" text="淇滨区"/>
+					<item name="456600_1422" text="浚县"/>
+					<item name="456600_1423" text="淇县"/>
+				</item>
+				<item name="453000_16_157" text="新乡市">
+					<item name="453000_1424" text="红旗区"/>
+					<item name="453000_1425" text="卫滨区"/>
+					<item name="453000_1426" text="凤泉区"/>
+					<item name="453000_1427" text="牧野区"/>
+					<item name="453000_1428" text="新乡县"/>
+					<item name="453000_1429" text="获嘉县"/>
+					<item name="453000_1430" text="原阳县"/>
+					<item name="453000_1431" text="延津县"/>
+					<item name="453000_1432" text="封丘县"/>
+					<item name="453000_1433" text="长垣县"/>
+					<item name="453000_1434" text="卫辉市"/>
+					<item name="453000_1435" text="辉县市"/>
+				</item>
+				<item name="454100_16_158" text="焦作市">
+					<item name="454100_1436" text="解放区"/>
+					<item name="454100_1437" text="中站区"/>
+					<item name="454100_1438" text="马村区"/>
+					<item name="454100_1439" text="山阳区"/>
+					<item name="454100_1440" text="修武县"/>
+					<item name="454100_1441" text="博爱县"/>
+					<item name="454100_1442" text="武陟县"/>
+					<item name="454100_1443" text="温县"/>
+					<item name="454100_1444" text="济源市"/>
+					<item name="454100_1445" text="沁阳市"/>
+					<item name="454100_1446" text="孟州市"/>
+				</item>
+				<item name="457000_16_159" text="濮阳市">
+					<item name="457000_1447" text="华龙区"/>
+					<item name="457000_1448" text="清丰县"/>
+					<item name="457000_1449" text="南乐县"/>
+					<item name="457000_1450" text="范县"/>
+					<item name="457000_1451" text="台前县"/>
+					<item name="457000_1452" text="濮阳县"/>
+				</item>
+				<item name="461000_16_160" text="许昌市">
+					<item name="461000_1453" text="魏都区"/>
+					<item name="461000_1454" text="许昌县"/>
+					<item name="461000_1455" text="鄢陵县"/>
+					<item name="461000_1456" text="襄城县"/>
+					<item name="461000_1457" text="禹州市"/>
+					<item name="461000_1458" text="长葛市"/>
+				</item>
+				<item name="462000_16_161" text="漯河市">
+					<item name="462000_1459" text="源汇区"/>
+					<item name="462000_1460" text="郾城区"/>
+					<item name="462000_1461" text="召陵区"/>
+					<item name="462000_1462" text="舞阳县"/>
+					<item name="462000_1463" text="临颍县"/>
+				</item>
+				<item name="472000_16_162" text="三门峡市">
+					<item name="472000_1464" text="市辖区"/>
+					<item name="472000_1465" text="湖滨区"/>
+					<item name="472000_1466" text="渑池县"/>
+					<item name="472000_1467" text="陕县"/>
+					<item name="472000_1468" text="卢氏县"/>
+					<item name="472000_1469" text="义马市"/>
+					<item name="472000_1470" text="灵宝市"/>
+				</item>
+				<item name="473000_16_163" text="南阳市">
+					<item name="473000_1471" text="宛城区"/>
+					<item name="473000_1472" text="卧龙区"/>
+					<item name="473000_1473" text="南召县"/>
+					<item name="473000_1474" text="方城县"/>
+					<item name="473000_1475" text="西峡县"/>
+					<item name="473000_1476" text="镇平县"/>
+					<item name="473000_1477" text="内乡县"/>
+					<item name="473000_1478" text="淅川县"/>
+					<item name="473000_1479" text="社旗县"/>
+					<item name="473000_1480" text="唐河县"/>
+					<item name="473000_1481" text="新野县"/>
+					<item name="473000_1482" text="桐柏县"/>
+					<item name="473000_1483" text="邓州市"/>
+				</item>
+				<item name="476000_16_164" text="商丘市">
+					<item name="476000_1484" text="梁园区"/>
+					<item name="476000_1485" text="睢阳区"/>
+					<item name="476000_1486" text="民权县"/>
+					<item name="476000_1487" text="睢县"/>
+					<item name="476000_1488" text="宁陵县"/>
+					<item name="476000_1489" text="柘城县"/>
+					<item name="476000_1490" text="虞城县"/>
+					<item name="476000_1491" text="夏邑县"/>
+					<item name="476000_1492" text="永城市"/>
+				</item>
+				<item name="464000_16_165" text="信阳市">
+					<item name="464000_1493" text="浉河区"/>
+					<item name="464000_1494" text="平桥区"/>
+					<item name="464000_1495" text="罗山县"/>
+					<item name="464000_1496" text="光山县"/>
+					<item name="464000_1497" text="新县"/>
+					<item name="464000_1498" text="商城县"/>
+					<item name="464000_1499" text="固始县"/>
+					<item name="464000_1500" text="潢川县"/>
+					<item name="464000_1501" text="淮滨县"/>
+					<item name="464000_1502" text="息县"/>
+				</item>
+				<item name="466000_16_166" text="周口市">
+					<item name="466000_1503" text="川汇区"/>
+					<item name="466000_1504" text="扶沟县"/>
+					<item name="466000_1505" text="西华县"/>
+					<item name="466000_1506" text="商水县"/>
+					<item name="466000_1507" text="沈丘县"/>
+					<item name="466000_1508" text="郸城县"/>
+					<item name="466000_1509" text="淮阳县"/>
+					<item name="466000_1510" text="太康县"/>
+					<item name="466000_1511" text="鹿邑县"/>
+					<item name="466000_1512" text="项城市"/>
+				</item>
+				<item name="463000_16_167" text="驻马店市">
+					<item name="463000_1513" text="驿城区"/>
+					<item name="463000_1514" text="西平县"/>
+					<item name="463000_1515" text="上蔡县"/>
+					<item name="463000_1516" text="平舆县"/>
+					<item name="463000_1517" text="正阳县"/>
+					<item name="463000_1518" text="确山县"/>
+					<item name="463000_1519" text="泌阳县"/>
+					<item name="463000_1520" text="汝南县"/>
+					<item name="463000_1521" text="遂平县"/>
+					<item name="463000_1522" text="新蔡县"/>
+				</item>
+			</item>
+			<item name="CITY_17" text="湖北省">
+				<item name="430000_17_168" text="武汉市">
+					<item name="430000_1523" text="江岸区"/>
+					<item name="430000_1524" text="江汉区"/>
+					<item name="430000_1525" text="硚口区"/>
+					<item name="430000_1526" text="汉阳区"/>
+					<item name="430000_1527" text="武昌区"/>
+					<item name="430000_1528" text="青山区"/>
+					<item name="430000_1529" text="洪山区"/>
+					<item name="430000_1530" text="东西湖区"/>
+					<item name="430000_1531" text="汉南区"/>
+					<item name="430000_1532" text="蔡甸区"/>
+					<item name="430000_1533" text="江夏区"/>
+					<item name="430000_1534" text="黄陂区"/>
+					<item name="430000_1535" text="新洲区"/>
+				</item>
+				<item name="435000_17_169" text="黄石市">
+					<item name="435000_1536" text="黄石港区"/>
+					<item name="435000_1537" text="西塞山区"/>
+					<item name="435000_1538" text="下陆区"/>
+					<item name="435000_1539" text="铁山区"/>
+					<item name="435000_1540" text="阳新县"/>
+					<item name="435000_1541" text="大冶市"/>
+				</item>
+				<item name="442000_17_170" text="十堰市">
+					<item name="442000_1542" text="茅箭区"/>
+					<item name="442000_1543" text="张湾区"/>
+					<item name="442000_1544" text="郧县"/>
+					<item name="442000_1545" text="郧西县"/>
+					<item name="442000_1546" text="竹山县"/>
+					<item name="442000_1547" text="竹溪县"/>
+					<item name="442000_1548" text="房县"/>
+					<item name="442000_1549" text="丹江口市"/>
+				</item>
+				<item name="443000_17_171" text="宜昌市">
+					<item name="443000_1550" text="西陵区"/>
+					<item name="443000_1551" text="伍家岗区"/>
+					<item name="443000_1552" text="点军区"/>
+					<item name="443000_1553" text="猇亭区"/>
+					<item name="443000_1554" text="夷陵区"/>
+					<item name="443000_1555" text="远安县"/>
+					<item name="443000_1556" text="兴山县"/>
+					<item name="443000_1557" text="秭归县"/>
+					<item name="443000_1558" text="长阳土家族自治县"/>
+					<item name="443000_1559" text="五峰土家族自治县"/>
+					<item name="443000_1560" text="宜都市"/>
+					<item name="443000_1561" text="当阳市"/>
+					<item name="443000_1562" text="枝江市"/>
+				</item>
+				<item name="441000_17_172" text="襄樊市">
+					<item name="441000_1563" text="襄城区"/>
+					<item name="441000_1564" text="樊城区"/>
+					<item name="441000_1565" text="襄阳区"/>
+					<item name="441000_1566" text="南漳县"/>
+					<item name="441000_1567" text="谷城县"/>
+					<item name="441000_1568" text="保康县"/>
+					<item name="441000_1569" text="老河口市"/>
+					<item name="441000_1570" text="枣阳市"/>
+					<item name="441000_1571" text="宜城市"/>
+				</item>
+				<item name="436000_17_173" text="鄂州市">
+					<item name="436000_1572" text="梁子湖区"/>
+					<item name="436000_1573" text="华容区"/>
+					<item name="436000_1574" text="鄂城区"/>
+				</item>
+				<item name="448000_17_174" text="荆门市">
+					<item name="448000_1575" text="东宝区"/>
+					<item name="448000_1576" text="掇刀区"/>
+					<item name="448000_1577" text="京山县"/>
+					<item name="448000_1578" text="沙洋县"/>
+					<item name="448000_1579" text="钟祥市"/>
+				</item>
+				<item name="432100_17_175" text="孝感市">
+					<item name="432100_1580" text="孝南区"/>
+					<item name="432100_1581" text="孝昌县"/>
+					<item name="432100_1582" text="大悟县"/>
+					<item name="432100_1583" text="云梦县"/>
+					<item name="432100_1584" text="应城市"/>
+					<item name="432100_1585" text="安陆市"/>
+					<item name="432100_1586" text="汉川市"/>
+				</item>
+				<item name="434000_17_176" text="荆州市">
+					<item name="434000_1587" text="沙市区"/>
+					<item name="434000_1588" text="荆州区"/>
+					<item name="434000_1589" text="公安县"/>
+					<item name="434000_1590" text="监利县"/>
+					<item name="434000_1591" text="江陵县"/>
+					<item name="434000_1592" text="石首市"/>
+					<item name="434000_1593" text="洪湖市"/>
+					<item name="434000_1594" text="松滋市"/>
+				</item>
+				<item name="438000_17_177" text="黄冈市">
+					<item name="438000_1595" text="黄州区"/>
+					<item name="438000_1596" text="团风县"/>
+					<item name="438000_1597" text="红安县"/>
+					<item name="438000_1598" text="罗田县"/>
+					<item name="438000_1599" text="英山县"/>
+					<item name="438000_1600" text="浠水县"/>
+					<item name="438000_1601" text="蕲春县"/>
+					<item name="438000_1602" text="黄梅县"/>
+					<item name="438000_1603" text="麻城市"/>
+					<item name="438000_1604" text="武穴市"/>
+				</item>
+				<item name="437000_17_178" text="咸宁市">
+					<item name="437000_1605" text="咸安区"/>
+					<item name="437000_1606" text="嘉鱼县"/>
+					<item name="437000_1607" text="通城县"/>
+					<item name="437000_1608" text="崇阳县"/>
+					<item name="437000_1609" text="通山县"/>
+					<item name="437000_1610" text="赤壁市"/>
+				</item>
+				<item name="441300_17_179" text="随州市">
+					<item name="441300_1611" text="曾都区"/>
+					<item name="441300_1612" text="广水市"/>
+				</item>
+				<item name="445000_17_180" text="恩施土家族苗族自治州">
+					<item name="445000_1613" text="恩施市"/>
+					<item name="445000_1614" text="利川市"/>
+					<item name="445000_1615" text="建始县"/>
+					<item name="445000_1616" text="巴东县"/>
+					<item name="445000_1617" text="宣恩县"/>
+					<item name="445000_1618" text="咸丰县"/>
+					<item name="445000_1619" text="来凤县"/>
+					<item name="445000_1620" text="鹤峰县"/>
+				</item>
+				<item name="442400_17_181" text="神农架">
+					<item name="442400_1621" text="仙桃市"/>
+					<item name="442400_1622" text="潜江市"/>
+					<item name="442400_1623" text="天门市"/>
+					<item name="442400_1624" text="神农架林区"/>
+				</item>
+			</item>
+			<item name="CITY_18" text="湖南省">
+				<item name="410000_18_182" text="长沙市">
+					<item name="410000_1625" text="芙蓉区"/>
+					<item name="410000_1626" text="天心区"/>
+					<item name="410000_1627" text="岳麓区"/>
+					<item name="410000_1628" text="开福区"/>
+					<item name="410000_1629" text="雨花区"/>
+					<item name="410000_1630" text="长沙县"/>
+					<item name="410000_1631" text="望城县"/>
+					<item name="410000_1632" text="宁乡县"/>
+					<item name="410000_1633" text="浏阳市"/>
+				</item>
+				<item name="412000_18_183" text="株洲市">
+					<item name="412000_1634" text="荷塘区"/>
+					<item name="412000_1635" text="芦淞区"/>
+					<item name="412000_1636" text="石峰区"/>
+					<item name="412000_1637" text="天元区"/>
+					<item name="412000_1638" text="株洲县"/>
+					<item name="412000_1639" text="攸县"/>
+					<item name="412000_1640" text="茶陵县"/>
+					<item name="412000_1641" text="炎陵县"/>
+					<item name="412000_1642" text="醴陵市"/>
+				</item>
+				<item name="411100_18_184" text="湘潭市">
+					<item name="411100_1643" text="雨湖区"/>
+					<item name="411100_1644" text="岳塘区"/>
+					<item name="411100_1645" text="湘潭县"/>
+					<item name="411100_1646" text="湘乡市"/>
+					<item name="411100_1647" text="韶山市"/>
+				</item>
+				<item name="421000_18_185" text="衡阳市">
+					<item name="421000_1648" text="珠晖区"/>
+					<item name="421000_1649" text="雁峰区"/>
+					<item name="421000_1650" text="石鼓区"/>
+					<item name="421000_1651" text="蒸湘区"/>
+					<item name="421000_1652" text="南岳区"/>
+					<item name="421000_1653" text="衡阳县"/>
+					<item name="421000_1654" text="衡南县"/>
+					<item name="421000_1655" text="衡山县"/>
+					<item name="421000_1656" text="衡东县"/>
+					<item name="421000_1657" text="祁东县"/>
+					<item name="421000_1658" text="耒阳市"/>
+					<item name="421000_1659" text="常宁市"/>
+				</item>
+				<item name="422000_18_186" text="邵阳市">
+					<item name="422000_1660" text="双清区"/>
+					<item name="422000_1661" text="大祥区"/>
+					<item name="422000_1662" text="北塔区"/>
+					<item name="422000_1663" text="邵东县"/>
+					<item name="422000_1664" text="新邵县"/>
+					<item name="422000_1665" text="邵阳县"/>
+					<item name="422000_1666" text="隆回县"/>
+					<item name="422000_1667" text="洞口县"/>
+					<item name="422000_1668" text="绥宁县"/>
+					<item name="422000_1669" text="新宁县"/>
+					<item name="422000_1670" text="城步苗族自治县"/>
+					<item name="422000_1671" text="武冈市"/>
+				</item>
+				<item name="414000_18_187" text="岳阳市">
+					<item name="414000_1672" text="岳阳楼区"/>
+					<item name="414000_1673" text="云溪区"/>
+					<item name="414000_1674" text="君山区"/>
+					<item name="414000_1675" text="岳阳县"/>
+					<item name="414000_1676" text="华容县"/>
+					<item name="414000_1677" text="湘阴县"/>
+					<item name="414000_1678" text="平江县"/>
+					<item name="414000_1679" text="汨罗市"/>
+					<item name="414000_1680" text="临湘市"/>
+				</item>
+				<item name="415000_18_188" text="常德市">
+					<item name="415000_1681" text="武陵区"/>
+					<item name="415000_1682" text="鼎城区"/>
+					<item name="415000_1683" text="安乡县"/>
+					<item name="415000_1684" text="汉寿县"/>
+					<item name="415000_1685" text="澧县"/>
+					<item name="415000_1686" text="临澧县"/>
+					<item name="415000_1687" text="桃源县"/>
+					<item name="415000_1688" text="石门县"/>
+					<item name="415000_1689" text="津市市"/>
+				</item>
+				<item name="427000_18_189" text="张家界市">
+					<item name="427000_1690" text="永定区"/>
+					<item name="427000_1691" text="武陵源区"/>
+					<item name="427000_1692" text="慈利县"/>
+					<item name="427000_1693" text="桑植县"/>
+				</item>
+				<item name="413000_18_190" text="益阳市">
+					<item name="413000_1694" text="资阳区"/>
+					<item name="413000_1695" text="赫山区"/>
+					<item name="413000_1696" text="南县"/>
+					<item name="413000_1697" text="桃江县"/>
+					<item name="413000_1698" text="安化县"/>
+					<item name="413000_1699" text="沅江市"/>
+				</item>
+				<item name="423000_18_191" text="郴州市">
+					<item name="423000_1700" text="北湖区"/>
+					<item name="423000_1701" text="苏仙区"/>
+					<item name="423000_1702" text="桂阳县"/>
+					<item name="423000_1703" text="宜章县"/>
+					<item name="423000_1704" text="永兴县"/>
+					<item name="423000_1705" text="嘉禾县"/>
+					<item name="423000_1706" text="临武县"/>
+					<item name="423000_1707" text="汝城县"/>
+					<item name="423000_1708" text="桂东县"/>
+					<item name="423000_1709" text="安仁县"/>
+					<item name="423000_1710" text="资兴市"/>
+				</item>
+				<item name="425000_18_192" text="永州市">
+					<item name="425000_1711" text="芝山区"/>
+					<item name="425000_1712" text="冷水滩区"/>
+					<item name="425000_1713" text="祁阳县"/>
+					<item name="425000_1714" text="东安县"/>
+					<item name="425000_1715" text="双牌县"/>
+					<item name="425000_1716" text="道县"/>
+					<item name="425000_1717" text="江永县"/>
+					<item name="425000_1718" text="宁远县"/>
+					<item name="425000_1719" text="蓝山县"/>
+					<item name="425000_1720" text="新田县"/>
+					<item name="425000_1721" text="江华瑶族自治县"/>
+				</item>
+				<item name="418000_18_193" text="怀化市">
+					<item name="418000_1722" text="鹤城区"/>
+					<item name="418000_1723" text="中方县"/>
+					<item name="418000_1724" text="沅陵县"/>
+					<item name="418000_1725" text="辰溪县"/>
+					<item name="418000_1726" text="溆浦县"/>
+					<item name="418000_1727" text="会同县"/>
+					<item name="418000_1728" text="麻阳苗族自治县"/>
+					<item name="418000_1729" text="新晃侗族自治县"/>
+					<item name="418000_1730" text="芷江侗族自治县"/>
+					<item name="418000_1731" text="靖州苗族侗族自治县"/>
+					<item name="418000_1732" text="通道侗族自治县"/>
+					<item name="418000_1733" text="洪江市"/>
+				</item>
+				<item name="417000_18_194" text="娄底市">
+					<item name="417000_1734" text="娄星区"/>
+					<item name="417000_1735" text="双峰县"/>
+					<item name="417000_1736" text="新化县"/>
+					<item name="417000_1737" text="冷水江市"/>
+					<item name="417000_1738" text="涟源市"/>
+				</item>
+				<item name="416000_18_195" text="湘西土家族苗族自治州">
+					<item name="416000_1739" text="吉首市"/>
+					<item name="416000_1740" text="泸溪县"/>
+					<item name="416000_1741" text="凤凰县"/>
+					<item name="416000_1742" text="花垣县"/>
+					<item name="416000_1743" text="保靖县"/>
+					<item name="416000_1744" text="古丈县"/>
+					<item name="416000_1745" text="永顺县"/>
+					<item name="416000_1746" text="龙山县"/>
+				</item>
+			</item>
+			<item name="CITY_19" text="广东省">
+				<item name="510000_19_196" text="广州市">
+					<item name="510000_1747" text="东山区"/>
+					<item name="510000_1748" text="荔湾区"/>
+					<item name="510000_1749" text="越秀区"/>
+					<item name="510000_1750" text="海珠区"/>
+					<item name="510000_1751" text="天河区"/>
+					<item name="510000_1752" text="芳村区"/>
+					<item name="510000_1753" text="白云区"/>
+					<item name="510000_1754" text="黄埔区"/>
+					<item name="510000_1755" text="番禺区"/>
+					<item name="510000_1756" text="花都区"/>
+					<item name="510000_1757" text="增城市"/>
+					<item name="510000_1758" text="从化市"/>
+				</item>
+				<item name="521000_19_197" text="韶关市">
+					<item name="521000_1759" text="武江区"/>
+					<item name="521000_1760" text="浈江区"/>
+					<item name="521000_1761" text="曲江区"/>
+					<item name="521000_1762" text="始兴县"/>
+					<item name="521000_1763" text="仁化县"/>
+					<item name="521000_1764" text="翁源县"/>
+					<item name="521000_1765" text="乳源瑶族自治县"/>
+					<item name="521000_1766" text="新丰县"/>
+					<item name="521000_1767" text="乐昌市"/>
+					<item name="521000_1768" text="南雄市"/>
+				</item>
+				<item name="518000_19_198" text="深圳市">
+					<item name="518000_1769" text="罗湖区"/>
+					<item name="518000_1770" text="福田区"/>
+					<item name="518000_1771" text="南山区"/>
+					<item name="518000_1772" text="宝安区"/>
+					<item name="518000_1773" text="龙岗区"/>
+					<item name="518000_1774" text="盐田区"/>
+				</item>
+				<item name="519000_19_199" text="珠海市">
+					<item name="519000_1775" text="香洲区"/>
+					<item name="519000_1776" text="斗门区"/>
+					<item name="519000_1777" text="金湾区"/>
+				</item>
+				<item name="515000_19_200" text="汕头市">
+					<item name="515000_1778" text="龙湖区"/>
+					<item name="515000_1779" text="金平区"/>
+					<item name="515000_1780" text="濠江区"/>
+					<item name="515000_1781" text="潮阳区"/>
+					<item name="515000_1782" text="潮南区"/>
+					<item name="515000_1783" text="澄海区"/>
+					<item name="515000_1784" text="南澳县"/>
+				</item>
+				<item name="528000_19_201" text="佛山市">
+					<item name="528000_1785" text="禅城区"/>
+					<item name="528000_1786" text="南海区"/>
+					<item name="528000_1787" text="顺德区"/>
+					<item name="528000_1788" text="三水区"/>
+					<item name="528000_1789" text="高明区"/>
+				</item>
+				<item name="529000_19_202" text="江门市">
+					<item name="529000_1790" text="蓬江区"/>
+					<item name="529000_1791" text="江海区"/>
+					<item name="529000_1792" text="新会区"/>
+					<item name="529000_1793" text="台山市"/>
+					<item name="529000_1794" text="开平市"/>
+					<item name="529000_1795" text="鹤山市"/>
+					<item name="529000_1796" text="恩平市"/>
+				</item>
+				<item name="524000_19_203" text="湛江市">
+					<item name="524000_1797" text="赤坎区"/>
+					<item name="524000_1798" text="霞山区"/>
+					<item name="524000_1799" text="坡头区"/>
+					<item name="524000_1800" text="麻章区"/>
+					<item name="524000_1801" text="遂溪县"/>
+					<item name="524000_1802" text="徐闻县"/>
+					<item name="524000_1803" text="廉江市"/>
+					<item name="524000_1804" text="雷州市"/>
+					<item name="524000_1805" text="吴川市"/>
+				</item>
+				<item name="525000_19_204" text="茂名市">
+					<item name="525000_1806" text="茂南区"/>
+					<item name="525000_1807" text="茂港区"/>
+					<item name="525000_1808" text="电白县"/>
+					<item name="525000_1809" text="高州市"/>
+					<item name="525000_1810" text="化州市"/>
+					<item name="525000_1811" text="信宜市"/>
+				</item>
+				<item name="526000_19_205" text="肇庆市">
+					<item name="526000_1812" text="端州区"/>
+					<item name="526000_1813" text="鼎湖区"/>
+					<item name="526000_1814" text="广宁县"/>
+					<item name="526000_1815" text="怀集县"/>
+					<item name="526000_1816" text="封开县"/>
+					<item name="526000_1817" text="德庆县"/>
+					<item name="526000_1818" text="高要市"/>
+					<item name="526000_1819" text="四会市"/>
+				</item>
+				<item name="516000_19_206" text="惠州市">
+					<item name="516000_1820" text="惠城区"/>
+					<item name="516000_1821" text="惠阳区"/>
+					<item name="516000_1822" text="博罗县"/>
+					<item name="516000_1823" text="惠东县"/>
+					<item name="516000_1824" text="龙门县"/>
+				</item>
+				<item name="514000_19_207" text="梅州市">
+					<item name="514000_1825" text="梅江区"/>
+					<item name="514000_1826" text="梅县"/>
+					<item name="514000_1827" text="大埔县"/>
+					<item name="514000_1828" text="丰顺县"/>
+					<item name="514000_1829" text="五华县"/>
+					<item name="514000_1830" text="平远县"/>
+					<item name="514000_1831" text="蕉岭县"/>
+					<item name="514000_1832" text="兴宁市"/>
+				</item>
+				<item name="516600_19_208" text="汕尾市">
+					<item name="516600_1833" text="城区"/>
+					<item name="516600_1834" text="海丰县"/>
+					<item name="516600_1835" text="陆河县"/>
+					<item name="516600_1836" text="陆丰市"/>
+				</item>
+				<item name="517000_19_209" text="河源市">
+					<item name="517000_1837" text="源城区"/>
+					<item name="517000_1838" text="紫金县"/>
+					<item name="517000_1839" text="龙川县"/>
+					<item name="517000_1840" text="连平县"/>
+					<item name="517000_1841" text="和平县"/>
+					<item name="517000_1842" text="东源县"/>
+				</item>
+				<item name="529500_19_210" text="阳江市">
+					<item name="529500_1843" text="江城区"/>
+					<item name="529500_1844" text="阳西县"/>
+					<item name="529500_1845" text="阳东县"/>
+					<item name="529500_1846" text="阳春市"/>
+				</item>
+				<item name="511500_19_211" text="清远市">
+					<item name="511500_1847" text="清城区"/>
+					<item name="511500_1848" text="佛冈县"/>
+					<item name="511500_1849" text="阳山县"/>
+					<item name="511500_1850" text="连山壮族瑶族自治县"/>
+					<item name="511500_1851" text="连南瑶族自治县"/>
+					<item name="511500_1852" text="清新县"/>
+					<item name="511500_1853" text="英德市"/>
+					<item name="511500_1854" text="连州市"/>
+				</item>
+				<item name="511700_19_212" text="东莞市"/>
+				<item name="528400_19_213" text="中山市"/>
+				<item name="515600_19_214" text="潮州市">
+					<item name="515600_1855" text="湘桥区"/>
+					<item name="515600_1856" text="潮安县"/>
+					<item name="515600_1857" text="饶平县"/>
+				</item>
+				<item name="522000_19_215" text="揭阳市">
+					<item name="522000_1858" text="榕城区"/>
+					<item name="522000_1859" text="揭东县"/>
+					<item name="522000_1860" text="揭西县"/>
+					<item name="522000_1861" text="惠来县"/>
+					<item name="522000_1862" text="普宁市"/>
+				</item>
+				<item name="527300_19_216" text="云浮市">
+					<item name="527300_1863" text="云城区"/>
+					<item name="527300_1864" text="新兴县"/>
+					<item name="527300_1865" text="郁南县"/>
+					<item name="527300_1866" text="云安县"/>
+					<item name="527300_1867" text="罗定市"/>
+				</item>
+			</item>
+			<item name="CITY_20" text="广西壮族自治区">
+				<item name="530000_20_217" text="南宁市">
+					<item name="530000_1868" text="兴宁区"/>
+					<item name="530000_1869" text="青秀区"/>
+					<item name="530000_1870" text="江南区"/>
+					<item name="530000_1871" text="西乡塘区"/>
+					<item name="530000_1872" text="良庆区"/>
+					<item name="530000_1873" text="邕宁区"/>
+					<item name="530000_1874" text="武鸣县"/>
+					<item name="530000_1875" text="隆安县"/>
+					<item name="530000_1876" text="马山县"/>
+					<item name="530000_1877" text="上林县"/>
+					<item name="530000_1878" text="宾阳县"/>
+					<item name="530000_1879" text="横县"/>
+				</item>
+				<item name="545000_20_218" text="柳州市">
+					<item name="545000_1880" text="城中区"/>
+					<item name="545000_1881" text="鱼峰区"/>
+					<item name="545000_1882" text="柳南区"/>
+					<item name="545000_1883" text="柳北区"/>
+					<item name="545000_1884" text="柳江县"/>
+					<item name="545000_1885" text="柳城县"/>
+					<item name="545000_1886" text="鹿寨县"/>
+					<item name="545000_1887" text="融安县"/>
+					<item name="545000_1888" text="融水苗族自治县"/>
+					<item name="545000_1889" text="三江侗族自治县"/>
+				</item>
+				<item name="541000_20_219" text="桂林市">
+					<item name="541000_1890" text="秀峰区"/>
+					<item name="541000_1891" text="叠彩区"/>
+					<item name="541000_1892" text="象山区"/>
+					<item name="541000_1893" text="七星区"/>
+					<item name="541000_1894" text="雁山区"/>
+					<item name="541000_1895" text="阳朔县"/>
+					<item name="541000_1896" text="临桂县"/>
+					<item name="541000_1897" text="灵川县"/>
+					<item name="541000_1898" text="全州县"/>
+					<item name="541000_1899" text="兴安县"/>
+					<item name="541000_1900" text="永福县"/>
+					<item name="541000_1901" text="灌阳县"/>
+					<item name="541000_1902" text="龙胜各族自治县"/>
+					<item name="541000_1903" text="资源县"/>
+					<item name="541000_1904" text="平乐县"/>
+					<item name="541000_1905" text="荔蒲县"/>
+					<item name="541000_1906" text="恭城瑶族自治县"/>
+				</item>
+				<item name="543000_20_220" text="梧州市">
+					<item name="543000_1907" text="万秀区"/>
+					<item name="543000_1908" text="蝶山区"/>
+					<item name="543000_1909" text="长洲区"/>
+					<item name="543000_1910" text="苍梧县"/>
+					<item name="543000_1911" text="藤县"/>
+					<item name="543000_1912" text="蒙山县"/>
+					<item name="543000_1913" text="岑溪市"/>
+				</item>
+				<item name="536000_20_221" text="北海市">
+					<item name="536000_1914" text="海城区"/>
+					<item name="536000_1915" text="银海区"/>
+					<item name="536000_1916" text="铁山港区"/>
+					<item name="536000_1917" text="合浦县"/>
+				</item>
+				<item name="538000_20_222" text="防城港市">
+					<item name="538000_1918" text="港口区"/>
+					<item name="538000_1919" text="防城区"/>
+					<item name="538000_1920" text="上思县"/>
+					<item name="538000_1921" text="东兴市"/>
+				</item>
+				<item name="535000_20_223" text="钦州市">
+					<item name="535000_1922" text="钦南区"/>
+					<item name="535000_1923" text="钦北区"/>
+					<item name="535000_1924" text="灵山县"/>
+					<item name="535000_1925" text="浦北县"/>
+				</item>
+				<item name="537100_20_224" text="贵港市">
+					<item name="537100_1926" text="港北区"/>
+					<item name="537100_1927" text="港南区"/>
+					<item name="537100_1928" text="覃塘区"/>
+					<item name="537100_1929" text="平南县"/>
+					<item name="537100_1930" text="桂平市"/>
+				</item>
+				<item name="537000_20_225" text="玉林市">
+					<item name="537000_1931" text="玉州区"/>
+					<item name="537000_1932" text="容县"/>
+					<item name="537000_1933" text="陆川县"/>
+					<item name="537000_1934" text="博白县"/>
+					<item name="537000_1935" text="兴业县"/>
+					<item name="537000_1936" text="北流市"/>
+				</item>
+				<item name="533000_20_226" text="百色市">
+					<item name="533000_1937" text="右江区"/>
+					<item name="533000_1938" text="田阳县"/>
+					<item name="533000_1939" text="田东县"/>
+					<item name="533000_1940" text="平果县"/>
+					<item name="533000_1941" text="德保县"/>
+					<item name="533000_1942" text="靖西县"/>
+					<item name="533000_1943" text="那坡县"/>
+					<item name="533000_1944" text="凌云县"/>
+					<item name="533000_1945" text="乐业县"/>
+					<item name="533000_1946" text="田林县"/>
+					<item name="533000_1947" text="西林县"/>
+					<item name="533000_1948" text="隆林各族自治县"/>
+				</item>
+				<item name="542800_20_227" text="贺州市">
+					<item name="542800_1949" text="八步区"/>
+					<item name="542800_1950" text="昭平县"/>
+					<item name="542800_1951" text="钟山县"/>
+					<item name="542800_1952" text="富川瑶族自治县"/>
+				</item>
+				<item name="547000_20_228" text="河池市">
+					<item name="547000_1953" text="金城江区"/>
+					<item name="547000_1954" text="南丹县"/>
+					<item name="547000_1955" text="天峨县"/>
+					<item name="547000_1956" text="凤山县"/>
+					<item name="547000_1957" text="东兰县"/>
+					<item name="547000_1958" text="罗城仫佬族自治县"/>
+					<item name="547000_1959" text="环江毛南族自治县"/>
+					<item name="547000_1960" text="巴马瑶族自治县"/>
+					<item name="547000_1961" text="都安瑶族自治县"/>
+					<item name="547000_1962" text="大化瑶族自治县"/>
+					<item name="547000_1963" text="宜州市"/>
+				</item>
+				<item name="546100_20_229" text="来宾市">
+					<item name="546100_1964" text="兴宾区"/>
+					<item name="546100_1965" text="忻城县"/>
+					<item name="546100_1966" text="象州县"/>
+					<item name="546100_1967" text="武宣县"/>
+					<item name="546100_1968" text="金秀瑶族自治县"/>
+					<item name="546100_1969" text="合山市"/>
+				</item>
+				<item name="532200_20_230" text="崇左市">
+					<item name="532200_1970" text="江洲区"/>
+					<item name="532200_1971" text="扶绥县"/>
+					<item name="532200_1972" text="宁明县"/>
+					<item name="532200_1973" text="龙州县"/>
+					<item name="532200_1974" text="大新县"/>
+					<item name="532200_1975" text="天等县"/>
+					<item name="532200_1976" text="凭祥市"/>
+				</item>
+			</item>
+			<item name="CITY_21" text="海南省">
+				<item name="570000_21_231" text="海口市">
+					<item name="570000_1977" text="秀英区"/>
+					<item name="570000_1978" text="龙华区"/>
+					<item name="570000_1979" text="琼山区"/>
+					<item name="570000_1980" text="美兰区"/>
+				</item>
+				<item name="572000_21_232" text="三亚市">
+					<item name="572000_1981" text="五指山市"/>
+					<item name="572000_1982" text="琼海市"/>
+					<item name="572000_1983" text="儋州市"/>
+					<item name="572000_1984" text="文昌市"/>
+					<item name="572000_1985" text="万宁市"/>
+					<item name="572000_1986" text="东方市"/>
+					<item name="572000_1987" text="定安县"/>
+					<item name="572000_1988" text="屯昌县"/>
+					<item name="572000_1989" text="澄迈县"/>
+					<item name="572000_1990" text="临高县"/>
+					<item name="572000_1991" text="白沙黎族自治县"/>
+					<item name="572000_1992" text="昌江黎族自治县"/>
+					<item name="572000_1993" text="乐东黎族自治县"/>
+					<item name="572000_1994" text="陵水黎族自治县"/>
+					<item name="572000_1995" text="保亭黎族苗族自治县"/>
+					<item name="572000_1996" text="琼中黎族苗族自治县"/>
+					<item name="572000_1997" text="西沙群岛"/>
+					<item name="572000_1998" text="南沙群岛"/>
+					<item name="572000_1999" text="中沙群岛的岛礁及其海域"/>
+				</item>
+			</item>
+			<item name="CITY_22" text="重庆市">
+				<item name="400000_22_233" text="重庆市">
+					<item name="400000_2000" text="万州区"/>
+					<item name="400000_2001" text="涪陵区"/>
+					<item name="400000_2002" text="渝中区"/>
+					<item name="400000_2003" text="大渡口区"/>
+					<item name="400000_2004" text="江北区"/>
+					<item name="400000_2005" text="沙坪坝区"/>
+					<item name="400000_2006" text="九龙坡区"/>
+					<item name="400000_2007" text="南岸区"/>
+					<item name="400000_2008" text="北碚区"/>
+					<item name="400000_2009" text="万盛区"/>
+					<item name="400000_2010" text="双桥区"/>
+					<item name="400000_2011" text="渝北区"/>
+					<item name="400000_2012" text="巴南区"/>
+					<item name="400000_2013" text="黔江区"/>
+					<item name="400000_2014" text="长寿区"/>
+					<item name="400000_2015" text="綦江县"/>
+					<item name="400000_2016" text="潼南县"/>
+					<item name="400000_2017" text="铜梁县"/>
+					<item name="400000_2018" text="大足县"/>
+					<item name="400000_2019" text="荣昌县"/>
+					<item name="400000_2020" text="璧山县"/>
+					<item name="400000_2021" text="梁平县"/>
+					<item name="400000_2022" text="城口县"/>
+					<item name="400000_2023" text="丰都县"/>
+					<item name="400000_2024" text="垫江县"/>
+					<item name="400000_2025" text="武隆县"/>
+					<item name="400000_2026" text="忠县"/>
+					<item name="400000_2027" text="开县"/>
+					<item name="400000_2028" text="云阳县"/>
+					<item name="400000_2029" text="奉节县"/>
+					<item name="400000_2030" text="巫山县"/>
+					<item name="400000_2031" text="巫溪县"/>
+					<item name="400000_2032" text="石柱土家族自治县"/>
+					<item name="400000_2033" text="秀山土家族苗族自治县"/>
+					<item name="400000_2034" text="酉阳土家族苗族自治县"/>
+					<item name="400000_2035" text="彭水苗族土家族自治县"/>
+					<item name="400000_2036" text="江津市"/>
+					<item name="400000_2037" text="合川市"/>
+					<item name="400000_2038" text="永川市"/>
+					<item name="400000_2039" text="南川市"/>
+				</item>
+			</item>
+			<item name="CITY_23" text="四川省">
+				<item name="610000_23_234" text="成都市">
+					<item name="610000_2040" text="锦江区"/>
+					<item name="610000_2041" text="青羊区"/>
+					<item name="610000_2042" text="金牛区"/>
+					<item name="610000_2043" text="武侯区"/>
+					<item name="610000_2044" text="成华区"/>
+					<item name="610000_2045" text="龙泉驿区"/>
+					<item name="610000_2046" text="青白江区"/>
+					<item name="610000_2047" text="新都区"/>
+					<item name="610000_2048" text="温江区"/>
+					<item name="610000_2049" text="金堂县"/>
+					<item name="610000_2050" text="双流县"/>
+					<item name="610000_2051" text="郫县"/>
+					<item name="610000_2052" text="大邑县"/>
+					<item name="610000_2053" text="蒲江县"/>
+					<item name="610000_2054" text="新津县"/>
+					<item name="610000_2055" text="都江堰市"/>
+					<item name="610000_2056" text="彭州市"/>
+					<item name="610000_2057" text="邛崃市"/>
+					<item name="610000_2058" text="崇州市"/>
+				</item>
+				<item name="643000_23_235" text="自贡市">
+					<item name="643000_2059" text="自流井区"/>
+					<item name="643000_2060" text="贡井区"/>
+					<item name="643000_2061" text="大安区"/>
+					<item name="643000_2062" text="沿滩区"/>
+					<item name="643000_2063" text="荣县"/>
+					<item name="643000_2064" text="富顺县"/>
+				</item>
+				<item name="617000_23_236" text="攀枝花市">
+					<item name="617000_2065" text="东区"/>
+					<item name="617000_2066" text="西区"/>
+					<item name="617000_2067" text="仁和区"/>
+					<item name="617000_2068" text="米易县"/>
+					<item name="617000_2069" text="盐边县"/>
+				</item>
+				<item name="646100_23_237" text="泸州市">
+					<item name="646100_2070" text="江阳区"/>
+					<item name="646100_2071" text="纳溪区"/>
+					<item name="646100_2072" text="龙马潭区"/>
+					<item name="646100_2073" text="泸县"/>
+					<item name="646100_2074" text="合江县"/>
+					<item name="646100_2075" text="叙永县"/>
+					<item name="646100_2076" text="古蔺县"/>
+				</item>
+				<item name="618000_23_238" text="德阳市">
+					<item name="618000_2077" text="旌阳区"/>
+					<item name="618000_2078" text="中江县"/>
+					<item name="618000_2079" text="罗江县"/>
+					<item name="618000_2080" text="广汉市"/>
+					<item name="618000_2081" text="什邡市"/>
+					<item name="618000_2082" text="绵竹市"/>
+				</item>
+				<item name="621000_23_239" text="绵阳市">
+					<item name="621000_2083" text="涪城区"/>
+					<item name="621000_2084" text="游仙区"/>
+					<item name="621000_2085" text="三台县"/>
+					<item name="621000_2086" text="盐亭县"/>
+					<item name="621000_2087" text="安县"/>
+					<item name="621000_2088" text="梓潼县"/>
+					<item name="621000_2089" text="北川羌族自治县"/>
+					<item name="621000_2090" text="平武县"/>
+					<item name="621000_2091" text="江油市"/>
+				</item>
+				<item name="628000_23_240" text="广元市">
+					<item name="628000_2092" text="市中区"/>
+					<item name="628000_2093" text="元坝区"/>
+					<item name="628000_2094" text="朝天区"/>
+					<item name="628000_2095" text="旺苍县"/>
+					<item name="628000_2096" text="青川县"/>
+					<item name="628000_2097" text="剑阁县"/>
+					<item name="628000_2098" text="苍溪县"/>
+				</item>
+				<item name="629000_23_241" text="遂宁市">
+					<item name="629000_2099" text="船山区"/>
+					<item name="629000_2100" text="安居区"/>
+					<item name="629000_2101" text="蓬溪县"/>
+					<item name="629000_2102" text="射洪县"/>
+					<item name="629000_2103" text="大英县"/>
+				</item>
+				<item name="641000_23_242" text="内江市">
+					<item name="641000_2104" text="市中区"/>
+					<item name="641000_2105" text="东兴区"/>
+					<item name="641000_2106" text="威远县"/>
+					<item name="641000_2107" text="资中县"/>
+					<item name="641000_2108" text="隆昌县"/>
+				</item>
+				<item name="614000_23_243" text="乐山市">
+					<item name="614000_2109" text="市中区"/>
+					<item name="614000_2110" text="沙湾区"/>
+					<item name="614000_2111" text="五通桥区"/>
+					<item name="614000_2112" text="金口河区"/>
+					<item name="614000_2113" text="犍为县"/>
+					<item name="614000_2114" text="井研县"/>
+					<item name="614000_2115" text="夹江县"/>
+					<item name="614000_2116" text="沐川县"/>
+					<item name="614000_2117" text="峨边彝族自治县"/>
+					<item name="614000_2118" text="马边彝族自治县"/>
+					<item name="614000_2119" text="峨眉山市"/>
+				</item>
+				<item name="637000_23_244" text="南充市">
+					<item name="637000_2120" text="顺庆区"/>
+					<item name="637000_2121" text="高坪区"/>
+					<item name="637000_2122" text="嘉陵区"/>
+					<item name="637000_2123" text="南部县"/>
+					<item name="637000_2124" text="营山县"/>
+					<item name="637000_2125" text="蓬安县"/>
+					<item name="637000_2126" text="仪陇县"/>
+					<item name="637000_2127" text="西充县"/>
+					<item name="637000_2128" text="阆中市"/>
+				</item>
+				<item name="612100_23_245" text="眉山市">
+					<item name="612100_2129" text="东坡区"/>
+					<item name="612100_2130" text="仁寿县"/>
+					<item name="612100_2131" text="彭山县"/>
+					<item name="612100_2132" text="洪雅县"/>
+					<item name="612100_2133" text="丹棱县"/>
+					<item name="612100_2134" text="青神县"/>
+				</item>
+				<item name="644000_23_246" text="宜宾市">
+					<item name="644000_2135" text="翠屏区"/>
+					<item name="644000_2136" text="宜宾县"/>
+					<item name="644000_2137" text="南溪县"/>
+					<item name="644000_2138" text="江安县"/>
+					<item name="644000_2139" text="长宁县"/>
+					<item name="644000_2140" text="高县"/>
+					<item name="644000_2141" text="珙县"/>
+					<item name="644000_2142" text="筠连县"/>
+					<item name="644000_2143" text="兴文县"/>
+					<item name="644000_2144" text="屏山县"/>
+				</item>
+				<item name="638000_23_247" text="广安市">
+					<item name="638000_2145" text="广安区"/>
+					<item name="638000_2146" text="岳池县"/>
+					<item name="638000_2147" text="武胜县"/>
+					<item name="638000_2148" text="邻水县"/>
+					<item name="638000_2149" text="华蓥市"/>
+				</item>
+				<item name="635000_23_248" text="达州市">
+					<item name="635000_2150" text="通川区"/>
+					<item name="635000_2151" text="达县"/>
+					<item name="635000_2152" text="宣汉县"/>
+					<item name="635000_2153" text="开江县"/>
+					<item name="635000_2154" text="大竹县"/>
+					<item name="635000_2155" text="渠县"/>
+					<item name="635000_2156" text="万源市"/>
+				</item>
+				<item name="625000_23_249" text="雅安市">
+					<item name="625000_2157" text="雨城区"/>
+					<item name="625000_2158" text="名山县"/>
+					<item name="625000_2159" text="荥经县"/>
+					<item name="625000_2160" text="汉源县"/>
+					<item name="625000_2161" text="石棉县"/>
+					<item name="625000_2162" text="天全县"/>
+					<item name="625000_2163" text="芦山县"/>
+					<item name="625000_2164" text="宝兴县"/>
+				</item>
+				<item name="635500_23_250" text="巴中市">
+					<item name="635500_2165" text="巴州区"/>
+					<item name="635500_2166" text="通江县"/>
+					<item name="635500_2167" text="南江县"/>
+					<item name="635500_2168" text="平昌县"/>
+				</item>
+				<item name="641300_23_251" text="资阳市">
+					<item name="641300_2169" text="雁江区"/>
+					<item name="641300_2170" text="安岳县"/>
+					<item name="641300_2171" text="乐至县"/>
+					<item name="641300_2172" text="简阳市"/>
+				</item>
+				<item name="624600_23_252" text="阿坝藏族羌族自治州">
+					<item name="624600_2173" text="汶川县"/>
+					<item name="624600_2174" text="理县"/>
+					<item name="624600_2175" text="茂县"/>
+					<item name="624600_2176" text="松潘县"/>
+					<item name="624600_2177" text="九寨沟县"/>
+					<item name="624600_2178" text="金川县"/>
+					<item name="624600_2179" text="小金县"/>
+					<item name="624600_2180" text="黑水县"/>
+					<item name="624600_2181" text="马尔康县"/>
+					<item name="624600_2182" text="壤塘县"/>
+					<item name="624600_2183" text="阿坝县"/>
+					<item name="624600_2184" text="若尔盖县"/>
+					<item name="624600_2185" text="红原县"/>
+				</item>
+				<item name="626000_23_253" text="甘孜藏族自治州">
+					<item name="626000_2186" text="康定县"/>
+					<item name="626000_2187" text="泸定县"/>
+					<item name="626000_2188" text="丹巴县"/>
+					<item name="626000_2189" text="九龙县"/>
+					<item name="626000_2190" text="雅江县"/>
+					<item name="626000_2191" text="道孚县"/>
+					<item name="626000_2192" text="炉霍县"/>
+					<item name="626000_2193" text="甘孜县"/>
+					<item name="626000_2194" text="新龙县"/>
+					<item name="626000_2195" text="德格县"/>
+					<item name="626000_2196" text="白玉县"/>
+					<item name="626000_2197" text="石渠县"/>
+					<item name="626000_2198" text="色达县"/>
+					<item name="626000_2199" text="理塘县"/>
+					<item name="626000_2200" text="巴塘县"/>
+					<item name="626000_2201" text="乡城县"/>
+					<item name="626000_2202" text="稻城县"/>
+					<item name="626000_2203" text="得荣县"/>
+				</item>
+				<item name="615000_23_254" text="凉山彝族自治州">
+					<item name="615000_2204" text="西昌市"/>
+					<item name="615000_2205" text="木里藏族自治县"/>
+					<item name="615000_2206" text="盐源县"/>
+					<item name="615000_2207" text="德昌县"/>
+					<item name="615000_2208" text="会理县"/>
+					<item name="615000_2209" text="会东县"/>
+					<item name="615000_2210" text="宁南县"/>
+					<item name="615000_2211" text="普格县"/>
+					<item name="615000_2212" text="布拖县"/>
+					<item name="615000_2213" text="金阳县"/>
+					<item name="615000_2214" text="昭觉县"/>
+					<item name="615000_2215" text="喜德县"/>
+					<item name="615000_2216" text="冕宁县"/>
+					<item name="615000_2217" text="越西县"/>
+					<item name="615000_2218" text="甘洛县"/>
+					<item name="615000_2219" text="美姑县"/>
+					<item name="615000_2220" text="雷波县"/>
+				</item>
+			</item>
+			<item name="CITY_24" text="贵州省">
+				<item name="55000_24_255" text="贵阳市">
+					<item name="55000_2221" text="南明区"/>
+					<item name="55000_2222" text="云岩区"/>
+					<item name="55000_2223" text="花溪区"/>
+					<item name="55000_2224" text="乌当区"/>
+					<item name="55000_2225" text="白云区"/>
+					<item name="55000_2226" text="小河区"/>
+					<item name="55000_2227" text="开阳县"/>
+					<item name="55000_2228" text="息烽县"/>
+					<item name="55000_2229" text="修文县"/>
+					<item name="55000_2230" text="清镇市"/>
+				</item>
+				<item name="553000_24_256" text="六盘水市">
+					<item name="553000_2231" text="钟山区"/>
+					<item name="553000_2232" text="六枝特区"/>
+					<item name="553000_2233" text="水城县"/>
+					<item name="553000_2234" text="盘县"/>
+				</item>
+				<item name="563000_24_257" text="遵义市">
+					<item name="563000_2235" text="红花岗区"/>
+					<item name="563000_2236" text="汇川区"/>
+					<item name="563000_2237" text="遵义县"/>
+					<item name="563000_2238" text="桐梓县"/>
+					<item name="563000_2239" text="绥阳县"/>
+					<item name="563000_2240" text="正安县"/>
+					<item name="563000_2241" text="道真仡佬族苗族自治县"/>
+					<item name="563000_2242" text="务川仡佬族苗族自治县"/>
+					<item name="563000_2243" text="凤冈县"/>
+					<item name="563000_2244" text="湄潭县"/>
+					<item name="563000_2245" text="余庆县"/>
+					<item name="563000_2246" text="习水县"/>
+					<item name="563000_2247" text="赤水市"/>
+					<item name="563000_2248" text="仁怀市"/>
+				</item>
+				<item name="561000_24_258" text="安顺市">
+					<item name="561000_2249" text="西秀区"/>
+					<item name="561000_2250" text="平坝县"/>
+					<item name="561000_2251" text="普定县"/>
+					<item name="561000_2252" text="镇宁布依族苗族自治县"/>
+					<item name="561000_2253" text="关岭布依族苗族自治县"/>
+					<item name="561000_2254" text="紫云苗族布依族自治县"/>
+				</item>
+				<item name="554300_24_259" text="铜仁地区">
+					<item name="554300_2255" text="铜仁市"/>
+					<item name="554300_2256" text="江口县"/>
+					<item name="554300_2257" text="玉屏侗族自治县"/>
+					<item name="554300_2258" text="石阡县"/>
+					<item name="554300_2259" text="思南县"/>
+					<item name="554300_2260" text="印江土家族苗族自治县"/>
+					<item name="554300_2261" text="德江县"/>
+					<item name="554300_2262" text="沿河土家族自治县"/>
+					<item name="554300_2263" text="松桃苗族自治县"/>
+					<item name="554300_2264" text="万山特区"/>
+				</item>
+				<item name="551500_24_260" text="黔西南布依族苗族自治州">
+					<item name="551500_2265" text="兴义市"/>
+					<item name="551500_2266" text="兴仁县"/>
+					<item name="551500_2267" text="普安县"/>
+					<item name="551500_2268" text="晴隆县"/>
+					<item name="551500_2269" text="贞丰县"/>
+					<item name="551500_2270" text="望谟县"/>
+					<item name="551500_2271" text="册亨县"/>
+					<item name="551500_2272" text="安龙县"/>
+				</item>
+				<item name="551700_24_261" text="毕节地区">
+					<item name="551700_2273" text="毕节市"/>
+					<item name="551700_2274" text="大方县"/>
+					<item name="551700_2275" text="黔西县"/>
+					<item name="551700_2276" text="金沙县"/>
+					<item name="551700_2277" text="织金县"/>
+					<item name="551700_2278" text="纳雍县"/>
+					<item name="551700_2279" text="威宁彝族回族苗族自治县"/>
+					<item name="551700_2280" text="赫章县"/>
+				</item>
+				<item name="551500_24_262" text="黔东南苗族侗族自治州">
+					<item name="551500_2281" text="凯里市"/>
+					<item name="551500_2282" text="黄平县"/>
+					<item name="551500_2283" text="施秉县"/>
+					<item name="551500_2284" text="三穗县"/>
+					<item name="551500_2285" text="镇远县"/>
+					<item name="551500_2286" text="岑巩县"/>
+					<item name="551500_2287" text="天柱县"/>
+					<item name="551500_2288" text="锦屏县"/>
+					<item name="551500_2289" text="剑河县"/>
+					<item name="551500_2290" text="台江县"/>
+					<item name="551500_2291" text="黎平县"/>
+					<item name="551500_2292" text="榕江县"/>
+					<item name="551500_2293" text="从江县"/>
+					<item name="551500_2294" text="雷山县"/>
+					<item name="551500_2295" text="麻江县"/>
+					<item name="551500_2296" text="丹寨县"/>
+				</item>
+				<item name="550100_24_263" text="黔南布依族苗族自治州">
+					<item name="550100_2297" text="都匀市"/>
+					<item name="550100_2298" text="福泉市"/>
+					<item name="550100_2299" text="荔波县"/>
+					<item name="550100_2300" text="贵定县"/>
+					<item name="550100_2301" text="瓮安县"/>
+					<item name="550100_2302" text="独山县"/>
+					<item name="550100_2303" text="平塘县"/>
+					<item name="550100_2304" text="罗甸县"/>
+					<item name="550100_2305" text="长顺县"/>
+					<item name="550100_2306" text="龙里县"/>
+					<item name="550100_2307" text="惠水县"/>
+					<item name="550100_2308" text="三都水族自治县"/>
+				</item>
+			</item>
+			<item name="CITY_25" text="云南省">
+				<item name="650000_25_264" text="昆明市">
+					<item name="650000_2309" text="五华区"/>
+					<item name="650000_2310" text="盘龙区"/>
+					<item name="650000_2311" text="官渡区"/>
+					<item name="650000_2312" text="西山区"/>
+					<item name="650000_2313" text="东川区"/>
+					<item name="650000_2314" text="呈贡县"/>
+					<item name="650000_2315" text="晋宁县"/>
+					<item name="650000_2316" text="富民县"/>
+					<item name="650000_2317" text="宜良县"/>
+					<item name="650000_2318" text="石林彝族自治县"/>
+					<item name="650000_2319" text="嵩明县"/>
+					<item name="650000_2320" text="禄劝彝族苗族自治县"/>
+					<item name="650000_2321" text="寻甸回族彝族自治县"/>
+					<item name="650000_2322" text="安宁市"/>
+				</item>
+				<item name="655000_25_265" text="曲靖市">
+					<item name="655000_2323" text="麒麟区"/>
+					<item name="655000_2324" text="马龙县"/>
+					<item name="655000_2325" text="陆良县"/>
+					<item name="655000_2326" text="师宗县"/>
+					<item name="655000_2327" text="罗平县"/>
+					<item name="655000_2328" text="富源县"/>
+					<item name="655000_2329" text="会泽县"/>
+					<item name="655000_2330" text="沾益县"/>
+					<item name="655000_2331" text="宣威市"/>
+				</item>
+				<item name="653100_25_266" text="玉溪市">
+					<item name="653100_2332" text="红塔区"/>
+					<item name="653100_2333" text="江川县"/>
+					<item name="653100_2334" text="澄江县"/>
+					<item name="653100_2335" text="通海县"/>
+					<item name="653100_2336" text="华宁县"/>
+					<item name="653100_2337" text="易门县"/>
+					<item name="653100_2338" text="峨山彝族自治县"/>
+					<item name="653100_2339" text="新平彝族傣族自治县"/>
+					<item name="653100_2340" text="元江哈尼族彝族傣族自治县"/>
+				</item>
+				<item name="678000_25_267" text="保山市">
+					<item name="678000_2341" text="隆阳区"/>
+					<item name="678000_2342" text="施甸县"/>
+					<item name="678000_2343" text="腾冲县"/>
+					<item name="678000_2344" text="龙陵县"/>
+					<item name="678000_2345" text="昌宁县"/>
+				</item>
+				<item name="657000_25_268" text="昭通市">
+					<item name="657000_2346" text="昭阳区"/>
+					<item name="657000_2347" text="鲁甸县"/>
+					<item name="657000_2348" text="巧家县"/>
+					<item name="657000_2349" text="盐津县"/>
+					<item name="657000_2350" text="大关县"/>
+					<item name="657000_2351" text="永善县"/>
+					<item name="657000_2352" text="绥江县"/>
+					<item name="657000_2353" text="镇雄县"/>
+					<item name="657000_2354" text="彝良县"/>
+					<item name="657000_2355" text="威信县"/>
+					<item name="657000_2356" text="水富县"/>
+				</item>
+				<item name="674100_25_269" text="丽江市">
+					<item name="674100_2357" text="古城区"/>
+					<item name="674100_2358" text="玉龙纳西族自治县"/>
+					<item name="674100_2359" text="永胜县"/>
+					<item name="674100_2360" text="华坪县"/>
+					<item name="674100_2361" text="宁蒗彝族自治县"/>
+				</item>
+				<item name="665000_25_270" text="思茅市">
+					<item name="665000_2362" text="翠云区"/>
+					<item name="665000_2363" text="普洱哈尼族彝族自治县"/>
+					<item name="665000_2364" text="墨江哈尼族自治县"/>
+					<item name="665000_2365" text="景东彝族自治县"/>
+					<item name="665000_2366" text="景谷傣族彝族自治县"/>
+					<item name="665000_2367" text="镇沅彝族哈尼族拉祜族自治县"/>
+					<item name="665000_2368" text="江城哈尼族彝族自治县"/>
+					<item name="665000_2369" text="孟连傣族拉祜族佤族自治县"/>
+					<item name="665000_2370" text="澜沧拉祜族自治县"/>
+					<item name="665000_2371" text="西盟佤族自治县"/>
+				</item>
+				<item name="677000_25_271" text="临沧市">
+					<item name="677000_2372" text="临翔区"/>
+					<item name="677000_2373" text="凤庆县"/>
+					<item name="677000_2374" text="云县"/>
+					<item name="677000_2375" text="永德县"/>
+					<item name="677000_2376" text="镇康县"/>
+					<item name="677000_2377" text="双江拉祜族佤族布朗族傣族自治县"/>
+					<item name="677000_2378" text="耿马傣族佤族自治县"/>
+					<item name="677000_2379" text="沧源佤族自治县"/>
+				</item>
+				<item name="675000_25_272" text="楚雄彝族自治州">
+					<item name="675000_2380" text="楚雄市"/>
+					<item name="675000_2381" text="双柏县"/>
+					<item name="675000_2382" text="牟定县"/>
+					<item name="675000_2383" text="南华县"/>
+					<item name="675000_2384" text="姚安县"/>
+					<item name="675000_2385" text="大姚县"/>
+					<item name="675000_2386" text="永仁县"/>
+					<item name="675000_2387" text="元谋县"/>
+					<item name="675000_2388" text="武定县"/>
+					<item name="675000_2389" text="禄丰县"/>
+				</item>
+				<item name="654400_25_273" text="红河哈尼族彝族自治州">
+					<item name="654400_2390" text="个旧市"/>
+					<item name="654400_2391" text="开远市"/>
+					<item name="654400_2392" text="蒙自县"/>
+					<item name="654400_2393" text="屏边苗族自治县"/>
+					<item name="654400_2394" text="建水县"/>
+					<item name="654400_2395" text="石屏县"/>
+					<item name="654400_2396" text="弥勒县"/>
+					<item name="654400_2397" text="泸西县"/>
+					<item name="654400_2398" text="元阳县"/>
+					<item name="654400_2399" text="红河县"/>
+					<item name="654400_2400" text="金平苗族瑶族傣族自治县"/>
+					<item name="654400_2401" text="绿春县"/>
+					<item name="654400_2402" text="河口瑶族自治县"/>
+				</item>
+				<item name="663000_25_274" text="文山壮族苗族自治州">
+					<item name="663000_2403" text="文山县"/>
+					<item name="663000_2404" text="砚山县"/>
+					<item name="663000_2405" text="西畴县"/>
+					<item name="663000_2406" text="麻栗坡县"/>
+					<item name="663000_2407" text="马关县"/>
+					<item name="663000_2408" text="丘北县"/>
+					<item name="663000_2409" text="广南县"/>
+					<item name="663000_2410" text="富宁县"/>
+				</item>
+				<item name="666200_25_275" text="西双版纳傣族自治州">
+					<item name="666200_2411" text="景洪市"/>
+					<item name="666200_2412" text="勐海县"/>
+					<item name="666200_2413" text="勐腊县"/>
+				</item>
+				<item name="671000_25_276" text="大理白族自治州">
+					<item name="671000_2414" text="大理市"/>
+					<item name="671000_2415" text="漾濞彝族自治县"/>
+					<item name="671000_2416" text="祥云县"/>
+					<item name="671000_2417" text="宾川县"/>
+					<item name="671000_2418" text="弥渡县"/>
+					<item name="671000_2419" text="南涧彝族自治县"/>
+					<item name="671000_2420" text="巍山彝族回族自治县"/>
+					<item name="671000_2421" text="永平县"/>
+					<item name="671000_2422" text="云龙县"/>
+					<item name="671000_2423" text="洱源县"/>
+					<item name="671000_2424" text="剑川县"/>
+					<item name="671000_2425" text="鹤庆县"/>
+				</item>
+				<item name="678400_25_277" text="德宏傣族景颇族自治州">
+					<item name="678400_2426" text="瑞丽市"/>
+					<item name="678400_2427" text="潞西市"/>
+					<item name="678400_2428" text="梁河县"/>
+					<item name="678400_2429" text="盈江县"/>
+					<item name="678400_2430" text="陇川县"/>
+				</item>
+				<item name="671400_25_278" text="怒江傈僳族自治州">
+					<item name="671400_2431" text="泸水县"/>
+					<item name="671400_2432" text="福贡县"/>
+					<item name="671400_2433" text="贡山独龙族怒族自治县"/>
+					<item name="671400_2434" text="兰坪白族普米族自治县"/>
+				</item>
+				<item name="674400_25_279" text="迪庆藏族自治州">
+					<item name="674400_2435" text="香格里拉县"/>
+					<item name="674400_2436" text="德钦县"/>
+					<item name="674400_2437" text="维西傈僳族自治县"/>
+				</item>
+			</item>
+			<item name="CITY_26" text="西藏自治区">
+				<item name="850000_26_280" text="拉萨市">
+					<item name="850000_2438" text="城关区"/>
+					<item name="850000_2439" text="林周县"/>
+					<item name="850000_2440" text="当雄县"/>
+					<item name="850000_2441" text="尼木县"/>
+					<item name="850000_2442" text="曲水县"/>
+					<item name="850000_2443" text="堆龙德庆县"/>
+					<item name="850000_2444" text="达孜县"/>
+					<item name="850000_2445" text="墨竹工卡县"/>
+				</item>
+				<item name="854000_26_281" text="昌都地区">
+					<item name="854000_2446" text="昌都县"/>
+					<item name="854000_2447" text="江达县"/>
+					<item name="854000_2448" text="贡觉县"/>
+					<item name="854000_2449" text="类乌齐县"/>
+					<item name="854000_2450" text="丁青县"/>
+					<item name="854000_2451" text="察雅县"/>
+					<item name="854000_2452" text="八宿县"/>
+					<item name="854000_2453" text="左贡县"/>
+					<item name="854000_2454" text="芒康县"/>
+					<item name="854000_2455" text="洛隆县"/>
+					<item name="854000_2456" text="边坝县"/>
+				</item>
+				<item name="856000_26_282" text="山南地区">
+					<item name="856000_2457" text="乃东县"/>
+					<item name="856000_2458" text="扎囊县"/>
+					<item name="856000_2459" text="贡嘎县"/>
+					<item name="856000_2460" text="桑日县"/>
+					<item name="856000_2461" text="琼结县"/>
+					<item name="856000_2462" text="曲松县"/>
+					<item name="856000_2463" text="措美县"/>
+					<item name="856000_2464" text="洛扎县"/>
+					<item name="856000_2465" text="加查县"/>
+					<item name="856000_2466" text="隆子县"/>
+					<item name="856000_2467" text="错那县"/>
+					<item name="856000_2468" text="浪卡子县"/>
+				</item>
+				<item name="857000_26_283" text="日喀则地区">
+					<item name="857000_2469" text="日喀则市"/>
+					<item name="857000_2470" text="南木林县"/>
+					<item name="857000_2471" text="江孜县"/>
+					<item name="857000_2472" text="定日县"/>
+					<item name="857000_2473" text="萨迦县"/>
+					<item name="857000_2474" text="拉孜县"/>
+					<item name="857000_2475" text="昂仁县"/>
+					<item name="857000_2476" text="谢通门县"/>
+					<item name="857000_2477" text="白朗县"/>
+					<item name="857000_2478" text="仁布县"/>
+					<item name="857000_2479" text="康马县"/>
+					<item name="857000_2480" text="定结县"/>
+					<item name="857000_2481" text="仲巴县"/>
+					<item name="857000_2482" text="亚东县"/>
+					<item name="857000_2483" text="吉隆县"/>
+					<item name="857000_2484" text="聂拉木县"/>
+					<item name="857000_2485" text="萨嘎县"/>
+					<item name="857000_2486" text="岗巴县"/>
+				</item>
+				<item name="852000_26_284" text="那曲地区">
+					<item name="852000_2487" text="那曲县"/>
+					<item name="852000_2488" text="嘉黎县"/>
+					<item name="852000_2489" text="比如县"/>
+					<item name="852000_2490" text="聂荣县"/>
+					<item name="852000_2491" text="安多县"/>
+					<item name="852000_2492" text="申扎县"/>
+					<item name="852000_2493" text="索县"/>
+					<item name="852000_2494" text="班戈县"/>
+					<item name="852000_2495" text="巴青县"/>
+					<item name="852000_2496" text="尼玛县"/>
+				</item>
+				<item name="859100_26_285" text="阿里地区">
+					<item name="859100_2497" text="普兰县"/>
+					<item name="859100_2498" text="札达县"/>
+					<item name="859100_2499" text="噶尔县"/>
+					<item name="859100_2500" text="日土县"/>
+					<item name="859100_2501" text="革吉县"/>
+					<item name="859100_2502" text="改则县"/>
+					<item name="859100_2503" text="措勤县"/>
+				</item>
+				<item name="860100_26_286" text="林芝地区">
+					<item name="860100_2504" text="林芝县"/>
+					<item name="860100_2505" text="工布江达县"/>
+					<item name="860100_2506" text="米林县"/>
+					<item name="860100_2507" text="墨脱县"/>
+					<item name="860100_2508" text="波密县"/>
+					<item name="860100_2509" text="察隅县"/>
+					<item name="860100_2510" text="朗县"/>
+				</item>
+			</item>
+			<item name="CITY_27" text="陕西省">
+				<item name="710000_27_287" text="西安市">
+					<item name="710000_2511" text="新城区"/>
+					<item name="710000_2512" text="碑林区"/>
+					<item name="710000_2513" text="莲湖区"/>
+					<item name="710000_2514" text="灞桥区"/>
+					<item name="710000_2515" text="未央区"/>
+					<item name="710000_2516" text="雁塔区"/>
+					<item name="710000_2517" text="阎良区"/>
+					<item name="710000_2518" text="临潼区"/>
+					<item name="710000_2519" text="长安区"/>
+					<item name="710000_2520" text="蓝田县"/>
+					<item name="710000_2521" text="周至县"/>
+					<item name="710000_2522" text="户县"/>
+					<item name="710000_2523" text="高陵县"/>
+				</item>
+				<item name="727000_27_288" text="铜川市">
+					<item name="727000_2524" text="王益区"/>
+					<item name="727000_2525" text="印台区"/>
+					<item name="727000_2526" text="耀州区"/>
+					<item name="727000_2527" text="宜君县"/>
+				</item>
+				<item name="721000_27_289" text="宝鸡市">
+					<item name="721000_2528" text="渭滨区"/>
+					<item name="721000_2529" text="金台区"/>
+					<item name="721000_2530" text="陈仓区"/>
+					<item name="721000_2531" text="凤翔县"/>
+					<item name="721000_2532" text="岐山县"/>
+					<item name="721000_2533" text="扶风县"/>
+					<item name="721000_2534" text="眉县"/>
+					<item name="721000_2535" text="陇县"/>
+					<item name="721000_2536" text="千阳县"/>
+					<item name="721000_2537" text="麟游县"/>
+					<item name="721000_2538" text="凤县"/>
+					<item name="721000_2539" text="太白县"/>
+				</item>
+				<item name="712000_27_290" text="咸阳市">
+					<item name="712000_2540" text="秦都区"/>
+					<item name="712000_2541" text="杨凌区"/>
+					<item name="712000_2542" text="渭城区"/>
+					<item name="712000_2543" text="三原县"/>
+					<item name="712000_2544" text="泾阳县"/>
+					<item name="712000_2545" text="乾县"/>
+					<item name="712000_2546" text="礼泉县"/>
+					<item name="712000_2547" text="永寿县"/>
+					<item name="712000_2548" text="彬县"/>
+					<item name="712000_2549" text="长武县"/>
+					<item name="712000_2550" text="旬邑县"/>
+					<item name="712000_2551" text="淳化县"/>
+					<item name="712000_2552" text="武功县"/>
+					<item name="712000_2553" text="兴平市"/>
+				</item>
+				<item name="714000_27_291" text="渭南市">
+					<item name="714000_2554" text="临渭区"/>
+					<item name="714000_2555" text="华县"/>
+					<item name="714000_2556" text="潼关县"/>
+					<item name="714000_2557" text="大荔县"/>
+					<item name="714000_2558" text="合阳县"/>
+					<item name="714000_2559" text="澄城县"/>
+					<item name="714000_2560" text="蒲城县"/>
+					<item name="714000_2561" text="白水县"/>
+					<item name="714000_2562" text="富平县"/>
+					<item name="714000_2563" text="韩城市"/>
+					<item name="714000_2564" text="华阴市"/>
+				</item>
+				<item name="716000_27_292" text="延安市">
+					<item name="716000_2565" text="宝塔区"/>
+					<item name="716000_2566" text="延长县"/>
+					<item name="716000_2567" text="延川县"/>
+					<item name="716000_2568" text="子长县"/>
+					<item name="716000_2569" text="安塞县"/>
+					<item name="716000_2570" text="志丹县"/>
+					<item name="716000_2571" text="吴旗县"/>
+					<item name="716000_2572" text="甘泉县"/>
+					<item name="716000_2573" text="富县"/>
+					<item name="716000_2574" text="洛川县"/>
+					<item name="716000_2575" text="宜川县"/>
+					<item name="716000_2576" text="黄龙县"/>
+					<item name="716000_2577" text="黄陵县"/>
+				</item>
+				<item name="723000_27_293" text="汉中市">
+					<item name="723000_2578" text="汉台区"/>
+					<item name="723000_2579" text="南郑县"/>
+					<item name="723000_2580" text="城固县"/>
+					<item name="723000_2581" text="洋县"/>
+					<item name="723000_2582" text="西乡县"/>
+					<item name="723000_2583" text="勉县"/>
+					<item name="723000_2584" text="宁强县"/>
+					<item name="723000_2585" text="略阳县"/>
+					<item name="723000_2586" text="镇巴县"/>
+					<item name="723000_2587" text="留坝县"/>
+					<item name="723000_2588" text="佛坪县"/>
+				</item>
+				<item name="719000_27_294" text="榆林市">
+					<item name="719000_2589" text="榆阳区"/>
+					<item name="719000_2590" text="神木县"/>
+					<item name="719000_2591" text="府谷县"/>
+					<item name="719000_2592" text="横山县"/>
+					<item name="719000_2593" text="靖边县"/>
+					<item name="719000_2594" text="定边县"/>
+					<item name="719000_2595" text="绥德县"/>
+					<item name="719000_2596" text="米脂县"/>
+					<item name="719000_2597" text="佳县"/>
+					<item name="719000_2598" text="吴堡县"/>
+					<item name="719000_2599" text="清涧县"/>
+					<item name="719000_2600" text="子洲县"/>
+				</item>
+				<item name="725000_27_295" text="安康市">
+					<item name="725000_2601" text="汉滨区"/>
+					<item name="725000_2602" text="汉阴县"/>
+					<item name="725000_2603" text="石泉县"/>
+					<item name="725000_2604" text="宁陕县"/>
+					<item name="725000_2605" text="紫阳县"/>
+					<item name="725000_2606" text="岚皋县"/>
+					<item name="725000_2607" text="平利县"/>
+					<item name="725000_2608" text="镇坪县"/>
+					<item name="725000_2609" text="旬阳县"/>
+					<item name="725000_2610" text="白河县"/>
+				</item>
+				<item name="711500_27_296" text="商洛市">
+					<item name="711500_2611" text="商州区"/>
+					<item name="711500_2612" text="洛南县"/>
+					<item name="711500_2613" text="丹凤县"/>
+					<item name="711500_2614" text="商南县"/>
+					<item name="711500_2615" text="山阳县"/>
+					<item name="711500_2616" text="镇安县"/>
+					<item name="711500_2617" text="柞水县"/>
+				</item>
+			</item>
+			<item name="CITY_28" text="甘肃省">
+				<item name="730000_28_297" text="兰州市">
+					<item name="730000_2618" text="城关区"/>
+					<item name="730000_2619" text="七里河区"/>
+					<item name="730000_2620" text="西固区"/>
+					<item name="730000_2621" text="安宁区"/>
+					<item name="730000_2622" text="红古区"/>
+					<item name="730000_2623" text="永登县"/>
+					<item name="730000_2624" text="皋兰县"/>
+					<item name="730000_2625" text="榆中县"/>
+				</item>
+				<item name="735100_28_298" text="嘉峪关市"/>
+				<item name="737100_28_299" text="金昌市">
+					<item name="737100_2626" text="金川区"/>
+					<item name="737100_2627" text="永昌县"/>
+				</item>
+				<item name="730900_28_300" text="白银市">
+					<item name="730900_2628" text="白银区"/>
+					<item name="730900_2629" text="平川区"/>
+					<item name="730900_2630" text="靖远县"/>
+					<item name="730900_2631" text="会宁县"/>
+					<item name="730900_2632" text="景泰县"/>
+				</item>
+				<item name="741000_28_301" text="天水市">
+					<item name="741000_2633" text="秦城区"/>
+					<item name="741000_2634" text="北道区"/>
+					<item name="741000_2635" text="清水县"/>
+					<item name="741000_2636" text="秦安县"/>
+					<item name="741000_2637" text="甘谷县"/>
+					<item name="741000_2638" text="武山县"/>
+					<item name="741000_2639" text="张家川回族自治县"/>
+				</item>
+				<item name="733000_28_302" text="武威市">
+					<item name="733000_2640" text="凉州区"/>
+					<item name="733000_2641" text="民勤县"/>
+					<item name="733000_2642" text="古浪县"/>
+					<item name="733000_2643" text="天祝藏族自治县"/>
+				</item>
+				<item name="734000_28_303" text="张掖市">
+					<item name="734000_2644" text="甘州区"/>
+					<item name="734000_2645" text="肃南裕固族自治县"/>
+					<item name="734000_2646" text="民乐县"/>
+					<item name="734000_2647" text="临泽县"/>
+					<item name="734000_2648" text="高台县"/>
+					<item name="734000_2649" text="山丹县"/>
+				</item>
+				<item name="744000_28_304" text="平凉市">
+					<item name="744000_2650" text="崆峒区"/>
+					<item name="744000_2651" text="泾川县"/>
+					<item name="744000_2652" text="灵台县"/>
+					<item name="744000_2653" text="崇信县"/>
+					<item name="744000_2654" text="华亭县"/>
+					<item name="744000_2655" text="庄浪县"/>
+					<item name="744000_2656" text="静宁县"/>
+				</item>
+				<item name="735000_28_305" text="酒泉市">
+					<item name="735000_2657" text="肃州区"/>
+					<item name="735000_2658" text="金塔县"/>
+					<item name="735000_2659" text="安西县"/>
+					<item name="735000_2660" text="肃北蒙古族自治县"/>
+					<item name="735000_2661" text="阿克塞哈萨克族自治县"/>
+					<item name="735000_2662" text="玉门市"/>
+					<item name="735000_2663" text="敦煌市"/>
+				</item>
+				<item name="744500_28_306" text="庆阳市">
+					<item name="744500_2664" text="西峰区"/>
+					<item name="744500_2665" text="庆城县"/>
+					<item name="744500_2666" text="环县"/>
+					<item name="744500_2667" text="华池县"/>
+					<item name="744500_2668" text="合水县"/>
+					<item name="744500_2669" text="正宁县"/>
+					<item name="744500_2670" text="宁县"/>
+					<item name="744500_2671" text="镇原县"/>
+				</item>
+				<item name="743000_28_307" text="定西市">
+					<item name="743000_2672" text="安定区"/>
+					<item name="743000_2673" text="通渭县"/>
+					<item name="743000_2674" text="陇西县"/>
+					<item name="743000_2675" text="渭源县"/>
+					<item name="743000_2676" text="临洮县"/>
+					<item name="743000_2677" text="漳县"/>
+					<item name="743000_2678" text="岷县"/>
+				</item>
+				<item name="742100_28_308" text="陇南市">
+					<item name="742100_2679" text="武都区"/>
+					<item name="742100_2680" text="成县"/>
+					<item name="742100_2681" text="文县"/>
+					<item name="742100_2682" text="宕昌县"/>
+					<item name="742100_2683" text="康县"/>
+					<item name="742100_2684" text="西和县"/>
+					<item name="742100_2685" text="礼县"/>
+					<item name="742100_2686" text="徽县"/>
+					<item name="742100_2687" text="两当县"/>
+				</item>
+				<item name="731100_28_309" text="临夏回族自治州">
+					<item name="731100_2688" text="临夏市"/>
+					<item name="731100_2689" text="临夏县"/>
+					<item name="731100_2690" text="康乐县"/>
+					<item name="731100_2691" text="永靖县"/>
+					<item name="731100_2692" text="广河县"/>
+					<item name="731100_2693" text="和政县"/>
+					<item name="731100_2694" text="东乡族自治县"/>
+					<item name="731100_2695" text="积石山保安族东乡族撒拉族自治县"/>
+				</item>
+				<item name="747000_28_310" text="甘南藏族自治州">
+					<item name="747000_2696" text="合作市"/>
+					<item name="747000_2697" text="临潭县"/>
+					<item name="747000_2698" text="卓尼县"/>
+					<item name="747000_2699" text="舟曲县"/>
+					<item name="747000_2700" text="迭部县"/>
+					<item name="747000_2701" text="玛曲县"/>
+					<item name="747000_2702" text="碌曲县"/>
+					<item name="747000_2703" text="夏河县"/>
+				</item>
+			</item>
+			<item name="CITY_29" text="青海省">
+				<item name="810000_29_311" text="西宁市">
+					<item name="810000_2704" text="城东区"/>
+					<item name="810000_2705" text="城中区"/>
+					<item name="810000_2706" text="城西区"/>
+					<item name="810000_2707" text="城北区"/>
+					<item name="810000_2708" text="大通回族土族自治县"/>
+					<item name="810000_2709" text="湟中县"/>
+					<item name="810000_2710" text="湟源县"/>
+				</item>
+				<item name="810600_29_312" text="海东地区">
+					<item name="810600_2711" text="平安县"/>
+					<item name="810600_2712" text="民和回族土族自治县"/>
+					<item name="810600_2713" text="乐都县"/>
+					<item name="810600_2714" text="互助土族自治县"/>
+					<item name="810600_2715" text="化隆回族自治县"/>
+					<item name="810600_2716" text="循化撒拉族自治县"/>
+				</item>
+				<item name="810300_29_313" text="海北藏族自治州">
+					<item name="810300_2717" text="门源回族自治县"/>
+					<item name="810300_2718" text="祁连县"/>
+					<item name="810300_2719" text="海晏县"/>
+					<item name="810300_2720" text="刚察县"/>
+				</item>
+				<item name="811300_29_314" text="黄南藏族自治州">
+					<item name="811300_2721" text="同仁县"/>
+					<item name="811300_2722" text="尖扎县"/>
+					<item name="811300_2723" text="泽库县"/>
+					<item name="811300_2724" text="河南蒙古族自治县"/>
+				</item>
+				<item name="813000_29_315" text="海南藏族自治州">
+					<item name="813000_2725" text="共和县"/>
+					<item name="813000_2726" text="同德县"/>
+					<item name="813000_2727" text="贵德县"/>
+					<item name="813000_2728" text="兴海县"/>
+					<item name="813000_2729" text="贵南县"/>
+				</item>
+				<item name="814000_29_316" text="果洛藏族自治州">
+					<item name="814000_2730" text="玛沁县"/>
+					<item name="814000_2731" text="班玛县"/>
+					<item name="814000_2732" text="甘德县"/>
+					<item name="814000_2733" text="达日县"/>
+					<item name="814000_2734" text="久治县"/>
+					<item name="814000_2735" text="玛多县"/>
+				</item>
+				<item name="815000_29_317" text="玉树藏族自治州">
+					<item name="815000_2736" text="玉树县"/>
+					<item name="815000_2737" text="杂多县"/>
+					<item name="815000_2738" text="称多县"/>
+					<item name="815000_2739" text="治多县"/>
+					<item name="815000_2740" text="囊谦县"/>
+					<item name="815000_2741" text="曲麻莱县"/>
+				</item>
+				<item name="817000_29_318" text="海西蒙古族藏族自治州">
+					<item name="817000_2742" text="格尔木市"/>
+					<item name="817000_2743" text="德令哈市"/>
+					<item name="817000_2744" text="乌兰县"/>
+					<item name="817000_2745" text="都兰县"/>
+					<item name="817000_2746" text="天峻县"/>
+				</item>
+			</item>
+			<item name="CITY_30" text="宁夏回族自治区">
+				<item name="750000_30_319" text="银川市">
+					<item name="750000_2747" text="兴庆区"/>
+					<item name="750000_2748" text="西夏区"/>
+					<item name="750000_2749" text="金凤区"/>
+					<item name="750000_2750" text="永宁县"/>
+					<item name="750000_2751" text="贺兰县"/>
+					<item name="750000_2752" text="灵武市"/>
+				</item>
+				<item name="753000_30_320" text="石嘴山市">
+					<item name="753000_2753" text="大武口区"/>
+					<item name="753000_2754" text="惠农区"/>
+					<item name="753000_2755" text="平罗县"/>
+				</item>
+				<item name="751100_30_321" text="吴忠市">
+					<item name="751100_2756" text="利通区"/>
+					<item name="751100_2757" text="盐池县"/>
+					<item name="751100_2758" text="同心县"/>
+					<item name="751100_2759" text="青铜峡市"/>
+				</item>
+				<item name="756000_30_322" text="固原市">
+					<item name="756000_2760" text="原州区"/>
+					<item name="756000_2761" text="西吉县"/>
+					<item name="756000_2762" text="隆德县"/>
+					<item name="756000_2763" text="泾源县"/>
+					<item name="756000_2764" text="彭阳县"/>
+				</item>
+				<item name="751700_30_323" text="中卫市">
+					<item name="751700_2765" text="沙坡头区"/>
+					<item name="751700_2766" text="中宁县"/>
+					<item name="751700_2767" text="海原县"/>
+				</item>
+			</item>
+			<item name="CITY_31" text="新疆维吾尔自治区">
+				<item name="830000_31_324" text="乌鲁木齐市">
+					<item name="830000_2768" text="天山区"/>
+					<item name="830000_2769" text="沙依巴克区"/>
+					<item name="830000_2770" text="新市区"/>
+					<item name="830000_2771" text="水磨沟区"/>
+					<item name="830000_2772" text="头屯河区"/>
+					<item name="830000_2773" text="达坂城区"/>
+					<item name="830000_2774" text="东山区"/>
+					<item name="830000_2775" text="乌鲁木齐县"/>
+				</item>
+				<item name="834000_31_325" text="克拉玛依市">
+					<item name="834000_2776" text="独山子区"/>
+					<item name="834000_2777" text="克拉玛依区"/>
+					<item name="834000_2778" text="白碱滩区"/>
+					<item name="834000_2779" text="乌尔禾区"/>
+				</item>
+				<item name="838000_31_326" text="吐鲁番地区">
+					<item name="838000_2780" text="吐鲁番市"/>
+					<item name="838000_2781" text="鄯善县"/>
+					<item name="838000_2782" text="托克逊县"/>
+				</item>
+				<item name="839000_31_327" text="哈密地区">
+					<item name="839000_2783" text="哈密市"/>
+					<item name="839000_2784" text="巴里坤哈萨克自治县"/>
+					<item name="839000_2785" text="伊吾县"/>
+				</item>
+				<item name="831100_31_328" text="昌吉回族自治州">
+					<item name="831100_2786" text="昌吉市"/>
+					<item name="831100_2787" text="阜康市"/>
+					<item name="831100_2788" text="米泉市"/>
+					<item name="831100_2789" text="呼图壁县"/>
+					<item name="831100_2790" text="玛纳斯县"/>
+					<item name="831100_2791" text="奇台县"/>
+					<item name="831100_2792" text="吉木萨尔县"/>
+					<item name="831100_2793" text="木垒哈萨克自治县"/>
+				</item>
+				<item name="833400_31_329" text="博尔塔拉蒙古自治州">
+					<item name="833400_2794" text="博乐市"/>
+					<item name="833400_2795" text="精河县"/>
+					<item name="833400_2796" text="温泉县"/>
+				</item>
+				<item name="841000_31_330" text="巴音郭楞蒙古自治州">
+					<item name="841000_2797" text="库尔勒市"/>
+					<item name="841000_2798" text="轮台县"/>
+					<item name="841000_2799" text="尉犁县"/>
+					<item name="841000_2800" text="若羌县"/>
+					<item name="841000_2801" text="且末县"/>
+					<item name="841000_2802" text="焉耆回族自治县"/>
+					<item name="841000_2803" text="和静县"/>
+					<item name="841000_2804" text="和硕县"/>
+					<item name="841000_2805" text="博湖县"/>
+				</item>
+				<item name="843000_31_331" text="阿克苏地区">
+					<item name="843000_2806" text="阿克苏市"/>
+					<item name="843000_2807" text="温宿县"/>
+					<item name="843000_2808" text="库车县"/>
+					<item name="843000_2809" text="沙雅县"/>
+					<item name="843000_2810" text="新和县"/>
+					<item name="843000_2811" text="拜城县"/>
+					<item name="843000_2812" text="乌什县"/>
+					<item name="843000_2813" text="阿瓦提县"/>
+					<item name="843000_2814" text="柯坪县"/>
+				</item>
+				<item name="835600_31_332" text="克孜勒苏柯尔克孜自治州">
+					<item name="835600_2815" text="阿图什市"/>
+					<item name="835600_2816" text="阿克陶县"/>
+					<item name="835600_2817" text="阿合奇县"/>
+					<item name="835600_2818" text="乌恰县"/>
+				</item>
+				<item name="844000_31_333" text="喀什地区">
+					<item name="844000_2819" text="喀什市"/>
+					<item name="844000_2820" text="疏附县"/>
+					<item name="844000_2821" text="疏勒县"/>
+					<item name="844000_2822" text="英吉沙县"/>
+					<item name="844000_2823" text="泽普县"/>
+					<item name="844000_2824" text="莎车县"/>
+					<item name="844000_2825" text="叶城县"/>
+					<item name="844000_2826" text="麦盖提县"/>
+					<item name="844000_2827" text="岳普湖县"/>
+					<item name="844000_2828" text="伽师县"/>
+					<item name="844000_2829" text="巴楚县"/>
+					<item name="844000_2830" text="塔什库尔干塔吉克自治县"/>
+				</item>
+				<item name="848000_31_334" text="和田地区">
+					<item name="848000_2831" text="和田市"/>
+					<item name="848000_2832" text="和田县"/>
+					<item name="848000_2833" text="墨玉县"/>
+					<item name="848000_2834" text="皮山县"/>
+					<item name="848000_2835" text="洛浦县"/>
+					<item name="848000_2836" text="策勒县"/>
+					<item name="848000_2837" text="于田县"/>
+					<item name="848000_2838" text="民丰县"/>
+				</item>
+				<item name="833200_31_335" text="伊犁哈萨克自治州">
+					<item name="833200_2839" text="伊宁市"/>
+					<item name="833200_2840" text="奎屯市"/>
+					<item name="833200_2841" text="伊宁县"/>
+					<item name="833200_2842" text="察布查尔锡伯自治县"/>
+					<item name="833200_2843" text="霍城县"/>
+					<item name="833200_2844" text="巩留县"/>
+					<item name="833200_2845" text="新源县"/>
+					<item name="833200_2846" text="昭苏县"/>
+					<item name="833200_2847" text="特克斯县"/>
+					<item name="833200_2848" text="尼勒克县"/>
+				</item>
+				<item name="834700_31_336" text="塔城地区">
+					<item name="834700_2849" text="塔城市"/>
+					<item name="834700_2850" text="乌苏市"/>
+					<item name="834700_2851" text="额敏县"/>
+					<item name="834700_2852" text="沙湾县"/>
+					<item name="834700_2853" text="托里县"/>
+					<item name="834700_2854" text="裕民县"/>
+					<item name="834700_2855" text="和布克赛尔蒙古自治县"/>
+				</item>
+				<item name="836500_31_337" text="阿勒泰地区">
+					<item name="836500_2856" text="阿勒泰市"/>
+					<item name="836500_2857" text="布尔津县"/>
+					<item name="836500_2858" text="富蕴县"/>
+					<item name="836500_2859" text="福海县"/>
+					<item name="836500_2860" text="哈巴河县"/>
+					<item name="836500_2861" text="青河县"/>
+					<item name="836500_2862" text="吉木乃县"/>
+				</item>
+				<item name="832000_31_338" text="石河子市"/>
+				<item name="843300_31_339" text="阿拉尔市"/>
+				<item name="843900_31_340" text="图木舒克市"/>
+				<item name="831300_31_341" text="五家渠市"/>
+			</item>
+			<item name="CITY_32" text="香港特别行政区">
+				<item name="00852_32_342" text="香港特别行政区">
+					<item name="00852_1" text="中西区"/>
+					<item name="00852_2" text="湾仔区"/>
+					<item name="00852_3" text="东区 "/>
+					<item name="00852_4" text="南区"/>
+					<item name="00852_5" text="油尖旺区"/>
+					<item name="00852_6" text="深水埗区"/>
+					<item name="00852_7" text="九龙城区"/>
+					<item name="00852_8" text="黄大仙区"/>
+					<item name="00852_9" text="观塘区"/>
+					<item name="00852_10" text="葵青区"/>
+					<item name="00852_12" text="荃湾区"/>
+					<item name="00852_13" text="屯门区"/>
+					<item name="00852_14" text="元朗区"/>
+					<item name="00852_15" text="北区"/>
+					<item name="00852_16" text="大埔区"/>
+					<item name="00852_17" text="沙田区"/>
+					<item name="00852_18" text="西贡区"/>
+					<item name="00852_19" text="离岛区"/>
+				</item>
+			</item>
+			<item name="CITY_33" text="澳门特别行政区">
+				<item name="00853_33_343" text="澳门特别行政区">
+					<item name="00853_0" text="花地玛堂区"/>
+					<item name="00853_1" text="圣安多尼堂"/>
+					<item name="00853_2" text="花地玛堂区"/>
+					<item name="00853_3" text="大堂区"/>
+					<item name="00853_4" text="望德堂区"/>
+					<item name="00853_5" text="风顺堂区"/>
+					<item name="00853_6" text="氹仔"/>
+					<item name="00853_7" text="路环"/>
+				</item>
+			</item>
+			<item name="CITY_34" text="台湾省">
+				<item name="00886_34_344" text="台湾省">
+					<item text="台北市" name="00886_0"/>
+					<item text="高雄市" name="00886_1"/>
+					<item text="基隆市" name="00886_2"/>
+					<item text="台中市" name="00886_3"/>
+					<item text="台南市" name="00886_4"/>
+					<item text="新竹市" name="00886_5"/>
+					<item text="嘉义市" name="00886_6"/>
+					<item text="台北县" name="00886_7"/>
+					<item text="宜兰县" name="00886_8"/>
+					<item text="新竹县" name="00886_9"/>
+					<item text="桃园县" name="00886_10"/>
+					<item text="苗栗县" name="00886_11"/>
+					<item text="台中县" name="00886_12"/>
+					<item text="彰化县" name="00886_13"/>
+					<item text="南投县" name="00886_14"/>
+					<item text="嘉义县" name="00886_15"/>
+					<item text="台南县" name="00886_16"/>
+					<item text="高雄县" name="00886_17"/>
+					<item text="屏东县" name="00886_18"/>
+					<item text="台东县" name="00886_19"/>
+					<item text="花连县" name="00886_20"/>
+					<item text="澎湖县" name="00886_21"/>
+				</item>
+			</item>
+		</type>
+	</type>
+	<type name="docu" text="文档管理">
+		<type name="thread" text="多线程">
+			<item name="thread_v" text="false"/>
+		</type>
+		<type name="auto" text="自动审核">
+			<item name="auto_v" text="false"/>
+		</type>
+		<type name="pages" text="转换页数">
+			<item name="pages_v" text="30"/>
+		</type>
+	</type>
+</dict>

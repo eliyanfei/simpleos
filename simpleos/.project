@@ -3,6 +3,7 @@
 	<name>simpleos</name>
 	<comment></comment>
 	<projects>
+		<project>web_lib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -27,6 +28,11 @@
 		</buildCommand>
 		<buildCommand>
 			<name>com.genuitec.eclipse.j2eedt.core.DeploymentDescriptorValidator</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.genuitec.eclipse.ast.deploy.core.DeploymentBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-script>
+	<version>1.0.0</version>
+	<name>app</name>
+	<tran-sql>
+		<description>it_ad</description>
+		<![CDATA[
+			CREATE TABLE `it_ad` (
+  `id` bigint(20) NOT NULL,
+  `adType` tinyint(4) NOT NULL,
+  `src` varchar(256) ,
+  `url` varchar(128) ,
+  `content` text ,
+  `status` tinyint(4) default 0,
+  `ad` tinyint(4) default 0,
+  `days` tinyint(4) default 0,
+  `startDate` date NOT NULL,
+  PRIMARY KEY  (`id`)
+) 
+		]]>
+	</tran-sql>
+</sql-script>

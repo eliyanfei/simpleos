@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<item title="#(Add)" icon="#add">
+		<jsSelectCallback>
+			__catalog_action(item).add(item);
+		</jsSelectCallback>
+	</item>
+	<item title="#(Edit)" icon="#edit">
+		<jsSelectCallback>
+			__catalog_action(item).edit(item);
+		</jsSelectCallback>
+	</item>
+	<item title="#(Delete)" icon="#delete">
+		<jsSelectCallback>
+			__catalog_action(item).del(item);
+		</jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(Refresh)" icon="#refresh">
+		<jsSelectCallback>
+			__catalog_action(item).refresh();
+   	</jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(Menu.move)">
+		<item title="#(Menu.up)" icon="#up">
+			<jsSelectCallback>
+				__catalog_action(item).move(item, true);
+			</jsSelectCallback>
+		</item>
+		<item title="#(Menu.up2)" icon="#up2">
+			<jsSelectCallback>
+				__catalog_action(item).move2(item, true);
+			</jsSelectCallback>
+		</item>
+		<item title="#(Menu.down)" icon="#down">
+			<jsSelectCallback>
+				__catalog_action(item).move(item, false);
+			</jsSelectCallback>
+		</item>
+		<item title="#(Menu.down2)" icon="#down2">
+			<jsSelectCallback>
+				__catalog_action(item).move2(item, false);
+			</jsSelectCallback>
+		</item>
+	</item>
+	<item title="-" />
+	<item title="#(Catalog.menu.0)" icon="#key">
+		<jsSelectCallback>
+			__catalog_action(item).owner_mgr(item);
+		</jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(Tree.expand)" icon="#expand">
+		<jsSelectCallback>
+			__catalog_action(item).expand(item);
+		</jsSelectCallback>
+	</item>
+	<item title="#(Tree.collapse)" icon="#collapse">
+		<jsSelectCallback>
+			__catalog_action(item).collapse(item);
+		</jsSelectCallback>
+	</item>
+</menu>

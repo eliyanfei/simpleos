@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<item title="#(Edit)" icon="#edit">
+		<jsSelectCallback>
+			__pager_action(item).edit(item);
+    </jsSelectCallback>
+	</item>
+	<item title="-"></item>
+	<item title="#(news_edit.3)" icon="#option">
+		<jsSelectCallback>
+			__pager_action(item).edit2(item);
+		</jsSelectCallback>
+	</item>
+	<item title="-"></item>
+	<item title="#(Delete)" icon="#delete">
+		<jsSelectCallback>
+			__pager_action(item).del(item);
+    </jsSelectCallback>
+	</item>
+	<!-- <item title="-" /> <item title="#(Menu.move)"> <item title="#(Menu.up)" icon="#up"> <jsSelectCallback> 
+		__pager_action(item).move(item, true, "newspagerMove"); </jsSelectCallback> </item> <item title="#(Menu.up2)" 
+		icon="#up2"> <jsSelectCallback> __pager_action(item).move2(item, true, "newspagerMove"); </jsSelectCallback> 
+		</item> <item title="#(Menu.down)" icon="#down"> <jsSelectCallback> __pager_action(item).move(item, 
+		false, "newspagerMove"); </jsSelectCallback> </item> <item title="#(Menu.down2)" icon="#down2"> 
+		<jsSelectCallback> __pager_action(item).move2(item, false, "newspagerMove"); </jsSelectCallback> 
+		</item> </item> -->
+</menu>

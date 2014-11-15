@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-script>
+	<version>1.0.0</version>
+	<name>case</name>
+	<tran-sql>
+		<description></description>
+    <![CDATA[
+      create table simple_my_favorite (
+      	id bigint not null,
+      	userid bigint not null,
+      	refId bigint not null,
+      	title varchar(128) not null,
+      	url varchar(64) not null,
+      	type tinyint(4),
+      	createdate datetime not null,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+</sql-script>

@@ -8,13 +8,13 @@
       exportAction="false" indexPages="5" pagerBarLayout="bottom">
       <columns>
         <column columnName="tagText" columnText="#(tags_manager.0)" />
-        <column columnName="ttype" columnText="#(tags_option.0)"
+        <column columnName="ttype" columnText="#(tags_option.0)" separator="true"
           textAlign="center" width="55" />
-        <column columnName="frequency" columnText="#(tags_manager.1)"
+        <column columnName="frequency" columnText="#(tags_manager.1)" separator="true"
           textAlign="center" width="55" />
-        <column columnName="views" columnText="#(tags_manager.2)"
+        <column columnName="views" columnText="#(tags_manager.2)" separator="true"
           textAlign="center" width="60" />
-        <column columnName="action" columnText="&amp;nbsp;"
+        <column columnName="action" columnText="&amp;nbsp;" separator="true"
           textAlign="center" width="105" />
       </columns>
     </tablePager>

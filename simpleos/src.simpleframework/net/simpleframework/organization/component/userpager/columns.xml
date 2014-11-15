@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columns>
+	<column columnName="photo" columnText="&amp;nbsp;" textAlign="center"
+		width="72" sort="false" />
+
+	<column columnName="text" columnText="#(UserPager.columns.0)"
+		textAlign="center" width="120" />
+
+	<column columnName="name" columnText="#(UserPager.columns.1)"
+		textAlign="center" width="120" separator="true" />
+
+	<column columnName="birthday" columnText="#(UserPager.columns.2)"
+		textAlign="center" width="120" separator="true" />
+
+	<column columnName="sex" columnText="#(UserPager.columns.3)"
+		textAlign="center" width="50" separator="true" />
+
+	<column columnName="other" columnText="#(UserPager.columns.4)"
+		sort="false" separator="true" />
+
+	<column columnName="action" />
+</columns>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<item title="#(Edit)" icon="#edit">
+		<jsSelectCallback>
+			__pager_action(item).edit(item);
+    </jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(Delete)" icon="#delete">
+		<jsSelectCallback>
+			__pager_action(item).del(item);
+    </jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="锁定">
+		<jsSelectCallback>
+			__pager_action(item).lock(item);
+    </jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="激活">
+		<jsSelectCallback>
+			__pager_action(item).active(item);
+    </jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="黑名单">
+		<jsSelectCallback>
+			__pager_action(item).blacklist(item);
+    </jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(UserPager.menu.0)">
+		<jsSelectCallback>
+			__pager_action(item).move2dept(item);
+    </jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(up_pager.6)">
+		<jsSelectCallback>
+			__pager_action(item).account_stat(item);
+		</jsSelectCallback>
+	</item>
+	<item title="#(up_pager.7)">
+		<jsSelectCallback>
+			__pager_action(item).account_binding(item);
+		</jsSelectCallback>
+	</item>
+	<item title="-" />
+	<item title="#(Menu.move)">
+		<item title="#(Menu.up)" icon="#up">
+			<jsSelectCallback>
+				__pager_action(item).move(item, true, "userPagerMove");
+			</jsSelectCallback>
+		</item>
+		<item title="#(Menu.up2)" icon="#up2">
+			<jsSelectCallback>
+				__pager_action(item).move2(item, true, "userPagerMove");
+			</jsSelectCallback>
+		</item>
+		<item title="#(Menu.down)" icon="#down">
+			<jsSelectCallback>
+				__pager_action(item).move(item, false, "userPagerMove");
+			</jsSelectCallback>
+		</item>
+		<item title="#(Menu.down2)" icon="#down2">
+			<jsSelectCallback>
+				__pager_action(item).move2(item, false, "userPagerMove");
+			</jsSelectCallback>
+		</item>
+	</item>
+</menu>
