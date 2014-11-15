@@ -49,23 +49,23 @@
 		align="center">
 		<img src="<%=src%>">
 		<div class="template_item_desc"><%=templateBean.getTitle()%>
-			<%--<input
+			<%-- <input
 				type="checkbox" id="fixedHeader_<%=templateBean.getName()%>"
-				<%="true".equals(template.attrMap.get("header")) ? "checked=\"checked\"" : ""%>>
+				<%=same&&"true".equals(template.attrMap.get("fixedHeader")) ? "checked=\"checked\"" : ""%>>
 			<label for="fixedHeader_<%=templateBean.getName()%>">
 				#(Desktop.Template.0)
 			</label>
 			<input type="checkbox" id="fixedFooter_<%=templateBean.getName()%>"
-				<%="true".equals(template.attrMap.get("footer")) ? "checked=\"checked\"" : ""%>>
+				<%=same&&"true".equals(template.attrMap.get("fixedFooter")) ? "checked=\"checked\"" : ""%>>
 			<label for="fixedFooter_<%=templateBean.getName()%>">
 				#(Desktop.Template.1)
-			</label>
+			</label> --%>
 			<input type="checkbox" id="fullScreen_<%=templateBean.getName()%>"
-				<%="true".equals(template.attrMap.get("fullScreen")) ? "checked=\"checked\"" : ""%>>
+				<%=same&&"true".equals(template.attrMap.get("fullScreen")) ? "checked=\"checked\"" : ""%>>
 			<label for="fullScreen_<%=templateBean.getName()%>">
 				#(Desktop.Template.2)
 			</label>
-			--%>
+			
 			<input type="button" value="#(Select)"
 				<%=same ? "" : "class=\"button2\""%>
 				onclick="saveModel('<%=templateBean.getName()%>');">
@@ -78,9 +78,9 @@
 <script type="text/javascript">
 function saveModel(t) {
 	var params = 'templateId=' + t;
-	/**params += '&fixedHeader=' + $('fixedHeader_' + t).checked;
-	params += '&fixedFooter=' + $('fixedFooter_' + t).checked;
-    params += '&fullScreen=' + $('fullScreen_' + t).checked;**/
+	/* params += '&fixedHeader=' + $('fixedHeader_' + t).checked;
+	params += '&fixedFooter=' + $('fixedFooter_' + t).checked; */
+    params += '&fullScreen=' + $('fullScreen_' + t).checked;
 	$IT.A('saveTemplate', params);
 }
 </script>

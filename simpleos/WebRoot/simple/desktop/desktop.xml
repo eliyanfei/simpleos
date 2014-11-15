@@ -8,6 +8,7 @@
  	 </scriptInit>
 	<importPage>
 		<value>/simple/include/c.xml</value>
+		<value>desktop_index_c.xml</value>
 	</importPage>
 	<jobView>sys_manager</jobView>
 	<components>
@@ -42,9 +43,11 @@
 					$('desktop_title').innerHTML ='#(Desktop.4)';
 				]]></jsClickCallback>
 			</item>
-			<item text="幻灯片设置">
-				<jsClickCallback><![CDATA[ $IT.A("desktop_slide_act"); 
-				$('desktop_title').innerHTML ='幻灯片设置'; ]]></jsClickCallback>
+			<item text="#(Desktop.5)">
+				<jsClickCallback><![CDATA[ 
+					$IT.A("desktop_slide_act"); 
+					$('desktop_title').innerHTML ='#(Desktop.5)'; 
+					]]></jsClickCallback>
 			</item>
 		</listbox>
 		<ajaxRequest name="desktop_menu_act" updateContainerId="desktop_data_id">

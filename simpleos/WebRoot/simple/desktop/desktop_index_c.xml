@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<components>
-		<portal name="desktop_index_act" autoPagelet="rss" containerId="desktop_index_id"
+		<portal name="por_desktop_index_act" autoPagelet="rss" containerId="desktop_index_id"
 			jobManager="${net.simpleframework.organization.IJob.sj_manager}"
 			draggable="true" showMenu="false">
 			<column width="70%">

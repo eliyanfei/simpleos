@@ -58,5 +58,5 @@ $ready(function() {
 	});
 });
 </script>
-	<%=ItSiteUtil.getAboutHtml(2)%>
+	<%=ItSiteUtil.getAboutHtml(2,".footer")%>
 </div>

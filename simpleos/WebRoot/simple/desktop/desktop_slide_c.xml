@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<components>
 		<swfupload name="logoUpload" fileSizeLimit="1MB" fileTypes="*.png"
@@ -20,9 +20,9 @@
 			handleClass="net.prj.manager.PrjNavTable">
 			<columns>
 				<column columnName="title" columnText="标题"></column>
-				<column columnName="img" columnText="图片" separator="true"
+				<column columnName="img" columnText="图片" separator="true" sort="false"
 					width="320" textAlign="center"></column>
-				<column columnName="act" columnText="操作" separator="true"
+				<column columnName="act" columnText="操作" separator="true" sort="false"
 					width="40" textAlign="center"></column>
 			</columns>
 			<jsLoadedCallback>

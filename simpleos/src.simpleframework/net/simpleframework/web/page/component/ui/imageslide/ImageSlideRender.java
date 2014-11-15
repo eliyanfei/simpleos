@@ -2,6 +2,8 @@ package net.simpleframework.web.page.component.ui.imageslide;
 
 import java.util.Collection;
 
+import net.prj.manager.template.PrjTemplateBean;
+import net.prj.manager.template.PrjTemplateUtils;
 import net.simpleframework.util.ConvertUtils;
 import net.simpleframework.util.JavascriptUtils;
 import net.simpleframework.util.StringUtils;
@@ -27,11 +29,21 @@ public class ImageSlideRender extends AbstractComponentJavascriptRender {
 	public String getJavascriptCode(final ComponentParameter compParameter) {
 		final ImageSlideBean imageSlide = (ImageSlideBean) compParameter.componentBean;
 		Collection<ImageItem> items;
-		final IImageSlideHandle handle = (IImageSlideHandle) compParameter.getComponentHandle();
+
+		PrjTemplateBean template = PrjTemplateUtils.getTemplateBean();
+		if ("true".equals(template.attrMap.get("fullScreen"))) {
+			imageSlide.setWidth("");
+		}
+
+		final IImageSlideHandle handle = (IImageSlideHandle) compParameter
+				.getComponentHandle();
 		if (handle != null) {
 			items = handle.getImageItems(compParameter);
 		} else {
 			items = imageSlide.getImageItems();
+		}
+		if (items == null || items.isEmpty()) {
+			return "";
 		}
 		final String actionFunc = imageSlide.getActionFunction();
 		final StringBuilder sb = new StringBuilder();
@@ -47,31 +59,46 @@ public class ImageSlideRender extends AbstractComponentJavascriptRender {
 				sb.append("{");
 				final String link = item.getLink();
 				if (StringUtils.hasText(link)) {
-					sb.append("link: \"").append(compParameter.wrapContextPath(link)).append("\",");
+					sb.append("link: \"")
+							.append(compParameter.wrapContextPath(link))
+							.append("\",");
 				}
-				sb.append("imageUrl: \"").append(compParameter.wrapContextPath(item.getImageUrl()))
-						.append("\",");
-				sb.append("title: \"").append(JavascriptUtils.escape(item.getTitle())).append("\"");
+				sb.append("imageUrl: \"")
+						.append(compParameter.wrapContextPath(item
+								.getImageUrl())).append("\",");
+				sb.append("title: \"")
+						.append(JavascriptUtils.escape(item.getTitle()))
+						.append("\"");
 				sb.append("}");
 			}
 		}
 		sb.append("], {");
 
-		final int titleHeight = ConvertUtils.toInt(compParameter.getBeanProperty("titleHeight"), 0);
+		final int titleHeight = ConvertUtils.toInt(
+				compParameter.getBeanProperty("titleHeight"), 0);
 		if (titleHeight > 0) {
 			sb.append("titleHeight: ").append(titleHeight).append(",");
 		}
-		sb.append("titleOpacity: ").append(compParameter.getBeanProperty("titleOpacity")).append(",");
-		sb.append("frequency: ").append(compParameter.getBeanProperty("frequency")).append(",");
-		sb.append("showNextAction: ").append(compParameter.getBeanProperty("showNextAction"))
+		sb.append("titleOpacity: ")
+				.append(compParameter.getBeanProperty("titleOpacity"))
 				.append(",");
-		sb.append("showPreAction: ").append(compParameter.getBeanProperty("showPreAction"))
+		sb.append("frequency: ")
+				.append(compParameter.getBeanProperty("frequency")).append(",");
+		sb.append("showNextAction: ")
+				.append(compParameter.getBeanProperty("showNextAction"))
 				.append(",");
-		sb.append("autoStart: ").append(compParameter.getBeanProperty("autoStart")).append(",");
-		sb.append("start: ").append(compParameter.getBeanProperty("start")).append(",");
+		sb.append("showPreAction: ")
+				.append(compParameter.getBeanProperty("showPreAction"))
+				.append(",");
+		sb.append("autoStart: ")
+				.append(compParameter.getBeanProperty("autoStart")).append(",");
+		sb.append("start: ").append(compParameter.getBeanProperty("start"))
+				.append(",");
 		sb.append(ComponentRenderUtils.jsonHeightWidth(compParameter));
-		sb.append("effects: Browser.effects && ").append(compParameter.getBeanProperty("effects"));
+		sb.append("effects: Browser.effects && ").append(
+				compParameter.getBeanProperty("effects"));
 		sb.append("});");
-		return ComponentRenderUtils.wrapActionFunction(compParameter, sb.toString());
+		return ComponentRenderUtils.wrapActionFunction(compParameter,
+				sb.toString());
 	}
 }

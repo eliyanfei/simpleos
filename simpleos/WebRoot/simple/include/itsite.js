@@ -366,8 +366,7 @@ $IT.searchButton = function(id, inputText, dq, dv, sf) {
 		$('search_id').value = dq + "_";
 		$('search_value').innerHTML = dv;
 	}
-	$('searchBtn')
-			.observe(
+	$('searchBtn').observe(
 					"click",
 					function(ev) {
 						if (sf) {
@@ -384,8 +383,7 @@ $IT.searchButton = function(id, inputText, dq, dv, sf) {
 							}
 						}
 					});
-	$Comp
-			.addReturnEvent(
+	$Comp.addReturnEvent(
 					$('txtValue'),
 					function(ev) {
 						if (sf) {
