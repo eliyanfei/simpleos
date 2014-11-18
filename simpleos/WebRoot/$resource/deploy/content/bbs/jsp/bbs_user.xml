@@ -8,7 +8,7 @@
 		<tablePager name="bbsUserPager" containerId="bbsUserPager"
 			showCheckbox="false" pageItems="30" pagerBarLayout="bottom"
 			handleClass="net.simpleframework.content.bbs.BbsUserPager"
-			exportAction="false" showLineNo="true" showVerticalLine="true">
+			exportAction="true" showLineNo="true" showVerticalLine="true">
 			<columns>
 				<column columnName="userText" columnText="#(bbs_topic_view.0)"
 					filter="false" sort="false" separator="true" />

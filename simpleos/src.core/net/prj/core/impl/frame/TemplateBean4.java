@@ -14,7 +14,7 @@ public class TemplateBean4 extends AbstractTemplateBean {
 
 	@Override
 	public String getTitle() {
-		return "模板34";
+		return "模板4";
 	}
 
 }

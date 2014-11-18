@@ -7,7 +7,7 @@
 	</importPage>
 	<components>
 		<tablePager name="allDocuListTableAct" containerId="allDocuListTableId"
-			showVerticalLine="true" exportAction="false" noResultDesc="#(Docu.all.list.0)"
+			showVerticalLine="true" exportAction="true" noResultDesc="#(Docu.all.list.0)"
 			pageItems="30" showEditPageItems="false" pagerBarLayout="bottom"
 			handleClass="net.itsite.document.docu.all.AllDocuTablePaperHandle">
 			<columns>

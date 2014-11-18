@@ -10,7 +10,7 @@
 	<components>
 		<tablePager name="myFavoriteTable"
 			handleClass="net.prj.mvc.myfavorite.MyFavoriteTableHandle"
-			exportAction="false" containerId="myfavorite_data_id" showCheckbox="false"
+			exportAction="true" containerId="myfavorite_data_id" showCheckbox="false"
 			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
 			pagerBarLayout="bottom">
 			<columns>

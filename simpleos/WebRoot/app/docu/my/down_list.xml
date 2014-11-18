@@ -4,7 +4,7 @@
 	<scriptEval>single</scriptEval>
 	<components>
 		<tablePager name="downListPaperAct" containerId="downListId"
-			exportAction="false" pageItems="30" showEditPageItems="false"
+			exportAction="true" pageItems="30" showEditPageItems="false"
 			showLineNo="true" showVerticalLine="true" showCheckbox="false"
 			pagerBarLayout="bottom" handleClass="net.itsite.document.docu.DocuDownTablePaperHandle">
 			<columns>

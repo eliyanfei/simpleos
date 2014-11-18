@@ -11,7 +11,7 @@
 	<components>
 		<tablePager name="allDocuListTableAct" containerId="myDocuListTableId"
 			pageItems="15" showEditPageItems="false" showCheckbox="false"
-			exportAction="false" handleClass="net.itsite.document.docu.my.MyDocuTablePaperHandle">
+			exportAction="true" handleClass="net.itsite.document.docu.my.MyDocuTablePaperHandle">
 			<columns>
 				<column columnText="文档名称" columnName="title" sort="false"></column>
 				<column columnText="类目" columnName="catalogId" separator="true"

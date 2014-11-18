@@ -5,7 +5,7 @@
   <components>
     <tablePager name="_tagsTablePager" containerId="_tagsTablePager"
       handleClass="net.simpleframework.applets.tag.TagsManagerTableHandle"
-      exportAction="false" indexPages="5" pagerBarLayout="bottom">
+      exportAction="true" indexPages="5" pagerBarLayout="bottom">
       <columns>
         <column columnName="tagText" columnText="#(tags_manager.0)" />
         <column columnName="ttype" columnText="#(tags_option.0)" separator="true"

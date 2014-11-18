@@ -71,9 +71,6 @@
 			<field label="#(user_edit_base.17)">
 				<component type="text" name="user_qq" />
 			</field>
-			<field label="#(user_edit_base.18)">
-				<component type="text" name="user_msn" />
-			</field>
 		</propEditor>
 
 		<calendar name="birthdayCal" inputField="user_birthday"
@@ -90,7 +87,7 @@
 
 		<validation name="userValidation" triggerSelector="#_userbase_save"
 			warnType="insertAfter">
-			<validator selector="#user_text, #user_email, #user_mobile"
+			<validator selector="#user_text, #user_email"
 				method="required" />
 			<validator selector="#user_birthday" method="date" args="yyyy-MM-dd" />
 			<validator selector="#user_email, #user_msn" method="email" />

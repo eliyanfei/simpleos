@@ -4,7 +4,7 @@
 
 	<components>
 		<tablePager name="_tagRTablePager" containerId="_tagRTablePager"
-			handleClass="net.simpleframework.applets.tag.TagRTableHandle" exportAction="false"
+			handleClass="net.simpleframework.applets.tag.TagRTableHandle" exportAction="true"
 			indexPages="5" pagerBarLayout="bottom" showCheckbox="false">
 			<columns>
 				<column columnName="topic" sort="false" columnText="#(tags_r.0)" />

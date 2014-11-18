@@ -26,6 +26,6 @@
 			<urlForward>remark_delete.jsp</urlForward>
 		</ajaxRequest>
 		<window name="remarkWindowAct" contentRef="remarkAjaxAct"
-			title="#(Remark.2)" width="500" height="350"></window>
+			title="#(Remark.2)" width="500" height="300"></window>
 	</components>
 </page>

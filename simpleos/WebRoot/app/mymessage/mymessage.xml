@@ -15,7 +15,7 @@
 	</jobView>
 	<components>
 		<tablePager name="myMessageTable" handleClass="net.prj.mvc.message.MyMessageTableHandle"
-			exportAction="false" containerId="mymessage_data_id" showCheckbox="true"
+			exportAction="true" containerId="mymessage_data_id" showCheckbox="true"
 			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
 			pagerBarLayout="bottom">
 			<columns>

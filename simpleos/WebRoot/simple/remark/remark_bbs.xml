@@ -4,7 +4,7 @@
 	<scriptEval>single</scriptEval>
 	<components>
 		<pager name="remarkBbsTable" handleClass="net.prj.mvc.remark.RemarkBbsTableHandle"
-			exportAction="false" containerId="remarkListId_bbs" dataPath="remark_bbs_data.jsp"
+			exportAction="true" containerId="remarkListId_bbs" dataPath="remark_bbs_data.jsp"
 			showEditPageItems="false" pagerBarLayout="bottom"></pager>
 	</components>
 </page>

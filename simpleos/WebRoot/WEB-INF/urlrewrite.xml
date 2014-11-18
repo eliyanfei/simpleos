@@ -34,7 +34,7 @@
 		<to>/app/$1/$1.jsp?userid=$2</to>
 	</rule>
 	<rule>
-		<from>/(index|myhome|my|space|news|bbs|blog|login|register|about|contact|mymessage|myfavorite).html</from>
+		<from>/(index|myhome|my|space|news|bbs|blog|login|links|register|about|contact|mymessage|myfavorite).html</from>
 		<to>/app/$1/$1.jsp</to>
 	</rule>
 	<rule>

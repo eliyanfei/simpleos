@@ -6,7 +6,7 @@
 		<userPager name="userSelectPager" indexPages="4" pageItems="8" 
 			pagerBarLayout="bottom"
 			handleClass="net.simpleframework.organization.component.userselect.UserSelectPagerHandle"
-			exportAction="false" showEditPageItems="false">
+			exportAction="true" showEditPageItems="false">
 			<jsLoadedCallback>
 				__user_select_pager_loaded();
 			</jsLoadedCallback>

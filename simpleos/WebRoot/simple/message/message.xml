@@ -35,7 +35,7 @@
 			</item>
 		</listbox>
 		<tablePager name="messageTable" handleClass="net.prj.mvc.message.MessageTableHandle"
-			exportAction="false" containerId="message_data_id" showCheckbox="true"
+			exportAction="true" containerId="message_data_id" showCheckbox="true"
 			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
 			pagerBarLayout="bottom">
 			<columns>

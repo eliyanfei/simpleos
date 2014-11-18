@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<components>
 		<tablePager name="myDocuListTableAct" containerId="myDocuListTableId"
 			showCheckbox="false" pageItems="30" pagerBarLayout="bottom"
 			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
-			exportAction="false" handleClass="net.itsite.document.docu.my.MyDocuTablePaperHandle">
+			exportAction="true" handleClass="net.itsite.document.docu.my.MyDocuTablePaperHandle">
 			<columns>
-				<column columnText="#(Docu.all.list.1)" columnName="title"
+				<column columnText="#(Docu.all.list.1)" columnName="title" filter="true"
 					sort="false"></column>
 				<column columnText="#(Docu.all.list.3)" columnName="catalogId"
 					separator="true" textAlign="left" width="120"></column>

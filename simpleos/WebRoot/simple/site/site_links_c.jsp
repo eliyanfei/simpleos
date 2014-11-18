@@ -1,3 +1,5 @@
+<%@page import="net.simpleframework.sysmgr.dict.SysDict"%>
+<%@page import="net.simpleframework.sysmgr.dict.DictUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
 	import="net.prj.manager.site.PrjSiteUtils"%><%@page
@@ -7,6 +9,12 @@
 <%
 	Map<String, String> map = PrjMgrUtils.loadCustom("links");
 	String name = StringsUtils.trimNull(map.get("links_linksType"), "sys");
+	SysDict sysDict= DictUtils.getSysDictByName("links");
+	if(sysDict==null){
+		sysDict = new SysDict();
+		sysDict.setText("10");
+	}
+	
 %>
 <div style="padding: 0 25px;" id="site_links_form">
 	<div>
@@ -25,6 +33,9 @@
 		</label>
 	</div>
 	<div id="links_sys_mgr_id">
+		<span class="rred">底部只显示表格的前</span><input name="dict_links" type="text" style="width: 40px;" value="<%=sysDict.getText()%>">个
+		<input type="button" class="button2" value="#(Itsite.c.ok)设置"
+			onclick="$IT.A('site_dickLinksAct');">
 		<input type="button" class="button2" value="#(links.5)"
 			onclick="$IT.A('linksAddWin');">
 		<div id="linksDataId"></div>

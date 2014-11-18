@@ -70,6 +70,12 @@
 	<div class="home_item home_item3" onclick="$Actions.loc('/manager/site.html');">
 		<span>站点设置</span>
 	</div>
+	<div class="home_item home_item2" onclick="$Actions.loc('/manager/desktop.html');">
+		<span>模板设置</span>
+	</div>
+	<div class="home_item home_item3" onclick="$Actions.loc('/manager/ad.html');">
+		<span>广告设置</span>
+	</div>
 	<div class="home_item home_item1"
 		onclick="$Actions.loc('/manager/company.html');">
 		<span>企业信息</span>

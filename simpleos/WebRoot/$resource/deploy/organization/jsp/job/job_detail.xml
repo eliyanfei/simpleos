@@ -2,7 +2,7 @@
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<components>
 		<tablePager name="jobTableAct" containerId="jobViewId"
-			exportAction="false" pagerBarLayout="top" showCheckbox="false"
+			exportAction="true" pagerBarLayout="top" showCheckbox="false"
 			showLineNo="true" showVerticalLine="true"
 			handleClass="net.simpleframework.organization.JobTableHandle">
 			<columns>

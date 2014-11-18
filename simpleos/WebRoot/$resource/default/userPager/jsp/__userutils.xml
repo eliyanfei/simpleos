@@ -18,7 +18,7 @@
 			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
 			handleMethod="editUrl" />
 		<window name="editUserWindow" contentRef="ajaxEditUserPage"
-			width="640" height="480" title="#(up_pager.5)">
+			width="800" height="480" title="#(up_pager.5)">
 		</window>
 
 		<ajaxRequest name="ajaxUserAccountStatPage"

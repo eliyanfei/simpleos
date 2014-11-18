@@ -10,7 +10,7 @@
 	<components>
 		<newsPager name="__my_blog_pager" containerId="__my_blog_pager"
 			pagerBarLayout="bottom" handleClass="net.simpleframework.content.blog.MyBlogPagerHandle"
-			pageItems="30" exportAction="false">
+			pageItems="30">
 			<jsLoadedCallback>
 				TableRowDraggable.init("__my_blog_pager",
 				"tafelTreeselected");	

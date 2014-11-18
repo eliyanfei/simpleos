@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<handleClass>net.prj.manager.site.PrjSitePageLoad</handleClass>
 	<handleMethod>linksLoad</handleMethod>
@@ -12,6 +12,18 @@
 				$("links_homeLinks").innerHTML = "";
 			</jsLoadedCallback>
 		</htmlEditor>
+		
+		
+		<ajaxRequest name="site_dickLinksAct" handleClass="net.prj.manager.site.PrjSiteAction"
+			selector="#links_sys_mgr_id" handleMethod="saveDictLinks">
+			<jsCompleteCallback>
+				<![CDATA[
+					if(json['rs']=='true'){
+						$IT.alert('#(Save.OK)');
+					}
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
 		<ajaxRequest name="site_linksAct" handleClass="net.prj.manager.site.PrjSiteAction"
 			selector="#site_links_form" handleMethod="saveLinks">
 			<jsCompleteCallback>
@@ -25,14 +37,15 @@
 		<tablePager name="linksTable"
 			handleClass="net.prj.manager.links.PrjLinksTableHandle" showLineNo="true"
 			showVerticalLine="true" runImmediately="true" containerId="linksDataId"
-			pagerBarLayout="bottom" showEditPageItems="false" noResultDesc=""
-			showCheckbox="false">
+			exportAction="true" pagerBarLayout="bottom" showEditPageItems="true"
+			noResultDesc="" showCheckbox="false">
 			<columns>
 				<column columnName="title" columnText="#(links.table.0)"
 					filter="true"></column>
 				<column columnName="startDate" columnText="#(links.table.1)"
 					separator="true"></column>
-				<column columnName="description" columnText="#(links.add.3)" separator="true"></column>
+				<column columnName="description" columnText="#(links.add.3)"
+					separator="true" filter="true"></column>
 				<column columnName="action" sort="false" separator="true"
 					textAlign="center" width="25"
 					columnText='&lt;a class=" down_menu_image"&gt;&lt;/a&gt;' />

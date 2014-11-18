@@ -13,7 +13,7 @@
 	<components>
 		<newsPager name="__g_blog_pager" containerId="__g_blog_pager"
 			handleClass="${BlogUtils.applicationModule.getPagerHandleClass()}"
-			pageItems="30" exportAction="false">
+			pageItems="30" exportAction="true">
 		</newsPager>
 
 

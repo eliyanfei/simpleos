@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="net.itsite.complaint.EComplaint"%>
 
-<div class="simple_toolbar2" id="rForm">
+<div class="simple_toolbar21" id="rForm">
 	<input type="hidden" id="raction" name="raction"
 		value="remark<%=request.getParameter("rtype")%>Table">
 	<input type="hidden" id="rtype" name="rtype"
@@ -16,7 +16,7 @@
 			</td>
 			<td>
 				<textarea name="rd_content" id="rd_content" style="width: 100%"
-					rows="10"></textarea>
+					rows="11"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -35,13 +35,11 @@
 
 <style type="text/css">
 #rForm .l {
-	width: 70px;
+	width: 50px;
 	text-align: right;
 }
 
 #rForm {
-	background: #f7f7ff;
-	border: 1px solid #ddd;
 	padding: 6px 8px;
 }
 </style>
