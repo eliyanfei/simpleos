@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<ajaxRequest name="complaintDealAct" selector="#dealcomplaintForm"
+			handleClass="net.itsite.complaint.ComplaintAjaxHandle" handleMethod="dealComplaint">
+			<jsCompleteCallback>
+					<![CDATA[
+						$IT.C('dealComplaintWindowAct');
+						$IT.R('complaintTableAct');
+					]]>
+				</jsCompleteCallback>
+		</ajaxRequest>
+	</components>
+</page>

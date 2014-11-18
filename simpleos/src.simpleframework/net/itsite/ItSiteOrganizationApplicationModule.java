@@ -42,8 +42,6 @@ public class ItSiteOrganizationApplicationModule extends OrganizationApplication
 	public void init(IInitializer initializer) {
 		super.init(initializer);
 		//保存
-		ItSiteUtil.url = getApplication().getApplicationConfig().getServerUrl();
-		ItSiteUtil.title = getApplication().getApplicationConfig().getTitle();
 		((ITaskExecutorAware) getApplication()).getTaskExecutor().addScheduledTask(ItSiteUtil.getWeekTime() + 1, ItSiteUtil.weekperiod + 1,
 				new ExecutorRunnable() {
 					@Override

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.itniwo.commons.StringsUtils;
+import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.applets.notification.MailMessageNotification;
 import net.simpleframework.applets.notification.NotificationUtils;
 import net.simpleframework.organization.IJob;
@@ -154,11 +156,12 @@ public class UserPagerAction extends UserPagerUrlAction {
 						mailMessage = new MailMessageNotification();
 						mailMessage.setHtmlContent(true);
 						mailMessage.getTo().add(account.user().getEmail());
+						Map<String, String> map = PrjMgrUtils.loadCustom("site");
 						final WebApplicationConfig applicationConfig = (WebApplicationConfig) uHandle
 								.getApplicationModule().getApplication()
 								.getApplicationConfig();
-						mailMessage.setSubject(applicationConfig.getTitle()
-								+ "(ITniwo.net)激活通知");
+						mailMessage.setSubject(StringsUtils.trimNull(map.get("site_name"), "")
+								+ "激活通知");
 						mailMessage
 								.setTextBody("你的账号已经被激活，现在你可以登入站点！<br/><a href='"
 										+ applicationConfig.getServerUrl()

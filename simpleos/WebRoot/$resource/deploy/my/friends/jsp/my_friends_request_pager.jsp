@@ -1,3 +1,4 @@
+<%@page import="net.simpleframework.my.friends.ERequestStatus"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page
@@ -30,8 +31,8 @@
 	<tr>
 		<%
 			if (!myRequest) {
-					final IUser send = OrgUtils.um()
-							.queryForObjectById(fr.getSentId());
+					final IUser send = OrgUtils.um().queryForObjectById(
+							fr.getSentId());
 					if (send == null) {
 						continue;
 					}
@@ -61,10 +62,13 @@
 		%>
 		<td width="70"><img class="photo_icon"
 			style="width: 64px; height: 64px;"
-			src="<%=OrgUtils.getPhotoSRC(request, to, 64, 64)%>">
-		</td>
+			src="<%=OrgUtils.getPhotoSRC(request, to, 64, 64)%>"></td>
 		<td>
-			<div class="f3"><%=fr.getRequestStatus()%>
+			<div class="f3">
+				<span
+					class="<%=(fr.getRequestStatus() == ERequestStatus.no || fr
+							.getRequestStatus() == ERequestStatus.request) ? "rred"
+							: ""%>"><%=fr.getRequestStatus()%></span>
 				(<%=to.getText()%>,
 				<%=DateUtils.getRelativeDate(fr.getSentDate())%>)
 			</div>

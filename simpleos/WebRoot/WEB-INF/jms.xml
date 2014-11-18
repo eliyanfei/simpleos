@@ -26,5 +26,11 @@
 
 	<bean id="notificationMessageReceive"
 		class="net.simpleframework.applets.notification.NotificationReceive" />
-
+		
+	<bean id="MailMessageNotification" class="net.simpleframework.applets.notification.MailSenderList">
+		<property name="senderList">
+			<list>
+			</list>
+		</property>
+	</bean>
 </beans>

@@ -2,6 +2,7 @@ package net.simpleframework.core;
 
 import java.util.List;
 
+import net.a.ItSiteUtil;
 import net.simpleframework.ado.db.TableEntityManager;
 import net.simpleframework.util.IConstants;
 import net.simpleframework.util.StringUtils;
@@ -33,6 +34,9 @@ public abstract class ApplicationConfig {
 	private boolean resourceCompress = true, autoDatabase = true;
 
 	public String getTitle() {
+		if (title == null) {
+			return ItSiteUtil.title;
+		}
 		return title;
 	}
 
@@ -65,7 +69,8 @@ public abstract class ApplicationConfig {
 	}
 
 	public String getTableEntityManagerClass() {
-		return StringUtils.text(tableEntityManagerClass, TableEntityManager.class.getName());
+		return StringUtils.text(tableEntityManagerClass,
+				TableEntityManager.class.getName());
 	}
 
 	public void setTableEntityManagerClass(final String tableEntityManagerClass) {

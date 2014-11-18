@@ -16,6 +16,7 @@
 	<tr>
 		<td valign="top">
 			<jsp:include page="<%=blog_view_c%>" flush="true"></jsp:include>
+			<jsp:include page="/app/common/ad_bar_content.jsp"></jsp:include>
 		</td>
 		<td width="264" valign="top">
 			<div class="block_layout1">
@@ -41,6 +42,7 @@
 				</div>
 				<div class="c" id="comments_tabs"></div>
 			</div>
+			<jsp:include page="/app/common/ad_bar_right.jsp"></jsp:include>
 		</td>
 	</tr>
 </table>

@@ -5,9 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import net.a.ItSiteUtil;
+import net.itniwo.commons.StringsUtils;
 import net.itsite.ItSiteCache;
 import net.itsite.ItSiteOrganizationApplicationModule.AccountExt;
 import net.itsite.utils.MD5;
+import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.applets.notification.MailMessageNotification;
 import net.simpleframework.applets.notification.NotificationUtils;
 import net.simpleframework.organization.IUser;
@@ -118,10 +120,11 @@ public class UserUtilsAction extends AbstractAjaxRequestHandle {
 						OrgUtils.um().update(user);
 					}
 
+					Map<String, String> map = PrjMgrUtils.loadCustom("site");
+					
 					final MailMessageNotification mailMessage = new MailMessageNotification();
 					mailMessage.getTo().add(user);
-					mailMessage.setSubject(LocaleI18n.getMessage("UserPagerAction.3", PageUtils.pageContext.getApplication().getApplicationConfig()
-							.getTitle()));
+					mailMessage.setSubject(LocaleI18n.getMessage("UserPagerAction.3", StringsUtils.trimNull(map.get("site_name"), "")));
 					final Map<String, Object> variable = new HashMap<String, Object>();
 					variable.put("username", user);
 					variable.put("bindingcode", StringUtils.hash(compParameter.getSession()));

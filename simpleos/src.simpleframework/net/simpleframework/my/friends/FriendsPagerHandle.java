@@ -103,27 +103,15 @@ public class FriendsPagerHandle extends AbstractPagerHandle {
 			}
 			final String fs_text = compParameter.getRequestParameter("fs_text");
 			if (StringUtils.hasText(fs_text)) {
-				sql.append(" and text like '%").append(fs_text).append("%'");
+				sql.append(" and text like '%").append(fs_name).append("%'");
 			}
 			final String fs_email = compParameter.getRequestParameter("fs_email");
 			if (StringUtils.hasText(fs_email)) {
-				sql.append(" and email like '%").append(fs_email).append("%'");
+				sql.append(" and email like '%").append(fs_name).append("%'");
 			}
 			final String fs_mobile = compParameter.getRequestParameter("fs_mobile");
 			if (StringUtils.hasText(fs_mobile)) {
-				sql.append(" and mobile like '%").append(fs_mobile).append("%'");
-			}
-			final String fs_address = compParameter.getRequestParameter("fs_address");
-			if (StringUtils.hasText(fs_address)) {
-				sql.append(" and address like '%").append(fs_address).append("%'");
-			}
-			final String fs_qq = compParameter.getRequestParameter("fs_qq");
-			if (StringUtils.hasText(fs_qq)) {
-				sql.append(" and qq like '%").append(fs_qq).append("%'");
-			}
-			final String fs_msn = compParameter.getRequestParameter("fs_msn");
-			if (StringUtils.hasText(fs_msn)) {
-				sql.append(" and msn like '%").append(fs_msn).append("%'");
+				sql.append(" and mobile like '%").append(fs_name).append("%'");
 			}
 			final String fs_birthday_s = compParameter.getRequestParameter("fs_birthday_s");
 			final String fs_birthday_e = compParameter.getRequestParameter("fs_birthday_e");

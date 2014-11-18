@@ -41,10 +41,4 @@
 			<jsp:param value="7" name="rows" />
 		</jsp:include></div>
 </div>
-<div  id="ad_00" style="display: none;">
-<script type="text/javascript">
-/*468*60，创建于2012-11-28*/
-var cpro_id = "u1142265";
-</script>
-<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
-</div>
+<jsp:include page="/app/common/ad_bar_right.jsp"></jsp:include>

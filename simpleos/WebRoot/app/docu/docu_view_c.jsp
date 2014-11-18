@@ -27,8 +27,8 @@
 <div>
 	<table width="100%">
 		<tr>
-			<td valign="top" style="background-color: #fff;">
-				<div class="show_template">
+			<td valign="top">
+				<div class="show_template" style="background-color: #fff;margin-top: 1px;">
 					<div class="nav2 clear_float">
 						<div style="float: left;">
 							<div class="nav1_image">
@@ -53,12 +53,15 @@
 						</div>
 					</div>
 				</div>
+				<jsp:include page="/app/common/ad_bar_content.jsp"></jsp:include>
+				
 				<div class="idRemark" id="idNewsRemark">
 					<input type="hidden" name="docuId"
 						value="<%=request.getParameter("docuId")%>">
 					<a name="idNewsRemark" style="display: none;"></a>
 					<div id="docu_remark"></div>
 				</div>
+				
 			</td>
 			<td width="260" valign="top">
 				<jsp:include page="/app/docu/view_layout_right.jsp"></jsp:include>

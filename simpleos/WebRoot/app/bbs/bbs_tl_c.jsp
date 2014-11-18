@@ -42,6 +42,7 @@
 				</div>
 				<div class="c" id="comments_tabs"></div>
 			</div>
+			<jsp:include page="/app/common/ad_bar_right.jsp"></jsp:include>
 		</td>
 	</tr>
 </table>

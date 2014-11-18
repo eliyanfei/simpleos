@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.my.friends.FriendsUtils;	
+	</scriptInit>
+	
+	<importPage>
+		<value>/simple/template/c2.xml</value>
+		<value>${FriendsUtils.deployPath}jsp/my_friends_search.xml</value>
+	</importPage>
+	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
+</page>

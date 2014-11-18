@@ -1,3 +1,5 @@
+<%@page import="net.simpleframework.web.EFunctionModule"%>
+<%@page import="net.simpleframework.util.HTMLBuilder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page
@@ -26,7 +28,10 @@
 <div class="newspager_template">
 	<%=ComponentRenderUtils.genParameters(nComponentParameter)%>
 	<div class="nav clear_float">
-		<div style="float: right;" id="act_<%=news.getId()%>"><%=StringUtils.blank(nHandle.getActionsHTML(nComponentParameter, news))%></div>
+		<div style="float: right;" id="act_<%=news.getId()%>"><%=StringUtils.blank(nHandle.getActionsHTML(nComponentParameter, news))%>
+		<%=HTMLBuilder.SEP%>
+			<%=ItSiteUtil.buildComplaint(nComponentParameter, EFunctionModule.blog, news.getId())%>
+		</div>
 		<div style="float: left;"><%=StringUtils.blank(nHandle.getNavigateHTML(nComponentParameter))%></div>
 	</div>
 	<div class="f3" style="text-align: center;"><%=news.getTopic()%></div>

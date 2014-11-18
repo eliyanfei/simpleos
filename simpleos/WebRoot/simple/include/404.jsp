@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <html>
 	<head>
-		<title>多元建站系统</title>
 		<style>
 .error {
 	width: 502px;

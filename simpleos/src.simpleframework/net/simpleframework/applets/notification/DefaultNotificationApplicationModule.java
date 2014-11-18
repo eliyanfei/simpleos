@@ -95,7 +95,7 @@ public class DefaultNotificationApplicationModule extends AbstractWebApplication
 				Map<String, String> map = PrjMgrUtils.loadCustom("sys");
 				if (LangUtils.toBoolean(map.get("sys_mail"), false)) {
 					final MailSender mailSender = new MailSender();
-					mailSender.setSentAddress("itniwo<" + map.get("sys_mail_sentAddress") + ">");
+					mailSender.setSentAddress("<" + map.get("sys_mail_sentAddress") + ">");
 					mailSender.setSmtpServer(map.get("sys_mail_smtpServer"));
 					mailSender.setSmtpUsername(map.get("sys_mail_smtpUsername"));
 					mailSender.setSmtpPassword(map.get("sys_mail_smtpPassword"));

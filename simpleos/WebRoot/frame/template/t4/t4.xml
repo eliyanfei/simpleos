@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<importPage>
+		<value>/simple/include/main.xml</value>
+	</importPage>
+	<importCSS>
+		<value>t4.css</value>
+	</importCSS>
+	<components>
+		<menu name="t3Menu" containerId="_menu"
+			handleClass="net.prj.manager.menu.PrjMenuHandle">
+			<jsBeforeShowCallback><![CDATA[
+			    menu.className="menu desktop m";
+			]]></jsBeforeShowCallback>
+		</menu>
+	</components>
+</page>

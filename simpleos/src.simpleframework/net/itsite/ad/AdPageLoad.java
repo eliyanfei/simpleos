@@ -16,6 +16,7 @@ public class AdPageLoad extends AbstractTitleAwarePageLoad {
 			dataBinding.put("adId", adBean.getAd().name());
 			dataBinding.put("ad_days", adBean.getDays());
 			dataBinding.put("ad_content", adBean.getContent());
+			dataBinding.put("ad_pcontent", adBean.getContent());
 			dataBinding.put("ad_url", adBean.getUrl());
 			dataBinding.put("ad_src", adBean.getSrc());
 			dataBinding.put("ad_adType", adBean.getAdType());

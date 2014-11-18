@@ -1,7 +1,3 @@
-
-
-
-
 ALTER TABLE it_document ADD INDEX docu_views ( `views` );
 ALTER TABLE it_document ADD INDEX docu_remarks ( `remarks` );
 ALTER TABLE it_document ADD INDEX docu_createDate ( `createDate` );

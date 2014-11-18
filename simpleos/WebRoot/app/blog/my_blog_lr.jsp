@@ -57,3 +57,4 @@
 		%>
 		<jsp:include page="<%=view_log_layout%>" flush="true"></jsp:include></div>
 </div>
+<jsp:include page="/app/common/ad_bar_right.jsp"></jsp:include>

@@ -59,8 +59,8 @@ public class PrjMgrAction extends AbstractAjaxRequestHandle {
 				if (navBean == null) {
 					navBean = new PrjNavBean();
 					navBean.setOorder(PrjMgrUtils.appModule.nextId());
+					navBean.setImage("");
 				}
-				navBean.setImage("");
 				navBean.setTitle(title);
 				navBean.setUrl(url);
 				PrjMgrUtils.appModule.doUpdate(navBean);

@@ -24,12 +24,6 @@
     </jsSelectCallback>
 	</item>
 	<item title="-" />
-	<item title="黑名单">
-		<jsSelectCallback>
-			__pager_action(item).blacklist(item);
-    </jsSelectCallback>
-	</item>
-	<item title="-" />
 	<item title="#(UserPager.menu.0)">
 		<jsSelectCallback>
 			__pager_action(item).move2dept(item);

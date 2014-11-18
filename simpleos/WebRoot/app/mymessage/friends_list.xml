@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.my.friends.FriendsUtils;	
+	</scriptInit>
+	<importPage>
+		<value>${FriendsUtils.deployPath}jsp/my_friends.xml</value>
+		<value>${FriendsUtils.deployPath}jsp/my_friends_group.xml</value>
+	</importPage>
+	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
+	<components>
+	</components>
+</page>

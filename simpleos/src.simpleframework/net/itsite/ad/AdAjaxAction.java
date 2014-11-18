@@ -44,8 +44,10 @@ public class AdAjaxAction extends AbstractAjaxRequestHandle {
 				if (adBean.getAdType() == 0) {
 					adBean.setSrc(StringsUtils.replace(compParameter.getRequestParameter("ad_src"), FileSelectUtils.DOWNLOAD_FLAG, ""));
 					adBean.setUrl(compParameter.getRequestParameter("ad_url"));
-				} else {
+				}else if (adBean.getAdType() == 1) {
 					adBean.setContent(compParameter.getRequestParameter("ad_content"));
+				} else {
+					adBean.setContent(compParameter.getRequestParameter("ad_pcontent"));
 				}
 				adBean.setDays(ConvertUtils.toInt(compParameter.getRequestParameter("ad_days"), adBean.getDays()));
 				AdUtils.applicationModule.doUpdate(adBean, new TableEntityAdapter() {

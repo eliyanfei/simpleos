@@ -15,7 +15,7 @@
 			handleMethod="editUrl">
 		</ajaxRequest>
 		<window name="addNewspagerWindow" contentRef="ajaxAddNewspagerPage" width="880"
-			height="650" title="#(np_edit.0)">
+			height="600" title="#(np_edit.0)">
 			<jsHiddenCallback>
 				window.onbeforeunload = null;
 			</jsHiddenCallback>

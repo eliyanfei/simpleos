@@ -38,6 +38,8 @@ public class MyFavoriteAction extends AbstractAjaxRequestHandle {
 				} else if (StringUtils.hasText(refId)) {
 					MyFavoriteUtils.cancelFavorite(refId, account.getId());
 				}
+				json.put("refId", refId);
+				json.put("id", id);
 			}
 		});
 	}

@@ -11,7 +11,7 @@ import org.apache.jcs.access.exception.CacheException;
 
 abstract class ACachesJcsImpl extends ACaches {
 	static {
-		JCS.setConfigFilename("/com/rosense/commons/cache/cache.ccf");
+		JCS.setConfigFilename("/net/itsite/cache/cache.ccf");
 	}
 
 	@Override

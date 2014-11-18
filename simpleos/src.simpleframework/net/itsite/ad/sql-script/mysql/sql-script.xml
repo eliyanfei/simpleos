@@ -13,7 +13,7 @@
   `content` text ,
   `status` tinyint(4) default 0,
   `ad` tinyint(4) default 0,
-  `days` tinyint(4) default 0,
+  `days` tinyint(8) default 0,
   `startDate` date NOT NULL,
   PRIMARY KEY  (`id`)
 ) 

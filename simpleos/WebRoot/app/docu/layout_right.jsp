@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	
-%>
 <div class="block_layout1">
 	<div class="t1 f4">
 		<span class="ts">#(Docu.hotdocu)</span>
@@ -14,3 +11,4 @@
 		</jsp:include>
 	</div>
 </div>
+<jsp:include page="/app/common/ad_bar_right.jsp"></jsp:include>

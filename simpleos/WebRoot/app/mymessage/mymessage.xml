@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<scriptInit>
 		import net.simpleframework.my.message.MessageUtils;
@@ -9,8 +9,10 @@
 		<value>/my/dialog/dialog.xml</value>
 		<value>${MessageUtils.deployPath}jsp/message_utils.xml</value>
 	</importPage>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
-	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle
+	</handleClass>
+	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}
+	</jobView>
 	<components>
 		<tablePager name="myMessageTable" handleClass="net.prj.mvc.message.MyMessageTableHandle"
 			exportAction="false" containerId="mymessage_data_id" showCheckbox="true"
@@ -48,6 +50,10 @@
 			handleClass="net.prj.mvc.message.MyMessageListBoxHandle" tooltip="false">
 		</listbox>
 
+		<ajaxRequest name="myFriendAjax" updateContainerId="mymessage_data_id">
+			<urlForward>friends.jsp</urlForward>
+		</ajaxRequest>
+
 		<ajaxRequest name="myMessageDeleteAct" confirmMessage="#(Delete.Is)"
 			handleClass="net.prj.mvc.message.MyMessageAction" handleMethod="deleteMyMessage">
 			<jsCompleteCallback>
@@ -75,6 +81,20 @@
 			]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
+
+		<ajaxRequest name="friend_list" updateContainerId="mymessage_data_id">
+			<urlForward>friends_list.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="friend_search" updateContainerId="mymessage_data_id">
+			<urlForward>friends_search.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="friend_request" updateContainerId="mymessage_data_id">
+			<urlForward>friends_request.jsp</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="friend_request_my" updateContainerId="mymessage_data_id">
+			<urlForward>friends_request.jsp?op=my</urlForward>
+		</ajaxRequest>
+
 		<ajaxRequest name="myDialogAjax1" updateContainerId="mymessage_data_id">
 			<urlForward>message_dialog.jsp</urlForward>
 		</ajaxRequest>
@@ -88,5 +108,12 @@
 		</ajaxRequest>
 		<window name="myMessageSendWin" contentRef="myMessageSendAjax"
 			title="#(Message.Act.4)" width="500"></window>
+
+
+		<ajaxRequest name="compAjax">
+			<urlForward>message_comp.jsp</urlForward>
+		</ajaxRequest>
+		<window name="compWin" contentRef="compAjax" title="举报处理"
+			width="800" height="500"></window>
 	</components>
 </page>

@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class AdUtils {
 	public static IAdApplicationModule applicationModule;
@@ -46,7 +44,7 @@ public class AdUtils {
 		if (adBean != null) {
 			if (adBean.startup()) {
 				buf.append("<div");
-				if (ad != EAd.ad_0) {
+				if (ad == EAd.right) {
 					buf.append(" class='block_layout1'");
 				}
 				buf.append(">");

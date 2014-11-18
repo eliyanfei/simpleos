@@ -28,7 +28,7 @@ public class PrjSiteAction extends AbstractAjaxRequestHandle {
 			public void doAction(Map<String, Object> json) throws Exception {
 				PrjMgrUtils.saveCustom("sys", (AItSiteAppclicationModule) PrjSiteUtils.appModule, compParameter);
 				ItSiteUtil.url = compParameter.getParameter("site_url");
-				ItSiteUtil.title = compParameter.getParameter("site_title");
+				ItSiteUtil.title = compParameter.getParameter("site_name");
 			}
 		});
 	}

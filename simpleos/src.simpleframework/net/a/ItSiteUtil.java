@@ -47,6 +47,8 @@ import net.simpleframework.core.IApplicationModule;
 import net.simpleframework.core.id.ID;
 import net.simpleframework.core.id.LongID;
 import net.simpleframework.my.file.component.fileselect.FileSelectUtils;
+import net.simpleframework.my.friends.FriendsRequest;
+import net.simpleframework.my.friends.FriendsUtils;
 import net.simpleframework.my.message.MessageUtils;
 import net.simpleframework.my.message.SimpleMessage;
 import net.simpleframework.my.space.MySpaceUtils;
@@ -1087,12 +1089,20 @@ public final class ItSiteUtil {
 		int count = qs.getCount();
 
 		if (type == -1) {
+			// 对话
 			sql.setLength(0);
 			sql.append("select id from simple_dialog where (toread=0 and toid="
 					+ account.getId() + ") or (sendread=0 and sentid="
 					+ account.getId() + ")");
 			qs = MessageUtils.getTableEntityManager(SimpleMessage.class).query(
 					new SQLValue(sql.toString()));
+			count += qs.getCount();
+			// 好友请求
+			sql.setLength(0);
+			sql.append("select id from simple_my_friends_request where requeststatus=0 ");
+			sql.append(" and toid=" + account.getId());
+			qs = FriendsUtils.getTableEntityManager(FriendsRequest.class)
+					.query(new SQLValue(sql.toString()));
 			count += qs.getCount();
 		}
 		if (count == 0)
@@ -1120,6 +1130,37 @@ public final class ItSiteUtil {
 				+ account.getId() + ")");
 		final IQueryEntitySet<Map<String, Object>> qs = MessageUtils
 				.getTableEntityManager(SimpleMessage.class).query(
+						new SQLValue(sql.toString()));
+		final int count = qs.getCount();
+		if (count == 0)
+			return "";
+		final StringBuffer sb = new StringBuffer();
+		sb.append("<sup class=\"highlight \">");
+		sb.append(count).append("</sup>");
+		return sb.toString();
+	}
+
+	/**
+	 * 获取好友消息提醒 1好友请求 2我的请求
+	 * 
+	 * @param requestResponse
+	 * @return
+	 */
+	public static String getFriend(final PageRequestResponse requestResponse,
+			int type) {
+		IAccount account = getLoginAccount(requestResponse);
+		if (account == null) {
+			return "";
+		}
+		final StringBuffer sql = new StringBuffer();
+		sql.append("select id from simple_my_friends_request where ");
+		if (type == 1) {
+			sql.append(" requeststatus=0 and toid=" + account.getId());
+		} else if (type == 2) {
+			sql.append(" (requeststatus=0 or requeststatus=2) and sentid=" + account.getId());
+		}
+		final IQueryEntitySet<Map<String, Object>> qs = FriendsUtils
+				.getTableEntityManager(FriendsRequest.class).query(
 						new SQLValue(sql.toString()));
 		final int count = qs.getCount();
 		if (count == 0)

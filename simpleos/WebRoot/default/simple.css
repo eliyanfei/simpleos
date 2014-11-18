@@ -2,7 +2,7 @@
 	top: 20px;
 }
 
-.bodyc .tabs,.bodyc .tabs .tab {
+.bodyc .tabs .tab {
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	display: inline-block;
@@ -1093,7 +1093,7 @@ a.simple_btn .left_icon {
 
 .v_about2 {
 	position: fixed;
-	right: 0px;
+	right: 18px;
 	bottom: 0px;
 }
 

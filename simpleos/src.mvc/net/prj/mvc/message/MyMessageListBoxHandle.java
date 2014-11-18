@@ -15,8 +15,7 @@ import net.simpleframework.web.page.component.ui.listbox.ListboxBean;
 /**
  * 
  * @author yanfei.li
- * @email eliyanfei@126.com
- * 2013-12-3上午10:16:00
+ * @email eliyanfei@126.com 2013-12-3上午10:16:00
  */
 public class MyMessageListBoxHandle extends AbstractListboxHandle {
 
@@ -31,27 +30,31 @@ public class MyMessageListBoxHandle extends AbstractListboxHandle {
 		ListItem item = new ListItem(listboxBean, "");
 		item.setId("system");
 		item.setRun("true");
-		item.setText(LocaleI18n.getMessage("Message.List.0") + ItSiteUtil.getMessages(compParameter, 1));
+		item.setText(LocaleI18n.getMessage("Message.List.0")
+				+ ItSiteUtil.getMessages(compParameter, 1));
 		item.setJsClickCallback("$('messageType').value='1';$IT.A('myMessageTable','issend=false&messagetype=1');");
 		listItems.add(item);
 
 		if (ItSiteUtil.isManage(compParameter, MessageUtils.applicationModule)) {
 			item = new ListItem(listboxBean, "");
 			item.setId("complaint");
-			item.setText(LocaleI18n.getMessage("Message.List.4") + ItSiteUtil.getMessages(compParameter, 4));
+			item.setText(LocaleI18n.getMessage("Message.List.4")
+					+ ItSiteUtil.getMessages(compParameter, 4));
 			item.setJsClickCallback("$('messageType').value='4';$IT.A('myMessageTable','issend=false&messagetype=4');");
 			listItems.add(item);
 		}
 
 		item = new ListItem(listboxBean, "");
 		item.setId("notification");
-		item.setText(LocaleI18n.getMessage("Message.List.1") + ItSiteUtil.getMessages(compParameter, 2));
+		item.setText(LocaleI18n.getMessage("Message.List.1")
+				+ ItSiteUtil.getMessages(compParameter, 2));
 		item.setJsClickCallback("$('messageType').value='2';$IT.A('myMessageTable','issend=false&messagetype=2');");
 		listItems.add(item);
 
 		item = new ListItem(listboxBean, "");
 		item.setId("private");
-		item.setText(LocaleI18n.getMessage("Message.List.2") + ItSiteUtil.getMessages(compParameter, 0));
+		item.setText(LocaleI18n.getMessage("Message.List.2")
+				+ ItSiteUtil.getMessages(compParameter, 0));
 		item.setJsClickCallback("$('messageType').value='0';$IT.A('myMessageTable','issend=false&messagetype=0');");
 		listItems.add(item);
 
@@ -66,6 +69,33 @@ public class MyMessageListBoxHandle extends AbstractListboxHandle {
 		item.setId("dialog");
 		item.setText("对话" + ItSiteUtil.getDialog(compParameter));
 		item.setJsClickCallback("$IT.A('myDialogAjax1','');");
+		listItems.add(item);
+
+		item = new ListItem(listboxBean, "");
+		item.setId("friend");
+		item.setText("好友" + ItSiteUtil.getDialog(compParameter));
+		item.setJsClickCallback("$IT.A('friend_list','');");
+		listItems.add(item);
+
+		item = new ListItem(listboxBean, "");
+		item.setId("friend_search");
+		item.setText("好友查找");
+		item.setSub(true);
+		item.setJsClickCallback("$IT.A('friend_search');");
+		listItems.add(item);
+
+		item = new ListItem(listboxBean, "");
+		item.setId("friend_search");
+		item.setText("好友请求" + ItSiteUtil.getFriend(compParameter, 1));
+		item.setSub(true);
+		item.setJsClickCallback("$IT.A('friend_request');");
+		listItems.add(item);
+
+		item = new ListItem(listboxBean, "");
+		item.setId("friend_search");
+		item.setText("我的请求" + ItSiteUtil.getFriend(compParameter, 2));
+		item.setSub(true);
+		item.setJsClickCallback("$IT.A('friend_request_my');");
 		listItems.add(item);
 		return listItems;
 	}

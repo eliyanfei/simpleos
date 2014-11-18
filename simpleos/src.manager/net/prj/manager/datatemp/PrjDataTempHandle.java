@@ -3,7 +3,6 @@ package net.prj.manager.datatemp;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import net.itsite.utils.MD5;
 import net.simpleframework.ado.db.IQueryEntitySet;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.menu.AbstractMenuHandle;

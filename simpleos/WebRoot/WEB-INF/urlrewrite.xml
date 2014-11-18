@@ -86,7 +86,7 @@
 	</rule>
 
 	<rule>
-		<from>/manager/(function|site|company|remark|template|desktop|home|message).html</from>
+		<from>/manager/(function|site|company|remark|template|desktop|home|message|ad).html</from>
 		<to>/simple/$1/$1.jsp</to>
 	</rule>
 	<rule>

@@ -2,10 +2,10 @@ package net.prj.manager;
 
 import java.util.Map;
 
+import net.a.ItSiteUtil;
 import net.itsite.document.docu.DocuUtils;
 import net.itsite.impl.AItSiteAppclicationModule;
 import net.itsite.utils.StringsUtils;
-import net.prj.manager.menu.PrjMenuBean;
 import net.simpleframework.content.component.remark.RemarkItem;
 import net.simpleframework.core.IInitializer;
 import net.simpleframework.core.ado.db.Table;
@@ -40,6 +40,10 @@ public class PrjMgrAppModule extends AItSiteAppclicationModule implements IPrjMg
 
 		Map<String, String> map = PrjMgrUtils.loadCustom("docu");
 		DocuUtils.docuPath = StringsUtils.trimNull(map.get("docuPath"), "c:\\");
+		
+		map = PrjMgrUtils.loadCustom("site");
+		ItSiteUtil.url = StringsUtils.trimNull(map.get("site_url"), "");
+		ItSiteUtil.title = StringsUtils.trimNull(map.get("site_name"), "");
 	}
 
 	@Override

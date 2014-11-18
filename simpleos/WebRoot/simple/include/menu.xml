@@ -34,6 +34,7 @@
 			<menuitem title="站点" url="/manager/site.html"></menuitem>
 			<menuitem title="企业" url="/manager/company.html"></menuitem>
 			<menuitem title="界面" url="/manager/desktop.html"></menuitem>
+			<menuitem title="广告" url="/manager/ad.html"></menuitem>
 			<menuitem title="功能" url="/manager/function.html"></menuitem>
 			<menuitem title="系统管理">
 				<menuitem title="用户管理" url="/manager/user.html"></menuitem>

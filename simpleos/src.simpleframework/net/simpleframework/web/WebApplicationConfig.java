@@ -1,5 +1,6 @@
 package net.simpleframework.web;
 
+import net.a.ItSiteUtil;
 import net.simpleframework.core.ApplicationConfig;
 import net.simpleframework.util.StringUtils;
 
@@ -14,6 +15,9 @@ public class WebApplicationConfig extends ApplicationConfig {
 	private String serverUrl;
 
 	public String getServerUrl() {
+		if (serverUrl == null) {
+			serverUrl = ItSiteUtil.url;
+		}
 		return StringUtils.text(serverUrl, "/");
 	}
 

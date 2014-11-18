@@ -13,8 +13,7 @@
 		</pager>
 
 		<validation name="friendsSearchValidation" triggerSelector="#fs_okbtn">
-			<validator selector="#fs_birthday_s, #fs_birthday_e" method="int_range" args="1,200" />
-			<validator selector="#fs_birthday_e" method="great_than" args="#fs_birthday_s" />
+			<validator selector="#fs_name" method="min_length" args="2" />
 		</validation>
 	</components>
 </page>

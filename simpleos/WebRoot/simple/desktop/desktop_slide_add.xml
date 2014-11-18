@@ -23,7 +23,7 @@
 		</ajaxRequest>
 		<validation name="validation1" triggerSelector="#validBtn"
 			warnType="insertAfter">
-			<validator selector="#ds_title,#ds_url" method="required"></validator>
+			<validator selector="#ds_url" method="required"></validator>
 			<validator selector="#ds_url" method="url"></validator>
 		</validation>
 	</components>

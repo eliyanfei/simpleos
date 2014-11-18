@@ -209,13 +209,13 @@ public class DefaultUserPagerHandle extends AbstractDbTablePagerHandle implement
 				}
 				other.append("</tr>");
 			}
-			//黑名单
+/*			//黑名单
 			other.append("<tr>");
 			other.append("<td class=\"l\">黑名单</td>");
 			other.append("<td class=\"v\">");
 			other.append(account.isBlacklist() ? "异常" : "正常").append("</td>");
 			other.append("</tr>");
-			//总登入次数
+*/			//总登入次数
 			other.append("<tr>");
 			other.append("<td class=\"l\">登入次数</td>");
 			other.append("<td class=\"v\">");

@@ -38,10 +38,12 @@
 	<div class="fixc">
 		<div class="re">
 			<div class="headTopText">
-				<a href="/manager/home.html" hidefocus="hidefocus">后台</a>
 				<%
 					if (account != null) {
+						if(ItSiteUtil.isManage(requestResponse)){
 				%>
+				<a href="/manager/home.html" hidefocus="hidefocus">后台</a>
+				<%} %>
 				<a href="/mymessage.html" style="position: relative;"
 					hidefocus="hidefocus">#(Template.0)<%=ItSiteUtil.getMessages(requestResponse, -1)%></a><a
 					href="/myfavorite.html" hidefocus="hidefocus">#(Template.1)</a><a

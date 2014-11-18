@@ -1,7 +1,5 @@
 package net.itsite.ad;
 
-import net.a.ItSiteUtil;
-import net.simpleframework.ado.db.IQueryEntitySet;
 import net.simpleframework.core.AbstractInitializer;
 import net.simpleframework.core.IApplication;
 import net.simpleframework.core.IInitializer;
