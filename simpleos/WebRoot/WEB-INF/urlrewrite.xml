@@ -161,6 +161,5 @@
 		<from>/morespace.html</from>
 		<to>/my/morespace.jsp</to>
 	</rule>
-
 </urlrewrite>
 
