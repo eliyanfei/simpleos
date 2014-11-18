@@ -7,7 +7,7 @@
 		import net.simpleframework.organization.component.userpager.UserPagerUtils;
   </scriptInit>
 	<importPage>
-		<value>/simple/template/c.xml</value>
+		<value>morespace_c.xml</value>
 		<value>${MySpaceUtils.deployPath }jsp/space_log.xml</value>
 		<value>${MySpaceUtils.deployPath }jsp/space_log_editor.xml</value>
 		<value>${UserPagerUtils.xmlUserutils()}</value>

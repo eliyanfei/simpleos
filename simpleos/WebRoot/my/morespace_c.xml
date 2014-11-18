@@ -2,7 +2,5 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<importPage>
-		<value>/simple/template/c.xml</value>
-	</importPage>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
 </page>

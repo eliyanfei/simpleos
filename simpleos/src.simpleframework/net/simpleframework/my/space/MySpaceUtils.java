@@ -302,7 +302,7 @@ public abstract class MySpaceUtils {
 		sb.append("<span style=\"margin-left: 5px;\" class=\"gray-color\">");
 		final EFunctionModule refModule = sapceLog.getRefModule();
 		if (refModule == EFunctionModule.space_log) {
-			sb.append("#(DefaultSpaceApplicationModule.6)");
+			sb.append(LocaleI18n.getMessage("DefaultSpaceApplicationModule.6"));
 		} else if (refModule == EFunctionModule.blog) {
 			final Blog blog = BlogUtils.getTableEntityManager().queryForObjectById(sapceLog.getRefId(), Blog.class);
 			if (blog != null) {
@@ -329,7 +329,7 @@ public abstract class MySpaceUtils {
 		} else if (refModule == EFunctionModule.news) {
 			final News news = NewsUtils.getTableEntityManager().queryForObjectById(sapceLog.getRefId(), News.class);
 			if (news != null) {
-				sb.append("#(space_log_list.3)");
+				sb.append(LocaleI18n.getMessage("space_log_list.3"));
 				sb.append("<span style=\"margin-left: 10px;\">");
 				sb.append(newsOpenLink(requestResponse, NewsUtils.applicationModule, news));
 				sb.append("</span>");
@@ -339,7 +339,7 @@ public abstract class MySpaceUtils {
 		} else if (refModule == EFunctionModule.news_remark) {
 			final NewsRemark remark = NewsUtils.getTableEntityManager(NewsRemark.class).queryForObjectById(sapceLog.getRefId(), NewsRemark.class);
 			if (remark != null) {
-				sb.append("#(space_log_list.7)");
+				sb.append(LocaleI18n.getMessage("space_log_list.7"));
 				final News news = NewsUtils.getTableEntityManager().queryForObjectById(remark.getDocumentId(), News.class);
 				if (news != null) {
 					sb.append("<span style=\"margin-left: 10px;\">");
@@ -356,7 +356,7 @@ public abstract class MySpaceUtils {
 			if (refModule == EFunctionModule.bbs) {
 				final BbsTopic topic = BbsUtils.getTableEntityManager().queryForObjectById(sapceLog.getRefId(), BbsTopic.class);
 				if (topic != null) {
-					sb.append("#(space_log_list.4)");
+					sb.append(LocaleI18n.getMessage("space_log_list.4"));
 					sb.append("<span style=\"margin-left: 10px;\">");
 					sb.append(tHandle.wrapOpenLink(nComponentParameter, topic));
 					sb.append("</span>");
@@ -366,7 +366,7 @@ public abstract class MySpaceUtils {
 			} else {
 				final PostsBean posts = BbsUtils.getTableEntityManager(PostsBean.class).queryForObjectById(sapceLog.getRefId(), PostsBean.class);
 				if (posts != null) {
-					sb.append("#(space_log_list.5)");
+					sb.append(LocaleI18n.getMessage("space_log_list.5"));
 					final BbsTopic topic = BbsUtils.getTableEntityManager().queryForObjectById(posts.getTopicId(), BbsTopic.class);
 					if (topic != null) {
 						sb.append("<span style=\"margin-left: 10px;\">");

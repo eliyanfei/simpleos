@@ -159,7 +159,7 @@
 	</rule>
 	<rule>
 		<from>/morespace.html</from>
-		<to>/simple/my/morespace.jsp</to>
+		<to>/my/morespace.jsp</to>
 	</rule>
 
 </urlrewrite>

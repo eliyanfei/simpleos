@@ -156,6 +156,8 @@
 	<%
 		}
 	%>
+	
+	<div style="float: right;"><a href="/morespace.html">更多»</a></div>
 </div>
 <script type="text/javascript">
 function init() {
