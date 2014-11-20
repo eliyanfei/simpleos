@@ -1,6 +1,12 @@
-//$Id: UUIDHexGenerator.java 8049 2005-08-30 23:28:50Z turin42 $
 package net.itsite.utils;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 import java.io.Serializable;
 import java.util.Properties;
 

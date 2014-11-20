@@ -10,7 +10,11 @@ import net.simpleframework.web.page.component.ui.tree.AbstractTreeNode;
 import net.simpleframework.web.page.component.ui.tree.TreeNode;
 
 /**
- * 添加的时候显示的树结构
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:03:03 
+ * @Description: 添加的时候显示的树结构
+ *
  */
 public class AdTreeHandle extends AbstractTreeHandle {
 

@@ -6,7 +6,7 @@
 <%@page import="net.itsite.document.docu.DocuBean"%>
 <%@page import="net.itsite.document.docu.DocuUtils"%>
 <%@page import="net.itsite.document.docu.EDocuStatus"%>
-<%@page import="net.a.ItSiteUtil"%>
+<%@page import="net.itsite.ItSiteUtil"%>
 <%@page import="net.simpleframework.util.HTMLBuilder"%>
 <%@page import="net.itsite.impl.AbstractCatalog"%>
 <%@page import="net.itsite.document.docu.DocuCatalog"%><%@page

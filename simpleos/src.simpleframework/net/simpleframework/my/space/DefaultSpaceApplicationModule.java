@@ -54,6 +54,7 @@ import net.simpleframework.web.IWebApplicationModule;
 import net.simpleframework.web.WebUtils;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ComponentParameter;
+import net.simpleframework.web.page.component.HandleException;
 import net.simpleframework.web.page.component.ui.portal.module.PortalModuleRegistryFactory;
 import net.simpleframework.web.page.component.ui.tabs.EMatchMethod;
 import net.simpleframework.web.page.component.ui.tabs.TabHref;
@@ -166,7 +167,8 @@ public class DefaultSpaceApplicationModule extends AbstractWebApplicationModule 
 			al.add(bbsTab);
 		}
 		if (isMyAccount(requestResponse)) {
-			//			al.add(createTabHref(requestResponse, MyHomeUtils.applicationModule));
+			// al.add(createTabHref(requestResponse,
+			// MyHomeUtils.applicationModule));
 			al.add(createTabHref(requestResponse, FriendsUtils.applicationModule));
 			al.add(createTabHref(requestResponse, MessageUtils.applicationModule));
 		}
@@ -278,9 +280,9 @@ public class DefaultSpaceApplicationModule extends AbstractWebApplicationModule 
 			final boolean transaction) {
 		final HttpSession httpSession = requestResponse.getSession();
 		final IAccount account = AccountSession.getLogin(httpSession);
-		//		if (account == null) {
-		//			return null;
-		//		}
+		// if (account == null) {
+		// return null;
+		// }
 		final ITableEntityManager log_mgr = MySpaceUtils.getTableEntityManager(SapceLogBean.class);
 		final SapceLogBean sapceLog = new SapceLogBean();
 
@@ -305,6 +307,9 @@ public class DefaultSpaceApplicationModule extends AbstractWebApplicationModule 
 		set.add(';');
 		set.add(' ');
 		int t = 0;
+		if (content != null && content.length() > 200) {
+			throw HandleException.wrapException("发布内容过长");
+		}
 		boolean flag = false;
 		try {
 			for (int i = 0; i < content.length(); i++) {
@@ -367,7 +372,9 @@ public class DefaultSpaceApplicationModule extends AbstractWebApplicationModule 
 				final StringBuffer textBody = new StringBuffer();
 				textBody.append(newLine).append("<br/>");
 				final String subject = "用户:" + user.getText() + "@提到我,(" + ConvertUtils.toDateString(new Date(), "yyyy-MM-dd HH:mm") + ")";
-				//			NotificationUtils.createSystemMessageNotification(sapceLog.getUserId(), user.getId(), subject, textBody.toString(), sapceLog.getId());
+				// NotificationUtils.createSystemMessageNotification(sapceLog.getUserId(),
+				// user.getId(), subject, textBody.toString(),
+				// sapceLog.getId());
 				MessageUtils.createNotifation(new ComponentParameter(requestResponse.request, requestResponse.response, null), subject,
 						textBody.toString(), sapceLog.getUserId(), user.getId());
 			} catch (Exception e) {

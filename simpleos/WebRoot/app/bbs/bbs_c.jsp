@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="net.simpleframework.content.bbs.BbsUtils"%><%@page
-	import="net.a.ItSiteUtil"%><%@page
+	import="net.itsite.ItSiteUtil"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%>
 <%
 	final String bbs_forum = BbsUtils.deployPath + "jsp/bbs_forum_view.jsp";

@@ -3,7 +3,7 @@ package net.itsite.upload;
 import java.io.IOException;
 import java.util.HashMap;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.ado.db.event.TableEntityAdapter;
 import net.simpleframework.content.component.filepager.FileBean;

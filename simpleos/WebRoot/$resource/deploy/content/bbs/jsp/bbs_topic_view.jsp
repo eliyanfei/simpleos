@@ -7,7 +7,7 @@
 <%@ page import="net.simpleframework.content.bbs.BbsForum"%>
 <%@ page import="net.simpleframework.applets.tag.ITagApplicationModule"%>
 <%@ page import="net.simpleframework.web.EFunctionModule"%><%@page
-	import="net.a.ItSiteUtil"%>
+	import="net.itsite.ItSiteUtil"%>
 
 <jsp:include page="bbs_toolbar_pane.jsp" flush="true"></jsp:include>
 <%

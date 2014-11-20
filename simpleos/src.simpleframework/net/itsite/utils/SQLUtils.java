@@ -14,7 +14,14 @@ import javax.sql.DataSource;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public final class SQLUtils {
 
 	public static boolean isOpen(DataSource ds) {
@@ -25,6 +32,45 @@ public final class SQLUtils {
 		} catch (SQLException e) {
 		}
 		return false;
+	}
+
+	/**
+	 * 统计表格的行数
+	 * @throws SQLException
+	 */
+	public static int count(final DataSource dataSource, final String table) {
+		int size = 0;
+		Connection conn = null;
+		try {
+			conn = dataSource.getConnection();
+			size = count(conn, table);
+		} catch (SQLException e) {
+		} finally {
+			closeAll(null, null, conn);
+		}
+		return size;
+	}
+
+	/**
+	 * 统计表格的行数
+	 * @throws SQLException
+	 */
+	public static int count(final Connection conn, final String table) {
+		int size = 0;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			final String sql = "select count(*) from " + table;
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				size = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+		} finally {
+			closeAll(rs, ps, null);
+		}
+		return size;
 	}
 
 	public static void closeAll(final ResultSet rs, final Statement st, final Connection conn) {

@@ -2,7 +2,7 @@ package net.itsite.complaint;
 
 import java.util.Date;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.core.bean.AbstractIdDataObjectBean;
 import net.simpleframework.core.id.ID;
 import net.simpleframework.organization.IUser;
@@ -12,8 +12,10 @@ import net.simpleframework.web.EFunctionModule;
 import net.simpleframework.web.page.PageRequestResponse;
 
 /**
- * 投诉对象
- * @author 李岩飞
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:19:00 
+ * @Description: 投诉表格的实体对象
  *
  */
 public class ComplaintBean extends AbstractIdDataObjectBean implements IUserBeanAware {

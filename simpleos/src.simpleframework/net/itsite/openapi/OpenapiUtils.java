@@ -1,6 +1,6 @@
 package net.itsite.openapi;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.applets.openid.OpenIDUtils;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.PageRequestResponse;
@@ -20,10 +20,15 @@ import weibo4j.util.WeiboConfig;
 import com.tencent.weibo.beans.Account;
 import com.tencent.weibo.beans.OAuth;
 import com.tencent.weibo.utils.OAuthClient;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 上午11:52:11 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class OpenapiUtils {
-	public static String deployPath;
-	public static IOpenapiApplicationModule applicationModule;
 	public final static String fileName = "/jsp/openapi_return.jsp";
 	static {
 		WeiboConfig.updateProperties("client_ID", "897761991");
@@ -106,13 +111,13 @@ public class OpenapiUtils {
 				final Users um = new Users();
 				final User user = um.showUserById(json.getString("uid"));
 				if (user != null) {
-					OpenapiBean apiBean = applicationModule.getOpenapiBean(EOpenapi.sina_t, user.getName());
+					OpenapiBean apiBean = OpenapiAppModule.applicationModule.getOpenapiBean(EOpenapi.sina_t, user.getName());
 					if (apiBean == null) {
 						apiBean = new OpenapiBean();
 						apiBean.setName(user.getId() + "_weibo");
 						apiBean.setOpenId(user.getId() + "_weibo");
 						apiBean.setOpenapi(EOpenapi.sina_t);
-						applicationModule.doUpdate(apiBean);
+						OpenapiAppModule.applicationModule.doUpdate(apiBean);
 					}
 					apiBean.setText(user.getScreenName());
 					return apiBean;
@@ -144,13 +149,13 @@ public class OpenapiUtils {
 			if (oauth.getStatus() != 2) {
 				final Account account = auth.getAccount(oauth);
 				if (account != null) {
-					OpenapiBean apiBean = applicationModule.getOpenapiBean(EOpenapi.qq_t, account.getName());
+					OpenapiBean apiBean = OpenapiAppModule.applicationModule.getOpenapiBean(EOpenapi.qq_t, account.getName());
 					if (apiBean == null) {
 						apiBean = new OpenapiBean();
 						apiBean.setName(account.getName() + "_tqq");
 						apiBean.setOpenId(account.getName() + "_tqq");
 						apiBean.setOpenapi(EOpenapi.qq_t);
-						applicationModule.doUpdate(apiBean);
+						OpenapiAppModule.applicationModule.doUpdate(apiBean);
 					}
 					apiBean.setText(account.getNick());
 					return apiBean;
@@ -179,13 +184,13 @@ public class OpenapiUtils {
 						+ "&openid=" + openid);
 				if (conn != null) {
 					jsonMap = new JSONObject(conn.get().body().text());
-					OpenapiBean apiBean = applicationModule.getOpenapiBean(EOpenapi.qq, openid);
+					OpenapiBean apiBean = OpenapiAppModule.applicationModule.getOpenapiBean(EOpenapi.qq, openid);
 					if (apiBean == null) {
 						apiBean = new OpenapiBean();
 						apiBean.setName(openid);
 						apiBean.setOpenId(openid);
 						apiBean.setOpenapi(EOpenapi.qq);
-						applicationModule.doUpdate(apiBean);
+						OpenapiAppModule.applicationModule.doUpdate(apiBean);
 					}
 					apiBean.setText((String) jsonMap.get("nickname"));
 					return apiBean;

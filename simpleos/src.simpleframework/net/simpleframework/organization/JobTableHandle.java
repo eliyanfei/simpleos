@@ -3,7 +3,7 @@ package net.simpleframework.organization;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.core.ado.IDataObjectQuery;
 import net.simpleframework.organization.impl.JobMember;

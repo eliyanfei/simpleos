@@ -1,14 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
-	import="net.prj.manager.template.PrjTemplateBean"%><%@page
-	import="net.prj.manager.template.PrjTemplateUtils"%><%@page
-	import="net.itniwo.commons.StringsUtils"%><%@page
-	import="net.simpleframework.util.ConvertUtils"%>
+	import="net.prj.manager.template.PrjTemplateUtils"%>
 <%
-	final PrjTemplateBean templateBean = PrjTemplateUtils.getTemplateBean();
-	final boolean win = ConvertUtils.toBoolean(request.getParameter("win"), false);
-	final String templateUrl = "/frame/template/" + (win ? "/t3/c" : StringsUtils.u(templateBean.templateId, "/", templateBean.templateId))
-			+ ".jsp";
+	final String templateUrl = PrjTemplateUtils.getTemplateUrl();
 %>
 <jsp:include page="<%=templateUrl %>" flush="true">
 	<jsp:param value="/app/docu/docu_view_c.jsp" name="center" />

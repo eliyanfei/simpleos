@@ -1,3 +1,4 @@
+<%@page import="net.itsite.complaint.ComplaintAppModule"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page
@@ -11,8 +12,7 @@
 <%@ page import="net.simpleframework.my.space.MySpaceUtils"%>
 <%@ page import="net.simpleframework.util.HTMLBuilder"%><%@page
 	import="net.itsite.complaint.ComplaintBean"%><%@page
-	import="net.a.ItSiteUtil"%><%@page
-	import="net.itsite.complaint.ComplaintUtils"%>
+	import="net.itsite.ItSiteUtil"%>
 
 <%
 	final List<?> list = PagerUtils.getPagerList(request);
@@ -20,7 +20,7 @@
 		return;
 	}
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
-	final boolean manager = ItSiteUtil.isManage(requestResponse, ComplaintUtils.applicationModule);
+	final boolean manager = ItSiteUtil.isManage(requestResponse, ComplaintAppModule.applicationModule);
 %>
 <div class="my_message_list">
 	<%

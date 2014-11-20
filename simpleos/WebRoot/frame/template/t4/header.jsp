@@ -4,8 +4,8 @@
 	import="net.simpleframework.organization.account.IAccount"%><%@page
 	import="net.simpleframework.organization.account.AccountSession"%><%@page
 	import="net.simpleframework.organization.OrgUtils"%><%@page
-	import="net.a.ItSiteUtil"%><%@page
-	import="net.itniwo.commons.StringsUtils"%><%@page
+	import="net.itsite.ItSiteUtil"%><%@page
+	import="net.itsite.utils.StringsUtils"%><%@page
 	import="java.util.HashMap"%><%@page import="java.util.Map"%><%@page
 	import="net.prj.manager.PrjMgrUtils"%>
 <%

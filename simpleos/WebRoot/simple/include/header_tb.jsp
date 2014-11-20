@@ -10,7 +10,7 @@
 <%@ page import="net.simpleframework.my.space.MySpaceUtils"%><%@page
 	import="net.simpleframework.util.HTMLBuilder"%><%@page
 	import="net.simpleframework.util.ConvertUtils"%><%@page
-	import="net.a.ItSiteUtil"%>
+	import="net.itsite.ItSiteUtil"%>
 
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);

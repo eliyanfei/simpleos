@@ -15,7 +15,13 @@ import net.simpleframework.web.page.component.ui.propeditor.AbstractPropEditorHa
 import net.simpleframework.web.page.component.ui.propeditor.FieldComponent;
 import net.simpleframework.web.page.component.ui.propeditor.PropEditorBean;
 import net.simpleframework.web.page.component.ui.propeditor.PropField;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午4:58:51 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class ItSiteDBPropEditorHandle extends AbstractPropEditorHandle {
 	@Override
 	public Map<String, Object> getFormParameters(ComponentParameter compParameter) {

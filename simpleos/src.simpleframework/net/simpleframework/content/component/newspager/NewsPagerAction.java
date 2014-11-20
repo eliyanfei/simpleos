@@ -3,7 +3,7 @@ package net.simpleframework.content.component.newspager;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.content.EContentStatus;
 import net.simpleframework.content.EContentType;
@@ -169,11 +169,14 @@ public class NewsPagerAction extends AbstractDbTablePagerAction {
 				nHandle.doEdit(nComponentParameter, news.getId(), data);
 				try {
 					if (news.getStatus() == EContentStatus.audit && ConvertUtils.toEnum(EContentStatus.class, nv_status) == EContentStatus.publish) {
-						MessageUtils.createNotifation(compParameter, "审核成功", NewsUtils.applicationModule.getViewUrl(compParameter, news), OrgUtils
-								.um().getUserByName("admin").getId(), news.getUserId());
+						MessageUtils.createNotifation(compParameter, "审核成功",
+								ItSiteUtil.wrapHref(NewsUtils.applicationModule.getViewUrl(compParameter, news), news.getTopic()), OrgUtils.um()
+										.getUserByName("admin").getId(), news.getUserId());
+
 					} else if (news.getTtype() == EContentType.normal && ConvertUtils.toEnum(EContentType.class, nv_type) == EContentType.recommended) {
-						MessageUtils.createNotifation(compParameter, "你的发布的内容被推荐", NewsUtils.applicationModule.getViewUrl(compParameter, news),
-								OrgUtils.um().getUserByName("admin").getId(), news.getUserId());
+						MessageUtils.createNotifation(compParameter, "你的发布的内容被推荐",
+								ItSiteUtil.wrapHref(NewsUtils.applicationModule.getViewUrl(compParameter, news), news.getTopic()), OrgUtils.um()
+										.getUserByName("admin").getId(), news.getUserId());
 					}
 				} catch (Exception e) {
 				}

@@ -10,20 +10,17 @@ import net.simpleframework.web.page.component.AbstractComponentBean;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.menu.AbstractMenuHandle;
 import net.simpleframework.web.page.component.ui.menu.MenuItem;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午4:57:54 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class ItSiteMenuHandle extends AbstractMenuHandle {
 
 	@Override
 	public Collection<MenuItem> getMenuItems(ComponentParameter compParameter, MenuItem menuItem) {
-		/*if (menuItem != null) {
-			return null;
-		}
-		final MenuBean menuBean = (MenuBean) compParameter.componentBean;
-		final ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>(menuBean.getMenuItems());
-		if (!OrgUtils.isMember(IJob.sj_manager, compParameter.getSession())) {
-			menuItems.remove(menuItems.size() - 1);
-		}
-		return menuItems;*/
 		if (menuItem != null) {
 			return null;
 		}

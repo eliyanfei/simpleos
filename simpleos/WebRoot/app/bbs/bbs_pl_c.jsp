@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page import="net.simpleframework.content.bbs.BbsUtils"%>
 <%@page import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.a.ItSiteUtil"%><%@page
+	import="net.itsite.ItSiteUtil"%><%@page
 	import="net.simpleframework.content.component.topicpager.TopicPagerUtils"%><%@page
 	import="net.simpleframework.web.page.component.ComponentParameter"%>
 <%

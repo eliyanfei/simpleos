@@ -53,8 +53,9 @@ public class PortalModuleRegistryFactory {
 		try {
 			inStream = new FileInputStream(servletContext.getRealPath(WEB_MODULE_PATH));
 		} catch (final FileNotFoundException e) {
-			inStream = PortalModuleRegistryFactory.class.getClassLoader().getResourceAsStream(
-					BeanUtils.getResourceClasspath(PortalModuleRegistryFactory.class, MODULE_FILE));
+			String path = 
+					BeanUtils.getResourceClasspath(PortalModuleRegistryFactory.class, MODULE_FILE);
+			inStream = PortalModuleRegistryFactory.class.getClassLoader().getResourceAsStream(path);
 		}
 		if (inStream != null) {
 			new ModuleDocument(inStream, instance);

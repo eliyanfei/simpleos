@@ -14,6 +14,11 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 /**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:40:18 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
  */
 public final class CachesUtil {
 

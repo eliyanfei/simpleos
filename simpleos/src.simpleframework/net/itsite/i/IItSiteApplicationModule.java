@@ -16,7 +16,14 @@ import net.simpleframework.core.bean.AbstractIdDataObjectBean;
 import net.simpleframework.web.EFunctionModule;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ComponentParameter;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 上午11:45:58 
+ * @Description: 公共接口
+ *
+ */
 public interface IItSiteApplicationModule extends IContentApplicationModule {
 	void doUpdate(final String sql);
 

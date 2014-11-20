@@ -1,4 +1,3 @@
-//$Id: AbstractUUIDGenerator.java 5002 2004-12-19 16:25:07Z oneovthafew $
 package net.itsite.utils;
 
 import java.net.InetAddress;

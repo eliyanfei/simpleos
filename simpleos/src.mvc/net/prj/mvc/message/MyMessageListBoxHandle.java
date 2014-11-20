@@ -3,7 +3,7 @@ package net.prj.mvc.message;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.my.message.MessageUtils;
 import net.simpleframework.organization.account.IAccount;
 import net.simpleframework.util.LocaleI18n;

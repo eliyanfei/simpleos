@@ -2,7 +2,7 @@ package net.itsite.document.docu;
 
 import java.util.Date;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.core.bean.AbstractIdDataObjectBean;
 import net.simpleframework.core.id.ID;
 import net.simpleframework.organization.IUser;

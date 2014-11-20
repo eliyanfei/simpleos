@@ -18,7 +18,7 @@
 	</table>
 </div>
 <div style="text-align: right; margin-top: 6px;">
-	<input type="button" class="button2" value="确定举报"
+	<input type="button" class="button2" value="确定处理"
 		onclick="$IT.A('complaintDealAct');" />
 	<input type="button" value="取消"
 		onclick="$IT.C('dealComplaintWindowAct');" />

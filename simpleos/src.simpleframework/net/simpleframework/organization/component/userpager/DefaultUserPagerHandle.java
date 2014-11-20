@@ -180,6 +180,9 @@ public class DefaultUserPagerHandle extends AbstractDbTablePagerHandle implement
 		protected Map<Object, Object> getRowData(final Object dataObject) {
 			final IUser user = (IUser) dataObject;
 			final IAccount account = user.account();
+			if(account==null){
+				return null;
+			}
 			final Map<Object, Object> rowData = new HashMap<Object, Object>();
 			final StringBuilder photo = new StringBuilder();
 			final Object id = user.getId();

@@ -4,7 +4,7 @@
 	import="net.simpleframework.organization.account.IAccount"%><%@page
 	import="net.simpleframework.organization.account.AccountSession"%><%@page
 	import="net.simpleframework.organization.OrgUtils"%><%@page
-	import="net.a.ItSiteUtil"%>
+	import="net.itsite.ItSiteUtil"%>
 
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);

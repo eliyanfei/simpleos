@@ -9,10 +9,12 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
- * ʹ��SAX����XML�Ĺ�����
  * 
- * @author QianFei.Xu;E-Mail:qianfei.xu@rosense.cn
- * @time Jul 10, 2009 5:57:03 PM
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
  */
 public final class SaxUtils {
 	public static final void parserXml(final InputStream inputStream, final DefaultHandler handle){
@@ -23,7 +25,6 @@ public final class SaxUtils {
 		}
 	}
 	/**
-	 * ���쳣��Ҫ�׳�ȥ����
 	 * @throws Exception
 	 */
 	public static final void parserXml1(final InputStream inputStream, final DefaultHandler handle) throws Exception{
@@ -31,13 +32,6 @@ public final class SaxUtils {
 	}
 
 	/**
-	 * ����XML,������ֻ��Ҫ���ľ������������
-	 * 
-	 * @param inputStream
-	 *            ��Ҫ������Ŀ��������
-	 * @param handler
-	 *            ����ݽ��д����ʵ��
-	 * @param ignoreDomCheck �����DOM�ж����DTD���﷨����
 	 */
 	public static final void parserXml(final InputStream inputStream, final DefaultHandler handler, final boolean ignoreDomCheck)throws Exception {
 		try {

@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.core.ado.IDataObjectQuery;

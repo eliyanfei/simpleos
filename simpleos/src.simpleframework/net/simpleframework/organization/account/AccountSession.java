@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.itsite.utils.StringsUtils;
 import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.core.ALoggerAware;

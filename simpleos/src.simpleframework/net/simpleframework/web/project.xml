@@ -62,7 +62,7 @@
 			</list>
 		</property>
 
-		<property name="serverUrl" value="http://www.itniwo.net" />
+		<property name="serverUrl" value="http://www.simpleos.net" />
 		<property name="datePattern" value="yyyy-MM-dd HH:mm" />
 		<property name="tableEntityManagerClass">
 			<value>net.simpleframework.ado.db.cache.MapTableEntityManager</value>

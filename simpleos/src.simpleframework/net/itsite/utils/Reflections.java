@@ -11,7 +11,6 @@ import java.util.Enumeration;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
@@ -21,8 +20,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * @author QianFei.Xu;E-Mail:qianfei.xu@rosense.cn
- * @time Apr 26, 2009 6:15:28 PM
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
  */
 public final class Reflections {
 	private final Collection<URL> pathUrls;

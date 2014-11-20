@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
 	import="net.prj.manager.site.PrjSiteUtils"%><%@page
 	import="net.prj.manager.PrjMgrUtils"%><%@page import="java.util.Map"%><%@page
-	import="net.itniwo.commons.StringsUtils"%>
+	import="net.itsite.utils.StringsUtils"%>
 <%
 	PrjColumns columns = PrjSiteUtils.appModule.getPrjColumns("sys");
 	Map<String, String> map = PrjMgrUtils.loadCustom("sys");
@@ -75,7 +75,7 @@
 							</td>
 							<td>
 								<input type="text"
-									value="<%=StringsUtils.trimNull(map.get("sys_mail_sentAddress"), "itniwo@qq.com")%>"
+									value="<%=StringsUtils.trimNull(map.get("sys_mail_sentAddress"), "simpleos@qq.com")%>"
 									id="sys_mail_sentAddress" name="sys_mail_sentAddress">
 							</td>
 						</tr>
@@ -95,7 +95,7 @@
 							</td>
 							<td>
 								<input type="text"
-									value="<%=StringsUtils.trimNull(map.get("sys_mail_smtpUsername"), "itniwo")%>"
+									value="<%=StringsUtils.trimNull(map.get("sys_mail_smtpUsername"), "simpleos")%>"
 									id="sys_mail_smtpUsername" name="sys_mail_smtpUsername">
 							</td>
 						</tr>
@@ -104,8 +104,8 @@
 								密码
 							</td>
 							<td>
-								<input type="text"
-									value="<%=StringsUtils.trimNull(map.get("sys_mail_smtpPassword"), "itniwo")%>"
+								<input type="password"
+									value="<%=StringsUtils.trimNull(map.get("sys_mail_smtpPassword"), "simpleos")%>"
 									id="sys_mail_smtpPassword" name="sys_mail_smtpPassword">
 							</td>
 						</tr>

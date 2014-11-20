@@ -9,10 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import net.a.ItSiteUtil;
-import net.itniwo.commons.StringsUtils;
-import net.itsite.utils.MD5;
 import net.itsite.utils.SQLUtils;
+import net.itsite.utils.StringsUtils;
 import net.simpleframework.applets.notification.NotificationUtils;
 import net.simpleframework.web.IWebApplication;
 import net.simpleframework.web.page.IForward;
@@ -21,14 +19,12 @@ import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxReque
 
 /**
  * 
- * @author 李岩飞
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午4:59:34 
+ * @Description: TODO(这里用一句话描述这个类的作用)
  *
  */
 public class ItSiteAjaxHandle extends AbstractAjaxRequestHandle {
-
-	public static void main(String[] args) {
-		System.out.println(MD5.getHashString("admin"));
-	}
 
 	public IForward deleteMessageNotification(final ComponentParameter compParameter) throws Exception {
 		return jsonForward(compParameter, new JsonCallback() {

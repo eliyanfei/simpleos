@@ -7,7 +7,7 @@
 <%@ page import="net.simpleframework.content.news.NewsUtils"%>
 <%@ page import="net.simpleframework.web.EFunctionModule"%>
 <%@page import="net.simpleframework.content.IContentPagerHandle"%><%@page
-	import="net.a.ItSiteUtil"%>
+	import="net.itsite.ItSiteUtil"%>
 <%
 	final String news = NewsUtils.deployPath + "jsp/news.jsp";
 	final String news_layout = NewsUtils.deployPath + "jsp/news_layout.jsp";

@@ -3,7 +3,7 @@ package net.itsite.i;
 import java.util.Date;
 import java.util.Map;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.itsite.impl.AbstractCommonBeanAware;
 import net.itsite.ttop.ETtop;
 import net.simpleframework.ado.db.ITableEntityManager;

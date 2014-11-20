@@ -20,14 +20,14 @@
 			<jsSelectCallback>
 				var txt = $("mm_toid");
 				if (txt) {
-				var arr =
-				selects.map(function(m) { return m.name; });
-				var v = $F(txt).strip();
-				if (v.length > 0) {
-				arr = $A(v.split(",").concat(arr)).uniq();
-				}
-				txt.value = arr.join(",");
-				return true;
+					var arr = selects.map(function(m) { return m.name; });
+					var v = $F(txt).strip();
+					if (v.length > 0) {
+					arr = $A(v.split(",").concat(arr)).uniq();
+					}
+					txt.value = arr.join(",");
+					$("mm_toid_text").value = arr.join(",");
+					return true;
 				}
 			</jsSelectCallback>
 		</userSelect>

@@ -9,7 +9,7 @@
 <%@ page
 	import="net.simpleframework.content.component.newspager.NewsBean"%>
 <%@ page
-	import="net.simpleframework.web.page.component.ComponentRenderUtils"%><%@page import="net.a.ItSiteUtil"%>
+	import="net.simpleframework.web.page.component.ComponentRenderUtils"%><%@page import="net.itsite.ItSiteUtil"%>
 
 <%
 	final ComponentParameter nComponentParameter = NewsPagerUtils

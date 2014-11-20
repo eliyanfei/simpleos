@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN"
+        "urlrewrite3.2.dtd">
+<urlrewrite>
+	<rule>
+		<from>/(my).html</from>
+		<to>/app/$1/$1.jsp</to>
+	</rule>
+</urlrewrite>
+

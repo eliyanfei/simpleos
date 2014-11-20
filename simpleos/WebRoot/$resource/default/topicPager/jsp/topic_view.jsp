@@ -8,7 +8,7 @@
 	import="net.simpleframework.content.component.topicpager.TopicBean"%>
 <%@ page
 	import="net.simpleframework.web.page.component.ComponentParameter"%><%@page
-	import="net.a.ItSiteUtil"%><%@page
+	import="net.itsite.ItSiteUtil"%><%@page
 	import="net.simpleframework.content.bbs.BbsUtils"%><%@page
 	import="net.simpleframework.content.bbs.BbsForum"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%>

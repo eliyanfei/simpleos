@@ -3,7 +3,7 @@ package net.itsite.user;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.DataObjectManagerUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;

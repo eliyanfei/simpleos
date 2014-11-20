@@ -8,7 +8,13 @@ import javax.servlet.ServletContext;
 
 import net.simpleframework.web.page.PageConfig;
 import net.simpleframework.web.page.PageContext;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午4:57:38 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class ItSitePageContext extends PageContext {
 	@Override
 	public void doInit(ServletContext servletContext) throws IOException {

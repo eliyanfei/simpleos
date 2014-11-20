@@ -8,8 +8,11 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * 基于内存Map实现的缓存管理器
  * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:39:56 
+ * @Description: 基于内存Map实现的缓存管理器
+ *
  */
 public final class CachesMemory extends ACaches {
 	private static final CachesMemory instance = new CachesMemory();

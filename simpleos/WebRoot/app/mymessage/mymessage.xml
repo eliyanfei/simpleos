@@ -6,7 +6,7 @@
 		import net.simpleframework.my.message.MessageUtils;
 	</scriptInit>
 	<importPage>
-		<value>/my/dialog/dialog.xml</value>
+		<value>/app/dialog/dialog.xml</value>
 		<value>${MessageUtils.deployPath}jsp/message_utils.xml</value>
 	</importPage>
 	<handleClass>net.prj.manager.template.PrjTemplatePageHandle
@@ -106,7 +106,7 @@
 		<ajaxRequest name="myMessageSendAjax">
 			<urlForward>my_message_sent1.jsp</urlForward>
 		</ajaxRequest>
-		<window name="myMessageSendWin" contentRef="myMessageSendAjax"
+		<window name="myMessageSendWin" contentRef="myMessageSendAjax" height="320"
 			title="#(Message.Act.4)" width="500"></window>
 
 

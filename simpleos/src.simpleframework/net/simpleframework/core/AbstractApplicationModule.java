@@ -78,7 +78,6 @@ public abstract class AbstractApplicationModule extends ALoggerAware implements 
 				deployPath.set(null, IInitializer.Utils.getApplicationDeployPath(application, deployName));
 			}
 		} catch (final Exception e) {
-			throw ApplicationModuleException.wrapException(e);
 		}
 	}
 }

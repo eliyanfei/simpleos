@@ -4,7 +4,7 @@
 <%@ page import="net.simpleframework.util.LocaleI18n"%>
 <%@ page import="net.simpleframework.util.StringUtils"%>
 <%@ page import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.a.ItSiteUtil"%>
+	import="net.itsite.ItSiteUtil"%>
 
 <%
 	String jn = StringUtils.blank(request.getParameter("job"));

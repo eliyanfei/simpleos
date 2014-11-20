@@ -1,7 +1,6 @@
 package net.prj.core.impl.model;
 
 import net.prj.core.impl.AbstractModelBean;
-import net.simpleframework.core.Version;
 
 /**
  * 登入
@@ -19,11 +18,6 @@ public class LoginModelBean extends AbstractModelBean {
 	@Override
 	public String getTitle() {
 		return "登入";
-	}
-
-	@Override
-	public Version getVersion() {
-		return Version.valueOf("1.0.0");
 	}
 
 	@Override

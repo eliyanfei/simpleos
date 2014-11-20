@@ -1,12 +1,15 @@
 package net.itsite.utils;
 
 /**
- * @author QianFei.Xu qianfei.xu@rosense.cn
- * @dateTime Apr 23, 2010 12:07:48 PM
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
  */
 abstract class PrivateStrings {
 	/**
-	 * �ж�һ���ַ�valueItem�Ƿ��������ַ�����array�е�һ��Ԫ��,�����õ��˱ȽϷ���:ֱ�����(equals),�Կ�ͷ(
 	 * startsWith),�Խ�β(endsWith);
 	 * 
 	 * @param array

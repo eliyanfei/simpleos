@@ -1,8 +1,10 @@
 package net.itsite.complaint;
 
 /**
- * 投诉
- * @author 李岩飞
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:12:51 
+ * @Description: 投诉类型
  *
  */
 public enum EComplaint {

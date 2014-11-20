@@ -2,10 +2,13 @@ package net.itsite.utils;
 
 import java.io.File;
 import java.net.URL;
-
 /**
- * @author QianFei.Xu;E-Mail:qianfei.xu@rosense.cn
- * @time Apr 26, 2009 7:11:06 PM
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
  */
 public class PathURLFilter implements IPathURLFilter {
 	public static final IPathURLFilter DEFAULT = new PathURLFilter("/", ".jar");

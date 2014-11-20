@@ -4,6 +4,13 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:39:09 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public abstract class ACaches {
 	public abstract ECacheEngine getCacheEngine();
 

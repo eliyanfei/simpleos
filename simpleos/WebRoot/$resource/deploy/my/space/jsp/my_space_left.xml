@@ -4,7 +4,7 @@
 	<scriptEval>single</scriptEval>
 	<importPage>
 		<value>space_user_layout.xml</value>
-		<value>/my/dialog/dialog.xml</value>
+		<value>/app/dialog/dialog.xml</value>
 	</importPage>
 	<handleClass>net.simpleframework.my.space.MySpacePageLoad</handleClass>
 </page>

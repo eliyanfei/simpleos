@@ -3,7 +3,7 @@ package net.prj.manager.template;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.itniwo.commons.StringsUtils;
+import net.itsite.utils.StringsUtils;
 import net.prj.core.i.IModelBean;
 import net.prj.core.impl.frame.ITemplateBean;
 import net.prj.core.impl.frame.TemplateBean1;
@@ -18,6 +18,16 @@ public class PrjTemplateUtils {
 	public static IPrjTemplateAppModule appModule = null;
 	public static Map<String, IModelBean> modelMap = new HashMap<String, IModelBean>();
 	public static Map<String, ITemplateBean> templateMap = new HashMap<String, ITemplateBean>();
+
+	/**
+	 * 获取模板地址
+	 * @return
+	 */
+	public static String getTemplateUrl() {
+		final PrjTemplateBean templateBean = PrjTemplateUtils.getTemplateBean();
+		final String templateUrl = "/frame/template/" + (StringsUtils.u(templateBean.templateId, "/", templateBean.templateId)) + ".jsp";
+		return templateUrl;
+	}
 
 	public static PrjTemplateBean getTemplateBean() {
 		Map<String, String> map = PrjMgrUtils.loadCustom("template");

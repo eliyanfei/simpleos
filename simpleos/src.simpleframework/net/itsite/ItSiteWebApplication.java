@@ -8,7 +8,13 @@ import javax.servlet.ServletException;
 import net.simpleframework.util.HTTPUtils;
 import net.simpleframework.web.AbstractWebApplication;
 import net.simpleframework.web.page.PageRequestResponse;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午4:57:15 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class ItSiteWebApplication extends AbstractWebApplication {
 
 	@Override

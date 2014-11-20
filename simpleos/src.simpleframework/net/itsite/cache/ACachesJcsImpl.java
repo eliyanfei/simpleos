@@ -9,6 +9,13 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import org.apache.jcs.JCS;
 import org.apache.jcs.access.exception.CacheException;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:39:19 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 abstract class ACachesJcsImpl extends ACaches {
 	static {
 		JCS.setConfigFilename("/net/itsite/cache/cache.ccf");

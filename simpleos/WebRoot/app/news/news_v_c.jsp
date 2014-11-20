@@ -8,7 +8,7 @@
 	import="net.simpleframework.content.component.newspager.NewsPagerUtils"%><%@page
 	import="net.simpleframework.content.component.newspager.INewsPagerHandle"%><%@page
 	import="net.simpleframework.content.component.newspager.NewsBean"%><%@page
-	import="net.a.ItSiteUtil"%>
+	import="net.itsite.ItSiteUtil"%>
 <%
 	ItSiteUtil.addMenuNav(request.getSession(), "/news.html", "#(Itsite.menu.news)", false);
 	final ComponentParameter nComponentParameter = NewsPagerUtils.getComponentParameter(request, response);

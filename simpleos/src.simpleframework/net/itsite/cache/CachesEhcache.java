@@ -14,6 +14,13 @@ import net.sf.ehcache.Element;
 import net.sf.ehcache.store.MemoryStoreEvictionPolicy;
 import net.simpleframework.util.ConvertUtils;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:39:43 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class CachesEhcache extends ACaches {
 	private static final String ehcacheXml = "ehcache.xml";
 	private final CacheManager cacheMgr;
@@ -88,7 +95,6 @@ public class CachesEhcache extends ACaches {
 		return cacheEle.getObjectValue();
 	}
 
-	
 	@SuppressWarnings("unchecked")
 	@Override
 	public Collection<String> keysCache(final String cacheName) {

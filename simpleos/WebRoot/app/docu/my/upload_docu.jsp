@@ -5,7 +5,7 @@
 	import="net.simpleframework.util.StringUtils"%><%@page
 	import="net.itsite.document.docu.DocuBean"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.simpleframework.web.WebUtils"%><%@page import="net.a.ItSiteUtil"%>
+	import="net.simpleframework.web.WebUtils"%><%@page import="net.itsite.ItSiteUtil"%>
 
 <%
 	final String docuId = request.getParameter("docuId");

@@ -2,7 +2,7 @@ package net.simpleframework.web.page.component.ui.htmleditor;
 
 import java.util.Locale;
 
-import net.itsite.mobile.JsonUtils;
+import net.itsite.utils.JsonUtils;
 import net.simpleframework.util.I18n;
 import net.simpleframework.util.JavascriptUtils;
 import net.simpleframework.util.StringUtils;

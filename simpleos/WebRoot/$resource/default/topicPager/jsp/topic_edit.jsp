@@ -9,7 +9,7 @@
 <%@ page
 	import="net.simpleframework.content.component.topicpager.TopicBean"%>
 <%@ page
-	import="net.simpleframework.organization.account.AccountContext"%><%@page import="net.a.ItSiteUtil"%>
+	import="net.simpleframework.organization.account.AccountContext"%><%@page import="net.itsite.ItSiteUtil"%>
 
 <%
 	final ComponentParameter nComponentParameter = TopicPagerUtils

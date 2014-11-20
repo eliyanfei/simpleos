@@ -107,6 +107,7 @@ public abstract class AjaxRequestUtils {
 		json.put("detail", detail);
 		json.put("hash", StringUtils.hash(detail));
 		((JsonForward) (forward = new JsonForward())).getMap().put("exception", json);
+		th.printStackTrace();
 		return forward;
 	}
 

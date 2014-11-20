@@ -15,6 +15,7 @@ import net.simpleframework.util.HTTPUtils;
 import net.simpleframework.util.IConstants;
 import net.simpleframework.util.LocaleI18n;
 import net.simpleframework.util.StringUtils;
+import net.simpleframework.web.page.component.HandleException;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -58,6 +59,9 @@ public class PageConfig extends ALoggerAware {
 			return message;
 		}
 		while (th != null) {
+			if(!(th instanceof HandleException)){
+				return "网络异常";
+			}
 			message = th.getMessage();
 			if (message == null) {
 				final Throwable th0 = th.getCause();

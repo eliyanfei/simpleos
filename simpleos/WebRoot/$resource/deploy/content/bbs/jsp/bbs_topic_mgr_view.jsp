@@ -7,7 +7,7 @@
 <%@ page import="net.simpleframework.content.bbs.BbsForum"%>
 <%@ page import="net.simpleframework.applets.tag.ITagApplicationModule"%>
 <%@ page import="net.simpleframework.web.EFunctionModule"%><%@page
-	import="net.a.ItSiteUtil"%><%@page import="net.simpleframework.web.IWebApplicationModule"%>
+	import="net.itsite.ItSiteUtil"%><%@page import="net.simpleframework.web.IWebApplicationModule"%>
 
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);

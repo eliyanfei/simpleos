@@ -1,7 +1,7 @@
+<%@page import="net.itsite.utils.StringsUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="java.util.Map"%><%@page
-	import="net.prj.manager.PrjMgrUtils"%><%@page
-	import="net.itniwo.commons.StringsUtils"%>
+	import="net.prj.manager.PrjMgrUtils"%>
 
 <%
 	Map<String, String> map = PrjMgrUtils.loadCustom("docu");

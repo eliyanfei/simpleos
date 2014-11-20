@@ -1,7 +1,6 @@
 package net.prj.core.impl.model;
 
 import net.prj.core.impl.AbstractModelBean;
-import net.simpleframework.core.Version;
 
 /**
  * 个人信息
@@ -18,11 +17,6 @@ public class MyInfoModelBean extends AbstractModelBean {
 	@Override
 	public String getTitle() {
 		return "用户中心";
-	}
-
-	@Override
-	public Version getVersion() {
-		return Version.valueOf("1.0.0");
 	}
 
 	@Override

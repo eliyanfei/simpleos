@@ -10,7 +10,7 @@
 <%@ page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@ page import="net.simpleframework.util.DateUtils"%><%@page
 	import="net.simpleframework.content.ContentUtils"%>
-<%@page import="net.a.ItSiteUtil"%><%@page
+<%@page import="net.itsite.ItSiteUtil"%><%@page
 	import="net.simpleframework.web.page.component.ui.dictionary.SmileyUtils"%><%@page
 	import="net.simpleframework.util.ConvertUtils"%><%@page
 	import="java.util.List"%><%@page
@@ -146,7 +146,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2" class="wrapWord"><%=SmileyUtils.replaceSmiley(ItSiteUtil.getShortContent(log.getContent(), 100, false))%></td>
+							<td colspan="2" class="wrapWord" style="word-wrap:break-word;word-break:break-all;"><%=SmileyUtils.replaceSmiley(ItSiteUtil.getShortContent(log.getContent(), 100, false))%></td>
 						</tr>
 					</table>
 				</td>

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.itniwo.commons.StringsUtils;
+import net.itsite.utils.StringsUtils;
 import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.applets.notification.MailMessageNotification;
 import net.simpleframework.applets.notification.NotificationUtils;
@@ -156,11 +156,13 @@ public class UserPagerAction extends UserPagerUrlAction {
 						mailMessage = new MailMessageNotification();
 						mailMessage.setHtmlContent(true);
 						mailMessage.getTo().add(account.user().getEmail());
-						Map<String, String> map = PrjMgrUtils.loadCustom("site");
+						Map<String, String> map = PrjMgrUtils
+								.loadCustom("site");
 						final WebApplicationConfig applicationConfig = (WebApplicationConfig) uHandle
 								.getApplicationModule().getApplication()
 								.getApplicationConfig();
-						mailMessage.setSubject(StringsUtils.trimNull(map.get("site_name"), "")
+						mailMessage.setSubject(StringsUtils.trimNull(
+								map.get("site_name"), "")
 								+ "激活通知");
 						mailMessage
 								.setTextBody("你的账号已经被激活，现在你可以登入站点！<br/><a href='"
@@ -211,6 +213,10 @@ public class UserPagerAction extends UserPagerUrlAction {
 						nComponentParameter.getRequestParameter(OrgUtils.um()
 								.getUserIdParameterName()));
 				if (account != null) {
+					if (((IUser) account.user()).isBuildIn())
+						throw HandleException.wrapException(LocaleI18n
+								.getMessage("buildin.1"));
+
 					account.setStatus(EAccountStatus.locked);
 					AccountSession.logout(account);
 					OrgUtils.am().update(account);

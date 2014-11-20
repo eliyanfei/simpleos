@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.itsite.i.ICommonBeanAware;
 import net.itsite.impl.AItSiteAppclicationModule;
 import net.itsite.utils.StringsUtils;

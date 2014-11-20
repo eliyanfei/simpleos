@@ -4,7 +4,7 @@
 	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
 	import="net.prj.manager.site.PrjSiteUtils"%><%@page
 	import="java.util.Map"%><%@page import="net.prj.manager.PrjMgrUtils"%><%@page
-	import="net.itniwo.commons.StringsUtils"%>
+	import="net.itsite.utils.StringsUtils"%>
 
 <%
 	Map<String, String> map = PrjMgrUtils.loadCustom("links");

@@ -1,6 +1,6 @@
 package net.prj.mvc.myfavorite;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.organization.account.IAccount;
 import net.simpleframework.web.page.component.ComponentParameter;
 

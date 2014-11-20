@@ -3,8 +3,8 @@ package net.prj.manager.company;
 import java.util.List;
 import java.util.Map;
 
-import net.itniwo.commons.StringsUtils;
 import net.itsite.impl.PrjColumns;
+import net.itsite.utils.StringsUtils;
 import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.web.page.DefaultPageHandle;
 import net.simpleframework.web.page.PageParameter;

@@ -14,7 +14,7 @@
 <%@ page import="net.simpleframework.my.space.MySpaceUtils"%>
 <%@ page import="net.simpleframework.my.space.SpaceStatBean"%><%@page
 	import="net.itsite.utils.StringsUtils"%><%@page
-	import="net.a.ItSiteUtil"%>
+	import="net.itsite.ItSiteUtil"%>
 
 
 <%

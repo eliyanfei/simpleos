@@ -6,11 +6,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.a.ItSiteUtil;
-import net.itniwo.commons.xml.Dom4jUtils;
+import net.itsite.ItSiteUtil;
 import net.itsite.i.ICommonBeanAware;
 import net.itsite.i.IItSiteApplicationModule;
 import net.itsite.i.ISendMail;
+import net.itsite.utils.Dom4jUtils;
 import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.DataObjectManagerUtils;
 import net.simpleframework.ado.db.ExpressionValue;
@@ -154,6 +154,8 @@ public abstract class AItSiteAppclicationModule extends AbstractContentApplicati
 		if (getDeployPath() != null)
 			IInitializer.Utils.deploySqlScript(getClass(), initializer.getApplication(), getDeployPath());
 		loadColumns();
+
+		doInit(getClass(), getDeployPath());
 	}
 
 	public void loadColumns() {

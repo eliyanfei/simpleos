@@ -12,10 +12,12 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * 提供一些常用的操作数字的函数，如：格式化，对象转换成数字等
  * 
- * @author QianFei.Xu qianfei.xu@rosense.cn
- * @dateTime Dec 20, 2009 12:44:57 AM
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
  */
 public final class NumberUtils {
 

@@ -3,7 +3,7 @@ package net.itsite.impl;
 import java.util.Calendar;
 import java.util.Date;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.itsite.i.ICommonBeanAware;
 import net.simpleframework.core.bean.AbstractIdDataObjectBean;
 import net.simpleframework.core.id.ID;

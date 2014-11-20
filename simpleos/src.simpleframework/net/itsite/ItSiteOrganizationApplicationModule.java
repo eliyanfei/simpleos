@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.a.ItSiteUtil;
 import net.itsite.utils.MD5;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;
@@ -31,10 +30,11 @@ import net.simpleframework.util.BeanUtils;
 import net.simpleframework.util.HTMLUtils;
 import net.simpleframework.util.IoUtils;
 import net.simpleframework.util.script.ScriptEvalUtils;
-
 /**
  * 
- * @author 李岩飞
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午4:57:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
  *
  */
 public class ItSiteOrganizationApplicationModule extends OrganizationApplicationModule {

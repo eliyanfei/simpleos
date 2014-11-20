@@ -15,10 +15,12 @@ import org.apache.tools.zip.ZipFile;
 import org.apache.tools.zip.ZipOutputStream;
 
 /**
- * 锟斤拷锟斤拷ZIP锟斤拷TAR压锟斤拷锟侥硷拷锟斤拷式锟侥癸拷锟斤拷锟斤拷
  * 
- * @Company 锟斤拷锟斤拷锟斤拷锟斤拷萍锟斤拷锟斤拷薰锟剿�
- * @author QianFei Xu
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
  */
 public class ZipUtils {
 	public static final void zip(final String inputFileName, final OutputStream os) throws Exception {

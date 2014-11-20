@@ -6,7 +6,7 @@
 		import net.simpleframework.my.space.MySpaceUtils;
 	</scriptInit>
 	<importPage>
-		<value>/my/dialog/dialog.xml</value>
+		<value>/app/dialog/dialog.xml</value>
 	</importPage>
 	<jobView>sys_account_normal</jobView>
 	<components>

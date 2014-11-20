@@ -12,7 +12,13 @@ import net.simpleframework.organization.account.IAccount;
 import net.simpleframework.util.LocaleI18n;
 import net.simpleframework.web.WebUtils;
 import net.simpleframework.web.page.PageRequestResponse;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午4:57:28 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class ItSiteSpaceApplicationModule extends DefaultSpaceApplicationModule {
 	@Override
 	public String getSpaceUrl(final PageRequestResponse requestResponse, final IUser user) {

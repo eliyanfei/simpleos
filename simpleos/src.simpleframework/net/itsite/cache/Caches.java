@@ -24,10 +24,11 @@ import net.itsite.utils.SQLUtils;
 import net.itsite.utils.StringsUtils;
 
 /**
- * 用于管理系统级别的缓存,如小区信息,ADJC信息等.
  * 
- * @author QianFei.Xu;E-Mail:qianfei.xu@rosense.cn
- * @time Aug 27, 2009 10:13:13 AM
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:39:32 
+ * @Description: 用于管理系统级别的缓存,如小区信息,ADJC信息等.
+ *
  */
 public final class Caches {
 	private static final Caches instance = new Caches();

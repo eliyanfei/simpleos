@@ -5,8 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.a.ItSiteUtil;
-import net.itsite.search.SearchUtils;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.ado.IDataObjectQuery;
@@ -38,6 +37,26 @@ public class UserSearchPaper extends AbstractDbTablePagerHandle {
 		return tMgr.query(new ExpressionValue(sql.toString(), lv.toArray()), UserSearchBean.class);
 	}
 
+	public static String getApplictionUrl(final String id) {
+		if ("os".equals(id)) {
+			return "/os.html?s=1&q=q";
+		} else if ("cs".equals(id)) {
+			return "/cs.html?q=q";
+		} else if ("docu".equals(id)) {
+			return "docusearch.html?docu_=all&q=q";
+		} else if ("question".equals(id)) {
+			return "/question.html?q=q";
+		} else if ("news".equals(id)) {
+			return "/news.html?q=q";
+		} else if ("blog".equals(id)) {
+			return "/blog.html?q=q";
+		} else if ("bbs".equals(id)) {
+			return "/bbs/tl.html?q=q";
+		} else {
+			return "/special.html?q=q";
+		}
+	}
+
 	@Override
 	public AbstractTablePagerData createTablePagerData(final ComponentParameter compParameter) {
 		return new AbstractTablePagerData(compParameter) {
@@ -52,8 +71,8 @@ public class UserSearchPaper extends AbstractDbTablePagerHandle {
 				}
 				final IUser user = OrgUtils.um().queryForObjectById(searchBean.getUserId());
 				row.put("userId", user == null ? "匿名" : MySpaceUtils.getAccountAware().wrapAccountHref(compParameter, user));
-				row.put("content", "<a target='_blank' onclick=\"$Actions.loc('" + SearchUtils.getApplictionUrl(functionModule.name())
-						+ "'.addParameter('c=" + searchBean.getContent() + "'))\">" + searchBean.getContent() + "</a>");
+				row.put("content", "<a target='_blank' onclick=\"$Actions.loc('" + getApplictionUrl(functionModule.name()) + "'.addParameter('c="
+						+ searchBean.getContent() + "'))\">" + searchBean.getContent() + "</a>");
 				row.put("functionModule", "<a href='" + functionModule.getApplicationUrl() + "'>" + functionModule + "</a>");
 				row.put("createDate", ConvertUtils.toDateString(searchBean.getCreateDate(), "yyyy-MM-dd HH"));
 				return row;

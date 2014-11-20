@@ -29,12 +29,6 @@ public interface IModelBean {
 	boolean isDesign();
 
 	/**
-	 * 该功能模块的当前版本
-	 * @return
-	 */
-	Version getVersion();
-
-	/**
 	 * 访问地址
 	 * @return
 	 */

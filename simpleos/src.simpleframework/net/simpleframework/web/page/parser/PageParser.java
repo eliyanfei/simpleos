@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.itniwo.commons.StringsUtils;
+import net.itsite.utils.StringsUtils;
 import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.core.id.ID;
 import net.simpleframework.util.HTMLUtils;
@@ -35,7 +35,7 @@ import org.jsoup.nodes.TextNode;
  * 
  * @author 陈侃(cknet@126.com, 13910090885)
  *         http://code.google.com/p/simpleframework/
- *         http://www.simpleframework.net
+ *         http://www.simpleos.net
  */
 public final class PageParser extends AbstractPageParser {
 	private static PageHtmlBuilder htmlBuilder = PageUtils.pageContext.createPageHtmlBuilder();

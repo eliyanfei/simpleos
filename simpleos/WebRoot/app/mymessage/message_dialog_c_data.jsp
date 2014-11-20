@@ -10,7 +10,7 @@
 <%@ page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@ page import="net.simpleframework.my.space.MySpaceUtils"%>
 <%@ page import="net.simpleframework.util.HTMLBuilder"%>
-<%@page import="net.a.ItSiteUtil"%>
+<%@page import="net.itsite.ItSiteUtil"%>
 <%@page import="net.simpleframework.my.dialog.SimpleDialog"%>
 
 <%

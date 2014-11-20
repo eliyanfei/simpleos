@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN"
+        "urlrewrite3.2.dtd">
+<urlrewrite>
+	<rule>
+		<from>/(blog).html</from>
+		<to>/app/$1/$1.jsp</to>
+	</rule>
+	<rule>
+		<from>/blog/(\d+).html</from>
+		<to>/app/blog/blog_mb.jsp?userid=$1</to>
+	</rule>
+	<rule>
+		<from>/blog/p/(\d+).html</from>
+		<to>/app/blog/blog.jsp?pageNumber=$1&amp;p=true</to>
+	</rule>
+	<rule>
+		<from>/blog/v/(\d+).html</from>
+		<to>/app/blog/blog_v.jsp?__news_Id=$1</to>
+	</rule>
+</urlrewrite>
+

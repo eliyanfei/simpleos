@@ -3,7 +3,7 @@ package net.prj.mvc.myfavorite;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.core.ado.IDataObjectQuery;

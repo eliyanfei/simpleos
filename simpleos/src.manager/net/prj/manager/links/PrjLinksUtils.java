@@ -2,7 +2,7 @@ package net.prj.manager.links;
 
 import java.util.Map;
 
-import net.itniwo.commons.LangUtils;
+import net.itsite.utils.LangUtils;
 import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;

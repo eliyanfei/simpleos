@@ -1,3 +1,4 @@
+<%@page import="net.itsite.utils.StringsUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.ado.db.ITableEntityManager"%><%@page
@@ -39,7 +40,7 @@
 					#(Message.V.2)
 				</td>
 				<td>
-					<%=message.getSubject()%>
+					<%=StringsUtils.trimNull(message.getSubject(), "")%>
 				</td>
 			</tr>
 		</table>
@@ -49,7 +50,7 @@
 					#(Message.V.3)
 				</td>
 				<td>
-					<div style="overflow: auto;"><%=message.getTextBody()%></div>
+					<div style="overflow: auto;word-wrap:break-word;word-break:break-all;"><%=message.getTextBody()%></div>
 				</td>
 			</tr>
 		</table>

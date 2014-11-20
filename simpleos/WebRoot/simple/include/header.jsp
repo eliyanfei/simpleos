@@ -7,7 +7,7 @@
 	import="net.itsite.utils.StringsUtils"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
 	import="net.simpleframework.util.HTMLBuilder"%><%@page
-	import="net.a.ItSiteUtil"%>
+	import="net.itsite.ItSiteUtil"%>
 <%
 	ItSiteUtil.addMenuNav(request.getSession(), "/", "#(Itsite.menu.home)", true);
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);

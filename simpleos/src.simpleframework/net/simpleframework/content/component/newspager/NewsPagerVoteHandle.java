@@ -3,7 +3,7 @@ package net.simpleframework.content.component.newspager;
 import java.util.ArrayList;
 import java.util.Map;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.content.component.vote.DefaultVoteHandle;
 import net.simpleframework.my.space.MySpaceUtils;

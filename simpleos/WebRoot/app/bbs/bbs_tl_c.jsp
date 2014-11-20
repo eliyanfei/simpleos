@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.content.bbs.BbsUtils"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.a.ItSiteUtil"%>
+	import="net.itsite.ItSiteUtil"%>
 <%
 	final String bbs_topic_view = BbsUtils.deployPath + "jsp/bbs_topic_view.jsp";
 	final String forumId = request.getParameter("forumId");

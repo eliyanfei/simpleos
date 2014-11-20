@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.ado.IDataObjectQuery;
@@ -23,11 +23,11 @@ public class ComplaintTablePaper extends AbstractPagerHandle {
 
 	@Override
 	public IDataObjectQuery<?> createDataObjectQuery(final ComponentParameter compParameter) {
-		final ITableEntityManager tMgr = ComplaintUtils.applicationModule.getDataObjectManager();
+		final ITableEntityManager tMgr = ComplaintAppModule.applicationModule.getDataObjectManager();
 		final List<Object> ol = new ArrayList<Object>();
 		final StringBuffer sql = new StringBuffer();
 		sql.append("1=1");
-		if (!ItSiteUtil.isManage(compParameter, ComplaintUtils.applicationModule)) {
+		if (!ItSiteUtil.isManage(compParameter, ComplaintAppModule.applicationModule)) {
 			ol.add(ItSiteUtil.getLoginUser(compParameter).getId());
 			sql.append(" and userId=?");
 		}

@@ -8,8 +8,11 @@ import net.simpleframework.core.ado.db.Column;
 import net.simpleframework.core.bean.AbstractIdDataObjectBean;
 
 /**
- * 用户的扩展信息
- * @author lg
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 上午11:52:35 
+ * @Description: 用户扩展信息
  *
  */
 public class OpenapiBean extends AbstractIdDataObjectBean implements IEntityBeanAware {

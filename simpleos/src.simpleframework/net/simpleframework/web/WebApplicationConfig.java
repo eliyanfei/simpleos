@@ -1,6 +1,6 @@
 package net.simpleframework.web;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.core.ApplicationConfig;
 import net.simpleframework.util.StringUtils;
 

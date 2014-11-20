@@ -1,3 +1,6 @@
+<%@page import="javax.sql.DataSource"%>
+<%@page import="net.itsite.utils.SQLUtils"%>
+<%@page import="net.simpleframework.web.IWebApplication"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
@@ -7,6 +10,12 @@
 	
 }
 </style>
+<%
+	DataSource dataSource = IWebApplication.Instance.getApplication().getDataSource();
+	if (dataSource != null && SQLUtils.count(dataSource, "simple_user") > 0) {
+		response.sendRedirect("/index.html");
+	}
+%>
 </head>
 <body>
 	<div id="ddd"></div>

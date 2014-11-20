@@ -17,6 +17,14 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class Dom4jUtils {
 	public static org.dom4j.Document newXmlDocument(final String rootEleText) {
 		final org.dom4j.Document doc = org.dom4j.DocumentHelper.createDocument();

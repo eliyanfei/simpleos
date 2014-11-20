@@ -20,7 +20,7 @@
 			<urlForward>docu_down.jsp</urlForward>
 		</ajaxRequest>
 		<window name="docuDownWindowAct" contentRef="docuDownAjax"
-			title="" width="480" height="340" resizable="false" />
+			title="下载文档" width="400" height="200" resizable="false" />
 		<ajaxRequest name="ajaxAttentionUsersAct">
 			<urlForward>attention/attention_users.jsp</urlForward>
 		</ajaxRequest>

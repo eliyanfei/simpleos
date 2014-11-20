@@ -2,7 +2,7 @@ package net.prj.mvc.myfavorite;
 
 import java.util.Map;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.core.id.LongID;
 import net.simpleframework.organization.account.IAccount;
 import net.simpleframework.web.EFunctionModule;

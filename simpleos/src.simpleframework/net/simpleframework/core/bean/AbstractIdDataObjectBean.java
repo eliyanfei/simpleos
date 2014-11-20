@@ -1,6 +1,6 @@
 package net.simpleframework.core.bean;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.core.id.ID;
 import net.simpleframework.organization.IUser;
 import net.simpleframework.organization.OrgUtils;

@@ -12,6 +12,13 @@ import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxRequestHandle;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:00:27 
+ * @Description: 广告的增删改处理
+ *
+ */
 public class AdAjaxAction extends AbstractAjaxRequestHandle {
 	@Override
 	public Object getBeanProperty(final ComponentParameter compParameter, final String beanProperty) {
@@ -24,7 +31,7 @@ public class AdAjaxAction extends AbstractAjaxRequestHandle {
 	}
 
 	/**
-	* @param compParameter
+	 * 保存设置广告
 	* @return
 	*/
 	public IForward adSave(final ComponentParameter compParameter) {
@@ -34,7 +41,7 @@ public class AdAjaxAction extends AbstractAjaxRequestHandle {
 			@Override
 			public void doAction(final Map<String, Object> json) {
 				final EAd ad = EAd.valueOf(compParameter.getRequestParameter("adId"));
-				adBean = AdUtils.applicationModule.getAdBean(ad);
+				adBean = AdAppModule.applicationModule.getAdBean(ad);
 				if (adBean == null) {
 					adBean = new AdBean();
 					adBean.setStartDate(ConvertUtils.toDate(compParameter.getRequestParameter("ad_startDate"), "yyyy-MM-dd"));
@@ -44,13 +51,13 @@ public class AdAjaxAction extends AbstractAjaxRequestHandle {
 				if (adBean.getAdType() == 0) {
 					adBean.setSrc(StringsUtils.replace(compParameter.getRequestParameter("ad_src"), FileSelectUtils.DOWNLOAD_FLAG, ""));
 					adBean.setUrl(compParameter.getRequestParameter("ad_url"));
-				}else if (adBean.getAdType() == 1) {
+				} else if (adBean.getAdType() == 1) {
 					adBean.setContent(compParameter.getRequestParameter("ad_content"));
 				} else {
 					adBean.setContent(compParameter.getRequestParameter("ad_pcontent"));
 				}
 				adBean.setDays(ConvertUtils.toInt(compParameter.getRequestParameter("ad_days"), adBean.getDays()));
-				AdUtils.applicationModule.doUpdate(adBean, new TableEntityAdapter() {
+				AdAppModule.applicationModule.doUpdate(adBean, new TableEntityAdapter() {
 					@Override
 					public void afterInsert(ITableEntityManager manager, Object[] objects) {
 						AdUtils.adMap.put(ad.name(), adBean);
@@ -61,13 +68,14 @@ public class AdAjaxAction extends AbstractAjaxRequestHandle {
 						AdUtils.adMap.put(ad.name(), adBean);
 					}
 				});
+				adBean = null;
 				json.put("json", ad.name());
 			}
 		});
 	}
 
 	/**
-	* @param compParameter
+	 * 停止或者暂停广告
 	* @return
 	*/
 	public IForward adStop(final ComponentParameter compParameter) {
@@ -80,7 +88,7 @@ public class AdAjaxAction extends AbstractAjaxRequestHandle {
 	}
 
 	/**
-	* @param compParameter
+	 * 启动广告
 	* @return
 	*/
 	public IForward adStart(final ComponentParameter compParameter) {

@@ -6,6 +6,13 @@ import java.util.Date;
 import net.itsite.utils.DateUtils;
 import net.simpleframework.core.bean.AbstractIdDataObjectBean;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:02:45 
+ * @Description: 广告实体类
+ *
+ */
 public class AdBean extends AbstractIdDataObjectBean {
 	private int adType;// 0表示图片，1表示文字
 	private String src;// 地址
@@ -27,8 +34,7 @@ public class AdBean extends AbstractIdDataObjectBean {
 		} else if (status == 2) {
 			buf.append("广告被暂停或者已结束");
 		} else if (status == 1) {
-			buf.append("广告正在运行,已运行"
-					+ DateUtils.onLineTimeInfo(startDate.getTime()));
+			buf.append("广告正在运行,已运行" + DateUtils.onLineTimeInfo(startDate.getTime()));
 		}
 		return buf.toString();
 	}

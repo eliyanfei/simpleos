@@ -3,7 +3,13 @@ package net.itsite;
 import net.itsite.openapi.OpenapiUtils;
 import net.simpleframework.applets.openid.DefaultOpenIDApplicationModule;
 import net.simpleframework.web.page.PageRequestResponse;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午4:57:49 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class ItSiteOpenIDApplicationModule extends DefaultOpenIDApplicationModule {
 
 	@Override

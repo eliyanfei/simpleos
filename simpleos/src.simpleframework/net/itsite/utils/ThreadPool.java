@@ -8,8 +8,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Company 北京洛神科技有限公司
- * @author QianFei Xu
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
  */
 public final class ThreadPool<T extends Runnable> extends Thread {
 	public static final int DEFAULT_SIZE = 50;

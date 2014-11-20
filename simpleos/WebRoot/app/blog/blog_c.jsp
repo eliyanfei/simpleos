@@ -8,7 +8,7 @@
 <%@ page import="net.simpleframework.util.DateUtils.TimeDistance"%>
 <%@page import="net.simpleframework.web.EFunctionModule"%>
 <%@page import="net.simpleframework.applets.tag.TagUtils"%>
-<%@page import="net.simpleframework.content.IContentPagerHandle"%><%@page import="net.a.ItSiteUtil"%>
+<%@page import="net.simpleframework.content.IContentPagerHandle"%><%@page import="net.itsite.ItSiteUtil"%>
 
 <%
 	final String blog_home = BlogUtils.deployPath + "jsp/blog_home.jsp";

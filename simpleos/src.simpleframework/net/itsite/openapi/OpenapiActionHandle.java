@@ -25,7 +25,7 @@ public class OpenapiActionHandle extends AbstractAjaxRequestHandle {
 		openapi.text = compParameter.getRequestParameter("oa_text");
 		openapi.name = compParameter.getRequestParameter("oa_name");
 		openapi.pass = compParameter.getRequestParameter("oa_password");
-		final String url = OpenapiUtils.applicationModule.login1(compParameter, openapi);
+		final String url = OpenapiAppModule.applicationModule.login1(compParameter, openapi);
 		if (StringUtils.hasText(url)) {
 			return jsonForward(compParameter, new JsonCallback() {
 				@Override

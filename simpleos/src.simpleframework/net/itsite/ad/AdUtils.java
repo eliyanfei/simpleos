@@ -5,9 +5,14 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:03:14 
+ * @Description: 广告的公共数据处理
+ *
+ */
 public class AdUtils {
-	public static IAdApplicationModule applicationModule;
-	public static String deployPath;
 	public static Map<String, AdBean> adMap = new HashMap<String, AdBean>();
 
 	/**
@@ -19,7 +24,7 @@ public class AdUtils {
 		if (adBean != null) {
 			if (adBean.getStatus() != 2) {
 				adBean.setStatus(2);
-				applicationModule.doUpdate(adBean);
+				AdAppModule.applicationModule.doUpdate(adBean);
 			}
 		}
 	}
@@ -33,7 +38,7 @@ public class AdUtils {
 		if (adBean != null) {
 			if (adBean.getStatus() != 1) {
 				adBean.setStatus(1);
-				applicationModule.doUpdate(adBean);
+				AdAppModule.applicationModule.doUpdate(adBean);
 			}
 		}
 	}

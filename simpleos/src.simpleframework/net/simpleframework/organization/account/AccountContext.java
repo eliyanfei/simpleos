@@ -40,13 +40,16 @@ public final class AccountContext extends ALoggerAware {
 	private static ApplicationContext applicationContext;
 
 	public static void init() throws IOException {
-		final File pointsFile = new File(OrgUtils.applicationModule.getApplication()
-				.getApplicationAbsolutePath("/WEB-INF/account_rule.xml"));
+		final File pointsFile = new File(OrgUtils.applicationModule
+				.getApplication().getApplicationAbsolutePath(
+						"/WEB-INF/account_rule.xml"));
 		if (pointsFile.exists()) {
-			applicationContext = new FileSystemXmlApplicationContext(pointsFile.getAbsolutePath());
+			applicationContext = new FileSystemXmlApplicationContext("file:"
+					+ pointsFile.getAbsolutePath());
 		} else {
-			applicationContext = new ClassPathXmlApplicationContext(BeanUtils.getResourceClasspath(
-					AccountContext.class, "account_rule.xml"));
+			applicationContext = new ClassPathXmlApplicationContext(
+					BeanUtils.getResourceClasspath(AccountContext.class,
+							"account_rule.xml"));
 		}
 	}
 
@@ -54,39 +57,44 @@ public final class AccountContext extends ALoggerAware {
 		return (AccountContext) applicationContext.getBean("idAccountContext");
 	}
 
-	public static void updateTransaction(final IAccount account, final String eventId, final ID logId) {
+	public static void updateTransaction(final IAccount account,
+			final String eventId, final ID logId) {
 		update(account, eventId, logId, true);
 	}
 
-	public static void update(final HttpSession httpSession, final String eventId, final ID logId) {
+	public static void update(final HttpSession httpSession,
+			final String eventId, final ID logId) {
 		final IAccount account = AccountSession.getLogin(httpSession);
 		if (account != null) {
 			update(account, eventId, logId);
 		}
 	}
 
-	public static void update(final IAccount account, final String eventId, final ID logId) {
+	public static void update(final IAccount account, final String eventId,
+			final ID logId) {
 		update(account, eventId, logId, false);
 
 	}
 
-	public static void update(final IAccount account, final IAccountRule accountRule, final ID logId) {
+	public static void update(final IAccount account,
+			final IAccountRule accountRule, final ID logId) {
 		update(account, accountRule, logId, false);
 	}
 
-	public static void updateTransaction(final IAccount account, final IAccountRule accountRule,
-			final ID logId) {
+	public static void updateTransaction(final IAccount account,
+			final IAccountRule accountRule, final ID logId) {
 		update(account, accountRule, logId, true);
 	}
 
-	private static void update(final IAccount account, final String eventId, final ID logId,
-			final boolean transaction) {
+	private static void update(final IAccount account, final String eventId,
+			final ID logId, final boolean transaction) {
 		update(account, getAccountRule(eventId), logId, transaction);
 	}
 
 	// 必须synchronized，有可能该IAccountRule的值，IAccountRule是单实例
-	public static void update(final IAccount account, final IAccountRule accountRule,
-			final ID logId, final boolean transaction) {
+	public static void update(final IAccount account,
+			final IAccountRule accountRule, final ID logId,
+			final boolean transaction) {
 		if (account == null || accountRule == null) {
 			return;
 		}
@@ -95,7 +103,8 @@ public final class AccountContext extends ALoggerAware {
 			return;
 		}
 		synchronized (accountRule) {
-			final ITableEntityManager logmgr = OrgUtils.getTableEntityManager(AccountLog.class);
+			final ITableEntityManager logmgr = OrgUtils
+					.getTableEntityManager(AccountLog.class);
 			int exp;
 			int points;
 			try {
@@ -107,8 +116,10 @@ public final class AccountContext extends ALoggerAware {
 			if (exp != 0 || points != 0) {
 				if (accountRule.isLogOnlyonce()
 						&& !ID.Utils.isNone(logId)
-						&& logmgr.getCount(new ExpressionValue("accountid=? and eventid=? and logid=?",
-								new Object[] { account.getId(), accountRule.getEventId(), logId })) > 0) {
+						&& logmgr.getCount(new ExpressionValue(
+								"accountid=? and eventid=? and logid=?",
+								new Object[] { account.getId(),
+										accountRule.getEventId(), logId })) > 0) {
 					return;
 				}
 
@@ -124,14 +135,17 @@ public final class AccountContext extends ALoggerAware {
 				log.setLogId(logId);
 
 				if (transaction) {
-					OrgUtils.am().getEntityManager()
-							.updateTransaction(account, new TableEntityAdapter() {
-								@Override
-								public void afterUpdate(final ITableEntityManager manager,
-										final Object[] objects) {
-									logmgr.insert(log);
-								}
-							});
+					OrgUtils.am()
+							.getEntityManager()
+							.updateTransaction(account,
+									new TableEntityAdapter() {
+										@Override
+										public void afterUpdate(
+												final ITableEntityManager manager,
+												final Object[] objects) {
+											logmgr.insert(log);
+										}
+									});
 				} else {
 					OrgUtils.am().update(account);
 					logmgr.insert(log);
@@ -140,19 +154,21 @@ public final class AccountContext extends ALoggerAware {
 		}
 	}
 
-	private static int getNum(final ITableEntityManager logmgr, final IAccount account,
-			final IAccountRule accountRule, final String type) throws Exception {
+	private static int getNum(final ITableEntityManager logmgr,
+			final IAccount account, final IAccountRule accountRule,
+			final String type) throws Exception {
 		final Class<? extends IAccountRule> clazz = accountRule.getClass();
-		final String _type = Character.toUpperCase(type.charAt(0)) + type.substring(1);
-		int num = (Integer) clazz.getMethod("get" + _type, IAccount.class).invoke(accountRule,
-				account);
+		final String _type = Character.toUpperCase(type.charAt(0))
+				+ type.substring(1);
+		int num = (Integer) clazz.getMethod("get" + _type, IAccount.class)
+				.invoke(accountRule, account);
 		if (num != 0) {
-			final int maxValue = (Integer) clazz.getMethod("get" + _type + "MaxValue").invoke(
-					accountRule);
+			final int maxValue = (Integer) clazz.getMethod(
+					"get" + _type + "MaxValue").invoke(accountRule);
 			if (maxValue > 0) {
 				Object s = null, e = null;
-				final TimeUnit timeUnit = (TimeUnit) clazz.getMethod("get" + _type + "TimeUnit")
-						.invoke(accountRule);
+				final TimeUnit timeUnit = (TimeUnit) clazz.getMethod(
+						"get" + _type + "TimeUnit").invoke(accountRule);
 				final Calendar cal = Calendar.getInstance();
 				cal.set(Calendar.MILLISECOND, 0);
 				if (timeUnit == TimeUnit.day) {
@@ -170,9 +186,13 @@ public final class AccountContext extends ALoggerAware {
 					e = cal.getTime();
 				}
 				if (s != null && e != null) {
-					final int sum = logmgr.getSum(type, new ExpressionValue(
-							"accountid=? and eventid=? and (createdate>? and createdate<?)", new Object[] {
-									account.getId(), accountRule.getEventId(), s, e }));
+					final int sum = logmgr
+							.getSum(type,
+									new ExpressionValue(
+											"accountid=? and eventid=? and (createdate>? and createdate<?)",
+											new Object[] { account.getId(),
+													accountRule.getEventId(),
+													s, e }));
 					num = Math.min(Math.max(maxValue - sum, 0), num);
 				}
 			}
@@ -185,7 +205,8 @@ public final class AccountContext extends ALoggerAware {
 	}
 
 	public static IAccountRule getAccountRule(final String eventId) {
-		final IAccountRule accountRule = getAccountContext().getAccountRuleMap().get(eventId);
+		final IAccountRule accountRule = getAccountContext()
+				.getAccountRuleMap().get(eventId);
 		if (accountRule == null) {
 			return null;
 		}
@@ -200,8 +221,8 @@ public final class AccountContext extends ALoggerAware {
 	public static Exp getExp(final int exp) {
 		if (exps == null) {
 			exps = new ArrayList<Exp>();
-			final BufferedReader reader = new BufferedReader(new StringReader(getAccountContext()
-					.getExpText()));
+			final BufferedReader reader = new BufferedReader(new StringReader(
+					getAccountContext().getExpText()));
 			String l;
 			try {
 				while ((l = reader.readLine()) != null) {

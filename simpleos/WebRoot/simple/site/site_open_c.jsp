@@ -3,7 +3,7 @@
 	import="java.util.Map"%><%@page
 	import="net.prj.manager.site.PrjSiteUtils"%><%@page
 	import="net.prj.manager.PrjMgrUtils"%><%@page
-	import="net.itniwo.commons.StringsUtils"%>
+	import="net.itsite.utils.StringsUtils"%>
 <%
 	PrjColumns columns = PrjSiteUtils.appModule.getPrjColumns("open");
 	Map<String, String> map = PrjMgrUtils.loadCustom("open");

@@ -5,7 +5,13 @@ import net.simpleframework.content.blog.DefaultBlogApplicationModule;
 import net.simpleframework.organization.IUser;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ComponentParameter;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午4:59:17 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class ItSiteBlogApplicationModule extends DefaultBlogApplicationModule {
 
 	@Override

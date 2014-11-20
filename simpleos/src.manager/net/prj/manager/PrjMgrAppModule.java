@@ -2,7 +2,7 @@ package net.prj.manager;
 
 import java.util.Map;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.itsite.document.docu.DocuUtils;
 import net.itsite.impl.AItSiteAppclicationModule;
 import net.itsite.utils.StringsUtils;

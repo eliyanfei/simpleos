@@ -2,7 +2,7 @@ package net.prj.manager;
 
 import java.util.Map;
 
-import net.itniwo.commons.LangUtils;
+import net.itsite.utils.LangUtils;
 import net.simpleframework.core.ado.db.Column;
 import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.component.ComponentParameter;

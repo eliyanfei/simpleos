@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN"
+        "urlrewrite3.2.dtd">
+<urlrewrite>
+	<rule>
+		<from>/(bbs).html</from>
+		<to>/app/$1/$1.jsp</to>
+	</rule>
+	<rule>
+		<from>/bbs/tl.html</from>
+		<to>/app/bbs/bbs_tl.jsp</to>
+	</rule>
+	<rule>
+		<from>/bbs/tl/(\d+).html</from>
+		<to>/app/bbs/bbs_tl.jsp?forumId=$1</to>
+	</rule>
+	<rule>
+		<from>/bbs/(\d+)/(\d+).html</from>
+		<to>/app/bbs/bbs_pl.jsp?forumId=$1&amp;__topic_Id=$2</to>
+	</rule>
+	<rule>
+		<from>/bbs/user.html</from>
+		<to>/app/bbs/bbs_ul.jsp</to>
+	</rule>
+</urlrewrite>
+

@@ -4,7 +4,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.IDataObjectValue;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
@@ -75,7 +75,7 @@ public class DialogAction extends AbstractAjaxRequestHandle {
 						final StringBuffer buf = new StringBuffer();
 						buf.append("<div>");
 						buf.append("<div class='tit " + (dialogItem.isMe() ? "tome" : "toyou") + "'>");
-						buf.append(account.user().getText());
+						buf.append(account.user().getText()).append(" ");
 						buf.append(ConvertUtils.toDateString(dialogItem.getSentDate()));
 						buf.append("</div>");
 						buf.append("<div class='cnt'>");

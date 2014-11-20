@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.simpleframework.core.ALoggerAware;
 import net.simpleframework.organization.IUser;
 import net.simpleframework.util.HTTPUtils;

@@ -2,28 +2,11 @@
 <!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN"
         "urlrewrite3.2.dtd">
 <urlrewrite>
+	<!-- 数据库初始化界面 -->
 	<rule>
 		<from>/db.html</from>
 		<to>/db_config.jsp</to>
 	</rule>
-	<!-- docu -->
-	<rule>
-		<from>/docu.html</from>
-		<to>/app/docu/docu.jsp?pageItems=35</to>
-	</rule>
-	<rule>
-		<from>/mydocu.html</from>
-		<to>/app/docu/my/mydocu.jsp?pageItems=35</to>
-	</rule>
-	<rule>
-		<from>/docu/v/(\d+).html</from>
-		<to>/app/docu/docu_view.jsp?docuId=$1</to>
-	</rule>
-	<rule>
-		<from>/docu/(\d+).html</from>
-		<to>/app/docu/upload.jsp</to>
-	</rule>
-
 	<!-- app -->
 	<rule>
 		<from>/c/(.*).html</from>
@@ -33,69 +16,15 @@
 		<from>/(space|attention)/(\d+).html</from>
 		<to>/app/$1/$1.jsp?userid=$2</to>
 	</rule>
+	<!-- 前台基本页面配置 -->
 	<rule>
-		<from>/(index|myhome|my|space|news|bbs|blog|login|links|register|about|contact|mymessage|myfavorite).html</from>
+		<from>/(space|links|about|contact|mymessage|myfavorite).html</from>
 		<to>/app/$1/$1.jsp</to>
 	</rule>
-	<rule>
-		<from>/news/v/(\d+).html</from>
-		<to>/app/news/news_v.jsp?__news_Id=$1</to>
-	</rule>
-	<!-- blog -->
-	<rule>
-		<from>/blog/(\d+).html</from>
-		<to>/app/blog/blog_mb.jsp?userid=$1</to>
-	</rule>
-	<rule>
-		<from>/blog/p/(\d+).html</from>
-		<to>/app/blog/blog.jsp?pageNumber=$1&amp;p=true</to>
-	</rule>
-	<rule>
-		<from>/blog/v/(\d+).html</from>
-		<to>/app/blog/blog_v.jsp?__news_Id=$1</to>
-	</rule>
-	<!-- news -->
-	<rule>
-		<from>/news/(\d+).html</from>
-		<to>/app/news/news.jsp?catalog=$1</to>
-	</rule>
-	<rule>
-		<from>/news/p/(\d+).html</from>
-		<to>/app/news/news.jsp?pageNumber=$1&amp;p=true</to>
-	</rule>
-	<!-- bbs -->
-	<rule>
-		<from>/bbs/tl.html</from>
-		<to>/app/bbs/bbs_tl.jsp</to>
-	</rule>
-	<rule>
-		<from>/bbs/tl/(\d+).html</from>
-		<to>/app/bbs/bbs_tl.jsp?forumId=$1</to>
-	</rule>
-	<rule>
-		<from>/bbs/(\d+)/(\d+).html</from>
-		<to>/app/bbs/bbs_pl.jsp?forumId=$1&amp;__topic_Id=$2</to>
-	</rule>
-	<rule>
-		<from>/bbs/user.html</from>
-		<to>/app/bbs/bbs_ul.jsp</to>
-	</rule>
-	<rule>
-		<from>/manager/my.html</from>
-		<to>/simple/manager/my/my.jsp</to>
-	</rule>
-
+	<!-- 后台管理配置 -->
 	<rule>
 		<from>/manager/(function|site|company|remark|template|desktop|home|message|ad).html</from>
 		<to>/simple/$1/$1.jsp</to>
-	</rule>
-	<rule>
-		<from>/manager/userjob.html</from>
-		<to>/simple/manager/userjob.jsp</to>
-	</rule>
-	<rule>
-		<from>/manager/permission.html</from>
-		<to>/simple/manager/permission/permission.jsp</to>
 	</rule>
 	<rule>
 		<from>/manager/user.html</from>
@@ -113,53 +42,14 @@
 		<from>/manager/dict.html</from>
 		<to>/simple/manager/dict.jsp</to>
 	</rule>
-	<rule>
-		<from>/manager/constant.html</from>
-		<to>/simple/manager/constant.jsp</to>
-	</rule>
-	<!-- 出错的网址 -->
+	<!-- 找回密码 -->
 	<rule>
 		<from>/findpass.html</from>
 		<to>/simple/user/findpass.jsp</to>
 	</rule>
-	<!-- tags -->
-	<rule>
-		<from>/tags.html</from>
-		<to>/app/tag/tags.jsp</to>
-	</rule>
-	<!-- bbs -->
-	<!-- user -->
-	<rule>
-		<from>/(regist|openid).html</from>
-		<to>/simple/user/$1.jsp</to>
-	</rule>
-	<rule>
-		<from>/(space|attention|invite|square).html</from>
-		<to>/simple/my/$1.jsp</to>
-	</rule>
-	<rule>
-		<from>/(friends|friends_request|friends_search).html</from>
-		<to>/simple/my/f/$1.jsp</to>
-	</rule>
-	<rule>
-		<from>/(message|message_sys|message_comp|message_dialog).html</from>
-		<to>/simple/my/m/$1.jsp</to>
-	</rule>
-	<rule>
-		<from>/home/(\d+).html</from>
-		<to>/simple/my/home.jsp?tabId=$1</to>
-	</rule>
-	<rule>
-		<from>/space/(\d+).html</from>
-		<to>/simple/my/space.jsp?userid=$1</to>
-	</rule>
-	<rule>
-		<from>/attention/(\d+).html</from>
-		<to>/simple/my/attention.jsp?userid=$1</to>
-	</rule>
 	<rule>
 		<from>/morespace.html</from>
-		<to>/my/morespace.jsp</to>
+		<to>/app/space/morespace.jsp</to>
 	</rule>
 </urlrewrite>
 

@@ -1,6 +1,6 @@
 package net.prj.manager.datatemp;
 
-import net.a.ItSiteUtil;
+import net.itsite.ItSiteUtil;
 import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.IQueryEntitySet;
 

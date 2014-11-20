@@ -1,8 +1,10 @@
 package net.itsite.cache;
-
 /**
- * 缓存数据存储数据库结构类型
  * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:40:28 
+ * @Description: 缓存数据存储数据库结构类型
+ *
  */
 public enum ECacheType {
 	/**

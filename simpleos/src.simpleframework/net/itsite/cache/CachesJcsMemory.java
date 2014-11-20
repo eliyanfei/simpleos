@@ -12,6 +12,13 @@ import org.apache.jcs.JCS;
 import org.apache.jcs.access.exception.CacheException;
 import org.apache.jcs.engine.CompositeCacheAttributes;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午5:39:50 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class CachesJcsMemory extends ACachesJcsImpl {
 	public CachesJcsMemory() {
 	}

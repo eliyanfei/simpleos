@@ -1,7 +1,6 @@
 package net.prj.core.impl.model;
 
 import net.prj.core.impl.AbstractModelBean;
-import net.simpleframework.core.Version;
 
 /**
  * 登入
@@ -19,11 +18,6 @@ public class RegisterModelBean extends AbstractModelBean {
 	@Override
 	public String getTitle() {
 		return "注册";
-	}
-
-	@Override
-	public Version getVersion() {
-		return Version.valueOf("1.0.0");
 	}
 
 	@Override

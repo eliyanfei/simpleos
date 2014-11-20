@@ -7,8 +7,10 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 公共缓存
- * @author 李岩飞
+ * 
+ * @author 李岩飞 
+ * @date 2014年11月19日 下午4:58:58 
+ * @Description: 公共缓存
  *
  */
 public class ItSiteCache {

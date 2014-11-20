@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.a.ItSiteUtil"%>
+	pageEncoding="UTF-8"%><%@page import="net.itsite.ItSiteUtil"%>
 
 <%
 	ItSiteUtil.addMenuNav(request.getSession(), null, "字典管理", false);

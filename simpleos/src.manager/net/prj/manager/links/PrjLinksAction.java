@@ -2,8 +2,8 @@ package net.prj.manager.links;
 
 import java.util.Map;
 
-import net.a.ItSiteUtil;
-import net.itniwo.commons.LangUtils;
+import net.itsite.ItSiteUtil;
+import net.itsite.utils.LangUtils;
 import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxRequestHandle;

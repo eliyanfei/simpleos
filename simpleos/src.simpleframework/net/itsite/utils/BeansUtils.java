@@ -7,10 +7,11 @@ import org.apache.commons.beanutils.BeanUtils;
 
 /**
  * 
- * @Description��
- * @Company: ��������Ƽ����޹�˾
- * @author: ���ҷ�
- * @Time: Apr 1, 2011 4:16:40 PM
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
  */
 public class BeansUtils extends net.simpleframework.util.BeanUtils {
 

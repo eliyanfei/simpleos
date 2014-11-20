@@ -5,10 +5,10 @@
 		<column name="register" text="允许注册" default="true" />
 		<column name="mail" text="注册不需要激活" default="false" />
 		<column name="remark" text="评论不需要登入" default="false" />
-		<column name="mail_sentAddress" text="发送地址" default="itniwo@qq.com" />
-		<column name="mail_smtpServer" text="服务地址" default="smtp.exmail.qq.com" />
-		<column name="mail_smtpUsername" text="用户名" default="itniwo" />
-		<column name="mail_smtpPassword" text="密码" default="itniwo" />
+		<column name="mail_sentAddress" text="发送地址" default="demo@simpleos.net" />
+		<column name="mail_smtpServer" text="服务地址" default="smtp.exmail.com" />
+		<column name="mail_smtpUsername" text="用户名" default="demo" />
+		<column name="mail_smtpPassword" text="密码" default="demo" />
 	</columns>
 	<columns name="site">
 		<column name="url" text="站点URL" />

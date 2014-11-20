@@ -3,8 +3,8 @@
 	import="net.prj.manager.site.PrjSiteUtils"%><%@page
 	import="net.prj.manager.PrjMgrUtils"%><%@page import="java.util.Map"%><%@page
 	import="java.util.HashMap"%><%@page
-	import="net.itniwo.commons.StringsUtils"%><%@page
-	import="net.a.ItSiteUtil"%><%@page
+	import="net.itsite.utils.StringsUtils"%><%@page
+	import="net.itsite.ItSiteUtil"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
 	import="net.prj.manager.links.PrjLinksUtils"%>
 
@@ -27,8 +27,8 @@
 	<div class="webFoot">
 		<div class="foot middle">
 			<div class="footLeft">
-				<span><a target="_blank" href="/about.html">关于</a> </span>
-				<span><a target="_blank" href="/contact.html">联系我们</a> </span>
+				<span><a target="_blank" style="color: #98c3e4;" href="/about.html">关于</a> </span>
+				<span><a target="_blank" style="color: #98c3e4;"  href="/contact.html">联系我们</a> </span>
 			</div>
 			<div class="footRight">
 				Powered by

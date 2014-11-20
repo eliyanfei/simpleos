@@ -1,11 +1,12 @@
+<%@page import="net.itsite.utils.StringsUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
 	import="net.simpleframework.organization.account.IAccount"%><%@page
 	import="net.simpleframework.organization.account.AccountSession"%><%@page
 	import="net.simpleframework.organization.OrgUtils"%><%@page
-	import="net.a.ItSiteUtil"%><%@page import="java.util.HashMap"%><%@page
-	import="java.util.Map"%><%@page import="net.prj.manager.PrjMgrUtils"%><%@page import="net.itniwo.commons.StringsUtils"%>
+	import="net.itsite.ItSiteUtil"%><%@page import="java.util.HashMap"%><%@page
+	import="java.util.Map"%><%@page import="net.prj.manager.PrjMgrUtils"%>
 
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);

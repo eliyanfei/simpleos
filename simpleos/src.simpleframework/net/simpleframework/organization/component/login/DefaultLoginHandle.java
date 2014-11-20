@@ -7,12 +7,12 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import net.a.ItSiteUtil;
-import net.itniwo.commons.StringsUtils;
 import net.itsite.ItSiteCache;
+import net.itsite.ItSiteUtil;
 import net.itsite.ItSiteOrganizationApplicationModule.AccountExt;
 import net.itsite.permission.PlatformUtis;
 import net.itsite.utils.MD5;
+import net.itsite.utils.StringsUtils;
 import net.itsite.utils.UUIDHexGenerator;
 import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.applets.notification.MailMessageNotification;
@@ -32,7 +32,6 @@ import net.simpleframework.util.LocaleI18n;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.util.script.ScriptEvalUtils;
 import net.simpleframework.web.LastUrlFilterListener;
-import net.simpleframework.web.page.PageUtils;
 import net.simpleframework.web.page.SkinUtils;
 import net.simpleframework.web.page.component.AbstractComponentHandle;
 import net.simpleframework.web.page.component.ComponentParameter;
@@ -44,8 +43,7 @@ import net.simpleframework.web.page.component.ComponentParameter;
  *         http://code.google.com/p/simpleframework/
  *         http://www.simpleframework.net
  */
-public class DefaultLoginHandle extends AbstractComponentHandle implements
-		ILoginHandle {
+public class DefaultLoginHandle extends AbstractComponentHandle implements ILoginHandle {
 	// TODO 修改密码
 	@Override
 	public Map<String, Object> login(final ComponentParameter compParameter) {
@@ -64,61 +62,45 @@ public class DefaultLoginHandle extends AbstractComponentHandle implements
 			final IUser user = accountObject.user();
 			if (user != null && user.getName().equals(accountName)) {
 				json.put("ok", Boolean.TRUE);
-				json.put("account",
-						LocaleI18n.getMessage("DefaultLoginHandle.2"));
+				json.put("account", LocaleI18n.getMessage("DefaultLoginHandle.2"));
 				return json;
 			}
 		}
 
 		EAccountType accountType = null;
 		try {
-			accountType = EAccountType.valueOf(request
-					.getParameter("_accountType"));
+			accountType = EAccountType.valueOf(request.getParameter("_accountType"));
 		} catch (final Exception e) {
 		}
-		final LoginObject loginObject = new LoginObject(accountName,
-				accountType);
+		final LoginObject loginObject = new LoginObject(accountName, accountType);
 		final String passwordName = request.getParameter("_passwordName");
 		beforeLogin(compParameter, loginObject, passwordName);
 
 		try {
 			accountObject = loginObject.getAccount();
 			if (accountObject != null) {
-				if (!accountObject.getPassword().equals(
-						MD5.getHashString(passwordName))) {
-					json.put("password",
-							LocaleI18n.getMessage("DefaultLoginHandle.0"));
+				if (!accountObject.getPassword().equals(MD5.getHashString(passwordName))) {
+					json.put("password", LocaleI18n.getMessage("DefaultLoginHandle.0"));
 				} else {
 					final EAccountStatus status = accountObject.getStatus();
 					if (status == EAccountStatus.normal) {
 						afterLogin(compParameter, loginObject);
-						final String lastUrl = (String) httpSession
-								.getAttribute(LastUrlFilterListener.SESSION_LAST_URL);
+						final String lastUrl = (String) httpSession.getAttribute(LastUrlFilterListener.SESSION_LAST_URL);
 						if (StringUtils.hasText(lastUrl)) {
 							json.put("url", lastUrl);
-							httpSession
-									.removeAttribute(LastUrlFilterListener.SESSION_LAST_URL);
+							httpSession.removeAttribute(LastUrlFilterListener.SESSION_LAST_URL);
 						} else {
-							json.put("url", compParameter
-									.wrapContextPath(loginBean
-											.getLoginForward()));
+							json.put("url", compParameter.wrapContextPath(loginBean.getLoginForward()));
 						}
 						json.put("ok", Boolean.TRUE);
 					} else if (status == EAccountStatus.locked) {
-						json.put("status",
-								LocaleI18n.getMessage("DefaultLoginHandle.3"));
+						json.put("status", LocaleI18n.getMessage("DefaultLoginHandle.3"));
 					} else if (status == EAccountStatus.register) {
-						json.put("status",
-								LocaleI18n
-										.getMessage("DefaultLoginHandle.4",
-												"<a accountId=\""
-														+ accountObject.getId()
-														+ "\">", "</a>"));
+						json.put("status", LocaleI18n.getMessage("DefaultLoginHandle.4", "<a accountId=\"" + accountObject.getId() + "\">", "</a>"));
 					}
 				}
 			} else {
-				json.put("account",
-						LocaleI18n.getMessage("DefaultLoginHandle.1"));
+				json.put("account", LocaleI18n.getMessage("DefaultLoginHandle.1"));
 			}
 		} catch (final OrganizationException e) {
 			json.put("account", e.getMessage());
@@ -127,19 +109,16 @@ public class DefaultLoginHandle extends AbstractComponentHandle implements
 	}
 
 	@Override
-	public void beforeLogin(final ComponentParameter compParameter,
-			final LoginObject loginObject, final String password) {
+	public void beforeLogin(final ComponentParameter compParameter, final LoginObject loginObject, final String password) {
 	}
 
 	@Override
-	public void afterLogin(final ComponentParameter compParameter,
-			final LoginObject loginObject) {
+	public void afterLogin(final ComponentParameter compParameter, final LoginObject loginObject) {
 		AccountSession.setLogin(compParameter.request, loginObject);
 		final AccountExt accountExt = (AccountExt) loginObject.getAccount();
 		if (accountExt != null) {
 			PlatformUtis.getPaltformMenusByUser(accountExt.user(), true);
-			SkinUtils.setSessionSkin(compParameter.getSession(),
-					accountExt.getSkin());
+			SkinUtils.setSessionSkin(compParameter.getSession(), accountExt.getSkin());
 		}
 	}
 
@@ -149,22 +128,19 @@ public class DefaultLoginHandle extends AbstractComponentHandle implements
 		mailMessage.setHtmlContent(true);
 		mailMessage.getTo().add(user);
 		Map<String, String> map = PrjMgrUtils.loadCustom("site");
-		mailMessage.setSubject(LocaleI18n.getMessage("LoginAction.2",
-				StringsUtils.trimNull(map.get("site_name"), "")));
+		mailMessage.setSubject(LocaleI18n.getMessage("LoginAction.2", StringsUtils.trimNull(map.get("site_name"), "")));
 
 		final Map<String, Object> variable = new HashMap<String, Object>();
 		variable.put("usertext", user);
+		variable.put("sitename", ItSiteUtil.title);
 		variable.put("username", user.getName());
 		final String id = UUIDHexGenerator.generator();
 		variable.put("url", ItSiteUtil.url + "/findpass.html?sid=" + id);
 		try {
-			mailMessage
-					.setTextBody(ScriptEvalUtils.replaceExpr(
-							variable,
-							IoUtils.getStringFromInputStream(DefaultLoginHandle.class
-									.getClassLoader()
-									.getResourceAsStream(
-											"net/simpleframework/organization/component/login/get_pwd.html"))));
+			mailMessage.setTextBody(ScriptEvalUtils.replaceExpr(
+					variable,
+					IoUtils.getStringFromInputStream(DefaultLoginHandle.class.getClassLoader().getResourceAsStream(
+							"net/simpleframework/organization/component/login/get_pwd.html"))));
 			NotificationUtils.sendMessage(mailMessage);
 			ItSiteCache.findPassword(id, user.getEmail());
 		} catch (IOException e) {
@@ -174,7 +150,6 @@ public class DefaultLoginHandle extends AbstractComponentHandle implements
 
 	@Override
 	public void mailRegistActivation(final IAccount account) {
-		UserRegisterUtils.sentMailActivation(account,
-				DefaultUserRegisterHandle.class, "account_active.html");
+		UserRegisterUtils.sentMailActivation(account, DefaultUserRegisterHandle.class, "account_active.html");
 	}
 }

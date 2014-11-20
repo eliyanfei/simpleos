@@ -9,7 +9,7 @@
 	import="net.itsite.ad.AdUtils"%><%@page import="net.itsite.ad.EAd"%><%@page
 	import="net.simpleframework.content.component.newspager.INewsPagerHandle"%><%@page
 	import="net.simpleframework.content.blog.Blog"%><%@page
-	import="net.a.ItSiteUtil"%>
+	import="net.itsite.ItSiteUtil"%>
 
 <%
 	final ComponentParameter nComponentParameter = new ComponentParameter(request, response, null);

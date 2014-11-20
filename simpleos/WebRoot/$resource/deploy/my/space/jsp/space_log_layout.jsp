@@ -10,7 +10,7 @@
 <%@ page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@ page import="net.simpleframework.util.DateUtils"%><%@page
 	import="net.simpleframework.content.ContentUtils"%>
-<%@page import="net.a.ItSiteUtil"%><%@page
+<%@page import="net.itsite.ItSiteUtil"%><%@page
 	import="net.simpleframework.web.page.component.ui.dictionary.SmileyUtils"%>
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);

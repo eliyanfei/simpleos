@@ -37,8 +37,12 @@ import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 /**
- * @author QianFei.Xu;E-Mail:qianfei.xu@rosense.cn
- * @time Dec 8, 2009 10:28:10 AM
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
  */
 public final class IOUtils {
 	public static final byte[] NBYTE = new byte[0];
@@ -98,7 +102,7 @@ public final class IOUtils {
 			}
 		}
 	}
-	
+
 	/**
 	 * 此方法用来从给定的基本配置路径下，构建给定的配置文件名的URI路径, 默认使用4级子目录
 	 * 
@@ -727,9 +731,8 @@ public final class IOUtils {
 	 */
 	public static final File unGZip(final File gzipFile) {
 		try {
-			return unGZip(new GZIPInputStream(new BufferedInputStream(new FileInputStream(gzipFile))), new File(gzipFile.getParentFile(), gzipFile
-					.getName()
-					+ ".unGzip"));
+			return unGZip(new GZIPInputStream(new BufferedInputStream(new FileInputStream(gzipFile))),
+					new File(gzipFile.getParentFile(), gzipFile.getName() + ".unGzip"));
 		} catch (final IOException ioex) {
 			ioex.printStackTrace();// for debug
 			return null;

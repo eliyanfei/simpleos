@@ -7,6 +7,14 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午12:00:44 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class PinyinUtil {
 
 	/**
@@ -311,7 +319,7 @@ public class PinyinUtil {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(PinyinUtil.hanziToPinyin("我的心肝爱上", false,true));
+		System.out.println(PinyinUtil.hanziToPinyin("我的心肝爱上", false, true));
 		System.out.println(getHeadByString("")[0]);
 
 	}
