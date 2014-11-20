@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="idTaskExecutor" class="net.simpleframework.core.ApplicationTaskExecutor">
+	</bean>
+	<bean id="idOrgInitializer" class="net.simpleframework.organization.OrgInitializer">
+		<property name="sync" value="true" />
+		<property name="organizationApplicationModule">
+			<bean class="net.itsite.ItSiteOrganizationApplicationModule">
+				<property name="loginUrl" value="/login.html"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="idContentInitializer" class="net.simpleframework.content.ContentInitializer">
+		<property name="sync" value="true" />
+		<property name="bbsApplicationModule">
+			<bean class="net.itsite.ItSiteBbsApplicationModule">
+				<property name="applicationUrl" value="/bbs.html" />
+				<property name="pagerHandleClass" value="net.itsite.ItSiteBbsPagerHandle" />
+			</bean>
+		</property>
+		<property name="blogApplicationModule">
+			<bean class="net.itsite.ItSiteBlogApplicationModule">
+				<property name="applicationUrl" value="/blog.html" />
+			</bean>
+		</property>
+		<property name="newsApplicationModule" ref="idSiteNewsApplicationModule" />
+	</bean>
+
+	<bean id="idAppletsInitializer" class="net.simpleframework.applets.AppletsInitializer">
+		<property name="sync" value="true" />
+		<property name="openIDApplicationModule">
+			<bean class="net.itsite.ItSiteOpenIDApplicationModule"></bean>
+		</property>
+		<property name="attentionApplicationModule">
+			<bean
+				class="net.simpleframework.applets.attention.DefaultAttentionApplicationModule">
+				<property name="applicationUrl" value="/attention.html" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="idMyInitializer" class="net.simpleframework.my.MyInitializer">
+		<property name="sync" value="true" />
+		<property name="spaceApplicationModule">
+			<bean class="net.itsite.ItSiteSpaceApplicationModule">
+				<property name="applicationUrl" value="/space.html" />
+			</bean>
+		</property>
+		<property name="homeApplicationModule">
+			<bean class="net.itsite.ItSiteHomeApplicationModule">
+				<property name="applicationUrl" value="/home.html" />
+			</bean>
+		</property>
+		<property name="fileApplicationModule">
+			<bean class="net.simpleframework.my.file.DefaultFileApplicationModule">
+				<property name="applicationUrl" value="/file.html" />
+			</bean>
+		</property>
+		<property name="friendsApplicationModule">
+			<bean
+				class="net.simpleframework.my.friends.DefaultFriendsApplicationModule">
+				<property name="applicationUrl" value="/friends.html" />
+				<property name="friendsRequestUrl" value="/friends_request.html" />
+				<property name="friendsSearchUrl" value="/friends_search.html" />
+			</bean>
+		</property>
+		<property name="messageApplicationModule">
+			<bean
+				class="net.simpleframework.my.message.DefaultMessageApplicationModule">
+				<property name="applicationUrl" value="/message.html?box=r" />
+				<property name="systemMessageUrl" value="/message_sys.html" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="idSysManagerInitializer" class="net.simpleframework.sysmgr.SysManagerInitializer">
+		<property name="sync" value="true" />
+	</bean>
+
+	<bean id="idItSiteInitializer" class="net.itsite.ItSiteInitializer">
+		<property name="sync" value="true" />
+	</bean>
+
+	<bean id="idApplicationConfig" class="net.simpleframework.web.WebApplicationConfig">
+		<property name="initializerList">
+			<list>
+				<ref local="idSysManagerInitializer" />
+				<ref local="idOrgInitializer" />
+				<ref local="idAppletsInitializer" />
+				<ref local="idMyInitializer" />
+				<ref local="idContentInitializer" />
+				<ref local="idItSiteInitializer" />
+			</list>
+		</property>
+
+		<property name="charset" value="utf-8"></property>
+		<property name="datePattern" value="yyyy-MM-dd HH:mm" />
+
+	</bean>
+	<!-- Application Module -->
+	<bean id="idSiteNewsApplicationModule" class="net.itsite.ItSiteNewsApplicationModule">
+		<property name="applicationUrl" value="/news.html" />
+		<property name="newsCatalogs">
+			<list>
+				<bean class="net.simpleframework.content.component.newspager.NewsCatalog">
+					<property name="id">
+						<bean class="net.simpleframework.core.id.IntegerID">
+							<constructor-arg value="0" />
+						</bean>
+					</property>
+					<property name="text" value="综合资讯" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+</beans>
