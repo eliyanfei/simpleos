@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.itsite.document.docu.DocuBean"%><%@page
-	import="net.itsite.document.docu.DocuUtils"%><%@page
+	import="net.itsite.docu.DocuBean"%><%@page
+	import="net.itsite.docu.DocuUtils"%><%@page
 	import="net.simpleframework.organization.IUser"%><%@page
 	import="net.simpleframework.content.ContentUtils"%><%@page
 	import="net.simpleframework.util.ConvertUtils"%><%@page
 	import="net.simpleframework.util.IoUtils"%><%@page
 	import="net.simpleframework.util.StringUtils"%><%@page
 	import="net.simpleframework.util.HTMLBuilder"%><%@page
-	import="net.itsite.document.docu.EDocuFunction"%><%@page
+	import="net.itsite.docu.EDocuFunction"%><%@page
 	import="net.itsite.ItSiteUtil"%>
 
 <%

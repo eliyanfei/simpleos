@@ -1,7 +1,7 @@
 package net.simpleframework.content.component.remark;
 
-import net.itsite.document.docu.DocuRemark;
-import net.itsite.document.docu.DocuUtils;
+import net.itsite.docu.DocuRemark;
+import net.itsite.docu.DocuUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.ado.IDataObjectQuery;

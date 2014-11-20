@@ -4,31 +4,16 @@
 	<scriptEval>single</scriptEval>
 	<importPage>
 		<value>menu.xml</value>
-		<value>main.xml</value>
+		<value>/frame/template/main.xml</value>
 	</importPage>
 	<importJavascript>
 		<value>itsite.js</value>
-		<value>t.js</value>
 	</importJavascript>
 	<jobView>sys_manager</jobView>
 	<handleClass>net.itsite.ItSitePageHandle</handleClass>
 	<components>
 		<ajaxRequest name="deleteMessageNotificationAction"
 			handleClass="net.itsite.ItSiteAjaxHandle" handleMethod="deleteMessageNotification">
-		</ajaxRequest>
-		<ajaxRequest name="doRssAct">
-			<urlForward>/app/rss/rss.jsp</urlForward>
-		</ajaxRequest>
-		<ajaxRequest name="doRss" handleMethod="doRss"
-			handleClass="net.itsite.ItSiteAjaxHandle">
-			<jsCompleteCallback>
-				<![CDATA[
-					$Actions.loc('/rss.html?rssId='+json['rssId']); 
-				]]>
-			</jsCompleteCallback>
-		</ajaxRequest>
-		<ajaxRequest name="tipAct" updateContainerId="tip_id">
-			<urlForward>tip.jsp</urlForward>
 		</ajaxRequest>
 	</components>
 </page>

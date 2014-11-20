@@ -8,16 +8,6 @@ package net.prj.core.impl.frame;
 public abstract class AbstractTemplateBean implements ITemplateBean {
 
 	@Override
-	public boolean isFixedHeader() {
-		return false;
-	}
-
-	@Override
-	public boolean isFixedFooter() {
-		return false;
-	}
-
-	@Override
 	public boolean isFullScreen() {
 		return false;
 	}

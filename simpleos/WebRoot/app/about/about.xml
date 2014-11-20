@@ -2,11 +2,9 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
 	<importPage>
 		<value>/simple/desktop/desktop_index_c.xml</value>
 	</importPage>
 	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
-	<components>
-	</components>
+	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
 </page>

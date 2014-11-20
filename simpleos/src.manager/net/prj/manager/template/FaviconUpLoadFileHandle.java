@@ -30,7 +30,7 @@ public class FaviconUpLoadFileHandle extends AbstractSwfUploadHandle {
 			InputStream in = null;
 			OutputStream out = null;
 			try {
-				String path = compParameter.request.getRealPath("/simple/main/image");
+				String path = compParameter.request.getRealPath("/default/images");
 				File file = new File(path);
 				file.mkdirs();
 				String fileName = StringsUtils.u(path + "\\favicon.png");
@@ -38,7 +38,7 @@ public class FaviconUpLoadFileHandle extends AbstractSwfUploadHandle {
 				out = new FileOutputStream(fileName);
 				IOUtils.copyStream(in, out);
 				json.put("rs", "true");
-				json.put("src", compParameter.getContextPath() + "/simple/main/image/favicon.png?v=" + UID.asString());
+				json.put("src", compParameter.getContextPath() + "/default/images/favicon.png?v=" + UID.asString());
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {

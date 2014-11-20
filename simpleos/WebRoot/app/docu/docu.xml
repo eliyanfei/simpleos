@@ -13,9 +13,9 @@
 	<jobView>${net.simpleframework.organization.IJob.sj_anonymous}</jobView>
 	<components>
 		<tree name="docuTreeAct" containerId="docu_tree"
-			handleClass="net.itsite.document.docu.DocuCatalogTreeHandle"></tree>
+			handleClass="net.itsite.docu.DocuCatalogTreeHandle"></tree>
 		<ajaxRequest name="doUploadAct"
-			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="doUpload">
+			handleClass="net.itsite.docu.DocuAjaxHandle" handleMethod="doUpload">
 			<jsCompleteCallback>
 				<![CDATA[
 					$Actions.loc('/docu/upload.html');
@@ -26,10 +26,10 @@
 		<pager name="documentPaperAct" containerId="documentDivId"
 			pagerBarLayout="bottom" pageItems="49" showEditPageItems="false"
 			noResultDesc="no document" dataPath="docu_data.jsp"
-			handleClass="net.itsite.document.docu.DocuPaperHandle">
+			handleClass="net.itsite.docu.DocuPaperHandle">
 		</pager>
 		<ajaxRequest name="docuAttentionAct"
-			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="attention">
+			handleClass="net.itsite.docu.DocuAjaxHandle" handleMethod="attention">
 			<jsCompleteCallback>
 				<![CDATA[
 					$IT.R('documentPaperAct');
@@ -37,7 +37,7 @@
 			</jsCompleteCallback>
 		</ajaxRequest>
 		<ajaxRequest name="docuRecommendedAct"
-			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuRecommended">
+			handleClass="net.itsite.docu.DocuAjaxHandle" handleMethod="docuRecommended">
 			<jsCompleteCallback>
 				<![CDATA[
 					$IT.R('documentPaperAct');

@@ -3,8 +3,8 @@ package net.simpleframework.content.component.remark;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.document.docu.DocuRemark;
-import net.itsite.document.docu.DocuUtils;
+import net.itsite.docu.DocuRemark;
+import net.itsite.docu.DocuUtils;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.DefaultPageHandle;
 import net.simpleframework.web.page.PageParameter;

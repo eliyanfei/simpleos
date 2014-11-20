@@ -4,7 +4,6 @@
 	import="net.itsite.ItSiteUtil"%>
 <head>
 	<meta name="keywords" content="" />
-	<title>#(Itsite.0)</title>
 	<style type="text/css">
 #t_main {
 	margin: 0px 0px 10px 0px;

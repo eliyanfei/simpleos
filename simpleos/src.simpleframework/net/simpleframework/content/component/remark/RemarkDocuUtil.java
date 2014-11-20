@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import net.itsite.document.docu.DocuBean;
-import net.itsite.document.docu.DocuRemark;
-import net.itsite.document.docu.DocuUtils;
+import net.itsite.docu.DocuBean;
+import net.itsite.docu.DocuRemark;
+import net.itsite.docu.DocuUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.ado.IDataObjectQuery;

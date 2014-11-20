@@ -14,7 +14,7 @@
 		</window>
 
 		<ajaxRequest name="docuReBuildStatData"
-			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="statRebuild"
+			handleClass="net.itsite.docu.DocuAjaxHandle" handleMethod="statRebuild"
 			confirmMessage="#(manager_tools.1)">
 			<jsCompleteCallback>
 				<![CDATA[
@@ -24,7 +24,7 @@
 			</jsCompleteCallback>
 		</ajaxRequest>
 		<ajaxRequest name="docuIndexRebuild"
-			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="indexRebuild"
+			handleClass="net.itsite.docu.DocuAjaxHandle" handleMethod="indexRebuild"
 			confirmMessage="#(manager_tools.5)">
 			<jsCompleteCallback>
 				if (json["info"])
@@ -33,7 +33,7 @@
 		</ajaxRequest>
 
 		<ajaxRequest name="docuPathAct"
-			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuPath"
+			handleClass="net.itsite.docu.DocuAjaxHandle" handleMethod="docuPath"
 			confirmMessage="#(Docu.mgr.6)">
 			<jsCompleteCallback>
 				<![CDATA[

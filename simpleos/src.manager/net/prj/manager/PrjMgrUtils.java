@@ -1,8 +1,6 @@
 package net.prj.manager;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 import net.itsite.ItSiteUtil;
 import net.itsite.i.IItSiteApplicationModule;
@@ -37,6 +35,7 @@ public class PrjMgrUtils {
 			String key1 = key;
 			PrjColumn col = columns.getColumnMap().get(key1);
 			for (String id : ids.split(",")) {
+				id = id.split("=")[0];
 				if (ids.split(",").length != 1) {
 					key1 = key + "_" + id;
 				}
@@ -54,28 +53,12 @@ public class PrjMgrUtils {
 				}
 				if ("sys".equals(type)) {
 					sysMail = true;
-					ItSiteUtil.attrMap.put(key1, StringsUtils.trimNull(value, ""));
 				}
+				ItSiteUtil.attrMap.put(type + "." + key1, StringsUtils.trimNull(value, ""));
 				customBean.setValue(StringsUtils.trimNull(value, ""));
 				appModule.doUpdate(customBean);
 			}
 		}
-	}
-
-	public static Map<String, String> loadCustom(final String type) {
-		final Map<String, String> map = new HashMap<String, String>();
-		try {
-			IQueryEntitySet<PrjCustomBean> qs = appModule.queryBean("type='" + type + "'", PrjCustomBean.class);
-			PrjCustomBean customBean = null;
-			while ((customBean = qs.next()) != null) {
-				map.put(customBean.getName(), customBean.getValue());
-				if ("sys".equals(type)) {
-					ItSiteUtil.attrMap.put(customBean.getName(), customBean.getValue());
-				}
-			}
-		} catch (Exception e) {
-		}
-		return map;
 	}
 
 	public static void initDesktopDocument(final PageParameter pageParameter) {

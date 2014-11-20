@@ -8,13 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import net.itsite.ItSiteCache;
-import net.itsite.ItSiteUtil;
 import net.itsite.ItSiteOrganizationApplicationModule.AccountExt;
+import net.itsite.ItSiteUtil;
 import net.itsite.permission.PlatformUtis;
 import net.itsite.utils.MD5;
 import net.itsite.utils.StringsUtils;
 import net.itsite.utils.UUIDHexGenerator;
-import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.applets.notification.MailMessageNotification;
 import net.simpleframework.applets.notification.NotificationUtils;
 import net.simpleframework.core.ApplicationModuleException;
@@ -127,8 +126,7 @@ public class DefaultLoginHandle extends AbstractComponentHandle implements ILogi
 		final MailMessageNotification mailMessage = new MailMessageNotification();
 		mailMessage.setHtmlContent(true);
 		mailMessage.getTo().add(user);
-		Map<String, String> map = PrjMgrUtils.loadCustom("site");
-		mailMessage.setSubject(LocaleI18n.getMessage("LoginAction.2", StringsUtils.trimNull(map.get("site_name"), "")));
+		mailMessage.setSubject(LocaleI18n.getMessage("LoginAction.2", StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), "")));
 
 		final Map<String, Object> variable = new HashMap<String, Object>();
 		variable.put("usertext", user);

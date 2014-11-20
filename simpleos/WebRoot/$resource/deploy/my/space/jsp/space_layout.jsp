@@ -99,7 +99,7 @@
 			<tr>
 				<td valign="top" width="50">
 					<img class="photo_icon" style="width: 36px; height: 36px;"
-						src="<%=OrgUtils.getPhotoSRC(request, user == null ? admin : user, 64, 64)%>">
+						src="<%=OrgUtils.getPhotoSRC(request, user, 64, 64)%>">
 				</td>
 				<td valign="top">
 					<table style="width: 100%;" cellpadding="0" cellspacing="0">

@@ -5,8 +5,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.core.ado.IDataObjectQuery"%><%@page
-	import="net.itsite.document.docu.DocuUtils"%><%@page
-	import="net.itsite.document.docu.DocuBean"%><%@page
+	import="net.itsite.docu.DocuUtils"%><%@page
+	import="net.itsite.docu.DocuBean"%><%@page
 	import="net.simpleframework.util.DateUtils"%>
 
 <%

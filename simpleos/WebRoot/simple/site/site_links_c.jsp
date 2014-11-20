@@ -1,3 +1,4 @@
+<%@page import="net.itsite.ItSiteUtil"%>
 <%@page import="net.simpleframework.sysmgr.dict.SysDict"%>
 <%@page import="net.simpleframework.sysmgr.dict.DictUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -7,8 +8,8 @@
 	import="net.itsite.utils.StringsUtils"%>
 
 <%
-	Map<String, String> map = PrjMgrUtils.loadCustom("links");
-	String name = StringsUtils.trimNull(map.get("links_linksType"), "sys");
+	Map<String, String> map = ItSiteUtil.attrMap;
+	String name = StringsUtils.trimNull(map.get("links.links_linksType"), "sys");
 	SysDict sysDict= DictUtils.getSysDictByName("links");
 	if(sysDict==null){
 		sysDict = new SysDict();

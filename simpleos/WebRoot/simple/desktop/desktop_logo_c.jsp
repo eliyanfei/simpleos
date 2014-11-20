@@ -9,7 +9,7 @@
 		<tr>
 			<td nowrap="nowrap">
 				<img alt="logo" id="template_logoId"
-					src="/simple/main/image/logo.png?v=<%=id%>">
+					src="/default/images/logo.png?v=<%=id%>">
 			</td>
 			<td id="template_logoUploadId" width="100%">
 			</td>

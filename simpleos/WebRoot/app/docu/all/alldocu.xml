@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<handleClass>net.itsite.document.docu.DocuPageLoad</handleClass>
+	<handleClass>net.itsite.docu.DocuPageLoad</handleClass>
 	<components>
 		<ajaxRequest name="allDocuTableAct" updateContainerId="alldocuId"
 			runImmediately="true">

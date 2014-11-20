@@ -44,7 +44,7 @@
 
 				<a href="javascript:;" href="/login.html" hidefocus="true">#(Template.3)</a>
 				<%
-					if ("true".equals(ItSiteUtil.attrMap.get("sys_register"))) {
+					if ("true".equals(ItSiteUtil.attrMap.get("sys.sys_register"))) {
 				%>
 				<a href="javascript:;" href="/register.html" hidefocus="true">注册</a>
 				<%

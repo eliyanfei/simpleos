@@ -2,6 +2,7 @@
 <config>
 	<columns name="sys">
 		<column name="language" text="语言设置" default="zh,zh-tw,en," mul="true" />
+		<column name="testing" text="是否测试系统" default="false" />
 		<column name="register" text="允许注册" default="true" />
 		<column name="mail" text="注册不需要激活" default="false" />
 		<column name="remark" text="评论不需要登入" default="false" />
@@ -20,9 +21,10 @@
 		<column name="icp" text="备案号码" />
 	</columns>
 	<columns name="links">
+		<column name="linksType" text="友链类型" />
 		<column name="homeLinks" text="首页友链" />
 	</columns>
-	<columns name="open" ids="qq,sinat,qqt,google,yahoo">
+	<columns name="open" ids="qq=QQ,sinat=新浪微博,qqt=腾讯微博,google=Google">
 		<column name="appKey" text="App Key" />
 		<column name="appSecret" text="App Secret" />
 		<column name="source" text="来源" />

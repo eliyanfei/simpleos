@@ -61,15 +61,12 @@ public abstract class AccountSession extends ALoggerAware {
 	}
 
 	public static void init(final ServletContext servletContext) {
-		final PageEventAdapter adapter = PageEventAdapter
-				.getInstance(servletContext);
+		final PageEventAdapter adapter = PageEventAdapter.getInstance(servletContext);
 		adapter.addListener(new HttpSessionListener() {
 			@Override
 			public void sessionDestroyed(final HttpSessionEvent event) {
 				final HttpSession httpSession = event.getSession();
-				_logout(getLogin(httpSession),
-						Math.max(httpSession.getCreationTime(),
-								httpSession.getLastAccessedTime()));
+				_logout(getLogin(httpSession), Math.max(httpSession.getCreationTime(), httpSession.getLastAccessedTime()));
 			}
 
 			@Override
@@ -95,20 +92,17 @@ public abstract class AccountSession extends ALoggerAware {
 		return getLogin(httpSession) != null;
 	}
 
-	public static boolean isAccount(final HttpSession httpSession,
-			final Object accountId) {
+	public static boolean isAccount(final HttpSession httpSession, final Object accountId) {
 		final IAccount account = getLogin(httpSession);
 		if (account != null) {
 			final ID id = account.getId();
-			return accountId instanceof ID ? id.equals(accountId) : id
-					.getValue().equals(accountId);
+			return accountId instanceof ID ? id.equals(accountId) : id.getValue().equals(accountId);
 		}
 		return false;
 	}
 
 	public static LoginObject getLoginObject(final HttpSession httpSession) {
-		final LoginObject loginObject = (LoginObject) httpSession
-				.getAttribute(LOGIN_ACCOUNT);
+		final LoginObject loginObject = (LoginObject) httpSession.getAttribute(LOGIN_ACCOUNT);
 		if (loginObject != null) {
 			return loginObject;
 		}
@@ -116,13 +110,11 @@ public abstract class AccountSession extends ALoggerAware {
 	}
 
 	public static IAccount getLogin(final HttpSession httpSession) {
-		final LoginObject loginObject = (LoginObject) httpSession
-				.getAttribute(LOGIN_ACCOUNT);
+		final LoginObject loginObject = (LoginObject) httpSession.getAttribute(LOGIN_ACCOUNT);
 		try {
 			if (loginObject != null) {
 				final IAccount account = loginObject.getAccount();
-				if (account != null && account.isLogin()
-						&& account.user() != null) {
+				if (account != null && account.isLogin() && account.user() != null) {
 					return account;
 				}
 			}
@@ -131,20 +123,18 @@ public abstract class AccountSession extends ALoggerAware {
 		return null;
 	}
 
-	public static void setLogin(final HttpServletRequest request,
-			final LoginObject loginObject) {
+	public static void setLogin(final HttpServletRequest request, final LoginObject loginObject) {
 		if (loginObject == null) {
 			return;
 		}
-		Map<String, String> map = PrjMgrUtils.loadCustom("sys");
-		String skin = map.get("sys_skin");
+		String skin = ItSiteUtil.attrMap.get("sys.sys_skin");
 		if (StringsUtils.isNotBlank1(skin)) {
 			String[] ss = skin.split(",");
 			if (ss.length == 1) {
 				ItSiteUtil.setSkin(ss[0], loginObject.getAccount(), request);
 			}
 		}
-		String language = map.get("sys_language");
+		String language = ItSiteUtil.attrMap.get("sys.sys_language");
 		if (StringsUtils.isNotBlank1(language)) {
 			String[] ls = language.split(",");
 			if (ls.length == 1) {
@@ -179,67 +169,50 @@ public abstract class AccountSession extends ALoggerAware {
 		HTTPUtils.addCookie(requestResponse.response, "_account_pwd", null);
 	}
 
-	private static void _logout(final IAccount account,
-			final long lastAccessedTime) {
+	private static void _logout(final IAccount account, final long lastAccessedTime) {
 		if (account == null) {
 			return;
 		}
-		final long millis = Math.min(
-				Math.max(lastAccessedTime
-						- account.getLastLoginDate().getTime(), 0),
-				1000 * 60 * 30);
+		final long millis = Math.min(Math.max(lastAccessedTime - account.getLastLoginDate().getTime(), 0), 1000 * 60 * 30);
 		account.setOnlineMillis(account.getOnlineMillis() + millis);
 		account.setLogin(false);
 		account.setLastLoginDate(new Date());
 		OrgUtils.am().update(c1, account);
 	}
 
-	private static String[] c1 = new String[] { "onlineMillis", "login",
-			"lastLoginDate" };
+	private static String[] c1 = new String[] { "onlineMillis", "login", "lastLoginDate" };
 
-	private static String[] c2 = new String[] { "lastLoginIP", "lastLoginDate",
-			"loginTimes", "login" };
+	private static String[] c2 = new String[] { "lastLoginIP", "lastLoginDate", "loginTimes", "login" };
 
 	public static interface IJobProperty {
 
 		String getJobProperty();
 	}
 
-	public static String getLoginRedirectUrl(
-			final PageRequestResponse requestResponse,
-			final IJobProperty jobProperty) {
+	public static String getLoginRedirectUrl(final PageRequestResponse requestResponse, final IJobProperty jobProperty) {
 		if (OrgUtils.deployPath == null) {
 			return null;
 		}
-		final String job = jobProperty != null ? jobProperty.getJobProperty()
-				: null;
+		final String job = jobProperty != null ? jobProperty.getJobProperty() : null;
 		final HttpServletRequest httpRequest = requestResponse.request;
 		final String durl = HTTPUtils.getRequestURI(requestResponse.request);
-		if (durl.contains("manager")
-				&& (!OrgUtils.isMember(job, requestResponse.getSession()) || !ItSiteUtil
-						.isManage(requestResponse))) {
+		if (durl.contains("manager") && (!OrgUtils.isMember(job, requestResponse.getSession()) || !ItSiteUtil.isManage(requestResponse))) {
 			return "/index.html";
 		}
 		if (isLogin(requestResponse.getSession())) {
 			return null;
 		}
-		final String account = HTTPUtils
-				.getCookie(httpRequest, "_account_name");
+		final String account = HTTPUtils.getCookie(httpRequest, "_account_name");
 		final String pwd = HTTPUtils.getCookie(httpRequest, "_account_pwd");
 		if (StringUtils.hasText(account) && StringUtils.hasText(pwd)) {
-			final EAccountType accountType = ConvertUtils.toEnum(
-					EAccountType.class,
-					HTTPUtils.getCookie(httpRequest, "_account_type"));
-			setLogin(httpRequest,
-					new LoginObject(StringUtils.decodeHexString(account),
-							accountType));
+			final EAccountType accountType = ConvertUtils.toEnum(EAccountType.class, HTTPUtils.getCookie(httpRequest, "_account_type"));
+			setLogin(httpRequest, new LoginObject(StringUtils.decodeHexString(account), accountType));
 			if (isLogin(requestResponse.getSession())) {
 				return null;
 			}
 		}
 		String url = httpRequest.getRequestURI();
-		if ((!StringUtils.hasText(job) || IJob.sj_anonymous.equals(job))
-				&& !url.endsWith("location.jsp")) {
+		if ((!StringUtils.hasText(job) || IJob.sj_anonymous.equals(job)) && !url.endsWith("location.jsp")) {
 			return null;
 		}
 		if (url.contains(OrgUtils.deployPath + "jsp/login_redirect")) {
@@ -249,41 +222,30 @@ public abstract class AccountSession extends ALoggerAware {
 			return null;
 		}
 		if (requestResponse.isHttpRequest()) {
-			return OrgUtils.deployPath
-					+ "jsp/login_redirect_template.jsp?login_redirect="
-					+ requestResponse
-							.wrapContextPath(OrgUtils.applicationModule
-									.getLoginUrl(requestResponse));
+			return OrgUtils.deployPath + "jsp/login_redirect_template.jsp?login_redirect="
+					+ requestResponse.wrapContextPath(OrgUtils.applicationModule.getLoginUrl(requestResponse));
 		} else {
-			return OrgUtils.deployPath
-					+ "jsp/login_win_redirect.jsp?login_redirect="
-					+ requestResponse
-							.wrapContextPath(OrgUtils.applicationModule
-									.getLoginUrl(requestResponse));
+			return OrgUtils.deployPath + "jsp/login_win_redirect.jsp?login_redirect="
+					+ requestResponse.wrapContextPath(OrgUtils.applicationModule.getLoginUrl(requestResponse));
 		}
 	}
 
-	public static IForward accessForward(
-			final PageRequestResponse requestResponse, final String job,
-			final String componentName) {
+	public static IForward accessForward(final PageRequestResponse requestResponse, final String job, final String componentName) {
 		if (OrgUtils.deployPath == null) {
 			return null;
 		}
-		final String redirectUrl = getLoginRedirectUrl(requestResponse,
-				new IJobProperty() {
-					@Override
-					public String getJobProperty() {
-						return job;
-					}
-				});
+		final String redirectUrl = getLoginRedirectUrl(requestResponse, new IJobProperty() {
+			@Override
+			public String getJobProperty() {
+				return job;
+			}
+		});
 		if (StringUtils.hasText(redirectUrl)) {
 			return new UrlForward(redirectUrl);
 		} else {
 			if (StringUtils.hasText(job)) {
 				if (!OrgUtils.isMember(job, requestResponse.getSession())) {
-					return new UrlForward(OrgUtils.deployPath
-							+ "jsp/job_ajax_access.jsp?v=" + componentName
-							+ "&job=" + job);
+					return new UrlForward(OrgUtils.deployPath + "jsp/job_ajax_access.jsp?v=" + componentName + "&job=" + job);
 				}
 			}
 		}

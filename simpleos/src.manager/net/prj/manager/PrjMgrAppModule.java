@@ -3,14 +3,12 @@ package net.prj.manager;
 import java.util.Map;
 
 import net.itsite.ItSiteUtil;
-import net.itsite.document.docu.DocuUtils;
+import net.itsite.docu.DocuUtils;
 import net.itsite.impl.AItSiteAppclicationModule;
 import net.itsite.utils.StringsUtils;
-import net.simpleframework.content.component.remark.RemarkItem;
+import net.simpleframework.ado.db.IQueryEntitySet;
 import net.simpleframework.core.IInitializer;
 import net.simpleframework.core.ado.db.Table;
-import net.simpleframework.web.page.PageRequestResponse;
-import net.simpleframework.web.page.component.ComponentParameter;
 
 /**
  * 
@@ -36,28 +34,30 @@ public class PrjMgrAppModule extends AItSiteAppclicationModule implements IPrjMg
 		super.init(initializer);
 		doInit(PrjMgrUtils.class, deployName);
 		PrjMgrUtils.appModule = this;
-		PrjMgrUtils.loadCustom("sys");
-
-		Map<String, String> map = PrjMgrUtils.loadCustom("docu");
-		DocuUtils.docuPath = StringsUtils.trimNull(map.get("docuPath"), "c:\\");
-		
-		map = PrjMgrUtils.loadCustom("site");
-		ItSiteUtil.url = StringsUtils.trimNull(map.get("site_url"), "");
-		ItSiteUtil.title = StringsUtils.trimNull(map.get("site_name"), "");
+		loadCustom();
+		DocuUtils.docuPath = StringsUtils.trimNull(ItSiteUtil.attrMap.get("docu.docuPath"), "c:\\");
+		ItSiteUtil.url = StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_url"), "");
+		ItSiteUtil.title = StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), "");
 	}
 
-	@Override
-	public String tabs(PageRequestResponse requestResponse) {
-		return null;
+	/**
+	 * 加载所有的常量值
+	 * @return
+	 */
+	public void loadCustom() {
+		try {
+			IQueryEntitySet<PrjCustomBean> qs = PrjMgrUtils.appModule.queryBean("1=1", PrjCustomBean.class);
+			PrjCustomBean customBean = null;
+			while ((customBean = qs.next()) != null) {
+				ItSiteUtil.attrMap.put(customBean.getType() + "." + customBean.getName(), customBean.getValue());
+			}
+		} catch (Exception e) {
+		}
 	}
 
 	@Override
 	public Class<?> getEntityBeanClass() {
 		return PrjCustomBean.class;
-	}
-
-	@Override
-	public void doAttentionSent(ComponentParameter compParameter, RemarkItem remark, Class<?> classBean) {
 	}
 
 	@Override

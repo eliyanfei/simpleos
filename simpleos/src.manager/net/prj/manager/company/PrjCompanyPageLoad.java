@@ -3,6 +3,7 @@ package net.prj.manager.company;
 import java.util.List;
 import java.util.Map;
 
+import net.itsite.ItSiteUtil;
 import net.itsite.impl.PrjColumns;
 import net.itsite.utils.StringsUtils;
 import net.prj.manager.PrjMgrUtils;
@@ -21,9 +22,8 @@ public class PrjCompanyPageLoad extends DefaultPageHandle {
 	public void contactLoad(PageParameter pageParameter, Map<String, Object> dataBinding, List<String> visibleToggleSelector,
 			List<String> readonlySelector, List<String> disabledSelector) {
 		PrjColumns columns = PrjCompanyUtils.appModule.getPrjColumns("contact");
-		Map<String, String> map = PrjMgrUtils.loadCustom("contact");
 		for (final String key : columns.getColumnMap().keySet()) {
-			dataBinding.put(key, StringsUtils.trimNull(map.get(key), ""));
+			dataBinding.put(key, StringsUtils.trimNull(ItSiteUtil.attrMap.get("contact." + key), ""));
 		}
 	}
 
@@ -33,9 +33,8 @@ public class PrjCompanyPageLoad extends DefaultPageHandle {
 	public void companyLoad(PageParameter pageParameter, Map<String, Object> dataBinding, List<String> visibleToggleSelector,
 			List<String> readonlySelector, List<String> disabledSelector) {
 		PrjColumns columns = PrjCompanyUtils.appModule.getPrjColumns("company");
-		Map<String, String> map = PrjMgrUtils.loadCustom("company");
 		for (final String key : columns.getColumnMap().keySet()) {
-			dataBinding.put(key, StringsUtils.trimNull(map.get(key), ""));
+			dataBinding.put(key, StringsUtils.trimNull(ItSiteUtil.attrMap.get("company." + key), ""));
 		}
 	}
 }

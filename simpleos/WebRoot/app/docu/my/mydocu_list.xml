@@ -6,7 +6,7 @@
 		<tablePager name="myDocuListTableAct" containerId="myDocuListTableId"
 			showCheckbox="false" pageItems="30" pagerBarLayout="bottom"
 			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
-			exportAction="true" handleClass="net.itsite.document.docu.my.MyDocuTablePaperHandle">
+			exportAction="true" handleClass="net.itsite.docu.my.MyDocuTablePaperHandle">
 			<columns>
 				<column columnText="#(Docu.all.list.1)" columnName="title" filter="true"
 					sort="false"></column>

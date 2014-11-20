@@ -1,3 +1,4 @@
+<%@page import="net.itsite.ItSiteUtil"%>
 <%@page import="net.itsite.utils.StringsUtils"%>
 <%@page import="java.util.Map"%>
 <%@page import="net.prj.manager.PrjMgrUtils"%>
@@ -12,7 +13,6 @@
 <%
 	final ComponentParameter nComponentParameter = LoginUtils.getComponentParameter(request, response);
 	final String beanId = nComponentParameter.componentBean.hashId();
-	Map<String, String> map = PrjMgrUtils.loadCustom("sys");
 %>
 <form id="_loginForm">
 	<input type="hidden" id="<%=LoginUtils.BEAN_ID%>"
@@ -37,7 +37,7 @@
 	<div
 		style="text-align: <%=nComponentParameter.getBeanProperty("actionAlign")%>">
 		<%
-			if("true".equals(map.get("sys_testing"))){
+			if("true".equals(ItSiteUtil.attrMap.get("sys.sys_testing"))){
 		%>
 		<span style="color: red;">admin/admin</span>
 		<%} %>

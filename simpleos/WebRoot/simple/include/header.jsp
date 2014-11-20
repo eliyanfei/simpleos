@@ -3,7 +3,6 @@
 	import="net.itsite.ad.EAd"%><%@page
 	import="net.simpleframework.web.WebUtils"%><%@page
 	import="net.simpleframework.util.StringUtils"%><%@page
-	import="net.itsite.search.SearchUtils"%><%@page
 	import="net.itsite.utils.StringsUtils"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
 	import="net.simpleframework.util.HTMLBuilder"%><%@page
@@ -11,7 +10,6 @@
 <%
 	ItSiteUtil.addMenuNav(request.getSession(), "/", "#(Itsite.menu.home)", true);
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
-	String q = SearchUtils.witchSearch(requestResponse);
 %>
 <style>
 .navbar-brand {

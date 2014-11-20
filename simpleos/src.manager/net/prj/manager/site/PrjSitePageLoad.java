@@ -3,9 +3,9 @@ package net.prj.manager.site;
 import java.util.List;
 import java.util.Map;
 
+import net.itsite.ItSiteUtil;
 import net.itsite.impl.PrjColumns;
 import net.itsite.utils.StringsUtils;
-import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.web.page.DefaultPageHandle;
 import net.simpleframework.web.page.PageParameter;
 
@@ -21,9 +21,8 @@ public class PrjSitePageLoad extends DefaultPageHandle {
 	public void siteLoad(PageParameter pageParameter, Map<String, Object> dataBinding, List<String> visibleToggleSelector,
 			List<String> readonlySelector, List<String> disabledSelector) {
 		PrjColumns columns = PrjSiteUtils.appModule.getPrjColumns("site");
-		Map<String, String> map = PrjMgrUtils.loadCustom("site");
 		for (final String key : columns.getColumnMap().keySet()) {
-			dataBinding.put(key, StringsUtils.trimNull(map.get(key), ""));
+			dataBinding.put(key, StringsUtils.trimNull(ItSiteUtil.attrMap.get("site." + key), ""));
 		}
 	}
 
@@ -33,9 +32,8 @@ public class PrjSitePageLoad extends DefaultPageHandle {
 	public void linksLoad(PageParameter pageParameter, Map<String, Object> dataBinding, List<String> visibleToggleSelector,
 			List<String> readonlySelector, List<String> disabledSelector) {
 		PrjColumns columns = PrjSiteUtils.appModule.getPrjColumns("links");
-		Map<String, String> map = PrjMgrUtils.loadCustom("links");
 		for (final String key : columns.getColumnMap().keySet()) {
-			dataBinding.put(key, StringsUtils.trimNull(map.get(key), ""));
+			dataBinding.put(key, StringsUtils.trimNull(ItSiteUtil.attrMap.get("links." + key), ""));
 		}
 	}
 }

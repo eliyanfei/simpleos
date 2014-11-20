@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-script>
+	<version>1.0.0</version>
+	<name>documentshare</name>
+	<tran-sql>
+		<description>documentshare</description>
+		<![CDATA[
+
+    CREATE TABLE `it_document` (
+  `id` bigint(20) NOT NULL,
+  `catalogId` bigint(20),
+  `userId` bigint(20) NOT NULL,
+  `lastUserId` bigint(20) NOT NULL,
+  `title` varchar(128) NOT NULL,
+  `content` text ,
+  `keyworks` varchar(64),
+  `status` tinyint(4) not null,
+  `ttype` tinyint(4) not null,
+  `docuFunction` tinyint(4),
+  `language` varchar(32),
+  `path1` varchar(128),
+  `path2` varchar(16),
+  `extension` varchar(10),
+  `fileName` varchar(128),
+  `fileSize` bigint(10),
+  `fileNum` bigint(10),
+  `success` tinyint(4),
+  `allowRead` double,
+  `point` bigint(10),
+  `downCounter` bigint(20),
+  `totalGrade` float,
+  `gradeCounter` bigint(10),
+  `adminGrade` float,
+  `lastDownDate` datetime ,
+  `attentions` bigint(20) NOT NULL,
+  `remarks` bigint(20) NOT NULL,
+  `views` bigint(20) NOT NULL,
+  `votes` bigint(20) NOT NULL,
+  `todayViews` bigint(20) NOT NULL,
+  `ttop` tinyint(1) NOT NULL,
+  `oorder` bigint(20) NOT NULL,
+  `ddays` tinyint(4) default 0,
+  `canRun` tinyint(1) default 0,
+  `mark` tinyint(4) default 0,
+  `downVotes` tinyint(4) default 0,
+  `ppriority` tinyint(4) default 0,
+  `remarkUserId` bigint(20) default 0,
+  `sameId` bigint(20) default 0,
+  `remarkDate` datetime ,
+  `createDate` datetime not null,
+  `modifyDate` datetime not null,
+  PRIMARY KEY  (`id`)
+)
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description>catalog</description>
+		<![CDATA[
+  CREATE TABLE `it_document_catalog` (
+  `id` bigint(20) NOT NULL,
+  `parentid` bigint(20) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `text` varchar(32) NOT NULL,
+  `createdate` datetime NOT NULL,
+  `counter` bigint(11) NOT NULL,
+  `description` varchar(256) default NULL,
+  `oorder` bigint(20) NOT NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY (`name`)
+)
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description>remark</description>
+		<![CDATA[
+			CREATE TABLE it_document_remark(
+  `id` bigint(20) NOT NULL,
+  `parentid` bigint(20) NOT NULL,
+  `documentid` bigint(20) NOT NULL,
+  `content` text NOT NULL,
+  `support` int(11) NOT NULL,
+  `opposition` int(11) NOT NULL,
+  `ip` varchar(32) default NULL,
+  `createdate` datetime NOT NULL,
+  `userid` bigint(20) default NULL,
+  `lastupdate` datetime default NULL,
+  `lastuserid` bigint(20) default NULL,
+  PRIMARY KEY  (`id`)
+);
+		]]>
+	</tran-sql>
+	<tran-sql>
+		<description>docuuser</description>
+		<![CDATA[
+			CREATE TABLE it_document_user(
+  `id` bigint(20) NOT NULL,
+  `userId` bigint(20) NOT NULL,
+  `downFiles` bigint(20) NOT NULL,
+  `upFiles` bigint(20) NOT NULL,
+  PRIMARY KEY  (`id`)
+);
+		]]>
+	</tran-sql>
+	<tran-sql>
+		<description>log</description>
+		<![CDATA[
+			CREATE TABLE it_document_log(
+  `id` bigint(20) NOT NULL,
+  `userId` bigint(20) NOT NULL,
+  `docuId` bigint(20) NOT NULL,
+  `ip` varchar(64) NOT NULL,
+  `downDate` datetime NOT NULL,
+  PRIMARY KEY  (`id`)
+);
+		]]>
+	</tran-sql>
+	<tran-sql>
+		<description>log</description>
+		<![CDATA[
+		ALTER TABLE it_document ADD INDEX docu_userid ( `userid` );
+		]]>
+	</tran-sql>
+	<tran-sql>
+		<description>log</description>
+		<![CDATA[
+		ALTER TABLE it_document ADD INDEX docu_createDate ( `createDate` );
+		]]>
+	</tran-sql>
+	<tran-sql>
+		<description>log</description>
+		<![CDATA[
+		ALTER TABLE it_document ADD INDEX docu_catalogId ( `catalogId` );
+		]]>
+	</tran-sql>
+	<tran-sql>
+		<description>log</description>
+		<![CDATA[
+		ALTER TABLE it_document ADD INDEX docu_views ( `views` );
+		]]>
+	</tran-sql>
+</sql-script>

@@ -8,7 +8,7 @@
 	<components>
 		<swfupload name="docuUploadAct" containerId="docu_upload"
 			fileQueueLimit="1" fileTypes="*" fileTypesDesc="All" fileSizeLimit="15MB"
-			multiFileSelected="true" handleClass="net.itsite.document.docu.DocuUploadHandle">
+			multiFileSelected="true" handleClass="net.itsite.docu.DocuUploadHandle">
 			<jsCompleteCallback><![CDATA[
 				$IT.A('uploadDocuAct','docuId='+json['id']);
 				if(json['id']!=''){

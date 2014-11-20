@@ -9,7 +9,7 @@
 		<tr>
 			<td nowrap="nowrap">
 				<img alt="favicon" id="template_faviconId"
-					src="/simple/main/image/favicon.png?v=<%=id%>">
+					src="/default/images/favicon.png?v=<%=id%>">
 			</td>
 			<td id="template_faviconUploadId" width="100%">
 			</td>

@@ -19,6 +19,7 @@ import net.itsite.utils.IOUtils;
 import net.itsite.utils.SQLUtils;
 import net.simpleframework.ado.DataObjectManagerFactory;
 import net.simpleframework.core.ALoggerAware;
+import net.simpleframework.core.ApplicationTaskExecutor;
 import net.simpleframework.core.ConsoleThread;
 import net.simpleframework.core.ExecutorRunnable;
 import net.simpleframework.core.IInitializer;
@@ -52,8 +53,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  *         http://www.simpleframework.net
  */
 @SuppressWarnings("serial")
-public abstract class AbstractWebApplication extends HttpServlet implements
-		IWebApplication, ITaskExecutorAware {
+public abstract class AbstractWebApplication extends HttpServlet implements IWebApplication, ITaskExecutorAware {
 	protected final Logger logger = ALoggerAware.getLogger(getClass());
 
 	protected ApplicationContext applicationContext;
@@ -78,16 +78,14 @@ public abstract class AbstractWebApplication extends HttpServlet implements
 			/**
 			 * 删除已经执行的sql脚本文件
 			 */
-			String sqlPath = this.getServletContext().getRealPath(
-					"/$resource/deploy/");
+			String sqlPath = this.getServletContext().getRealPath("/$resource/deploy/");
 			final File file = new File(sqlPath);
 			if (file.exists()) {
 				file.listFiles(new FileFilter() {
 
 					@Override
 					public boolean accept(File pathname) {
-						File f = new File(pathname.getAbsolutePath()
-								+ "/sql-script");
+						File f = new File(pathname.getAbsolutePath() + "/sql-script");
 						if (f.exists()) {
 							IOUtils.delete(f);
 						}
@@ -98,8 +96,7 @@ public abstract class AbstractWebApplication extends HttpServlet implements
 		} catch (Exception e1) {
 		}
 		if (!this.ok) {
-			final File dsFile = new File(this.getServletContext().getRealPath(
-					"/base.properties"));
+			final File dsFile = new File(this.getServletContext().getRealPath("/base.properties"));
 			if (dsFile.exists()) {
 				Properties pro = new Properties();
 				try {
@@ -123,8 +120,7 @@ public abstract class AbstractWebApplication extends HttpServlet implements
 			e.printStackTrace();
 		}
 
-		final List<IInitializer> initializerList = getApplicationConfig()
-				.getInitializerList();
+		final List<IInitializer> initializerList = getApplicationConfig().getInitializerList();
 		if (initializerList != null) {
 			final List<IInitializer> list = new ArrayList<IInitializer>();
 			for (final IInitializer initializer : initializerList) {
@@ -154,13 +150,12 @@ public abstract class AbstractWebApplication extends HttpServlet implements
 			}
 		}
 
-		getTaskExecutor().addScheduledTask(DateUtils.to24Hour(),
-				DateUtils.DAY_PERIOD, new ExecutorRunnable() {
-					@Override
-					public void task() {
-						DataObjectManagerFactory.resetAll();
-					}
-				});
+		getTaskExecutor().addScheduledTask(DateUtils.to24Hour(), DateUtils.DAY_PERIOD, new ExecutorRunnable() {
+			@Override
+			public void task() {
+				DataObjectManagerFactory.resetAll();
+			}
+		});
 	}
 
 	EmbedMySqlServer sqlServer;
@@ -169,32 +164,24 @@ public abstract class AbstractWebApplication extends HttpServlet implements
 	public void init(final ServletConfig config) throws ServletException {
 		super.init(config);
 		final ServletContext servletContext = config.getServletContext();
-		final File projectFile = new File(
-				servletContext
-						.getRealPath("/WEB-INF/" + getSpringProjectName()));
+		final File projectFile = new File(servletContext.getRealPath("/WEB-INF/" + getSpringProjectName()));
 		if (!projectFile.exists()) {
-			applicationContext = new ClassPathXmlApplicationContext(
-					BeanUtils.getResourceClasspath(getClass(),
-							getSpringProjectName()));
+			applicationContext = new ClassPathXmlApplicationContext(BeanUtils.getResourceClasspath(AbstractWebApplication.class,
+					getSpringProjectName()));
 		} else {
-			applicationContext = new FileSystemXmlApplicationContext("file:"
-					+ projectFile.getAbsolutePath());
+			applicationContext = new FileSystemXmlApplicationContext("file:" + projectFile.getAbsolutePath());
 		}
 
-		final File dsFile = new File(
-				servletContext.getRealPath("/base.properties"));
+		final File dsFile = new File(servletContext.getRealPath("/base.properties"));
 		if (dsFile.exists()) {
 			Properties pro = new Properties();
 			try {
 				pro.load(new FileInputStream(dsFile));
 				if (StringUtils.hasText(pro.getProperty("base"))) {
-					final File mysqlFile = new File(
-							servletContext.getRealPath("/mysql-em/"
-									+ pro.getProperty("base")));
+					final File mysqlFile = new File(servletContext.getRealPath("/mysql-em/" + pro.getProperty("base")));
 					Properties dbpro = new Properties();
 					dbpro.load(new FileInputStream(mysqlFile));
-					EmbedMySqlServer.setEmbedMySqlHome(servletContext
-							.getRealPath(""));
+					EmbedMySqlServer.setEmbedMySqlHome(servletContext.getRealPath(""));
 					sqlServer = new EmbedMySqlServer(dbpro);
 					sqlServer.startup();
 				}
@@ -244,8 +231,7 @@ public abstract class AbstractWebApplication extends HttpServlet implements
 
 	@Override
 	public DataSource getDataSource(final String datasourceName) {
-		return dataSource != null ? dataSource
-				: (DataSource) getBean(datasourceName);
+		return dataSource != null ? dataSource : (DataSource) getBean(datasourceName);
 	}
 
 	@Override
@@ -260,7 +246,11 @@ public abstract class AbstractWebApplication extends HttpServlet implements
 
 	@Override
 	public ITaskExecutor getTaskExecutor() {
-		return (ITaskExecutor) getBean("idTaskExecutor");
+		ITaskExecutor taskExecutor = (ITaskExecutor) getBean("idTaskExecutor");
+		if (taskExecutor == null) {
+			taskExecutor = new ApplicationTaskExecutor();
+		}
+		return taskExecutor;
 	}
 
 	@Override
@@ -271,25 +261,20 @@ public abstract class AbstractWebApplication extends HttpServlet implements
 		}
 		getTaskExecutor().close();
 		try {
-			IoUtils.deleteAll(new File(WebUtils
-					.getTempPath(getServletContext())));
+			IoUtils.deleteAll(new File(WebUtils.getTempPath(getServletContext())));
 		} catch (final IOException e) {
 		}
 	}
 
 	@Override
 	public boolean isSystemUrl(final PageRequestResponse requestResponse) {
-		final String requestURI = HTTPUtils
-				.getRequestURI(requestResponse.request);
-		if (requestURI.indexOf(AjaxRequestUtils.getHomePath()
-				+ "/jsp/ajax_request.jsp") > -1) {
+		final String requestURI = HTTPUtils.getRequestURI(requestResponse.request);
+		if (requestURI.indexOf(AjaxRequestUtils.getHomePath() + "/jsp/ajax_request.jsp") > -1) {
 			return true;
 		}
-		final LoginRegistry registry = (LoginRegistry) AbstractComponentRegistry
-				.getRegistry(LoginRegistry.login);
+		final LoginRegistry registry = (LoginRegistry) AbstractComponentRegistry.getRegistry(LoginRegistry.login);
 		if (registry != null) {
-			if (requestURI.indexOf(registry.getComponentResourceProvider()
-					.getResourceHomePath() + "/jsp/location.jsp") > -1) {
+			if (requestURI.indexOf(registry.getComponentResourceProvider().getResourceHomePath() + "/jsp/location.jsp") > -1) {
 				return true;
 			}
 		}
@@ -297,8 +282,7 @@ public abstract class AbstractWebApplication extends HttpServlet implements
 			if (requestURI.indexOf(OrgUtils.deployPath + "jsp/") > -1) {
 				return true;
 			}
-			if (requestURI.indexOf(OrgUtils.applicationModule
-					.getLoginUrl(requestResponse)) > -1) {
+			if (requestURI.indexOf(OrgUtils.applicationModule.getLoginUrl(requestResponse)) > -1) {
 				return true;
 			}
 		}

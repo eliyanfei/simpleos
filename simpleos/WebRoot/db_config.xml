@@ -7,8 +7,8 @@
 			handleClass="net.itsite.ItSiteDBPropEditorHandle">
 			<field label="数据库" labelStyle="">
 				<component type="select" name="dbtype">
-					<!--<defaultValue>in=内置数据库;out=外置数据库</defaultValue> -->
-					<defaultValue>out=外置数据库</defaultValue>
+					<defaultValue>in=内置数据库;out=外置数据库</defaultValue>
+					<!-- <defaultValue>out=外置数据库</defaultValue> -->
 				</component>
 			</field>
 			<field label="JDBC驱动" labelStyle="">

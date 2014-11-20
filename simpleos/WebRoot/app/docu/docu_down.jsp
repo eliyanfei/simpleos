@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.itsite.document.docu.DocuBean"%><%@page
-	import="net.itsite.document.docu.DocuUtils"%><%@page
+	import="net.itsite.docu.DocuBean"%><%@page
+	import="net.itsite.docu.DocuUtils"%><%@page
 	import="net.simpleframework.util.IoUtils"%><%@page
 	import="net.simpleframework.organization.OrgUtils"%><%@page
 	import="net.itsite.ItSiteUtil"%><%@page

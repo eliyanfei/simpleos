@@ -8,4 +8,4 @@
 	final String my_friends_request = FriendsUtils.deployPath
 			+ "jsp/my_friends_request.jsp";
 %>
-<jsp:include page="<%=my_friends_request%>"></jsp:include></div
+<jsp:include page="<%=my_friends_request%>"></jsp:include>

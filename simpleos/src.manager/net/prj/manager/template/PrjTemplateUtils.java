@@ -3,11 +3,11 @@ package net.prj.manager.template;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.itsite.ItSiteUtil;
 import net.itsite.utils.StringsUtils;
 import net.prj.core.i.IModelBean;
 import net.prj.core.impl.frame.ITemplateBean;
 import net.prj.core.impl.frame.TemplateBean1;
-import net.prj.manager.PrjMgrUtils;
 
 /**
  * 
@@ -30,10 +30,9 @@ public class PrjTemplateUtils {
 	}
 
 	public static PrjTemplateBean getTemplateBean() {
-		Map<String, String> map = PrjMgrUtils.loadCustom("template");
 		PrjTemplateBean bean = new PrjTemplateBean();
 		bean.templateId = new TemplateBean1().getName();
-		String template = map.get("template");
+		String template = ItSiteUtil.attrMap.get("template.template");
 		if (StringsUtils.isNotBlank(template)) {
 			String[] attrs = template.split(";");
 			for (String attr : attrs) {

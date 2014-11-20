@@ -15,13 +15,6 @@
 		<value>${NewsUtils.deployPath}jsp/news_announce.xml</value>
 		<value>${MySpaceUtils.deployPath}jsp/my_space_utils.xml</value>
 	</importPage>
-	<importJavascript>
-		<value>/mytools/ittool.js</value>
-		<value>/mytools/itniwo.js</value>
-	</importJavascript>
-	<importCSS>
-		<value>/mytools/itniwo.css</value>
-	</importCSS>
 	<components>
 		<menu name="mainMenu" containerId="_simple_menu" minWidth="130"
 			runImmediately="false">

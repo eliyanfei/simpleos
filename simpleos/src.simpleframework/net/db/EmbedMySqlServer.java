@@ -10,6 +10,14 @@ import net.itsite.utils.StringsUtils;
 
 import com.mysql.management.MysqldResource;
 
+/**
+ * 内置数据源
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月20日 下午5:32:45 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public final class EmbedMySqlServer {
 	private MysqldResource mysqlInstance;
 	public final Properties props;

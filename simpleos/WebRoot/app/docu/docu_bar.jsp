@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.itsite.document.docu.DocuUtils"%><%@page
+	import="net.itsite.docu.DocuUtils"%><%@page
 	import="net.simpleframework.util.ConvertUtils"%><%@page
 	import="net.itsite.ItSiteUtil"%><%@page
-	import="net.itsite.document.docu.EDocuFunction"%><%@page
+	import="net.itsite.docu.EDocuFunction"%><%@page
 	import="net.simpleframework.web.WebUtils"%><%@page
 	import="net.simpleframework.util.StringUtils"%>
 <%
@@ -60,8 +60,7 @@ $ready(function(){
 		$("__blog_sech").update(sb);
 		<%final String c = WebUtils.toLocaleString(request.getParameter("c"));
 			if (StringUtils.hasText(c)) {%>
-			sb.down(".txt").setValue("<%=c%>
-	");
+			sb.down(".txt").setValue("<%=c%>");
 <%}%>
 	});
 </script>

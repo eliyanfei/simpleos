@@ -43,23 +43,7 @@
 	<filter-mapping>
 		<filter-name>gzipFilter</filter-name>
 		<url-pattern>*.js</url-pattern>
-	</filter-mapping><!-- 
-	<filter-mapping>
-		<filter-name>gzipFilter</filter-name>
-		<url-pattern>*.png</url-pattern>
 	</filter-mapping>
-	<filter-mapping>
-		<filter-name>gzipFilter</filter-name>
-		<url-pattern>*.gif</url-pattern>
-	</filter-mapping>
-	<filter-mapping>
-		<filter-name>gzipFilter</filter-name>
-		<url-pattern>*.jpg</url-pattern>
-	</filter-mapping>
-	<filter-mapping>
-		<filter-name>gzipFilter</filter-name>
-		<url-pattern>*.jpeg</url-pattern>
-	</filter-mapping>-->
 
 	<filter>
 		<filter-name>actionFilter</filter-name>

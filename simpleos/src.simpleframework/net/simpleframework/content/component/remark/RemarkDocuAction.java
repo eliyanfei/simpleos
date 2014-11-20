@@ -7,8 +7,8 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import net.itsite.ItSiteUtil;
-import net.itsite.document.docu.DocuRemark;
-import net.itsite.document.docu.DocuUtils;
+import net.itsite.docu.DocuRemark;
+import net.itsite.docu.DocuUtils;
 import net.simpleframework.content.ContentUtils;
 import net.simpleframework.content.EContentStatus;
 import net.simpleframework.core.id.LongID;

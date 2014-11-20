@@ -5,11 +5,11 @@
 	<importPage>
 		<value>/simple/template/c.xml</value>
 	</importPage>
-	<handleClass>net.itsite.document.docu.DocuPageLoad</handleClass>
+	<handleClass>net.itsite.docu.DocuPageLoad</handleClass>
 	<handleMethod>docuLoad</handleMethod>
 	<components>
 		<ajaxRequest name="docuEditSaveAct"
-			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuEditSave"
+			handleClass="net.itsite.docu.DocuAjaxHandle" handleMethod="docuEditSave"
 			selector="#docuForm" confirmMessage="#(Docu.add.5)">
 			<jsCompleteCallback>
 				<![CDATA[
@@ -28,7 +28,7 @@
 				method="required" />
 		</validation>
 
-		<tree name="docuCatalogTreeAct" handleClass="net.itsite.document.docu.DocuCatalogAddTreeHandle" />
+		<tree name="docuCatalogTreeAct" handleClass="net.itsite.docu.DocuCatalogAddTreeHandle" />
 		<dictionary name="docuCatalogAct" width="320" height="350"
 			bindingText="docu_catalog_text" bindingId="docu_catalog" title="#(Docu.add.6)">
 			<tree ref="docuCatalogTreeAct" />

@@ -19,18 +19,6 @@ public interface ITemplateBean {
 	String getTitle();
 
 	/**
-	 * 是否固定顶部
-	 * @return
-	 */
-	boolean isFixedHeader();
-
-	/**
-	 * 是否固定底部
-	 * @return
-	 */
-	boolean isFixedFooter();
-
-	/**
 	 * 是否是宽屏显示
 	 * @return
 	 */

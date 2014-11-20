@@ -28,9 +28,7 @@ public class PrjSiteAction extends AbstractAjaxRequestHandle {
 
 			@Override
 			public void doAction(Map<String, Object> json) throws Exception {
-				PrjMgrUtils.saveCustom("sys",
-						(AItSiteAppclicationModule) PrjSiteUtils.appModule,
-						compParameter);
+				PrjMgrUtils.saveCustom("sys", (AItSiteAppclicationModule) PrjSiteUtils.appModule, compParameter);
 				ItSiteUtil.url = compParameter.getParameter("site_url");
 				ItSiteUtil.title = compParameter.getParameter("site_name");
 			}
@@ -51,15 +49,12 @@ public class PrjSiteAction extends AbstractAjaxRequestHandle {
 				SysDict sysDict = DictUtils.getSysDictByName("links");
 				if (sysDict == null) {
 					sysDict = new SysDict();
-					sysDict.setParentId(DictUtils.getSysDictByName("base")
-							.getId());
+					sysDict.setParentId(DictUtils.getSysDictByName("base").getId());
 					sysDict.setName("links");
-					sysDict.setText(StringsUtils.trimNull(
-							compParameter.getParameter("dict_links"), "10"));
+					sysDict.setText(StringsUtils.trimNull(compParameter.getParameter("dict_links"), "10"));
 					DictUtils.getTableEntityManager(SysDict.class).insert(sysDict);
 				} else {
-					sysDict.setText(StringsUtils.trimNull(
-							compParameter.getParameter("dict_links"), "10"));
+					sysDict.setText(StringsUtils.trimNull(compParameter.getParameter("dict_links"), "10"));
 					DictUtils.getTableEntityManager(SysDict.class).update(sysDict);
 				}
 				json.put("rs", "true");
@@ -78,9 +73,7 @@ public class PrjSiteAction extends AbstractAjaxRequestHandle {
 
 			@Override
 			public void doAction(Map<String, Object> json) throws Exception {
-				PrjMgrUtils.saveCustom("site",
-						(AItSiteAppclicationModule) PrjSiteUtils.appModule,
-						compParameter);
+				PrjMgrUtils.saveCustom("site", (AItSiteAppclicationModule) PrjSiteUtils.appModule, compParameter);
 			}
 		});
 	}
@@ -96,11 +89,8 @@ public class PrjSiteAction extends AbstractAjaxRequestHandle {
 
 			@Override
 			public void doAction(Map<String, Object> json) throws Exception {
-				json.put("rs", StringsUtils.trimNull(
-						compParameter.getParameter("rs"), "true"));
-				PrjMgrUtils.saveCustom("links",
-						(AItSiteAppclicationModule) PrjSiteUtils.appModule,
-						compParameter);
+				json.put("rs", StringsUtils.trimNull(compParameter.getParameter("rs"), "true"));
+				PrjMgrUtils.saveCustom("links", (AItSiteAppclicationModule) PrjSiteUtils.appModule, compParameter);
 			}
 		});
 	}
@@ -116,9 +106,7 @@ public class PrjSiteAction extends AbstractAjaxRequestHandle {
 
 			@Override
 			public void doAction(Map<String, Object> json) throws Exception {
-				PrjMgrUtils.saveCustom("open",
-						(AItSiteAppclicationModule) PrjSiteUtils.appModule,
-						compParameter);
+				PrjMgrUtils.saveCustom("open", (AItSiteAppclicationModule) PrjSiteUtils.appModule, compParameter);
 			}
 		});
 	}

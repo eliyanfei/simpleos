@@ -1,3 +1,4 @@
+<%@page import="net.itsite.ItSiteUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
 	import="java.util.Map"%><%@page
@@ -6,18 +7,19 @@
 	import="net.itsite.utils.StringsUtils"%>
 <%
 	PrjColumns columns = PrjSiteUtils.appModule.getPrjColumns("open");
-	Map<String, String> map = PrjMgrUtils.loadCustom("open");
+	Map<String, String> map = ItSiteUtil.attrMap;
 %>
 <div class="simple_custom" id="site_open_form" style="width: 95%;">
 	<table style="width: 100%;">
 		<%
 			String ids = columns.getIds();
 			for (String id : ids.split(",")) {
+				String[] vs =id.split("=");
 		%>
 		<tr>
 			<td colspan="2"
 				style="background-color: #EFEFEF; border: 1px solid #D4D4D4;">
-				<%=id%>
+				<%=vs[1]%>
 			</td>
 		</tr>
 		<tr>
@@ -25,9 +27,9 @@
 				App Key
 			</th>
 			<td width="100%">
-				<input type="text" name="open_appKey_<%=id%>"
-					id="open_appKey_<%=id%>"
-					value="<%=StringsUtils.trimNull(map.get("open_appKey_" + id), "")%>"
+				<input type="text" name="open_appKey_<%=vs[0]%>"
+					id="open_appKey_<%=vs[0]%>"
+					value="<%=StringsUtils.trimNull(map.get("open.open_appKey_" + vs[0]), "")%>"
 					class="text-3">
 			</td>
 		</tr>
@@ -36,9 +38,9 @@
 				App Secret
 			</th>
 			<td>
-				<input type="text" name="open_appSecret_<%=id%>"
-					id="open_appSecret_<%=id%>"
-					value="<%=StringsUtils.trimNull(map.get("open_appSecret_" + id), "")%>"
+				<input type="text" name="open_appSecret_<%=vs[0]%>"
+					id="open_appSecret_<%=vs[0]%>"
+					value="<%=StringsUtils.trimNull(map.get("open.open_appSecret_" + vs[0]), "")%>"
 					class="text-3">
 			</td>
 		</tr>

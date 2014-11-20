@@ -26,7 +26,6 @@ import net.itsite.user.CounterBean;
 import net.itsite.utils.StringsUtils;
 import net.itsite.utils.UID;
 import net.prj.core.$VType;
-import net.prj.manager.PrjMgrUtils;
 import net.prj.manager.template.PrjTemplateBean;
 import net.prj.manager.template.PrjTemplateUtils;
 import net.simpleframework.ado.DataObjectManagerUtils;
@@ -86,6 +85,9 @@ public final class ItSiteUtil {
 	public static String title;// 网站标题
 	public static ItSiteHomeApplicationModule applicationModule;
 	public static int aloneLimit = 10;
+	/**
+	 * prj_custom 表常量
+	 */
 	public static Map<String, String> attrMap = new HashMap<String, String>();
 
 	public static String anonymity = "匿名";
@@ -111,8 +113,7 @@ public final class ItSiteUtil {
 		}
 	}
 
-	public static void setSkin(final String skin, final IAccount ac,
-			final HttpServletRequest request) {
+	public static void setSkin(final String skin, final IAccount ac, final HttpServletRequest request) {
 		if (skin != null) {
 			final AccountExt account = (AccountExt) ac;
 			if (account != null) {
@@ -121,8 +122,7 @@ public final class ItSiteUtil {
 					SkinUtils.setSessionSkin(request.getSession(), skin);
 				} else {
 					account.setSkin(SkinUtils.DEFAULT_SKIN);
-					SkinUtils.setSessionSkin(request.getSession(),
-							SkinUtils.DEFAULT_SKIN);
+					SkinUtils.setSessionSkin(request.getSession(), SkinUtils.DEFAULT_SKIN);
 				}
 				OrgUtils.am().update(new String[] { "skin" }, account);
 			}
@@ -131,9 +131,7 @@ public final class ItSiteUtil {
 
 	public static String witchLanguage(final PageRequestResponse requestResponse) {
 		final StringBuffer sb = new StringBuffer();
-		Map<String, String> map = PrjMgrUtils.loadCustom("sys");
-		String language = StringsUtils.trimNull(map.get("sys_language"),
-				"zh,zh-tw,en");
+		String language = StringsUtils.trimNull(attrMap.get("sys.sys_language"), "zh,zh-tw,en");
 		String[] ls = language.split(",");
 		if (ls.length > 1) {
 			sb.append("<select onchange=\"$IT.A('doLanguage','language='+this.value);\" style='color:black;'>");
@@ -143,9 +141,8 @@ public final class ItSiteUtil {
 				locale += "-" + country.toLowerCase();
 			}
 			for (String l : ls) {
-				sb.append("<option style='color:black;' value=\"" + l + "\" "
-						+ (l.equals(locale) ? "selected=\"selected\"" : "")
-						+ ">" + languageMap.get(l) + "</option>");
+				sb.append("<option style='color:black;' value=\"" + l + "\" " + (l.equals(locale) ? "selected=\"selected\"" : "") + ">"
+						+ languageMap.get(l) + "</option>");
 			}
 			sb.append("</select>");
 		}
@@ -154,19 +151,15 @@ public final class ItSiteUtil {
 
 	public static String witchSkin(final PageRequestResponse requestResponse) {
 		final StringBuffer sb = new StringBuffer();
-		Map<String, String> map = PrjMgrUtils.loadCustom("sys");
-		String skin = map.get("sys_skin");
+		String skin = attrMap.get("sys.sys_skin");
 		if (StringsUtils.isNotBlank1(skin)) {
 			String[] ss = skin.split(",");
 			if (ss.length > 1) {
 				sb.append("<select onchange=\"$IT.A('doSkin','skin='+this.value);\" style='color:black;'>");
-				final String dskin = ItSiteUtil
-						.getLoginAccount(requestResponse).getSkin();
+				final String dskin = ItSiteUtil.getLoginAccount(requestResponse).getSkin();
 				for (String s : SkinUtils.skinMap.keySet()) {
-					sb.append("<option style='color:black;' value=\"" + s
-							+ "\" "
-							+ (dskin.equals(s) ? "selected=\"selected\"" : "")
-							+ ">" + SkinUtils.skinMap.get(s) + "</option>");
+					sb.append("<option style='color:black;' value=\"" + s + "\" " + (dskin.equals(s) ? "selected=\"selected\"" : "") + ">"
+							+ SkinUtils.skinMap.get(s) + "</option>");
 				}
 				sb.append("</select>");
 			}
@@ -184,18 +177,14 @@ public final class ItSiteUtil {
 		final String id = UID.asString();
 		sb.append("<div class=\"tabs\" id=\"" + UID.asString() + "\">");
 		sb.append("<span id='" + id + "' class=\"tab active\"");
-		sb.append(" onclick=\"$IT.togglePageletV(this,'" + act
-				+ "','time=week&" + param + "');\">周</span><span");
+		sb.append(" onclick=\"$IT.togglePageletV(this,'" + act + "','time=week&" + param + "');\">周</span><span");
 		sb.append(" class=\"tab\"");
-		sb.append(" onclick=\"$IT.togglePageletV(this,'" + act
-				+ "','time=month&" + param + "');\">月</span><span");
+		sb.append(" onclick=\"$IT.togglePageletV(this,'" + act + "','time=month&" + param + "');\">月</span><span");
 		sb.append(" class=\"tab\"");
-		sb.append(" onclick=\"$IT.togglePageletV(this,'" + act
-				+ "','time=year&" + param + "');\">年</span>");
+		sb.append(" onclick=\"$IT.togglePageletV(this,'" + act + "','time=year&" + param + "');\">年</span>");
 		sb.append("</div>");
-		sb.append(JavascriptUtils.wrapScriptTag(JavascriptUtils
-				.wrapWhenReady("$IT.togglePageletV($('" + id + "'),'" + act
-						+ "','time=week&" + param + "');")));
+		sb.append(JavascriptUtils.wrapScriptTag(JavascriptUtils.wrapWhenReady("$IT.togglePageletV($('" + id + "'),'" + act + "','time=week&" + param
+				+ "');")));
 		return sb.toString();
 	}
 
@@ -232,8 +221,7 @@ public final class ItSiteUtil {
 	 * @param subject
 	 * @param body
 	 */
-	public static void sendMailToUser(final String subject, final String body,
-			final IUser user) {
+	public static void sendMailToUser(final String subject, final String body, final IUser user) {
 		final MailMessageNotification mailMessage = new MailMessageNotification();
 		mailMessage.setHtmlContent(true);
 		mailMessage.getTo().add(user);
@@ -248,8 +236,7 @@ public final class ItSiteUtil {
 	 * @param length
 	 * @return
 	 */
-	public static String getShortString(final String content, int length,
-			final boolean more) {
+	public static String getShortString(final String content, int length, final boolean more) {
 		if (content.length() < length)
 			return content;
 		float temp = length;
@@ -269,17 +256,14 @@ public final class ItSiteUtil {
 		}
 		if (content.length() <= position)
 			return content;
-		return content.substring(0, Math.min((int) position, content.length()))
-				+ (more ? "..." : "");
+		return content.substring(0, Math.min((int) position, content.length())) + (more ? "..." : "");
 	}
 
-	public static String getShortContent(final String content,
-			final int length, final boolean newLine) {
+	public static String getShortContent(final String content, final int length, final boolean newLine) {
 		return getShortContent(content, length, newLine, false);
 	}
 
-	public static String getShortContent(final String content,
-			final int length, final boolean newLine, final boolean removeA) {
+	public static String getShortContent(final String content, final int length, final boolean newLine, final boolean removeA) {
 		final Document document = HTMLUtils.createHtmlDocument(content, false);
 		if (removeA) {
 			document.select("a").remove();
@@ -287,21 +271,17 @@ public final class ItSiteUtil {
 		return HTMLUtils.truncateHtml(document, length, newLine, true, true);
 	}
 
-	public static ITableEntityManager getTableEntityManager(
-			final IApplicationModule applicationModule, final Class<?> beanClazz) {
-		return DataObjectManagerUtils.getTableEntityManager(applicationModule,
-				beanClazz);
+	public static ITableEntityManager getTableEntityManager(final IApplicationModule applicationModule, final Class<?> beanClazz) {
+		return DataObjectManagerUtils.getTableEntityManager(applicationModule, beanClazz);
 	}
 
-	public static ITableEntityManager getTableEntityManager(
-			final IApplicationModule applicationModule) {
+	public static ITableEntityManager getTableEntityManager(final IApplicationModule applicationModule) {
 		return DataObjectManagerUtils.getTableEntityManager(applicationModule);
 	}
 
 	public static boolean isManage(final PageRequestResponse requestResponse) {
 		try {
-			if (IWebApplicationModule.Utils.isManager(requestResponse,
-					applicationModule)) {
+			if (IWebApplicationModule.Utils.isManager(requestResponse, applicationModule)) {
 				return true;
 			}
 		} catch (final Exception e) {
@@ -309,8 +289,7 @@ public final class ItSiteUtil {
 		return false;
 	}
 
-	public static boolean isManage(final PageRequestResponse requestResponse,
-			final IWebApplicationModule module) {
+	public static boolean isManage(final PageRequestResponse requestResponse, final IWebApplicationModule module) {
 		try {
 			if (IWebApplicationModule.Utils.isManager(requestResponse, module)) {
 				return true;
@@ -320,9 +299,7 @@ public final class ItSiteUtil {
 		return false;
 	}
 
-	public static boolean isManageOrSelf(
-			final PageRequestResponse requestResponse,
-			final IWebApplicationModule module, final Object userId) {
+	public static boolean isManageOrSelf(final PageRequestResponse requestResponse, final IWebApplicationModule module, final Object userId) {
 		try {
 			if (isManage(requestResponse, module)) {
 				return true;
@@ -338,8 +315,7 @@ public final class ItSiteUtil {
 	/**
 	 * 区分大小写
 	 */
-	public static String replaceString(String source, String oldstring,
-			String newstring, final boolean ignoreCase) {
+	public static String replaceString(String source, String oldstring, String newstring, final boolean ignoreCase) {
 		if (ignoreCase)
 			return source.replaceAll(oldstring, newstring);// 大小写敏感
 		else
@@ -347,15 +323,12 @@ public final class ItSiteUtil {
 	}
 
 	// 使用正则表达式实现不区分大小写替换
-	public static String replaceStringP(String source, String oldstring,
-			String newstring, final boolean ignoreCase) {
+	public static String replaceStringP(String source, String oldstring, String newstring, final boolean ignoreCase) {
 		if (ignoreCase) {
-			Matcher m1 = Pattern.compile(oldstring, Pattern.CANON_EQ).matcher(
-					source);
+			Matcher m1 = Pattern.compile(oldstring, Pattern.CANON_EQ).matcher(source);
 			return m1.replaceAll(newstring);// 大小写敏感
 		} else {
-			Matcher m = Pattern.compile(oldstring, Pattern.CASE_INSENSITIVE)
-					.matcher(source);
+			Matcher m = Pattern.compile(oldstring, Pattern.CASE_INSENSITIVE).matcher(source);
 			return m.replaceAll(newstring); // 大小写不敏感
 		}
 	}
@@ -366,8 +339,7 @@ public final class ItSiteUtil {
 		final String[] marks = mark.split(" ");
 		String temp = content;
 		for (final String m : marks) {
-			temp = StringsUtils.replace(temp.toLowerCase(), m.toLowerCase(),
-					StringsUtils.u("<span class=\"_red\">", m, "</span>"));
+			temp = StringsUtils.replace(temp.toLowerCase(), m.toLowerCase(), StringsUtils.u("<span class=\"_red\">", m, "</span>"));
 		}
 		return temp;
 	}
@@ -387,14 +359,10 @@ public final class ItSiteUtil {
 		return "#";
 	}
 
-	public static String layoutListInfo(PageRequestResponse requestResponse,
-			final ICommonBeanAware commonBean) {
+	public static String layoutListInfo(PageRequestResponse requestResponse, final ICommonBeanAware commonBean) {
 		final StringBuffer sb = new StringBuffer();
-		sb.append(ContentUtils.getAccountAware().wrapAccountHref(
-				requestResponse, commonBean.getUserId(),
-				commonBean.getUserText()));
-		sb.append(" , 发布于 ").append(
-				DateUtils.getRelativeDate(commonBean.getCreateDate()));
+		sb.append(ContentUtils.getAccountAware().wrapAccountHref(requestResponse, commonBean.getUserId(), commonBean.getUserText()));
+		sb.append(" , 发布于 ").append(DateUtils.getRelativeDate(commonBean.getCreateDate()));
 		sb.append(" , (").append(commonBean.getRemarks()).append("条评论");
 		sb.append(" , ").append(commonBean.getViews()).append("次阅读)");
 		return sb.toString();
@@ -405,8 +373,7 @@ public final class ItSiteUtil {
 	 * 
 	 * @return
 	 */
-	public static String layoutRemarkTime(PageRequestResponse requestResponse,
-			final ICommonBeanAware commonBean) {
+	public static String layoutRemarkTime(PageRequestResponse requestResponse, final ICommonBeanAware commonBean) {
 		final StringBuilder sb = new StringBuilder();
 		Date date = commonBean.getCreateDate();
 		boolean isRemark = false;
@@ -414,15 +381,12 @@ public final class ItSiteUtil {
 			date = commonBean.getRemarkDate();
 			isRemark = true;
 		}
-		sb.append("<span title=\"" + ConvertUtils.toDateString(date) + "\">")
-				.append(DateUtils.getRelativeDate(date)).append("</span>");
+		sb.append("<span title=\"" + ConvertUtils.toDateString(date) + "\">").append(DateUtils.getRelativeDate(date)).append("</span>");
 		sb.append(", ");
-		final Object userId = commonBean.getRemarkUserId() == null
-				|| commonBean.getRemarkUserId().equals2(0) ? commonBean
-				.getUserId() : commonBean.getRemarkUserId();
+		final Object userId = commonBean.getRemarkUserId() == null || commonBean.getRemarkUserId().equals2(0) ? commonBean.getUserId() : commonBean
+				.getRemarkUserId();
 		sb.append("By ");
-		sb.append(StringUtils.text(ContentUtils.getAccountAware()
-				.wrapAccountHref(requestResponse, userId), "匿名"));
+		sb.append(StringUtils.text(ContentUtils.getAccountAware().wrapAccountHref(requestResponse, userId), "匿名"));
 		final Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.HOUR, -12);
 		if (date.after(cal.getTime())) {
@@ -440,12 +404,9 @@ public final class ItSiteUtil {
 	 * @param commonBean
 	 * @return
 	 */
-	public static String layoutRemarkAndView(final ICommonBeanAware commonBean,
-			final boolean today) {
+	public static String layoutRemarkAndView(final ICommonBeanAware commonBean, final boolean today) {
 		final StringBuilder sb = new StringBuilder();
-		sb.append("<span class=\"nnum\" title=\"" + commonBean.getRemarks()
-				+ "评论/"
-				+ (today ? commonBean.getTodayViews() : commonBean.getViews())
+		sb.append("<span class=\"nnum\" title=\"" + commonBean.getRemarks() + "评论/" + (today ? commonBean.getTodayViews() : commonBean.getViews())
 				+ "阅读\">");
 		if (commonBean.isNewRemark()) {
 			sb.append("<span class=\"nnum _red\">");
@@ -454,18 +415,14 @@ public final class ItSiteUtil {
 		} else {
 			sb.append(commonBean.getRemarks());
 		}
-		sb.append("/").append(
-				today ? commonBean.getTodayViews() : commonBean.getViews());
+		sb.append("/").append(today ? commonBean.getTodayViews() : commonBean.getViews());
 		sb.append("</span>");
 		return sb.toString();
 	}
 
-	public static String layoutRemarkAndViewAndVote(
-			final ICommonBeanAware commonBean) {
+	public static String layoutRemarkAndViewAndVote(final ICommonBeanAware commonBean) {
 		final StringBuilder sb = new StringBuilder();
-		sb.append("<span class=\"nnum\" title=\"" + commonBean.getVotes()
-				+ "支持/" + commonBean.getRemarks() + "评论/"
-				+ commonBean.getViews() + "阅读\">");
+		sb.append("<span class=\"nnum\" title=\"" + commonBean.getVotes() + "支持/" + commonBean.getRemarks() + "评论/" + commonBean.getViews() + "阅读\">");
 		sb.append(commonBean.getVotes()).append("支持/");
 		if (commonBean.isNewRemark()) {
 			sb.append("<span class=\"nnum _red\">");
@@ -484,27 +441,20 @@ public final class ItSiteUtil {
 	 * 
 	 * @return
 	 */
-	public static String layoutTime(PageRequestResponse requestResponse,
-			final ICommonBeanAware commonBean, final String dateFormat,
+	public static String layoutTime(PageRequestResponse requestResponse, final ICommonBeanAware commonBean, final String dateFormat,
 			final boolean isNew) {
 		final StringBuilder sb = new StringBuilder();
-		sb.append(ContentUtils.getAccountAware().wrapAccountHref(
-				requestResponse, commonBean.getUserId()));
+		sb.append(ContentUtils.getAccountAware().wrapAccountHref(requestResponse, commonBean.getUserId()));
 		sb.append(", ");
 		if (dateFormat != null) {
 			try {
-				sb.append(ConvertUtils.toDateString(commonBean.getModifyDate(),
-						dateFormat));
+				sb.append(ConvertUtils.toDateString(commonBean.getModifyDate(), dateFormat));
 			} catch (final Exception ex) {
 				sb.append(ex.getMessage());
 			}
 		} else {
-			sb.append(
-					"<span title=\""
-							+ ConvertUtils.toDateString(commonBean
-									.getModifyDate()) + "\">")
-					.append(DateUtils.getRelativeDate(commonBean
-							.getModifyDate())).append("</span>");
+			sb.append("<span title=\"" + ConvertUtils.toDateString(commonBean.getModifyDate()) + "\">")
+					.append(DateUtils.getRelativeDate(commonBean.getModifyDate())).append("</span>");
 		}
 		if (isNew) {
 			final Calendar cal = Calendar.getInstance();
@@ -516,31 +466,23 @@ public final class ItSiteUtil {
 		return sb.toString();
 	}
 
-	public static String layoutTimeHome(PageRequestResponse requestResponse,
-			final ICommonBeanAware commonBean, final String dateFormat,
+	public static String layoutTimeHome(PageRequestResponse requestResponse, final ICommonBeanAware commonBean, final String dateFormat,
 			final boolean isNew) {
 		final StringBuilder sb = new StringBuilder();
 		if (dateFormat != null) {
 			try {
-				sb.append(ConvertUtils.toDateString(commonBean.getModifyDate(),
-						dateFormat));
+				sb.append(ConvertUtils.toDateString(commonBean.getModifyDate(), dateFormat));
 			} catch (final Exception ex) {
 				sb.append(ex.getMessage());
 			}
 		} else {
-			sb.append(
-					"<span title=\""
-							+ ConvertUtils.toDateString(commonBean
-									.getModifyDate()) + "\">")
-					.append(DateUtils.getRelativeDate(commonBean
-							.getModifyDate())).append("</span>");
+			sb.append("<span title=\"" + ConvertUtils.toDateString(commonBean.getModifyDate()) + "\">")
+					.append(DateUtils.getRelativeDate(commonBean.getModifyDate())).append("</span>");
 		}
 		sb.append(", ");
-		String remarkUserText = ContentUtils.getAccountAware().wrapAccountHref(
-				requestResponse, commonBean.getRemarkUserId());
+		String remarkUserText = ContentUtils.getAccountAware().wrapAccountHref(requestResponse, commonBean.getRemarkUserId());
 		if (!StringUtils.hasText(remarkUserText)) {
-			remarkUserText = ContentUtils.getAccountAware().wrapAccountHref(
-					requestResponse, commonBean.getUserId());
+			remarkUserText = ContentUtils.getAccountAware().wrapAccountHref(requestResponse, commonBean.getUserId());
 		}
 		sb.append("By ").append(remarkUserText);
 		if (isNew) {
@@ -559,8 +501,7 @@ public final class ItSiteUtil {
 	 * @return
 	 */
 	public static boolean isLogin(final PageRequestResponse requestResponse) {
-		final IAccount login = AccountSession.getLogin(requestResponse
-				.getSession());
+		final IAccount login = AccountSession.getLogin(requestResponse.getSession());
 		if (login == null) {
 			return false;
 		}
@@ -594,8 +535,7 @@ public final class ItSiteUtil {
 	 * @return
 	 */
 	public static IUser getLoginUser(final PageRequestResponse requestResponse) {
-		final IAccount account = AccountSession.getLogin(requestResponse
-				.getSession());
+		final IAccount account = AccountSession.getLogin(requestResponse.getSession());
 		if (account == null) {
 			final User u = new User();
 			u.setId(LongID.zero);
@@ -605,8 +545,7 @@ public final class ItSiteUtil {
 		return account.user();
 	}
 
-	public static IAccount getLoginAccount(
-			final PageRequestResponse requestResponse) {
+	public static IAccount getLoginAccount(final PageRequestResponse requestResponse) {
 		return AccountSession.getLogin(requestResponse.getSession());
 	}
 
@@ -617,45 +556,33 @@ public final class ItSiteUtil {
 	 * @param content
 	 * @return
 	 */
-	public static String doDownloadContent(
-			final ComponentParameter compParameter, final String content) {
+	public static String doDownloadContent(final ComponentParameter compParameter, final String content) {
 		final Document doc = Jsoup.parse(content);
-		final Elements atts = doc.select("a[href^="
-				+ FileSelectUtils.DOWNLOAD_FLAG + "]");
+		final Elements atts = doc.select("a[href^=" + FileSelectUtils.DOWNLOAD_FLAG + "]");
 		if (atts.isEmpty()) {
 			return content;
 		}
 		for (int i = 0; i < atts.size(); i++) {
 			final Element att = atts.get(i);
-			String dl = att.attr("href").substring(
-					FileSelectUtils.DOWNLOAD_FLAG.length());
+			String dl = att.attr("href").substring(FileSelectUtils.DOWNLOAD_FLAG.length());
 			att.removeAttr("href");
 			final int p = dl.indexOf("?");
-			final Map<String, Object> params = WebUtils.toQueryParams(dl
-					.substring(p + 1));
-			final String dl_points = compParameter
-					.getRequestParameter("dl_points");
+			final Map<String, Object> params = WebUtils.toQueryParams(dl.substring(p + 1));
+			final String dl_points = compParameter.getRequestParameter("dl_points");
 			if (StringUtils.hasText(dl_points)) {
 				params.put("points", 1);
 				params.put("posttext", 0);
 			}
-			final String nDL = AlgorithmUtils.base64Encode((dl.substring(0,
-					p + 1) + WebUtils.toQueryString(params)).getBytes());
-			att.attr("onclick",
-					"$Actions['__my_folderfile_ajax_download']('dl=" + nDL
-							+ "');");
+			final String nDL = AlgorithmUtils.base64Encode((dl.substring(0, p + 1) + WebUtils.toQueryString(params)).getBytes());
+			att.attr("onclick", "$Actions['__my_folderfile_ajax_download']('dl=" + nDL + "');");
 			if (true) {
 				dl = compParameter.wrapContextPath(dl);
 				try {
-					final URL url = new URL(
-							AbstractUrlForward
-									.getLocalhostUrl(compParameter.request)
-									+ dl);
+					final URL url = new URL(AbstractUrlForward.getLocalhostUrl(compParameter.request) + dl);
 					if (ImageUtils.isImage(url)) {
 						final Element img = doc.createElement("img");
-						img.attr("src", WebUtils.addParameters(dl, "loc=true"))
-								.attr("style",
-										"padding: 1px; border: 1px solid #999; max-width: 600px;");
+						img.attr("src", WebUtils.addParameters(dl, "loc=true")).attr("style",
+								"padding: 1px; border: 1px solid #999; max-width: 600px;");
 						att.replaceWith(img);
 					}
 				} catch (final Exception e) {
@@ -697,14 +624,12 @@ public final class ItSiteUtil {
 		cal.set(Calendar.MINUTE, 0);
 		cal.set(Calendar.SECOND, 0);
 		cal.set(Calendar.MILLISECOND, 0);
-		cal.set(Calendar.DAY_OF_WEEK,
-				cal.getActualMaximum(Calendar.DAY_OF_WEEK));
+		cal.set(Calendar.DAY_OF_WEEK, cal.getActualMaximum(Calendar.DAY_OF_WEEK));
 		cal.add(Calendar.DATE, 2);
 		return (cal.getTimeInMillis() - new Date().getTime()) / 1000;
 	}
 
-	public static String getHtmlEditorToolbar(
-			final PageRequestResponse requestResponse, final String bean) {
+	public static String getHtmlEditorToolbar(final PageRequestResponse requestResponse, final String bean) {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<a class=\"simple_btn simple_btn_left\" ");
 		sb.append("onclick=\"$Actions['__").append(bean);
@@ -715,13 +640,10 @@ public final class ItSiteUtil {
 		return sb.toString();
 	}
 
-	public static String getHtmlEditorToolbar(
-			final PageRequestResponse requestResponse, final String bean,
-			final String content) {
+	public static String getHtmlEditorToolbar(final PageRequestResponse requestResponse, final String bean, final String content) {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<a class=\"simple_btn simple_btn_left\" ");
-		sb.append("onclick=\"$Actions['fileUploadWindowAct']('refId=" + content
-				+ "');\">#(TopicPagerUtils.0)</a>");
+		sb.append("onclick=\"$Actions['fileUploadWindowAct']('refId=" + content + "');\">#(TopicPagerUtils.0)</a>");
 		sb.append("<a class=\"simple_btn simple_btn_right\" ");
 		sb.append("onclick=\"$Actions['__").append(bean);
 		sb.append("_syntaxHighlighter'].editor();\">#(TopicPagerUtils.4)</a>");
@@ -731,23 +653,16 @@ public final class ItSiteUtil {
 	public static String buildVote(ICommonBeanAware beanAware, final String id) {
 		final StringBuffer buf = new StringBuffer();
 		buf.append("<div class='voteCommon'>");
-		buf.append("<span class='__vote voteUp' title='顶"
-				+ beanAware.getVotes() + "次'");
+		buf.append("<span class='__vote voteUp' title='顶" + beanAware.getVotes() + "次'");
 		buf.append("param='voteValue=up&").append(id);
-		buf.append("=").append(beanAware.getId()).append("'>")
-				.append("顶</span>");
-		buf.append("<span class='voteValue' title='顶"
-				+ beanAware.getVotes()
-				+ "次,踩"
-				+ beanAware.getDownVotes()
+		buf.append("=").append(beanAware.getId()).append("'>").append("顶</span>");
+		buf.append("<span class='voteValue' title='顶" + beanAware.getVotes() + "次,踩" + beanAware.getDownVotes()
 				+ "次\n点击隐藏' id='voteValue' onclick=\"this.up('div').$toggle();\">");
 		buf.append(beanAware.getTotalVotes());
 		buf.append("</span>");
-		buf.append("<span class='__vote voteDown' title='踩"
-				+ beanAware.getDownVotes() + "次'");
+		buf.append("<span class='__vote voteDown' title='踩" + beanAware.getDownVotes() + "次'");
 		buf.append("param='voteValue=down&").append(id);
-		buf.append("=").append(beanAware.getId()).append("'>")
-				.append("踩</span>");
+		buf.append("=").append(beanAware.getId()).append("'>").append("踩</span>");
 		buf.append("</div>");
 		return buf.toString();
 	}
@@ -757,8 +672,7 @@ public final class ItSiteUtil {
 	 * 
 	 * @return
 	 */
-	public static String witchDescription(
-			final PageRequestResponse requestResponse) {
+	public static String witchDescription(final PageRequestResponse requestResponse) {
 		final String url = HTTPUtils.getRequestURI(requestResponse.request);
 		final StringBuffer buf = new StringBuffer();
 		buf.append("<meta name=\"description\" content=\"");
@@ -809,11 +723,9 @@ public final class ItSiteUtil {
 	/**
 	 * 交换积分
 	 */
-	public static void switchPoint(final PageRequestResponse requestResponse,
-			final int sPoint, final Object userId, final ID id) {
+	public static void switchPoint(final PageRequestResponse requestResponse, final int sPoint, final Object userId, final ID id) {
 		// 交换积分
-		final IAccount account = ItSiteUtil.getAccountById(ItSiteUtil
-				.getLoginUser(requestResponse).getId());
+		final IAccount account = ItSiteUtil.getAccountById(ItSiteUtil.getLoginUser(requestResponse).getId());
 		if (account != null) {
 			account.setPoints(account.getPoints() - sPoint);
 		}
@@ -822,8 +734,7 @@ public final class ItSiteUtil {
 	/**
 	 * 更新账号日志
 	 */
-	public static void addAccountLog(final ID userId, final String eventId,
-			final int point, final int exp, final ID logId) {
+	public static void addAccountLog(final ID userId, final String eventId, final int point, final int exp, final ID logId) {
 		final AccountLog log = new AccountLog();
 		log.setAccountId(userId);
 		log.setEventId(eventId);
@@ -833,22 +744,17 @@ public final class ItSiteUtil {
 		log.setLogId(logId);
 	}
 
-	public static void update(final PageRequestResponse requestResponse,
-			final ID userId, final ID id, final boolean remark) {
+	public static void update(final PageRequestResponse requestResponse, final ID userId, final ID id, final boolean remark) {
 		if (isManage(requestResponse, applicationModule)) {
 			if (remark)
-				AccountContext.update(ItSiteUtil.getAccountById(userId),
-						"ma_delete_remark", id);
+				AccountContext.update(ItSiteUtil.getAccountById(userId), "ma_delete_remark", id);
 			else
-				AccountContext.update(ItSiteUtil.getAccountById(userId),
-						"ma_delete", id);
+				AccountContext.update(ItSiteUtil.getAccountById(userId), "ma_delete", id);
 		} else {
 			if (remark)
-				AccountContext.update(ItSiteUtil.getAccountById(userId),
-						"my_delete_remark", id);
+				AccountContext.update(ItSiteUtil.getAccountById(userId), "my_delete_remark", id);
 			else
-				AccountContext.update(ItSiteUtil.getAccountById(userId),
-						"my_delete", id);
+				AccountContext.update(ItSiteUtil.getAccountById(userId), "my_delete", id);
 		}
 	}
 
@@ -858,11 +764,8 @@ public final class ItSiteUtil {
 	 * @param account
 	 * @param content
 	 */
-	public static void addSpaceLog(final IAccount account,
-			final String content, final EFunctionModule functionModule,
-			final ID refId) {
-		final ITableEntityManager log_mgr = MySpaceUtils
-				.getTableEntityManager(SapceLogBean.class);
+	public static void addSpaceLog(final IAccount account, final String content, final EFunctionModule functionModule, final ID refId) {
+		final ITableEntityManager log_mgr = MySpaceUtils.getTableEntityManager(SapceLogBean.class);
 		final SapceLogBean sapceLog = new SapceLogBean();
 		sapceLog.setUserId(account == null ? new LongID(0) : account.getId());
 		sapceLog.setCreateDate(new Date());
@@ -884,8 +787,7 @@ public final class ItSiteUtil {
 			final Element a = as.get(i);
 			final String href = a.attr("href");
 			if (!href.startsWith("http") && href.startsWith("www")) {
-				a.attr("href", href.charAt(0) == '/' ? ItSiteUtil.url + href
-						: ItSiteUtil.url + "/" + href);
+				a.attr("href", href.charAt(0) == '/' ? ItSiteUtil.url + href : ItSiteUtil.url + "/" + href);
 			}
 		}
 		return document.body().html();
@@ -896,30 +798,23 @@ public final class ItSiteUtil {
 	 * 
 	 * @return
 	 */
-	public static String isAttention(final PageRequestResponse requestResponse,
-			final EFunctionModule vtype, final ID attentionId,
-			final String text, String text1) {
-		return AttentionUtils.get(requestResponse, vtype, attentionId) != null ? text
-				: text1;
+	public static String isAttention(final PageRequestResponse requestResponse, final EFunctionModule vtype, final ID attentionId, final String text,
+			String text1) {
+		return AttentionUtils.get(requestResponse, vtype, attentionId) != null ? text : text1;
 	}
 
-	public static String buildComplaint(
-			final PageRequestResponse requestRespons,
-			final EFunctionModule refModule, final Object id) {
+	public static String buildComplaint(final PageRequestResponse requestRespons, final EFunctionModule refModule, final Object id) {
 		return buildComplaint(requestRespons, refModule, id, "a2");
 	}
 
-	public static String buildComplaint(
-			final PageRequestResponse requestRespons,
-			final EFunctionModule refModule, final Object id,
+	public static String buildComplaint(final PageRequestResponse requestRespons, final EFunctionModule refModule, final Object id,
 			final String className) {
 		final StringBuffer buf = new StringBuffer();
 		buf.append("<a dl='false' ");
 		if (className != null) {
 			buf.append(" class='").append(className).append("'");
 		}
-		buf.append(" onclick=\"$Actions['complaintWindowAct']('refId=" + id
-				+ "&refModule=" + refModule.name() + "');\">举报</a>");
+		buf.append(" onclick=\"$Actions['complaintWindowAct']('refId=" + id + "&refModule=" + refModule.name() + "');\">举报</a>");
 		return buf.toString();
 	}
 
@@ -938,8 +833,7 @@ public final class ItSiteUtil {
 	 * 跳转函数
 	 */
 	public static String buildActionLoc(final String fun) {
-		return JavascriptUtils.wrapScriptTag(JavascriptUtils
-				.wrapWhenReady("$Actions.loc('" + fun + "');"));
+		return JavascriptUtils.wrapScriptTag(JavascriptUtils.wrapWhenReady("$Actions.loc('" + fun + "');"));
 	}
 
 	/**
@@ -950,8 +844,7 @@ public final class ItSiteUtil {
 	 */
 	public static String getExpGrade(final IAccount account) {
 		Exp exp;
-		if (account != null
-				&& (exp = AccountContext.getExp(account.getExp())) != null) {
+		if (account != null && (exp = AccountContext.getExp(account.getExp())) != null) {
 			final StringBuilder sb = new StringBuilder();
 			sb.append(exp).append(UserPagerUtils.getExpIcon(exp));
 			return sb.toString();
@@ -960,19 +853,14 @@ public final class ItSiteUtil {
 	}
 
 	public static int getConstantValue(final String name) {
-		final ITableEntityManager temgr = ItSiteUtil.getTableEntityManager(
-				ItSiteUtil.applicationModule, CounterBean.class);
-		final CounterBean counterBean = temgr.queryForObject(
-				new ExpressionValue("name=?", new Object[] { name }),
-				CounterBean.class);
+		final ITableEntityManager temgr = ItSiteUtil.getTableEntityManager(ItSiteUtil.applicationModule, CounterBean.class);
+		final CounterBean counterBean = temgr.queryForObject(new ExpressionValue("name=?", new Object[] { name }), CounterBean.class);
 		return counterBean == null ? 0 : counterBean.getCounter();
 	}
 
 	public static int setConstantValue(final String name) {
-		final ITableEntityManager temgr = ItSiteUtil.getTableEntityManager(
-				ItSiteUtil.applicationModule, CounterBean.class);
-		CounterBean counterBean = temgr.queryForObject(new ExpressionValue(
-				"name=?", new Object[] { name }), CounterBean.class);
+		final ITableEntityManager temgr = ItSiteUtil.getTableEntityManager(ItSiteUtil.applicationModule, CounterBean.class);
+		CounterBean counterBean = temgr.queryForObject(new ExpressionValue("name=?", new Object[] { name }), CounterBean.class);
 		if (counterBean == null) {
 			counterBean = new CounterBean();
 		}
@@ -1005,8 +893,7 @@ public final class ItSiteUtil {
 	/**
 	 * 添加导航菜单
 	 */
-	public static void addMenuNav(HttpSession session, final String url,
-			final String title, final boolean init) {
+	public static void addMenuNav(HttpSession session, final String url, final String title, final boolean init) {
 		List<String> navList = (List<String>) session.getAttribute("navList");
 		if (navList == null) {
 			navList = new ArrayList<String>();
@@ -1028,13 +915,11 @@ public final class ItSiteUtil {
 
 	public static String buildTimeString(Date date) {
 		final StringBuffer sb = new StringBuffer();
-		final String[] months = { "一月", "二月", "三月", "四月", "五月", "六月", "七月",
-				"八月", "九月", "十月", "十一月", "十二月" };
+		final String[] months = { "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" };
 		final Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
 		sb.append("<div class=\"time\">");
-		sb.append("<div class=\"month\">" + months[cal.get(Calendar.MONTH)]
-				+ "</div>");
+		sb.append("<div class=\"month\">" + months[cal.get(Calendar.MONTH)] + "</div>");
 		sb.append("<div class=\"day\">" + cal.get(Calendar.DATE) + "</div>");
 		sb.append("<div class=\"year\">" + cal.get(Calendar.YEAR) + "</div>");
 		sb.append("</div>");
@@ -1047,38 +932,31 @@ public final class ItSiteUtil {
 	 * @param requestResponse
 	 * @return
 	 */
-	public static String getMessages(final PageRequestResponse requestResponse,
-			int type) {
+	public static String getMessages(final PageRequestResponse requestResponse, int type) {
 		IAccount account = getLoginAccount(requestResponse);
 		if (account == null) {
 			return "";
 		}
 		final StringBuffer sql = new StringBuffer();
-		sql.append("select id from simple_my_message where messageread=0 and toid="
-				+ account.getId());
+		sql.append("select id from simple_my_message where messageread=0 and toid=" + account.getId());
 		if (type != -1) {
 			sql.append(" and messageType=" + type);
 		}
-		IQueryEntitySet<Map<String, Object>> qs = MessageUtils
-				.getTableEntityManager(SimpleMessage.class).query(
-						new SQLValue(sql.toString()));
+		IQueryEntitySet<Map<String, Object>> qs = MessageUtils.getTableEntityManager(SimpleMessage.class).query(new SQLValue(sql.toString()));
 		int count = qs.getCount();
 
 		if (type == -1) {
 			// 对话
 			sql.setLength(0);
-			sql.append("select id from simple_dialog where (toread=0 and toid="
-					+ account.getId() + ") or (sendread=0 and sentid="
-					+ account.getId() + ")");
-			qs = MessageUtils.getTableEntityManager(SimpleMessage.class).query(
-					new SQLValue(sql.toString()));
+			sql.append("select id from simple_dialog where (toread=0 and toid=" + account.getId() + ") or (sendread=0 and sentid=" + account.getId()
+					+ ")");
+			qs = MessageUtils.getTableEntityManager(SimpleMessage.class).query(new SQLValue(sql.toString()));
 			count += qs.getCount();
 			// 好友请求
 			sql.setLength(0);
 			sql.append("select id from simple_my_friends_request where requeststatus=0 ");
 			sql.append(" and toid=" + account.getId());
-			qs = FriendsUtils.getTableEntityManager(FriendsRequest.class)
-					.query(new SQLValue(sql.toString()));
+			qs = FriendsUtils.getTableEntityManager(FriendsRequest.class).query(new SQLValue(sql.toString()));
 			count += qs.getCount();
 		}
 		if (count == 0)
@@ -1101,12 +979,9 @@ public final class ItSiteUtil {
 			return "";
 		}
 		final StringBuffer sql = new StringBuffer();
-		sql.append("select id from simple_dialog where (toread=0 and toid="
-				+ account.getId() + ") or (sendread=0 and sentid="
-				+ account.getId() + ")");
-		final IQueryEntitySet<Map<String, Object>> qs = MessageUtils
-				.getTableEntityManager(SimpleMessage.class).query(
-						new SQLValue(sql.toString()));
+		sql.append("select id from simple_dialog where (toread=0 and toid=" + account.getId() + ") or (sendread=0 and sentid=" + account.getId()
+				+ ")");
+		final IQueryEntitySet<Map<String, Object>> qs = MessageUtils.getTableEntityManager(SimpleMessage.class).query(new SQLValue(sql.toString()));
 		final int count = qs.getCount();
 		if (count == 0)
 			return "";
@@ -1122,8 +997,7 @@ public final class ItSiteUtil {
 	 * @param requestResponse
 	 * @return
 	 */
-	public static String getFriend(final PageRequestResponse requestResponse,
-			int type) {
+	public static String getFriend(final PageRequestResponse requestResponse, int type) {
 		IAccount account = getLoginAccount(requestResponse);
 		if (account == null) {
 			return "";
@@ -1135,9 +1009,7 @@ public final class ItSiteUtil {
 		} else if (type == 2) {
 			sql.append(" (requeststatus=0 or requeststatus=2) and sentid=" + account.getId());
 		}
-		final IQueryEntitySet<Map<String, Object>> qs = FriendsUtils
-				.getTableEntityManager(FriendsRequest.class).query(
-						new SQLValue(sql.toString()));
+		final IQueryEntitySet<Map<String, Object>> qs = FriendsUtils.getTableEntityManager(FriendsRequest.class).query(new SQLValue(sql.toString()));
 		final int count = qs.getCount();
 		if (count == 0)
 			return "";
@@ -1198,8 +1070,7 @@ public final class ItSiteUtil {
 			if (LOOPBACK_ADDRESS.equals(ip)) {
 				InetAddress inetAddress = InetAddress.getLocalHost();
 				// 貌似此方法需要JDK1.6。
-				byte[] mac = NetworkInterface.getByInetAddress(inetAddress)
-						.getHardwareAddress();
+				byte[] mac = NetworkInterface.getByInetAddress(inetAddress).getHardwareAddress();
 				// 下面代码是把mac地址拼装成String
 				StringBuilder sb = new StringBuilder();
 				for (int i = 0; i < mac.length; i++) {
@@ -1222,9 +1093,7 @@ public final class ItSiteUtil {
 				if (line != null) {
 					int index = line.indexOf(MAC_ADDRESS_PREFIX);
 					if (index != -1) {
-						macAddress = line
-								.substring(index + MAC_ADDRESS_PREFIX.length())
-								.trim().toUpperCase();
+						macAddress = line.substring(index + MAC_ADDRESS_PREFIX.length()).trim().toUpperCase();
 					}
 				}
 			}
@@ -1243,19 +1112,17 @@ public final class ItSiteUtil {
 		buf.append("<div class='v_about" + type + "'>");
 		buf.append("<a style='color:#3393c9;' onclick=\"$Actions['aboutWinAct']();\">智汇</a>");
 		buf.append("(").append("<span style='color: red;'>");
-		buf.append($VType.getNowVType().ver.toString())
-				.append("</span>)</div>");
+		buf.append($VType.getNowVType().ver.toString()).append("</span>)</div>");
 		PrjTemplateBean template = PrjTemplateUtils.getTemplateBean();
 		if ("true".equals(template.attrMap.get("fullScreen"))) {
 			buf.append("<script type=\"text/javascript\">$ready(function() {");
-			buf.append("$$('.fixc" + (classes == null ? "" : "," + classes)
-					+ "').each(function(c) {c.style.width = 'auto';});");
+			buf.append("$$('.fixc" + (classes == null ? "" : "," + classes) + "').each(function(c) {c.style.width = 'auto';});");
 			buf.append("});</script>");
 		}
 		return buf.toString();
 	}
-	
-	public static String wrapHref(String href,String title){
+
+	public static String wrapHref(String href, String title) {
 		final StringBuffer buf = new StringBuffer();
 		buf.append("<a href=\"").append(href).append("\" target=\"_blank\">");
 		buf.append(title).append("</a>");

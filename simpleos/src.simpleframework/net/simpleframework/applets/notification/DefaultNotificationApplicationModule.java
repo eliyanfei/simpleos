@@ -10,6 +10,7 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.Queue;
 
+import net.itsite.ItSiteUtil;
 import net.itsite.utils.LangUtils;
 import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.core.IInitializer;
@@ -33,15 +34,12 @@ import org.springframework.jms.core.MessagePostProcessor;
  *         http://code.google.com/p/simpleframework/
  *         http://www.simpleframework.net
  */
-public class DefaultNotificationApplicationModule extends
-		AbstractWebApplicationModule implements INotificationApplicationModule {
+public class DefaultNotificationApplicationModule extends AbstractWebApplicationModule implements INotificationApplicationModule {
 
 	@Override
 	protected void putTables(final Map<Class<?>, Table> tables) {
-		tables.put(NotificationLogBean.class, new Table(
-				"simple_notification_log"));
-		tables.put(SystemMessageNotification.class, new Table(
-				"simple_message_notification"));
+		tables.put(NotificationLogBean.class, new Table("simple_notification_log"));
+		tables.put(SystemMessageNotification.class, new Table("simple_message_notification"));
 	}
 
 	private ApplicationContext applicationContext;
@@ -52,18 +50,13 @@ public class DefaultNotificationApplicationModule extends
 		NotificationUtils.applicationModule = this;
 
 		final IWebApplication application = getApplication();
-		final File file = new File(application.getServletContext().getRealPath(
-				"/WEB-INF/jms.xml"));
-		final ApplicationContext parent = ((AbstractWebApplication) application)
-				.getApplicationContext();
+		final File file = new File(application.getServletContext().getRealPath("/WEB-INF/jms.xml"));
+		final ApplicationContext parent = ((AbstractWebApplication) application).getApplicationContext();
 		if (file.exists()) {
-			applicationContext = new FileSystemXmlApplicationContext(
-					new String[] { "file:" + file.getAbsolutePath() }, parent);
+			applicationContext = new FileSystemXmlApplicationContext(new String[] { "file:" + file.getAbsolutePath() }, parent);
 		} else {
-			applicationContext = new ClassPathXmlApplicationContext(
-					new String[] { BeanUtils.getResourceClasspath(
-							DefaultNotificationApplicationModule.class,
-							"jms.xml") }, parent);
+			applicationContext = new ClassPathXmlApplicationContext(new String[] { BeanUtils.getResourceClasspath(
+					DefaultNotificationApplicationModule.class, "jms.xml") }, parent);
 		}
 	}
 
@@ -77,18 +70,15 @@ public class DefaultNotificationApplicationModule extends
 
 	@Override
 	public void sendMessage(final ISendCallback callback) {
-		final IMessageNotification messageNotification = callback
-				.getMessageNotification();
+		final IMessageNotification messageNotification = callback.getMessageNotification();
 		if (messageNotification instanceof MailMessageNotification) {
 			final MailMessageNotification mmn = (MailMessageNotification) messageNotification;
 			final MailSender sender = mmn.getSender();
 			if (sender == null) {
 				try {
-					final Object bean = getApplicationContext().getBean(
-							mmn.getClass().getSimpleName());
+					final Object bean = getApplicationContext().getBean(mmn.getClass().getSimpleName());
 					if (bean instanceof MailSenderList) {
-						final List<MailSender> senderList = ((MailSenderList) bean)
-								.getSenderList();
+						final List<MailSender> senderList = ((MailSenderList) bean).getSenderList();
 						if (senderList.size() > 0) {
 							final MailSender sender2 = senderList.remove(0);
 							mmn.setSender(sender2);
@@ -103,16 +93,12 @@ public class DefaultNotificationApplicationModule extends
 			}
 
 			if (sender == null || PrjMgrUtils.sysMail) {
-				Map<String, String> map = PrjMgrUtils.loadCustom("sys");
-				if (LangUtils.toBoolean(map.get("sys_mail"), false)) {
+				if (LangUtils.toBoolean(ItSiteUtil.attrMap.get("sys.sys_mail"), false)) {
 					final MailSender mailSender = new MailSender();
-					mailSender.setSentAddress("<"
-							+ map.get("sys_mail_sentAddress") + ">");
-					mailSender.setSmtpServer(map.get("sys_mail_smtpServer"));
-					mailSender
-							.setSmtpUsername(map.get("sys_mail_smtpUsername"));
-					mailSender
-							.setSmtpPassword(map.get("sys_mail_smtpPassword"));
+					mailSender.setSentAddress("<" + ItSiteUtil.attrMap.get("sys.sys_mail_sentAddress") + ">");
+					mailSender.setSmtpServer(ItSiteUtil.attrMap.get("sys.sys_mail_smtpServer"));
+					mailSender.setSmtpUsername(ItSiteUtil.attrMap.get("sys.sys_mail_smtpUsername"));
+					mailSender.setSmtpPassword(ItSiteUtil.attrMap.get("sys.sys_mail_smtpPassword"));
 					mmn.setSender(mailSender);
 				}
 				PrjMgrUtils.sysMail = false;
@@ -125,8 +111,7 @@ public class DefaultNotificationApplicationModule extends
 					final IUser user = (IUser) obj;
 					if (callback.isSubscribeNotification(user)) {
 						if (mmn instanceof MailMessageNotification) {
-							al.add(user.toString() + " <" + user.getEmail()
-									+ ">");
+							al.add(user.toString() + " <" + user.getEmail() + ">");
 						}
 					}
 				} else if (obj instanceof String) {
@@ -140,17 +125,14 @@ public class DefaultNotificationApplicationModule extends
 				return;
 			}
 
-			final Queue mailQueue = (Queue) getApplicationContext().getBean(
-					"notificationQueue");
-			getJmsTemplate().convertAndSend(mailQueue, mmn,
-					defaultMessagePostProcessor);
+			final Queue mailQueue = (Queue) getApplicationContext().getBean("notificationQueue");
+			getJmsTemplate().convertAndSend(mailQueue, mmn, defaultMessagePostProcessor);
 		}
 	}
 
 	protected MessagePostProcessor defaultMessagePostProcessor = new MessagePostProcessor() {
 		@Override
-		public Message postProcessMessage(final Message message)
-				throws JMSException {
+		public Message postProcessMessage(final Message message) throws JMSException {
 			return message;
 		}
 	};

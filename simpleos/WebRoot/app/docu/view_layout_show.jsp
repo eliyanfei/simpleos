@@ -7,8 +7,8 @@
 <%@ page import="net.simpleframework.util.ConvertUtils"%>
 <%@ page import="net.simpleframework.content.ContentLayoutUtils"%><%@page
 	import="net.simpleframework.core.ado.IDataObjectQuery"%><%@page
-	import="net.itsite.document.docu.DocuBean"%><%@page
-	import="net.itsite.document.docu.DocuUtils"%>
+	import="net.itsite.docu.DocuBean"%><%@page
+	import="net.itsite.docu.DocuUtils"%>
 
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);

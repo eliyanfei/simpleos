@@ -3,6 +3,6 @@
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<components>
 		<catalog name="docuMgrCatalogAct" containerId="docuMgrCatalog"
-			rootText="#(Docu.mgr.1)" handleClass="net.itsite.document.docu.DocuCatalogHandle" />
+			rootText="#(Docu.mgr.1)" handleClass="net.itsite.docu.DocuCatalogHandle" />
 	</components>
 </page>

@@ -35,6 +35,11 @@ public class ItSiteAjaxHandle extends AbstractAjaxRequestHandle {
 		});
 	}
 
+	/**
+	 * 是否有数据源连接
+	 * @param compParameter
+	 * @return
+	 */
 	private boolean isConnection(final ComponentParameter compParameter) {
 		final String driverClassName = compParameter.getParameter("driverClassName");
 		final String url = compParameter.getParameter("url");
@@ -51,6 +56,12 @@ public class ItSiteAjaxHandle extends AbstractAjaxRequestHandle {
 		}
 	}
 
+	/**
+	 * 测试数据源
+	 * @param compParameter
+	 * @return
+	 * @throws Exception
+	 */
 	public IForward doConnectionTest(final ComponentParameter compParameter) throws Exception {
 		return jsonForward(compParameter, new JsonCallback() {
 			@Override
@@ -64,6 +75,12 @@ public class ItSiteAjaxHandle extends AbstractAjaxRequestHandle {
 		});
 	}
 
+	/**
+	 * 保存数据源
+	 * @param compParameter
+	 * @return
+	 * @throws Exception
+	 */
 	public IForward doConnectionSave(final ComponentParameter compParameter) throws Exception {
 		return jsonForward(compParameter, new JsonCallback() {
 			@Override
@@ -108,6 +125,10 @@ public class ItSiteAjaxHandle extends AbstractAjaxRequestHandle {
 		});
 	}
 
+	/**
+	 * 设置语言
+	 * @throws Exception
+	 */
 	public IForward doLanguage(final ComponentParameter compParameter) throws Exception {
 		return jsonForward(compParameter, new JsonCallback() {
 			@Override
@@ -119,27 +140,9 @@ public class ItSiteAjaxHandle extends AbstractAjaxRequestHandle {
 	}
 
 	/**
-	 * 购物车
+	 * 设置皮肤
+	 * @throws Exception
 	 */
-	public IForward shoppingCart(final ComponentParameter compParameter) throws Exception {
-		return jsonForward(compParameter, new JsonCallback() {
-			@Override
-			public void doAction(Map<String, Object> json) throws Exception {
-				Map<String, String> map = (Map<String, String>) compParameter.getSessionAttribute("shopping");
-				if (map == null) {
-					map = new HashMap<String, String>();
-					compParameter.setSessionAttribute("shopping", map);
-				}
-				String id = compParameter.getParameter("id");
-				if (StringsUtils.isNotBlank(id)) {
-					map.put(id, compParameter.getParameter("title"));
-				}
-				json.put("lens", map.size());
-				json.put("titles", StringsUtils.join(map.values(), "\n"));
-			}
-		});
-	}
-
 	public IForward doSkin(final ComponentParameter compParameter) throws Exception {
 		return jsonForward(compParameter, new JsonCallback() {
 

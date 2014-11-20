@@ -3,8 +3,8 @@ package net.prj.mvc.remark;
 import java.util.Map;
 
 import net.itsite.ItSiteUtil;
-import net.itsite.document.docu.DocuRemark;
-import net.itsite.document.docu.DocuUtils;
+import net.itsite.docu.DocuRemark;
+import net.itsite.docu.DocuUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;
 import net.simpleframework.core.ado.IDataObjectQuery;

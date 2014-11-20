@@ -17,8 +17,8 @@
 			<item text="#(Site.2)">
 				<jsClickCallback><![CDATA[$IT.A('site_links_act');$('site_title').innerHTML = '#(Site.2)';]]></jsClickCallback>
 			</item>
-			<!--<item text="开放登入"> <jsClickCallback><![CDATA[$IT.A('site_open_act');$('site_title').innerHTML 
-				= '开放登入';]]></jsClickCallback> </item> -->
+			<item text="开放登入"> <jsClickCallback><![CDATA[$IT.A('site_open_act');$('site_title').innerHTML 
+				= '开放登入';]]></jsClickCallback> </item>
 		</listbox>
 		<ajaxRequest name="site_sys_act" updateContainerId="site_data_id">
 			<urlForward>site_sys_c.jsp</urlForward>

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import net.itsite.document.docu.DocuUtils;
-import net.itsite.document.docu.EDocuStatus;
+import net.itsite.docu.DocuUtils;
+import net.itsite.docu.EDocuStatus;
 import net.prj.core.i.IModelBean;
 import net.prj.mvc.news.MVCNewsUtils;
 import net.simpleframework.content.EContentStatus;

@@ -9,7 +9,7 @@
 		<tablePager name="allDocuListTableAct" containerId="allDocuListTableId"
 			showVerticalLine="true" exportAction="true" noResultDesc="#(Docu.all.list.0)"
 			pageItems="30" showEditPageItems="false" pagerBarLayout="bottom"
-			handleClass="net.itsite.document.docu.all.AllDocuTablePaperHandle">
+			handleClass="net.itsite.docu.all.AllDocuTablePaperHandle">
 			<columns>
 				<column columnText="#(Docu.all.list.1)" filter="true" columnName="title"
 					separator="true"></column>
@@ -64,7 +64,7 @@
 			</menuitem>
 		</menu>
 		<ajaxRequest name="docuAuditAct"
-			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuAudit"
+			handleClass="net.itsite.docu.DocuAjaxHandle" handleMethod="docuAudit"
 			confirmMessage="#(Docu.all.list.8)">
 			<jsCompleteCallback>
 				<![CDATA[

@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.itsite.ItSiteUtil;
 import net.itsite.utils.StringsUtils;
 import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.core.id.ID;
@@ -78,13 +79,12 @@ public final class PageParser extends AbstractPageParser {
 		if (pageParameter.isHttpRequest()) {
 			htmlDocument = HTMLUtils.createHtmlDocument(responseString, true);
 			headElement = htmlDocument.head();
-			Map<String, String> map = PrjMgrUtils.loadCustom("site");
 			final Collection<String[]> coll = htmlBuilder.meta(pageParameter);
 			if (coll != null) {
-				if (map.get("site_keywords") != null)
-					coll.add(new String[] { "name", "keywords", "content", map.get("site_keywords") });
-				if (map.get("site_desc") != null)
-					coll.add(new String[] { "name", "description", "content", map.get("site_desc") });
+				if (ItSiteUtil.attrMap.get("site.site_keywords") != null)
+					coll.add(new String[] { "name", "keywords", "content", ItSiteUtil.attrMap.get("site.site_keywords") });
+				if (ItSiteUtil.attrMap.get("site.site_desc") != null)
+					coll.add(new String[] { "name", "description", "content", ItSiteUtil.attrMap.get("site.site_desc") });
 				for (final String[] attri : coll) {
 					if (attri != null && attri.length > 1 && attri.length % 2 == 0) {
 						final Element meta = headElement.prependElement("meta");
@@ -99,9 +99,9 @@ public final class PageParser extends AbstractPageParser {
 			final String title = pageDocument.getTitle(pageParameter);
 
 			if (StringUtils.hasText(title)) {
-				htmlDocument.title(title + "-" + StringsUtils.trimNull(map.get("site_name"), ""));
+				htmlDocument.title(title + "-" + StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), ""));
 			} else {
-				htmlDocument.title(StringsUtils.trimNull(map.get("site_name"), ""));
+				htmlDocument.title(StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), ""));
 			}
 
 			String favicon = pageDocument.getPageBean().getFavicon();

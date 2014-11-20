@@ -2,11 +2,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<handleClass>net.itsite.document.docu.DocuPageLoad</handleClass>
+	<handleClass>net.itsite.docu.DocuPageLoad</handleClass>
 	<handleMethod>docuLoad1</handleMethod>
 	<components>
 		<ajaxRequest name="docuSaveAct"
-			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuSave"
+			handleClass="net.itsite.docu.DocuAjaxHandle" handleMethod="docuSave"
 			selector="#docuForm" confirmMessage="#(Docu.add.5)">
 			<jsCompleteCallback>
 				<![CDATA[
@@ -20,7 +20,7 @@
 			<validator selector="#docu_title,#docu_catalog" method="required"></validator>
 		</validation>
 
-		<tree name="docuCatalogTreeAct" handleClass="net.itsite.document.docu.DocuCatalogAddTreeHandle" />
+		<tree name="docuCatalogTreeAct" handleClass="net.itsite.docu.DocuCatalogAddTreeHandle" />
 		<dictionary name="docuCatalogAct" width="320" height="350"
 			title="">
 			<tree ref="docuCatalogTreeAct" />

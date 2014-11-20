@@ -6,7 +6,7 @@
 		<tablePager name="downListPaperAct" containerId="downListId"
 			exportAction="true" pageItems="30" showEditPageItems="false"
 			showVerticalLine="true" pagerBarLayout="bottom"
-			handleClass="net.itsite.document.docu.DocuDownTablePaperHandle">
+			handleClass="net.itsite.docu.DocuDownTablePaperHandle">
 			<columns>
 				<column columnText="#(Docu.all.down.0)" columnName="title" columnSqlName="docuId"
 					separator="true"></column>
@@ -66,7 +66,7 @@
 			</menuitem>
 		</menu>
 		<ajaxRequest name="docuLogDeleteAct"
-			handleClass="net.itsite.document.docu.DocuAjaxHandle" handleMethod="docuLogDelete"
+			handleClass="net.itsite.docu.DocuAjaxHandle" handleMethod="docuLogDelete"
 			confirmMessage="#(Docu.all.down.6)">
 			<jsCompleteCallback>
 				<![CDATA[

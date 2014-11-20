@@ -15,9 +15,9 @@
 	import="net.simpleframework.organization.OrgUtils"%><%@page
 	import="net.simpleframework.util.DateUtils"%><%@page
 	import="net.prj.mvc.remark.RemarkUtils"%><%@page
-	import="net.itsite.document.docu.DocuRemark"%><%@page
-	import="net.itsite.document.docu.DocuBean"%><%@page
-	import="net.itsite.document.docu.DocuUtils"%>
+	import="net.itsite.docu.DocuRemark"%><%@page
+	import="net.itsite.docu.DocuBean"%><%@page
+	import="net.itsite.docu.DocuUtils"%>
 
 
 

@@ -3,7 +3,7 @@
 <%@ page
 	import="net.simpleframework.web.page.component.ui.pager.PagerUtils"%>
 <%@ page import="net.simpleframework.organization.OrgUtils"%>
-<%@page import="net.itsite.document.docu.DocuLogBean"%><%@page
+<%@page import="net.itsite.docu.DocuLogBean"%><%@page
 	import="net.itsite.ItSiteUtil"%>
 
 <%

@@ -11,9 +11,6 @@
 
 
 <%
-	Map<String, String> map = new HashMap<String, String>();
-	map.putAll(PrjMgrUtils.loadCustom("site"));
-	map.putAll(PrjMgrUtils.loadCustom("links"));
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 	final String menuName = ItSiteUtil.witchMenu(requestResponse);
 %>
@@ -25,7 +22,7 @@
 		<tr>
 			<td width="75%" valign="top">
 				<div class="ll">
-					<%=PrjLinksUtils.queryLinks(requestResponse, map)%>
+					<%=PrjLinksUtils.queryLinks(requestResponse, ItSiteUtil.attrMap)%>
 				</div>
 			</td>
 		</tr>
@@ -37,8 +34,8 @@
 		</div>
 		<div style="padding-top: 4px; color: gray;">
 			Powered by
-			<%=StringsUtils.trimNull(map.get("site_name"), "")%>&nbsp;&nbsp;&nbsp;版权所有
-			©<%=StringsUtils.trimNull(map.get("site_copyright"), "")%>&nbsp;&nbsp;<%=StringsUtils.trimNull(map.get("site_icp"), "")%>
+			<%=StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), "")%>&nbsp;&nbsp;&nbsp;版权所有
+			©<%=StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_copyright"), "")%>&nbsp;&nbsp;<%=StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_icp"), "")%>
 		</div>
 		<div style="padding-top: 4px; color: gray;">
 			建议使用

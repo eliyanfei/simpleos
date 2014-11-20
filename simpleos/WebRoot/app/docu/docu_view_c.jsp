@@ -3,13 +3,13 @@
 <%@page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="net.itsite.document.docu.DocuBean"%>
-<%@page import="net.itsite.document.docu.DocuUtils"%>
-<%@page import="net.itsite.document.docu.EDocuStatus"%>
+<%@page import="net.itsite.docu.DocuBean"%>
+<%@page import="net.itsite.docu.DocuUtils"%>
+<%@page import="net.itsite.docu.EDocuStatus"%>
 <%@page import="net.itsite.ItSiteUtil"%>
 <%@page import="net.simpleframework.util.HTMLBuilder"%>
 <%@page import="net.itsite.impl.AbstractCatalog"%>
-<%@page import="net.itsite.document.docu.DocuCatalog"%><%@page
+<%@page import="net.itsite.docu.DocuCatalog"%><%@page
 	import="net.simpleframework.web.EFunctionModule"%>
 
 <%

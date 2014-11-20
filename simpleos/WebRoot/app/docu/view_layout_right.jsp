@@ -7,8 +7,8 @@
 <%@page import="net.simpleframework.organization.account.IAccount"%>
 <%@page import="net.simpleframework.organization.OrgUtils"%>
 <%@page import="net.simpleframework.content.ContentUtils"%><%@page
-	import="net.itsite.document.docu.DocuBean"%><%@page
-	import="net.itsite.document.docu.DocuUtils"%><%@page
+	import="net.itsite.docu.DocuBean"%><%@page
+	import="net.itsite.docu.DocuUtils"%><%@page
 	import="net.itsite.ad.AdUtils"%><%@page import="net.itsite.ad.EAd"%><%@page
 	import="java.util.Random"%>
 

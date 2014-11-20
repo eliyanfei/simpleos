@@ -11,8 +11,6 @@
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 	IAccount account = AccountSession.getLogin(session);
-	Map<String, String> map = new HashMap<String, String>();
-	map.putAll(PrjMgrUtils.loadCustom("site"));
 %>
 <style>
 <%--
@@ -60,7 +58,7 @@
 
 				<a href="javascript:;" href="/login.html" hidefocus="true">#(Template.3)</a>
 				<%
-					if ("true".equals(ItSiteUtil.attrMap.get("sys_register"))) {
+					if ("true".equals(ItSiteUtil.attrMap.get("sys.sys_register"))) {
 				%>
 				<a href="javascript:;" href="/register.html" hidefocus="true">注册</a>
 				<%
@@ -78,7 +76,7 @@
 <div class="header" align="center">
 	<div class="fixc">
 		<div class="logo" onclick="$Actions.loc('/');"></div>
-		<div class="slogan"><%=StringsUtils.trimNull(map.get("site_slogan"),"") %></div>
+		<div class="slogan"><%=StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_slogan"),"") %></div>
 		<div class="nav"></div>
 		<div class="rc">
 			<div id="_menu"></div>
