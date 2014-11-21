@@ -2,11 +2,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<handleClass>net.prj.manager.site.PrjSitePageLoad</handleClass>
+	<handleClass>net.simpleos.backend.site.SitePageLoad</handleClass>
 	<handleMethod>siteLoad</handleMethod>
 	<jobView>sys_manager</jobView>
 	<components>
-		<ajaxRequest name="site_siteAct" handleClass="net.prj.manager.site.PrjSiteAction"
+		<ajaxRequest name="site_siteAct" handleClass="net.simpleos.backend.site.SiteAction"
 			selector="#site_site_form" handleMethod="saveSite">
 			<jsCompleteCallback>
 				<![CDATA[

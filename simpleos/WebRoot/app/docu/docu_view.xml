@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="../../xsd/default/simple.xsd">
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<scriptInit>
 		import
@@ -13,7 +13,7 @@
 	<importCSS>
 		<value>${NewsPagerUtils.getCssPath(pageParameter)}/np_edit.css</value>
 	</importCSS>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 	<jobView>${net.simpleframework.organization.IJob.sj_anonymous}</jobView>
 	<components>
 		<ajaxRequest name="docuDownAjax">
@@ -21,11 +21,6 @@
 		</ajaxRequest>
 		<window name="docuDownWindowAct" contentRef="docuDownAjax"
 			title="下载文档" width="400" height="200" resizable="false" />
-		<ajaxRequest name="ajaxAttentionUsersAct">
-			<urlForward>attention/attention_users.jsp</urlForward>
-		</ajaxRequest>
-		<window name="attentionUsersWindowAct" contentRef="ajaxAttentionUsersAct"
-			title="" width="420" height="380" />
 		<ajaxRequest name="ajaxDownUsersAct">
 			<urlForward>downuser/down_users.jsp</urlForward>
 		</ajaxRequest>
@@ -34,6 +29,5 @@
 		<remark name="docuRemarkAct" containerId="docu_remark"
 			selector="#idNewsRemark" runImmediately="true" showValidateCode="false"
 			handleClass="net.itsite.docu.DocuRemarkHandle" />
-
 	</components>
 </page>

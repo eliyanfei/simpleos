@@ -23,12 +23,12 @@ public class ComplaintAppModule extends AItSiteAppclicationModule {
 		return ComplaintBean.class;
 	}
 
-	static final Table it_complaint = new Table("it_complaint");
+	static final Table simpleos_complaint = new Table("simpleos_complaint");
 
 	@Override
 	protected void putTables(Map<Class<?>, Table> tables) {
 		super.putTables(tables);
-		tables.put(ComplaintBean.class, it_complaint);
+		tables.put(ComplaintBean.class, simpleos_complaint);
 	}
 
 	@Override

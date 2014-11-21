@@ -22,13 +22,9 @@ import javax.servlet.http.HttpSession;
 
 import net.itsite.ItSiteOrganizationApplicationModule.AccountExt;
 import net.itsite.i.ICommonBeanAware;
-import net.itsite.user.CounterBean;
 import net.itsite.utils.StringsUtils;
 import net.itsite.utils.UID;
-import net.prj.manager.template.PrjTemplateBean;
-import net.prj.manager.template.PrjTemplateUtils;
 import net.simpleframework.ado.DataObjectManagerUtils;
-import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.ado.db.SQLValue;
@@ -73,6 +69,8 @@ import net.simpleframework.web.page.SkinUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.menu.MenuItem;
 import net.simpleos.$VType;
+import net.simpleos.backend.template.TemplateBean;
+import net.simpleos.backend.template.TemplateUtils;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -86,7 +84,7 @@ public final class ItSiteUtil {
 	public static ItSiteHomeApplicationModule applicationModule;
 	public static int aloneLimit = 10;
 	/**
-	 * prj_custom 表常量
+	 * simpleos_custom 表常量
 	 */
 	public static Map<String, String> attrMap = new HashMap<String, String>();
 
@@ -852,27 +850,6 @@ public final class ItSiteUtil {
 		return "";
 	}
 
-	public static int getConstantValue(final String name) {
-		final ITableEntityManager temgr = ItSiteUtil.getTableEntityManager(ItSiteUtil.applicationModule, CounterBean.class);
-		final CounterBean counterBean = temgr.queryForObject(new ExpressionValue("name=?", new Object[] { name }), CounterBean.class);
-		return counterBean == null ? 0 : counterBean.getCounter();
-	}
-
-	public static int setConstantValue(final String name) {
-		final ITableEntityManager temgr = ItSiteUtil.getTableEntityManager(ItSiteUtil.applicationModule, CounterBean.class);
-		CounterBean counterBean = temgr.queryForObject(new ExpressionValue("name=?", new Object[] { name }), CounterBean.class);
-		if (counterBean == null) {
-			counterBean = new CounterBean();
-		}
-		counterBean.setName(name);
-		counterBean.setCounter(counterBean.getCounter() + 1);
-		if (counterBean.getId() == null)
-			temgr.insert(counterBean);
-		else
-			temgr.update(counterBean);
-		return counterBean.getCounter();
-	}
-
 	public static final List<MenuItem> menuList = new ArrayList<MenuItem>();
 
 	public static String wrapSpan(long value, String className) {
@@ -1113,7 +1090,7 @@ public final class ItSiteUtil {
 		buf.append("<a style='color:#3393c9;' onclick=\"$Actions['aboutWinAct']();\">智汇</a>");
 		buf.append("(").append("<span style='color: red;'>");
 		buf.append($VType.getNowVType().ver.toString()).append("</span>)</div>");
-		PrjTemplateBean template = PrjTemplateUtils.getTemplateBean();
+		TemplateBean template = TemplateUtils.getTemplateBean();
 		if ("true".equals(template.attrMap.get("fullScreen"))) {
 			buf.append("<script type=\"text/javascript\">$ready(function() {");
 			buf.append("$$('.fixc" + (classes == null ? "" : "," + classes) + "').each(function(c) {c.style.width = 'auto';});");

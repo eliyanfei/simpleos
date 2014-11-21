@@ -7,6 +7,14 @@ import net.itsite.impl.AbstractCatalog;
 import net.simpleframework.core.ado.db.Column;
 import net.simpleframework.core.bean.ITreeBeanAware;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午4:13:34 
+ * @Description: 文档的目录
+ *
+ */
 public class DocuCatalog extends AbstractCatalog {
 	private static Map<String, Column> columns;
 

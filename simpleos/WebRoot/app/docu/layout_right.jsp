@@ -11,4 +11,4 @@
 		</jsp:include>
 	</div>
 </div>
-<jsp:include page="/app/common/ad_bar_right.jsp"></jsp:include>
+<jsp:include page="/simpleos/commons/ad/ad_bar_right.jsp"></jsp:include>

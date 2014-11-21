@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<components>
+		<tablePager name="downListPaperAct" containerId="downListId"
+			exportAction="true" pageItems="30" showEditPageItems="false"
+			showVerticalLine="true" pagerBarLayout="bottom" showCheckbox="false"
+			handleClass="net.itsite.docu.AllDocuDownTablePaperHandle">
+			<columns>
+				<column columnText="#(Docu.all.down.0)" columnName="title"
+					columnSqlName="docuId"></column>
+				<column columnText="#(Docu.all.down.1)" textAlign="center"
+					columnName="userId" width="100" separator="true"></column>
+				<column columnText="IP" textAlign="center" columnName="ip"
+					filter="true" width="100" separator="true"></column>
+				<column columnText="#(Docu.all.down.2)" textAlign="center"
+					columnName="ipName" width="100" separator="true"></column>
+				<column columnText="#(Docu.all.down.3)" columnName="downDate"
+					separator="true" textAlign="center" width="120"></column>
+			</columns>
+		</tablePager>
+	</components>
+</page>

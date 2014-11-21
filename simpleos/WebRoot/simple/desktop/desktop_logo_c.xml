@@ -5,7 +5,7 @@
 	<components>
 		<swfupload name="logoUpload" fileSizeLimit="1MB" fileTypes="*.png"
 			containerId="template_logoUploadId" fileTypesDesc="#(Img.Upload)"
-			handleClass="net.prj.manager.template.LogoUpLoadFileHandle">
+			handleClass="net.simpleos.backend.template.LogoUploadHandle">
 			<jsCompleteCallback>
 					<![CDATA[
 						if(json['rs']=='true'){

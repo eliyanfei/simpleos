@@ -4,9 +4,9 @@
 	<scriptEval>single</scriptEval>
 	<importPage>
 		<value>/simple/include/c.xml</value>
-		<value>/app/upload/upload_common.xml</value>
+		<value>/simpleos/commons/upload/upload_common.xml</value>
 	</importPage>
-	<handleClass>net.itsite.ad.AdPageLoad</handleClass>
+	<handleClass>net.simpleos.module.ad.AdPageLoad</handleClass>
 	<handleMethod>adLoad</handleMethod>
 	<jobView>sys_manager</jobView>
 	<components>

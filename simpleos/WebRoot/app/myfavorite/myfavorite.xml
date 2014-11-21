@@ -5,7 +5,7 @@
 	<importPage>
 		<value>myfavorite_utils.xml</value>
 	</importPage>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
 	<components>
 		<tablePager name="myFavoriteTable"

@@ -4,7 +4,6 @@ import java.beans.Beans;
 import java.util.Collection;
 
 import net.itsite.impl.AItSiteAppclicationModule;
-import net.itsite.permission.PlatformUtis;
 import net.itsite.utils.ReflectUtils;
 import net.simpleframework.core.AbstractInitializer;
 import net.simpleframework.core.IApplication;
@@ -30,7 +29,6 @@ public class ItSiteInitializer extends AbstractInitializer {
 		try {
 			loadConfigMgr(application);
 			IInitializer.Utils.deploySqlScript(getClass(), application, "simpleos");
-			PlatformUtis.setDataSource(application.getDataSource());
 			IInitializer.Utils.deploySqlScript(getClass(), application, "simpleos");
 			doInitInitializer(application);
 		} catch (Exception e) {

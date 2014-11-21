@@ -86,6 +86,10 @@ public class PageRequestResponse extends ALoggerAware {
 		return getSession().getServletContext();
 	}
 
+	public String getApplicationAbsolutePath(String path) {
+		return getSession().getServletContext().getRealPath(path);
+	}
+
 	/********************************* utils *********************************/
 
 	public boolean isHttpClientRequest() {

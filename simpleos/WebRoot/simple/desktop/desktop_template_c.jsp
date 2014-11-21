@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="net.simpleframework.applets.openid.OpenIDUtils"%><%@page
 	import="net.simpleos.template.ITemplateBean"%><%@page
-	import="net.prj.manager.template.PrjTemplateUtils"%><%@page
+	import="net.simpleos.backend.template.TemplateUtils"%><%@page
 	import="java.util.List"%><%@page import="java.util.ArrayList"%><%@page
 	import="java.util.Collections"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.prj.manager.template.PrjTemplateBean"%>
+	import="net.simpleos.backend.template.TemplateBean"%>
 <%
 	PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 %>
@@ -34,11 +34,11 @@
 </style>
 <div id="template_check">
 	<%
-		List<String> list = new ArrayList<String>(PrjTemplateUtils.templateMap.keySet());
+		List<String> list = new ArrayList<String>(TemplateUtils.templateMap.keySet());
 		Collections.sort(list);
-		PrjTemplateBean template = PrjTemplateUtils.getTemplateBean();
+		TemplateBean template = TemplateUtils.getTemplateBean();
 		for (String temp : list) {
-			ITemplateBean templateBean = PrjTemplateUtils.templateMap.get(temp);
+			ITemplateBean templateBean = TemplateUtils.templateMap.get(temp);
 			if (templateBean.isDesign()) {
 				continue;
 			}
@@ -66,8 +66,6 @@
 <script type="text/javascript">
 function saveModel(t) {
 	var params = 'templateId=' + t;
-	/* params += '&fixedHeader=' + $('fixedHeader_' + t).checked;
-	params += '&fixedFooter=' + $('fixedFooter_' + t).checked; */
     params += '&fullScreen=' + $('fullScreen_' + t).checked;
 	$IT.A('saveTemplate', params);
 }

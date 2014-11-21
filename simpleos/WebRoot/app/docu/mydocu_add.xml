@@ -2,9 +2,6 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<importPage>
-		<value>/simple/template/c.xml</value>
-	</importPage>
 	<handleClass>net.itsite.docu.DocuPageLoad</handleClass>
 	<handleMethod>docuLoad</handleMethod>
 	<components>

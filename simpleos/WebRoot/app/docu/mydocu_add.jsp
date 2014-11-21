@@ -1,48 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page
-	import="net.itsite.docu.EDocuFunction"%><%@page
-	import="net.itsite.docu.DocuUtils"%>
-
-
+	pageEncoding="UTF-8"%>
 <div id="docuForm">
 	<input type="hidden" id="docuId" name="docuId">
 	<table width="100%'">
 		<tbody>
 			<tr>
-				<td class="l">
-					#(Docu.add.0)：
-				</td>
-				<td>
-					<input type="text" id="docu_title" name="docu_title"
-						style="width: 100%" value="">
-				</td>
+				<td class="l">#(Docu.add.0)：</td>
+				<td><input type="text" id="docu_title" name="docu_title"
+					style="width: 100%" value=""></td>
 			</tr>
 			<tr>
-				<td class="l" valign="top">
-					#(Docu.add.1)：
-				</td>
-				<td>
-					<textarea id="docu_content" name="docu_content" rows="5"
-						style="width: 99%"></textarea>
-				</td>
+				<td class="l" valign="top">#(Docu.add.1)：</td>
+				<td><textarea id="docu_content" name="docu_content" rows="8"
+						style="width: 99%"></textarea></td>
 			</tr>
 			<tr>
-				<td class="l">
-					#(Docu.add.2)：
-				</td>
-				<td>
-					<input type="text" id="docu_keyworks" name="docu_keyworks"
-						style="width: 100%">
-					<div id="docu_tag"></div>
-				</td>
+				<td class="l">#(Docu.add.2)：</td>
+				<td><input type="text" id="docu_keyworks" name="docu_keyworks"
+					style="width: 100%">
+					<div id="docu_tag"></div></td>
 			</tr>
 			<tr>
-				<td class="l">
-					#(Docu.add.3)：
-				</td>
+				<td class="l">#(Docu.add.3)：</td>
 				<td>
-					<div id="td_docu_catalog" style="width: 100%"></div>
-					<input type="hidden" name="docu_catalog" id="docu_catalog">
+					<div id="td_docu_catalog" style="width: 100%"></div> <input
+					type="hidden" name="docu_catalog" id="docu_catalog">
 				</td>
 			</tr>
 		</tbody>
@@ -69,19 +51,19 @@
 }
 </style>
 <script type="text/javascript">
-function selectDocuAttr(t) {
-	if ('code' == t.value) {
-		$$('.code_catalog_id').each(function(c) {
-			c.style.display = '';
-		});
-	} else {
-		$$('.code_catalog_id').each(function(c) {
-			c.style.display = 'none';
-		});
+	function selectDocuAttr(t) {
+		if ('code' == t.value) {
+			$$('.code_catalog_id').each(function(c) {
+				c.style.display = '';
+			});
+		} else {
+			$$('.code_catalog_id').each(function(c) {
+				c.style.display = 'none';
+			});
+		}
 	}
-}
-$ready(function() {
-	addTextButton("docu_catalog_text", "docuCatalogAct", "td_docu_catalog",
-			false);
-});
+	$ready(function() {
+		addTextButton("docu_catalog_text", "docuCatalogAct", "td_docu_catalog",
+				false);
+	});
 </script>

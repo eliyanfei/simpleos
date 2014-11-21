@@ -3,6 +3,13 @@ package net.itsite.docu;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午5:38:01 
+ *
+ */
 public abstract class AbstractDocuTablePagerData extends AbstractTablePagerData {
 	public AbstractDocuTablePagerData(final ComponentParameter compParameter) {
 		super(compParameter);

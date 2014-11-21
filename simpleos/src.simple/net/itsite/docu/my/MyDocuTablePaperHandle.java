@@ -10,7 +10,6 @@ import net.itsite.docu.AbstractDocuTablePagerData;
 import net.itsite.docu.DocuBean;
 import net.itsite.docu.DocuCatalog;
 import net.itsite.docu.DocuUtils;
-import net.itsite.docu.EDocuFunction;
 import net.itsite.docu.EDocuStatus;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
@@ -20,12 +19,18 @@ import net.simpleframework.organization.IJob;
 import net.simpleframework.organization.OrgUtils;
 import net.simpleframework.organization.account.IGetAccountAware;
 import net.simpleframework.util.ConvertUtils;
-import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
 import net.simpleframework.web.page.component.ui.pager.TablePagerColumn;
 import net.simpleframework.web.page.component.ui.pager.db.AbstractDbTablePagerHandle;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午5:41:01 
+ *
+ */
 public class MyDocuTablePaperHandle extends AbstractDbTablePagerHandle {
 	@Override
 	public Object getBeanProperty(ComponentParameter compParameter, String beanProperty) {
@@ -41,31 +46,14 @@ public class MyDocuTablePaperHandle extends AbstractDbTablePagerHandle {
 		final List<Object> ol = new ArrayList<Object>();
 		final StringBuffer sql = new StringBuffer();
 		final StringBuffer order = new StringBuffer();
-		final String docu_type = compParameter.getRequestParameter("docu_type");
 		sql.append("status=?");
 		ol.add(EDocuStatus.publish);
-		if (StringUtils.hasText(docu_type) || "all".equals(docu_type)) {
-			try {
-				//异常表示是所有的
-				ol.add(EDocuFunction.valueOf(docu_type));
-				sql.append(" and docuFunction=?");
-			} catch (Exception e) {
-			}
-		}
 		sql.append(" and userId=?");
 		final IGetAccountAware accountAware = MySpaceUtils.getAccountAware();
 		if (accountAware.isMyAccount(compParameter)) {
 			ol.add(ItSiteUtil.getLoginUser(compParameter).getId());
 		} else {
 			ol.add(compParameter.getRequestParameter(OrgUtils.um().getUserIdParameterName()));
-		}
-		final String docuFunction = compParameter.getRequestParameter("docuFunction");
-		if (StringUtils.hasText(docuFunction)) {
-			try {
-				ol.add(EDocuFunction.valueOf(docuFunction));
-				sql.append(" and docuFunction=?");
-			} catch (Exception e) {
-			}
 		}
 		order.append("createDate desc");
 		sql.append(" order by ").append(order);
@@ -92,8 +80,6 @@ public class MyDocuTablePaperHandle extends AbstractDbTablePagerHandle {
 				rowData.put("title", buildTitle(docuBean));
 				final DocuCatalog catalog = DocuUtils.applicationModule.getBean(DocuCatalog.class, docuBean.getCatalogId());
 				rowData.put("catalogId", catalog == null ? "" : catalog.getText());
-				rowData.put("docuFunction", "<a onclick=\"$IT.A('myDocuListTableAct','docuFunction=" + docuBean.getDocuFunction().name() + "');\">"
-						+ docuBean.getDocuFunction() + "</a>");
 				rowData.put("createDate", ConvertUtils.toDateString(docuBean.getCreateDate(), "yyyy-MM-dd HH"));
 				rowData.put("action", "<a class='myDB1 down_menu_image'></a>");
 				return rowData;

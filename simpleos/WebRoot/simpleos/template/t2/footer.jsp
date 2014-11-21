@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
-	import="net.prj.manager.site.PrjSiteUtils"%><%@page
-	import="net.prj.manager.PrjMgrUtils"%><%@page import="java.util.Map"%><%@page
-	import="java.util.HashMap"%><%@page
+	import="net.simpleos.backend.site.SiteUtils"%><%@page
+	import="java.util.Map"%><%@page import="java.util.HashMap"%><%@page
 	import="net.itsite.utils.StringsUtils"%><%@page
 	import="net.itsite.ItSiteUtil"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.prj.manager.links.PrjLinksUtils"%>
+	import="net.simpleos.backend.links.LinksUtils"%>
 
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(
@@ -16,7 +15,7 @@
 <div class="footer" align="center">
 	<div class="webLink_index" align="left">
 		<div align="center" class="_link middle">友情链接</div>
-		<div id="link_index" class="middle"><%=PrjLinksUtils.queryLinks(requestResponse,
+		<div id="link_index" class="middle"><%=LinksUtils.queryLinks(requestResponse,
 					ItSiteUtil.attrMap)%>
 		</div>
 	</div>

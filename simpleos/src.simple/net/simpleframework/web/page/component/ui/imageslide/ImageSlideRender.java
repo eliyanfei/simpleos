@@ -2,8 +2,6 @@ package net.simpleframework.web.page.component.ui.imageslide;
 
 import java.util.Collection;
 
-import net.prj.manager.template.PrjTemplateBean;
-import net.prj.manager.template.PrjTemplateUtils;
 import net.simpleframework.util.ConvertUtils;
 import net.simpleframework.util.JavascriptUtils;
 import net.simpleframework.util.StringUtils;
@@ -11,6 +9,8 @@ import net.simpleframework.web.page.component.AbstractComponentJavascriptRender;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ComponentRenderUtils;
 import net.simpleframework.web.page.component.IComponentRegistry;
+import net.simpleos.backend.template.TemplateBean;
+import net.simpleos.backend.template.TemplateUtils;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -30,7 +30,7 @@ public class ImageSlideRender extends AbstractComponentJavascriptRender {
 		final ImageSlideBean imageSlide = (ImageSlideBean) compParameter.componentBean;
 		Collection<ImageItem> items;
 
-		PrjTemplateBean template = PrjTemplateUtils.getTemplateBean();
+		TemplateBean template = TemplateUtils.getTemplateBean();
 		if ("true".equals(template.attrMap.get("fullScreen"))) {
 			imageSlide.setWidth("");
 		}

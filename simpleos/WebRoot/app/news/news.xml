@@ -13,7 +13,7 @@
 	<importCSS>
 		<value>/app/twocol.css</value>
 	</importCSS>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 	<title>${NewsUtils.applicationModule.getApplicationTitle()}</title>
 	<components>
 		<ajaxRequest name="hotPageletLoad" updateContainerId="hot_tabs"

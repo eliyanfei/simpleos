@@ -13,6 +13,14 @@ import net.simpleframework.core.id.ID;
 import net.simpleframework.util.LocaleI18n;
 import net.simpleframework.web.page.component.ComponentParameter;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午4:15:13 
+ * @Description: 文档评论处理
+ *
+ */
 public class DocuRemarkHandle extends DefaultRemarkHandle {
 
 	@Override

@@ -8,7 +8,7 @@
 	<importPage>
 		<value>${NewsUtils.deployPath}jsp/news_view.xml</value>
 	</importPage>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 	<components>
 		<ajaxRequest name="hotPageletLoadV" updateContainerId="hot_tabs"
 			showLoading="false" runImmediately="false">

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import net.itsite.ItSiteUtil;
-import net.itsite.user.UserSearchUtils;
 import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.ado.db.SQLValue;
@@ -21,9 +20,7 @@ import net.simpleframework.util.ConvertUtils;
 import net.simpleframework.util.HTMLBuilder;
 import net.simpleframework.util.LocaleI18n;
 import net.simpleframework.util.StringUtils;
-import net.simpleframework.web.EFunctionModule;
 import net.simpleframework.web.page.PageRequestResponse;
-import net.simpleframework.web.page.PageUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.menu.MenuBean;
 import net.simpleframework.web.page.component.ui.menu.MenuItem;
@@ -109,28 +106,22 @@ public class BlogPagerHandle extends AbstractBlogPagerHandle {
 
 	@Override
 	public IDataObjectQuery<?> createDataObjectQuery(final ComponentParameter compParameter) {
-		final String c = PageUtils.toLocaleString(compParameter.getRequestParameter("c"));
-		if (StringUtils.hasText(c)) {
-			UserSearchUtils.createSearch(compParameter, EFunctionModule.blog, c);
-			return createLuceneManager(compParameter).getLuceneQuery(c);
-		} else {
-			final ITableEntityManager blog_mgr = getTableEntityManager(compParameter);
-			final String tag = compParameter.getRequestParameter(ITagApplicationModule._TAG_ID);
-			final StringBuilder sql = new StringBuilder();
-			final ArrayList<Object> al = new ArrayList<Object>();
-			if (StringsUtils.isNotBlank(tag)) {
-				appendTagsSQL(compParameter, sql, al, tag);
-				sql.append(" and a.status=" + EContentStatus.publish.ordinal());
-				sql.append(" order by  a.createdate desc");
-				System.out.println(sql.toString());
-				return blog_mgr.query(new SQLValue(sql.toString(), al.toArray()), getEntityBeanClass());
-			}
-			final String t = compParameter.getRequestParameter("t");
-			if ("attention".equals(t)) {
-				return blog_mgr.query(AttentionUtils.attentionSQLValue(compParameter, getFunctionModule()), getEntityBeanClass());
-			}
-			return blog_mgr.query(createSqlValue(compParameter), getEntityBeanClass());
+		final ITableEntityManager blog_mgr = getTableEntityManager(compParameter);
+		final String tag = compParameter.getRequestParameter(ITagApplicationModule._TAG_ID);
+		final StringBuilder sql = new StringBuilder();
+		final ArrayList<Object> al = new ArrayList<Object>();
+		if (StringsUtils.isNotBlank(tag)) {
+			appendTagsSQL(compParameter, sql, al, tag);
+			sql.append(" and a.status=" + EContentStatus.publish.ordinal());
+			sql.append(" order by  a.createdate desc");
+			System.out.println(sql.toString());
+			return blog_mgr.query(new SQLValue(sql.toString(), al.toArray()), getEntityBeanClass());
 		}
+		final String t = compParameter.getRequestParameter("t");
+		if ("attention".equals(t)) {
+			return blog_mgr.query(AttentionUtils.attentionSQLValue(compParameter, getFunctionModule()), getEntityBeanClass());
+		}
+		return blog_mgr.query(createSqlValue(compParameter), getEntityBeanClass());
 	}
 
 	@Override

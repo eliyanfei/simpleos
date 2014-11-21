@@ -33,7 +33,7 @@ public class DocuLuceneManager extends AbstractContentLuceneManager {
 
 	@Override
 	protected String[] getQueryParserFields() {
-		return new String[] { "title", "createDate", "point", "downCounter", "totalGrade", "fileSize", "docuFunction", "views" };
+		return new String[] { "title", "createDate", "point", "downCounter", "totalGrade", "fileSize", "views" };
 	}
 
 	@Override
@@ -47,8 +47,6 @@ public class DocuLuceneManager extends AbstractContentLuceneManager {
 				if (value != null) {
 					if ("createDate".equals(field)) {
 						doc.add(new Field(field, String.valueOf(((Date) value).getTime()), Store.NO, Index.ANALYZED));
-					} else if ("docuFunction".equals(field)) {
-						doc.add(new Field(field, ((EDocuFunction) value).name(), Store.NO, Index.ANALYZED));
 					} else {
 						doc.add(new Field(field, String.valueOf(value), Store.NO, Index.ANALYZED));
 					}

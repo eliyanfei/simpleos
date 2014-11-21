@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="java.util.Map"%><%@page
 	import="java.util.HashMap"%><%@page
-	import="net.prj.manager.menu.PrjMenuBean"%><%@page
-	import="net.prj.manager.menu.PrjMenuUtils"%>
+	import="net.simpleos.backend.menu.MenuNavBean"%><%@page
+	import="net.simpleos.backend.menu.MenuNavUtils"%>
 
 <%
 	String name = "/" + request.getParameter("menu") + ".html";
-	PrjMenuBean menuBean = PrjMenuUtils.appModule.getBeanByExp(PrjMenuBean.class, "url=?", new Object[] { name });
+	MenuNavBean menuBean = MenuNavUtils.appModule.getBeanByExp(MenuNavBean.class, "url=?", new Object[] { name });
 	if (menuBean == null)
 		return;
 %>

@@ -16,7 +16,6 @@ public class DocuBean extends AbstractCommonBeanAware {
 	private ID catalogId;//目录
 	private EDocuStatus status;//状态
 	private EContentType ttype;//推荐
-	private EDocuFunction docuFunction = EDocuFunction.data;//分类
 	private String language;//代码语言
 	private String path1;//文件存储路径
 	private String path2;//部分存储路径
@@ -211,14 +210,6 @@ public class DocuBean extends AbstractCommonBeanAware {
 
 	public EContentType getTtype() {
 		return ttype == null ? EContentType.normal : ttype;
-	}
-
-	public EDocuFunction getDocuFunction() {
-		return docuFunction;
-	}
-
-	public void setDocuFunction(EDocuFunction docuFunction) {
-		this.docuFunction = docuFunction;
 	}
 
 	public String getPath1() {

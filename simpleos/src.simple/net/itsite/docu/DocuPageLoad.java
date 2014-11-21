@@ -67,10 +67,7 @@ public class DocuPageLoad extends AbstractTitleAwarePageLoad {
 				catalogTitle.append(catalog.getText());
 			}
 			dataBinding.put("docu_catalog_text", catalogTitle.toString());
-
 			dataBinding.put("code_language", docuBean.getLanguage());
-
-			dataBinding.put("docu_function", docuBean.getDocuFunction() == null ? "" : docuBean.getDocuFunction().name());
 		}
 		dataBinding.put("docuId", docuId);
 	}

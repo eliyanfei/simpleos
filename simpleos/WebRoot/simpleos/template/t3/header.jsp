@@ -6,8 +6,7 @@
 	import="net.simpleframework.organization.OrgUtils"%><%@page
 	import="net.itsite.ItSiteUtil"%><%@page
 	import="net.itsite.utils.StringsUtils"%><%@page
-	import="java.util.HashMap"%><%@page import="java.util.Map"%><%@page
-	import="net.prj.manager.PrjMgrUtils"%>
+	import="java.util.HashMap"%><%@page import="java.util.Map"%>
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(
 			request, response);

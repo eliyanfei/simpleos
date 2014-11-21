@@ -2,9 +2,9 @@
 	pageEncoding="UTF-8"%>
 	<%@page import="net.itsite.utils.StringsUtils"%><%@page
 	
-	import="net.prj.manager.links.PrjLinksUtils"%><%@page
-	import="net.prj.manager.PrjNavBean"%><%@page
-	import="net.prj.manager.PrjMgrUtils"%>
+	import="net.simpleos.backend.links.LinksUtils"%><%@page
+	import="net.simpleos.backend.slide.IndexSlideBean"%><%@page
+	import="net.simpleos.backend.BackendUtils"%>
 
 
 
@@ -17,9 +17,9 @@
 </style>
 <%
 	final String navId = request.getParameter("navId");
-	PrjNavBean navBean = PrjMgrUtils.appModule.getBean(PrjNavBean.class, navId);
+	IndexSlideBean navBean = BackendUtils.applicationModule.getBean(IndexSlideBean.class, navId);
 	if (navBean == null) {
-		navBean = new PrjNavBean();
+		navBean = new IndexSlideBean();
 	}
 %>
 <div id="saveForm">

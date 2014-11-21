@@ -13,6 +13,14 @@ import net.simpleframework.web.page.UrlForward;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.portal.PageletBean;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午4:16:41 
+ * @Description: 文档的插件
+ *
+ */
 public class DocuPortalModule extends AbstractContentLayoutModuleHandle {
 	public DocuPortalModule(final PageletBean pagelet) {
 		super(pagelet);

@@ -8,7 +8,7 @@
 	</rule>
 	<rule>
 		<from>/mydocu.html</from>
-		<to>/app/docu/my/mydocu.jsp?pageItems=35</to>
+		<to>/app/docu/mydocu.jsp?pageItems=35</to>
 	</rule>
 	<rule>
 		<from>/docu/v/(\d+).html</from>

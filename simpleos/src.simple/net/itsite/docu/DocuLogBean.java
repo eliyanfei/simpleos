@@ -9,7 +9,11 @@ import net.simpleframework.organization.IUser;
 import net.simpleframework.organization.IUserBeanAware;
 
 /**
- * 用户上传下载次数
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午4:17:41 
+ * @Description: 用户下载信息
  *
  */
 public class DocuLogBean extends AbstractIdDataObjectBean implements IUserBeanAware {

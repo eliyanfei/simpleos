@@ -46,10 +46,9 @@ import net.simpleframework.web.page.component.ComponentParameter;
 
 public final class DocuUtils {
 	public static String docuPath = "f:\\data";//文件存储路径
-	public static String $data$ = "$data$";
 	public static String docuId = "docuId";
 	public static String deploy = "/app/docu";
-	public static IDocuApplicationModule applicationModule;
+	public static IDocuAppModule applicationModule;
 	public static long docuCounter = 0;// 总的文档数量
 
 	public static void setDocuCounter(int wsCounter) {
@@ -71,32 +70,27 @@ public final class DocuUtils {
 		final ITableEntityManager tMgr = applicationModule.getDataObjectManager(DocuBean.class);
 		// 更新评论和分数
 		final StringBuffer sql1 = new StringBuffer();
-		sql1.append("update ").append(DocuApplicationModule.docu_documentshare.getName()).append(" d set remarks=(select count(id) from ");
-		sql1.append(DocuApplicationModule.docu_remark.getName()).append(" where documentid=d.id) where d.status=?");
+		sql1.append("update ").append(DocuAppModule.docu_documentshare.getName()).append(" d set remarks=(select count(id) from ");
+		sql1.append(DocuAppModule.docu_remark.getName()).append(" where documentid=d.id) where d.status=?");
 		tMgr.execute(new SQLValue(sql1.toString(), new Object[] { EContentStatus.publish }));
 		sql1.setLength(0);
 		// 更新关注
-		sql1.append("update ").append(DocuApplicationModule.docu_documentshare.getName()).append(" d set attentions=(select count(id) from ");
+		sql1.append("update ").append(DocuAppModule.docu_documentshare.getName()).append(" d set attentions=(select count(id) from ");
 		sql1.append(AttentionUtils.getTableEntityManager(AttentionBean.class).getTablename()).append(
 				" where attentionId=d.id and vtype=" + EFunctionModule.docu.ordinal() + ")  where d.status=?");
 		tMgr.execute(new SQLValue(sql1.toString(), new Object[] { EContentStatus.publish }));
 		sql1.setLength(0);
-		// 更新发布记录
-		sql1.append("update ").append(DocuApplicationModule.docu_user.getName()).append(" d set upFiles=(select count(id) from ");
-		sql1.append(DocuApplicationModule.docu_documentshare.getName()).append("  where status=? and userId=d.userId)");
-		tMgr.execute(new SQLValue(sql1.toString(), new Object[] { EContentStatus.publish }));
-		sql1.setLength(0);
 		// 更新目录
-		sql1.append("update ").append(DocuApplicationModule.docu_catalog.getName()).append(" osc set osc.counter=(select count(id) from ");
-		sql1.append(DocuApplicationModule.docu_documentshare.getName()).append(" where status=? and catalogId=osc.id and osc.parentid<>0)");
+		sql1.append("update ").append(DocuAppModule.docu_catalog.getName()).append(" osc set osc.counter=(select count(id) from ");
+		sql1.append(DocuAppModule.docu_documentshare.getName()).append(" where status=? and catalogId=osc.id and osc.parentid<>0)");
 		try {
 			tMgr.execute(new SQLValue(sql1.toString(), new Object[] { EContentStatus.publish }));
 		} catch (Exception e) {
 		}
 		sql1.setLength(0);
-		sql1.append("update ").append(DocuApplicationModule.docu_catalog.getName())
+		sql1.append("update ").append(DocuAppModule.docu_catalog.getName())
 				.append(" osc set counter=(select sum(osc1.counter) from ( SELECT counter,parentid from ");
-		sql1.append(DocuApplicationModule.docu_catalog.getName()).append(") osc1 where osc1.parentid=osc.id ) where osc.parentid=0");
+		sql1.append(DocuAppModule.docu_catalog.getName()).append(") osc1 where osc1.parentid=osc.id ) where osc.parentid=0");
 		try {
 			tMgr.execute(new SQLValue(sql1.toString()));
 		} catch (Exception e) {
@@ -165,7 +159,7 @@ public final class DocuUtils {
 		final StringBuffer sql = new StringBuffer();
 		final StringBuffer where = new StringBuffer();
 		final StringBuffer orderBuf = new StringBuffer();
-		sql.append("select * from it_document where ");
+		sql.append("select * from simpleos_document where ");
 		if (catalogId != 0) {
 			if (where.length() != 0)
 				where.append(" and ");
@@ -252,8 +246,6 @@ public final class DocuUtils {
 		return path;
 	}
 
-	public static int allowDownloadDocus = 5;//一天最大支持免费下载5个文档
-
 	/**
 	 * 下载文件
 	 * 
@@ -288,14 +280,6 @@ public final class DocuUtils {
 								if (account != null)
 									logBean.setUserId(account.getId());
 								DocuUtils.applicationModule.doUpdate(logBean);
-								// 使总下载文档数+1
-								DocuUserBean userBean = DocuUtils.applicationModule.getBeanByExp(DocuUserBean.class, "userId=?",
-										new Object[] { docuBean.getUserId() });
-								if (userBean == null) {
-									userBean = new DocuUserBean();
-								}
-								userBean.setDownFiles(userBean.getDownFiles() + 1);
-								DocuUtils.applicationModule.doUpdate(userBean);
 								// 添加全文索引
 								DocuUtils.applicationModule.createLuceneManager(
 										new ComponentParameter(requestResponse.request, requestResponse.response, null)).objects2DocumentsBackground(
@@ -334,14 +318,14 @@ public final class DocuUtils {
 		if (StringUtils.hasText(param)) {
 			param = OrgUtils.um().getUserIdParameterName() + "=" + param;
 		}
-		buildDocumentNav(buf, true, "myDocuTableAct", param,
+		buildDocumentNav(buf, true, "myDocuListTableAct", param,
 				(isMe ? LocaleI18n.getMessage("Docu.util.4") : "Ta") + LocaleI18n.getMessage("Docu.util.5"), "myAll", true);
 		buildDocumentNav(buf, true, "myUploadAct", param, LocaleI18n.getMessage("Docu.util.2"), "myUpload", true);
 		if (account == null) {
 			return buf.toString();
 		}
 		if (isMe) {
-			buildDocumentNav(buf, false, "myDownloadAct", "t=4", LocaleI18n.getMessage("Docu.util.3"), "myDownload", false);
+			buildDocumentNav(buf, false, "myDownListPaperAct", "t=4", LocaleI18n.getMessage("Docu.util.3"), "myDownload", false);
 		}
 		return buf.toString();
 	}

@@ -3,14 +3,15 @@
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<scriptInit>
-		import net.simpleframework.content.component.newspager.NewsPagerUtils
+		import
+		net.simpleframework.content.component.newspager.NewsPagerUtils
 	</scriptInit>
 	<importCSS>
 		<value>
 			${NewsPagerUtils.getCssPath(pageParameter)}/np_edit.css
 		</value>
 	</importCSS>
-	<handleClass>net.prj.manager.links.PrjLinksPageLoad</handleClass>
+	<handleClass>net.simpleos.backend.links.LinksPageLoad</handleClass>
 	<handleMethod>linksLoad</handleMethod>
 	<components>
 		<colorpalette name="palette2" runImmediately="false">
@@ -21,7 +22,7 @@
 		</colorpalette>
 		<window name="paletteWin" contentRef="palette2" popup="true"
 			width="460" height="340"></window>
-		<ajaxRequest name="linksSave" handleClass="net.prj.manager.links.PrjLinksAction"
+		<ajaxRequest name="linksSave" handleClass="net.simpleos.backend.links.LinksAction"
 			handleMethod="linksSave" selector="#linksForm">
 			<jsCompleteCallback>
 				<![CDATA[

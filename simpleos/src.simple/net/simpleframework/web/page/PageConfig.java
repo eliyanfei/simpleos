@@ -59,7 +59,7 @@ public class PageConfig extends ALoggerAware {
 			return message;
 		}
 		while (th != null) {
-			if(!(th instanceof HandleException)){
+			if (!(th instanceof HandleException) && !(th instanceof SimpleException)) {
 				return "网络异常";
 			}
 			message = th.getMessage();

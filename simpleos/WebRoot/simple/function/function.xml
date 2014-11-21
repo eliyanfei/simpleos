@@ -8,7 +8,7 @@
 	<jobView>sys_manager</jobView>
 	<components>
 		<listbox name="aa" containerId="functionListId" tooltip="false"
-			handleClass="net.prj.manager.function.FunctionListBoxHandle">
+			handleClass="net.simpleos.backend.function.FunctionListBoxHandle">
 		</listbox>
 		<ajaxRequest name="functionNews" updateContainerId="function_data_id">
 			<urlForward>function_news.jsp</urlForward>

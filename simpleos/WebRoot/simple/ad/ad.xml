@@ -7,11 +7,12 @@
 	</importPage>
 	<jobView>sys_manager</jobView>
 	<components>
-		<tree name="adTreeAct" containerId="ad_id" handleClass="net.itsite.ad.AdTreeHandle"></tree>
+		<tree name="adTreeAct" containerId="ad_id"
+			handleClass="net.simpleos.module.ad.AdTreeHandle"></tree>
 		<ajaxRequest updateContainerId="adDiv" name="adAct">
 			<urlForward>ad_data.jsp</urlForward>
 		</ajaxRequest>
-		<ajaxRequest name="adSaveAct" handleClass="net.itsite.ad.AdAjaxAction"
+		<ajaxRequest name="adSaveAct" handleClass="net.simpleos.module.ad.AdAjaxAction"
 			handleMethod="adSave" selector="#adForm">
 			<jsCompleteCallback>
 				<![CDATA[
@@ -19,7 +20,7 @@
 				]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="adStopAct" handleClass="net.itsite.ad.AdAjaxAction"
+		<ajaxRequest name="adStopAct" handleClass="net.simpleos.module.ad.AdAjaxAction"
 			handleMethod="adStop">
 			<jsCompleteCallback>
 				<![CDATA[
@@ -27,7 +28,7 @@
 				]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="adStartAct" handleClass="net.itsite.ad.AdAjaxAction"
+		<ajaxRequest name="adStartAct" handleClass="net.simpleos.module.ad.AdAjaxAction"
 			handleMethod="adStart">
 			<jsCompleteCallback>
 				<![CDATA[

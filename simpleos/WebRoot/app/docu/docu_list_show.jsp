@@ -23,9 +23,9 @@
 	<div class="rrow" style="padding-left: 0px;">
 		<table width="100%" cellpadding="0" cellspacing="0">
 			<tr>
-				<td width="20" valign="top">
-					<img alt="<%=docuBean.getExtension()%>"
-						src="<%=DocuUtils.getFileImage(requestResponse, docuBean)%>">
+				<td width="20" valign="top"><img
+					alt="<%=docuBean.getExtension()%>"
+					src="<%=DocuUtils.getFileImage(requestResponse, docuBean)%>">
 				</td>
 				<td class="wrapWord"><%=DocuUtils.wrapOpenLink(requestResponse, docuBean)%></td>
 				<td align="right" class="nnum" nowrap="nowrap" valign="top">

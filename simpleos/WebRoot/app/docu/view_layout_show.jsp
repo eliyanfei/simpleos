@@ -9,7 +9,6 @@
 	import="net.simpleframework.core.ado.IDataObjectQuery"%><%@page
 	import="net.itsite.docu.DocuBean"%><%@page
 	import="net.itsite.docu.DocuUtils"%>
-
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 	final IDataObjectQuery<?> qs = ContentLayoutUtils.getQueryByRequest(requestResponse);
@@ -28,14 +27,13 @@
 	<div class="rrow" style="padding-left: 0px;">
 		<table width="100%" cellpadding="0" cellspacing="0">
 			<tr>
-				<td width="20" valign="top">
-					<img alt="<%=docuBean.getExtension()%>"
-						src="<%=DocuUtils.getFileImage(requestResponse, docuBean)%>">
+				<td width="20" valign="top"><img
+					alt="<%=docuBean.getExtension()%>"
+					src="<%=DocuUtils.getFileImage(requestResponse, docuBean)%>">
 				</td>
 				<td class="wrapWord"><%=DocuUtils.wrapOpenLink(requestResponse, docuBean)%></td>
-				<td align="right" valign="top">
-					<span class="nnum"
-						title="<%=docuBean.getDownCounter()%>#(Docu.down)/<%=docuBean.getViews()%>#(Docu.read)"><%=docuBean.getDownCounter()%>/<%=docuBean.getViews()%></span>
+				<td align="right" valign="top"><span class="nnum"
+					title="<%=docuBean.getDownCounter()%>#(Docu.down)/<%=docuBean.getViews()%>#(Docu.read)"><%=docuBean.getDownCounter()%>/<%=docuBean.getViews()%></span>
 				</td>
 			</tr>
 		</table>

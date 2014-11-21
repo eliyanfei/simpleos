@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<importPage>
-		<value>/app/docu/all/alldocu.xml</value>
-	</importPage>
+	<components>
+		<ajaxRequest name="myDocuListAct_docu" updateContainerId="function_docu_id"
+			runImmediately="false">
+			<urlForward>/app/docu/mgr/alldocu.jsp?showHead=false</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="myDocuListAct_docudown"
+			updateContainerId="function_docu_id" runImmediately="false">
+			<urlForward>/app/docu/mgr/alldocudown.jsp</urlForward>
+		</ajaxRequest>
+	</components>
 </page>

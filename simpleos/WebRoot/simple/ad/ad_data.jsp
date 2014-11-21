@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.itsite.ad.AdUtils"%><%@page
-	import="net.itsite.ad.EAd"%><%@page import="net.itsite.ad.AdBean"%>
+	pageEncoding="UTF-8"%><%@page import="net.simpleos.module.ad.AdUtils"%><%@page
+	import="net.simpleos.module.ad.EAd"%><%@page import="net.simpleos.module.ad.AdBean"%>
 <style type="text/css">
 #adForm .l {
 	width: 100px;

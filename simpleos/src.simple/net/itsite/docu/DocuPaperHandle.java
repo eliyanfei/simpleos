@@ -85,7 +85,7 @@ public class DocuPaperHandle extends AbstractPagerHandle {
 		final String _docu_topic = compParameter.getRequestParameter("_docu_topic");
 		final int od = ConvertUtils.toInt(compParameter.getRequestParameter("od"), 0);
 		sql.append("select d.* from ");
-		sql.append(DocuApplicationModule.docu_documentshare.getName()).append(" d ");
+		sql.append(DocuAppModule.docu_documentshare.getName()).append(" d ");
 		if (StringUtils.hasText(_docu_topic)) {
 			where.append(" and title like ?");
 			ol.add("%" + _docu_topic + "%");

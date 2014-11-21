@@ -8,7 +8,5 @@
 	<importPage>
 		<value>${MySpaceUtils.deployPath}jsp/my_space_left.xml</value>
 	</importPage>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
-	<components>
-	</components>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 </page>

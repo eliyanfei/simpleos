@@ -6,7 +6,7 @@
 	import="net.simpleframework.content.component.newspager.NewsPagerUtils"%>
 <%@ page import="net.simpleframework.content.blog.BlogUtils"%>
 <%@ page import="net.simpleframework.util.DateUtils.TimeDistance"%><%@page
-	import="net.itsite.ad.AdUtils"%><%@page import="net.itsite.ad.EAd"%><%@page
+	import="net.simpleos.module.ad.AdUtils"%><%@page import="net.simpleos.module.ad.EAd"%><%@page
 	import="net.simpleframework.content.component.newspager.INewsPagerHandle"%><%@page
 	import="net.simpleframework.content.blog.Blog"%><%@page
 	import="net.itsite.ItSiteUtil"%>
@@ -39,4 +39,4 @@
 	</div>
 	<div class="c" id="comments_tabs"></div>
 </div>
-<jsp:include page="/app/common/ad_bar_right.jsp"></jsp:include>
+<jsp:include page="/simpleos/commons/ad/ad_bar_right.jsp"></jsp:include>

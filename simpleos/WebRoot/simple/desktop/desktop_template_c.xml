@@ -3,7 +3,7 @@
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<components>
-		<ajaxRequest name="saveTemplate" handleClass="net.prj.manager.PrjMgrAction"
+		<ajaxRequest name="saveTemplate" handleClass="net.simpleos.backend.BackendAction"
 			handleMethod="saveTemplate">
 			<jsCompleteCallback>
 				<![CDATA[

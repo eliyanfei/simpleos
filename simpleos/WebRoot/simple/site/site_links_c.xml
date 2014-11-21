@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<handleClass>net.prj.manager.site.PrjSitePageLoad</handleClass>
+	<handleClass>net.simpleos.backend.site.SitePageLoad</handleClass>
 	<handleMethod>linksLoad</handleMethod>
 	<jobView>sys_manager</jobView>
 	<components>
@@ -12,9 +12,9 @@
 				$("links_homeLinks").innerHTML = "";
 			</jsLoadedCallback>
 		</htmlEditor>
-		
-		
-		<ajaxRequest name="site_dickLinksAct" handleClass="net.prj.manager.site.PrjSiteAction"
+
+
+		<ajaxRequest name="site_dickLinksAct" handleClass="net.simpleos.backend.site.SiteAction"
 			selector="#links_sys_mgr_id" handleMethod="saveDictLinks">
 			<jsCompleteCallback>
 				<![CDATA[
@@ -24,8 +24,9 @@
 				]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="site_linksAct" handleClass="net.prj.manager.site.PrjSiteAction"
-			selector="#site_links_form" handleMethod="saveLinks">
+		<ajaxRequest name="site_linksAct"
+			handleClass="net.simpleos.backend.site.SiteAction" selector="#site_links_form"
+			handleMethod="saveLinks">
 			<jsCompleteCallback>
 				<![CDATA[
 					if(json['rs']=='true'){
@@ -35,10 +36,10 @@
 			</jsCompleteCallback>
 		</ajaxRequest>
 		<tablePager name="linksTable"
-			handleClass="net.prj.manager.links.PrjLinksTableHandle" showLineNo="true"
-			showVerticalLine="true" runImmediately="true" containerId="linksDataId"
-			exportAction="true" pagerBarLayout="bottom" showEditPageItems="true"
-			noResultDesc="" showCheckbox="false">
+			handleClass="net.simpleos.backend.links.LinksTableHandle"
+			showLineNo="true" showVerticalLine="true" runImmediately="true"
+			containerId="linksDataId" exportAction="true" pagerBarLayout="bottom"
+			showEditPageItems="true" noResultDesc="" showCheckbox="false">
 			<columns>
 				<column columnName="title" columnText="#(links.table.0)"
 					filter="true"></column>
@@ -94,14 +95,14 @@
 			</menuitem>
 		</menu>
 		<ajaxRequest name="linksDelete" confirmMessage="#(links.2)"
-			handleClass="net.prj.manager.links.PrjLinksAction" handleMethod="linksDelete">
+			handleClass="net.simpleos.backend.links.LinksAction" handleMethod="linksDelete">
 			<jsCompleteCallback>
 				<![CDATA[
 					$IT.R('linksTable');
 				]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="exchangeLinksAct" handleClass="net.prj.manager.links.PrjLinksAction"
+		<ajaxRequest name="exchangeLinksAct" handleClass="net.simpleos.backend.links.LinksAction"
 			handleMethod="exchangeLinks">
 			<jsCompleteCallback>
 				<![CDATA[

@@ -4,7 +4,7 @@
 	<scriptEval>single</scriptEval>
 	<jobView>sys_manager</jobView>
 	<components>
-		<ajaxRequest name="site_openAct" handleClass="net.prj.manager.site.PrjSiteAction"
+		<ajaxRequest name="site_openAct" handleClass="net.simpleos.backend.site.SiteAction"
 			selector="#site_open_form" handleMethod="saveOpen">
 			<jsCompleteCallback>
 				<![CDATA[

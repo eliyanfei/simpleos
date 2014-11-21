@@ -3,9 +3,9 @@
 	<version>1.0.0</version>
 	<name>Complaint</name>
 	<tran-sql>
-		<description>it_complaint</description>
+		<description>simpleos_complaint</description>
 		<![CDATA[
-  CREATE TABLE `it_complaint` (
+  CREATE TABLE `simpleos_complaint` (
   `id` bigint(20) NOT NULL,
   `refModule` tinyint(4) NOT NULL,
   `complaint` tinyint(4) NOT NULL,

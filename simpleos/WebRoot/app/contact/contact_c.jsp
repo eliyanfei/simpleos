@@ -2,12 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="java.util.Map"%><%@page
 	import="java.util.HashMap"%><%@page
-	import="net.prj.manager.PrjMgrUtils"%><%@page
+	import="net.simpleos.backend.BackendUtils"%><%@page
 	import="net.itsite.impl.PrjColumns"%><%@page
-	import="net.prj.manager.company.PrjCompanyUtils"%><%@page
+	import="net.simpleos.backend.company.CompanyUtils"%><%@page
 	import="net.itsite.impl.PrjColumn"%>
 <%
-	PrjColumns columns = PrjCompanyUtils.appModule.getPrjColumns("contact");
+	PrjColumns columns = CompanyUtils.appModule.getPrjColumns("contact");
 %>
 <div class="simple_toolbar2 f3" style="min-height: 400px;">
 	<table>

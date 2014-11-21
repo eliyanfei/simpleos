@@ -9,7 +9,7 @@
 		<value>${BbsUtils.deployPath}jsp/bbs_forum_view.xml</value>
 	</importPage>
 	<title>${BbsUtils.applicationModule.getApplicationTitle()}</title>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 	<components>
 		<ajaxRequest name="hotPageletLoad" updateContainerId="hot_tabs"
 			showLoading="false" runImmediately="false">

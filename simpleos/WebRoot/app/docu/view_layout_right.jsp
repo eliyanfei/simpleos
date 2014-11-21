@@ -9,8 +9,8 @@
 <%@page import="net.simpleframework.content.ContentUtils"%><%@page
 	import="net.itsite.docu.DocuBean"%><%@page
 	import="net.itsite.docu.DocuUtils"%><%@page
-	import="net.itsite.ad.AdUtils"%><%@page import="net.itsite.ad.EAd"%><%@page
-	import="java.util.Random"%>
+	import="net.simpleos.module.ad.AdUtils"%><%@page
+	import="net.simpleos.module.ad.EAd"%><%@page import="java.util.Random"%>
 
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
@@ -21,9 +21,7 @@
 	final String title = docuBean == null ? "" : docuBean.getTitle();
 %>
 <div class="block_layout1">
-	<div class="t f4">
-		#(Docu.view.0)
-	</div>
+	<div class="t f4">#(Docu.view.0)</div>
 	<div class="wrap_text">
 		<jsp:include page="docu_user_info.jsp" flush="true"></jsp:include>
 	</div>
@@ -41,4 +39,4 @@
 			<jsp:param value="7" name="rows" />
 		</jsp:include></div>
 </div>
-<jsp:include page="/app/common/ad_bar_right.jsp"></jsp:include>
+<jsp:include page="/simpleos/commons/ad/ad_bar_right.jsp"></jsp:include>

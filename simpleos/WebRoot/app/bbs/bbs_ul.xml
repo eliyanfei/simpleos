@@ -9,5 +9,5 @@
 		<value>${BbsUtils.deployPath}jsp/bbs_user.xml</value>
 	</importPage>
 	<jobView>sys_manager</jobView>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 </page>

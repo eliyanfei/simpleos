@@ -11,7 +11,6 @@
 	import="net.simpleframework.content.ContentUtils"%><%@page
 	import="net.simpleframework.util.StringUtils"%><%@page
 	import="net.simpleframework.util.DateUtils"%><%@page
-	import="net.itsite.docu.EDocuFunction"%><%@page
 	import="net.simpleframework.util.ConvertUtils"%><%@page
 	import="net.itsite.ItSiteUtil"%>
 
@@ -31,17 +30,15 @@
 	<div class="rrow" style="padding-left: 0px;">
 		<table width="100%" cellpadding="0" cellspacing="0">
 			<tr>
-				<td width="20" valign="top">
-					<img alt="<%=docuBean.getExtension()%>"
-						src="<%=DocuUtils.getFileImage(requestResponse, docuBean)%>">
+				<td width="20" valign="top"><img
+					alt="<%=docuBean.getExtension()%>"
+					src="<%=DocuUtils.getFileImage(requestResponse, docuBean)%>">
 				</td>
 				<td class="wrapWord"><%=DocuUtils.wrapOpenLink(requestResponse, docuBean)%></td>
-				<td align="right" class="nnum" nowrap="nowrap" valign="top">
-					<span class="nnum"
-						title="<%=docuBean.getRemarks()%>#(Docu.remark)/<%=docuBean.getViews()%>#(Docu.read)/<%=docuBean.getDownCounter()%>#(Docu.down)">(<%=docuBean.getRemarks() + "," + docuBean.getViews() + "," + docuBean.getDownCounter()%>)</span>
-					By
-					<%=DateUtils.getRelativeDate(docuBean.getCreateDate())%>
-				</td>
+				<td align="right" class="nnum" nowrap="nowrap" valign="top"><span
+					class="nnum"
+					title="<%=docuBean.getRemarks()%>#(Docu.remark)/<%=docuBean.getViews()%>#(Docu.read)/<%=docuBean.getDownCounter()%>#(Docu.down)">(<%=docuBean.getRemarks() + "," + docuBean.getViews() + "," + docuBean.getDownCounter()%>)
+				</span> By <%=DateUtils.getRelativeDate(docuBean.getCreateDate())%></td>
 			</tr>
 		</table>
 	</div>

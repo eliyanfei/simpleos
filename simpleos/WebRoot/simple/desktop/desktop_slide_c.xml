@@ -5,7 +5,7 @@
 	<components>
 		<swfupload name="logoUpload" fileSizeLimit="1MB" fileTypes="*.png"
 			containerId="template_logoUploadId" fileTypesDesc="#(Img.Upload)"
-			handleClass="net.prj.manager.template.LogoUpLoadFileHandle">
+			handleClass="net.simpleos.backend.template.LogoUploadHandle">
 			<jsCompleteCallback>
 					<![CDATA[
 						if(json['rs']=='true'){
@@ -17,13 +17,13 @@
 
 		<tablePager name="navTable" containerId="template_slide_id"
 			pagerBarLayout="top" showLineNo="true" showVerticalLine="true"
-			handleClass="net.prj.manager.PrjNavTable">
+			handleClass="net.simpleos.backend.slide.IndexSlideTable">
 			<columns>
 				<column columnName="title" columnText="标题"></column>
-				<column columnName="img" columnText="图片" separator="true" sort="false"
-					width="320" textAlign="center"></column>
-				<column columnName="act" columnText="操作" separator="true" sort="false"
-					width="40" textAlign="center"></column>
+				<column columnName="img" columnText="图片" separator="true"
+					sort="false" width="320" textAlign="center"></column>
+				<column columnName="act" columnText="操作" separator="true"
+					sort="false" width="40" textAlign="center"></column>
 			</columns>
 			<jsLoadedCallback>
 				<![CDATA[
@@ -76,7 +76,7 @@
 				</jsSelectCallback>
 			</menuitem>
 		</menu>
-		<ajaxRequest name="navDeleteAct" handleClass="net.prj.manager.PrjMgrAction"
+		<ajaxRequest name="navDeleteAct" handleClass="net.simpleos.backend.BackendAction"
 			handleMethod="deleteNav">
 			<jsCompleteCallback>
 				<![CDATA[
@@ -84,7 +84,7 @@
 				]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="exchangeNav" handleClass="net.prj.manager.PrjMgrAction"
+		<ajaxRequest name="exchangeNav" handleClass="net.simpleos.backend.BackendAction"
 			handleMethod="exchangeNav">
 			<jsCompleteCallback>
 				<![CDATA[

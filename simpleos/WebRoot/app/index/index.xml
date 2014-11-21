@@ -2,13 +2,13 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
 	<importPage>
 		<value>/simple/desktop/desktop_index_c.xml</value>
 	</importPage>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 	<components>
 		<imageSlide name="indexImageAct" containerId="index_image"
-			width="1017" handleClass="net.prj.manager.PrjImageSlideHandle">
+			width="1017" handleClass="net.simpleos.backend.slide.IndexSlideImageHandle">
 		</imageSlide>
 	</components>
 </page>

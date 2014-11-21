@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<handleClass>net.prj.manager.company.PrjCompanyPageLoad</handleClass>
+	<handleClass>net.simpleos.backend.company.CompanyPageLoad</handleClass>
 	<handleMethod>companyLoad</handleMethod>
 	<jobView>sys_manager</jobView>
 	<components>
@@ -13,7 +13,7 @@
 			</jsLoadedCallback>
 		</htmlEditor>
 		<ajaxRequest name="company_companyAct"
-			handleClass="net.prj.manager.company.PrjCompanyAction" selector="#company_company_form"
+			handleClass="net.simpleos.backend.company.CompanyAction" selector="#company_company_form"
 			handleMethod="saveCompany">
 			<jsCompleteCallback>
 				<![CDATA[

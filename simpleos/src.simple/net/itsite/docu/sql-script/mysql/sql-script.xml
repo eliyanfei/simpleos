@@ -6,7 +6,7 @@
 		<description>documentshare</description>
 		<![CDATA[
 
-    CREATE TABLE `it_document` (
+    CREATE TABLE `simpleos_document` (
   `id` bigint(20) NOT NULL,
   `catalogId` bigint(20),
   `userId` bigint(20) NOT NULL,
@@ -16,7 +16,6 @@
   `keyworks` varchar(64),
   `status` tinyint(4) not null,
   `ttype` tinyint(4) not null,
-  `docuFunction` tinyint(4),
   `language` varchar(32),
   `path1` varchar(128),
   `path2` varchar(16),
@@ -56,7 +55,7 @@
 	<tran-sql>
 		<description>catalog</description>
 		<![CDATA[
-  CREATE TABLE `it_document_catalog` (
+  CREATE TABLE `simpleos_document_catalog` (
   `id` bigint(20) NOT NULL,
   `parentid` bigint(20) NOT NULL,
   `name` varchar(32) NOT NULL,
@@ -73,7 +72,7 @@
 	<tran-sql>
 		<description>remark</description>
 		<![CDATA[
-			CREATE TABLE it_document_remark(
+			CREATE TABLE simpleos_document_remark(
   `id` bigint(20) NOT NULL,
   `parentid` bigint(20) NOT NULL,
   `documentid` bigint(20) NOT NULL,
@@ -90,21 +89,9 @@
 		]]>
 	</tran-sql>
 	<tran-sql>
-		<description>docuuser</description>
-		<![CDATA[
-			CREATE TABLE it_document_user(
-  `id` bigint(20) NOT NULL,
-  `userId` bigint(20) NOT NULL,
-  `downFiles` bigint(20) NOT NULL,
-  `upFiles` bigint(20) NOT NULL,
-  PRIMARY KEY  (`id`)
-);
-		]]>
-	</tran-sql>
-	<tran-sql>
 		<description>log</description>
 		<![CDATA[
-			CREATE TABLE it_document_log(
+			CREATE TABLE simpleos_document_log(
   `id` bigint(20) NOT NULL,
   `userId` bigint(20) NOT NULL,
   `docuId` bigint(20) NOT NULL,
@@ -117,25 +104,25 @@
 	<tran-sql>
 		<description>log</description>
 		<![CDATA[
-		ALTER TABLE it_document ADD INDEX docu_userid ( `userid` );
+		ALTER TABLE simpleos_document ADD INDEX docu_userid ( `userid` );
 		]]>
 	</tran-sql>
 	<tran-sql>
 		<description>log</description>
 		<![CDATA[
-		ALTER TABLE it_document ADD INDEX docu_createDate ( `createDate` );
+		ALTER TABLE simpleos_document ADD INDEX docu_createDate ( `createDate` );
 		]]>
 	</tran-sql>
 	<tran-sql>
 		<description>log</description>
 		<![CDATA[
-		ALTER TABLE it_document ADD INDEX docu_catalogId ( `catalogId` );
+		ALTER TABLE simpleos_document ADD INDEX docu_catalogId ( `catalogId` );
 		]]>
 	</tran-sql>
 	<tran-sql>
 		<description>log</description>
 		<![CDATA[
-		ALTER TABLE it_document ADD INDEX docu_views ( `views` );
+		ALTER TABLE simpleos_document ADD INDEX docu_views ( `views` );
 		]]>
 	</tran-sql>
 </sql-script>

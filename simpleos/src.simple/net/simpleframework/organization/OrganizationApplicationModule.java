@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;
 import net.simpleframework.ado.db.ITableEntityManager;
@@ -49,6 +48,7 @@ import net.simpleframework.util.script.ScriptEvalUtils;
 import net.simpleframework.web.AbstractWebApplicationModule;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ui.portal.module.PortalModuleRegistryFactory;
+import net.simpleos.backend.BackendUtils;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。

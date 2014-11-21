@@ -8,8 +8,6 @@ import net.itsite.ItSiteUtil;
 import net.itsite.impl.AbstractCommonAjaxAction;
 import net.itsite.utils.IOUtils;
 import net.itsite.utils.NumberUtils;
-import net.prj.manager.PrjCustomBean;
-import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.ado.IDataObjectValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.ado.db.event.TableEntityAdapter;
@@ -29,7 +27,17 @@ import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.EFunctionModule;
 import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.component.ComponentParameter;
+import net.simpleos.backend.CustomBean;
+import net.simpleos.backend.BackendUtils;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午4:12:48 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class DocuAjaxHandle extends AbstractCommonAjaxAction {
 
 	@Override
@@ -184,7 +192,6 @@ public class DocuAjaxHandle extends AbstractCommonAjaxAction {
 					if (StringUtils.hasText(docu_catalog)) {
 						docuBean.setCatalogId(new LongID(docu_catalog));
 					}
-					docuBean.setDocuFunction(EDocuFunction.data);
 					docuBean.setPoint(ConvertUtils.toInt(docu_point, 0));
 					docuBean.setAllowRead(NumberUtils.toDouble(docu_free_page));
 					//当文档不是发布状态时
@@ -230,16 +237,16 @@ public class DocuAjaxHandle extends AbstractCommonAjaxAction {
 			@Override
 			public void doAction(final Map<String, Object> json) throws Exception {
 				final String docuPath = compParameter.getParameter("docuPath");
-				PrjCustomBean customBean = PrjMgrUtils.appModule.getBeanByExp(PrjCustomBean.class, "name=? and type=?", new Object[] { "docuPath",
+				CustomBean customBean = BackendUtils.applicationModule.getBeanByExp(CustomBean.class, "name=? and type=?", new Object[] { "docuPath",
 						"docu" });
 				if (customBean == null) {
-					customBean = new PrjCustomBean();
+					customBean = new CustomBean();
 					customBean.setType("docu");
 					customBean.setName("docuPath");
 				}
 				customBean.setValue(docuPath);
 				DocuUtils.docuPath = docuPath;
-				PrjMgrUtils.appModule.doUpdate(customBean);
+				BackendUtils.applicationModule.doUpdate(customBean);
 			}
 		});
 	}
@@ -272,7 +279,6 @@ public class DocuAjaxHandle extends AbstractCommonAjaxAction {
 						if (StringUtils.hasText(docu_catalog)) {
 							docuBean.setCatalogId(new LongID(docu_catalog));
 						}
-						docuBean.setDocuFunction(EDocuFunction.data);
 						docuBean.setPoint(ConvertUtils.toInt(docu_point, 0));
 						docuBean.setAttentions(1);
 						docuBean.setAllowRead(100);

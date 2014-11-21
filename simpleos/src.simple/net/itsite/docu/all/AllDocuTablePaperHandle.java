@@ -21,6 +21,13 @@ import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
 import net.simpleframework.web.page.component.ui.pager.db.AbstractDbTablePagerHandle;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午5:40:56 
+ *
+ */
 public class AllDocuTablePaperHandle extends AbstractDbTablePagerHandle {
 	@Override
 	public Object getBeanProperty(ComponentParameter compParameter, String beanProperty) {
@@ -47,7 +54,7 @@ public class AllDocuTablePaperHandle extends AbstractDbTablePagerHandle {
 			sql.append(" and status=?");
 		} catch (Exception e) {
 		}
-		
+
 		if (!ItSiteUtil.isManage(compParameter, DocuUtils.applicationModule)) {
 			sql.append(" and userId=?");
 			ol.add(ItSiteUtil.getLoginUser(compParameter).getId());

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-script>
+	<version>1.0.0</version>
+	<name>app</name>
+	<tran-sql>
+		<description>simpleos_openapi</description>
+		<![CDATA[
+			CREATE TABLE `simpleos_openapi` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `openId` varchar(128) NOT NULL,
+  `openapi` tinyint(4) NOT NULL,
+  PRIMARY KEY  (`id`),
+   UNIQUE KEY (`openId`,`openapi`)
+) 
+		]]>
+	</tran-sql>
+</sql-script>

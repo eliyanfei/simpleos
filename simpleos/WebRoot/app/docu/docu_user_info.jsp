@@ -9,14 +9,11 @@
 	import="net.simpleframework.util.IoUtils"%><%@page
 	import="net.simpleframework.util.StringUtils"%><%@page
 	import="net.simpleframework.util.HTMLBuilder"%><%@page
-	import="net.itsite.docu.EDocuFunction"%><%@page
 	import="net.itsite.ItSiteUtil"%>
 
 <%
-	final PageRequestResponse requestResponse = new PageRequestResponse(
-			request, response);
-	final DocuBean docuBean = DocuUtils.applicationModule
-			.getViewDocuBean(requestResponse);
+	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
+	final DocuBean docuBean = DocuUtils.applicationModule.getViewDocuBean(requestResponse);
 	if (docuBean == null) {
 		return;
 	}
@@ -59,22 +56,6 @@
 			<td></td>
 			<td><input type="button" class="button2" value="我要下载"
 				onclick="$Actions['docuDownWindowAct']('docuId=<%=docuBean.getId()%>');">
-		</tr>
-		<tr>
-			<td colspan="2">
-				<%
-					if (StringUtils.hasText(docuBean.getContent())) {
-				%> <span id="dc_s"> <%=ItSiteUtil.getShortString(docuBean.getContent(), 20,
-						true)%> <%
- 	if (docuBean.getContent().length() > 20) {
- %> <a onclick="$('dc_s').$toggle();$('dc_m').$toggle();">#(Docu.user.4)»</a>
-			</span> <span id="dc_m" style="display: none;"> <%=docuBean.getContent()%>
-					<a onclick="$('dc_s').$toggle();$('dc_m').$toggle();">#(Docu.user.5)»</a>
-			</span> <%
- 	}
- 	}
- %>
-			</td>
 		</tr>
 	</table>
 </div>

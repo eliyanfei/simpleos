@@ -1,3 +1,13 @@
+#idNewsRemark {
+	border: 1px solid #bbb;
+	padding: 8px;
+	text-align: left;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #f9f9f9;
+}
+
 #site_header2 {
 	border-bottom: 6px solid #00008B;
 }
@@ -128,8 +138,8 @@
 }
 
 /***************************************************/
-	/*                   deprecated                    */
-	/***************************************************/
+/*                   deprecated                    */
+/***************************************************/
 .props_table {
 	border: 1px solid #ddd;
 	-moz-border-radius: 3px;
@@ -239,13 +249,14 @@
 	background-color: #f9f9f9;
 	position: relative;
 }
+
 .block_layout1 .c {
 	min-height: 200px;
 	padding: 4px;
 	background-color: #fff;
 }
 
-.block_layout1 .t1 .tabs, .block_layout1 .t2 .tabs .tab {
+.block_layout1 .t1 .tabs,.block_layout1 .t2 .tabs .tab {
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
@@ -286,7 +297,6 @@
 ._red {
 	color: red;
 }
-
 
 .show_template .nav2 {
 	border-bottom: 1px dashed #ccc;

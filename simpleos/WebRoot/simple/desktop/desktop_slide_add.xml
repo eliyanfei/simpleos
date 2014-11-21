@@ -3,7 +3,8 @@
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<scriptInit>
-		import net.simpleframework.content.component.newspager.NewsPagerUtils
+		import
+		net.simpleframework.content.component.newspager.NewsPagerUtils
 	</scriptInit>
 	<importCSS>
 		<value>
@@ -11,7 +12,7 @@
 		</value>
 	</importCSS>
 	<components>
-		<ajaxRequest name="saveNav" handleClass="net.prj.manager.PrjMgrAction"
+		<ajaxRequest name="saveNav" handleClass="net.simpleos.backend.BackendAction"
 			handleMethod="saveNav" selector="#saveForm">
 			<jsCompleteCallback>
 				<![CDATA[

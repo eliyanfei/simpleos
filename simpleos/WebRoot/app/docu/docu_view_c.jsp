@@ -53,7 +53,7 @@
 						</div>
 					</div>
 				</div>
-				<jsp:include page="/app/common/ad_bar_content.jsp"></jsp:include>
+				<jsp:include page="/simpleos/commons/ad/ad_bar_content.jsp"></jsp:include>
 				
 				<div class="idRemark" id="idNewsRemark">
 					<input type="hidden" name="docuId"

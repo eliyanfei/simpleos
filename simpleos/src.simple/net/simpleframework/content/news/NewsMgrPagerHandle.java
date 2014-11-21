@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import net.itsite.ItSiteUtil;
-import net.itsite.user.UserSearchUtils;
 import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.ado.db.SQLValue;
@@ -39,7 +38,6 @@ import net.simpleframework.web.EFunctionModule;
 import net.simpleframework.web.IWebApplicationModule;
 import net.simpleframework.web.WebUtils;
 import net.simpleframework.web.page.PageRequestResponse;
-import net.simpleframework.web.page.PageUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
 import net.simpleframework.web.page.component.ui.pager.EPagerPosition;
@@ -195,11 +193,6 @@ public class NewsMgrPagerHandle extends DefaultNewsPagerHandle {
 
 	@Override
 	public IDataObjectQuery<?> createDataObjectQuery(final ComponentParameter compParameter) {
-		final String c = PageUtils.toLocaleString(compParameter.getRequestParameter("c"));
-		if (StringUtils.hasText(c)) {
-			UserSearchUtils.createSearch(compParameter, EFunctionModule.news, c);
-			return createLuceneManager(compParameter).getLuceneQuery(c);
-		}
 		final ITableEntityManager news_mgr = getTableEntityManager(compParameter);
 		final StringBuilder sql = new StringBuilder();
 		final ArrayList<Object> al = new ArrayList<Object>();

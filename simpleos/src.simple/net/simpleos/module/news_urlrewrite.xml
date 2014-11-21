@@ -11,6 +11,10 @@
 		<to>/app/news/news.jsp?catalog=$1</to>
 	</rule>
 	<rule>
+		<from>/news/v/(\d+).html</from>
+		<to>/app/news/news_v.jsp?__news_Id=$1</to>
+	</rule>
+	<rule>
 		<from>/news/p/(\d+).html</from>
 		<to>/app/news/news.jsp?pageNumber=$1&amp;p=true</to>
 	</rule>

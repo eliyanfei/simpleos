@@ -17,6 +17,14 @@ import net.simpleframework.web.page.component.ui.swfupload.AbstractSwfUploadHand
 
 import org.apache.commons.io.FilenameUtils;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午4:02:39 
+ * @Description: 上传文档
+ *
+ */
 public class DocuUploadHandle extends AbstractSwfUploadHandle {
 
 	@Override
@@ -34,7 +42,6 @@ public class DocuUploadHandle extends AbstractSwfUploadHandle {
 			final String extension = StringUtils.getFilenameExtension(fileName);
 			final ID userId = ItSiteUtil.getLoginUser(compParameter).getId();
 			final String path1 = DocuUtils.getDatabase(userId);
-			// 保存文件，解压文件，转换文件
 			try {
 				if (DocuUtils.applicationModule.getDataObjectManager(DocuBean.class).getCount(
 						new ExpressionValue("title=?", new Object[] { FilenameUtils.getBaseName(fileName) })) > 0) {
@@ -51,12 +58,11 @@ public class DocuUploadHandle extends AbstractSwfUploadHandle {
 				docuBean.setPath1(path1);// 存储路径
 				docuBean.setPath2("");// 存储路径
 				if (ItSiteUtil.isManage(compParameter)) {
-					docuBean.setStatus(EDocuStatus.publish  );
+					docuBean.setStatus(EDocuStatus.publish);
 				} else {
 					docuBean.setStatus(EDocuStatus.audit);
 				}
 				docuBean.setFileSize(multipartFile.getSize());
-				docuBean.setDocuFunction(EDocuFunction.data);
 				DocuUtils.applicationModule.doUpdate(docuBean, new TableEntityAdapter() {
 					@Override
 					public void afterInsert(ITableEntityManager manager, Object[] objects) {

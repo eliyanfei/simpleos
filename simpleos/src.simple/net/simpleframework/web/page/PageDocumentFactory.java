@@ -6,10 +6,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.servlet.http.HttpServletRequest;
 
-import net.prj.manager.PrjMgrUtils;
 import net.simpleframework.util.BeanUtils;
 import net.simpleframework.util.HTTPUtils;
 import net.simpleframework.util.StringUtils;
+import net.simpleos.backend.BackendUtils;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -96,7 +96,7 @@ public class PageDocumentFactory {
 		if (document != null && document.isModified()) {
 			document = null;
 		}
-		PrjMgrUtils.initDesktopDocument(new PageParameter(requestResponse.request, requestResponse.response, document));
+		BackendUtils.initDesktopDocument(new PageParameter(requestResponse.request, requestResponse.response, document));
 		if (document == null) {
 			try {
 				if (pObject instanceof File) {

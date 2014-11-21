@@ -16,6 +16,14 @@ import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.propeditor.PropEditorBean;
 import net.simpleframework.web.page.component.ui.propeditor.PropField;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午4:14:16 
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ *
+ */
 public class DocuCatalogHandle extends DefaultCatalogHandle {
 
 	@Override

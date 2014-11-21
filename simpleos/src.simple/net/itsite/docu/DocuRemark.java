@@ -7,6 +7,14 @@ import net.simpleframework.ado.db.IEntityBeanAware;
 import net.simpleframework.content.component.remark.RemarkItem;
 import net.simpleframework.core.ado.db.Column;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月21日 下午4:15:01 
+ * @Description: 文档评论
+ *
+ */
 public class DocuRemark extends RemarkItem implements IEntityBeanAware {
 
 	private static final long serialVersionUID = -3704659703177686923L;

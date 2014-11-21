@@ -2,11 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
 	import="java.util.Map"%><%@page
-	import="net.prj.manager.site.PrjSiteUtils"%><%@page
-	import="net.prj.manager.PrjMgrUtils"%><%@page
+	import="net.simpleos.backend.site.SiteUtils"%><%@page
+	import="net.simpleos.backend.BackendUtils"%><%@page
 	import="net.itsite.utils.StringsUtils"%>
 <%
-	PrjColumns columns = PrjSiteUtils.appModule.getPrjColumns("open");
+	PrjColumns columns = SiteUtils.appModule.getPrjColumns("open");
 	Map<String, String> map = ItSiteUtil.attrMap;
 %>
 <div class="simple_custom" id="site_open_form" style="width: 95%;">

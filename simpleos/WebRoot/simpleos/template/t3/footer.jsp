@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
-	import="net.prj.manager.site.PrjSiteUtils"%><%@page
-	import="net.prj.manager.PrjMgrUtils"%><%@page import="java.util.Map"%><%@page
+	import="net.simpleos.backend.site.SiteUtils"%><%@page import="java.util.Map"%><%@page
 	import="java.util.HashMap"%><%@page
 	import="net.itsite.utils.StringsUtils"%><%@page
 	import="net.itsite.ItSiteUtil"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.prj.manager.links.PrjLinksUtils"%><%@page
+	import="net.simpleos.backend.links.LinksUtils"%><%@page
 	import="net.simpleos.$VType"%>
 
 
@@ -22,7 +21,7 @@
 		<tr>
 			<td width="75%" valign="top">
 				<div class="ll">
-					<%=PrjLinksUtils.queryLinks(requestResponse, ItSiteUtil.attrMap)%>
+					<%=LinksUtils.queryLinks(requestResponse, ItSiteUtil.attrMap)%>
 				</div>
 			</td>
 		</tr>

@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.Map;
 
 import net.itsite.ItSiteUtil;
-import net.itsite.user.UserSearchUtils;
 import net.simpleframework.ado.IDataObjectValue;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;
@@ -291,12 +290,6 @@ public class BbsTopicPagerHandle extends DefaultTopicPagerHandle {
 
 	@Override
 	public IDataObjectQuery<?> createDataObjectQuery(final ComponentParameter compParameter) {
-		final String c = PageUtils.toLocaleString(compParameter.getRequestParameter("c"));
-		if (StringUtils.hasText(c)) {
-			compParameter.setRequestAttribute("_s_flag", Boolean.TRUE);
-			UserSearchUtils.createSearch(compParameter, EFunctionModule.bbs, c);
-			return createLuceneManager(compParameter).getLuceneQuery(c);
-		}
 		final ITableEntityManager topic_mgr = getTableEntityManager(compParameter);
 		final StringBuilder sql = new StringBuilder();
 		final ArrayList<Object> al = new ArrayList<Object>();

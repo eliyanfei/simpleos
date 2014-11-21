@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-script>
+	<version>1.0.0</version>
+	<name>case</name>
+	<tran-sql>
+		<description>simpleos_custom</description>
+		<![CDATA[
+	 create table simpleos_nav (
+    	id bigint not null,
+        title varchar(64) not null,
+        url varchar(128) not null,
+        image varchar(64) not null,
+    	oorder bigint not null,
+        primary key(id)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<description>simpleos_custom</description>
+		<![CDATA[
+	 create table simpleos_custom (
+    	id bigint not null,
+        name varchar(64) not null,
+        type varchar(64) not null,
+        value text,
+        primary key(id),
+        unique (type, name)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(0,'company_name','company','智汇企业门户系统');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(1,'company_desc','company','');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(2,'company_content','company','');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(10,'contact_phone','contact','18600366451');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(11,'contact_fax','contact','');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(12,'contact_email','contact','eliyanfei@126.com');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(20,'site_name','site','智汇企业门户系统');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(21,'site_copyright','site','2011');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(22,'site_keywords','site','企业，建站，企业门户，免费CMS');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(23,'site_desc','site','是一个免费的门户系统');
+    ]]>
+	</tran-sql>
+	<tran-sql>
+		<![CDATA[
+		insert into simpleos_custom(id,name,type,value) values(24,'site_icp','site','京ICP备11045400号');
+    ]]>
+	</tran-sql>
+</sql-script>

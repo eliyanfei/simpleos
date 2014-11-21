@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="simpleos">
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src.manager"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src.mvc"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src.simple"/>
         <dependent-module archiveName="web_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/web_lib/web_lib">

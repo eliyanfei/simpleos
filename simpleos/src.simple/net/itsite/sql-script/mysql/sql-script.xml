@@ -2,21 +2,6 @@
 <sql-script>
 	<version>1.0.0</version>
 	<name>simple_user_ext</name>
-	<tran-sql>
-		<description>catalog</description>
-		<![CDATA[
-  CREATE TABLE `simple_school` (
-  `id` bigint(20) NOT NULL,
-  `parentid` bigint(20) NOT NULL,
-  `name` varchar(256) NOT NULL,
-  `text` varchar(256) NOT NULL,
-  `createdate` datetime NOT NULL,
-  `description` varchar(256) default NULL,
-  `oorder` bigint(20) NOT NULL,
-  PRIMARY KEY  (`id`)
-)
-    ]]>
-	</tran-sql>
 		<tran-sql>
 		<description>simple_dialog</description>
 		<![CDATA[
@@ -43,20 +28,9 @@
     ]]>
 	</tran-sql>
 	<tran-sql>
-		<description>it_counter</description>
-		<![CDATA[
-  CREATE TABLE `it_counter` (
-  `id` bigint(20) NOT NULL,
-  `name` varchar(32) NOT NULL,
-  `counter` bigint(20) NOT NULL,
-  PRIMARY KEY  (`id`)
-)
-    ]]>
-	</tran-sql>
-	<tran-sql>
 		<description>功能菜单权限</description>
 		<![CDATA[
-			CREATE TABLE `it_platform_permission` (
+			CREATE TABLE `simpleos_platform_permission` (
 			  `id` int(11) default NULL,
 			  `job_id` int(11) default NULL,
 			  `job_name` varchar(128) default NULL,

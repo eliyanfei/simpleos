@@ -9,7 +9,7 @@
 		<value>/simple/template/c2.xml</value>
 		<value>${BlogUtils.deployPath}jsp/blog_view_c.xml</value>
 	</importPage>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 	<components>
 		<ajaxRequest name="hotPageletLoadV" updateContainerId="hot_tabs"
 			showLoading="false" runImmediately="false">

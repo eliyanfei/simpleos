@@ -4,7 +4,6 @@
 	import="net.itsite.docu.DocuUtils"%><%@page
 	import="net.simpleframework.util.ConvertUtils"%><%@page
 	import="net.itsite.ItSiteUtil"%><%@page
-	import="net.itsite.docu.EDocuFunction"%><%@page
 	import="net.simpleframework.web.WebUtils"%><%@page
 	import="net.simpleframework.util.StringUtils"%>
 <%

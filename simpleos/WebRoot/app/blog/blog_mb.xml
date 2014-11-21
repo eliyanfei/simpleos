@@ -12,5 +12,5 @@
 	<importCSS>
 		<value>/app/twocol.css</value>
 	</importCSS>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 </page>

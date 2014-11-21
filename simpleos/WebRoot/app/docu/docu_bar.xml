@@ -2,9 +2,6 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<importJavascript>
-		<value>docu.js</value>
-	</importJavascript>
 	<components>
 		<ajaxRequest name="docuMgrToolsAjaxAct">
 			<urlForward>mgr/docu_mgr.jsp</urlForward>

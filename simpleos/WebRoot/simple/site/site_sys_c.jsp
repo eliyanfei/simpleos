@@ -1,11 +1,11 @@
 <%@page import="net.itsite.ItSiteUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
-	import="net.prj.manager.site.PrjSiteUtils"%><%@page
-	import="net.prj.manager.PrjMgrUtils"%><%@page import="java.util.Map"%><%@page
+	import="net.simpleos.backend.site.SiteUtils"%><%@page
+	import="net.simpleos.backend.BackendUtils"%><%@page import="java.util.Map"%><%@page
 	import="net.itsite.utils.StringsUtils"%>
 <%
-	PrjColumns columns = PrjSiteUtils.appModule.getPrjColumns("sys");
+	PrjColumns columns = SiteUtils.appModule.getPrjColumns("sys");
 	Map<String, String> map = ItSiteUtil.attrMap;
 	String language = StringsUtils.trimNull(map.get("sys.sys_language"), columns.getColumnMap().get("sys_language").getDefValue());
 %>

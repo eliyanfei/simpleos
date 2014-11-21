@@ -3,8 +3,8 @@
 <%@page import="net.simpleframework.sysmgr.dict.DictUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
-	import="net.prj.manager.site.PrjSiteUtils"%><%@page
-	import="java.util.Map"%><%@page import="net.prj.manager.PrjMgrUtils"%><%@page
+	import="net.simpleos.backend.site.SiteUtils"%><%@page
+	import="java.util.Map"%><%@page import="net.simpleos.backend.BackendUtils"%><%@page
 	import="net.itsite.utils.StringsUtils"%>
 
 <%

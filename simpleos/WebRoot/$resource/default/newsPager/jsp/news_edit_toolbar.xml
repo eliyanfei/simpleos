@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
 	<importPage>
-		<value>/app/upload/upload_common.xml</value>
+		<value>/simpleos/commons/upload/upload_common.xml</value>
 	</importPage>
 	<components>
 		<myFileSelect name="__news_myfileSelect" bindingText="np_content"

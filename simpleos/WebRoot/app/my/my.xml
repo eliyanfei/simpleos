@@ -8,8 +8,6 @@
 	<importPage>
 		<value>${UserPagerUtils.xmlUserutils()}</value>
 	</importPage>
-	<handleClass>net.prj.manager.template.PrjTemplatePageHandle</handleClass>
+	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 	<jobView>sys_account_normal</jobView>
-	<components>
-	</components>
 </page>

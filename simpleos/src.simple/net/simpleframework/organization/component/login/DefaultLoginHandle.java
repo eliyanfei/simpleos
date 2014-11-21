@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import net.itsite.ItSiteCache;
-import net.itsite.ItSiteOrganizationApplicationModule.AccountExt;
 import net.itsite.ItSiteUtil;
-import net.itsite.permission.PlatformUtis;
 import net.itsite.utils.MD5;
 import net.itsite.utils.StringsUtils;
 import net.itsite.utils.UUIDHexGenerator;
@@ -31,7 +29,6 @@ import net.simpleframework.util.LocaleI18n;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.util.script.ScriptEvalUtils;
 import net.simpleframework.web.LastUrlFilterListener;
-import net.simpleframework.web.page.SkinUtils;
 import net.simpleframework.web.page.component.AbstractComponentHandle;
 import net.simpleframework.web.page.component.ComponentParameter;
 
@@ -114,11 +111,6 @@ public class DefaultLoginHandle extends AbstractComponentHandle implements ILogi
 	@Override
 	public void afterLogin(final ComponentParameter compParameter, final LoginObject loginObject) {
 		AccountSession.setLogin(compParameter.request, loginObject);
-		final AccountExt accountExt = (AccountExt) loginObject.getAccount();
-		if (accountExt != null) {
-			PlatformUtis.getPaltformMenusByUser(accountExt.user(), true);
-			SkinUtils.setSessionSkin(compParameter.getSession(), accountExt.getSkin());
-		}
 	}
 
 	@Override

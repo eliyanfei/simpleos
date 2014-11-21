@@ -3,8 +3,8 @@
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<components>
-		<catalog name="template_menu_catalog" containerId="template_menu_catalog" 
-			runImmediately="true" handleClass="net.prj.manager.menu.PrjMenuItemHandle"
+		<catalog name="template_menu_catalog" containerId="template_menu_catalog"
+			runImmediately="true" handleClass="net.simpleos.backend.menu.MenuNavItemHandle"
 			rootText="#(Desktop.Menu.0)" />
 
 		<ajaxRequest name="ajax_sys_dict_item_c"

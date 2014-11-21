@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="net.itsite.utils.StringsUtils"%><%@page
-	import="net.prj.manager.links.PrjLinksUtils"%><%@page
-	import="net.prj.manager.links.PrjLinksBean"%>
+	import="net.simpleos.backend.links.LinksUtils"%><%@page
+	import="net.simpleos.backend.links.LinksBean"%>
 
 <style>
 #l_title,#l_days,#l_url,#l_description {
@@ -12,9 +12,9 @@
 </style>
 <%
 	final String linksId = request.getParameter("linksId");
-	PrjLinksBean linksBean = PrjLinksUtils.appModule.getBean(PrjLinksBean.class, linksId);
+	LinksBean linksBean = LinksUtils.appModule.getBean(LinksBean.class, linksId);
 	if (linksBean == null) {
-		linksBean = new PrjLinksBean();
+		linksBean = new LinksBean();
 	}
 %>
 <div id="linksForm">

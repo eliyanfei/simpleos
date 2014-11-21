@@ -6,7 +6,7 @@
 		<swfupload name="slideUploadAct" fileSizeLimit="5MB"
 			selector="#slide_upload_form" fileQueueLimit="1"
 			fileTypes="*.png;*.jpg;*.jpeg;*.gif" containerId="slide_upload_id"
-			fileTypesDesc="#(Img.Upload)" handleClass="net.prj.manager.PrjNavUpLoadFileHandle">
+			fileTypesDesc="#(Img.Upload)" handleClass="net.simpleos.backend.slide.IndexSlideUploadHandle">
 			<jsCompleteCallback>
 				<![CDATA[
 					$IT.R('navTable');

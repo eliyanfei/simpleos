@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>/app/docu/docu_bar.xml</value>
+	</importPage>
+	<handleClass>net.itsite.docu.DocuPageLoad</handleClass>
+	<components>
+		<ajaxRequest name="appDelDocuAjaxAct">
+			<urlForward>app_del.jsp</urlForward>
+		</ajaxRequest>
+		<window name="appDelDocuWindowAct" contentRef="appDelDocuAjaxAct"
+			height="300" width="400" title="#(Docu.all.1)"></window>
+
+		<tablePager name="allDocuListTableAct" containerId="alldocuId"
+			showVerticalLine="true" exportAction="true" noResultDesc="#(Docu.all.list.0)"
+			pageItems="30" showEditPageItems="false" pagerBarLayout="bottom"
+			handleClass="net.itsite.docu.all.AllDocuTablePaperHandle">
+			<columns>
+				<column columnText="#(Docu.all.list.1)" filter="true"
+					columnName="title" separator="true"></column>
+				<column columnText="#(Docu.all.list.2)" textAlign="center"
+					columnName="userId" width="100" separator="true" filter="true"></column>
+				<column columnText="#(Docu.all.list.3)" width="120"
+					columnName="catalogId" textAlign="center" separator="true"></column>
+				<column columnText="#(Docu.all.list.4)" width="120"
+					columnName="createDate" textAlign="center" separator="true"></column>
+				<column columnName="action" sort="false" separator="true"
+					width="22" textAlign="center"
+					columnText='&lt;a class="allDH down_menu_image"&gt;&lt;/a&gt;' />
+			</columns>
+			<!-- 绑定操作菜单 -->
+			<jsLoadedCallback>
+				<![CDATA[
+				var alldb = $Actions["allDocuBodyMenu"]; 
+				if (alldb)
+					alldb.bindEvent(".allDB");
+				var allDH = $Actions["allDocuHeaderMenu"]; 
+				if (allDH)
+					allDH.bindEvent(".allDH");
+             ]]>
+			</jsLoadedCallback>
+		</tablePager>
+		<menu name="allDocuBodyMenu" menuEvent="click">
+			<menuitem title="#(Docu.all.list.5)" icon="#edit">
+				<jsSelectCallback>
+				<![CDATA[
+					var id = $Actions['allDocuListTableAct'].rowId(item);
+					$Actions['docuAuditAct']('docuIds='+id);
+				]]>
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="#(Docu.all.list.6)" icon="#edit">
+				<jsSelectCallback>
+				<![CDATA[
+					var id = $Actions['allDocuListTableAct'].rowId(item);
+					$Actions['myDocuAddWindowAct']('docuId='+id);
+				]]>
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="-"></menuitem>
+			<menuitem title="#(Docu.all.list.7)" icon="#delete">
+				<jsSelectCallback>
+				<![CDATA[
+					var id = $Actions['allDocuListTableAct'].rowId(item);
+					$Actions['appDelDocuWindowAct']('docuIds='+id);
+				]]>
+				</jsSelectCallback>
+			</menuitem>
+		</menu>
+		<ajaxRequest name="docuAuditAct" handleClass="net.itsite.docu.DocuAjaxHandle"
+			handleMethod="docuAudit" confirmMessage="#(Docu.all.list.8)">
+			<jsCompleteCallback>
+				<![CDATA[
+					if($Actions['appDelDocuWindowAct']){
+						$IT.C('appDelDocuWindowAct');
+					}
+					if($Actions['allDocuListTableAct'])
+						$IT.R('allDocuListTableAct')
+				]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<menu name="allDocuHeaderMenu" selector=".myDH" menuEvent="click">
+			<menuitem title="#(Docu.all.list.9)" icon="#delete">
+				<jsSelectCallback>
+					<![CDATA[
+					var id = "";
+					$$('#allDocuListTableId .titem input[type=checkbox]').each(function (c) {
+						if (c.checked) {
+							var idc = $Actions['allDocuListTableAct'].rowId(c);
+							id += idc + ",";
+						}
+					});
+					if (id == "") {
+						alert("\u81f3\u5c11\u9009\u62e9\u4e00\u4e2a\u6761\u76ee");
+						return;
+					} else {
+						if(confirm("#(Docu.all.list.10)")){	
+						$Actions['appDelDocuWindowAct']('docuIds='+id);
+						}
+					}
+					]]>
+				</jsSelectCallback>
+			</menuitem>
+			<menuitem title="#(Docu.all.list.11)" icon="#option">
+				<jsSelectCallback>
+					<![CDATA[
+					var id = "";
+					$$('#allDocuListTableId .titem input[type=checkbox]').each(function (c) {
+						if (c.checked) {
+							var idc = $Actions['allDocuListTableAct'].rowId(c);
+							id += idc + ",";
+						}
+					});
+					if (id == "") {
+						alert("\u81f3\u5c11\u9009\u62e9\u4e00\u4e2a\u6761\u76ee");
+						return;
+					} else {
+						if(confirm("#(Docu.all.list.12)")){	
+						$Actions['docuAuditAct']('docuIds='+id);
+						}
+					}
+					]]>
+				</jsSelectCallback>
+			</menuitem>
+		</menu>
+	</components>
+</page>

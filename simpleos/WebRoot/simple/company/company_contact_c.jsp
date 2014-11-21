@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
-	import="net.prj.manager.company.PrjCompanyUtils"%><%@page
+	import="net.simpleos.backend.company.CompanyUtils"%><%@page
 	import="net.itsite.impl.PrjColumn"%>
 
 <%
-	PrjColumns columns = PrjCompanyUtils.appModule.getPrjColumns("contact");
+	PrjColumns columns = CompanyUtils.appModule.getPrjColumns("contact");
 %>
 
 <div class="simple_custom" id="company_contact_form">
