@@ -157,7 +157,7 @@
 		}
 	%>
 	
-	<div style="float: right;"><a href="/morespace.html">更多»</a></div>
+	<div style="float: right;"><a href="/morespace.html">更多动态»</a></div>
 </div>
 <script type="text/javascript">
 function init() {

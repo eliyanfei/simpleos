@@ -1,3 +1,4 @@
+<%@page import="net.simpleframework.util.DateUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page
@@ -12,7 +13,7 @@
 		final VoteResult result = (VoteResult) o;
 		request.setAttribute("__account_", OrgUtils.am()
 				.queryForObjectById(result.getUserId()));
-%><jsp:include page="<%=jsp%>"></jsp:include><%
+%><jsp:include page="<%=jsp%>"><jsp:param value="<%=DateUtils.getRelativeDate(result.getCreateDate()) %>" name="__showDate"/></jsp:include><%
 	if (admin) {
 %><a style="vertical-align: top;" class="delete2_image"
 	onclick="$Actions['ajaxVoteUserDelete']('resultId=<%=result.getId()%>')"></a>

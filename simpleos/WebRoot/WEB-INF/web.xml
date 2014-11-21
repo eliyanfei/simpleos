@@ -59,6 +59,12 @@
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>FORWARD</dispatcher>
 	</filter-mapping>
+	<filter-mapping>
+		<filter-name>actionFilter</filter-name>
+		<url-pattern>*.xml</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
 	<error-page>
 		<error-code>404</error-code>
 		<location>/index.jsp</location>

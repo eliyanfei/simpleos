@@ -27,7 +27,7 @@
 				</component>
 			</field>
 			<field label="密码">
-				<component type="text" name="password">
+				<component type="password" name="password">
 					<defaultValue></defaultValue>
 				</component>
 			</field>

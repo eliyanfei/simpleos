@@ -31,7 +31,7 @@ public class PrjTemplatePageHandle extends DefaultPageHandle {
 		PrjTemplateBean templateBean = PrjTemplateUtils.getTemplateBean();
 		if (templateBean == null)
 			return pages;
-		importPages[i++] = "/frame/template/" + templateBean.templateId + "/" + templateBean.templateId + ".xml";
+		importPages[i++] = "/simpleos/template/" + templateBean.templateId + "/" + templateBean.templateId + ".xml";
 		return importPages;
 	}
 

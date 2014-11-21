@@ -7,7 +7,7 @@
 	import="net.simpleframework.web.page.SkinUtils"%><%@page
 	import="net.simpleframework.my.dialog.DialogUtils"%><%@page
 	import="net.simpleframework.web.page.SessionCache"%><%@page
-	import="java.util.List"%><%@page import="net.prj.core.$VType"%>
+	import="java.util.List"%><%@page import="net.simpleos.$VType"%>
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 	final String menuName = ItSiteUtil.witchMenu(requestResponse);

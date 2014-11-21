@@ -6,14 +6,14 @@ import java.util.Map;
 
 import net.itsite.impl.AItSiteAppclicationModule;
 import net.itsite.utils.ReflectUtils;
-import net.prj.core.i.IModelBean;
-import net.prj.core.impl.frame.ITemplateBean;
 import net.prj.manager.menu.PrjMenuBean;
 import net.simpleframework.content.component.remark.RemarkItem;
 import net.simpleframework.core.IInitializer;
 import net.simpleframework.core.ado.db.Table;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ComponentParameter;
+import net.simpleos.module.IModuleBean;
+import net.simpleos.template.ITemplateBean;
 
 /**
  * 
@@ -57,9 +57,9 @@ public class PrjTemplateAppModule extends AItSiteAppclicationModule implements I
 			Beans.setDesignTime(true);
 			ReflectUtils.createSharedReflections("classes", "bin", "app.");
 			try {
-				final Collection<String> subTypes = ReflectUtils.listSubClass(IModelBean.class);//
+				final Collection<String> subTypes = ReflectUtils.listSubClass(IModuleBean.class);//
 				for (final String subType : subTypes) {
-					final IModelBean impl = ReflectUtils.initClass(subType, IModelBean.class);
+					final IModuleBean impl = ReflectUtils.initClass(subType, IModuleBean.class);
 					if (null == impl)
 						continue;
 					PrjTemplateUtils.modelMap.put(impl.getName(), impl);

@@ -18,12 +18,17 @@
 	}
 	final int size = ConvertUtils.toInt(request.getParameter("size"), 64);
 	final int width = size + 6;
-	final boolean showCreateDate = ConvertUtils.toBoolean(request.getParameter("showCreateDate"), false);
+	final String __showDate = request.getParameter("__showDate");
+	String dateValue = __showDate;
+	if (__showDate == null) {
+		final boolean showCreateDate = ConvertUtils.toBoolean(request.getParameter("showCreateDate"), false);
+		dateValue = DateUtils.getRelativeDate(showCreateDate ? account.getCreateDate() : account.getLastLoginDate());
+	}
 %>
 <div class="li"><%=ContentUtils.getAccountAware().wrapImgAccountHref(requestResponse, account, size, size)%>
 	<div
 		style="line-height: 20px; height: 20px; width: <%=width%>px; overflow: hidden;"><%=ContentUtils.getAccountAware().wrapAccountHref(requestResponse, account)%></div>
 	<div style="line-height: 20px; color: #aaa;">
-		<%=DateUtils.getRelativeDate(showCreateDate ? account.getCreateDate() : account.getLastLoginDate())%>
+		<%=dateValue%>
 	</div>
 </div>

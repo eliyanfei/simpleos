@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.itsite.impl.AItSiteAppclicationModule;
 import net.itsite.utils.ReflectUtils;
-import net.prj.core.i.IModelBean;
 import net.simpleframework.content.component.catalog.CatalogBean;
 import net.simpleframework.content.component.remark.RemarkItem;
 import net.simpleframework.core.IInitializer;
@@ -23,6 +22,7 @@ import net.simpleframework.web.page.component.ui.propeditor.EComponentType;
 import net.simpleframework.web.page.component.ui.propeditor.FieldComponent;
 import net.simpleframework.web.page.component.ui.propeditor.PropEditorBean;
 import net.simpleframework.web.page.component.ui.propeditor.PropField;
+import net.simpleos.module.IModuleBean;
 
 /**
  * 
@@ -50,9 +50,9 @@ public class PrjMenuAppModule extends AItSiteAppclicationModule implements IPrjM
 			Beans.setDesignTime(true);
 			ReflectUtils.createSharedReflections("classes", "bin", "app.");
 			try {
-				final Collection<String> subTypes = ReflectUtils.listSubClass(IModelBean.class);//
+				final Collection<String> subTypes = ReflectUtils.listSubClass(IModuleBean.class);//
 				for (final String subType : subTypes) {
-					final IModelBean impl = ReflectUtils.initClass(subType, IModelBean.class);
+					final IModuleBean impl = ReflectUtils.initClass(subType, IModuleBean.class);
 					if (null == impl)
 						continue;
 					if (impl.isMenu()) {

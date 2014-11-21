@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src.core"/>
 	<classpathentry kind="src" path="src.manager"/>
 	<classpathentry kind="src" path="src.mvc"/>
-	<classpathentry kind="src" path="src.simpleframework"/>
+	<classpathentry kind="src" path="src.simple"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.generic_5.0">
 		<attributes>

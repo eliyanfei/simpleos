@@ -5,9 +5,9 @@ import java.util.Map;
 
 import net.itsite.ItSiteUtil;
 import net.itsite.utils.StringsUtils;
-import net.prj.core.i.IModelBean;
-import net.prj.core.impl.frame.ITemplateBean;
-import net.prj.core.impl.frame.TemplateBean1;
+import net.simpleos.module.IModuleBean;
+import net.simpleos.template.ITemplateBean;
+import net.simpleos.template.TemplateBean1;
 
 /**
  * 
@@ -16,7 +16,7 @@ import net.prj.core.impl.frame.TemplateBean1;
  */
 public class PrjTemplateUtils {
 	public static IPrjTemplateAppModule appModule = null;
-	public static Map<String, IModelBean> modelMap = new HashMap<String, IModelBean>();
+	public static Map<String, IModuleBean> modelMap = new HashMap<String, IModuleBean>();
 	public static Map<String, ITemplateBean> templateMap = new HashMap<String, ITemplateBean>();
 
 	/**
@@ -25,7 +25,7 @@ public class PrjTemplateUtils {
 	 */
 	public static String getTemplateUrl() {
 		final PrjTemplateBean templateBean = PrjTemplateUtils.getTemplateBean();
-		final String templateUrl = "/frame/template/" + (StringsUtils.u(templateBean.templateId, "/", templateBean.templateId)) + ".jsp";
+		final String templateUrl = "/simpleos/template/" + (StringsUtils.u(templateBean.templateId, "/", templateBean.templateId)) + ".jsp";
 		return templateUrl;
 	}
 

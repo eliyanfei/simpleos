@@ -6,7 +6,6 @@ import java.util.List;
 
 import net.itsite.docu.DocuUtils;
 import net.itsite.docu.EDocuStatus;
-import net.prj.core.i.IModelBean;
 import net.prj.mvc.news.MVCNewsUtils;
 import net.simpleframework.content.EContentStatus;
 import net.simpleframework.content.EContentType;
@@ -16,6 +15,7 @@ import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.listbox.AbstractListboxHandle;
 import net.simpleframework.web.page.component.ui.listbox.ListItem;
 import net.simpleframework.web.page.component.ui.listbox.ListboxBean;
+import net.simpleos.module.IModuleBean;
 
 /**
  * 
@@ -25,7 +25,7 @@ import net.simpleframework.web.page.component.ui.listbox.ListboxBean;
  */
 public class FunctionListBoxHandle extends AbstractListboxHandle {
 
-	static List<IModelBean> modelList = new ArrayList<IModelBean>();
+	static List<IModuleBean> modelList = new ArrayList<IModuleBean>();
 
 	@Override
 	public Collection<ListItem> getListItems(ComponentParameter compParameter) {

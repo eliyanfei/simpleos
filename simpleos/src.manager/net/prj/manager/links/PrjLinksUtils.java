@@ -35,8 +35,8 @@ public class PrjLinksUtils {
 				b1.append("<a style='color:" + linksBean.getColor() + ";' href='" + linksBean.getUrl() + "' target='blank'>")
 						.append(linksBean.getTitle()).append("</a>");
 			}
+			b1.append("<a  href='/links.html' target='blank'>").append("更多链接").append("</a>");
 		}
-		b1.append("<a  href='/links.html' target='blank'>").append("更多链接").append("</a>");
 		return b1.toString();
 	}
 
