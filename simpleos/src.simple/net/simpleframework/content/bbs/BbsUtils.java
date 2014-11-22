@@ -3,7 +3,6 @@ package net.simpleframework.content.bbs;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.DataObjectManagerUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;
@@ -35,6 +34,7 @@ import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.EFunctionModule;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.AbstractComponentBean;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。

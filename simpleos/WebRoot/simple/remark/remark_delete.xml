@@ -5,7 +5,7 @@
 	<jobView>sys_account_normal</jobView>
 	<components>
 		<ajaxRequest name="remarkDeleteAct" selector="#rForm"
-			handleClass="net.prj.mvc.remark.RemarkAction" handleMethod="remarkDelete">
+			handleClass="net.simpleos.mvc.remark.RemarkAction" handleMethod="remarkDelete">
 			<jsCompleteCallback>
 					<![CDATA[
 						$IT.C('remarkWindowAct');

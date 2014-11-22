@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.ado.db.SQLValue;
 import net.simpleframework.applets.attention.AttentionUtils;
@@ -42,6 +40,8 @@ import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
 import net.simpleframework.web.page.component.ui.pager.EPagerPosition;
 import net.simpleframework.web.page.component.ui.pager.TablePagerColumn;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -222,7 +222,7 @@ public class NewsMgrPagerHandle extends DefaultNewsPagerHandle {
 		sql.append("select * from simple_app_news ");
 		sql.append("where ");
 		boolean aloneLimit = false;
-		if (compParameter.getStart() > ItSiteUtil.aloneLimit && dataSplit()) {
+		if (compParameter.getStart() > SimpleosUtil.aloneLimit && dataSplit()) {
 			aloneLimit = true;
 			sql.append("id <= (select id from simple_app_news where " + limitWhere + " order by createdate desc limit ")
 					.append(compParameter.getStart()).append(",1) and ");

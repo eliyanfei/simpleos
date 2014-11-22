@@ -7,7 +7,7 @@
 	<bean id="idOrgInitializer" class="net.simpleframework.organization.OrgInitializer">
 		<property name="sync" value="true" />
 		<property name="organizationApplicationModule">
-			<bean class="net.itsite.ItSiteOrganizationApplicationModule">
+			<bean class="net.simpleos.SimpleosOrganizationApplicationModule">
 				<property name="loginUrl" value="/login.html"></property>
 			</bean>
 		</property>
@@ -16,13 +16,13 @@
 	<bean id="idContentInitializer" class="net.simpleframework.content.ContentInitializer">
 		<property name="sync" value="true" />
 		<property name="bbsApplicationModule">
-			<bean class="net.itsite.ItSiteBbsApplicationModule">
+			<bean class="net.simpleos.SimpleosBbsApplicationModule">
 				<property name="applicationUrl" value="/bbs.html" />
-				<property name="pagerHandleClass" value="net.itsite.ItSiteBbsPagerHandle" />
+				<property name="pagerHandleClass" value="net.simpleos.SimpleosBbsPagerHandle" />
 			</bean>
 		</property>
 		<property name="blogApplicationModule">
-			<bean class="net.itsite.ItSiteBlogApplicationModule">
+			<bean class="net.simpleos.SimpleosBlogApplicationModule">
 				<property name="applicationUrl" value="/blog.html" />
 			</bean>
 		</property>
@@ -32,7 +32,7 @@
 	<bean id="idAppletsInitializer" class="net.simpleframework.applets.AppletsInitializer">
 		<property name="sync" value="true" />
 		<property name="openIDApplicationModule">
-			<bean class="net.itsite.ItSiteOpenIDApplicationModule"></bean>
+			<bean class="net.simpleos.SimpleosOpenIDApplicationModule"></bean>
 		</property>
 		<property name="attentionApplicationModule">
 			<bean
@@ -45,12 +45,12 @@
 	<bean id="idMyInitializer" class="net.simpleframework.my.MyInitializer">
 		<property name="sync" value="true" />
 		<property name="spaceApplicationModule">
-			<bean class="net.itsite.ItSiteSpaceApplicationModule">
+			<bean class="net.simpleos.SimpleosSpaceApplicationModule">
 				<property name="applicationUrl" value="/space.html" />
 			</bean>
 		</property>
 		<property name="homeApplicationModule">
-			<bean class="net.itsite.ItSiteHomeApplicationModule">
+			<bean class="net.simpleos.SimpleosHomeApplicationModule">
 				<property name="applicationUrl" value="/home.html" />
 			</bean>
 		</property>
@@ -80,7 +80,7 @@
 		<property name="sync" value="true" />
 	</bean>
 
-	<bean id="idItSiteInitializer" class="net.itsite.ItSiteInitializer">
+	<bean id="idItSiteInitializer" class="net.simpleos.SimpleosInitializer">
 		<property name="sync" value="true" />
 	</bean>
 
@@ -101,7 +101,7 @@
 
 	</bean>
 	<!-- Application Module -->
-	<bean id="idSiteNewsApplicationModule" class="net.itsite.ItSiteNewsApplicationModule">
+	<bean id="idSiteNewsApplicationModule" class="net.simpleos.SimpleosNewsApplicationModule">
 		<property name="applicationUrl" value="/news.html" />
 		<property name="newsCatalogs">
 			<list>

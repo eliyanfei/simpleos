@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import net.itsite.ItSiteUtil;
-import net.prj.mvc.myfavorite.MyFavoriteUtils;
 import net.simpleframework.ado.IDataObjectValue;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
@@ -39,6 +37,8 @@ import net.simpleframework.web.page.PageUtils;
 import net.simpleframework.web.page.component.AbstractComponentBean;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.mvc.myfavorite.MyFavoriteUtils;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -159,8 +159,8 @@ public class DefaultNewsPagerHandle extends AbstractNewsPagerHandle {
 		for (final Object v : values) {
 			NewsBean newsBean = (NewsBean) temgr_new.queryForObjectById(v, getEntityBeanClass());
 			if (newsBean != null) {
-				if (ItSiteUtil.isManageOrSelf(compParameter, NewsUtils.applicationModule, newsBean.getUserId())) {
-					ItSiteUtil.update(compParameter, newsBean.getUserId(), newsBean.getId(), false);
+				if (SimpleosUtil.isManageOrSelf(compParameter, NewsUtils.applicationModule, newsBean.getUserId())) {
+					SimpleosUtil.update(compParameter, newsBean.getUserId(), newsBean.getId(), false);
 				} else {
 					throw DataObjectException.wrapException("你不是管理员，没有权限删除!");
 				}
@@ -270,7 +270,7 @@ public class DefaultNewsPagerHandle extends AbstractNewsPagerHandle {
 	public String getActionsHTML(final ComponentParameter compParameter, final AbstractContentBase contentBase) {
 		final NewsBean news = (NewsBean) contentBase;
 		final StringBuilder sb = new StringBuilder();
-		final IAccount account = ItSiteUtil.getLoginAccount(compParameter);
+		final IAccount account = SimpleosUtil.getLoginAccount(compParameter);
 		if (account != null) {
 			sb.append("<a class=\"a2\" id='favorite_act' onclick=\"");
 			long c = MyFavoriteUtils.getFavorites(news.getId(), account.getId());

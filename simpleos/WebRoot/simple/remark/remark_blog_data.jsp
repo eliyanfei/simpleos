@@ -1,8 +1,8 @@
 <%@page import="net.simpleframework.web.WebUtils"%>
-<%@page import="net.itsite.ItSiteUtil"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
 <%@page import="net.simpleframework.content.EContentStatus"%>
 <%@page import="net.simpleframework.util.ConvertUtils"%>
-<%@page import="net.itsite.utils.StringsUtils"%>
+<%@page import="net.simpleos.utils.StringsUtils"%>
 <%@page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@page import="net.simpleframework.content.ContentUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,7 +16,7 @@
 	import="net.simpleframework.util.DateUtils"%><%@page
 	import="net.simpleframework.content.blog.BlogRemark"%><%@page
 	import="net.simpleframework.content.blog.Blog"%><%@page
-	import="net.simpleframework.content.blog.BlogUtils"%><%@page import="net.prj.mvc.remark.RemarkUtils"%>
+	import="net.simpleframework.content.blog.BlogUtils"%><%@page import="net.simpleos.mvc.remark.RemarkUtils"%>
 
 <%
 	final ComponentParameter componentParameter = new ComponentParameter(request, response, null);

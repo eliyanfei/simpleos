@@ -1,32 +1,31 @@
-<%@page import="net.itsite.utils.StringsUtils"%>
+<%@page import="net.simpleos.utils.StringsUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
-	import="net.simpleos.backend.site.SiteUtils"%><%@page
 	import="java.util.Map"%><%@page import="java.util.HashMap"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
+	import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
 	import="net.simpleos.backend.links.LinksUtils"%><%@page
 	import="net.simpleos.$VType"%>
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(
-			request, response);
-	final String menuName = ItSiteUtil.witchMenu(requestResponse);
+	request, response);
+	final String menuName = SimpleosUtil.witchMenu(requestResponse);
 %>
 <div class="footer" align="center">
 	<div class="links">
 		<%=LinksUtils.queryLinks(requestResponse,
-					ItSiteUtil.attrMap)%>
+					SimpleosUtil.attrMap)%>
 	</div>
 	<div class="lsep"></div>
 	<div class="cr">
 		<div>
 			Powered by
 			<%=StringsUtils.trimNull(
-					ItSiteUtil.attrMap.get("site.site_name"), "")%>&nbsp;&nbsp;&nbsp;版权所有
+					SimpleosUtil.attrMap.get("site.site_name"), "")%>&nbsp;&nbsp;&nbsp;版权所有
 			©<%=StringsUtils.trimNull(
-					ItSiteUtil.attrMap.get("site.site_copyright"), "")%>&nbsp;&nbsp;<a
+					SimpleosUtil.attrMap.get("site.site_copyright"), "")%>&nbsp;&nbsp;<a
 				href="http://www.miitbeian.gov.cn/" target="_blank"><%=StringsUtils.trimNull(
-					ItSiteUtil.attrMap.get("site.site_icp"), "")%></a>
+					SimpleosUtil.attrMap.get("site.site_icp"), "")%></a>
 			<a target="_blank" href="/about.html" hidefocus="hidefocus">关于</a> <a
 				target="_blank" href="/contact.html" hidefocus="hidefocus">联系我们</a>
 		</div>
@@ -46,5 +45,5 @@ $ready(function() {
 			});
 		});
 	</script>
-	<%=ItSiteUtil.getAboutHtml(2)%>
+	<%=SimpleosUtil.getAboutHtml(2)%>
 </div>

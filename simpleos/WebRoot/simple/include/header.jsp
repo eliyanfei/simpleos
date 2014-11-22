@@ -3,12 +3,12 @@
 	import="net.simpleos.module.ad.EAd"%><%@page
 	import="net.simpleframework.web.WebUtils"%><%@page
 	import="net.simpleframework.util.StringUtils"%><%@page
-	import="net.itsite.utils.StringsUtils"%><%@page
+	import="net.simpleos.utils.StringsUtils"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
 	import="net.simpleframework.util.HTMLBuilder"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.SimpleosUtil"%>
 <%
-	ItSiteUtil.addMenuNav(request.getSession(), "/", "#(Itsite.menu.home)", true);
+	SimpleosUtil.addMenuNav(request.getSession(), "/", "#(Itsite.menu.home)", true);
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 %>
 <style>

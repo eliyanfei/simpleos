@@ -7,8 +7,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.core.id.ID;
 import net.simpleframework.util.HTMLUtils;
 import net.simpleframework.util.HTTPUtils;
@@ -22,7 +20,9 @@ import net.simpleframework.web.page.PageParameter;
 import net.simpleframework.web.page.PageUtils;
 import net.simpleframework.web.page.component.AbstractComponentBean;
 import net.simpleframework.web.page.component.ComponentBeanUtils;
+import net.simpleos.SimpleosUtil;
 import net.simpleos.backend.BackendUtils;
+import net.simpleos.utils.StringsUtils;
 
 import org.jsoup.nodes.DataNode;
 import org.jsoup.nodes.Document;
@@ -81,10 +81,10 @@ public final class PageParser extends AbstractPageParser {
 			headElement = htmlDocument.head();
 			final Collection<String[]> coll = htmlBuilder.meta(pageParameter);
 			if (coll != null) {
-				if (ItSiteUtil.attrMap.get("site.site_keywords") != null)
-					coll.add(new String[] { "name", "keywords", "content", ItSiteUtil.attrMap.get("site.site_keywords") });
-				if (ItSiteUtil.attrMap.get("site.site_desc") != null)
-					coll.add(new String[] { "name", "description", "content", ItSiteUtil.attrMap.get("site.site_desc") });
+				if (SimpleosUtil.attrMap.get("site.site_keywords") != null)
+					coll.add(new String[] { "name", "keywords", "content", SimpleosUtil.attrMap.get("site.site_keywords") });
+				if (SimpleosUtil.attrMap.get("site.site_desc") != null)
+					coll.add(new String[] { "name", "description", "content", SimpleosUtil.attrMap.get("site.site_desc") });
 				for (final String[] attri : coll) {
 					if (attri != null && attri.length > 1 && attri.length % 2 == 0) {
 						final Element meta = headElement.prependElement("meta");
@@ -99,9 +99,9 @@ public final class PageParser extends AbstractPageParser {
 			final String title = pageDocument.getTitle(pageParameter);
 
 			if (StringUtils.hasText(title)) {
-				htmlDocument.title(title + "-" + StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), ""));
+				htmlDocument.title(title + "-" + StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_name"), ""));
 			} else {
-				htmlDocument.title(StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), ""));
+				htmlDocument.title(StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_name"), ""));
 			}
 
 			String favicon = pageDocument.getPageBean().getFavicon();

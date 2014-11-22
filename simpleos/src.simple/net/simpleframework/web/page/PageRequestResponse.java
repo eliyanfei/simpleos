@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.core.ALoggerAware;
 import net.simpleframework.organization.IUser;
 import net.simpleframework.util.HTTPUtils;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -32,7 +32,7 @@ public class PageRequestResponse extends ALoggerAware {
 	}
 
 	public IUser getLoginUser() {
-		return ItSiteUtil.getLoginUser(this);
+		return SimpleosUtil.getLoginUser(this);
 	}
 
 	private HttpServletRequest getPageRequest(HttpServletRequest request) {

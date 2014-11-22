@@ -4,8 +4,8 @@
 	<scriptEval>single</scriptEval>
 	<jobView>sys_manager</jobView>
 	<components>
-		<ajaxRequest name="site_openAct" handleClass="net.simpleos.backend.site.SiteAction"
-			selector="#site_open_form" handleMethod="saveOpen">
+		<ajaxRequest name="site_openAct" handleClass="net.simpleos.backend.BackendAction"
+			selector="#site_open_form" handleMethod="saveCustom">
 			<jsCompleteCallback>
 				<![CDATA[
 					$IT.alert('#(Save.OK)');

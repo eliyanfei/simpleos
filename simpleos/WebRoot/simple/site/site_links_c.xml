@@ -2,8 +2,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<handleClass>net.simpleos.backend.site.SitePageLoad</handleClass>
-	<handleMethod>linksLoad</handleMethod>
+	<handleClass>net.simpleos.backend.BackendCustomPageLoad</handleClass>
+	<handleMethod>dataLoad</handleMethod>
 	<jobView>sys_manager</jobView>
 	<components>
 		<htmlEditor name="links_homeLinks" textarea="links_homeLinks"
@@ -14,7 +14,7 @@
 		</htmlEditor>
 
 
-		<ajaxRequest name="site_dickLinksAct" handleClass="net.simpleos.backend.site.SiteAction"
+		<ajaxRequest name="site_dickLinksAct" handleClass="net.simpleos.backend.BackendAction"
 			selector="#links_sys_mgr_id" handleMethod="saveDictLinks">
 			<jsCompleteCallback>
 				<![CDATA[
@@ -24,22 +24,19 @@
 				]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="site_linksAct"
-			handleClass="net.simpleos.backend.site.SiteAction" selector="#site_links_form"
-			handleMethod="saveLinks">
+		<ajaxRequest name="site_linksAct" handleClass="net.simpleos.backend.BackendAction"
+			selector="#site_links_form" handleMethod="saveCustom">
 			<jsCompleteCallback>
 				<![CDATA[
-					if(json['rs']=='true'){
-						$IT.alert('#(Save.OK)');
-					}
+					$IT.alert('#(Save.OK)');
 				]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
 		<tablePager name="linksTable"
-			handleClass="net.simpleos.backend.links.LinksTableHandle"
-			showLineNo="true" showVerticalLine="true" runImmediately="true"
-			containerId="linksDataId" exportAction="true" pagerBarLayout="bottom"
-			showEditPageItems="true" noResultDesc="" showCheckbox="false">
+			handleClass="net.simpleos.backend.links.LinksTableHandle" showLineNo="true"
+			showVerticalLine="true" runImmediately="true" containerId="linksDataId"
+			exportAction="true" pagerBarLayout="bottom" showEditPageItems="true"
+			noResultDesc="" showCheckbox="false">
 			<columns>
 				<column columnName="title" columnText="#(links.table.0)"
 					filter="true"></column>

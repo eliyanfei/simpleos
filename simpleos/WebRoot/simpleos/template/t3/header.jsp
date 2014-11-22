@@ -4,12 +4,12 @@
 	import="net.simpleframework.organization.account.IAccount"%><%@page
 	import="net.simpleframework.organization.account.AccountSession"%><%@page
 	import="net.simpleframework.organization.OrgUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
-	import="net.itsite.utils.StringsUtils"%><%@page
+	import="net.simpleos.SimpleosUtil"%><%@page
+	import="net.simpleos.utils.StringsUtils"%><%@page
 	import="java.util.HashMap"%><%@page import="java.util.Map"%>
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(
-			request, response);
+	request, response);
 	IAccount account = AccountSession.getLogin(session);
 %>
 <style>
@@ -37,19 +37,21 @@
 	<div class="fixc">
 		<div>
 			<div class="logo" onclick="$Actions.loc('/');"></div>
-			<div class="slogan"><%=StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_slogan"), "")%></div>
+			<div class="slogan"><%=StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_slogan"), "")%></div>
 		</div>
 		<div align="right">
 			<div class="re">
 				<div class="headTopText">
 					<%
 						if (account != null) {
-							if(ItSiteUtil.isManage(requestResponse)){
-				%>
+										if(SimpleosUtil.isManage(requestResponse)){
+					%>
 				<a href="/manager/home.html" hidefocus="hidefocus">后台</a>
-				<%} %>
+				<%
+					}
+				%>
 					<a href="/mymessage.html" style="position: relative;"
-						hidefocus="hidefocus">#(Template.0)<%=ItSiteUtil.getMessages(requestResponse, -1)%></a><a
+						hidefocus="hidefocus">#(Template.0)<%=SimpleosUtil.getMessages(requestResponse, -1)%></a><a
 						href="/myfavorite.html" hidefocus="hidefocus">#(Template.1)</a><a
 						href="/space.html" style="font-style: italic;"
 						hidefocus="hidefocus"><img style="vertical-align: middle"
@@ -63,7 +65,7 @@
 
 					<a href="javascript:;" href="/login.html" hidefocus="true">#(Template.3)</a>
 					<%
-						if ("true".equals(ItSiteUtil.attrMap.get("sys.sys_register"))) {
+						if ("true".equals(SimpleosUtil.attrMap.get("sys.sys_register"))) {
 					%>
 					<a href="javascript:;" href="/register.html" hidefocus="true">注册</a>
 					<%
@@ -71,7 +73,7 @@
 					%>
 					<%
 						}
-					%><%=ItSiteUtil.witchLanguage(requestResponse)%>
+					%><%=SimpleosUtil.witchLanguage(requestResponse)%>
 				</div>
 			</div>
 		</div>

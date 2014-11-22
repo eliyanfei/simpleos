@@ -2,7 +2,6 @@ package net.simpleframework.content;
 
 import java.util.Map;
 
-import net.itsite.impl.AItSiteAppclicationModule;
 import net.simpleframework.applets.attention.ISentCallback;
 import net.simpleframework.content.component.newspager.NewsBean;
 import net.simpleframework.organization.EJobType;
@@ -19,6 +18,7 @@ import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.PageUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.HandleException;
+import net.simpleos.impl.ASimpleosAppclicationModule;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -94,8 +94,8 @@ public abstract class AbstractContentApplicationModule extends AbstractWebApplic
 
 		protected String getFromTemplate(final Map<String, Object> variable, final Class<?> templateClazz) {
 			try {
-				final String readerString = IoUtils.getStringFromInputStream(AItSiteAppclicationModule.class.getClassLoader().getResourceAsStream(
-						BeanUtils.getResourceClasspath(AItSiteAppclicationModule.class, "attention.html")));
+				final String readerString = IoUtils.getStringFromInputStream(ASimpleosAppclicationModule.class.getClassLoader().getResourceAsStream(
+						BeanUtils.getResourceClasspath(ASimpleosAppclicationModule.class, "attention.html")));
 				return ScriptEvalUtils.replaceExpr(variable, readerString);
 			} catch (final Exception e) {
 				throw HandleException.wrapException(e);

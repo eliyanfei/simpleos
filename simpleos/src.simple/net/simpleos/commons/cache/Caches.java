@@ -19,9 +19,9 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import javax.sql.DataSource;
 
-import net.itsite.utils.SQLUtils;
-import net.itsite.utils.StringsUtils;
 import net.simpleos.commons.cache.CacheState.ECacheState;
+import net.simpleos.utils.SQLUtils;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 
@@ -84,12 +84,6 @@ public final class Caches {
 			case EHCACHE_DISK:
 				cacheImpls.add(cacheImpl = new CachesEhcache());
 				break;
-			case JCS_MEMORY:
-				cacheImpls.add(cacheImpl = new CachesJcsMemory());
-				break;
-			case JCS_DISK:
-				cacheImpls.add(cacheImpl = new CachesJcsDisk());
-				break;
 			//TODO 如果有新加的Cache实现,需要同时在这里添加创建的代码
 			}
 			if (null != cacheImpl)
@@ -118,7 +112,7 @@ public final class Caches {
 	}
 
 	public static final CacheState getCacheState(final String cacheName) {
-		if (net.itsite.utils.StringsUtils.isBlank(cacheName)) {
+		if (net.simpleos.utils.StringsUtils.isBlank(cacheName)) {
 			return null;
 		}
 		return Caches.instance.cacheStateMaps.get(cacheName);
@@ -180,7 +174,7 @@ public final class Caches {
 		CacheConfig cacheConfig = caches.configs.get(cacheName);
 		if (null == cacheConfig)// 不存在时,需要新增加
 		{
-			final String cacheEngine = props.getProperty("cacheEngine", ECacheEngine.JCS_DISK.name());
+			final String cacheEngine = props.getProperty("cacheEngine", ECacheEngine.EHCACHE_DISK.name());
 			caches.configs.put(cacheName, cacheConfig = new CacheConfig(cacheName, ECacheEngine.valueOf(cacheEngine)));
 			cacheConfig.properties = props;
 		}

@@ -2,14 +2,14 @@ package net.simpleos.backend.links;
 
 import java.util.Map;
 
-import net.itsite.impl.AItSiteAppclicationModule;
 import net.simpleframework.content.component.remark.RemarkItem;
 import net.simpleframework.core.IInitializer;
 import net.simpleframework.core.ado.db.Table;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ComponentParameter;
+import net.simpleos.impl.ASimpleosAppclicationModule;
 
-public class LinksAppModule extends AItSiteAppclicationModule implements ILinksAppModule {
+public class LinksAppModule extends ASimpleosAppclicationModule implements ILinksAppModule {
 
 	public static Table catalog = new Table("simpleos_links", "id");
 

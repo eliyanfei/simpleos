@@ -3,7 +3,6 @@ package net.simpleos.commons.upload;
 import java.io.IOException;
 import java.util.HashMap;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.ado.db.event.TableEntityAdapter;
 import net.simpleframework.content.component.filepager.FileBean;
@@ -20,7 +19,15 @@ import net.simpleframework.web.page.IMultipartFile;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.HandleException;
 import net.simpleframework.web.page.component.ui.swfupload.AbstractSwfUploadHandle;
+import net.simpleos.SimpleosUtil;
 
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月22日 下午10:10:10 
+ *
+ */
 public class FileUploadHandle extends AbstractSwfUploadHandle {
 	@Override
 	public Object getBeanProperty(final ComponentParameter compParameter, final String beanProperty) {
@@ -54,7 +61,7 @@ public class FileUploadHandle extends AbstractSwfUploadHandle {
 		fileBean.setFilename(filename);
 		final String filetype = StringUtils.getFilenameExtension(filename);
 		fileBean.setFiletype(filetype);
-		fileBean.setUserId(ItSiteUtil.getLoginUser(compParameter).getId());
+		fileBean.setUserId(SimpleosUtil.getLoginUser(compParameter).getId());
 		fileBean.setFilesize(multipartFile.getSize());
 		fileBean.setIp(HTTPUtils.getRemoteAddr(compParameter.request));
 		MyFileUtils.getTableEntityManager(MyFile.class).insertTransaction(fileBean, new TableEntityAdapter() {

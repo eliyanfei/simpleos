@@ -33,7 +33,7 @@
 			<th></th>
 			<td>
 				<input type="button" class="button2" id="company_company_btn"
-					onclick="$IT.A('company_companyAct');" value="#(Itsite.c.ok)">
+					onclick="$IT.A('company_companyAct','type=company');" value="#(Itsite.c.ok)">
 			</td>
 		</tr>
 	</table>

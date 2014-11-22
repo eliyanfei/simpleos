@@ -17,4 +17,8 @@ public class TemplateBean4 extends AbstractTemplateBean {
 		return "模板4";
 	}
 
+	@Override
+	public boolean isFullScreen() {
+		return true;
+	}
 }

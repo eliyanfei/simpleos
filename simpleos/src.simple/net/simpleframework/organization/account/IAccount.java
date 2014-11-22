@@ -85,10 +85,6 @@ public interface IAccount extends IIdBeanAware {
 
 	public void setTheme(String theme);
 
-	boolean isBlacklist();
-
-	void setBlacklist(boolean blacklist);
-
 	/*----------------------------------关联操作 --------------------------------*/
 
 	public abstract static class InsertCallback {

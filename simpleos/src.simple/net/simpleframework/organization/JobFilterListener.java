@@ -1,7 +1,6 @@
 package net.simpleframework.organization;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,7 +18,6 @@ import net.simpleframework.web.page.IPageConstants;
 import net.simpleframework.web.page.PageDocument;
 import net.simpleframework.web.page.PageParameter;
 import net.simpleframework.web.page.PageUtils;
-import net.simpleos.configmgr.SimpleosConfigMgr;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。

@@ -4,7 +4,7 @@
 <%@ page import="net.simpleframework.util.LocaleI18n"%>
 <%@ page import="net.simpleframework.util.StringUtils"%>
 <%@ page import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.SimpleosUtil"%>
 
 <%
 	String jn = StringUtils.blank(request.getParameter("job"));
@@ -20,7 +20,7 @@
 %>
 <html>
 	<%
-		if (!ItSiteUtil.isLogin(requestResponse)) {
+		if (!SimpleosUtil.isLogin(requestResponse)) {
 	%>
 	<script type="text/javascript">
 $Actions.loc("/login.html");

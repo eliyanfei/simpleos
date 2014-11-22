@@ -9,7 +9,7 @@
 	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
 	<components>
 		<tablePager name="myFavoriteTable"
-			handleClass="net.prj.mvc.myfavorite.MyFavoriteTableHandle"
+			handleClass="net.simpleos.mvc.myfavorite.MyFavoriteTableHandle"
 			exportAction="true" containerId="myfavorite_data_id" showCheckbox="false"
 			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
 			pagerBarLayout="bottom">
@@ -23,7 +23,7 @@
 			</columns>
 		</tablePager>
 		<listbox name="myfavoriteList" containerId="myfavoriteListId"
-			handleClass="net.prj.mvc.myfavorite.MyFavoriteListBoxHandle" tooltip="false">
+			handleClass="net.simpleos.mvc.myfavorite.MyFavoriteListBoxHandle" tooltip="false">
 		</listbox>
 
 	</components>

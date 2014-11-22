@@ -5,11 +5,11 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.organization.account.IAccount;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.component.AbstractComponentRegistry;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -38,7 +38,7 @@ public abstract class SkinUtils {
 	public static String getSkin(final PageRequestResponse requestResponse, final String userSkin) {
 		String sessionSkin = (String) requestResponse.getSessionAttribute(SkinUtils.SESSION_NAME_SKIN);
 		if (sessionSkin == null) {
-			final IAccount account = ItSiteUtil.getLoginAccount(requestResponse);
+			final IAccount account = SimpleosUtil.getLoginAccount(requestResponse);
 			if (account != null) {
 				setSessionSkin(requestResponse.getSession(), account.getSkin());
 			}

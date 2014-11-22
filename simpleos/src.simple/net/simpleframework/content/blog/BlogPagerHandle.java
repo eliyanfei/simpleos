@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.ado.db.SQLValue;
 import net.simpleframework.applets.attention.AttentionUtils;
@@ -26,6 +24,8 @@ import net.simpleframework.web.page.component.ui.menu.MenuBean;
 import net.simpleframework.web.page.component.ui.menu.MenuItem;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
 import net.simpleframework.web.page.component.ui.pager.EPagerPosition;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -134,19 +134,19 @@ public class BlogPagerHandle extends AbstractBlogPagerHandle {
 		if ("recommended".equals(t)) {
 			sql.append(" where ttype=?");
 			al.add(EContentType.recommended);
-			if (compParameter.getStart() > ItSiteUtil.aloneLimit && dataSplit()) {
+			if (compParameter.getStart() > SimpleosUtil.aloneLimit && dataSplit()) {
 				aloneLimit = true;
 				sql.append("id <= (select id from simple_blog where ttype=" + EContentType.recommended.ordinal() + " order by createdate desc limit ")
 						.append(compParameter.getStart()).append(",1) and ");
 			}
 		} else if ("audit".equals(t)) {
-			if (ItSiteUtil.isManage(compParameter)) {
+			if (SimpleosUtil.isManage(compParameter)) {
 				sql.append(" where status=?");
 				al.add(EContentStatus.audit);
 			}
 		} else {
 			sql.append(" where ");
-			if (compParameter.getStart() > ItSiteUtil.aloneLimit && dataSplit()) {
+			if (compParameter.getStart() > SimpleosUtil.aloneLimit && dataSplit()) {
 				aloneLimit = true;
 				sql.append("id <= (select id from simple_blog where status=" + EContentStatus.publish.ordinal() + " order by createdate desc limit ")
 						.append(compParameter.getStart()).append(",1) and ");
@@ -174,11 +174,11 @@ public class BlogPagerHandle extends AbstractBlogPagerHandle {
 				if (status != EContentStatus.publish) {
 					sb.append("<span style=\"margin-right: 6px;\" class=\"important-tip\">[ ").append(status).append(" ]</span>");
 				}
-				sb.append(ItSiteUtil.markContent(c, wrapOpenLink(compParameter, blog)));
-				sb.append(ItSiteUtil.buildTimeString(blog.getCreateDate()));
+				sb.append(SimpleosUtil.markContent(c, wrapOpenLink(compParameter, blog)));
+				sb.append(SimpleosUtil.buildTimeString(blog.getCreateDate()));
 				sb.append("<div class=\"nc\">");
 				sb.append(ContentUtils.getAccountAware().wrapImgAccountHref(compParameter, blog.getUserId()));
-				sb.append(ItSiteUtil.markContent(c, ContentUtils.getShortContent(blog, 300, true)));
+				sb.append(SimpleosUtil.markContent(c, ContentUtils.getShortContent(blog, 300, true)));
 				sb.append("<div class=\"nd\">");
 				sb.append("<span class=\"num\">" + blog.getRemarks() + "</span>&nbsp;评论");
 				sb.append("<span style=\"margin: 0px 5px;\">|</span>");

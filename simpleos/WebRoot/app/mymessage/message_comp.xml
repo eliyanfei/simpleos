@@ -2,18 +2,21 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<scriptInit>import net.simpleframework.my.message.MessageUtils;</scriptInit>
+	<scriptInit>import net.simpleframework.my.message.MessageUtils;
+	</scriptInit>
 	<importCSS>
 		<value>${MessageUtils.getCssPath(pageParameter)}/message.css</value>
 	</importCSS>
 	<title>举报管理</title>
-	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
+	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}
+	</jobView>
 	<components>
 		<pager name="complaintTableAct" containerId="complaintTableId"
-			showEditPageItems="false" handleClass="net.itsite.complaint.ComplaintTablePaper"
+			showEditPageItems="false" handleClass="net.simpleos.module.complaint.ComplaintTablePaper"
 			dataPath="message_comp_c_data.jsp" />
 		<ajaxRequest name="complaintDeleteAct"
-			handleClass="net.itsite.complaint.ComplaintAjaxHandle" handleMethod="deleteComplaint">
+			handleClass="net.simpleos.module.complaint.ComplaintAjaxHandle"
+			handleMethod="deleteComplaint">
 			<jsCompleteCallback>
 					<![CDATA[
 						if(json['act']){
@@ -22,15 +25,16 @@
 							$IT.R('complaintTableAct');
 						}
 					]]>
-				</jsCompleteCallback>
+			</jsCompleteCallback>
 		</ajaxRequest>
 		<ajaxRequest name="complaintOKAct"
-			handleClass="net.itsite.complaint.ComplaintAjaxHandle" handleMethod="okComplaint">
+			handleClass="net.simpleos.module.complaint.ComplaintAjaxHandle"
+			handleMethod="okComplaint">
 			<jsCompleteCallback>
 					<![CDATA[
 						$IT.R('complaintTableAct');
 					]]>
-				</jsCompleteCallback>
+			</jsCompleteCallback>
 		</ajaxRequest>
 		<ajaxRequest name="dealComplaintAjaxAct">
 			<urlForward>complaint_c.jsp</urlForward>

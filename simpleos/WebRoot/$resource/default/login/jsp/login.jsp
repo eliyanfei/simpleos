@@ -1,9 +1,8 @@
-<%@page import="net.itsite.ItSiteUtil"%>
-<%@page import="net.itsite.utils.StringsUtils"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
+<%@page import="net.simpleos.utils.StringsUtils"%>
 <%@page import="java.util.Map"%>
 <%@page import="net.simpleos.backend.BackendUtils"%>
-<%@page import="net.simpleos.backend.site.SiteUtils"%>
-<%@page import="net.itsite.impl.PrjColumns"%>
+<%@page import="net.simpleos.impl.PrjColumns"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page
@@ -37,7 +36,7 @@
 	<div
 		style="text-align: <%=nComponentParameter.getBeanProperty("actionAlign")%>">
 		<%
-			if("true".equals(ItSiteUtil.attrMap.get("sys.sys_testing"))){
+			if("true".equals(SimpleosUtil.attrMap.get("sys.sys_testing"))){
 		%>
 		<span style="color: red;">admin/admin</span>
 		<%} %>

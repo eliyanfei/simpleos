@@ -28,6 +28,6 @@
 			title="" width="420" height="380" />
 		<remark name="docuRemarkAct" containerId="docu_remark"
 			selector="#idNewsRemark" runImmediately="true" showValidateCode="false"
-			handleClass="net.itsite.docu.DocuRemarkHandle" />
+			handleClass="net.simpleos.module.docu.DocuRemarkHandle" />
 	</components>
 </page>

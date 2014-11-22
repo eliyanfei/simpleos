@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.itsite.utils.UID"%>
+	pageEncoding="UTF-8"%><%@page import="net.simpleos.utils.UID"%>
 <%
 	request.getSession().setAttribute("_show_tabs",false);
 %>

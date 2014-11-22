@@ -25,7 +25,7 @@ String.prototype.trim = function() {
 function getCookie(name, value) {
 	var strCookie = document.cookie;
 	var arrCookie = strCookie.split(";");
-	for ( var i = 0; i < arrCookie.length; i++) {
+	for (var i = 0; i < arrCookie.length; i++) {
 		var arr = arrCookie[i].split("=");
 		if (arr[0].trim() == name)
 			return arr[1];
@@ -87,7 +87,7 @@ $IT.insertText = function(obj, myValue) {
 
 $IT.setMeta = function(content) {
 	var metas = document.getElementsByTagName("meta");
-	for ( var i = 0; i < metas.length; i++) {
+	for (var i = 0; i < metas.length; i++) {
 		if (metas[i].name == 'description') {
 			if (content == null || content == '') {
 				document.removeChild(metas[i]);
@@ -109,11 +109,11 @@ $IT.stopExec = function() {
 		$IT.exec2 = null;
 	}
 };
-$IT.alert = function(info) {
-	$Actions['alertWin']('info=' + info);
-};
 $IT.confirm = function(info) {
 	$Actions['confirmWin']('info=' + info);
+};
+$IT.alert = function(info) {
+	$Actions['alertWin']('info=' + info);
 };
 $IT.hidden = function(ss, id) {
 	if ($$(ss).length == 0)
@@ -136,7 +136,7 @@ $IT.C = function(act) {
 $IT.R = function(act) {
 	if ($Actions[act])
 		$Actions[act].refresh();
-}
+};
 $IT.A = function(act, p) {
 	if (arguments.length == 2) {
 		if ($Actions[act])
@@ -145,7 +145,7 @@ $IT.A = function(act, p) {
 		if ($Actions[act])
 			$Actions[act]();
 	}
-}
+};
 $IT.bind = function(seletor, flag) {
 	$$(seletor).each(function(c) {
 		var act = "";
@@ -208,7 +208,7 @@ $IT.active = function(t, c1, c2) {
 		c.removeClassName(c2);
 	});
 	t.addClassName(c2);
-}
+};
 
 $IT.tab = function(c) {
 	var obj = c.up().up().up();
@@ -268,7 +268,7 @@ $IT.createSplitbar = function(bar, left, callback) {
 	if (!(bar = $(bar)) || !(left = $(left))) {
 		return;
 	}
-	var p, w, ow = left.getHeight();
+	var p = 0, w=0, ow = left.getHeight();
 	bar.observe("dblclick", function(evt) {
 		left.setStyle("height: " + ow + "px");
 	});
@@ -306,7 +306,7 @@ $IT.stree = function(id) {
 		});
 		branch.className = branch.className + ' sstree';
 	}
-}
+};
 
 $IT.filter = function() {
 	$$('.tablepager .tfilter').each(function(tfilter) {
@@ -327,7 +327,7 @@ $IT.filter = function() {
 			});
 		});
 	});
-}
+};
 
 $IT.searchButton = function(id, inputText, dq, dv, sf) {
 	var show = true;
@@ -366,7 +366,8 @@ $IT.searchButton = function(id, inputText, dq, dv, sf) {
 		$('search_id').value = dq + "_";
 		$('search_value').innerHTML = dv;
 	}
-	$('searchBtn').observe(
+	$('searchBtn')
+			.observe(
 					"click",
 					function(ev) {
 						if (sf) {

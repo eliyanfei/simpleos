@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.itsite.ItSiteUtil"%>
+	pageEncoding="UTF-8"%><%@page import="net.simpleos.SimpleosUtil"%>
 
 <%
-	ItSiteUtil.addMenuNav(request.getSession(), null, "角色管理", false);
+	SimpleosUtil.addMenuNav(request.getSession(), null, "角色管理", false);
 %>
 <div style="margin: 8px;">
 	<table style="width: 100%;" cellpadding="0" cellspacing="0">

@@ -1,6 +1,5 @@
 package net.simpleframework.my.dialog;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.ado.IDataObjectQuery;
@@ -11,6 +10,7 @@ import net.simpleframework.organization.account.AccountSession;
 import net.simpleframework.organization.account.IAccount;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.PageRequestResponse;
+import net.simpleos.SimpleosUtil;
 
 public class DialogUtils {
 
@@ -57,7 +57,7 @@ public class DialogUtils {
 	}
 
 	public static SimpleDialog getSimpleDialog(final PageRequestResponse requestResponse) {
-		final ID sentId = ItSiteUtil.getLoginUser(requestResponse).getId();
+		final ID sentId = SimpleosUtil.getLoginUser(requestResponse).getId();
 		final String userId = requestResponse.getRequestParameter("userid");
 		if (StringUtils.hasText(userId)) {
 			final ITableEntityManager dialog_mgr = MySpaceUtils.getTableEntityManager(SimpleDialog.class);

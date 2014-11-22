@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.content.ContentUtils;
 import net.simpleframework.content.EContentStatus;
@@ -20,6 +19,7 @@ import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.menu.MenuBean;
 import net.simpleframework.web.page.component.ui.menu.MenuItem;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -116,14 +116,14 @@ public class MyBlogPagerHandle extends AbstractBlogPagerHandle {
 				if (status != EContentStatus.publish) {
 					sb.append("<span style=\"margin-right: 6px;\" class=\"important-tip\">[ ").append(status).append(" ]</span>");
 				}
-				sb.append(ItSiteUtil.markContent(c, wrapOpenLink(compParameter, blog)));
-				sb.append(ItSiteUtil.buildTimeString(blog.getCreateDate()));
+				sb.append(SimpleosUtil.markContent(c, wrapOpenLink(compParameter, blog)));
+				sb.append(SimpleosUtil.buildTimeString(blog.getCreateDate()));
 				sb.append("<div class=\"nc\">");
 				final String img = ContentUtils.getContentImage(compParameter, blog, 64, 64);
 				if (img != null) {
 					sb.append(img);
 				}
-				sb.append(ItSiteUtil.markContent(c, ContentUtils.getShortContent(blog, 300, true)));
+				sb.append(SimpleosUtil.markContent(c, ContentUtils.getShortContent(blog, 300, true)));
 				sb.append("<div class=\"nd\">");
 				sb.append("<span class=\"num\">" + blog.getRemarks() + "</span>&nbsp;评论");
 				sb.append("<span style=\"margin: 0px 5px;\">|</span>");

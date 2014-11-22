@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.ado.IDataObjectQuery;
@@ -13,6 +12,7 @@ import net.simpleframework.organization.IJob;
 import net.simpleframework.util.HTMLBuilder;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractPagerHandle;
+import net.simpleos.SimpleosUtil;
 
 public class DialogTablePaper extends AbstractPagerHandle {
 	@Override
@@ -54,17 +54,17 @@ public class DialogTablePaper extends AbstractPagerHandle {
 		sql.append("1=1");
 		if ("me".equals(box)) {
 			sql.append(" and sentId=? and sentDel=?");
-			ol.add(ItSiteUtil.getLoginUser(compParameter).getId());
+			ol.add(SimpleosUtil.getLoginUser(compParameter).getId());
 			ol.add(false);
 		} else if ("you".equals(box)) {
 			sql.append(" and toId=? and toDel=?");
-			ol.add(ItSiteUtil.getLoginUser(compParameter).getId());
+			ol.add(SimpleosUtil.getLoginUser(compParameter).getId());
 			ol.add(false);
 		} else {
 			sql.append(" and ((sentId=? and sentDel=?) or (toId=? and toDel=?))");
-			ol.add(ItSiteUtil.getLoginUser(compParameter).getId());
+			ol.add(SimpleosUtil.getLoginUser(compParameter).getId());
 			ol.add(false);
-			ol.add(ItSiteUtil.getLoginUser(compParameter).getId());
+			ol.add(SimpleosUtil.getLoginUser(compParameter).getId());
 			ol.add(false);
 		}
 

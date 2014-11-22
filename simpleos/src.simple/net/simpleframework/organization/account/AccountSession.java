@@ -13,8 +13,6 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.core.ALoggerAware;
 import net.simpleframework.core.id.ID;
 import net.simpleframework.organization.IJob;
@@ -28,7 +26,9 @@ import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.PageEventAdapter;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.UrlForward;
+import net.simpleos.SimpleosUtil;
 import net.simpleos.backend.BackendUtils;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -127,18 +127,18 @@ public abstract class AccountSession extends ALoggerAware {
 		if (loginObject == null) {
 			return;
 		}
-		String skin = ItSiteUtil.attrMap.get("sys.sys_skin");
+		String skin = SimpleosUtil.attrMap.get("sys.sys_skin");
 		if (StringsUtils.isNotBlank1(skin)) {
 			String[] ss = skin.split(",");
 			if (ss.length == 1) {
-				ItSiteUtil.setSkin(ss[0], loginObject.getAccount(), request);
+				SimpleosUtil.setSkin(ss[0], loginObject.getAccount(), request);
 			}
 		}
-		String language = ItSiteUtil.attrMap.get("sys.sys_language");
+		String language = SimpleosUtil.attrMap.get("sys.sys_language");
 		if (StringsUtils.isNotBlank1(language)) {
 			String[] ls = language.split(",");
 			if (ls.length == 1) {
-				ItSiteUtil.setLanguage(ls[0]);
+				SimpleosUtil.setLanguage(ls[0]);
 			}
 		}
 		final IAccount account = loginObject.getAccount();
@@ -196,7 +196,7 @@ public abstract class AccountSession extends ALoggerAware {
 		final String job = jobProperty != null ? jobProperty.getJobProperty() : null;
 		final HttpServletRequest httpRequest = requestResponse.request;
 		final String durl = HTTPUtils.getRequestURI(requestResponse.request);
-		if (durl.contains("manager") && (!OrgUtils.isMember(job, requestResponse.getSession()) || !ItSiteUtil.isManage(requestResponse))) {
+		if (durl.contains("manager") && (!OrgUtils.isMember(job, requestResponse.getSession()) || !SimpleosUtil.isManage(requestResponse))) {
 			return "/index.html";
 		}
 		if (isLogin(requestResponse.getSession())) {

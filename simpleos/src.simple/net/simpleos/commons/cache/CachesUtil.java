@@ -4,9 +4,9 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 
-import net.itsite.utils.IOUtils;
-import net.itsite.utils.StringsUtils;
-import net.itsite.utils.W3cUtils;
+import net.simpleos.utils.IOUtils;
+import net.simpleos.utils.StringsUtils;
+import net.simpleos.utils.W3cUtils;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

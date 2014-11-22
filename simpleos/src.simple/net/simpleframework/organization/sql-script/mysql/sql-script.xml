@@ -18,7 +18,6 @@
         onlinemillis bigint not null,
         mailbinding bit,
         mobilebinding bit,
-        blacklist bit,
         exp int,
         points int,
         reputation int,

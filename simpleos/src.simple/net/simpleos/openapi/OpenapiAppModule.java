@@ -2,7 +2,6 @@ package net.simpleos.openapi;
 
 import java.util.Map;
 
-import net.itsite.impl.AItSiteAppclicationModule;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.ado.db.Table;
@@ -16,6 +15,7 @@ import net.simpleframework.util.HTTPUtils;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.LastUrlFilterListener;
 import net.simpleframework.web.page.PageRequestResponse;
+import net.simpleos.impl.ASimpleosAppclicationModule;
 
 /**
  * 
@@ -25,7 +25,7 @@ import net.simpleframework.web.page.PageRequestResponse;
  * @Description: TODO(这里用一句话描述这个类的作用)
  *
  */
-public class OpenapiAppModule extends AItSiteAppclicationModule implements IOpenapiAppModule {
+public class OpenapiAppModule extends ASimpleosAppclicationModule implements IOpenapiAppModule {
 	private String deployName = "openapi";
 	public static IOpenapiAppModule applicationModule;
 

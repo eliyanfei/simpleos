@@ -6,7 +6,7 @@
 	import="net.simpleframework.my.dialog.SimpleDialog"%><%@page
 	import="net.simpleframework.util.ConvertUtils"%><%@page
 	import="net.simpleframework.web.page.component.ui.dictionary.SmileyUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
+	import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.my.dialog.SimpleDialogItem"%>
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
@@ -38,17 +38,17 @@
 <div id="dialog_msg_data_id">
 	<%
 		if (qs != null) {
-			String sentUser = null;
-			SimpleDialogItem dialogItem;
-			Object userId = ItSiteUtil.getLoginUser(requestResponse).getId();
-			boolean isMe = true;
-			while ((dialogItem = qs.next()) != null) {
-				isMe = dialogItem.isMe();
-				if(isMe){
-					sentUser = dialog.getSentUserText();
-				}else{
-					sentUser =  dialog.getToUserText();
-				}
+		String sentUser = null;
+		SimpleDialogItem dialogItem;
+		Object userId = SimpleosUtil.getLoginUser(requestResponse).getId();
+		boolean isMe = true;
+		while ((dialogItem = qs.next()) != null) {
+			isMe = dialogItem.isMe();
+			if(isMe){
+				sentUser = dialog.getSentUserText();
+			}else{
+				sentUser =  dialog.getToUserText();
+			}
 	%>
 	<div>
 		<div class="tit <%=isMe ? "tome" : "toyou"%>"><%=sentUser%>

@@ -38,13 +38,6 @@
 			da(("<%=idParameterName%>=" + action.rowId(o)).addParameter(params));	
 		};
 		
-		action.blacklist = function(o, params) {
-			var da = $Actions["userPagerBlacklist"];
-			da.selector = action.selector;
-			da(("<%=idParameterName%>=" + action.rowId(o)).addParameter(params));	
-		};
-		
-
 		action.del = function(o, params) {
 			var da = $Actions["userPagerDelete"];
 			da.selector = action.selector;

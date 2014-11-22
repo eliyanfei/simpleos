@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@page import="net.itsite.utils.StringsUtils"%><%@page
+	<%@page import="net.simpleos.utils.StringsUtils"%><%@page
 	
 	import="net.simpleos.backend.links.LinksUtils"%><%@page
 	import="net.simpleos.backend.slide.IndexSlideBean"%><%@page

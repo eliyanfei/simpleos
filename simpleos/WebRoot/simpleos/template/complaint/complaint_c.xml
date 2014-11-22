@@ -5,13 +5,14 @@
 	<jobView>sys_account_normal</jobView>
 	<components>
 		<ajaxRequest name="complaintSaveAct" selector="#complaintForm"
-			handleClass="net.itsite.complaint.ComplaintAjaxHandle" handleMethod="saveComplaint">
+			handleClass="net.simpleos.module.complaint.ComplaintAjaxHandle"
+			handleMethod="saveComplaint">
 			<jsCompleteCallback>
 					<![CDATA[
 						$IT.C('complaintWindowAct');
 						$IT.alert('已经成功举报!');
 					]]>
-				</jsCompleteCallback>
+			</jsCompleteCallback>
 		</ajaxRequest>
 		<validation name="__complaintAct" triggerSelector="#compBtn"
 			warnType="insertAfter">

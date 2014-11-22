@@ -1,6 +1,6 @@
 package net.simpleos.backend.links;
 
-import net.itsite.i.IItSiteApplicationModule;
+import net.simpleos.i.ISimpleosApplicationModule;
 
 /**
  * 
@@ -8,5 +8,5 @@ import net.itsite.i.IItSiteApplicationModule;
  * @email eliyanfei@126.com
  * 2013-11-22下午02:18:36
  */
-public interface ILinksAppModule extends IItSiteApplicationModule {
+public interface ILinksAppModule extends ISimpleosApplicationModule {
 }

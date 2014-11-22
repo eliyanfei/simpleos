@@ -2,117 +2,48 @@ package net.simpleos.backend.function;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
-import net.itsite.docu.DocuUtils;
-import net.itsite.docu.EDocuStatus;
-import net.prj.mvc.news.MVCNewsUtils;
-import net.simpleframework.content.EContentStatus;
-import net.simpleframework.content.EContentType;
-import net.simpleframework.util.LocaleI18n;
-import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.listbox.AbstractListboxHandle;
 import net.simpleframework.web.page.component.ui.listbox.ListItem;
 import net.simpleframework.web.page.component.ui.listbox.ListboxBean;
-import net.simpleos.module.IModuleBean;
+import net.simpleos.module.ISimpleosModule;
+import net.simpleos.module.SimpleosModuleBean;
+import net.simpleos.module.SimpleosModuleUtils;
 
 /**
  * 
  * @author yanfei.li
  * @email eliyanfei@126.com
  * 2013-12-3上午10:16:00
+ * 
+ * 功能模块菜单
  */
 public class FunctionListBoxHandle extends AbstractListboxHandle {
 
-	static List<IModuleBean> modelList = new ArrayList<IModuleBean>();
-
-	@Override
 	public Collection<ListItem> getListItems(ComponentParameter compParameter) {
 		ListboxBean listboxBean = (ListboxBean) compParameter.componentBean;
-		String type = compParameter.getParameter("type");
-		String op = compParameter.getParameter("op");
 		Collection<ListItem> listItems = new ArrayList<ListItem>();
-		ListItem item = new ListItem(listboxBean, "");
-		item.setId("news");
-		if (StringUtils.hasText(type) && "news".equals(type)) {
-			item.setRun("true");
-		} else {
-			item.setRun("true");
+		boolean run = true;
+		for (final ISimpleosModule module : SimpleosModuleUtils.moduleMap.values()) {
+			for (final SimpleosModuleBean moduleBean : module.getBackendActions()) {
+				ListItem item = new ListItem(listboxBean, "");
+				item.setId(moduleBean.name);
+				item.setText(moduleBean.text);
+				item.setJsClickCallback(moduleBean.action);
+				item.setRun(String.valueOf(run));
+				run = false;
+				listItems.add(item);
+				for (final SimpleosModuleBean subModuleBean : moduleBean.moduleList) {
+					item = new ListItem(listboxBean, "");
+					item.setSub(true);
+					item.setId(subModuleBean.name);
+					item.setText(subModuleBean.text);
+					item.setJsClickCallback(subModuleBean.action);
+					listItems.add(item);
+				}
+			}
 		}
-		item.setText(LocaleI18n.getMessage("EFunctionModule.2"));
-		item.setJsClickCallback("$IT.A('functionNews','type=news&op=" + op + "');");
-		listItems.add(item);
-
-		item = new ListItem(listboxBean, "");
-		item.setId("news_audit");
-		item.setText(LocaleI18n.getMessage("EFunctionModule.7") + MVCNewsUtils.getAuditNews(compParameter, 0));
-		item.setSub(true);
-		item.setJsClickCallback("$IT.A('functionNews','status=" + EContentStatus.audit.name() + "');");
-		listItems.add(item);
-
-		item = new ListItem(listboxBean, "");
-		item.setId("news_recommended");
-		item.setText(LocaleI18n.getMessage("EFunctionModule.8"));
-		item.setSub(true);
-		item.setJsClickCallback("$IT.A('functionNews','status=" + EContentStatus.publish.name() + "&t=" + EContentType.recommended.name() + "');");
-		listItems.add(item);
-
-		item = new ListItem(listboxBean, "");
-		item.setId("blog");
-		if (StringUtils.hasText(type) && "blog".equals(type)) {
-			item.setRun("true");
-		}
-		item.setText(LocaleI18n.getMessage("EFunctionModule.1"));
-		item.setJsClickCallback("$IT.A('functionBlog','type=blog');");
-		listItems.add(item);
-
-		item = new ListItem(listboxBean, "");
-		item.setId("blog_recommended");
-		item.setText(LocaleI18n.getMessage("EFunctionModule.8"));
-		item.setSub(true);
-		item.setJsClickCallback("$IT.A('functionBlog','t=" + EContentType.recommended.name() + "');");
-		listItems.add(item);
-
-		item = new ListItem(listboxBean, "");
-		item.setId("bbs");
-		if (StringUtils.hasText(type) && "bbs".equals(type)) {
-			item.setRun("true");
-		}
-		item.setText(LocaleI18n.getMessage("EFunctionModule.0"));
-		item.setJsClickCallback("$IT.A('functionBbs','type=bbs&op_act=" + op + "');");
-		listItems.add(item);
-
-		item = new ListItem(listboxBean, "");
-		item.setId("bbs_star");
-		item.setText(LocaleI18n.getMessage("EFunctionModule.9"));
-		item.setSub(true);
-		item.setJsClickCallback("$IT.A('functionBbs','star=-1');");
-		listItems.add(item);
-
-		item = new ListItem(listboxBean, "");
-		item.setId("docu");
-		if (StringUtils.hasText(type) && "docu".equals(type)) {
-			item.setRun("true");
-		}
-		item.setText("文档");
-		item.setJsClickCallback("$IT.A('functionDocu','type=docu');");
-		listItems.add(item);
-
-		item = new ListItem(listboxBean, "");
-		item.setId("docu_downlist");
-		item.setText("下载记录");
-		item.setSub(true);
-		item.setJsClickCallback("$IT.A('functionDocu','type=docudown&status=" + EDocuStatus.audit.name() + "');");
-		listItems.add(item);
-
-		item = new ListItem(listboxBean, "");
-		item.setId("docu_audit");
-		item.setText(LocaleI18n.getMessage("EFunctionModule.7") + DocuUtils.getAuditDocus(compParameter, 0));
-		item.setSub(true);
-		item.setJsClickCallback("$IT.A('functionDocu','type=docu&status=" + EDocuStatus.audit.name() + "');");
-		listItems.add(item);
-
 		return listItems;
 	}
 

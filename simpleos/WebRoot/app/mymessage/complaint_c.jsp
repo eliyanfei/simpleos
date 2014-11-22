@@ -1,6 +1,6 @@
 <%@page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.itsite.complaint.EComplaint"%>
+	pageEncoding="UTF-8"%><%@page import="net.simpleos.module.complaint.EComplaint"%>
 
 <div class="simple_toolbar2" id="dealcomplaintForm">
 	<input type="hidden" id="complaintId" name="complaintId"

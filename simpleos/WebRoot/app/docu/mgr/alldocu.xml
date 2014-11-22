@@ -5,7 +5,7 @@
 	<importPage>
 		<value>/app/docu/docu_bar.xml</value>
 	</importPage>
-	<handleClass>net.itsite.docu.DocuPageLoad</handleClass>
+	<handleClass>net.simpleos.module.docu.DocuPageLoad</handleClass>
 	<components>
 		<ajaxRequest name="appDelDocuAjaxAct">
 			<urlForward>app_del.jsp</urlForward>
@@ -16,7 +16,7 @@
 		<tablePager name="allDocuListTableAct" containerId="alldocuId"
 			showVerticalLine="true" exportAction="true" noResultDesc="#(Docu.all.list.0)"
 			pageItems="30" showEditPageItems="false" pagerBarLayout="bottom"
-			handleClass="net.itsite.docu.all.AllDocuTablePaperHandle">
+			handleClass="net.simpleos.module.docu.AllDocuTablePaperHandle">
 			<columns>
 				<column columnText="#(Docu.all.list.1)" filter="true"
 					columnName="title" separator="true"></column>
@@ -70,8 +70,9 @@
 				</jsSelectCallback>
 			</menuitem>
 		</menu>
-		<ajaxRequest name="docuAuditAct" handleClass="net.itsite.docu.DocuAjaxHandle"
-			handleMethod="docuAudit" confirmMessage="#(Docu.all.list.8)">
+		<ajaxRequest name="docuAuditAct"
+			handleClass="net.simpleos.module.docu.DocuAjaxHandle" handleMethod="docuAudit"
+			confirmMessage="#(Docu.all.list.8)">
 			<jsCompleteCallback>
 				<![CDATA[
 					if($Actions['appDelDocuWindowAct']){

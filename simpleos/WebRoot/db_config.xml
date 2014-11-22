@@ -4,7 +4,7 @@
 	<scriptEval>single</scriptEval>
 	<components>
 		<propEditor name="dbAct" containerId="db_config"
-			handleClass="net.itsite.ItSiteDBPropEditorHandle">
+			handleClass="net.simpleos.SimpleosDBPropEditorHandle">
 			<field label="数据库" labelStyle="">
 				<component type="select" name="dbtype">
 					<defaultValue>in=内置数据库;out=外置数据库</defaultValue>
@@ -32,7 +32,7 @@
 				</component>
 			</field>
 		</propEditor>
-		<ajaxRequest name="doConnectionTest" handleClass="net.itsite.ItSiteAjaxHandle"
+		<ajaxRequest name="doConnectionTest" handleClass="net.simpleos.SimpleosAjaxHandle"
 			handleMethod="doConnectionTest" selector="#db_config">
 			<jsCompleteCallback>
 				<![CDATA[
@@ -40,7 +40,7 @@
 				]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="doConnectionSave" handleClass="net.itsite.ItSiteAjaxHandle"
+		<ajaxRequest name="doConnectionSave" handleClass="net.simpleos.SimpleosAjaxHandle"
 			confirmMessage="初始化数据库可能需要一些时间，请您耐心等待！" handleMethod="doConnectionSave"
 			selector="#db_config">
 			<jsCompleteCallback>

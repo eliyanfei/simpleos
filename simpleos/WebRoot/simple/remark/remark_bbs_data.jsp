@@ -1,8 +1,8 @@
 <%@page import="net.simpleframework.web.WebUtils"%>
-<%@page import="net.itsite.ItSiteUtil"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
 <%@page import="net.simpleframework.content.EContentStatus"%>
 <%@page import="net.simpleframework.util.ConvertUtils"%>
-<%@page import="net.itsite.utils.StringsUtils"%>
+<%@page import="net.simpleos.utils.StringsUtils"%>
 <%@page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@page import="net.simpleframework.content.ContentUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -17,7 +17,7 @@
 	import="net.simpleframework.content.blog.BlogRemark"%><%@page
 	import="net.simpleframework.content.blog.Blog"%><%@page
 	import="net.simpleframework.content.blog.BlogUtils"%><%@page
-	import="net.prj.mvc.remark.RemarkUtils"%><%@page import="java.util.Map"%><%@page
+	import="net.simpleos.mvc.remark.RemarkUtils"%><%@page import="java.util.Map"%><%@page
 	import="net.simpleframework.content.bbs.BbsTopic"%><%@page
 	import="net.simpleframework.content.bbs.BbsUtils"%>
 

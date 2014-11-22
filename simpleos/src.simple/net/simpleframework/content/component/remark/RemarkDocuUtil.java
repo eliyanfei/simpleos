@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import net.itsite.docu.DocuBean;
-import net.itsite.docu.DocuRemark;
-import net.itsite.docu.DocuUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.ado.IDataObjectQuery;
@@ -18,6 +15,9 @@ import net.simpleframework.util.LocaleI18n;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ui.pager.PagerUtils;
+import net.simpleos.module.docu.DocuBean;
+import net.simpleos.module.docu.DocuRemark;
+import net.simpleos.module.docu.DocuUtils;
 
 public class RemarkDocuUtil {
 	public static String itemsHtml(final PageRequestResponse requestResponse) {

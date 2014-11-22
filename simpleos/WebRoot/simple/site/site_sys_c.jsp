@@ -1,12 +1,11 @@
-<%@page import="net.itsite.ItSiteUtil"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
-	import="net.simpleos.backend.site.SiteUtils"%><%@page
+	pageEncoding="UTF-8"%><%@page import="net.simpleos.impl.PrjColumns"%><%@page
 	import="net.simpleos.backend.BackendUtils"%><%@page import="java.util.Map"%><%@page
-	import="net.itsite.utils.StringsUtils"%>
+	import="net.simpleos.utils.StringsUtils"%>
 <%
-	PrjColumns columns = SiteUtils.appModule.getPrjColumns("sys");
-	Map<String, String> map = ItSiteUtil.attrMap;
+	PrjColumns columns = BackendUtils.applicationModule.getPrjColumns("sys");
+	Map<String, String> map = SimpleosUtil.attrMap;
 	String language = StringsUtils.trimNull(map.get("sys.sys_language"), columns.getColumnMap().get("sys_language").getDefValue());
 %>
 <div class="simple_custom" id="site_sys_form">
@@ -119,7 +118,7 @@
 			<th></th>
 			<td>
 				<input type="button" class="button2" id="site_sys_btn"
-					onclick="$IT.A('site_sysAct');" value="#(Itsite.c.ok)">
+					onclick="$IT.A('site_sysAct','type=sys');" value="#(Itsite.c.ok)">
 			</td>
 		</tr>
 	</table>

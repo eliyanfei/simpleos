@@ -3,7 +3,6 @@ package net.simpleframework.organization.component.login;
 import java.io.IOException;
 import java.util.Map;
 
-import net.itsite.utils.MD5;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.organization.IUser;
 import net.simpleframework.organization.OrgUtils;
@@ -16,6 +15,7 @@ import net.simpleframework.web.page.JsonForward;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxRequestHandle;
 import net.simpleframework.web.page.component.ui.validatecode.DefaultValidateCodeHandle;
+import net.simpleos.utils.MD5;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。

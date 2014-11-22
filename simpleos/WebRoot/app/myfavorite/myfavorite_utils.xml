@@ -6,7 +6,7 @@
 	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}</jobView>
 	<components>
 		<ajaxRequest name="cancelFavorite"
-			handleClass="net.prj.mvc.myfavorite.MyFavoriteAction" handleMethod="cancelFavorite">
+			handleClass="net.simpleos.mvc.myfavorite.MyFavoriteAction" handleMethod="cancelFavorite">
 			<jsCompleteCallback>
 			<![CDATA[
 				$IT.R('myFavoriteTable');
@@ -23,7 +23,7 @@
 			</jsCompleteCallback>
 		</ajaxRequest>
 		<ajaxRequest name="addFavorite"
-			handleClass="net.prj.mvc.myfavorite.MyFavoriteAction" handleMethod="addFavorite">
+			handleClass="net.simpleos.mvc.myfavorite.MyFavoriteAction" handleMethod="addFavorite">
 			<jsCompleteCallback>
 			<![CDATA[
 				if(json['action']==null){

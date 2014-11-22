@@ -6,6 +6,6 @@
 	<jobView>sys_anonymous</jobView>
 	<components>
 		<userRegister name="userRegister" containerId="userRegister"
-			handleClass="net.itsite.ItSiteUserRegisterHandle" />
+			handleClass="net.simpleos.SimpleosUserRegisterHandle" />
 	</components>
 </page>

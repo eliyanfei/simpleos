@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.content.bbs.BbsUtils"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.SimpleosUtil"%>
 <%
 	final String bbs_topic_view = BbsUtils.deployPath + "jsp/bbs_topic_view.jsp";
 	final String forumId = request.getParameter("forumId");
-	ItSiteUtil.addMenuNav(request.getSession(), "/bbs.html", "#(Itsite.menu.bbs)", false);
+	SimpleosUtil.addMenuNav(request.getSession(), "/bbs.html", "#(Itsite.menu.bbs)", false);
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 	final String bbs_layout = BbsUtils.deployPath + "jsp/bbs_portal.jsp";
 %>
@@ -31,14 +31,14 @@
 			<div class="block_layout1">
 				<div class="t1 f4">
 					<span class="ts">#(App.Bbs.0)</span>
-					<%=ItSiteUtil.getTabList("hotPageletLoad", "_tab_param=2&forumId")%>
+					<%=SimpleosUtil.getTabList("hotPageletLoad", "_tab_param=2&forumId")%>
 				</div>
 				<div class="c" id="hot_tabs"></div>
 			</div>
 			<div class="block_layout1">
 				<div class="t1 f4">
 					<span class="ts">#(App.Bbs.1)</span>
-					<%=ItSiteUtil.getTabList("commentsPageletLoad", "_tab_param=5")%>
+					<%=SimpleosUtil.getTabList("commentsPageletLoad", "_tab_param=5")%>
 				</div>
 				<div class="c" id="comments_tabs"></div>
 			</div>

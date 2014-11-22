@@ -15,7 +15,7 @@
 	import="net.simpleframework.content.component.newspager.NewsPagerUtils"%>
 <%@ page
 	import="net.simpleframework.web.page.component.ComponentRenderUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.SimpleosUtil"%>
 
 <%
 	final ComponentParameter nComponentParameter = NewsPagerUtils.getComponentParameter(request, response);
@@ -24,14 +24,14 @@
 	if (news == null) {
 		return;
 	}
-	ItSiteUtil.addMenuNav(request.getSession(), null, news.getTopic(), false);
+	SimpleosUtil.addMenuNav(request.getSession(), null, news.getTopic(), false);
 %>
 <div class="newspager_template"><%=ComponentRenderUtils.genParameters(nComponentParameter)%>
 	<div class="nav2 clear_float">
 		<div id="act_<%=news.getId()%>" style="float: right;">
 			<%=StringUtils.blank(nHandle.getActionsHTML(nComponentParameter, news))%>
 			<%=HTMLBuilder.SEP%>
-			<%=ItSiteUtil.buildComplaint(nComponentParameter, EFunctionModule.news, news.getId())%>
+			<%=SimpleosUtil.buildComplaint(nComponentParameter, EFunctionModule.news, news.getId())%>
 			</div>
 		<div style="float: left;"><%=nHandle.getNavigateHTML(nComponentParameter)%></div>
 	</div>

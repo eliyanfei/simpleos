@@ -13,8 +13,8 @@
 <%@ page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@ page import="net.simpleframework.my.space.MySpaceUtils"%>
 <%@ page import="net.simpleframework.my.space.SpaceStatBean"%><%@page
-	import="net.itsite.utils.StringsUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.utils.StringsUtils"%><%@page
+	import="net.simpleos.SimpleosUtil"%>
 
 
 <%

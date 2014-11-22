@@ -9,19 +9,19 @@
 <%@ page
 	import="net.simpleframework.content.component.topicpager.TopicBean"%>
 <%@ page
-	import="net.simpleframework.organization.account.AccountContext"%><%@page import="net.itsite.ItSiteUtil"%>
+	import="net.simpleframework.organization.account.AccountContext"%><%@page import="net.simpleos.SimpleosUtil"%>
 
 <%
 	final ComponentParameter nComponentParameter = TopicPagerUtils
-			.getComponentParameter(request, response);
+	.getComponentParameter(request, response);
 	final ITopicPagerHandle tHandle = (ITopicPagerHandle) nComponentParameter
-			.getComponentHandle();
+	.getComponentHandle();
 	final TopicBean topicBean = tHandle
-			.getEntityBeanByRequest(nComponentParameter);
+	.getEntityBeanByRequest(nComponentParameter);
 	final String idParameterName = tHandle
-			.getIdParameterName(nComponentParameter);
+	.getIdParameterName(nComponentParameter);
 	final boolean showValidateCode = (Boolean) nComponentParameter
-			.getBeanProperty("showValidateCode");
+	.getBeanProperty("showValidateCode");
 %>
 <div id="topicPropEditor">
 	<input type="hidden" id="<%=idParameterName%>"
@@ -49,7 +49,7 @@
 			<td class="lbl">#(topic_edit.1)</td>
 			<td style="padding: 3px;">
 				<div class="clear_float" style="padding-bottom: 3px;">
-					<div style="float: right;"><%=ItSiteUtil.getHtmlEditorToolbar(nComponentParameter, "topic", "tp_content")%></div>
+					<div style="float: right;"><%=SimpleosUtil.getHtmlEditorToolbar(nComponentParameter, "topic", "tp_content")%></div>
 					<div style="float: left" id="tp_content_info" class="important-tip">#(CKEditor.0)</div>
 				</div>
 				<div>

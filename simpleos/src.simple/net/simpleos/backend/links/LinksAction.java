@@ -2,11 +2,11 @@ package net.simpleos.backend.links;
 
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.LangUtils;
 import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxRequestHandle;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.utils.LangUtils;
 
 /**
  * 
@@ -24,12 +24,12 @@ public class LinksAction extends AbstractAjaxRequestHandle {
 
 			@Override
 			public void doAction(Map<String, Object> json) throws Exception {
-				if (ItSiteUtil.isManage(compParameter)) {
+				if (SimpleosUtil.isManage(compParameter)) {
 					String linksId = compParameter.getParameter("linksId");
 					LinksBean linksBean = LinksUtils.appModule.getBean(LinksBean.class, linksId);
 					if (linksBean == null) {
 						linksBean = new LinksBean();
-						linksBean.setUserId(ItSiteUtil.getLoginAccount(compParameter).getId());
+						linksBean.setUserId(SimpleosUtil.getLoginAccount(compParameter).getId());
 						linksBean.setOorder(LangUtils.toInt(LinksUtils.appModule.getDataObjectManager(LinksBean.class).nextId("id").getValue(),
 								0));
 					}
@@ -54,7 +54,7 @@ public class LinksAction extends AbstractAjaxRequestHandle {
 
 			@Override
 			public void doAction(Map<String, Object> json) throws Exception {
-				if (ItSiteUtil.isManage(compParameter)) {
+				if (SimpleosUtil.isManage(compParameter)) {
 					final String linksId = compParameter.getParameter("linksId");
 					final LinksBean linksBean = LinksUtils.appModule.getBean(LinksBean.class, linksId);
 					if (linksBean != null) {

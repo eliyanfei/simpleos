@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import net.itsite.utils.StringsUtils;
+import net.simpleos.utils.StringsUtils;
 
 import com.mysql.management.MysqldResource;
 

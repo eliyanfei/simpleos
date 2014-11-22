@@ -8,7 +8,7 @@
 	import="net.simpleframework.content.component.topicpager.TopicBean"%>
 <%@ page
 	import="net.simpleframework.web.page.component.ComponentParameter"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
+	import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.content.bbs.BbsUtils"%><%@page
 	import="net.simpleframework.content.bbs.BbsForum"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%>
@@ -22,10 +22,10 @@
 
 	final BbsForum forum = BbsUtils.getForum(new PageRequestResponse(request, response));
 	if (forum != null) {
-		ItSiteUtil.addMenuNav(request.getSession(), "/bbs/tl/" + forum.getId() + ".html", forum.getText(), false);
+		SimpleosUtil.addMenuNav(request.getSession(), "/bbs/tl/" + forum.getId() + ".html", forum.getText(), false);
 	}
 
-	ItSiteUtil.addMenuNav(request.getSession(), null, topic.getTopic(), false);
+	SimpleosUtil.addMenuNav(request.getSession(), null, topic.getTopic(), false);
 %>
 <div class="tp_view">
 	<div id="__pager_postsId"></div>

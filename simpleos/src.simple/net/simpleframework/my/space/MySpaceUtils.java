@@ -11,7 +11,6 @@ import java.util.Set;
 
 import javax.servlet.http.HttpSession;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.DataObjectManagerUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;
@@ -51,6 +50,7 @@ import net.simpleframework.web.WebUtils;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.dictionary.SmileyUtils;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -255,7 +255,7 @@ public abstract class MySpaceUtils {
 	static String getContent(final PageRequestResponse requestResponse, final SapceLogBean sapceLog) {
 		final EFunctionModule refModule = sapceLog.getRefModule();
 		if (refModule == EFunctionModule.space_log) {
-			return SmileyUtils.replaceSmiley(ItSiteUtil.getShortContent(sapceLog.getContent(), 500, false));
+			return SmileyUtils.replaceSmiley(SimpleosUtil.getShortContent(sapceLog.getContent(), 500, false));
 		} else if (refModule == EFunctionModule.blog) {
 			final Blog blog = BlogUtils.getTableEntityManager().queryForObjectById(sapceLog.getRefId(), Blog.class);
 			if (blog != null) {

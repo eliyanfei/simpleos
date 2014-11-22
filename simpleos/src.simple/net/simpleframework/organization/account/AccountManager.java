@@ -2,13 +2,13 @@ package net.simpleframework.organization.account;
 
 import java.util.Date;
 
-import net.itsite.utils.MD5;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.ado.db.event.TableEntityAdapter;
 import net.simpleframework.organization.AbstractOrganizationManager;
 import net.simpleframework.organization.IUser;
 import net.simpleframework.organization.OrgUtils;
 import net.simpleframework.organization.account.IAccount.InsertCallback;
+import net.simpleos.utils.MD5;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。

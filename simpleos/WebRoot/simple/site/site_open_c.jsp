@@ -1,13 +1,12 @@
-<%@page import="net.itsite.ItSiteUtil"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
+	pageEncoding="UTF-8"%><%@page import="net.simpleos.impl.PrjColumns"%><%@page
 	import="java.util.Map"%><%@page
-	import="net.simpleos.backend.site.SiteUtils"%><%@page
 	import="net.simpleos.backend.BackendUtils"%><%@page
-	import="net.itsite.utils.StringsUtils"%>
+	import="net.simpleos.utils.StringsUtils"%>
 <%
-	PrjColumns columns = SiteUtils.appModule.getPrjColumns("open");
-	Map<String, String> map = ItSiteUtil.attrMap;
+	PrjColumns columns = BackendUtils.applicationModule.getPrjColumns("open");
+	Map<String, String> map = SimpleosUtil.attrMap;
 %>
 <div class="simple_custom" id="site_open_form" style="width: 95%;">
 	<table style="width: 100%;">
@@ -50,7 +49,7 @@
 			<th></th>
 			<td>
 				<input type="button" class="button2" id="site_open_btn"
-					onclick="$IT.A('site_openAct');" value="#(Itsite.c.ok)">
+					onclick="$IT.A('site_openAct','type=open');" value="#(Itsite.c.ok)">
 			</td>
 		</tr>
 	</table>

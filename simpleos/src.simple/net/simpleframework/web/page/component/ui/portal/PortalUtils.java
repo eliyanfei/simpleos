@@ -6,7 +6,6 @@ import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.core.ALoggerAware;
 import net.simpleframework.core.Logger;
 import net.simpleframework.util.ConvertUtils;
@@ -30,6 +29,7 @@ import net.simpleframework.web.page.component.ui.portal.module.IPortalModuleHand
 import net.simpleframework.web.page.component.ui.portal.module.OptionWindowUI;
 import net.simpleframework.web.page.component.ui.portal.module.PortalModule;
 import net.simpleframework.web.page.component.ui.portal.module.PortalModuleRegistryFactory;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。

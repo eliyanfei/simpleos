@@ -10,7 +10,7 @@
 <%@ page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@ page import="net.simpleframework.my.space.MySpaceUtils"%>
 <%@ page import="net.simpleframework.util.HTMLBuilder"%>
-<%@page import="net.itsite.ItSiteUtil"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
 <%@page import="net.simpleframework.my.dialog.SimpleDialog"%>
 
 <%
@@ -22,7 +22,7 @@
 	final boolean me = "me".equals(box);
 	final boolean you = "you".equals(box);
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
-	final Object userId = ItSiteUtil.getLoginUser(requestResponse).getId();
+	final Object userId = SimpleosUtil.getLoginUser(requestResponse).getId();
 %>
 <div class="my_message_list">
 	<%

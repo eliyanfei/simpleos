@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.util.ConvertUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.tabs.AbstractTabsHandle;
 import net.simpleframework.web.page.component.ui.tabs.TabItem;
 import net.simpleframework.web.page.component.ui.tabs.TabsBean;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -31,7 +31,7 @@ public class UserTabsHandle extends AbstractTabsHandle {
 	public Collection<TabItem> getTabItems(ComponentParameter compParameter) {
 		final TabsBean tabsBean = (TabsBean) compParameter.componentBean;
 		final List<TabItem> colls = new ArrayList<TabItem>(tabsBean.getTabItems());
-		if (!colls.isEmpty() && !ItSiteUtil.isManage(compParameter, ItSiteUtil.applicationModule)) {
+		if (!colls.isEmpty() && !SimpleosUtil.isManage(compParameter, SimpleosUtil.applicationModule)) {
 //			colls.remove(0);
 		}
 		return colls;

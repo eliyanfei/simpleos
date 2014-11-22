@@ -8,8 +8,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.itsite.impl.AItSiteAppclicationModule;
-import net.itsite.utils.ReflectUtils;
 import net.simpleframework.content.component.catalog.CatalogBean;
 import net.simpleframework.content.component.remark.RemarkItem;
 import net.simpleframework.core.IInitializer;
@@ -22,7 +20,11 @@ import net.simpleframework.web.page.component.ui.propeditor.EComponentType;
 import net.simpleframework.web.page.component.ui.propeditor.FieldComponent;
 import net.simpleframework.web.page.component.ui.propeditor.PropEditorBean;
 import net.simpleframework.web.page.component.ui.propeditor.PropField;
-import net.simpleos.module.IModuleBean;
+import net.simpleos.impl.ASimpleosAppclicationModule;
+import net.simpleos.module.ISimpleosModule;
+import net.simpleos.module.SimpleosModuleUtils;
+import net.simpleos.utils.ReflectUtils;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 
@@ -30,7 +32,7 @@ import net.simpleos.module.IModuleBean;
  * @email eliyanfei@126.com
  * 2013-12-3下午12:29:55
  */
-public class MenuNavAppModule extends AItSiteAppclicationModule implements IMenuNavAppModule {
+public class MenuNavAppModule extends ASimpleosAppclicationModule implements IMenuNavAppModule {
 
 	public static Table catalog = new Table("simpleos_menu_catalog", "id");
 
@@ -39,7 +41,7 @@ public class MenuNavAppModule extends AItSiteAppclicationModule implements IMenu
 		tables.put(MenuNavBean.class, catalog);
 	}
 
-	static final String deployName = "prjmenu";
+	static final String deployName = "simpleosmenu";
 
 	@Override
 	public void init(final IInitializer initializer) {
@@ -48,21 +50,17 @@ public class MenuNavAppModule extends AItSiteAppclicationModule implements IMenu
 		MenuNavUtils.appModule = this;
 		try {
 			Beans.setDesignTime(true);
-			ReflectUtils.createSharedReflections("classes", "bin", "app.");
+			ReflectUtils.createSharedReflections("classes", "bin", "simpleos.");
 			try {
-				final Collection<String> subTypes = ReflectUtils.listSubClass(IModuleBean.class);//
-				for (final String subType : subTypes) {
-					final IModuleBean impl = ReflectUtils.initClass(subType, IModuleBean.class);
-					if (null == impl)
-						continue;
-					if (impl.isMenu()) {
-						if (count("name=?", new Object[] { impl.getName() }, MenuNavBean.class) == 0) {
+				for (final ISimpleosModule module : SimpleosModuleUtils.moduleMap.values()) {
+					if (StringsUtils.isNotBlank1(module.getFrontHtml())) {
+						if (count("name=?", new Object[] { module.getModuleName() }, MenuNavBean.class) == 0) {
 							MenuNavBean menuBean = new MenuNavBean();
-							menuBean.setName(impl.getName());
-							menuBean.setText(impl.getTitle());
-							menuBean.setUrl(impl.getUrl());
+							menuBean.setName(module.getModuleName());
+							menuBean.setText(module.getFrontTitle());
+							menuBean.setUrl(module.getFrontHtml());
 							menuBean.setBuildIn(true);
-							menuBean.setOorder(impl.getOorder());
+							menuBean.setOorder(module.getOorder());
 							doUpdate(menuBean);
 						}
 					}
@@ -77,17 +75,8 @@ public class MenuNavAppModule extends AItSiteAppclicationModule implements IMenu
 	}
 
 	@Override
-	public String tabs(PageRequestResponse requestResponse) {
-		return null;
-	}
-
-	@Override
 	public Class<?> getEntityBeanClass() {
 		return MenuNavBean.class;
-	}
-
-	@Override
-	public void doAttentionSent(ComponentParameter compParameter, RemarkItem remark, Class<?> classBean) {
 	}
 
 	@Override

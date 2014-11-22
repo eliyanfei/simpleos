@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import net.itsite.ItSiteOrganizationApplicationModule.AccountExt;
 import net.simpleframework.organization.IDepartment;
 import net.simpleframework.organization.IUser;
 import net.simpleframework.organization.OrgUtils;
@@ -16,6 +15,7 @@ import net.simpleframework.util.ConvertUtils;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.DefaultPageHandle;
 import net.simpleframework.web.page.PageParameter;
+import net.simpleos.SimpleosOrganizationApplicationModule.AccountExt;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。

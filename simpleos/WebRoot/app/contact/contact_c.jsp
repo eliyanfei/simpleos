@@ -1,11 +1,11 @@
-<%@page import="net.itsite.ItSiteUtil"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="java.util.Map"%><%@page
 	import="java.util.HashMap"%><%@page
 	import="net.simpleos.backend.BackendUtils"%><%@page
-	import="net.itsite.impl.PrjColumns"%><%@page
+	import="net.simpleos.impl.PrjColumns"%><%@page
 	import="net.simpleos.backend.company.CompanyUtils"%><%@page
-	import="net.itsite.impl.PrjColumn"%>
+	import="net.simpleos.impl.PrjColumn"%>
 <%
 	PrjColumns columns = CompanyUtils.appModule.getPrjColumns("contact");
 %>
@@ -19,7 +19,7 @@
 				<%=column.getText()%>：
 			</th>
 			<td width="100%" style="font-weight: normal;">
-				<%=ItSiteUtil.attrMap.get("contact."+column.getName())%>
+				<%=SimpleosUtil.attrMap.get("contact."+column.getName())%>
 			</td>
 		</tr>
 		<%

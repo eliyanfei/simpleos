@@ -13,9 +13,10 @@
 			<urlForward>upload/upload.jsp</urlForward>
 		</ajaxRequest>
 		<tablePager name="myDocuListTableAct" containerId="mydocuId"
+			runImmediately="false"
 			showCheckbox="false" pageItems="30" pagerBarLayout="bottom"
 			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
-			exportAction="true" handleClass="net.itsite.docu.my.MyDocuTablePaperHandle">
+			exportAction="true" handleClass="net.simpleos.module.docu.MyDocuTablePaperHandle">
 			<columns>
 				<column columnText="#(Docu.all.list.1)" columnName="title"
 					filter="true" sort="false"></column>
@@ -27,9 +28,10 @@
 		</tablePager>
 
 		<tablePager name="myDownListPaperAct" containerId="mydocuId"
+			runImmediately="false"
 			exportAction="true" pageItems="30" showEditPageItems="false"
 			showVerticalLine="true" pagerBarLayout="bottom" showCheckbox="false"
-			handleClass="net.itsite.docu.MyDocuDownTablePaperHandle">
+			handleClass="net.simpleos.module.docu.MyDocuDownTablePaperHandle">
 			<columns>
 				<column columnText="#(Docu.all.down.0)" columnName="title"
 					columnSqlName="docuId"></column>

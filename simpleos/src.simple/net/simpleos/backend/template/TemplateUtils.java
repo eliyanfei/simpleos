@@ -3,10 +3,10 @@ package net.simpleos.backend.template;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.StringsUtils;
+import net.simpleos.SimpleosUtil;
 import net.simpleos.template.ITemplateBean;
 import net.simpleos.template.TemplateBean1;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 
@@ -29,7 +29,7 @@ public class TemplateUtils {
 	public static TemplateBean getTemplateBean() {
 		TemplateBean bean = new TemplateBean();
 		bean.templateId = new TemplateBean1().getName();
-		String template = ItSiteUtil.attrMap.get("template.template");
+		String template = SimpleosUtil.attrMap.get("template.template");
 		if (StringsUtils.isNotBlank(template)) {
 			String[] attrs = template.split(";");
 			for (String attr : attrs) {

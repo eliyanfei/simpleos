@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.ado.IDataObjectQuery;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractPagerHandle;
+import net.simpleos.SimpleosUtil;
 
 public class MyAttentionUsersPagerHandle extends AbstractPagerHandle {
 
@@ -39,7 +39,7 @@ public class MyAttentionUsersPagerHandle extends AbstractPagerHandle {
 		final List<Object> ol = new ArrayList<Object>();
 		final StringBuffer sql = new StringBuffer();
 		if (!StringUtils.hasText(userId)) {
-			userId = ItSiteUtil.getLoginUser(compParameter).getId().toString();
+			userId = SimpleosUtil.getLoginUser(compParameter).getId().toString();
 		}
 		if ("fans".equals(t)) {
 			sql.append("attentionId=?");

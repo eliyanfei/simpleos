@@ -8,9 +8,9 @@
 	</jobView>
 	<components>
 		<tree name="docuTreeAct" containerId="docu_tree"
-			handleClass="net.itsite.docu.DocuCatalogTreeHandle"></tree>
-		<ajaxRequest name="doUploadAct" handleClass="net.itsite.docu.DocuAjaxHandle"
-			handleMethod="doUpload">
+			handleClass="net.simpleos.module.docu.DocuCatalogTreeHandle"></tree>
+		<ajaxRequest name="doUploadAct"
+			handleClass="net.simpleos.module.docu.DocuAjaxHandle" handleMethod="doUpload">
 			<jsCompleteCallback>
 				<![CDATA[
 					$Actions.loc('/docu/upload.html');
@@ -19,7 +19,7 @@
 		</ajaxRequest>
 		<pager name="documentPaperAct" containerId="documentDivId"
 			pagerBarLayout="bottom" pageItems="49" showEditPageItems="false"
-			noResultDesc="no document" dataPath="docu_data.jsp" handleClass="net.itsite.docu.DocuPaperHandle">
+			noResultDesc="no document" dataPath="docu_data.jsp" handleClass="net.simpleos.module.docu.DocuPaperHandle">
 		</pager>
 	</components>
 </page>

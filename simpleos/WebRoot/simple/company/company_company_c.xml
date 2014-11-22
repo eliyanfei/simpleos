@@ -2,8 +2,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<handleClass>net.simpleos.backend.company.CompanyPageLoad</handleClass>
-	<handleMethod>companyLoad</handleMethod>
+	<handleClass>net.simpleos.backend.BackendCustomPageLoad</handleClass>
+	<handleMethod>dataLoad</handleMethod>
 	<jobView>sys_manager</jobView>
 	<components>
 		<htmlEditor name="company_content" textarea="company_content"
@@ -13,8 +13,8 @@
 			</jsLoadedCallback>
 		</htmlEditor>
 		<ajaxRequest name="company_companyAct"
-			handleClass="net.simpleos.backend.company.CompanyAction" selector="#company_company_form"
-			handleMethod="saveCompany">
+			handleClass="net.simpleos.backend.BackendAction" selector="#company_company_form"
+			handleMethod="saveCustom">
 			<jsCompleteCallback>
 				<![CDATA[
 					$IT.alert('#(Save.OK)');

@@ -2,12 +2,6 @@ package net.simpleos.backend;
 
 import java.util.Collection;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.i.IItSiteApplicationModule;
-import net.itsite.impl.AItSiteAppclicationModule;
-import net.itsite.impl.PrjColumn;
-import net.itsite.impl.PrjColumns;
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.IQueryEntitySet;
 import net.simpleframework.web.page.PageDocument;
 import net.simpleframework.web.page.PageParameter;
@@ -15,8 +9,14 @@ import net.simpleframework.web.page.component.AbstractComponentBean;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.base.ajaxrequest.AjaxRequestBean;
 import net.simpleframework.web.page.component.ui.window.WindowBean;
+import net.simpleos.SimpleosUtil;
 import net.simpleos.backend.menu.MenuNavBean;
 import net.simpleos.backend.menu.MenuNavUtils;
+import net.simpleos.i.ISimpleosApplicationModule;
+import net.simpleos.impl.ASimpleosAppclicationModule;
+import net.simpleos.impl.PrjColumn;
+import net.simpleos.impl.PrjColumns;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 
@@ -25,9 +25,9 @@ import net.simpleos.backend.menu.MenuNavUtils;
  */
 public class BackendUtils {
 	public static boolean sysMail = false;
-	public static AItSiteAppclicationModule applicationModule = null;
+	public static ASimpleosAppclicationModule applicationModule = null;
 
-	public static void saveCustom(final String type, final IItSiteApplicationModule module, final ComponentParameter compParameter) {
+	public static void saveCustom(final String type, final ISimpleosApplicationModule module, final ComponentParameter compParameter) {
 		PrjColumns columns = module.getPrjColumns(type);
 		if (columns == null)
 			return;
@@ -55,7 +55,7 @@ public class BackendUtils {
 				if ("sys".equals(type)) {
 					sysMail = true;
 				}
-				ItSiteUtil.attrMap.put(type + "." + key1, StringsUtils.trimNull(value, ""));
+				SimpleosUtil.attrMap.put(type + "." + key1, StringsUtils.trimNull(value, ""));
 				customBean.setValue(StringsUtils.trimNull(value, ""));
 				applicationModule.doUpdate(customBean);
 			}

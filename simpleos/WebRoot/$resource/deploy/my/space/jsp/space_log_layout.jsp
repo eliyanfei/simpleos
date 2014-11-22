@@ -10,7 +10,7 @@
 <%@ page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@ page import="net.simpleframework.util.DateUtils"%><%@page
 	import="net.simpleframework.content.ContentUtils"%>
-<%@page import="net.itsite.ItSiteUtil"%><%@page
+<%@page import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.web.page.component.ui.dictionary.SmileyUtils"%>
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
@@ -19,7 +19,7 @@
 .sayEditor {
 	border: 2px solid #5490C0;
 	float: left;
-	width: 200px;
+	width: 78%;
 	height: 36px;
 	padding: 2px;
 	resize: none;
@@ -34,7 +34,7 @@
 .saySubmit {
 	text-align: center;
 	float: left;
-	width: 49px;
+	width: 18%;
 	height: 44px;
 	margin-right: 3px;
 	font-size: 10pt;
@@ -54,7 +54,7 @@
 </style>
 <div class="space_log_layout" id="space_log_layout">
 	<%
-		if (ItSiteUtil.isLogin(requestResponse)) {
+		if (SimpleosUtil.isLogin(requestResponse)) {
 	%>
 	<div class="space_log_editor1">
 		<textarea id="ta_space_log_editor" name="ta_space_log_editor"
@@ -68,15 +68,15 @@
 	%>
 	<%
 		final IQueryEntitySet<SapceLogBean> qs = MySpaceUtils.getTableEntityManager(SapceLogBean.class).query(
-				new ExpressionValue("(refModule=? or refModule=?) and content is not null order by createdate desc", new Object[] {
-						EFunctionModule.space_log, EFunctionModule.docu }), SapceLogBean.class);
-		qs.setCount(5);
-		SapceLogBean log;
-		while ((log = qs.next()) != null) {
-			IUser user = OrgUtils.um().queryForObjectById(log.getUserId());
-			if (user == null) {
-				continue;
-			}
+			new ExpressionValue("(refModule=? or refModule=?) and content is not null order by createdate desc", new Object[] {
+					EFunctionModule.space_log, EFunctionModule.docu }), SapceLogBean.class);
+			qs.setCount(5);
+			SapceLogBean log;
+			while ((log = qs.next()) != null) {
+		IUser user = OrgUtils.um().queryForObjectById(log.getUserId());
+		if (user == null) {
+			continue;
+		}
 	%>
 	<div class="item">
 		<table style="width: 100%;" cellpadding="0" cellspacing="0"
@@ -90,7 +90,7 @@
 					<div><%=MySpaceUtils.getAccountAware().wrapAccountHref(requestResponse, user)%><span
 							style="margin-left: 10px;" class="gray-color"><%=DateUtils.getRelativeDate(log.getCreateDate())%></span>
 					</div>
-					<div style="padding: 4px 0 2px 0;" class="wrap_text"><%=SmileyUtils.replaceSmiley(ItSiteUtil.getShortContent(log.getContent(), 100, false))%></div>
+					<div style="padding: 4px 0 2px 0;" class="wrap_text"><%=SmileyUtils.replaceSmiley(SimpleosUtil.getShortContent(log.getContent(), 100, false))%></div>
 				</td>
 			</tr>
 		</table>

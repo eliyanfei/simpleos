@@ -1,6 +1,6 @@
 package net.simpleos.module.ad;
 
-import net.itsite.i.IItSiteApplicationModule;
+import net.simpleos.i.ISimpleosApplicationModule;
 
 /**
  * 
@@ -9,7 +9,7 @@ import net.itsite.i.IItSiteApplicationModule;
  * @Description: 接口
  *
  */
-public interface IAdAppModule extends IItSiteApplicationModule {
+public interface IAdAppModule extends ISimpleosApplicationModule {
 
 	AdBean getAdBean(final Object id);
 

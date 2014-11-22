@@ -6,9 +6,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.docu.DocuRemark;
-import net.itsite.docu.DocuUtils;
 import net.simpleframework.content.ContentUtils;
 import net.simpleframework.content.EContentStatus;
 import net.simpleframework.core.id.LongID;
@@ -20,6 +17,9 @@ import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.HandleException;
 import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxRequestHandle;
 import net.simpleframework.web.page.component.ui.validatecode.DefaultValidateCodeHandle;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.module.docu.DocuRemark;
+import net.simpleos.module.docu.DocuUtils;
 
 public class RemarkDocuAction extends AbstractAjaxRequestHandle {
 
@@ -28,7 +28,7 @@ public class RemarkDocuAction extends AbstractAjaxRequestHandle {
 			@Override
 			public void doAction(final Map<String, Object> json) {
 				final String itemId = compParameter.getRequestParameter("itemId");
-				final IUser user = ItSiteUtil.getLoginUser(compParameter);
+				final IUser user = SimpleosUtil.getLoginUser(compParameter);
 				if (StringUtils.hasText(itemId)) {
 					final DocuRemark docuRemark = DocuUtils.applicationModule.getBean(DocuRemark.class, itemId);
 					if (docuRemark != null) {

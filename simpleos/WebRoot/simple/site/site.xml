@@ -21,16 +21,16 @@
 				= '开放登入';]]></jsClickCallback> </item>
 		</listbox>
 		<ajaxRequest name="site_sys_act" updateContainerId="site_data_id">
-			<urlForward>site_sys_c.jsp</urlForward>
+			<urlForward>site_sys_c.jsp?type=sys</urlForward>
 		</ajaxRequest>
 		<ajaxRequest name="site_site_act" updateContainerId="site_data_id">
-			<urlForward>site_site_c.jsp</urlForward>
+			<urlForward>site_site_c.jsp?type=site</urlForward>
 		</ajaxRequest>
 		<ajaxRequest name="site_links_act" updateContainerId="site_data_id">
-			<urlForward>site_links_c.jsp</urlForward>
+			<urlForward>site_links_c.jsp?type=links</urlForward>
 		</ajaxRequest>
 		<ajaxRequest name="site_open_act" updateContainerId="site_data_id">
-			<urlForward>site_open_c.jsp</urlForward>
+			<urlForward>site_open_c.jsp?type=open</urlForward>
 		</ajaxRequest>
 	</components>
 </page>

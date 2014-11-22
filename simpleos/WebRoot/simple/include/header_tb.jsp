@@ -10,7 +10,7 @@
 <%@ page import="net.simpleframework.my.space.MySpaceUtils"%><%@page
 	import="net.simpleframework.util.HTMLBuilder"%><%@page
 	import="net.simpleframework.util.ConvertUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.SimpleosUtil"%>
 
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
@@ -28,7 +28,7 @@
 <span> ( </span>
 <a onclick="$Actions['ajaxLogout']();">#(Itsite.login.0)</a>
 <span> )</span>
-<%=ItSiteUtil.witchLanguage(requestResponse)%>
+<%=SimpleosUtil.witchLanguage(requestResponse)%>
 <%
 	} else {
 %>

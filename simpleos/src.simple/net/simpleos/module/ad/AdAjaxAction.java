@@ -2,7 +2,6 @@ package net.simpleos.module.ad;
 
 import java.util.Map;
 
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.ado.db.event.TableEntityAdapter;
 import net.simpleframework.my.file.component.fileselect.FileSelectUtils;
@@ -11,6 +10,7 @@ import net.simpleframework.util.ConvertUtils;
 import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxRequestHandle;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 

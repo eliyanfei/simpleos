@@ -14,7 +14,7 @@
 		<window name="myDocuAddWindowAct" contentRef="myDocuAddAjaxAct"
 			height="390" width="400" title="#(Docu.edit)"></window>
 		<ajaxRequest name="docuDownloadAct"
-			handleClass="net.itsite.docu.DocuAjaxHandle" jobExecute="sys_anonymous"
+			handleClass="net.simpleos.module.docu.DocuAjaxHandle" jobExecute="sys_anonymous"
 			handleMethod="docuDownload">
 			<jsCompleteCallback>
 				<![CDATA[

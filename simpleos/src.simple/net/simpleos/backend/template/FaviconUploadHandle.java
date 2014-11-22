@@ -6,14 +6,14 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
 
-import net.itsite.utils.IOUtils;
-import net.itsite.utils.StringsUtils;
-import net.itsite.utils.UID;
 import net.simpleframework.organization.account.AccountSession;
 import net.simpleframework.organization.account.IAccount;
 import net.simpleframework.web.page.IMultipartFile;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.swfupload.AbstractSwfUploadHandle;
+import net.simpleos.utils.IOUtils;
+import net.simpleos.utils.StringsUtils;
+import net.simpleos.utils.UID;
 
 /**
  * 

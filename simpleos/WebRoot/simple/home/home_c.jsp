@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.itsite.ItSiteUtil"%><%@page
+	pageEncoding="UTF-8"%><%@page import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%>
 <style>
 .home_item {
@@ -80,17 +80,9 @@
 		onclick="$Actions.loc('/manager/company.html');">
 		<span>企业信息</span>
 	</div>
-	<div class="home_item home_item2"
-		onclick="$Actions.loc('/manager/function.html?type=news&op=add');">
-		<span>发资讯</span>
-	</div>
-	<div class="home_item home_item3"
-		onclick="$Actions.loc('/manager/function.html?type=bbs&op=add');">
-		<span>发帖子</span>
-	</div>
 	<div class="home_item home_item4"
 		onclick="$Actions.loc('/manager/message.html');">
-		<span>消息<%=ItSiteUtil.getMessages(requestResponse, -1)%></span>
+		<span>消息<%=SimpleosUtil.getMessages(requestResponse, -1)%></span>
 	</div>
 	<div class="home_item home_item2"
 		onclick="$Actions.loc('/manager/remark.html');">

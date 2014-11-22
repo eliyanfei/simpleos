@@ -8,5 +8,5 @@ package net.simpleos.commons.cache;
  *
  */
 public enum ECacheEngine {
-	MEMORY, EHCACHE_DISK, JCS_MEMORY, JCS_DISK
+	MEMORY, EHCACHE_DISK
 }

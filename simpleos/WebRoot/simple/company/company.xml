@@ -20,10 +20,10 @@
 			</item>
 		</listbox>
 		<ajaxRequest name="company_company_act" updateContainerId="company_data_id">
-			<urlForward>company_company_c.jsp</urlForward>
+			<urlForward>company_company_c.jsp?type=company</urlForward>
 		</ajaxRequest>
 		<ajaxRequest name="company_contact_act" updateContainerId="company_data_id">
-			<urlForward>company_contact_c.jsp</urlForward>
+			<urlForward>company_contact_c.jsp?type=contact</urlForward>
 		</ajaxRequest>
 	</components>
 </page>

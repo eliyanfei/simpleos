@@ -3,13 +3,13 @@ package net.simpleframework.organization;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.core.ado.IDataObjectQuery;
 import net.simpleframework.organization.impl.JobMember;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
 import net.simpleframework.web.page.component.ui.pager.db.AbstractDbTablePagerHandle;
+import net.simpleos.SimpleosUtil;
 
 public class JobTableHandle extends AbstractDbTablePagerHandle {
 	@Override
@@ -27,7 +27,7 @@ public class JobTableHandle extends AbstractDbTablePagerHandle {
 				Map<Object, Object> data = new HashMap<Object, Object>();
 				JobMember jobMember = (JobMember) dataObject;
 				data.put("memberType", jobMember.getMemberType() == EMemberType.user ? "#(job_detail_m.1)" : "#(job_detail_m.2)");
-				data.put("memberId", ItSiteUtil.getUserText(jobMember.getMemberId()));
+				data.put("memberId", SimpleosUtil.getUserText(jobMember.getMemberId()));
 				data.put(
 						"primaryJob",
 						"<div>"

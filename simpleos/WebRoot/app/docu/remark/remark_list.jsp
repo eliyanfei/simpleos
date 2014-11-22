@@ -4,7 +4,7 @@
 <%@page
 	import="net.simpleframework.web.page.component.ui.pager.PagerUtils"%>
 <%@page import="java.util.List"%>
-<%@page import="net.itsite.docu.DocuRemark"%>
+<%@page import="net.simpleos.module.docu.DocuRemark"%>
 <%@page import="net.simpleframework.web.page.PageRequestResponse"%><%@page
 	import="net.simpleframework.content.component.remark.RemarkDocuUtil"%>
 

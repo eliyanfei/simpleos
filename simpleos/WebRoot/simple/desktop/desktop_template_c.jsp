@@ -35,26 +35,24 @@
 <div id="template_check">
 	<%
 		List<String> list = new ArrayList<String>(TemplateUtils.templateMap.keySet());
-		Collections.sort(list);
-		TemplateBean template = TemplateUtils.getTemplateBean();
-		for (String temp : list) {
-			ITemplateBean templateBean = TemplateUtils.templateMap.get(temp);
-			if (templateBean.isDesign()) {
-				continue;
-			}
-			String src = request.getContextPath() + "/simpleos/template/" + templateBean.getName() + "/" + templateBean.getName() + ".png";
-			boolean same = template.templateId.equals(templateBean.getName());
+			Collections.sort(list);
+			TemplateBean template = TemplateUtils.getTemplateBean();
+			for (String temp : list) {
+		ITemplateBean templateBean = TemplateUtils.templateMap.get(temp);
+		if (templateBean.isDesign()) {
+			continue;
+		}
+		String src = request.getContextPath() + "/simpleos/template/" + templateBean.getName() + "/" + templateBean.getName() + ".png";
+		boolean same = template.templateId.equals(templateBean.getName());
 	%>
 	<div class="template_item <%=same ? "template_item_select" : ""%>"
 		align="center">
 		<img src="<%=src%>">
 		<div class="template_item_desc"><%=templateBean.getTitle()%>
 			<input type="checkbox" id="fullScreen_<%=templateBean.getName()%>"
-				<%=same&&"true".equals(template.attrMap.get("fullScreen")) ? "checked=\"checked\"" : ""%>>
+				<%=(same&&"true".equals(template.attrMap.get("fullScreen")))||templateBean.isFullScreen() ? "checked=\"checked\"" : ""%>>
 			<label for="fullScreen_<%=templateBean.getName()%>">
-				#(Desktop.Template.2)
-			</label>
-			<input type="button" value="#(Select)"
+				#(Desktop.Template.2) </label> <input type="button" value="#(Select)"
 				<%=same ? "" : "class=\"button2\""%>
 				onclick="saveModel('<%=templateBean.getName()%>');">
 		</div>
@@ -64,9 +62,9 @@
 	%>
 </div>
 <script type="text/javascript">
-function saveModel(t) {
-	var params = 'templateId=' + t;
-    params += '&fullScreen=' + $('fullScreen_' + t).checked;
-	$IT.A('saveTemplate', params);
-}
+	function saveModel(t) {
+		var params = 'templateId=' + t;
+		params += '&fullScreen=' + $('fullScreen_' + t).checked;
+		$IT.A('saveTemplate', params);
+	}
 </script>

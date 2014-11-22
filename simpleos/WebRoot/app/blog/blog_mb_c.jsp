@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="net.simpleframework.content.blog.BlogUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
+	import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.web.page.component.ComponentParameter"%>
 <%
 	final String my_blog_c = BlogUtils.deployPath + "jsp/my_blog_c.jsp";

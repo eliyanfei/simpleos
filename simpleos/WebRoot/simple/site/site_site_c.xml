@@ -2,12 +2,12 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
-	<handleClass>net.simpleos.backend.site.SitePageLoad</handleClass>
-	<handleMethod>siteLoad</handleMethod>
+	<handleClass>net.simpleos.backend.BackendCustomPageLoad</handleClass>
+	<handleMethod>dataLoad</handleMethod>
 	<jobView>sys_manager</jobView>
 	<components>
-		<ajaxRequest name="site_siteAct" handleClass="net.simpleos.backend.site.SiteAction"
-			selector="#site_site_form" handleMethod="saveSite">
+		<ajaxRequest name="site_siteAct" handleClass="net.simpleos.backend.BackendAction"
+			selector="#site_site_form" handleMethod="saveCustom">
 			<jsCompleteCallback>
 				<![CDATA[
 					$IT.alert('#(Save.OK)');

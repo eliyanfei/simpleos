@@ -9,7 +9,7 @@
 	import="net.simpleos.module.ad.AdUtils"%><%@page import="net.simpleos.module.ad.EAd"%><%@page
 	import="net.simpleframework.content.component.newspager.INewsPagerHandle"%><%@page
 	import="net.simpleframework.content.blog.Blog"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.SimpleosUtil"%>
 
 <%
 	final ComponentParameter nComponentParameter = new ComponentParameter(request, response, null);
@@ -28,14 +28,14 @@
 <div class="block_layout1">
 	<div class="t1 f4">
 		<span class="ts">#(App.Blog.0)</span>
-		<%=ItSiteUtil.getTabList("hotPageletLoadV", "_tab_param=2")%>
+		<%=SimpleosUtil.getTabList("hotPageletLoadV", "_tab_param=2")%>
 	</div>
 	<div class="c" id="hot_tabs"></div>
 </div>
 <div class="block_layout1">
 	<div class="t1 f4">
 		<span class="ts">#(App.Blog.1)</span>
-		<%=ItSiteUtil.getTabList("commentsPageletLoadV", "_tab_param=5")%>
+		<%=SimpleosUtil.getTabList("commentsPageletLoadV", "_tab_param=5")%>
 	</div>
 	<div class="c" id="comments_tabs"></div>
 </div>

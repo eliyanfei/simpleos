@@ -7,11 +7,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import net.itsite.ItSiteCache;
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.MD5;
-import net.itsite.utils.StringsUtils;
-import net.itsite.utils.UUIDHexGenerator;
 import net.simpleframework.applets.notification.MailMessageNotification;
 import net.simpleframework.applets.notification.NotificationUtils;
 import net.simpleframework.core.ApplicationModuleException;
@@ -31,6 +26,11 @@ import net.simpleframework.util.script.ScriptEvalUtils;
 import net.simpleframework.web.LastUrlFilterListener;
 import net.simpleframework.web.page.component.AbstractComponentHandle;
 import net.simpleframework.web.page.component.ComponentParameter;
+import net.simpleos.SimpleosCache;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.utils.MD5;
+import net.simpleos.utils.StringsUtils;
+import net.simpleos.utils.UUIDHexGenerator;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -118,21 +118,21 @@ public class DefaultLoginHandle extends AbstractComponentHandle implements ILogi
 		final MailMessageNotification mailMessage = new MailMessageNotification();
 		mailMessage.setHtmlContent(true);
 		mailMessage.getTo().add(user);
-		mailMessage.setSubject(LocaleI18n.getMessage("LoginAction.2", StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), "")));
+		mailMessage.setSubject(LocaleI18n.getMessage("LoginAction.2", StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_name"), "")));
 
 		final Map<String, Object> variable = new HashMap<String, Object>();
 		variable.put("usertext", user);
-		variable.put("sitename", ItSiteUtil.title);
+		variable.put("sitename", SimpleosUtil.title);
 		variable.put("username", user.getName());
 		final String id = UUIDHexGenerator.generator();
-		variable.put("url", ItSiteUtil.url + "/findpass.html?sid=" + id);
+		variable.put("url", SimpleosUtil.url + "/findpass.html?sid=" + id);
 		try {
 			mailMessage.setTextBody(ScriptEvalUtils.replaceExpr(
 					variable,
 					IoUtils.getStringFromInputStream(DefaultLoginHandle.class.getClassLoader().getResourceAsStream(
 							"net/simpleframework/organization/component/login/get_pwd.html"))));
 			NotificationUtils.sendMessage(mailMessage);
-			ItSiteCache.findPassword(id, user.getEmail());
+			SimpleosCache.findPassword(id, user.getEmail());
 		} catch (IOException e) {
 			throw ApplicationModuleException.wrapException(e);
 		}

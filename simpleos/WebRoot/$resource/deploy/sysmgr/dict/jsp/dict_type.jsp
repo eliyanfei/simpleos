@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.itsite.ItSiteUtil"%>
+	pageEncoding="UTF-8"%><%@page import="net.simpleos.SimpleosUtil"%>
 
 <%
-	ItSiteUtil.addMenuNav(request.getSession(), null, "字典管理", false);
+	SimpleosUtil.addMenuNav(request.getSession(), null, "字典管理", false);
 %>
 <div class="sys_dict_type">
 	<div id="__sys_dict_type"></div>

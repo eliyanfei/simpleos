@@ -68,7 +68,7 @@
 			<th></th>
 			<td>
 				<input type="button" class="button2" id="site_site_btn"
-					onclick="$IT.A('site_siteAct');" value="#(Itsite.c.ok)">
+					onclick="$IT.A('site_siteAct','type=site');" value="#(Itsite.c.ok)">
 			</td>
 		</tr>
 	</table>

@@ -6,7 +6,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.IDataObjectValue;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;
@@ -47,6 +46,7 @@ import net.simpleframework.web.page.component.ui.tabs.TabsUtils;
 import net.simpleframework.web.page.component.ui.tree.AbstractTreeBean;
 import net.simpleframework.web.page.component.ui.tree.AbstractTreeNode;
 import net.simpleframework.web.page.component.ui.tree.TreeNode;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -187,7 +187,7 @@ public class DefaultBbsApplicationModule extends AbstractContentApplicationModul
 
 		createManagerJob(sj_bbs_manager, LocaleI18n.getMessage("BbsUtils.bbs_manager"));
 
-		((ITaskExecutorAware) getApplication()).getTaskExecutor().addScheduledTask(ItSiteUtil.get0Time() + 30, DateUtils.DAY_PERIOD,
+		((ITaskExecutorAware) getApplication()).getTaskExecutor().addScheduledTask(SimpleosUtil.get0Time() + 30, DateUtils.DAY_PERIOD,
 				new ExecutorRunnable() {
 					@Override
 					public void task() {

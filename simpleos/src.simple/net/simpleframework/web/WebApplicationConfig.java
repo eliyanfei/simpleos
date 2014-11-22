@@ -1,8 +1,8 @@
 package net.simpleframework.web;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.core.ApplicationConfig;
 import net.simpleframework.util.StringUtils;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -16,7 +16,7 @@ public class WebApplicationConfig extends ApplicationConfig {
 
 	public String getServerUrl() {
 		if (serverUrl == null) {
-			serverUrl = ItSiteUtil.url;
+			serverUrl = SimpleosUtil.url;
 		}
 		return StringUtils.text(serverUrl, "/");
 	}

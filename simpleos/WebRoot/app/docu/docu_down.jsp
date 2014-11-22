@@ -1,21 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.itsite.docu.DocuBean"%><%@page
-	import="net.itsite.docu.DocuUtils"%><%@page
+	import="net.simpleos.module.docu.DocuBean"%><%@page
+	import="net.simpleos.module.docu.DocuUtils"%><%@page
 	import="net.simpleframework.util.IoUtils"%><%@page
 	import="net.simpleframework.organization.OrgUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
+	import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.organization.account.IAccount"%><%@page
 	import="java.util.Random"%><%@page
 	import="net.simpleframework.organization.account.Account"%>
 
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(
-			request, response);
-	IAccount account = ItSiteUtil.getLoginAccount(requestResponse);
+	request, response);
+	IAccount account = SimpleosUtil.getLoginAccount(requestResponse);
 	final DocuBean docuBean = DocuUtils.applicationModule
-			.getViewDocuBean(requestResponse);
+	.getViewDocuBean(requestResponse);
 	if (account == null) {
 		account = new Account();
 	}
@@ -24,7 +24,6 @@
 	}
 %>
 <style>
-
 .padd1 {
 	line-height: 25px;
 	font-size: 14px;

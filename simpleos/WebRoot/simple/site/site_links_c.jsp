@@ -1,21 +1,19 @@
-<%@page import="net.itsite.ItSiteUtil"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
 <%@page import="net.simpleframework.sysmgr.dict.SysDict"%>
 <%@page import="net.simpleframework.sysmgr.dict.DictUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.itsite.impl.PrjColumns"%><%@page
-	import="net.simpleos.backend.site.SiteUtils"%><%@page
+	pageEncoding="UTF-8"%><%@page import="net.simpleos.impl.PrjColumns"%><%@page
 	import="java.util.Map"%><%@page import="net.simpleos.backend.BackendUtils"%><%@page
-	import="net.itsite.utils.StringsUtils"%>
+	import="net.simpleos.utils.StringsUtils"%>
 
 <%
-	Map<String, String> map = ItSiteUtil.attrMap;
+	Map<String, String> map = SimpleosUtil.attrMap;
 	String name = StringsUtils.trimNull(map.get("links.links_linksType"), "sys");
 	SysDict sysDict= DictUtils.getSysDictByName("links");
 	if(sysDict==null){
 		sysDict = new SysDict();
 		sysDict.setText("10");
 	}
-	
 %>
 <div style="padding: 0 25px;" id="site_links_form">
 	<div>
@@ -52,7 +50,7 @@
 function linksToggle(t1, t2, t) {
 	$(t1).style.display = '';
 	$(t2).style.display = 'none';
-	$IT.A('site_linksAct', 'rs=false&links_linksType=' + t.value);
+	$IT.A('site_linksAct', 'type=links&rs=false&links_linksType=' + t.value);
 }
 $ready(function() {
 	if ($('links_custom').checked) {

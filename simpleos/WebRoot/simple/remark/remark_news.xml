@@ -3,7 +3,7 @@
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<components>
-		<pager name="remarkNewsTable" handleClass="net.prj.mvc.remark.RemarkNewsTableHandle"
+		<pager name="remarkNewsTable" handleClass="net.simpleos.mvc.remark.RemarkNewsTableHandle"
 			exportAction="true" containerId="remarkListId_news" dataPath="remark_news_data.jsp"
 			showEditPageItems="false" pagerBarLayout="bottom"></pager>
 	</components>

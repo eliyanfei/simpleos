@@ -2,17 +2,18 @@ package org.tuckey.web.filters.urlrewrite;
 
 import java.beans.Beans;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-import net.itsite.utils.ReflectUtils;
-import net.simpleos.module.IModuleBean;
-
-import org.tuckey.web.filters.urlrewrite.Conf;
-import org.tuckey.web.filters.urlrewrite.UrlRewriteFilter;
+import net.simpleos.module.ISimpleosModule;
+import net.simpleos.module.SimpleosModuleUtils;
+import net.simpleos.utils.ReflectUtils;
 
 /**  
  * @author 李岩飞 
@@ -28,16 +29,22 @@ public class SimpleosUrlRewriteFilter extends UrlRewriteFilter {
 			Beans.setDesignTime(true);
 			ReflectUtils.createSharedReflections("classes", "bin", "simpleos.");
 			try {
-				final Collection<String> subTypes = ReflectUtils.listSubClass(IModuleBean.class);//
+				final Collection<String> subTypes = ReflectUtils.listSubClass(ISimpleosModule.class);//
+				final List<ISimpleosModule> list = new ArrayList<ISimpleosModule>();
 				for (final String subType : subTypes) {
-					final IModuleBean impl = ReflectUtils.initClass(subType, IModuleBean.class);
-					if (null == impl)
+					final ISimpleosModule module = ReflectUtils.initClass(subType, ISimpleosModule.class);
+					if (null == module)
 						continue;
-					InputStream is = impl.getClass().getResourceAsStream(impl.getName() + "_urlrewrite.xml");
+					list.add(module);
+					InputStream is = module.getClass().getResourceAsStream("urlrewrite.xml");
 					if (is != null) {
 						conf.loadDom(is);
 						conf.initialise();
 					}
+				}
+				Collections.sort(list);
+				for (final ISimpleosModule module : list) {
+					SimpleosModuleUtils.moduleMap.put(module.getModuleName(), module);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

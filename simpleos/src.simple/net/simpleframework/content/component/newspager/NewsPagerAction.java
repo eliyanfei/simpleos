@@ -3,7 +3,6 @@ package net.simpleframework.content.component.newspager;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.content.EContentStatus;
 import net.simpleframework.content.EContentType;
@@ -27,6 +26,7 @@ import net.simpleframework.web.page.component.base.ajaxrequest.AjaxRequestBean;
 import net.simpleframework.web.page.component.ui.pager.db.AbstractDbTablePagerAction;
 import net.simpleframework.web.page.component.ui.pager.db.IDbTablePagerHandle;
 import net.simpleframework.web.page.component.ui.validatecode.DefaultValidateCodeHandle;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -103,7 +103,7 @@ public class NewsPagerAction extends AbstractDbTablePagerAction {
 					} else {
 						data.put("status", EContentStatus.audit);
 						jsCallback = nHandle.getJavascriptCallback(nComponentParameter, "add", nHandle.doAdd(nComponentParameter, data));
-						if (!ItSiteUtil.isManage(compParameter) && nHandle instanceof NewsPagerHandle) {//只有新闻才发邮件通知
+						if (!SimpleosUtil.isManage(compParameter) && nHandle instanceof NewsPagerHandle) {//只有新闻才发邮件通知
 							MessageUtils.createNotifation(compParameter, "资讯审核", (String) data.get("topic"), LongID.zero, OrgUtils.am()
 									.getAccountByName("admin").getId(), EMessageType.notification);
 						}
@@ -170,12 +170,12 @@ public class NewsPagerAction extends AbstractDbTablePagerAction {
 				try {
 					if (news.getStatus() == EContentStatus.audit && ConvertUtils.toEnum(EContentStatus.class, nv_status) == EContentStatus.publish) {
 						MessageUtils.createNotifation(compParameter, "审核成功",
-								ItSiteUtil.wrapHref(NewsUtils.applicationModule.getViewUrl(compParameter, news), news.getTopic()), OrgUtils.um()
+								SimpleosUtil.wrapHref(NewsUtils.applicationModule.getViewUrl(compParameter, news), news.getTopic()), OrgUtils.um()
 										.getUserByName("admin").getId(), news.getUserId());
 
 					} else if (news.getTtype() == EContentType.normal && ConvertUtils.toEnum(EContentType.class, nv_type) == EContentType.recommended) {
 						MessageUtils.createNotifation(compParameter, "你的发布的内容被推荐",
-								ItSiteUtil.wrapHref(NewsUtils.applicationModule.getViewUrl(compParameter, news), news.getTopic()), OrgUtils.um()
+								SimpleosUtil.wrapHref(NewsUtils.applicationModule.getViewUrl(compParameter, news), news.getTopic()), OrgUtils.um()
 										.getUserByName("admin").getId(), news.getUserId());
 					}
 				} catch (Exception e) {

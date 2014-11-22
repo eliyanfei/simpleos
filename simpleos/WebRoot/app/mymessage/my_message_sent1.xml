@@ -40,7 +40,7 @@
 		</validation>
 
 		<ajaxRequest name="ajaxMessageSentOK" selector="#my_message_sent_form"
-			handleClass="net.prj.mvc.message.MyMessageAction" handleMethod="sentMessage"
+			handleClass="net.simpleos.mvc.message.MyMessageAction" handleMethod="sentMessage"
 			confirmMessage="#(my_message_sent.4)">
 			<jsCompleteCallback>
 				$IT.alert('#(Message.5)');

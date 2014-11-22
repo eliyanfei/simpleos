@@ -34,7 +34,7 @@
 				</jsClickCallback>
 			</item>
 		</listbox>
-		<tablePager name="messageTable" handleClass="net.prj.mvc.message.MessageTableHandle"
+		<tablePager name="messageTable" handleClass="net.simpleos.mvc.message.MessageTableHandle"
 			exportAction="true" containerId="message_data_id" showCheckbox="true"
 			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
 			pagerBarLayout="bottom">
@@ -51,7 +51,7 @@
 		</tablePager>
 
 		<ajaxRequest name="messageDeleteAct" confirmMessage="#(Delete.Is)"
-			handleClass="net.prj.mvc.message.MyMessageAction" handleMethod="deleteMyMessage">
+			handleClass="net.simpleos.mvc.message.MyMessageAction" handleMethod="deleteMyMessage">
 			<jsCompleteCallback>
 			<![CDATA[
 				$IT.alert('#(Delete.OK)');

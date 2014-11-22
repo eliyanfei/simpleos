@@ -2,7 +2,6 @@ package net.simpleframework.web.page.component.ui.htmleditor;
 
 import java.util.Locale;
 
-import net.itsite.utils.JsonUtils;
 import net.simpleframework.util.I18n;
 import net.simpleframework.util.JavascriptUtils;
 import net.simpleframework.util.StringUtils;
@@ -10,6 +9,7 @@ import net.simpleframework.web.page.component.AbstractComponentJavascriptRender;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ComponentRenderUtils;
 import net.simpleframework.web.page.component.IComponentRegistry;
+import net.simpleos.utils.JsonUtils;
 
 import org.apache.commons.lang3.ArrayUtils;
 

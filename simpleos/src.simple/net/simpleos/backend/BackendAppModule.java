@@ -4,17 +4,17 @@ import java.beans.Beans;
 import java.util.Collection;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.docu.DocuUtils;
-import net.itsite.impl.AItSiteAppclicationModule;
-import net.itsite.utils.ReflectUtils;
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.IQueryEntitySet;
 import net.simpleframework.core.IInitializer;
 import net.simpleframework.core.ado.db.Table;
+import net.simpleos.SimpleosUtil;
 import net.simpleos.backend.slide.IndexSlideBean;
 import net.simpleos.backend.template.TemplateUtils;
+import net.simpleos.impl.ASimpleosAppclicationModule;
+import net.simpleos.module.docu.DocuUtils;
 import net.simpleos.template.ITemplateBean;
+import net.simpleos.utils.ReflectUtils;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 
@@ -22,7 +22,7 @@ import net.simpleos.template.ITemplateBean;
  * @email eliyanfei@126.com
  * 2013-12-3下午12:29:55
  */
-public class BackendAppModule extends AItSiteAppclicationModule {
+public class BackendAppModule extends ASimpleosAppclicationModule {
 
 	public static Table custom_ = new Table("simpleos_custom", "id");
 	public static Table nav_ = new Table("simpleos_nav", "id");
@@ -42,9 +42,9 @@ public class BackendAppModule extends AItSiteAppclicationModule {
 		BackendUtils.applicationModule = this;
 		loadCustom();
 		loadTempate();
-		DocuUtils.docuPath = StringsUtils.trimNull(ItSiteUtil.attrMap.get("docu.docuPath"), "c:\\");
-		ItSiteUtil.url = StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_url"), "");
-		ItSiteUtil.title = StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), "");
+		DocuUtils.docuPath = StringsUtils.trimNull(SimpleosUtil.attrMap.get("docu.docuPath"), "c:\\");
+		SimpleosUtil.url = StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_url"), "");
+		SimpleosUtil.title = StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_name"), "");
 	}
 
 	public void loadTempate() {
@@ -76,7 +76,7 @@ public class BackendAppModule extends AItSiteAppclicationModule {
 			IQueryEntitySet<CustomBean> qs = BackendUtils.applicationModule.queryBean("1=1", CustomBean.class);
 			CustomBean customBean = null;
 			while ((customBean = qs.next()) != null) {
-				ItSiteUtil.attrMap.put(customBean.getType() + "." + customBean.getName(), customBean.getValue());
+				SimpleosUtil.attrMap.put(customBean.getType() + "." + customBean.getName(), customBean.getValue());
 			}
 		} catch (Exception e) {
 		}

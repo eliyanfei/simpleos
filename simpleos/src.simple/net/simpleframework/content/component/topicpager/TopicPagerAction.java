@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.content.EContentStatus;
 import net.simpleframework.content.EContentType;
 import net.simpleframework.content.bbs.BbsTopic;
@@ -24,6 +23,7 @@ import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.db.AbstractDbTablePagerAction;
 import net.simpleframework.web.page.component.ui.validatecode.DefaultValidateCodeHandle;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -141,11 +141,11 @@ public class TopicPagerAction extends AbstractDbTablePagerAction {
 					if (topic.getTtype() == EContentType.normal
 							&& ConvertUtils.toEnum(EContentType.class, compParameter.getRequestParameter("tp_type")) == EContentType.recommended) {
 						MessageUtils.createNotifation(compParameter, "你的发布的帖子被推荐",
-								ItSiteUtil.wrapHref(BbsUtils.applicationModule.getPostUrl(compParameter, (BbsTopic) topic), topic.getTopic()),
+								SimpleosUtil.wrapHref(BbsUtils.applicationModule.getPostUrl(compParameter, (BbsTopic) topic), topic.getTopic()),
 								OrgUtils.um().getUserByName("admin").getId(), topic.getUserId());
 					} else if (topic.getStar() == 0 && ConvertUtils.toShort(compParameter.getRequestParameter("tp_star"), (short) 0) > 0) {
 						MessageUtils.createNotifation(compParameter, "你的发布的帖子被加精",
-								ItSiteUtil.wrapHref(BbsUtils.applicationModule.getPostUrl(compParameter, (BbsTopic) topic), topic.getTopic()),
+								SimpleosUtil.wrapHref(BbsUtils.applicationModule.getPostUrl(compParameter, (BbsTopic) topic), topic.getTopic()),
 								OrgUtils.um().getUserByName("admin").getId(), topic.getUserId());
 					}
 				} catch (Exception e) {

@@ -1,16 +1,13 @@
+<%@page import="net.simpleos.module.docu.DocuUtils"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.itsite.docu.DocuUtils"%><%@page
-	import="net.simpleframework.util.ConvertUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
 	import="net.simpleframework.web.WebUtils"%><%@page
 	import="net.simpleframework.util.StringUtils"%>
 <%
-	final PageRequestResponse requestResponse = new PageRequestResponse(
-			request, response);
-	final boolean manager = ItSiteUtil.isManage(requestResponse,
-			DocuUtils.applicationModule);
+	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
+	final boolean manager = SimpleosUtil.isManage(requestResponse, DocuUtils.applicationModule);
 %>
 <div class="simple_toolbar2">
 	<table width="100%" cellpadding="1" cellspacing="0">

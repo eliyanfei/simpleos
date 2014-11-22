@@ -5,8 +5,8 @@
 <%@ page import="net.simpleframework.organization.account.IAccount"%>
 <%@ page import="net.simpleframework.content.ContentLayoutUtils"%>
 <%@ page import="net.simpleframework.content.ContentUtils"%><%@page
-	import="net.itsite.docu.DocuBean"%><%@page
-	import="net.itsite.docu.DocuUtils"%><%@page
+	import="net.simpleos.module.docu.DocuBean"%><%@page
+	import="net.simpleos.module.docu.DocuUtils"%><%@page
 	import="net.simpleframework.util.DateUtils"%><%@page
 	import="net.simpleframework.web.page.component.ComponentParameter"%><%@page
 	import="net.simpleframework.util.LocaleI18n"%>

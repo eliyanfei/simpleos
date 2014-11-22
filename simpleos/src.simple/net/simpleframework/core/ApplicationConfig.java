@@ -2,10 +2,10 @@ package net.simpleframework.core;
 
 import java.util.List;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.TableEntityManager;
 import net.simpleframework.util.IConstants;
 import net.simpleframework.util.StringUtils;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -35,7 +35,7 @@ public abstract class ApplicationConfig {
 
 	public String getTitle() {
 		if (title == null) {
-			return ItSiteUtil.title;
+			return SimpleosUtil.title;
 		}
 		return title;
 	}

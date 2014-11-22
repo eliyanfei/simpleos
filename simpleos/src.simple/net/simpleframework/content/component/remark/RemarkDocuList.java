@@ -1,12 +1,12 @@
 package net.simpleframework.content.component.remark;
 
-import net.itsite.docu.DocuRemark;
-import net.itsite.docu.DocuUtils;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.ado.IDataObjectQuery;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractPagerHandle;
+import net.simpleos.module.docu.DocuRemark;
+import net.simpleos.module.docu.DocuUtils;
 
 public class RemarkDocuList extends AbstractPagerHandle {
 

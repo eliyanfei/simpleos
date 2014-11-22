@@ -4,13 +4,14 @@
 	<scriptEval>single</scriptEval>
 	<components>
 		<ajaxRequest name="complaintDealAct" selector="#dealcomplaintForm"
-			handleClass="net.itsite.complaint.ComplaintAjaxHandle" handleMethod="dealComplaint">
+			handleClass="net.simpleos.module.complaint.ComplaintAjaxHandle"
+			handleMethod="dealComplaint">
 			<jsCompleteCallback>
 					<![CDATA[
 						$IT.C('dealComplaintWindowAct');
 						$IT.R('complaintTableAct');
 					]]>
-				</jsCompleteCallback>
+			</jsCompleteCallback>
 		</ajaxRequest>
 	</components>
 </page>

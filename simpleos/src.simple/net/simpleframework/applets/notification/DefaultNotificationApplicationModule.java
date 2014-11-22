@@ -10,8 +10,6 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.Queue;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.LangUtils;
 import net.simpleframework.core.IInitializer;
 import net.simpleframework.core.ado.db.Table;
 import net.simpleframework.organization.IUser;
@@ -19,7 +17,9 @@ import net.simpleframework.util.BeanUtils;
 import net.simpleframework.web.AbstractWebApplication;
 import net.simpleframework.web.AbstractWebApplicationModule;
 import net.simpleframework.web.IWebApplication;
+import net.simpleos.SimpleosUtil;
 import net.simpleos.backend.BackendUtils;
+import net.simpleos.utils.LangUtils;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -93,12 +93,12 @@ public class DefaultNotificationApplicationModule extends AbstractWebApplication
 			}
 
 			if (sender == null || BackendUtils.sysMail) {
-				if (LangUtils.toBoolean(ItSiteUtil.attrMap.get("sys.sys_mail"), false)) {
+				if (LangUtils.toBoolean(SimpleosUtil.attrMap.get("sys.sys_mail"), false)) {
 					final MailSender mailSender = new MailSender();
-					mailSender.setSentAddress("<" + ItSiteUtil.attrMap.get("sys.sys_mail_sentAddress") + ">");
-					mailSender.setSmtpServer(ItSiteUtil.attrMap.get("sys.sys_mail_smtpServer"));
-					mailSender.setSmtpUsername(ItSiteUtil.attrMap.get("sys.sys_mail_smtpUsername"));
-					mailSender.setSmtpPassword(ItSiteUtil.attrMap.get("sys.sys_mail_smtpPassword"));
+					mailSender.setSentAddress("<" + SimpleosUtil.attrMap.get("sys.sys_mail_sentAddress") + ">");
+					mailSender.setSmtpServer(SimpleosUtil.attrMap.get("sys.sys_mail_smtpServer"));
+					mailSender.setSmtpUsername(SimpleosUtil.attrMap.get("sys.sys_mail_smtpUsername"));
+					mailSender.setSmtpPassword(SimpleosUtil.attrMap.get("sys.sys_mail_smtpPassword"));
 					mmn.setSender(mailSender);
 				}
 				BackendUtils.sysMail = false;

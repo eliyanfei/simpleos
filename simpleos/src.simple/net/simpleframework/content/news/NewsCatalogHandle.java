@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.IDataObjectValue;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
@@ -16,6 +15,7 @@ import net.simpleframework.core.bean.IIdBeanAware;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.propeditor.PropEditorBean;
 import net.simpleframework.web.page.component.ui.propeditor.PropField;
+import net.simpleos.SimpleosUtil;
 
 public class NewsCatalogHandle extends DefaultCatalogHandle {
 
@@ -39,7 +39,7 @@ public class NewsCatalogHandle extends DefaultCatalogHandle {
 		final ArrayList<Object> al = new ArrayList<Object>();
 		final StringBuilder sql = new StringBuilder();
 		if (parentId == null) {
-			sql.append(ItSiteUtil.getSQLNullExpr(Long.class, "parentid"));
+			sql.append(SimpleosUtil.getSQLNullExpr(Long.class, "parentid"));
 		} else {
 			sql.append("parentid=?");
 			al.add(parentId);

@@ -1,13 +1,15 @@
 package net.simpleos.backend.menu;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.ado.db.IQueryEntitySet;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 
- * @author 李岩飞
- * 2013-3-28下午04:17:22
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月22日 下午10:09:54 
+ *
  */
 public class MenuNavUtils {
 	public static IMenuNavAppModule appModule = null;
@@ -22,7 +24,7 @@ public class MenuNavUtils {
 		MenuNavBean menu = null;
 		while ((menu = qs.next()) != null) {
 			if (StringsUtils.isNotBlank1(menu.getUrl()))
-				ItSiteUtil.menuMap.put(menu.getUrl().substring(0, menu.getUrl().lastIndexOf(".")), menu.getText());
+				SimpleosUtil.menuMap.put(menu.getUrl().substring(0, menu.getUrl().lastIndexOf(".")), menu.getText());
 			buildMenu(menu.getId());
 		}
 	}

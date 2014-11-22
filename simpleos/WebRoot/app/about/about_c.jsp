@@ -1,8 +1,8 @@
-<%@page import="net.itsite.ItSiteUtil"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page import="java.util.Map"%>
 <%
-	Map<String, String> map = ItSiteUtil.attrMap;
+	Map<String, String> map = SimpleosUtil.attrMap;
 %>
 <div class="simple_toolbar2">
 	<p class="f2">

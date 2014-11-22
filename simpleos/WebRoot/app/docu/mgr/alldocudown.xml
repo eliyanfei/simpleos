@@ -6,7 +6,7 @@
 		<tablePager name="downListPaperAct" containerId="downListId"
 			exportAction="true" pageItems="30" showEditPageItems="false"
 			showVerticalLine="true" pagerBarLayout="bottom" showCheckbox="false"
-			handleClass="net.itsite.docu.AllDocuDownTablePaperHandle">
+			handleClass="net.simpleos.module.docu.AllDocuDownTablePaperHandle">
 			<columns>
 				<column columnText="#(Docu.all.down.0)" columnName="title"
 					columnSqlName="docuId"></column>

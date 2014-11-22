@@ -10,7 +10,7 @@
 <%@ page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%@ page import="net.simpleframework.util.DateUtils"%><%@page
 	import="net.simpleframework.content.ContentUtils"%>
-<%@page import="net.itsite.ItSiteUtil"%><%@page
+<%@page import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.web.page.component.ui.dictionary.SmileyUtils"%><%@page
 	import="net.simpleframework.util.ConvertUtils"%><%@page
 	import="java.util.List"%><%@page
@@ -37,7 +37,7 @@
 .sayEditor {
 	border: 2px solid #5490C0;
 	float: left;
-	width: 200px;
+	width: 78%;
 	height: 36px;
 	padding: 2px;
 	resize: none;
@@ -52,7 +52,7 @@
 .saySubmit {
 	text-align: center;
 	float: left;
-	width: 49px;
+	width: 18%;
 	height: 44px;
 	margin-right: 3px;
 	font-size: 10pt;
@@ -79,19 +79,18 @@
 <div class="space_log_layout" id="space_log_layout">
 	<%
 		final IDataObjectQuery<?> qs = (IDataObjectQuery<?>) request.getAttribute("__qs");
-		if (qs == null) {
-			return;
-		}
-		Object obj;
-		IUser admin = OrgUtils.um().getUserByName("admin");
+			if (qs == null) {
+		return;
+			}
+			Object obj;
 
-		while ((obj = qs.next()) != null) {
-			SapceLogBean log = (SapceLogBean) obj;
-			IUser user = OrgUtils.um().queryForObjectById(log.getUserId());
-			final String content = MySpaceUtils.spaceLogContent(requestResponse, log);
-			final boolean hasImg = ConvertUtils.toBoolean(log.getAttribute("hasImg"), false);
-			final boolean isVote = "spacevote".hashCode() == ConvertUtils.toInt(log.getRefId(), 0);
-			final List<ID> list = MySpaceUtils.getReplyFrom(log.getReplyFrom());
+			while ((obj = qs.next()) != null) {
+		SapceLogBean log = (SapceLogBean) obj;
+		IUser user = OrgUtils.um().queryForObjectById(log.getUserId());
+		final String content = MySpaceUtils.spaceLogContent(requestResponse, log);
+		final boolean hasImg = ConvertUtils.toBoolean(log.getAttribute("hasImg"), false);
+		final boolean isVote = "spacevote".hashCode() == ConvertUtils.toInt(log.getRefId(), 0);
+		final List<ID> list = MySpaceUtils.getReplyFrom(log.getReplyFrom());
 	%>
 
 	<div class="space_content_item">
@@ -146,7 +145,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2" class="wrapWord" style="word-wrap:break-word;word-break:break-all;"><%=SmileyUtils.replaceSmiley(ItSiteUtil.getShortContent(log.getContent(), 100, false))%></td>
+							<td colspan="2" class="wrapWord" style="word-wrap:break-word;word-break:break-all;"><%=SmileyUtils.replaceSmiley(SimpleosUtil.getShortContent(log.getContent(), 100, false))%></td>
 						</tr>
 					</table>
 				</td>

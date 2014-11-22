@@ -3,7 +3,6 @@ package net.simpleframework.web.page.component.ui.tree;
 import java.util.Collection;
 import java.util.Map;
 
-import net.itsite.utils.UID;
 import net.simpleframework.util.HTMLUtils;
 import net.simpleframework.util.JSONUtils;
 import net.simpleframework.util.JavascriptUtils;
@@ -13,6 +12,7 @@ import net.simpleframework.web.page.component.AbstractComponentJavascriptRender;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ComponentRenderUtils;
 import net.simpleframework.web.page.component.IComponentRegistry;
+import net.simpleos.utils.UID;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。

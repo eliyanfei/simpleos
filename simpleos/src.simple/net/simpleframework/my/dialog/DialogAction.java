@@ -4,7 +4,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.IDataObjectValue;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
@@ -23,6 +22,7 @@ import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxRequestHandle;
 import net.simpleframework.web.page.component.ui.dictionary.SmileyUtils;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -99,7 +99,7 @@ public class DialogAction extends AbstractAjaxRequestHandle {
 				final ITableEntityManager dialog_mgr = MySpaceUtils.getTableEntityManager(SimpleDialog.class);
 				final ITableEntityManager dialog_item_mgr = MySpaceUtils.getTableEntityManager(SimpleDialogItem.class);
 				final SimpleDialog dialog = dialog_mgr.queryForObjectById(dialogId, SimpleDialog.class);
-				final ID userId = ItSiteUtil.getLoginUser(compParameter).getId();
+				final ID userId = SimpleosUtil.getLoginUser(compParameter).getId();
 				if (dialog != null) {
 					if (dialog.getSentId().equals2(userId)) {
 						dialog.setSentDel(true);

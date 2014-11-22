@@ -42,7 +42,7 @@
 			handleMethod="logout">
 			<jsCompleteCallback>location.reload();</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="doLanguage" handleClass="net.itsite.ItSiteAjaxHandle"
+		<ajaxRequest name="doLanguage" handleClass="net.simpleos.SimpleosAjaxHandle"
 			handleMethod="doLanguage">
 			<jsCompleteCallback>
 				<![CDATA[
@@ -50,7 +50,7 @@
 				]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="doSkin" handleClass="net.itsite.ItSiteAjaxHandle"
+		<ajaxRequest name="doSkin" handleClass="net.simpleos.SimpleosAjaxHandle"
 			handleMethod="doSkin">
 			<jsCompleteCallback>
 				<![CDATA[

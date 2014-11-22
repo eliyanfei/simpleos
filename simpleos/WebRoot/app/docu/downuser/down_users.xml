@@ -3,8 +3,8 @@
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<components>
 		<pager name="downUsersPagerAct" containerId="idDownUsersPager"
-			handleClass="net.itsite.docu.DocuDownUsersPagerHandle" pageItems="10"
-			dataPath="down_users_pager.jsp" showEditPageItems="false">
+			handleClass="net.simpleos.module.docu.DocuDownUsersPagerHandle"
+			pageItems="10" dataPath="down_users_pager.jsp" showEditPageItems="false">
 		</pager>
 	</components>
 </page>

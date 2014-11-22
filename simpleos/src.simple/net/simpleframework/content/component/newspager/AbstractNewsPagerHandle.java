@@ -5,7 +5,6 @@ import java.io.StringWriter;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.lucene.AbstractLuceneManager;
 import net.simpleframework.content.AbstractContentPagerHandle;
 import net.simpleframework.content.blog.Blog;
@@ -15,6 +14,7 @@ import net.simpleframework.util.ConvertUtils;
 import net.simpleframework.util.IoUtils;
 import net.simpleframework.web.page.IPageConstants;
 import net.simpleframework.web.page.component.ComponentParameter;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -79,9 +79,9 @@ public abstract class AbstractNewsPagerHandle extends AbstractContentPagerHandle
 			sb.append(" title=\"").append(news.getTopic()).append("\"");
 			sb.append(">");
 			if (news instanceof Blog) {
-				sb.append(ItSiteUtil.getShortString(news.getTopic(), 35, true));
+				sb.append(SimpleosUtil.getShortString(news.getTopic(), 35, true));
 			} else {
-				sb.append(ItSiteUtil.getShortString(news.getTopic(), ConvertUtils.toBoolean(compParameter.getRequestAttribute("isNews"), false) ? 17
+				sb.append(SimpleosUtil.getShortString(news.getTopic(), ConvertUtils.toBoolean(compParameter.getRequestAttribute("isNews"), false) ? 17
 						: 19, true));
 			}
 		} else {

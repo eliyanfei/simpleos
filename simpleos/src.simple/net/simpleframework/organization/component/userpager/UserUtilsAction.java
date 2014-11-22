@@ -4,11 +4,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.itsite.ItSiteCache;
-import net.itsite.ItSiteOrganizationApplicationModule.AccountExt;
-import net.itsite.ItSiteUtil;
-import net.itsite.utils.MD5;
-import net.itsite.utils.StringsUtils;
 import net.simpleframework.applets.notification.MailMessageNotification;
 import net.simpleframework.applets.notification.NotificationUtils;
 import net.simpleframework.organization.IUser;
@@ -30,6 +25,11 @@ import net.simpleframework.web.page.component.HandleException;
 import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxRequestHandle;
 import net.simpleframework.web.page.component.base.ajaxrequest.AjaxRequestBean;
 import net.simpleframework.web.page.component.ui.validatecode.DefaultValidateCodeHandle;
+import net.simpleos.SimpleosCache;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.SimpleosOrganizationApplicationModule.AccountExt;
+import net.simpleos.utils.MD5;
+import net.simpleos.utils.StringsUtils;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -96,7 +96,7 @@ public class UserUtilsAction extends AbstractAjaxRequestHandle {
 		return jsonForward(compParameter, new JsonCallback() {
 			@Override
 			public void doAction(final Map<String, Object> json) {
-				final IUser user = ItSiteUtil.getLoginUser(compParameter);
+				final IUser user = SimpleosUtil.getLoginUser(compParameter);
 				final String signature_text = compParameter.getRequestParameter("user_signature");
 				user.setSignature(HTMLUtils.htmlEscape(signature_text));
 				OrgUtils.um().update(new String[] { "signature" }, user);
@@ -122,7 +122,7 @@ public class UserUtilsAction extends AbstractAjaxRequestHandle {
 					final MailMessageNotification mailMessage = new MailMessageNotification();
 					mailMessage.getTo().add(user);
 					mailMessage.setSubject(LocaleI18n.getMessage("UserPagerAction.3",
-							StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), "")));
+							StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_name"), "")));
 					final Map<String, Object> variable = new HashMap<String, Object>();
 					variable.put("username", user);
 					variable.put("bindingcode", StringUtils.hash(compParameter.getSession()));
@@ -150,7 +150,7 @@ public class UserUtilsAction extends AbstractAjaxRequestHandle {
 				if (userId == null) {
 					userId = AccountSession.getLogin(compParameter.getSession()).getId().getValue();
 				}
-				final AccountExt account = (AccountExt) ItSiteUtil.getAccountById(userId);
+				final AccountExt account = (AccountExt) SimpleosUtil.getAccountById(userId);
 				if (account.user().isBuildIn())
 					throw HandleException.wrapException(LocaleI18n.getMessage("buildin.1"));
 				if (account != null) {
@@ -208,7 +208,7 @@ public class UserUtilsAction extends AbstractAjaxRequestHandle {
 			@Override
 			public void doAction(final Map<String, Object> json) throws Exception {
 				final String sid = compParameter.getRequestParameter("sid");
-				final String email = ItSiteCache.getEmail(sid);
+				final String email = SimpleosCache.getEmail(sid);
 				if (!"null".equals(sid) && StringUtils.hasText(sid) && email != null) {
 					final IUser user = OrgUtils.um().getUserByEmail(email);
 					if (user != null) {

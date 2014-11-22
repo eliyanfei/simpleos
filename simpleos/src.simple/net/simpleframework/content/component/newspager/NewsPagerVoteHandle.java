@@ -3,7 +3,6 @@ package net.simpleframework.content.component.newspager;
 import java.util.ArrayList;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.content.component.vote.DefaultVoteHandle;
 import net.simpleframework.my.space.MySpaceUtils;
@@ -12,6 +11,7 @@ import net.simpleframework.organization.account.IAccount;
 import net.simpleframework.util.HTMLBuilder;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
+import net.simpleos.SimpleosUtil;
 
 public class NewsPagerVoteHandle extends DefaultVoteHandle {
 	@Override
@@ -45,7 +45,7 @@ public class NewsPagerVoteHandle extends DefaultVoteHandle {
 		if (account != null) {
 			final ComponentParameter nComponentParameter = NewsPagerUtils.getComponentParameter(compParameter);
 			final NewsBean newBean = ((INewsPagerHandle) nComponentParameter.getComponentHandle()).getEntityBeanByRequest(nComponentParameter);
-			if (newBean != null && ItSiteUtil.isManageOrSelf(compParameter, ItSiteUtil.applicationModule, newBean.getUserId())) {
+			if (newBean != null && SimpleosUtil.isManageOrSelf(compParameter, SimpleosUtil.applicationModule, newBean.getUserId())) {
 				al.add(TB_VOTE_REFRESH);
 				al.add(TB_VOTE_EDIT);
 			}

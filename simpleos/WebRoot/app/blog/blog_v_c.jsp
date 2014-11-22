@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="net.simpleframework.content.blog.BlogUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
+	import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.web.page.component.ComponentParameter"%><%@page
 	import="net.simpleframework.content.component.newspager.NewsPagerUtils"%>
 
@@ -31,14 +31,14 @@
 			<div class="block_layout1">
 				<div class="t1 f4">
 					<span class="ts">#(App.Blog.0)</span>
-					<%=ItSiteUtil.getTabList("hotPageletLoadV", "_tab_param=2")%>
+					<%=SimpleosUtil.getTabList("hotPageletLoadV", "_tab_param=2")%>
 				</div>
 				<div class="c" id="hot_tabs"></div>
 			</div>
 			<div class="block_layout1">
 				<div class="t1 f4">
 					<span class="ts">#(App.Blog.1)</span>
-					<%=ItSiteUtil.getTabList("commentsPageletLoadV", "_tab_param=5")%>
+					<%=SimpleosUtil.getTabList("commentsPageletLoadV", "_tab_param=5")%>
 				</div>
 				<div class="c" id="comments_tabs"></div>
 			</div>

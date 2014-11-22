@@ -4,7 +4,7 @@
 	import="net.simpleframework.organization.OrgUtils"%><%@page
 	import="net.simpleframework.organization.IUser"%><%@page
 	import="net.simpleframework.my.space.MySpaceUtils"%><%@page
-	import="net.simpleframework.my.dialog.DialogUtils"%><%@page import="net.simpleframework.my.dialog.SimpleDialog"%><%@page import="net.itsite.ItSiteUtil"%>
+	import="net.simpleframework.my.dialog.DialogUtils"%><%@page import="net.simpleframework.my.dialog.SimpleDialog"%><%@page import="net.simpleos.SimpleosUtil"%>
 
 
 <style>
@@ -33,7 +33,7 @@
 </style>
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
-	Object userId = ItSiteUtil.getLoginUser(requestResponse).getId();
+	Object userId = SimpleosUtil.getLoginUser(requestResponse).getId();
 	SimpleDialog dialog ;
 	if (MySpaceUtils.getAccountAware().isMyAccount(requestResponse)) {
 %><div class="f2" style="text-align: center;">

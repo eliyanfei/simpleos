@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modules>
+	<module name="bbs" text="论坛">
+		<action>
+		<![CDATA[$IT.A('functionBbs','type=bbs');]]>
+		</action>
+		<module name="bbs_star" text="精华">
+			<action><![CDATA[$IT.A('functionBbs','star=1');]]>
+			</action>
+		</module>
+	</module>
+</modules>
+

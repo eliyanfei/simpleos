@@ -58,21 +58,6 @@ public abstract class MessageUtils {
 			temgr.insertTransaction(sMessage, new TableEntityAdapter() {
 				@Override
 				public void afterInsert(final ITableEntityManager manager, final Object[] objects) {
-					/*for (final Object object : objects) {
-						final SimpleMessage sMessage = (SimpleMessage) object;
-						final StringBuilder tb = new StringBuilder();
-						try {
-							tb.append("<a href=\"").append(MessageUtils.applicationModule.getSystemMessageUrl(compParameter)).append("\">")
-									.append(topic).append("</a>");
-							tb.append("<p>")
-									.append(ItSiteUtil.getShortString(textBody, 1200, true) + "(" + ConvertUtils.toDateString(sMessage.getSentDate()))
-									.append(")</p>");
-						} catch (final Exception e) {
-							logger.warn(e);
-						}
-						NotificationUtils.createSystemMessageNotification(sMessage.getSentId(), sMessage.getToId(),
-								LocaleI18n.getMessage("MessageAction.1"), tb.toString(), sMessage.getToId());
-					}*/
 				}
 			});
 		} catch (Exception e) {

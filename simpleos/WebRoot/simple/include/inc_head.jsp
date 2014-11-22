@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.SimpleosUtil"%>
 <head>
 	<meta name="keywords" content="" />
 	<style type="text/css">

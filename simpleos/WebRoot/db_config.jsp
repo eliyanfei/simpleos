@@ -1,5 +1,5 @@
 <%@page import="javax.sql.DataSource"%>
-<%@page import="net.itsite.utils.SQLUtils"%>
+<%@page import="net.simpleos.utils.SQLUtils"%>
 <%@page import="net.simpleframework.web.IWebApplication"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>

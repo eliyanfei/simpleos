@@ -2,11 +2,11 @@ package net.simpleframework.my.dialog;
 
 import java.util.Date;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.core.bean.AbstractIdDataObjectBean;
 import net.simpleframework.core.id.ID;
 import net.simpleframework.organization.IUser;
 import net.simpleframework.util.IConstants;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -97,12 +97,12 @@ public class SimpleDialog extends AbstractIdDataObjectBean {
 	}
 
 	public String getSentUserText() {
-		final IUser user = ItSiteUtil.getUserById(getSentId());
+		final IUser user = SimpleosUtil.getUserById(getSentId());
 		return user != null ? user.getText() : IConstants.HTML_BLANK_STRING;
 	}
 
 	public String getToUserText() {
-		final IUser user = ItSiteUtil.getUserById(getToId());
+		final IUser user = SimpleosUtil.getUserById(getToId());
 		return user != null ? user.getText() : IConstants.HTML_BLANK_STRING;
 	}
 

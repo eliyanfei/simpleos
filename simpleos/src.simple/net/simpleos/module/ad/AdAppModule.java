@@ -2,14 +2,14 @@ package net.simpleos.module.ad;
 
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.impl.AItSiteAppclicationModule;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;
 import net.simpleframework.ado.db.ITableEntityManager;
 import net.simpleframework.core.IInitializer;
 import net.simpleframework.core.ado.db.Table;
 import net.simpleframework.web.page.PageRequestResponse;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.impl.ASimpleosAppclicationModule;
 
 /**
  * 
@@ -18,7 +18,7 @@ import net.simpleframework.web.page.PageRequestResponse;
  * @Description: 广告的初始化类
  *
  */
-public class AdAppModule extends AItSiteAppclicationModule implements IAdAppModule {
+public class AdAppModule extends ASimpleosAppclicationModule implements IAdAppModule {
 
 	public final static Table ad = new Table("simpleos_ad", "id");
 	public static IAdAppModule applicationModule;
@@ -41,7 +41,7 @@ public class AdAppModule extends AItSiteAppclicationModule implements IAdAppModu
 			public void run() {
 				//第二天的凌晨启动
 				try {
-					Thread.sleep(ItSiteUtil.get0Time());
+					Thread.sleep(SimpleosUtil.get0Time());
 				} catch (Exception e) {
 				}
 				while (true) {

@@ -6,8 +6,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
-import net.prj.mvc.myfavorite.MyFavoriteUtils;
 import net.simpleframework.ado.IDataObjectValue;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
@@ -46,6 +44,8 @@ import net.simpleframework.web.page.component.AbstractComponentBean;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ado.IDbComponentHandle;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.mvc.myfavorite.MyFavoriteUtils;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -445,12 +445,12 @@ public class DefaultTopicPagerHandle extends AbstractTopicPagerHandle {
 			for (final Object v : values) {
 				TopicBean topicBean = topic_mgr.queryForObjectById(v, BbsTopic.class);
 				if (topicBean != null) {
-					if (ItSiteUtil.isManageOrSelf(compParameter, BbsUtils.applicationModule, topicBean.getUserId())) {
+					if (SimpleosUtil.isManageOrSelf(compParameter, BbsUtils.applicationModule, topicBean.getUserId())) {
 						final String topic_where = "topicid=" + topicBean.getId();
 						final String sql1 = "delete from " + simple_posts_text + " where id in (select id from " + post_mgr.getTablename()
 								+ " where " + topic_where + ")";
 						post_text_mgr.execute(new SQLValue(sql1, null));
-						ItSiteUtil.update(compParameter, topicBean.getUserId(), topicBean.getId(), false);
+						SimpleosUtil.update(compParameter, topicBean.getUserId(), topicBean.getId(), false);
 						post_mgr.delete(new ExpressionValue(topic_where, null));
 					} else {
 						throw DataObjectException.wrapException("你不是管理员，没有权限删除!");
@@ -474,7 +474,7 @@ public class DefaultTopicPagerHandle extends AbstractTopicPagerHandle {
 				if (postsBean != null) {
 					final String sql2 = "delete from " + simple_posts_text + " where id=?";
 					post_text_mgr.execute(new SQLValue(sql2, new Object[] { v }));
-					ItSiteUtil.update(compParameter, postsBean.getUserId(), postsBean.getId(), true);
+					SimpleosUtil.update(compParameter, postsBean.getUserId(), postsBean.getId(), true);
 				}
 			}
 
@@ -641,7 +641,7 @@ public class DefaultTopicPagerHandle extends AbstractTopicPagerHandle {
 			if (compParameter.getRequestAttribute("home") != null && (Boolean) compParameter.getRequestAttribute("home")) {
 				sb.append(" title=\"").append(topic.getTopic()).append("\"");
 				sb.append(">");
-				sb.append(ItSiteUtil.getShortString(topic.getTopic(), 35, true));
+				sb.append(SimpleosUtil.getShortString(topic.getTopic(), 35, true));
 			} else {
 				sb.append(">");
 				sb.append(topic.getTopic());
@@ -668,7 +668,7 @@ public class DefaultTopicPagerHandle extends AbstractTopicPagerHandle {
 	public String getActionsHTML(final ComponentParameter compParameter, final AbstractContentBase contentBase) {
 		final StringBuilder sb = new StringBuilder();
 		final TopicBean topicBean = (TopicBean) contentBase;
-		final IAccount account = ItSiteUtil.getLoginAccount(compParameter);
+		final IAccount account = SimpleosUtil.getLoginAccount(compParameter);
 		if (account != null) {
 			sb.append("<a class=\"a2\" id='favorite_act' onclick=\"");
 			long c = MyFavoriteUtils.getFavorites(topicBean.getId(), account.getId());

@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.i.ISendMail;
-import net.itsite.impl.AItSiteAppclicationModule;
 import net.simpleframework.applets.attention.AttentionUtils;
 import net.simpleframework.applets.attention.ISentCallback;
 import net.simpleframework.applets.notification.MailMessageNotification;
@@ -41,6 +39,8 @@ import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.portal.module.PortalModuleRegistryFactory;
 import net.simpleframework.web.page.component.ui.tabs.TabHref;
 import net.simpleframework.web.page.component.ui.tabs.TabsUtils;
+import net.simpleos.i.ISendMail;
+import net.simpleos.impl.ASimpleosAppclicationModule;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -278,7 +278,7 @@ public class DefaultNewsApplicationModule extends AbstractContentApplicationModu
 				variable.put("fromUser", remark.getUserText());
 				variable.put("topic", newsBean.getTopic());
 				variable.put("content", remark.getContent());
-				return getFromTemplate(variable, AItSiteAppclicationModule.class);
+				return getFromTemplate(variable, ASimpleosAppclicationModule.class);
 			}
 		});
 	}

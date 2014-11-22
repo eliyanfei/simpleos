@@ -1,22 +1,20 @@
+<%@page import="net.simpleos.utils.StringsUtils"%>
+<%@page import="net.simpleos.SimpleosUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@page
-	import="net.simpleos.backend.site.SiteUtils"%><%@page
 	import="java.util.Map"%><%@page import="java.util.HashMap"%><%@page
-	import="net.itsite.utils.StringsUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
 	import="net.simpleos.backend.links.LinksUtils"%>
-
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(
 			request, response);
-	final String menuName = ItSiteUtil.witchMenu(requestResponse);
+	final String menuName = SimpleosUtil.witchMenu(requestResponse);
 %>
 <div class="footer" align="center">
 	<div class="webLink_index" align="left">
 		<div align="center" class="_link middle">友情链接</div>
 		<div id="link_index" class="middle"><%=LinksUtils.queryLinks(requestResponse,
-					ItSiteUtil.attrMap)%>
+					SimpleosUtil.attrMap)%>
 		</div>
 	</div>
 	<div class="lineWhite"></div>
@@ -30,10 +28,10 @@
 			<div class="footRight">
 				Powered by
 				<%=StringsUtils.trimNull(
-					ItSiteUtil.attrMap.get("site.site_name"), "")%>&nbsp;&nbsp;&nbsp;版权所有
+						SimpleosUtil.attrMap.get("site.site_name"), "")%>&nbsp;&nbsp;&nbsp;版权所有
 				©<%=StringsUtils.trimNull(
-					ItSiteUtil.attrMap.get("site.site_copyright"), "")%>&nbsp;&nbsp;<%=StringsUtils.trimNull(
-					ItSiteUtil.attrMap.get("site.site_icp"), "")%>
+						SimpleosUtil.attrMap.get("site.site_copyright"), "")%>&nbsp;&nbsp;<%=StringsUtils.trimNull(
+								SimpleosUtil.attrMap.get("site.site_icp"), "")%>
 
 				(建议使用 <a target="_blank" href="http://firefox.com.cn/">Firefox</a>,
 				<a target="_blank" href="http://www.google.com/chrome/">Chrome</a>来浏览本站！)
@@ -50,5 +48,5 @@ $ready(function() {
 				}
 			});
 		});
-	</script><%=ItSiteUtil.getAboutHtml(2)%>
+	</script><%=SimpleosUtil.getAboutHtml(2)%>
 </div>

@@ -7,7 +7,7 @@
 <%@ page import="net.simpleframework.content.news.NewsUtils"%>
 <%@ page import="net.simpleframework.web.EFunctionModule"%>
 <%@page import="net.simpleframework.content.IContentPagerHandle"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.SimpleosUtil"%>
 <%
 	final String news = NewsUtils.deployPath + "jsp/news.jsp";
 	final String news_layout = NewsUtils.deployPath + "jsp/news_layout.jsp";
@@ -15,7 +15,7 @@
 	final String tags_params = IContentPagerHandle._VTYPE + "=" + EFunctionModule.news.ordinal();
 	final String tags_layout = TagUtils.deployPath + "jsp/tags_layout.jsp?" + tags_params;
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
-	ItSiteUtil.addMenuNav(request.getSession(), null, "#(Itsite.menu.news)", false);
+	SimpleosUtil.addMenuNav(request.getSession(), null, "#(Itsite.menu.news)", false);
 %>
 <table width="100%">
 	<tr>
@@ -27,14 +27,14 @@
 			<div class="block_layout1">
 				<div class="t1 f4">
 					<span class="ts">#(App.Blog.0)</span>
-					<%=ItSiteUtil.getTabList("hotPageletLoad", "_tab_param=2")%>
+					<%=SimpleosUtil.getTabList("hotPageletLoad", "_tab_param=2")%>
 				</div>
 				<div class="c" id="hot_tabs"></div>
 			</div>
 			<div class="block_layout1">
 				<div class="t1 f4">
 					<span class="ts">#(App.Blog.1)</span>
-					<%=ItSiteUtil.getTabList("commentsPageletLoad", "_tab_param=5")%>
+					<%=SimpleosUtil.getTabList("commentsPageletLoad", "_tab_param=5")%>
 				</div>
 				<div class="c" id="comments_tabs"></div>
 			</div>

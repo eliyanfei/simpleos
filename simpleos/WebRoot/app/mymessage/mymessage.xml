@@ -13,7 +13,7 @@
 	<jobView>${net.simpleframework.organization.IJob.sj_account_normal}
 	</jobView>
 	<components>
-		<tablePager name="myMessageTable" handleClass="net.prj.mvc.message.MyMessageTableHandle"
+		<tablePager name="myMessageTable" handleClass="net.simpleos.mvc.message.MyMessageTableHandle"
 			exportAction="true" containerId="mymessage_data_id" showCheckbox="true"
 			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
 			pagerBarLayout="bottom">
@@ -46,7 +46,7 @@
 			</menuitem>
 		</menu>
 		<listbox name="mymessageList" containerId="mymessageListId"
-			handleClass="net.prj.mvc.message.MyMessageListBoxHandle" tooltip="false">
+			handleClass="net.simpleos.mvc.message.MyMessageListBoxHandle" tooltip="false">
 		</listbox>
 
 		<ajaxRequest name="myFriendAjax" updateContainerId="mymessage_data_id">
@@ -54,7 +54,7 @@
 		</ajaxRequest>
 
 		<ajaxRequest name="myMessageDeleteAct" confirmMessage="#(Delete.Is)"
-			handleClass="net.prj.mvc.message.MyMessageAction" handleMethod="deleteMyMessage">
+			handleClass="net.simpleos.mvc.message.MyMessageAction" handleMethod="deleteMyMessage">
 			<jsCompleteCallback>
 			<![CDATA[
 				$IT.alert('#(Delete.OK)');
@@ -62,7 +62,7 @@
 			]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="messagereadAct" handleClass="net.prj.mvc.message.MyMessageAction"
+		<ajaxRequest name="messagereadAct" handleClass="net.simpleos.mvc.message.MyMessageAction"
 			handleMethod="messageread">
 			<jsCompleteCallback>
 			<![CDATA[
@@ -71,7 +71,7 @@
 			]]>
 			</jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="messagereadAllAct" handleClass="net.prj.mvc.message.MyMessageAction"
+		<ajaxRequest name="messagereadAllAct" handleClass="net.simpleos.mvc.message.MyMessageAction"
 			handleMethod="messagereadAll">
 			<jsCompleteCallback>
 			<![CDATA[

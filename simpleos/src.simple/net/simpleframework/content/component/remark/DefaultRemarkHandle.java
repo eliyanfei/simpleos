@@ -2,7 +2,6 @@ package net.simpleframework.content.component.remark;
 
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.IDataObjectValue;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.ITableEntityManager;
@@ -22,6 +21,7 @@ import net.simpleframework.web.page.PageUtils;
 import net.simpleframework.web.page.component.AbstractComponentBean;
 import net.simpleframework.web.page.component.ComponentException;
 import net.simpleframework.web.page.component.ComponentParameter;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -74,7 +74,7 @@ public class DefaultRemarkHandle extends AbstractContentHandle implements IRemar
 			//发布消息
 			ID userId = remark.getUserId();
 			if (userId == null) {
-				if (!"true".equals(ItSiteUtil.attrMap.get("sys_remark"))) {
+				if (!"true".equals(SimpleosUtil.attrMap.get("sys_remark"))) {
 					throw new DataObjectException("你还没有登入?");
 				}
 				userId = LongID.zero;
@@ -134,7 +134,7 @@ public class DefaultRemarkHandle extends AbstractContentHandle implements IRemar
 		} else {
 			final RemarkItem remark = (RemarkItem) getTableEntityManager(compParameter).queryForObject(ev, getEntityBeanClass());
 			if (remark != null) {
-				ItSiteUtil.update(compParameter, remark.getUserId(), remark.getId(), true);
+				SimpleosUtil.update(compParameter, remark.getUserId(), remark.getId(), true);
 			}
 			super.doDelete(compParameter, ev);
 		}

@@ -9,17 +9,17 @@
 <%@ page
 	import="net.simpleframework.content.component.newspager.NewsBean"%>
 <%@ page
-	import="net.simpleframework.web.page.component.ComponentRenderUtils"%><%@page import="net.itsite.ItSiteUtil"%>
+	import="net.simpleframework.web.page.component.ComponentRenderUtils"%><%@page import="net.simpleos.SimpleosUtil"%>
 
 <%
 	final ComponentParameter nComponentParameter = NewsPagerUtils
-			.getComponentParameter(request, response);
+	.getComponentParameter(request, response);
 	final INewsPagerHandle nHandle = (INewsPagerHandle) nComponentParameter
-			.getComponentHandle();
+	.getComponentHandle();
 	final NewsBean newsBean = nHandle
-			.getEntityBeanByRequest(nComponentParameter);
+	.getEntityBeanByRequest(nComponentParameter);
 	final boolean showValidateCode = (Boolean) nComponentParameter
-			.getBeanProperty("showValidateCode");
+	.getBeanProperty("showValidateCode");
 %>
 <div id="__np__newsAddForm">
 	<%=ComponentRenderUtils.genParameters(nComponentParameter)%>
@@ -54,7 +54,7 @@
 			<td class="lbl">#(np_edit.5)</td>
 			<td style="padding: 3px;">
 				<div class="clear_float" style="padding-bottom: 3px;">
-					<div style="float: right;"><%=ItSiteUtil.getHtmlEditorToolbar(nComponentParameter, "news", "np_content")%></div>
+					<div style="float: right;"><%=SimpleosUtil.getHtmlEditorToolbar(nComponentParameter, "news", "np_content")%></div>
 					<div style="float: left" id="np_content_info" class="important-tip">#(CKEditor.0)</div>
 				</div>
 				<div>

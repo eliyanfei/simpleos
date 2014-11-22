@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.util.HTMLBuilder;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.AbstractComponentRegistry;
 import net.simpleframework.web.page.component.ComponentParameter;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -52,7 +52,7 @@ public abstract class LoginUtils {
 			flag = false;
 		}
 		final String registAction = (String) nComponentParameter.getBeanProperty("registAction");
-		if (StringUtils.hasText(registAction) && !"false".equalsIgnoreCase(registAction) && "true".equals(ItSiteUtil.attrMap.get("sys_register"))) {
+		if (StringUtils.hasText(registAction) && !"false".equalsIgnoreCase(registAction) && "true".equals(SimpleosUtil.attrMap.get("sys_register"))) {
 			final StringBuilder sb2 = new StringBuilder();
 			sb2.append("<a onclick=\"").append(registAction).append("\">#(login.8)</a>");
 			al.add(sb2.toString());

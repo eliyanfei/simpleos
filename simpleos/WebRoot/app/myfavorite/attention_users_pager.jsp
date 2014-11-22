@@ -4,7 +4,7 @@
 	import="net.simpleframework.web.page.component.ui.pager.PagerUtils"%>
 <%@ page import="net.simpleframework.organization.OrgUtils"%>
 <%@ page import="net.simpleframework.applets.attention.AttentionBean"%><%@page
-	import="net.prj.mvc.myfavorite.MyFavoriteBean"%>
+	import="net.simpleos.mvc.myfavorite.MyFavoriteBean"%>
 
 <%
 	final String jsp = OrgUtils.deployPath + "jsp/account_layout_item.jsp";

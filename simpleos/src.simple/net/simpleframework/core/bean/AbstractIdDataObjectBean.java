@@ -1,9 +1,9 @@
 package net.simpleframework.core.bean;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.core.id.ID;
 import net.simpleframework.organization.IUser;
 import net.simpleframework.organization.OrgUtils;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -41,7 +41,7 @@ public abstract class AbstractIdDataObjectBean extends AbstractDataObjectBean im
 	public String getUserText(final ID userId, boolean title) {
 		IUser user = OrgUtils.um().queryForObjectById(userId);
 		if (user == null)
-			return ItSiteUtil.anonymity;
+			return SimpleosUtil.anonymity;
 		if (title)
 			return ("<span title='" + userId + "'>" + user.getText() + "</span>");
 		return user.getText();

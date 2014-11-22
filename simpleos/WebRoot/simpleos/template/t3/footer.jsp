@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page
-	import="net.simpleos.backend.site.SiteUtils"%><%@page import="java.util.Map"%><%@page
+	pageEncoding="UTF-8"%><%@page import="java.util.Map"%><%@page
 	import="java.util.HashMap"%><%@page
-	import="net.itsite.utils.StringsUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
+	import="net.simpleos.utils.StringsUtils"%><%@page
+	import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
 	import="net.simpleos.backend.links.LinksUtils"%><%@page
 	import="net.simpleos.$VType"%>
@@ -11,7 +10,7 @@
 
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
-	final String menuName = ItSiteUtil.witchMenu(requestResponse);
+	final String menuName = SimpleosUtil.witchMenu(requestResponse);
 %>
 <div class="footer" align="center">
 	<div align="left" class="_link">
@@ -21,7 +20,7 @@
 		<tr>
 			<td width="75%" valign="top">
 				<div class="ll">
-					<%=LinksUtils.queryLinks(requestResponse, ItSiteUtil.attrMap)%>
+					<%=LinksUtils.queryLinks(requestResponse, SimpleosUtil.attrMap)%>
 				</div>
 			</td>
 		</tr>
@@ -33,8 +32,8 @@
 		</div>
 		<div style="padding-top: 4px; color: gray;">
 			Powered by
-			<%=StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_name"), "")%>&nbsp;&nbsp;&nbsp;版权所有
-			©<%=StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_copyright"), "")%>&nbsp;&nbsp;<%=StringsUtils.trimNull(ItSiteUtil.attrMap.get("site.site_icp"), "")%>
+			<%=StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_name"), "")%>&nbsp;&nbsp;&nbsp;版权所有
+			©<%=StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_copyright"), "")%>&nbsp;&nbsp;<%=StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_icp"), "")%>
 		</div>
 		<div style="padding-top: 4px; color: gray;">
 			建议使用
@@ -54,5 +53,5 @@ $ready(function() {
 	});
 });
 </script>
-	<%=ItSiteUtil.getAboutHtml(2,".footer")%>
+	<%=SimpleosUtil.getAboutHtml(2,".footer")%>
 </div>

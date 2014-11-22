@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modules>
+	<module name="blog" text="博客">
+		<action>
+		<![CDATA[$IT.A('functionBlog','type=blog');]]>
+		</action>
+		<module name="blog_recommended" text="推荐">
+			<action><![CDATA[$IT.A('functionBlog','t=recommended');]]>
+			</action>
+		</module>
+	</module>
+</modules>
+

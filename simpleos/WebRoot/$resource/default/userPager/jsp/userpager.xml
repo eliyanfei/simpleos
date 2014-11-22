@@ -80,14 +80,6 @@
 				$eval(json["jsCallback"]);
       </jsCompleteCallback>
 		</ajaxRequest>
-		<ajaxRequest name="userPagerBlacklist"
-			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
-			handleMethod="blacklist" confirmMessage="确定把用户加入黑名单吗？">
-			<jsCompleteCallback>
-				alert(json['rs']);
-				$eval(json["jsCallback"]);
-      </jsCompleteCallback>
-		</ajaxRequest>
 		<ajaxRequest name="userPagerActive"
 			handleClass="net.simpleframework.organization.component.userpager.UserPagerAction"
 			handleMethod="active" confirmMessage="确定激活该用户吗？">

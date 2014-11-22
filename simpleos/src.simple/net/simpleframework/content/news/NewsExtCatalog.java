@@ -3,9 +3,9 @@ package net.simpleframework.content.news;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.itsite.impl.AbstractCatalog;
 import net.simpleframework.core.ado.db.Column;
 import net.simpleframework.core.bean.ITreeBeanAware;
+import net.simpleos.impl.AbstractCatalog;
 
 public class NewsExtCatalog extends AbstractCatalog {
 	private static Map<String, Column> columns;

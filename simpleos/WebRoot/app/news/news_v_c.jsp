@@ -8,9 +8,9 @@
 	import="net.simpleframework.content.component.newspager.NewsPagerUtils"%><%@page
 	import="net.simpleframework.content.component.newspager.INewsPagerHandle"%><%@page
 	import="net.simpleframework.content.component.newspager.NewsBean"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.SimpleosUtil"%>
 <%
-	ItSiteUtil.addMenuNav(request.getSession(), "/news.html", "#(Itsite.menu.news)", false);
+	SimpleosUtil.addMenuNav(request.getSession(), "/news.html", "#(Itsite.menu.news)", false);
 	final ComponentParameter nComponentParameter = NewsPagerUtils.getComponentParameter(request, response);
 	final String templatePage = NewsUtils.getTemplatePage(nComponentParameter);
 	final String news_layout = NewsUtils.deployPath + "jsp/news_layout.jsp";
@@ -37,14 +37,14 @@
 			<div class="block_layout1">
 				<div class="t1 f4">
 					<span class="ts">#(App.Blog.0)</span>
-					<%=ItSiteUtil.getTabList("hotPageletLoadV", "_tab_param=2")%>
+					<%=SimpleosUtil.getTabList("hotPageletLoadV", "_tab_param=2")%>
 				</div>
 				<div class="c" id="hot_tabs"></div>
 			</div>
 			<div class="block_layout1">
 				<div class="t1 f4">
 					<span class="ts">#(App.Blog.1)</span>
-					<%=ItSiteUtil.getTabList("commentsPageletLoadV", "_tab_param=5")%>
+					<%=SimpleosUtil.getTabList("commentsPageletLoadV", "_tab_param=5")%>
 				</div>
 				<div class="c" id="comments_tabs"></div>
 			</div>

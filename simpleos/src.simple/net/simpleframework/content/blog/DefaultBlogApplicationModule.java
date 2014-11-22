@@ -5,9 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
-import net.itsite.i.ISendMail;
-import net.itsite.impl.AItSiteAppclicationModule;
 import net.simpleframework.applets.attention.AttentionUtils;
 import net.simpleframework.applets.attention.ISentCallback;
 import net.simpleframework.applets.notification.MailMessageNotification;
@@ -40,6 +37,9 @@ import net.simpleframework.web.page.component.ui.portal.module.PortalModuleRegis
 import net.simpleframework.web.page.component.ui.tabs.EMatchMethod;
 import net.simpleframework.web.page.component.ui.tabs.TabHref;
 import net.simpleframework.web.page.component.ui.tabs.TabsUtils;
+import net.simpleos.SimpleosUtil;
+import net.simpleos.i.ISendMail;
+import net.simpleos.impl.ASimpleosAppclicationModule;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -124,7 +124,7 @@ public class DefaultBlogApplicationModule extends AbstractContentApplicationModu
 
 		TabHref tabHref = new TabHref(EContentType.recommended.toString(), WebUtils.addParameters(applicationUrl, "t=recommended"));
 		tabHrefs.add(tabHref);
-		if (ItSiteUtil.isManage(requestResponse)) {
+		if (SimpleosUtil.isManage(requestResponse)) {
 //			tabHref = new TabHref("审核", WebUtils.addParameters(applicationUrl, "t=audit"));
 //			tabHrefs.add(tabHref);
 		}
@@ -198,7 +198,7 @@ public class DefaultBlogApplicationModule extends AbstractContentApplicationModu
 				variable.put("fromUser", remark.getUserText());
 				variable.put("topic", newsBean.getTopic());
 				variable.put("content", remark.getContent());
-				return getFromTemplate(variable, AItSiteAppclicationModule.class);
+				return getFromTemplate(variable, ASimpleosAppclicationModule.class);
 			}
 		});
 	}

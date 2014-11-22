@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Map;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.ado.IDataObjectValue;
 import net.simpleframework.ado.db.ExpressionValue;
 import net.simpleframework.ado.db.IQueryEntitySet;
@@ -48,6 +47,7 @@ import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ado.IDbComponentHandle;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
 import net.simpleframework.web.page.component.ui.pager.TablePagerColumn;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -376,7 +376,7 @@ public class BbsTopicPagerHandle extends DefaultTopicPagerHandle {
 				}
 			}
 		}
-		if (!ItSiteUtil.isManage(compParameter, BbsUtils.applicationModule)) {
+		if (!SimpleosUtil.isManage(compParameter, BbsUtils.applicationModule)) {
 			sql.append(" and status=?");
 			al.add(EContentStatus.publish);
 		}
@@ -389,7 +389,7 @@ public class BbsTopicPagerHandle extends DefaultTopicPagerHandle {
 	public AbstractTablePagerData createTablePagerData(final ComponentParameter compParameter) {
 		return new TopicTablePagerData(compParameter) {
 			String userId = compParameter.getParameter(OrgUtils.um().getUserIdParameterName());
-			IUser user = ItSiteUtil.getLoginUser(compParameter);
+			IUser user = SimpleosUtil.getLoginUser(compParameter);
 			@Override
 			public Map<String, TablePagerColumn> getTablePagerColumns() {
 				final Map<String, TablePagerColumn> columns = cloneTablePagerColumns();

@@ -26,7 +26,7 @@
 				</div>
 			</td>
 			<td width="80" align="right">
-				<span class="btn" onclick="$Actions['ajaxSpaceLogSave']();">#(space_log.5)</span>
+				<span class="btn" onclick="$Actions['ajaxSpaceLogSave1']();">#(space_log.5)</span>
 			</td>
 		</tr>
 	</table>

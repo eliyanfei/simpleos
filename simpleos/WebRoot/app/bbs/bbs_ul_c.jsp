@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="net.simpleframework.content.bbs.BbsUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleos.SimpleosUtil"%>
 
 <%
 	final String bbs_user = BbsUtils.deployPath + "jsp/bbs_user.jsp";
-	ItSiteUtil.addMenuNav(request.getSession(), null, "#(Itsite.menu.bbs)", false);
+	SimpleosUtil.addMenuNav(request.getSession(), null, "#(Itsite.menu.bbs)", false);
 %>
 <table width="100%">
 	<tr>

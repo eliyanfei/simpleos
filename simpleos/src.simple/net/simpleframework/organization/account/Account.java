@@ -60,20 +60,10 @@ public class Account extends AbstractIdDataObjectBean implements IAccount {
 	/* 金钱 */
 	private int money;
 
-	//黑名单
-	private boolean blacklist;
 	//主题
 	private String theme;
 	//皮肤
 	private String skin = SkinUtils.DEFAULT_SKIN;
-
-	public boolean isBlacklist() {
-		return blacklist;
-	}
-
-	public void setBlacklist(boolean blacklist) {
-		this.blacklist = blacklist;
-	}
 
 	@Override
 	public String getPassword() {

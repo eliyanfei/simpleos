@@ -7,7 +7,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.applets.notification.MailMessageNotification;
 import net.simpleframework.applets.notification.NotificationUtils;
 import net.simpleframework.organization.IUser;
@@ -22,6 +21,7 @@ import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.AbstractComponentRegistry;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.HandleException;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -53,9 +53,9 @@ public abstract class UserRegisterUtils {
 		}
 		mailMessage.getTo().add(user);
 		mailMessage.setSubject(LocaleI18n.getMessage("UserRegisterAction.3",
-				ItSiteUtil.title));
+				SimpleosUtil.title));
 		final Map<String, Object> variable = new HashMap<String, Object>();
-		String serverUrl = ItSiteUtil.url;
+		String serverUrl = SimpleosUtil.url;
 		if (!serverUrl.startsWith("http")) {
 			serverUrl = "http://" + serverUrl;
 		}

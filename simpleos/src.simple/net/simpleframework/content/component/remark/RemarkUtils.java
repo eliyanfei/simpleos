@@ -7,7 +7,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.itsite.ItSiteUtil;
 import net.simpleframework.content.blog.BlogRemarkHandle;
 import net.simpleframework.content.news.NewsRemarkHandle;
 import net.simpleframework.core.ado.IDataObjectQuery;
@@ -23,6 +22,7 @@ import net.simpleframework.web.EFunctionModule;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.PagerUtils;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -137,10 +137,10 @@ public abstract class RemarkUtils {
 			sb.append(StringUtils.join(al, HTMLBuilder.SEP));
 			if (remarkHandle instanceof NewsRemarkHandle) {
 				sb.append(HTMLBuilder.SEP);
-				sb.append(ItSiteUtil.buildComplaint(compParameter, EFunctionModule.news_remark, item.getId(), null));
+				sb.append(SimpleosUtil.buildComplaint(compParameter, EFunctionModule.news_remark, item.getId(), null));
 			} else if (remarkHandle instanceof BlogRemarkHandle) {
 				sb.append(HTMLBuilder.SEP);
-				sb.append(ItSiteUtil.buildComplaint(compParameter, EFunctionModule.blog_remark, item.getId(), null));
+				sb.append(SimpleosUtil.buildComplaint(compParameter, EFunctionModule.blog_remark, item.getId(), null));
 			}
 			sb.append("</div>");
 			if (items2.size() > 0) {

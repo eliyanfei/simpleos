@@ -3,11 +3,11 @@ package net.simpleframework.content.component.remark;
 import java.util.List;
 import java.util.Map;
 
-import net.itsite.docu.DocuRemark;
-import net.itsite.docu.DocuUtils;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.DefaultPageHandle;
 import net.simpleframework.web.page.PageParameter;
+import net.simpleos.module.docu.DocuRemark;
+import net.simpleos.module.docu.DocuUtils;
 
 public class RemarkDocuEditPageLoad extends DefaultPageHandle {
 

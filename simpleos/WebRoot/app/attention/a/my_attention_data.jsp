@@ -15,7 +15,7 @@
 	import="net.simpleframework.my.space.SapceLogBean"%><%@page
 	import="net.simpleframework.ado.db.ExpressionValue"%><%@page
 	import="net.simpleframework.web.page.component.ui.dictionary.SmileyUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%><%@page
+	import="net.simpleos.SimpleosUtil"%><%@page
 	import="net.simpleframework.web.EFunctionModule"%><%@page
 	import="net.simpleframework.util.ConvertUtils"%><%@page
 	import="net.simpleframework.my.space.SpaceStatBean"%><%@page import="net.simpleframework.util.HTMLBuilder"%>
@@ -23,19 +23,19 @@
 <div class="my_message_list account_layout">
 	<%
 		final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
-		final String t = request.getParameter("t");
-		for (Object o : PagerUtils.getPagerList(request)) {
-			UserAttentionBean attentionBean = (UserAttentionBean) o;
-			final IAccount account = OrgUtils.am().queryForObjectById(
-					"fans".equals(t) ? attentionBean.getUserId() : attentionBean.getAttentionId());
-			if (account == null)
-				continue;
-			final IUser user = account.user();
-			final SapceLogBean log = MySpaceUtils.getTableEntityManager(SapceLogBean.class).queryForObject(
-					new ExpressionValue("(refModule=? and userId=?) and content is not null order by createdate desc", new Object[] {
-							EFunctionModule.space_log, user.getId() }), SapceLogBean.class);
-			final String sex = "男".equals(user.getSex()) ? "他" : "她";
-			final SpaceStatBean stat = MySpaceUtils.getSpaceStatById(user.getId());
+			final String t = request.getParameter("t");
+			for (Object o : PagerUtils.getPagerList(request)) {
+		UserAttentionBean attentionBean = (UserAttentionBean) o;
+		final IAccount account = OrgUtils.am().queryForObjectById(
+				"fans".equals(t) ? attentionBean.getUserId() : attentionBean.getAttentionId());
+		if (account == null)
+			continue;
+		final IUser user = account.user();
+		final SapceLogBean log = MySpaceUtils.getTableEntityManager(SapceLogBean.class).queryForObject(
+				new ExpressionValue("(refModule=? and userId=?) and content is not null order by createdate desc", new Object[] {
+						EFunctionModule.space_log, user.getId() }), SapceLogBean.class);
+		final String sex = "男".equals(user.getSex()) ? "他" : "她";
+		final SpaceStatBean stat = MySpaceUtils.getSpaceStatById(user.getId());
 	%>
 
 	<table cellpadding="0" cellspacing="0" class="item">
@@ -88,7 +88,7 @@
 								class="fixed_table">
 								<tr>
 									<td>
-										<div style="padding: 4px 0 2px 0;" class="wrap_text"><%=SmileyUtils.replaceSmiley(ItSiteUtil.getShortContent(log.getContent(), 100, false))%><%=ConvertUtils.toDateString(log.getCreateDate())%></div>
+										<div style="padding: 4px 0 2px 0;" class="wrap_text"><%=SmileyUtils.replaceSmiley(SimpleosUtil.getShortContent(log.getContent(), 100, false))%><%=ConvertUtils.toDateString(log.getCreateDate())%></div>
 									</td>
 								</tr>
 							</table>

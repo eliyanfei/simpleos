@@ -1,7 +1,7 @@
 package net.simpleos.openapi;
 
-import net.itsite.i.IItSiteApplicationModule;
 import net.simpleframework.web.page.PageRequestResponse;
+import net.simpleos.i.ISimpleosApplicationModule;
 
 /**
  * 
@@ -11,7 +11,7 @@ import net.simpleframework.web.page.PageRequestResponse;
  * @Description: TODO(这里用一句话描述这个类的作用)
  *
  */
-public interface IOpenapiAppModule extends IItSiteApplicationModule {
+public interface IOpenapiAppModule extends ISimpleosApplicationModule {
 	OpenapiBean getOpenapiBean(final EOpenapi openapi, final Object openId);
 
 	String login(final PageRequestResponse requestResponse, final OpenapiBean openapiBean);
