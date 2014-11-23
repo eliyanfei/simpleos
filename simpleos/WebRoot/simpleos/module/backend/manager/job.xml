@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+    import net.simpleframework.organization.OrgUtils;
+  </scriptInit>
+	<importPage>
+		<value>/simpleos/include/c.xml</value>
+		<value>${OrgUtils.deployPath}jsp/job/jobchart_c.xml</value>
+		<value>${OrgUtils.deployPath}jsp/job/job_c.xml</value>
+	</importPage>
+	<jobView>${net.simpleframework.organization.IJob.sj_manager}</jobView>
+</page>

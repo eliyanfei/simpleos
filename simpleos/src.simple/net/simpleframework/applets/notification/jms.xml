@@ -7,7 +7,6 @@
 	<amq:broker useJmx="false">
 		<amq:transportConnectors>
 			<amq:transportConnector uri="vm://localhost" />
-			<!-- <amq:transportConnector uri="tcp://localhost:61616" /> -->
 		</amq:transportConnectors>
 	</amq:broker>
 
@@ -26,7 +25,7 @@
 
 	<bean id="notificationMessageReceive"
 		class="net.simpleframework.applets.notification.NotificationReceive" />
-		
+
 	<bean id="MailMessageNotification" class="net.simpleframework.applets.notification.MailSenderList">
 		<property name="senderList">
 			<list>

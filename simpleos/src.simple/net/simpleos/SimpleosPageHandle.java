@@ -4,6 +4,7 @@ import net.simpleframework.organization.IJob;
 import net.simpleframework.web.page.DefaultPageHandle;
 import net.simpleframework.web.page.PageParameter;
 import net.simpleframework.web.page.SkinUtils;
+
 /**
  * 
  * @author 李岩飞 
@@ -12,7 +13,6 @@ import net.simpleframework.web.page.SkinUtils;
  *
  */
 public class SimpleosPageHandle extends DefaultPageHandle {
-	public String deploy = "/simple/include/css/";
 
 	@Override
 	public Object getBeanProperty(final PageParameter pageParameter, final String beanProperty) {
@@ -25,20 +25,14 @@ public class SimpleosPageHandle extends DefaultPageHandle {
 	}
 
 	public String[] getImportCSS(final String[] pages, final PageParameter pageParameter) {
-		final String[] importCss = new String[(pages == null ? 0 : pages.length) + csss.length + 1];
+		final String[] importCss = new String[(pages == null ? 0 : pages.length) + 1];
 		int i = 0;
-		final String skin = SkinUtils.getSkin(pageParameter, SkinUtils.DEFAULT_SKIN);
 		if (pages != null)
 			for (final String p : pages) {
 				importCss[i++] = p;
 			}
-		for (final String css : csss) {
-			importCss[i++] = deploy + skin + "/" + css;
-		}
-		importCss[i++] = "/default/simple.css";
+		importCss[i++] = "/simpleos/default/simpleos.css";
 		return importCss;
 	}
-
-	public static String[] csss = { "itsite.css", "category.css" };
 
 }

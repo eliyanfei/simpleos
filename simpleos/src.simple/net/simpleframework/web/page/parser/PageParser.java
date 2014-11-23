@@ -21,7 +21,6 @@ import net.simpleframework.web.page.PageUtils;
 import net.simpleframework.web.page.component.AbstractComponentBean;
 import net.simpleframework.web.page.component.ComponentBeanUtils;
 import net.simpleos.SimpleosUtil;
-import net.simpleos.backend.BackendUtils;
 import net.simpleos.utils.StringsUtils;
 
 import org.jsoup.nodes.DataNode;
@@ -106,7 +105,7 @@ public final class PageParser extends AbstractPageParser {
 
 			String favicon = pageDocument.getPageBean().getFavicon();
 			if (!StringUtils.hasText(favicon)) {
-				favicon = pageParameter.getContextPath() + "/simple/main/image/favicon.png?v=" + pageParameter.hashCode();
+				favicon = pageParameter.getContextPath() + "/images/favicon.png?v=" + pageParameter.hashCode();
 			}
 			final Element link = htmlDocument.head().appendElement("link");
 			link.attr("href", pageParameter.wrapContextPath(favicon));

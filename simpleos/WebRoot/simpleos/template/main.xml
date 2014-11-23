@@ -3,7 +3,7 @@
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<importJavascript>
-		<value>/simple/include/itsite.js</value>
+		<value>/simpleos/default/simpleos.js</value>
 	</importJavascript>
 	<handleClass>net.simpleos.SimpleosPageHandle</handleClass>
 	<components>
@@ -58,13 +58,13 @@
 			</jsCompleteCallback>
 		</ajaxRequest>
 		<ajaxRequest name="aboutAjaxAct">
-			<urlForward>/simple/main/let/_about.jsp</urlForward>
+			<urlForward>/simpleos/about/_about.jsp</urlForward>
 		</ajaxRequest>
 		<window name="aboutWinAct" contentRef="aboutAjaxAct" title="智汇"
 			draggable="false" popup="true" resizable="false" width="600" height="350"
 			modal="true" showCenter="true"></window>
 		<ajaxRequest name="alertAjax">
-			<urlForward>/simple/include/alert.jsp</urlForward>
+			<urlForward>/simpleos/include/alert.jsp</urlForward>
 		</ajaxRequest>
 		<window name="alertWin" contentRef="alertAjax" title="信息"
 			draggable="false" popup="true" resizable="false" width="420" height="160"

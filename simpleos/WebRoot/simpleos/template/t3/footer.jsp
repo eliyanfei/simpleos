@@ -6,8 +6,6 @@
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
 	import="net.simpleos.backend.links.LinksUtils"%><%@page
 	import="net.simpleos.$VType"%>
-
-
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 	final String menuName = SimpleosUtil.witchMenu(requestResponse);

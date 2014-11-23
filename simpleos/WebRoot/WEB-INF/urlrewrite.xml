@@ -24,28 +24,28 @@
 	<!-- 后台管理配置 -->
 	<rule>
 		<from>/manager/(function|site|company|remark|template|desktop|home|message|ad).html</from>
-		<to>/simple/$1/$1.jsp</to>
+		<to>/simpleos/module/backend/$1/$1.jsp</to>
 	</rule>
 	<rule>
 		<from>/manager/user.html</from>
-		<to>/simple/manager/user.jsp</to>
+		<to>/simpleos/module/backend/manager/user.jsp</to>
 	</rule>
 	<rule>
 		<from>/manager/file.html</from>
-		<to>/simple/manager/file.jsp</to>
+		<to>/simpleos/module/backend/manager/file.jsp</to>
 	</rule>
 	<rule>
 		<from>/manager/job.html</from>
-		<to>/simple/manager/job.jsp</to>
+		<to>/simpleos/module/backend/manager/job.jsp</to>
 	</rule>
 	<rule>
 		<from>/manager/dict.html</from>
-		<to>/simple/manager/dict.jsp</to>
+		<to>/simpleos/module/backend/manager/dict.jsp</to>
 	</rule>
 	<!-- 找回密码 -->
 	<rule>
 		<from>/findpass.html</from>
-		<to>/simple/user/findpass.jsp</to>
+		<to>/simpleos/module/backend/user/findpass.jsp</to>
 	</rule>
 	<rule>
 		<from>/morespace.html</from>

@@ -5,12 +5,10 @@
 	import="net.simpleframework.organization.account.IAccount"%><%@page
 	import="net.simpleframework.organization.account.AccountSession"%><%@page
 	import="net.simpleframework.organization.OrgUtils"%>
-
 <%
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 	IAccount account = AccountSession.getLogin(session);
 %>
-
 <div class="topbar" align="center">
 	<div class="fixc">
 		<div class="le">
@@ -53,7 +51,6 @@
 				<%
 					}
 				%>
-				<%=SimpleosUtil.witchLanguage(requestResponse)%>
 			</div>
 		</div>
 		<div class="clearfix"></div>

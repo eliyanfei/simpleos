@@ -19,7 +19,7 @@
 		</ajaxRequest>
 		<pager name="documentPaperAct" containerId="documentDivId"
 			pagerBarLayout="bottom" pageItems="49" showEditPageItems="false"
-			noResultDesc="no document" dataPath="docu_data.jsp" handleClass="net.simpleos.module.docu.DocuPaperHandle">
+			dataPath="docu_data.jsp" handleClass="net.simpleos.module.docu.DocuPaperHandle">
 		</pager>
 	</components>
 </page>

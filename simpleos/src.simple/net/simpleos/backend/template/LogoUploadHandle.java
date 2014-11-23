@@ -32,7 +32,7 @@ public class LogoUploadHandle extends AbstractSwfUploadHandle {
 			InputStream in = null;
 			OutputStream out = null;
 			try {
-				String path = compParameter.getApplicationAbsolutePath("/default/images");
+				String path = compParameter.getApplicationAbsolutePath("/images");
 				File file = new File(path);
 				file.mkdirs();
 				String fileName = StringsUtils.u(path + "\\logo.png");
@@ -40,7 +40,7 @@ public class LogoUploadHandle extends AbstractSwfUploadHandle {
 				out = new FileOutputStream(fileName);
 				IOUtils.copyStream(in, out);
 				json.put("rs", "true");
-				json.put("src", compParameter.getContextPath() + "/default/images/logo.png?v=" + UID.asString());
+				json.put("src", compParameter.getContextPath() + "/images/logo.png?v=" + UID.asString());
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {

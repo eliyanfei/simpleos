@@ -50,7 +50,7 @@ public class MenuNavAppModule extends ASimpleosAppclicationModule implements IMe
 		MenuNavUtils.appModule = this;
 		try {
 			Beans.setDesignTime(true);
-			ReflectUtils.createSharedReflections("classes", "bin", "simpleos.");
+			ReflectUtils.createSharedReflections("classes", "bin", "simpleos");
 			try {
 				for (final ISimpleosModule module : SimpleosModuleUtils.moduleMap.values()) {
 					if (StringsUtils.isNotBlank1(module.getFrontHtml())) {

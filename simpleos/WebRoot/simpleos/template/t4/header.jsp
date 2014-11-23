@@ -11,31 +11,10 @@
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 	IAccount account = AccountSession.getLogin(session);
 %>
-<style>
-<%--
-.menu.desktop a {
-	color: #444;
-	height: 30px;
-	font-weight: bold;
-	line-height: 30px;
-	position: relative;
-	cursor: pointer;
-	border-bottom: 1px solid transparent;
-	border-bottom-color: #555;
-	color: #666
-}
-
-.menu.desktop a:hover {
-	color: white;
-	background-color: #f60;
-	text-decoration: none;
-}
---%>
-</style>
 <div class="topbar" align="center">
 	<div class="fixc">
 		<div style="float: left;">
-			<img alt="" src="/default/images/logo.png" style="max-height: 42px;"
+			<img alt="" src="/images/logo.png" style="max-height: 42px;"
 				onclick="$Actions.loc('/');">
 			<div class="slogan"><%=StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_slogan"), "")%></div>
 		</div>
@@ -73,7 +52,7 @@
 					%>
 					<%
 						}
-					%><%=SimpleosUtil.witchLanguage(requestResponse)%>
+					%>
 				</div>
 			</div>
 		</div>

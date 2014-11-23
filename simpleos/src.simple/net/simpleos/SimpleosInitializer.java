@@ -1,11 +1,13 @@
 package net.simpleos;
 
 import java.beans.Beans;
+import java.io.IOException;
 import java.util.Collection;
 
 import net.simpleframework.core.AbstractInitializer;
 import net.simpleframework.core.IApplication;
 import net.simpleframework.core.IInitializer;
+import net.simpleframework.util.IoUtils;
 import net.simpleframework.util.LocaleI18n;
 import net.simpleframework.web.IWebApplication;
 import net.simpleframework.web.page.component.ComponentRegistryFactory;
@@ -39,7 +41,7 @@ public class SimpleosInitializer extends AbstractInitializer {
 		registryComponet((IWebApplication) application);
 		try {
 			Beans.setDesignTime(true);
-			ReflectUtils.createSharedReflections("classes", "bin", "app.", "simple.");
+			ReflectUtils.createSharedReflections("classes", "bin", "simpleos");
 			try {
 				final Collection<String> subTypes = ReflectUtils.listSubClass(ASimpleosAppclicationModule.class);//
 				for (final String subType : subTypes) {

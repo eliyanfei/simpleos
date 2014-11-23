@@ -39,6 +39,7 @@ import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.HandleException;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
 import net.simpleframework.web.page.component.ui.pager.db.AbstractDbTablePagerHandle;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -260,7 +261,7 @@ public class DefaultUserPagerHandle extends AbstractDbTablePagerHandle implement
 				final MailMessageNotification mailMessage = new MailMessageNotification();
 				mailMessage.setHtmlContent(true);
 				mailMessage.getTo().add(user);
-				mailMessage.setSubject(topic);
+				mailMessage.setSubject(SimpleosUtil.title + "--" + topic);
 				final Map<String, Object> variable = new HashMap<String, Object>();
 				variable.put("user", user);
 				variable.put("account", user.account());

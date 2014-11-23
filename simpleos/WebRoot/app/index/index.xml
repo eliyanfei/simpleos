@@ -3,7 +3,7 @@
 	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<importPage>
-		<value>/simple/desktop/desktop_index_c.xml</value>
+		<value>/simpleos/module/backend/desktop/desktop_index_c.xml</value>
 	</importPage>
 	<handleClass>net.simpleos.backend.template.TemplatePageHandle</handleClass>
 	<components>

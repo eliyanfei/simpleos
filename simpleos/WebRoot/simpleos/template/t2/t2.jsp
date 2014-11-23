@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<jsp:include page="footer.jsp" flush="true"></jsp:include>
-		<jsp:include page="../initer.jsp" flush="true"></jsp:include></body>
+		<jsp:include page="../gotop.jsp" flush="true"></jsp:include></body>
 </html>
 
 

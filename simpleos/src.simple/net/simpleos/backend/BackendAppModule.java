@@ -50,7 +50,7 @@ public class BackendAppModule extends ASimpleosAppclicationModule {
 	public void loadTempate() {
 		try {
 			Beans.setDesignTime(true);
-			ReflectUtils.createSharedReflections("classes", "bin", "simpleos.");
+			ReflectUtils.createSharedReflections("classes", "bin", "simpleos");
 			try {
 				final Collection<String> subTypes = ReflectUtils.listSubClass(ITemplateBean.class);//
 				for (final String subType : subTypes) {

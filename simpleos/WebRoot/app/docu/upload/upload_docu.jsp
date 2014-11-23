@@ -1,10 +1,10 @@
+<%@page import="net.simpleos.module.docu.DocuBean"%>
+<%@page import="net.simpleframework.util.StringUtils"%>
+<%@page import="net.simpleos.module.docu.DocuUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@page import="net.itsite.docu.DocuUtils"%><%@page
-	import="net.simpleframework.util.StringUtils"%><%@page
-	import="net.itsite.docu.DocuBean"%><%@page
+	pageEncoding="UTF-8"%><%@page
 	import="net.simpleframework.web.page.PageRequestResponse"%><%@page
-	import="net.simpleframework.web.WebUtils"%><%@page
-	import="net.itsite.ItSiteUtil"%>
+	import="net.simpleframework.web.WebUtils"%>
 <%
 	final String docuId = request.getParameter("docuId");
 	final boolean hasDocu = StringUtils.hasText(docuId);

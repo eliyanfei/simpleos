@@ -1,6 +1,7 @@
 package org.tuckey.web.filters.urlrewrite;
 
 import java.beans.Beans;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -8,9 +9,12 @@ import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+import net.simpleframework.util.IoUtils;
 import net.simpleos.module.ISimpleosModule;
 import net.simpleos.module.SimpleosModuleUtils;
 import net.simpleos.utils.ReflectUtils;
@@ -24,10 +28,24 @@ import net.simpleos.utils.ReflectUtils;
 */
 public class SimpleosUrlRewriteFilter extends UrlRewriteFilter {
 	@Override
+	public void init(FilterConfig arg0) throws ServletException {
+		initSimpleFiles(arg0.getServletContext().getRealPath(""));
+		super.init(arg0);
+	}
+
+	private void initSimpleFiles(String path) {
+		try {
+			System.out.println("开始覆盖修改后的simpleos.....");
+			IoUtils.unzip(getClass().getResourceAsStream("simpleos.zip"), path, false);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+
+	@Override
 	protected void checkConf(Conf conf) {
 		try {
-			Beans.setDesignTime(true);
-			ReflectUtils.createSharedReflections("classes", "bin", "simpleos.");
+			ReflectUtils.createSharedReflections("classes", "bin", "simpleos");
 			try {
 				final Collection<String> subTypes = ReflectUtils.listSubClass(ISimpleosModule.class);//
 				final List<ISimpleosModule> list = new ArrayList<ISimpleosModule>();

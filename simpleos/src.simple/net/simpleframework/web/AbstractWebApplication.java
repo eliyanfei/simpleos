@@ -96,7 +96,7 @@ public abstract class AbstractWebApplication extends HttpServlet implements IWeb
 		} catch (Exception e1) {
 		}
 		if (!this.ok) {
-			final File dsFile = new File(this.getServletContext().getRealPath("/WEB-INF/base.properties"));
+			final File dsFile = new File(this.getServletContext().getRealPath("/WEB-INF/db.properties"));
 			if (dsFile.exists()) {
 				Properties pro = new Properties();
 				try {
@@ -172,7 +172,7 @@ public abstract class AbstractWebApplication extends HttpServlet implements IWeb
 			applicationContext = new FileSystemXmlApplicationContext("file:" + projectFile.getAbsolutePath());
 		}
 
-		final File dsFile = new File(servletContext.getRealPath("/WEB-INF/base.properties"));
+		final File dsFile = new File(servletContext.getRealPath("/WEB-INF/db.properties"));
 		if (dsFile.exists()) {
 			Properties pro = new Properties();
 			try {

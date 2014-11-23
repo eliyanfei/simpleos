@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<importPage>
+		<value>/simpleos/include/c.xml</value>
+	</importPage>
+	<jobView>sys_manager</jobView>
+	<components>
+		<listbox name="messageList" containerId="messageListId"
+			tooltip="false">
+			<item text="#(Message.List.0)" run="true">
+				<jsClickCallback>
+					<![CDATA[
+						$('messageType').value='1';
+						$IT.A('messageTable','messagetype=1');
+					]]>
+				</jsClickCallback>
+			</item>
+			<item text="#(Message.List.1)">
+				<jsClickCallback>
+					<![CDATA[
+						$('messageType').value='2';
+						$IT.A('messageTable','messagetype=2');
+					]]>
+				</jsClickCallback>
+			</item>
+			<item text="#(Message.List.2)">
+				<jsClickCallback>
+					<![CDATA[
+						$('messageType').value='1';
+						$IT.A('messageTable','messagetype=0');
+					]]>
+				</jsClickCallback>
+			</item>
+		</listbox>
+		<tablePager name="messageTable" handleClass="net.simpleos.mvc.message.MessageTableHandle"
+			exportAction="true" containerId="message_data_id" showCheckbox="true"
+			showVerticalLine="true" showLineNo="true" showEditPageItems="false"
+			pagerBarLayout="bottom">
+			<columns>
+				<column columnName="subject" columnText="#(Message.Table.0)"
+					separator="true" filter="true"></column>
+				<column columnName="sendid" width="120" columnText="#(Message.Table.1)"
+					separator="true"></column>
+				<column columnName="toid" width="120" columnText="#(Message.Table.2)"
+					separator="true"></column>
+				<column columnName="sentdate" columnText="#(Message.Table.3)"
+					width="120" textAlign="center" separator="true" filter="true"></column>
+			</columns>
+		</tablePager>
+
+		<ajaxRequest name="messageDeleteAct" confirmMessage="#(Delete.Is)"
+			handleClass="net.simpleos.mvc.message.MyMessageAction" handleMethod="deleteMyMessage">
+			<jsCompleteCallback>
+			<![CDATA[
+				$IT.alert('#(Delete.OK)');
+				$IT.R('messageTable');
+			]]>
+			</jsCompleteCallback>
+		</ajaxRequest>
+		<ajaxRequest name="messageAjax">
+			<urlForward>/app/mymessage/mymessage_v.jsp</urlForward>
+		</ajaxRequest>
+		<window name="messageWin" contentRef="messageAjax" title="#(Message.0)"
+			width="500"></window>
+	</components>
+</page>

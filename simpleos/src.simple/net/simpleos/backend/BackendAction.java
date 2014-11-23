@@ -58,6 +58,10 @@ public class BackendAction extends AbstractAjaxRequestHandle {
 			public void doAction(Map<String, Object> json) throws Exception {
 				final String type = compParameter.getRequestParameter("type");
 				BackendUtils.saveCustom(type, BackendUtils.applicationModule, compParameter);
+				if ("site".equals(type)) {
+					SimpleosUtil.url = StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_url"), "");
+					SimpleosUtil.title = StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_name"), "");
+				}
 			}
 		});
 	}

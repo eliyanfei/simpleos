@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+		import net.simpleframework.organization.OrgUtils;
+		import net.simpleframework.applets.openid.OpenIDUtils;
+ 	 </scriptInit>
+	<importPage>
+		<value>/simpleos/include/c.xml</value>
+	</importPage>
+	<jobView>sys_manager</jobView>
+	<components>
+		<listbox name="aa" containerId="companyListId" tooltip="false">
+			<item text="#(Componey.3)" run="true">
+				<jsClickCallback><![CDATA[$IT.A('company_company_act');$('company_title').innerHTML = '#(Componey.3)';]]></jsClickCallback>
+			</item>
+			<item text="#(Componey.4)">
+				<jsClickCallback><![CDATA[$IT.A('company_contact_act');$('company_title').innerHTML = '#(Componey.4)';]]></jsClickCallback>
+			</item>
+		</listbox>
+		<ajaxRequest name="company_company_act" updateContainerId="company_data_id">
+			<urlForward>company_company_c.jsp?type=company</urlForward>
+		</ajaxRequest>
+		<ajaxRequest name="company_contact_act" updateContainerId="company_data_id">
+			<urlForward>company_contact_c.jsp?type=contact</urlForward>
+		</ajaxRequest>
+	</components>
+</page>

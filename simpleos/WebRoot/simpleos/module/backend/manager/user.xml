@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<scriptInit>
+	    import net.simpleframework.organization.OrgUtils;
+	  </scriptInit>
+	<importPage>
+		<value>/simpleos/include/c.xml</value>
+		<value>${OrgUtils.deployPath}jsp/user/dept_c.xml</value>
+		<value>${OrgUtils.deployPath}jsp/user/user_c.xml</value>
+	</importPage>
+	<jobView>sys_manager</jobView>
+</page>
