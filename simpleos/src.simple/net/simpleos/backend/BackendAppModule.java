@@ -26,11 +26,13 @@ public class BackendAppModule extends ASimpleosAppclicationModule {
 
 	public static Table custom_ = new Table("simpleos_custom", "id");
 	public static Table nav_ = new Table("simpleos_nav", "id");
+	public static Table keyvalue_ = new Table("simpleos_keyvalue", "name");
 
 	@Override
 	protected void putTables(final Map<Class<?>, Table> tables) {
 		tables.put(CustomBean.class, custom_);
 		tables.put(IndexSlideBean.class, nav_);
+		tables.put(KeyValueBean.class, keyvalue_);
 	}
 
 	static final String deployName = "backend";

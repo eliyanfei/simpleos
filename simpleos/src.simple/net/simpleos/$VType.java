@@ -12,7 +12,7 @@ public enum $VType {
 	free(PrjVersion.latest) {
 		@Override
 		public String toString() {
-			return LocaleI18n.getMessage("VType.0");
+			return LocaleI18n.getMessage("VType.1");
 		}
 	};
 	public Version ver;

@@ -16,7 +16,9 @@ import java.io.StringWriter;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -226,6 +228,11 @@ public abstract class IoUtils {
 	}
 
 	public static void unzip(final InputStream in, final String target, final boolean rewrite) throws IOException {
+		final Set<String> set = new HashSet<String>();
+		unzip(in, target, rewrite, set);
+	}
+
+	public static void unzip(final InputStream in, final String target, final boolean rewrite, final Set<String> filter) throws IOException {
 		unzip(in, target, rewrite, new IUnZipHandle() {
 			@Override
 			public void doFile(final ZipInputStream is, final File destFile) throws IOException {
@@ -239,10 +246,16 @@ public abstract class IoUtils {
 					}
 				}
 			}
-		});
+		}, filter);
 	}
 
 	public static void unzip(final InputStream in, String target, final boolean rewrite, final IUnZipHandle unzipHandle) throws IOException {
+		final Set<String> set = new HashSet<String>();
+		unzip(in, target, rewrite, unzipHandle, set);
+	}
+
+	public static void unzip(final InputStream in, String target, final boolean rewrite, final IUnZipHandle unzipHandle, final Set<String> filter)
+			throws IOException {
 		if (target.charAt(target.length() - 1) != File.separatorChar) {
 			target += File.separatorChar;
 		}
@@ -265,7 +278,7 @@ public abstract class IoUtils {
 				}
 
 				final File destFile = new File(target + entryName);
-				if (rewrite || !destFile.exists()) {
+				if ((rewrite && !filter.contains(entryName)) || !destFile.exists()) {
 					unzipHandle.doFile(is, destFile);
 				}
 			}

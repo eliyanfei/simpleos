@@ -16,7 +16,7 @@ public class PrjVersion {
 		return productVer.less(latest);
 	}
 
-	public static final Version latest = Version.valueOf("1.0.0");// 解析系统版本
+	public static final Version latest = Version.valueOf("1.0.3");// 解析系统版本
 
 	/**
 	 * 获得版本号

@@ -2,6 +2,8 @@ package net.simpleos.module;
 
 import java.util.List;
 
+import net.simpleframework.web.page.component.ui.portal.module.AbstractPortalModuleHandle;
+
 /**  
  * @author 李岩飞 
  * @email eliyanfei@126.com
@@ -28,6 +30,12 @@ public interface ISimpleosModule extends Comparable<ISimpleosModule> {
 	String getFrontHtml();
 
 	/**
+	 * 获取后台处理的相应的jsp页面
+	 * @return
+	 */
+	String getBackendJsp();
+
+	/**
 	 * 获取后端的处理
 	 * @return
 	 */
@@ -37,4 +45,10 @@ public interface ISimpleosModule extends Comparable<ISimpleosModule> {
 	 * 显示顺序
 	 */
 	int getOorder();
+
+	/**
+	 * 创建组件
+	 * @return
+	 */
+	AbstractPortalModuleHandle getPortalModuleHandle();
 }

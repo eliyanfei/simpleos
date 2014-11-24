@@ -1,12 +1,15 @@
 package org.tuckey.web.filters.urlrewrite;
 
-import java.beans.Beans;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -15,8 +18,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import net.simpleframework.util.IoUtils;
+import net.simpleos.PrjVersion;
 import net.simpleos.module.ISimpleosModule;
 import net.simpleos.module.SimpleosModuleUtils;
+import net.simpleos.utils.IOUtils;
 import net.simpleos.utils.ReflectUtils;
 
 /**  
@@ -34,11 +39,34 @@ public class SimpleosUrlRewriteFilter extends UrlRewriteFilter {
 	}
 
 	private void initSimpleFiles(String path) {
+		PrintWriter pw = null;
 		try {
+			final File versionFile = new File(path + File.separator + "simpleos.v");
+			if (versionFile.exists()) {
+				String version = null;
+				try {
+					version = IOUtils.readListFromFile(versionFile).get(0);
+					if (!PrjVersion.latest.toString().equals(version)) {
+						pw = new PrintWriter(versionFile);
+					}
+				} catch (Exception e) {
+					pw = new PrintWriter(versionFile);
+				}
+			} else {
+				pw = new PrintWriter(versionFile);
+			}
+			if (pw != null) {
+				pw.append(PrjVersion.latest.toString());
+				pw.flush();
+			}
 			System.out.println("开始覆盖修改后的simpleos.....");
-			IoUtils.unzip(getClass().getResourceAsStream("simpleos.zip"), path, false);
+			final Set<String> set = new HashSet<String>();
+			set.add("desktop_index_c.xml");
+			IoUtils.unzip(getClass().getResourceAsStream("simpleos.zip"), path, pw != null, set);
 		} catch (IOException e1) {
 			e1.printStackTrace();
+		} finally {
+			IOUtils.closeIO(pw);
 		}
 	}
 

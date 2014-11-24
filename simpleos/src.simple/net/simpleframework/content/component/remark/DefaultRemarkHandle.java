@@ -74,7 +74,7 @@ public class DefaultRemarkHandle extends AbstractContentHandle implements IRemar
 			//发布消息
 			ID userId = remark.getUserId();
 			if (userId == null) {
-				if (!"true".equals(SimpleosUtil.attrMap.get("sys_remark"))) {
+				if ("true".equals(SimpleosUtil.attrMap.get("sys.sys_remark"))) {
 					throw new DataObjectException("你还没有登入?");
 				}
 				userId = LongID.zero;

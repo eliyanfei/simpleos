@@ -2,10 +2,10 @@
 <modules>
 	<module name="bbs" text="论坛">
 		<action>
-		<![CDATA[$IT.A('functionBbs','type=bbs');]]>
+		<![CDATA[$IT.A('functionAct','type=bbs');]]>
 		</action>
 		<module name="bbs_star" text="精华">
-			<action><![CDATA[$IT.A('functionBbs','star=1');]]>
+			<action><![CDATA[$IT.A('functionAct','type=bbs&star=1');]]>
 			</action>
 		</module>
 	</module>

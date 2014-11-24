@@ -2,14 +2,14 @@
 <modules>
 	<module name="news" text="新闻">
 		<action>
-		<![CDATA[$IT.A('functionNews','type=news');]]>
+		<![CDATA[$IT.A('functionAct','type=news');]]>
 		</action>
 		<module name="news_audit" text="未审核">
-			<action><![CDATA[$IT.A('functionNews','status=audit');]]>
+			<action><![CDATA[$IT.A('functionAct','type=news&status=audit');]]>
 			</action>
 		</module>
 		<module name="news_recommended" text="推荐">
-			<action><![CDATA[$IT.A('functionNews','status=publish&t=recommended');]]>
+			<action><![CDATA[$IT.A('functionAct','type=news&status=publish&t=recommended');]]>
 			</action>
 		</module>
 	</module>

@@ -4,6 +4,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.simpleframework.web.page.component.ui.portal.module.AbstractPortalModuleHandle;
+import net.simpleframework.web.page.component.ui.portal.module.PortalModuleRegistryFactory;
 import net.simpleos.utils.Dom4jUtils;
 
 import org.dom4j.Document;
@@ -19,6 +21,11 @@ public abstract class ASimpleosModule implements ISimpleosModule {
 	public ASimpleosModule() {
 		list = new ArrayList<SimpleosModuleBean>();
 		parserModuleBean();
+		final AbstractPortalModuleHandle portalModuleHandle = getPortalModuleHandle();
+		if (portalModuleHandle != null) {
+			PortalModuleRegistryFactory.regist(portalModuleHandle.getClass(), portalModuleHandle.getName(), portalModuleHandle.getText(),
+					portalModuleHandle.getCatalog(), portalModuleHandle.getIcon(), portalModuleHandle.getDescription());
+		}
 	}
 
 	protected List<SimpleosModuleBean> list;
@@ -59,5 +66,15 @@ public abstract class ASimpleosModule implements ISimpleosModule {
 	@Override
 	public List<SimpleosModuleBean> getBackendActions() {
 		return list;
+	}
+
+	@Override
+	public AbstractPortalModuleHandle getPortalModuleHandle() {
+		return null;
+	}
+
+	@Override
+	public String getBackendJsp() {
+		return null;
 	}
 }

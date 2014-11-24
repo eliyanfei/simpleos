@@ -14,12 +14,18 @@
 			<item text="#(Site.0)">
 				<jsClickCallback><![CDATA[$IT.A('site_sys_act');$('site_title').innerHTML = '#(Site.0)';]]></jsClickCallback>
 			</item>
+			<item text="网站统计">
+				<jsClickCallback><![CDATA[$IT.A('site_stat_act');$('site_title').innerHTML = '网站统计';]]></jsClickCallback>
+			</item>
 			<item text="#(Site.2)">
 				<jsClickCallback><![CDATA[$IT.A('site_links_act');$('site_title').innerHTML = '#(Site.2)';]]></jsClickCallback>
 			</item>
-			<item text="开放登入"> <jsClickCallback><![CDATA[$IT.A('site_open_act');$('site_title').innerHTML 
-				= '开放登入';]]></jsClickCallback> </item>
+			<!-- <item text="开放登入"> <jsClickCallback><![CDATA[$IT.A('site_open_act');$('site_title').innerHTML 
+				= '开放登入';]]></jsClickCallback> </item> -->
 		</listbox>
+		<ajaxRequest name="site_stat_act" updateContainerId="site_data_id">
+			<urlForward>site_stat_c.jsp?type=stat</urlForward>
+		</ajaxRequest>
 		<ajaxRequest name="site_sys_act" updateContainerId="site_data_id">
 			<urlForward>site_sys_c.jsp?type=sys</urlForward>
 		</ajaxRequest>

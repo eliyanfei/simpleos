@@ -14,7 +14,7 @@
 <div class="topbar" align="center">
 	<div class="fixc">
 		<div style="float: left;">
-			<img alt="" src="/images/logo.png" style="max-height: 42px;"
+			<img alt="" src="<%=requestResponse.getContextPath() %>/images/logo.png" style="max-height: 42px;"
 				onclick="$Actions.loc('/');">
 			<div class="slogan"><%=StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_slogan"), "")%></div>
 		</div>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 所有包含以下字符串的都不会显示 -->
-<reject>
-	<list value=".xml" />
-	<list value=".sql" />
-</reject>

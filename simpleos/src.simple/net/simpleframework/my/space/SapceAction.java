@@ -3,6 +3,7 @@ package net.simpleframework.my.space;
 import java.io.File;
 import java.util.Map;
 
+import net.simpleframework.core.ado.DataObjectException;
 import net.simpleframework.my.message.MessageUtils;
 import net.simpleframework.organization.IJob;
 import net.simpleframework.organization.account.AccountSession;
@@ -14,6 +15,7 @@ import net.simpleframework.web.FilePathWrapper;
 import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxRequestHandle;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -65,6 +67,10 @@ public class SapceAction extends AbstractAjaxRequestHandle {
 		final String content = compParameter.getRequestParameter("ta_space_log_editor");
 		if (!StringUtils.hasText(content)) {
 			return null;
+		}
+		IAccount account = AccountSession.getLogin(compParameter.getSession());
+		if (account == null && "true".equals(SimpleosUtil.attrMap.get("sys.sys_space"))) {
+			throw new DataObjectException("你还没有登入?");
 		}
 		return jsonForward(compParameter, new JsonCallback() {
 			@Override

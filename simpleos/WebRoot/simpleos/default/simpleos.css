@@ -657,7 +657,7 @@ img.photo_icon {
 }
 
 .logo {
-	background: url("/images/logo.png") no-repeat 0 0;
+	background: url("../../images/logo.png") no-repeat 0 0;
 	width: 200px;
 	height: 70px;
 	margin-top: 3px;

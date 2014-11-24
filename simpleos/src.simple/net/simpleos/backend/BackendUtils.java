@@ -27,6 +27,15 @@ public class BackendUtils {
 	public static boolean sysMail = false;
 	public static ASimpleosAppclicationModule applicationModule = null;
 
+	/**
+	 * 获取keyvalue 通过name
+	 * @return
+	 */
+	public static String getKeyValue(String name) {
+		KeyValueBean keyValueBean = BackendUtils.applicationModule.getBeanByExp(KeyValueBean.class, "name=?", new Object[] { name });
+		return keyValueBean == null ? null : keyValueBean.getContent();
+	}
+
 	public static void saveCustom(final String type, final ISimpleosApplicationModule module, final ComponentParameter compParameter) {
 		PrjColumns columns = module.getPrjColumns(type);
 		if (columns == null)

@@ -52,7 +52,16 @@
 		</tr>
 		<tr>
 			<th>
-				评论不需要登入
+				发布动态需要登入
+			</th>
+			<td>
+				<input type="checkbox" name="sys_space" value="true"
+					<%="true".equals(map.get("sys.sys_space")) ? "checked=\"checked\"" : ""%>>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				发表评论需要登入
 			</th>
 			<td>
 				<input type="checkbox" name="sys_remark" value="true"

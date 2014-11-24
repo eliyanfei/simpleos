@@ -6,6 +6,7 @@ import java.util.Properties;
 import net.simpleframework.content.AbstractContentLayoutModuleHandle;
 import net.simpleframework.core.ado.IDataObjectQuery;
 import net.simpleframework.util.ConvertUtils;
+import net.simpleframework.util.LocaleI18n;
 import net.simpleframework.web.WebUtils;
 import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.PageParameter;
@@ -58,5 +59,30 @@ public class DocuPortalModule extends AbstractContentLayoutModuleHandle {
 		forward = WebUtils.addParameters(forward, "_show_tabs=" + _show_tabs);
 		forward = WebUtils.addParameters(forward, "rows=" + ConvertUtils.toInt(getPagelet().getOptionProperty("_docu_rows"), 6));
 		return new UrlForward(DocuUtils.deploy + forward, "pa");
+	}
+
+	@Override
+	public String getText() {
+		return "资料";
+	}
+
+	@Override
+	public String getName() {
+		return "docu";
+	}
+
+	@Override
+	public String getIcon() {
+		return DocuUtils.deploy + "/images/docu.png";
+	}
+
+	@Override
+	public String getCatalog() {
+		return LocaleI18n.getMessage("NewsUtils.0");
+	}
+
+	@Override
+	public String getDescription() {
+		return "提供最近、热点的一些文档资料";
 	}
 }

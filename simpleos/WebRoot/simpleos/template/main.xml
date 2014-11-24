@@ -61,7 +61,7 @@
 			<urlForward>/simpleos/about/_about.jsp</urlForward>
 		</ajaxRequest>
 		<window name="aboutWinAct" contentRef="aboutAjaxAct" title="智汇"
-			draggable="false" popup="true" resizable="false" width="600" height="350"
+			draggable="false" popup="true" resizable="false" width="600" height="300"
 			modal="true" showCenter="true"></window>
 		<ajaxRequest name="alertAjax">
 			<urlForward>/simpleos/include/alert.jsp</urlForward>

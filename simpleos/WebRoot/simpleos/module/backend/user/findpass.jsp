@@ -1,5 +1,19 @@
+<%@page import="net.simpleos.utils.StringsUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<jsp:include page="/simpleos/include/c.jsp" flush="true">
-	<jsp:param value="/simpleos/module/backend/user/findpass_c.jsp" name="center" />
-</jsp:include>
+<%@ page import="net.simpleframework.util.StringUtils"%>
+<%@ page import="net.simpleframework.organization.OrgUtils"%>
+<%
+	String sid = request.getParameter("sid");
+	if (!StringsUtils.isNotBlank1(sid)) {
+		response.sendRedirect("/index.html");
+	}
+%>
+<div align="center" style="margin-top: 50px;">
+	<form id="_userpwd_form">
+		<input type="hidden" id="sid" name="sid" value="<%=sid%>" />
+		<div id="_userpwd"></div>
+	</form>
+</div>
+
+

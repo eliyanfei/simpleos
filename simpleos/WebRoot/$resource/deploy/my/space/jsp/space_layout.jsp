@@ -92,7 +92,6 @@
 		final boolean isVote = "spacevote".hashCode() == ConvertUtils.toInt(log.getRefId(), 0);
 		final List<ID> list = MySpaceUtils.getReplyFrom(log.getReplyFrom());
 	%>
-
 	<div class="space_content_item">
 		<table style="width: 100%;">
 			<tr>

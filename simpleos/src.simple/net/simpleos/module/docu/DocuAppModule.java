@@ -28,7 +28,6 @@ import net.simpleframework.web.page.IPageConstants;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.AbstractComponentBean;
 import net.simpleframework.web.page.component.ComponentParameter;
-import net.simpleframework.web.page.component.ui.portal.module.PortalModuleRegistryFactory;
 import net.simpleframework.web.page.component.ui.tabs.EMatchMethod;
 import net.simpleframework.web.page.component.ui.tabs.TabHref;
 import net.simpleframework.web.page.component.ui.tabs.TabsUtils;
@@ -59,10 +58,6 @@ public class DocuAppModule extends ASimpleosAppclicationModule implements IDocuA
 			final ITableEntityManager tMgr = getDataObjectManager();
 			DocuUtils.setDocuCounter(tMgr.getCount(new SQLValue("select count(id) from " + tMgr.getTablename() + " where status=?",
 					new Object[] { EContentStatus.publish })));
-
-			PortalModuleRegistryFactory.regist(DocuPortalModule.class, "docu", "文档", LocaleI18n.getMessage("NewsUtils.0"), DocuUtils.deploy
-					+ "/images/docu.png", "提供最近、热点的一些文档资料");
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

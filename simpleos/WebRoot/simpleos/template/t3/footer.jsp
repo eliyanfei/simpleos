@@ -29,9 +29,7 @@
 				href="/about.html">关于</a>
 		</div>
 		<div style="padding-top: 4px; color: gray;">
-			Powered by
-			<%=StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_name"), "")%>&nbsp;&nbsp;&nbsp;版权所有
-			©<%=StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_copyright"), "")%>&nbsp;&nbsp;<%=StringsUtils.trimNull(SimpleosUtil.attrMap.get("site.site_icp"), "")%>
+		<jsp:include page="../footer_base.jsp" flush="true"></jsp:include>
 		</div>
 		<div style="padding-top: 4px; color: gray;">
 			建议使用

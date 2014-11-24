@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://www.simpleframework.net/xsd/default/simple.xsd">
+	xsi:noNamespaceSchemaLocation="http://www.simpleos.net/xsd/default/simple.xsd">
 	<scriptEval>single</scriptEval>
 	<importPage>
 		<value>/simpleos/include/c.xml</value>
@@ -10,17 +10,9 @@
 		<listbox name="aa" containerId="functionListId" tooltip="false"
 			handleClass="net.simpleos.backend.function.FunctionListBoxHandle">
 		</listbox>
-		<ajaxRequest name="functionNews" updateContainerId="function_data_id">
-			<urlForward>function_news.jsp</urlForward>
-		</ajaxRequest>
-		<ajaxRequest name="functionBlog" updateContainerId="function_data_id">
-			<urlForward>function_blog.jsp</urlForward>
-		</ajaxRequest>
-		<ajaxRequest name="functionBbs" updateContainerId="function_data_id">
-			<urlForward>function_bbs.jsp</urlForward>
-		</ajaxRequest>
-		<ajaxRequest name="functionDocu" updateContainerId="function_data_id">
-			<urlForward>function_docu.jsp</urlForward>
-		</ajaxRequest>
+		
+		<ajaxRequest name="functionAct" updateContainerId="function_data_id"
+			handleClass="net.simpleos.backend.function.FunctionAction"
+			handleMethod="functionUrl"></ajaxRequest>
 	</components>
 </page>

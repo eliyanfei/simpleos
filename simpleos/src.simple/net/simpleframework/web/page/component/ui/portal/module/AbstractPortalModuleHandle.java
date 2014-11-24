@@ -25,6 +25,8 @@ public abstract class AbstractPortalModuleHandle implements IPortalModuleHandle 
 
 	public AbstractPortalModuleHandle(final PageletBean pagelet) {
 		this.pagelet = pagelet;
+		if (pagelet == null)
+			return;
 
 		final String defaultOptions = StringUtils.join(getDefaultOptions(), IConstants.NEWLINE);
 		if (!StringUtils.hasText(pagelet.getOptions())) {
@@ -96,5 +98,30 @@ public abstract class AbstractPortalModuleHandle implements IPortalModuleHandle 
 
 	protected String getResourceHomePath() {
 		return pagelet.getColumnBean().getPortalBean().getResourceHomePath();
+	}
+
+	@Override
+	public String getCatalog() {
+		return null;
+	}
+
+	@Override
+	public String getDescription() {
+		return null;
+	}
+
+	@Override
+	public String getIcon() {
+		return null;
+	}
+
+	@Override
+	public String getName() {
+		return null;
+	}
+
+	@Override
+	public String getText() {
+		return null;
 	}
 }

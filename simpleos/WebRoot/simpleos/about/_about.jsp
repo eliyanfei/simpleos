@@ -53,46 +53,46 @@ dl,dt,dd {
 		<dl class="foot-lst foot-lst-first fl"
 			style="text-align: center; padding-top: 20px;">
 			<dd>
-				<img
+				<a href="http://www.simpleos.net"> <img
 					src="<%=request.getContextPath()%>/simpleos/about/logo.png?v=3"
 					alt="">
+				</a>
 			</dd>
 			<dd>
-				<%=$VType.getNowVType().toString()%>(
-				<span style="font-weight: bold;"><%=$VType.getNowVType().ver.toString()%></span>)
+				<%=$VType.getNowVType().toString()%>( <span
+					style="font-weight: bold;"><%=$VType.getNowVType().ver.toString()%></span>)
 			</dd>
 		</dl>
 		<dl class="foot-lst fl fl1">
-			<dt>
-				关于产品
-			</dt>
+			<dt>关于平台</dt>
+			<dd>
+				<a href="http://www.simpleos.net/developer.html" id="changelog">开发者</a>
+			</dd>
+			<dd>
+				<a href="http://www.simpleos.net/use.html" id="changelog">使用者</a>
+			</dd>
 			<dd>
 				<a href="http://www.simpleos.net" id="official">官方网站</a>
 			</dd>
 			<dd>
-				<a href="http://www.simpleos.net/news.html" id="changelog">最新资讯</a>
+				<a href="http://www.simpleos.net" id="donate">捐助我们</a>
 			</dd>
 		</dl>
 		<dl class="foot-lst fl fl1">
-			<dt>
-				技术支持
-			</dt>
+			<dt>技术支持</dt>
 			<dd>
-				<a href="http://www.simpleos.net/bbs/tl/409479.html" id="vip">文档资料</a>
+				<a href="http://www.simpleos.net/docu.html" id="vip">文档资料</a>
 			</dd>
 			<dd>
-				<a href="http://www.simpleos.net/bbs/tl/409480.html" id="faq">常见问题</a>
+				<a href="http://www.simpleos.net/bbs/tl/3370.html" id="faq">最新版本</a>
+			</dd>
+			<dd>
+				<a href="http://www.simpleos.net/bbs/tl/3411.html" id="faq">问题咨询</a>
 			</dd>
 		</dl>
 	</div>
 </div>
-<div style="clear: both;"></div>
 <div
-	style="border-top: 1px dotted #ccc; text-align: center; padding-top: 10px;">
-	<a href="http://www.simpleos.net" style="color: blue;" id="donate">捐助我们</a>
-	<a href="http://www.simpleos.net/bbs/tl/409481.html" style="color: blue;" id="reportbug">汇报Bug</a>
-	<a href="http://www.simpleos.net/bbs/tl/409596.html" style="color: blue;" id="feedback">反馈需求</a>
-</div>
+	style="clear: both;border-top: 1px dotted #ccc; text-align: center; padding-top: 10px;"></div>
 <div style="bottom: 13px; right: 3px; position: absolute;">
-	Copyright ©2014 版权所有
-</div>
+	Copyright ©2014 版权所有</div>

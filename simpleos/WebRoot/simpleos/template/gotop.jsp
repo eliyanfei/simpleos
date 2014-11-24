@@ -4,14 +4,14 @@
 	<img class="img" border=0 src="/simpleos/template/_top.jpg">
 </div>
 <script type="text/javascript">
-$ready(function() {
-	var tc = $("_idTopControl").observe("click", function() {
-		window.scrollTo(0, 0);
+	$ready(function() {
+		var tc = $("_idTopControl").observe("click", function() {
+			window.scrollTo(0, 0);
+		});
+		Event.observe(window, "scroll", function() {
+			var scrollTop = document.documentElement.scrollTop
+					|| document.body.scrollTop || 0;
+			tc.style.display = scrollTop > 1 ? "" : "none";
+		});
 	});
-	Event.observe(window, "scroll", function() {
-		var scrollTop = document.documentElement.scrollTop
-				|| document.body.scrollTop || 0;
-		tc.style.display = scrollTop > 1 ? "" : "none";
-	});
-});
 </script>

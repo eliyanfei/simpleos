@@ -5,7 +5,7 @@ var $MessageConst = {
 	"Button.More" : "\u66F4\u591A",
 	"Button.Less" : "\u66F4\u5C11",
 	"Button.Location.Reload" : "\u91CD\u65B0\u88C5\u8F7D\u5F53\u524D\u9875\u9762",
-	"Error.Title" : "\u7CFB\u7EDF\u5F02\u5E38",
+	"Error.Title" : "\u7CFB\u7EDF\u63D0\u793A",
 	"Error.delete2" : "\u81F3\u5C11\u8981\u9009\u62E9\u4E00\u4E2A\u6761\u76EE",
 	"Button.Search" : "\u641C\u7D22",
 	"Text.Search" : "\u8BF7\u8F93\u5165\u5173\u952E\u5B57",

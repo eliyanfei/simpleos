@@ -5,7 +5,10 @@
 <%@ page import="net.simpleframework.web.page.PageRequestResponse"%>
 <%
 	final String bbs_layout = BbsUtils.deployPath + "jsp/bbs_portal.jsp";
-	final String time = request.getParameter("time");
+	String time = request.getParameter("time");
+	if (time == null) {
+		time = TimeDistance.day.name();
+	}
 	final PageRequestResponse requestResponse = new PageRequestResponse(request, response);
 %>
 <%

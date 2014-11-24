@@ -3,8 +3,6 @@ package net.simpleframework.util;
 import java.util.Calendar;
 import java.util.Date;
 
-import net.simpleframework.content.EContentType;
-
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
  * 

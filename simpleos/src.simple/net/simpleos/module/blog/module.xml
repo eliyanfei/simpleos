@@ -2,10 +2,10 @@
 <modules>
 	<module name="blog" text="博客">
 		<action>
-		<![CDATA[$IT.A('functionBlog','type=blog');]]>
+		<![CDATA[$IT.A('functionAct','type=blog');]]>
 		</action>
 		<module name="blog_recommended" text="推荐">
-			<action><![CDATA[$IT.A('functionBlog','t=recommended');]]>
+			<action><![CDATA[$IT.A('functionAct','type=blog&t=recommended');]]>
 			</action>
 		</module>
 	</module>

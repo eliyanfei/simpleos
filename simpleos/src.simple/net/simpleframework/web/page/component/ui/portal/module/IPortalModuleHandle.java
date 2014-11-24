@@ -34,4 +34,32 @@ public interface IPortalModuleHandle {
 	String getOptionUITitle(ComponentParameter compParameter);
 
 	OptionWindowUI getPageletOptionUI(ComponentParameter compParameter);
+
+	/**
+	 * 唯一ID
+	 * @return
+	 */
+	String getName();
+
+	/**
+	 * 显示名称
+	 * @return
+	 */
+	String getText();
+
+	/**
+	 * 目录
+	 * @return
+	 */
+	String getCatalog();
+
+	/**
+	 * 图片
+	 */
+	String getIcon();
+
+	/**
+	 * 描述
+	 */
+	String getDescription();
 }

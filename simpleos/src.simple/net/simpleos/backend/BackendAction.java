@@ -47,6 +47,29 @@ public class BackendAction extends AbstractAjaxRequestHandle {
 	}
 
 	/**
+	 * 保存keyvalue的值
+	 * @param compParameter
+	 * @return
+	 */
+	public IForward saveKeyValue(final ComponentParameter compParameter) {
+		return jsonForward(compParameter, new JsonCallback() {
+
+			@Override
+			public void doAction(Map<String, Object> json) throws Exception {
+				final String kv_name = compParameter.getRequestParameter("kv_name");
+				final String kv_content = compParameter.getRequestParameter("kv_content");
+				KeyValueBean keyValueBean = BackendUtils.applicationModule.getBeanByExp(KeyValueBean.class, "name=?", new Object[] { kv_name });
+				if (keyValueBean == null) {
+					keyValueBean = new KeyValueBean();
+					keyValueBean.setName(kv_name);
+				}
+				keyValueBean.setContent(kv_content);
+				BackendUtils.applicationModule.doUpdate(keyValueBean);
+			}
+		});
+	}
+
+	/**
 	 * 保存自已表的数据
 	 * @param compParameter
 	 * @return

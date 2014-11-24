@@ -31,7 +31,7 @@ public class SimpleosPageHandle extends DefaultPageHandle {
 			for (final String p : pages) {
 				importCss[i++] = p;
 			}
-		importCss[i++] = "/simpleos/default/simpleos.css";
+		importCss[i++] = pageParameter.getContextPath() + "/simpleos/default/simpleos.css";
 		return importCss;
 	}
 

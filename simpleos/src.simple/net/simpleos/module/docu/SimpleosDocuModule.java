@@ -1,5 +1,6 @@
 package net.simpleos.module.docu;
 
+import net.simpleframework.web.page.component.ui.portal.module.AbstractPortalModuleHandle;
 import net.simpleos.module.ASimpleosModule;
 
 /**  
@@ -17,7 +18,7 @@ public class SimpleosDocuModule extends ASimpleosModule {
 
 	@Override
 	public String getFrontTitle() {
-		return "文档";
+		return "资料";
 	}
 
 	@Override
@@ -30,4 +31,8 @@ public class SimpleosDocuModule extends ASimpleosModule {
 		return 400;
 	}
 
+	@Override
+	public AbstractPortalModuleHandle getPortalModuleHandle() {
+		return new DocuPortalModule(null);
+	}
 }

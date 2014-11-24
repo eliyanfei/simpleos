@@ -3,6 +3,17 @@
 	<version>1.0.0</version>
 	<name>case</name>
 	<tran-sql>
+		<description>simpleos_keyvalue</description>
+		<![CDATA[
+	 create table simpleos_keyvalue (
+    	id bigint not null,
+        name varchar(64) not null,
+    	content text not null,
+        primary key(name)
+      );
+    ]]>
+	</tran-sql>
+	<tran-sql>
 		<description>simpleos_nav</description>
 		<![CDATA[
 	 create table simpleos_nav (
@@ -53,7 +64,7 @@
 	</tran-sql>
 	<tran-sql>
 		<![CDATA[
-		insert into simpleos_custom(id,name,type,value) values(0,'company_name','company','智汇企业门户系统');
+		insert into simpleos_custom(id,name,type,value) values(0,'company_name','company','智汇平台系统');
     ]]>
 	</tran-sql>
 	<tran-sql>
@@ -83,12 +94,12 @@
 	</tran-sql>
 	<tran-sql>
 		<![CDATA[
-		insert into simpleos_custom(id,name,type,value) values(20,'site_name','site','智汇企业门户系统');
+		insert into simpleos_custom(id,name,type,value) values(20,'site_name','site','智汇平台系统');
     ]]>
 	</tran-sql>
 	<tran-sql>
 		<![CDATA[
-		insert into simpleos_custom(id,name,type,value) values(21,'site_copyright','site','2011');
+		insert into simpleos_custom(id,name,type,value) values(21,'site_copyright','site','2013');
     ]]>
 	</tran-sql>
 	<tran-sql>
@@ -98,7 +109,7 @@
 	</tran-sql>
 	<tran-sql>
 		<![CDATA[
-		insert into simpleos_custom(id,name,type,value) values(23,'site_desc','site','是一个免费的门户系统');
+		insert into simpleos_custom(id,name,type,value) values(23,'site_desc','site','是一个免费的平台系统');
     ]]>
 	</tran-sql>
 	<tran-sql>
