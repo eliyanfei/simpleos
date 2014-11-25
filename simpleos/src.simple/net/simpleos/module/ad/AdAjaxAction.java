@@ -13,7 +13,6 @@ import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxReque
 import net.simpleos.utils.StringsUtils;
 
 /**
- * 
  * @author 李岩飞 
  * @date 2014年11月19日 下午5:00:27 
  * @Description: 广告的增删改处理
