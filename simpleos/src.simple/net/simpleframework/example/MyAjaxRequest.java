@@ -48,11 +48,11 @@ public class MyAjaxRequest extends AbstractAjaxRequestHandle {
 
 	private String getUrl(final PageRequestResponse requestResponse, final String n) {
 		final String d = requestResponse.getRequestParameter("p");
-		final File f = new File(requestResponse.getServletContext().getRealPath("mytools/comps/" + d + "/" + n + ".jsp"));
+		final File f = new File(requestResponse.getServletContext().getRealPath("app/demo/comps/" + d + "/" + n + ".jsp"));
 		if (!f.exists()) {
-			return "/mytools/comps/null.jsp";
+			return "/app/demo/comps/null.jsp";
 		} else {
-			return "/mytools/comps/" + d + "/" + n + ".jsp";
+			return "/app/demo/comps/" + d + "/" + n + ".jsp";
 		}
 	}
 }

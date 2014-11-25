@@ -22,6 +22,7 @@
   `fileSize` bigint(10),
   `lastDownDate` datetime ,
   `attentions` bigint(20) NOT NULL,
+  `downCounter` bigint(20) NOT NULL,
   `remarks` bigint(20) NOT NULL,
   `views` bigint(20) NOT NULL,
   `votes` bigint(20) NOT NULL,

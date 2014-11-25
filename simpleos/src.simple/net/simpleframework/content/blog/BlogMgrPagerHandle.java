@@ -175,7 +175,8 @@ public class BlogMgrPagerHandle extends AbstractBlogPagerHandle {
 				if (status != EContentStatus.publish) {
 					sb.append("<span style=\"margin-right: 6px;\" class=\"important-tip\">[ ").append(status).append(" ]</span>");
 				}
-				sb.append(SimpleosUtil.markContent(c, wrapOpenLink(compParameter, blog)));
+				blog.setTopic(SimpleosUtil.markContent(c, blog.getTopic()));
+				sb.append(wrapOpenLink(compParameter, blog));
 				sb.append("<div class=\"nc\">");
 				sb.append(ContentUtils.getAccountAware().wrapImgAccountHref(compParameter, blog.getUserId()));
 				sb.append(SimpleosUtil.markContent(c, ContentUtils.getShortContent(blog, 300, true)));

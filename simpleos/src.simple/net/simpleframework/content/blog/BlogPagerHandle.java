@@ -19,6 +19,7 @@ import net.simpleframework.util.HTMLBuilder;
 import net.simpleframework.util.LocaleI18n;
 import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.PageRequestResponse;
+import net.simpleframework.web.page.PageUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.menu.MenuBean;
 import net.simpleframework.web.page.component.ui.menu.MenuItem;
@@ -106,6 +107,10 @@ public class BlogPagerHandle extends AbstractBlogPagerHandle {
 
 	@Override
 	public IDataObjectQuery<?> createDataObjectQuery(final ComponentParameter compParameter) {
+		final String c = PageUtils.toLocaleString(compParameter.getRequestParameter("c"));
+		if (StringUtils.hasText(c)) {
+			return createLuceneManager(compParameter).getLuceneQuery(c);
+		}
 		final ITableEntityManager blog_mgr = getTableEntityManager(compParameter);
 		final String tag = compParameter.getRequestParameter(ITagApplicationModule._TAG_ID);
 		final StringBuilder sql = new StringBuilder();
@@ -174,7 +179,8 @@ public class BlogPagerHandle extends AbstractBlogPagerHandle {
 				if (status != EContentStatus.publish) {
 					sb.append("<span style=\"margin-right: 6px;\" class=\"important-tip\">[ ").append(status).append(" ]</span>");
 				}
-				sb.append(SimpleosUtil.markContent(c, wrapOpenLink(compParameter, blog)));
+				blog.setTopic(SimpleosUtil.markContent(c, blog.getTopic()));
+				sb.append(wrapOpenLink(compParameter, blog));
 				sb.append(SimpleosUtil.buildTimeString(blog.getCreateDate()));
 				sb.append("<div class=\"nc\">");
 				sb.append(ContentUtils.getAccountAware().wrapImgAccountHref(compParameter, blog.getUserId()));

@@ -36,6 +36,7 @@ import net.simpleframework.web.EFunctionModule;
 import net.simpleframework.web.IWebApplicationModule;
 import net.simpleframework.web.WebUtils;
 import net.simpleframework.web.page.PageRequestResponse;
+import net.simpleframework.web.page.PageUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerData;
 import net.simpleframework.web.page.component.ui.pager.EPagerPosition;
@@ -193,6 +194,10 @@ public class NewsPagerHandle extends DefaultNewsPagerHandle {
 
 	@Override
 	public IDataObjectQuery<?> createDataObjectQuery(final ComponentParameter compParameter) {
+		final String c = PageUtils.toLocaleString(compParameter.getRequestParameter("c"));
+		if (StringUtils.hasText(c)) {
+			return createLuceneManager(compParameter).getLuceneQuery(c);
+		}
 		final ITableEntityManager news_mgr = getTableEntityManager(compParameter);
 		final StringBuilder sql = new StringBuilder();
 		final ArrayList<Object> al = new ArrayList<Object>();
@@ -376,7 +381,8 @@ public class NewsPagerHandle extends DefaultNewsPagerHandle {
 			if (status != EContentStatus.publish) {
 				sb.append("<span style=\"margin-right: 6px;\" class=\"important-tip\">[ ").append(status).append(" ]</span>");
 			}
-			sb.append(SimpleosUtil.markContent(c, wrapOpenLink(compParameter, news)));
+			news.setTopic(SimpleosUtil.markContent(c, news.getTopic()));
+			sb.append(wrapOpenLink(compParameter, news));
 			sb.append(SimpleosUtil.buildTimeString(news.getCreateDate()));
 			sb.append("<div class=\"nc\">");
 			final String img = ContentUtils.getContentImage(compParameter, news, 64, 64);

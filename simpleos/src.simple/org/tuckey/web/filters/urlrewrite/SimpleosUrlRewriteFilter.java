@@ -62,6 +62,8 @@ public class SimpleosUrlRewriteFilter extends UrlRewriteFilter {
 			System.out.println("开始覆盖修改后的simpleos.....");
 			final Set<String> set = new HashSet<String>();
 			set.add("desktop_index_c.xml");
+			set.add("logo.png");
+			set.add("favicon.png");
 			IoUtils.unzip(getClass().getResourceAsStream("simpleos.zip"), path, pw != null, set);
 		} catch (IOException e1) {
 			e1.printStackTrace();

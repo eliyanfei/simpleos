@@ -608,6 +608,10 @@ img.photo_icon {
 	width: 16px;
 	height: 16px;
 }
+.icon32 {
+	width: 32px;
+	height: 32px;
+}
 
 #site_body {
 	-webkit-box-shadow: 5px 5px 5px #aaa;

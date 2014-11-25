@@ -290,6 +290,10 @@ public class BbsTopicPagerHandle extends DefaultTopicPagerHandle {
 
 	@Override
 	public IDataObjectQuery<?> createDataObjectQuery(final ComponentParameter compParameter) {
+		final String c = PageUtils.toLocaleString(compParameter.getRequestParameter("c"));
+		if (StringUtils.hasText(c)) {
+			return createLuceneManager(compParameter).getLuceneQuery(c);
+		}
 		final ITableEntityManager topic_mgr = getTableEntityManager(compParameter);
 		final StringBuilder sql = new StringBuilder();
 		final ArrayList<Object> al = new ArrayList<Object>();
@@ -390,22 +394,23 @@ public class BbsTopicPagerHandle extends DefaultTopicPagerHandle {
 		return new TopicTablePagerData(compParameter) {
 			String userId = compParameter.getParameter(OrgUtils.um().getUserIdParameterName());
 			IUser user = SimpleosUtil.getLoginUser(compParameter);
+
 			@Override
 			public Map<String, TablePagerColumn> getTablePagerColumns() {
 				final Map<String, TablePagerColumn> columns = cloneTablePagerColumns();
 				if (!IDbComponentHandle.Utils.isManager(compParameter)) {
 				}
-				if(!user.getId().equals2(userId)){
+				if (!user.getId().equals2(userId)) {
 					columns.remove("action");
 				}
 				if (BbsUtils.getForum(compParameter) == null) {
-//					final TablePagerColumn forum = new TablePagerColumn("forum");
-//					forum.setColumnSqlName("catalogId");
-//					forum.setColumnText(LocaleI18n.getMessage("BbsTopicPagerHandle.1"));
-//					forum.setHeaderStyle("width: 150px;");
-//					forum.setStyle("width: 150px;text-align: center;");
-//					forum.setSeparator(true);
-//					putColumn(columns, 2, "forum", forum);
+					//					final TablePagerColumn forum = new TablePagerColumn("forum");
+					//					forum.setColumnSqlName("catalogId");
+					//					forum.setColumnText(LocaleI18n.getMessage("BbsTopicPagerHandle.1"));
+					//					forum.setHeaderStyle("width: 150px;");
+					//					forum.setStyle("width: 150px;text-align: center;");
+					//					forum.setSeparator(true);
+					//					putColumn(columns, 2, "forum", forum);
 					if (StringUtils.hasText(compParameter.getRequestParameter(OrgUtils.um().getUserIdParameterName()))
 							&& !ConvertUtils.toBoolean(compParameter.getRequestParameter("r"), false)) {
 						columns.remove("author");
@@ -417,13 +422,13 @@ public class BbsTopicPagerHandle extends DefaultTopicPagerHandle {
 			@Override
 			protected Map<Object, Object> getRowData(final Object dataObject) {
 				final Map<Object, Object> rowData = super.getRowData(dataObject);
-//				final BbsForum forum = getCatalogById(compParameter, ((BbsTopic) dataObject).getCatalogId());
-//				if (forum != null) {
-//					final StringBuilder sb = new StringBuilder();
-//					sb.append("<a class=\"a2\" href=\"").append(getApplicationModule().getTopicUrl(compParameter, forum)).append("\">")
-//							.append(forum.getText()).append("</a>");
-//					rowData.put("forum", sb.toString());
-//				}
+				//				final BbsForum forum = getCatalogById(compParameter, ((BbsTopic) dataObject).getCatalogId());
+				//				if (forum != null) {
+				//					final StringBuilder sb = new StringBuilder();
+				//					sb.append("<a class=\"a2\" href=\"").append(getApplicationModule().getTopicUrl(compParameter, forum)).append("\">")
+				//							.append(forum.getText()).append("</a>");
+				//					rowData.put("forum", sb.toString());
+				//				}
 				return rowData;
 			}
 		};

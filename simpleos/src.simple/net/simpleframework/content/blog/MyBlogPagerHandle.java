@@ -116,7 +116,8 @@ public class MyBlogPagerHandle extends AbstractBlogPagerHandle {
 				if (status != EContentStatus.publish) {
 					sb.append("<span style=\"margin-right: 6px;\" class=\"important-tip\">[ ").append(status).append(" ]</span>");
 				}
-				sb.append(SimpleosUtil.markContent(c, wrapOpenLink(compParameter, blog)));
+				blog.setTopic(SimpleosUtil.markContent(c, blog.getTopic()));
+				sb.append(wrapOpenLink(compParameter, blog));
 				sb.append(SimpleosUtil.buildTimeString(blog.getCreateDate()));
 				sb.append("<div class=\"nc\">");
 				final String img = ContentUtils.getContentImage(compParameter, blog, 64, 64);

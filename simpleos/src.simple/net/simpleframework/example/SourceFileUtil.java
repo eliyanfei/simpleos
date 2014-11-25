@@ -22,13 +22,14 @@ public class SourceFileUtil {
 	 *           : Source file Name
 	 * @return
 	 */
-	public static String getSrcContent(final ServletContext context,
-			final HttpServletRequest request, final String srcFileName) {
-		final String srcFileRelativePath = !srcFileName.toLowerCase().endsWith(".java") ? "developer\\comps\\"
-				+ request.getParameter("p")
+	public static String getSrcContent(final ServletContext context, final HttpServletRequest request, final String srcFileName) {
+		final String srcFileRelativePath = !srcFileName.toLowerCase().endsWith(".java") ? "app/demo/comps/" + request.getParameter("p")
 				: "example.src";
-		final File demoFile = new File(context.getRealPath("/") + srcFileRelativePath + "\\"
-				+ srcFileName);
+		return getSrcContent(request, srcFileRelativePath, srcFileName);
+	}
+
+	public static String getSrcContent(final HttpServletRequest request, String path, final String srcFileName) {
+		final File demoFile = new File(request.getRealPath("/") + path + File.separator + srcFileName);
 		srcList = null;
 		try {
 			if (demoFile.exists()) {

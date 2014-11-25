@@ -12,6 +12,11 @@ import net.simpleos.module.ASimpleosModule;
 public class SimpleosDocuModule extends ASimpleosModule {
 
 	@Override
+	public String getBackendJsp() {
+		return super.getBackendJsp();
+	}
+	
+	@Override
 	public String getFrontHtml() {
 		return "/docu.html";
 	}

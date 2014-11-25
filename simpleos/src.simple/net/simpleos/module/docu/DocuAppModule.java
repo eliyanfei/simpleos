@@ -38,7 +38,6 @@ import net.simpleos.mvc.myfavorite.MyFavoriteUtils;
 
 /**
  * 
- * @author 李岩飞 
  * @email eliyanfei@126.com
  * @date 2014年11月21日 下午10:34:29 
  *

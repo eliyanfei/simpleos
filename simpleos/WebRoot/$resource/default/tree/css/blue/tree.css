@@ -82,7 +82,7 @@
 
 .tafelTree .tafelTreeselected,
 .tafelTree .tafelTreedragOver {
-	background-color: #215ca6;
+	background-color: #E1E1E2;
 	color: black;
 	border: 1px dotted #ddd;
 	_border: 0px; /* ie6 */

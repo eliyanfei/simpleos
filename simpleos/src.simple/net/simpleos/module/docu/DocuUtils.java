@@ -43,7 +43,13 @@ import net.simpleframework.web.page.component.AbstractComponentRegistry;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleos.SimpleosUtil;
 import net.simpleos.impl.AbstractCatalog;
-
+/**
+ * 
+ * @author 李岩飞 
+ * @email eliyanfei@126.com
+ * @date 2014年11月25日 上午10:17:41 
+ *
+ */
 public final class DocuUtils {
 	public static String docuPath = "f:\\data";//文件存储路径
 	public static String docuId = "docuId";
