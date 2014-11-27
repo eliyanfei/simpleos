@@ -24,7 +24,7 @@
 			<div>
 				<h1>数据库配置</h1>
 			</div>
-			<div style="color: red;">如果选择内置数据库,端口请设置为3336</div>
+			<div style="color: red;display: none;">如果选择内置数据库,端口请设置为3336,数据库是mysql,用户名是root,密码是空</div>
 			<div id="db_config"></div>
 			<div style="height: 24px; margin-top: 5px;">
 				<div style="float: right;">

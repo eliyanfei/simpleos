@@ -87,7 +87,11 @@ public class DefaultUserPagerHandle extends AbstractDbTablePagerHandle implement
 
 	@Override
 	public IDataObjectQuery<?> createDataObjectQuery(final ComponentParameter compParameter) {
-		final ExpressionValue ev = new ExpressionValue("status <> ? order by oorder desc", new Object[] { EUserStatus.delete });
+		String sql = "status <> ? order by oorder desc";
+		if(!SimpleosUtil.isManage(compParameter)){
+			sql = "status <> ? and 1>1 order by oorder desc";
+		}
+		final ExpressionValue ev = new ExpressionValue(sql, new Object[] { EUserStatus.delete });
 		return OrgUtils.um().query(ev);
 	}
 

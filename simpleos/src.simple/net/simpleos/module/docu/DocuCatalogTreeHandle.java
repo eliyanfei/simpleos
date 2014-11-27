@@ -30,6 +30,7 @@ public class DocuCatalogTreeHandle extends AbstractTreeHandle {
 				if (treeNode != null) {
 					treeNode2.setId(treeNode.getText() + "-" + treeNode2.getText() + "|" + wc.getId());
 				}
+				treeNode2.setOpened(true);
 				nodes.add(treeNode2);
 			}
 			return nodes;

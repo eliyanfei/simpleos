@@ -9,6 +9,6 @@ public class MySubmitHandle extends AbstractSubmitHandle {
 	public UrlForward submit(final ComponentParameter compParameter) {
 		compParameter.setRequestAttribute("dp2", compParameter.getRequestParameter("dp2"));
 		compParameter.setRequestAttribute("dp1", getMultipartFile(compParameter, "dp1"));
-		return new UrlForward("/developer/comps/submit/demo_submit.jsp");
+		return new UrlForward("/app/demo/comps/submit/demo_submit.jsp");
 	}
 }

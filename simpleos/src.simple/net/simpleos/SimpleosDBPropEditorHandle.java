@@ -15,6 +15,7 @@ import net.simpleframework.web.page.component.ui.propeditor.AbstractPropEditorHa
 import net.simpleframework.web.page.component.ui.propeditor.FieldComponent;
 import net.simpleframework.web.page.component.ui.propeditor.PropEditorBean;
 import net.simpleframework.web.page.component.ui.propeditor.PropField;
+
 /**
  * 
  * @author 李岩飞 
@@ -30,7 +31,7 @@ public class SimpleosDBPropEditorHandle extends AbstractPropEditorHandle {
 
 	@Override
 	public Collection<PropField> getFormFields(ComponentParameter compParameter) {
-		final String path = IWebApplication.Instance.getApplication().getServletContext().getRealPath("/base.properties");
+		final String path = IWebApplication.Instance.getApplication().getServletContext().getRealPath("/WEB-INF/db.properties");
 		final File dsFile = new File(path);
 		Properties pro = new Properties();
 		if (dsFile.exists()) {

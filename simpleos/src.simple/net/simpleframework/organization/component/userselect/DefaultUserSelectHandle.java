@@ -16,6 +16,7 @@ import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.page.PageRequestResponse;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.dictionary.AbstractDictionaryHandle;
+import net.simpleos.SimpleosUtil;
 
 /**
  * 这是一个开源的软件，请在LGPLv3下合法使用、修改或重新发布。
@@ -37,6 +38,9 @@ public class DefaultUserSelectHandle extends AbstractDictionaryHandle implements
 		final StringBuilder sql = new StringBuilder();
 		sql.append("status=?");
 		al.add(EUserStatus.normal);
+		if(!SimpleosUtil.isManage(requestResponse)){
+			sql.append(" and 1>1");
+		}
 		final String deptId = requestResponse.getRequestParameter(OrgUtils.dm().getDepartmentIdParameterName());
 		if (StringUtils.hasText(deptId)) {
 			sql.append(" and departmentid=?");

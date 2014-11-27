@@ -10,7 +10,6 @@ import net.simpleframework.core.ado.IDataObjectQuery;
 import net.simpleframework.core.ado.ListDataObjectQuery;
 import net.simpleframework.core.ado.db.Table;
 import net.simpleframework.util.ConvertUtils;
-import net.simpleframework.util.HTMLBuilder;
 import net.simpleframework.web.WebUtils;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.ui.pager.AbstractTablePagerHandle;
@@ -27,9 +26,6 @@ public class MyTablePagerHandle extends AbstractTablePagerHandle {
 				sb.append("<a onclick=\"$Actions['demoTablePager']('t200=false');\">").append("切换内存数据")
 						.append("</a>");
 			} else {
-				sb.append("<a onclick=\"$Actions['demoTablePager']('t200=true');\">");
-				sb.append("切换数据库数据(200万)").append("</a>");
-				sb.append(HTMLBuilder.SEP);
 				sb.append("<a onclick=\"$Actions['").append(compParameter.componentBean.getName())
 						.append("'].exportFile(null, false);\">导出</a>");
 			}

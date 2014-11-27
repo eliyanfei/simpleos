@@ -9,10 +9,12 @@ import java.util.Map;
 import java.util.Properties;
 
 import net.simpleframework.applets.notification.NotificationUtils;
+import net.simpleframework.util.StringUtils;
 import net.simpleframework.web.IWebApplication;
 import net.simpleframework.web.page.IForward;
 import net.simpleframework.web.page.component.ComponentParameter;
 import net.simpleframework.web.page.component.base.ajaxrequest.AbstractAjaxRequestHandle;
+import net.simpleos.commons.mysql.EmbedMySqlServer;
 import net.simpleos.utils.SQLUtils;
 
 /**
@@ -54,6 +56,8 @@ public class SimpleosAjaxHandle extends AbstractAjaxRequestHandle {
 		}
 	}
 
+	private static EmbedMySqlServer sqlServer;
+
 	/**
 	 * 测试数据源
 	 * @param compParameter
@@ -64,6 +68,15 @@ public class SimpleosAjaxHandle extends AbstractAjaxRequestHandle {
 		return jsonForward(compParameter, new JsonCallback() {
 			@Override
 			public void doAction(Map<String, Object> json) throws Exception {
+				final String dbtype = compParameter.getParameter("dbtype");
+				if ("in".equals(dbtype)) {
+					final File mysqlFile = new File(compParameter.getApplicationAbsolutePath("/mysql-em/MySql_medium.properties"));
+					Properties dbpro = new Properties();
+					dbpro.load(new FileInputStream(mysqlFile));
+					EmbedMySqlServer.setEmbedMySqlHome(compParameter.getApplicationAbsolutePath(""));
+					sqlServer = new EmbedMySqlServer(dbpro);
+					sqlServer.startup();
+				}
 				if (isConnection(compParameter)) {
 					json.put("rs", "连接成功!");
 				} else {
@@ -83,17 +96,13 @@ public class SimpleosAjaxHandle extends AbstractAjaxRequestHandle {
 		return jsonForward(compParameter, new JsonCallback() {
 			@Override
 			public void doAction(Map<String, Object> json) throws Exception {
-				if (!isConnection(compParameter)) {
-					json.put("rs", "连接失败!");
-					return;
-				}
+				final String dbtype = compParameter.getParameter("dbtype");
 				final String driverClassName = compParameter.getParameter("driverClassName");
 				final String url = compParameter.getParameter("url");
 				final String username = compParameter.getParameter("username");
 				final String password = compParameter.getParameter("password");
-				final String dbtype = compParameter.getParameter("dbtype");
 				try {
-					final String path = IWebApplication.Instance.getApplication().getServletContext().getRealPath("/base.properties");
+					final String path = IWebApplication.Instance.getApplication().getServletContext().getRealPath("/WEB-INF/db.properties");
 					final File dsFile = new File(path);
 					Properties pro = new Properties();
 					if (dsFile.exists()) {
@@ -111,6 +120,22 @@ public class SimpleosAjaxHandle extends AbstractAjaxRequestHandle {
 					pro.put("password", password);
 					pro.put("testWhileIdle", "true");
 					pro.put("timeBetweenEvictionRunsMillis", "14400000");
+
+					if ("in".equals(dbtype)) {
+						if (StringUtils.hasText(pro.getProperty("base")) && !sqlServer.isRunning()) {
+							final File mysqlFile = new File(compParameter.getApplicationAbsolutePath("/mysql-em/" + pro.getProperty("base")));
+							Properties dbpro = new Properties();
+							dbpro.load(new FileInputStream(mysqlFile));
+							EmbedMySqlServer.setEmbedMySqlHome(compParameter.getApplicationAbsolutePath(""));
+							EmbedMySqlServer sqlServer = new EmbedMySqlServer(dbpro);
+							sqlServer.startup();
+						}
+					}
+					if (!isConnection(compParameter)) {
+						json.put("rs", "连接失败!");
+						return;
+					}
+
 					FileOutputStream fos = new FileOutputStream(path);
 					pro.store(fos, null);
 					fos.flush();

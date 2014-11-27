@@ -78,7 +78,7 @@ public class DocuPortalModule extends AbstractContentLayoutModuleHandle {
 
 	@Override
 	public String getCatalog() {
-		return LocaleI18n.getMessage("NewsUtils.0");
+		return "信息";
 	}
 
 	@Override

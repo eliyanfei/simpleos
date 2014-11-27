@@ -5,7 +5,7 @@
 	</columns>
 	<columns name="sys">
 		<column name="language" text="语言设置" default="zh," mul="true" />
-		<column name="testing" text="是否测试系统" default="false" />
+		<column name="testing" text="是否测试系统" default="true" />
 		<column name="register" text="允许注册" default="true" />
 		<column name="mail" text="注册不需要激活" default="false" />
 		<column name="space" text="发布动态不需要登入" default="false" />

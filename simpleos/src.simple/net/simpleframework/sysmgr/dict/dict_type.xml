@@ -3704,15 +3704,4 @@
 			</item>
 		</type>
 	</type>
-	<type name="docu" text="文档管理">
-		<type name="thread" text="多线程">
-			<item name="thread_v" text="false" />
-		</type>
-		<type name="auto" text="自动审核">
-			<item name="auto_v" text="false" />
-		</type>
-		<type name="pages" text="转换页数">
-			<item name="pages_v" text="30" />
-		</type>
-	</type>
 </dict>

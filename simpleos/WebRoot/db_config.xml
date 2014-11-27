@@ -7,8 +7,8 @@
 			handleClass="net.simpleos.SimpleosDBPropEditorHandle">
 			<field label="数据库" labelStyle="">
 				<component type="select" name="dbtype">
-					<defaultValue>in=内置数据库;out=外置数据库</defaultValue>
-					<!-- <defaultValue>out=外置数据库</defaultValue> -->
+					<defaultValue>out=外置数据库</defaultValue>
+					<!-- <defaultValue>in=内置数据库;out=外置数据库</defaultValue> -->
 				</component>
 			</field>
 			<field label="JDBC驱动" labelStyle="">
@@ -18,12 +18,12 @@
 			</field>
 			<field label="URL">
 				<component type="text" name="url">
-					<defaultValue>jdbc:mysql://localhost:3306/database</defaultValue>
+					<defaultValue>jdbc:mysql://localhost:3306/mysql?useUnicode=true&amp;characterEncoding=UTF-8</defaultValue>
 				</component>
 			</field>
 			<field label="用户名">
 				<component type="text" name="username">
-					<defaultValue></defaultValue>
+					<defaultValue>root</defaultValue>
 				</component>
 			</field>
 			<field label="密码">
